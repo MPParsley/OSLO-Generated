@@ -3083,7 +3083,7 @@
     },
     {
       "@id": "http://fixme.com#aantalVerversingen",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "name": {
         "nl": "aantalVerversingen"
       },
@@ -3110,11 +3110,11 @@
         "EA-Type": "attribute",
         "EA-Domain": "GrondWaterMonster",
         "EA-Domain-Guid": "{98C722F5-6403-46a1-BC31-DB10812ADFF6}",
-        "EA-Range": "int",
+        "EA-Range": "Integer",
         "RangeData": {
-          "EA-Name": "",
+          "EA-Name": "Integer",
           "EA-Package": "",
-          "uri": "null"
+          "uri": "http://www.w3.org/2001/XMLSchema#integer"
         },
         "label": {
           "nl": "aantalVerversingen"
@@ -3162,14 +3162,20 @@
           "EA-Name": "GrondWaterMonster"
         }
       ],
-      "range": [],
+      "range": [
+        {
+          "EA-Name": "Integer",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2001/XMLSchema#integer"
+        }
+      ],
       "generalization": [],
       "minCardinality": "0",
       "maxCardinality": "1"
     },
     {
       "@id": "http://fixme.com#aanzuring",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "name": {
         "nl": "aanzuring"
       },
@@ -3196,11 +3202,12 @@
         "EA-Type": "attribute",
         "EA-Domain": "GrondWaterMonster",
         "EA-Domain-Guid": "{98C722F5-6403-46a1-BC31-DB10812ADFF6}",
-        "EA-Range": "int",
+        "EA-Range": "KwantitatieveWaarde",
         "RangeData": {
-          "EA-Name": "",
-          "EA-Package": "",
-          "uri": "null"
+          "EA-Name": "KwantitatieveWaarde",
+          "EA-GUID": "{5756CEDF-1C21-48b3-9F6B-D5AFA1BAF9AC}",
+          "EA-Package": "OSLO-Generiek",
+          "uri": "https://schema.org/QuantitativeValue"
         },
         "label": {
           "nl": "aanzuring"
@@ -3248,7 +3255,14 @@
           "EA-Name": "GrondWaterMonster"
         }
       ],
-      "range": [],
+      "range": [
+        {
+          "EA-Name": "KwantitatieveWaarde",
+          "EA-GUID": "{5756CEDF-1C21-48b3-9F6B-D5AFA1BAF9AC}",
+          "EA-Package": "OSLO-Generiek",
+          "uri": "https://schema.org/QuantitativeValue"
+        }
+      ],
       "generalization": [],
       "minCardinality": "0",
       "maxCardinality": "1"
@@ -6268,92 +6282,6 @@
       "generalization": [],
       "minCardinality": "0",
       "maxCardinality": "1"
-    },
-    {
-      "@id": "http://fixme.com#opmerking",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "name": {
-        "nl": "opmerking"
-      },
-      "inpackage": "ACTIVE_PACKAGE",
-      "usage": {
-        "nl": "TO DO"
-      },
-      "definition": {
-        "nl": "TODO"
-      },
-      "label": {
-        "nl": "opmerking"
-      },
-      "ap-label-nl": {
-        "nl": "opmerking"
-      },
-      "ap-definition-nl": {
-        "nl": "TODO"
-      },
-      "extra": {
-        "EA-Name": "opmerking",
-        "EA-Guid": "{BF72FB03-62BA-4c11-A4C4-5BAB2EE28539}",
-        "EA-Package": "OSLO-Grondwatermeetnet",
-        "EA-Type": "attribute",
-        "EA-Domain": "Peilmeting",
-        "EA-Domain-Guid": "{395A89FA-6F8F-4f21-BB25-2DD3AED43255}",
-        "EA-Range": "int",
-        "RangeData": {
-          "EA-Name": "",
-          "EA-Package": "",
-          "uri": "null"
-        },
-        "label": {
-          "nl": "opmerking"
-        },
-        "definition": {
-          "nl": "TODO"
-        },
-        "usage": {
-          "nl": "TO DO"
-        },
-        "ap-label-nl": {
-          "nl": "opmerking"
-        },
-        "ap-definition-nl": {
-          "nl": "TODO"
-        },
-        "ap-usageNote-nl": "",
-        "ap-codelist": "",
-        "RawTags": [
-          {
-            "key": "label-nl",
-            "value": "opmerking",
-            "note": "null"
-          },
-          {
-            "key": "usageNote-nl",
-            "value": "TO DO",
-            "note": "null"
-          },
-          {
-            "key": "definition-nl",
-            "value": "TODO",
-            "note": "null"
-          }
-        ],
-        "Scope": "FULL_DEFINITON"
-      },
-      "description": {
-        "nl": "TODO"
-      },
-      "codelist": [],
-      "domain": [
-        {
-          "uri": "http://fixme.com#Peilmeting",
-          "EA-Name": "Peilmeting"
-        }
-      ],
-      "range": [],
-      "generalization": [],
-      "minCardinality": "0",
-      "maxCardinality": "*"
     },
     {
       "@id": "http://fixme.com#opmeter",
@@ -12323,135 +12251,6 @@
       },
       "inpackage": "OTHER_PACKAGE",
       "ap-usageNote-nl": {
-        "nl": "Het gaat om samenhang die van belang is om het resultaat van individuele Observaties te begrijpen, bv biotische relaties (dier A is roofdier en is aanwezig omdat dier B prooi voorkomt). Dergelijke relaties vereisen expliciet te worden beschreven (in tegenstelling tot relaties zoals het samenvallen van resultaten van Observaties in ruimte of tijd die impliciet mogen blijven). Ook nuttig voor relaties waarbij de output van Observatie A de input vormt voor Observatie B."
-      },
-      "usage": {
-        "nl": "Het gaat om samenhang die van belang is om het resultaat van individuele Observaties te begrijpen, bv biotische relaties (dier A is roofdier en is aanwezig omdat dier B prooi voorkomt). Dergelijke relaties vereisen expliciet te worden beschreven (in tegenstelling tot relaties zoals het samenvallen van resultaten van Observaties in ruimte of tijd die impliciet mogen blijven). Ook nuttig voor relaties waarbij de output van Observatie A de input vormt voor Observatie B."
-      },
-      "definition": {
-        "nl": "Observaties waarvan de resultaten op een of andere manier samenhangen."
-      },
-      "label": {
-        "nl": "geassocieerdeObservatie"
-      },
-      "ap-label-nl": {
-        "nl": "geassocieerdeObservatie"
-      },
-      "ap-definition-nl": {
-        "nl": "Observaties waarvan de resultaten op een of andere manier samenhangen."
-      },
-      "extra": {
-        "EA-Name": "geassocieerdeObservatie",
-        "EA-Guid": "{26E59195-6002-4978-BDE0-D77DFDF4F335}",
-        "derived": "true",
-        "EA-Package": "",
-        "EA-Type": "connector",
-        "EA-Domain": "Observatie",
-        "EA-Domain-Guid": "{DD258C34-B88E-49a8-9FCC-E6FB7117FC87}",
-        "EA-Range": "Observatie",
-        "RangeData": {
-          "EA-Name": "Observatie",
-          "EA-GUID": "{DD258C34-B88E-49a8-9FCC-E6FB7117FC87}",
-          "EA-Package": "OSLO-ObservatiesEnMetingen",
-          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
-        },
-        "sourceRole": "null",
-        "destRole": "geassocieerdeObservatie",
-        "label": {
-          "nl": "geassocieerdeObservatie"
-        },
-        "definition": {
-          "nl": "Observaties waarvan de resultaten op een of andere manier samenhangen."
-        },
-        "usage": {
-          "nl": "Het gaat om samenhang die van belang is om het resultaat van individuele Observaties te begrijpen, bv biotische relaties (dier A is roofdier en is aanwezig omdat dier B prooi voorkomt). Dergelijke relaties vereisen expliciet te worden beschreven (in tegenstelling tot relaties zoals het samenvallen van resultaten van Observaties in ruimte of tijd die impliciet mogen blijven). Ook nuttig voor relaties waarbij de output van Observatie A de input vormt voor Observatie B."
-        },
-        "ap-label-nl": {
-          "nl": "geassocieerdeObservatie"
-        },
-        "ap-definition-nl": {
-          "nl": "Observaties waarvan de resultaten op een of andere manier samenhangen."
-        },
-        "ap-usageNote-nl": {
-          "nl": "Het gaat om samenhang die van belang is om het resultaat van individuele Observaties te begrijpen, bv biotische relaties (dier A is roofdier en is aanwezig omdat dier B prooi voorkomt). Dergelijke relaties vereisen expliciet te worden beschreven (in tegenstelling tot relaties zoals het samenvallen van resultaten van Observaties in ruimte of tijd die impliciet mogen blijven). Ook nuttig voor relaties waarbij de output van Observatie A de input vormt voor Observatie B."
-        },
-        "ap-codelist": "",
-        "RawTags": [
-          {
-            "key": "label-nl",
-            "value": "NOTE",
-            "note": "geassocieerdeObservatie"
-          },
-          {
-            "key": "uri",
-            "value": "NOTE",
-            "note": "http://def.isotc211.org/iso19156/2011/Observation#ObservationContext.relatedObservation"
-          },
-          {
-            "key": "ap-usageNote-nl",
-            "value": "NOTE",
-            "note": "Het gaat om samenhang die van belang is om het resultaat van individuele Observaties te begrijpen, bv biotische relaties (dier A is roofdier en is aanwezig omdat dier B prooi voorkomt). Dergelijke relaties vereisen expliciet te worden beschreven (in tegenstelling tot relaties zoals het samenvallen van resultaten van Observaties in ruimte of tijd die impliciet mogen blijven). Ook nuttig voor relaties waarbij de output van Observatie A de input vormt voor Observatie B."
-          },
-          {
-            "key": "ap-definition-nl",
-            "value": "NOTE",
-            "note": "Observaties waarvan de resultaten op een of andere manier samenhangen."
-          }
-        ],
-        "DestRoleTags": [
-          {
-            "key": "label-nl",
-            "value": "NOTE",
-            "note": "geassocieerdeObservatie"
-          },
-          {
-            "key": "uri",
-            "value": "NOTE",
-            "note": "http://def.isotc211.org/iso19156/2011/Observation#ObservationContext.relatedObservation"
-          },
-          {
-            "key": "ap-usageNote-nl",
-            "value": "NOTE",
-            "note": "Het gaat om samenhang die van belang is om het resultaat van individuele Observaties te begrijpen, bv biotische relaties (dier A is roofdier en is aanwezig omdat dier B prooi voorkomt). Dergelijke relaties vereisen expliciet te worden beschreven (in tegenstelling tot relaties zoals het samenvallen van resultaten van Observaties in ruimte of tijd die impliciet mogen blijven). Ook nuttig voor relaties waarbij de output van Observatie A de input vormt voor Observatie B."
-          },
-          {
-            "key": "ap-definition-nl",
-            "value": "NOTE",
-            "note": "Observaties waarvan de resultaten op een of andere manier samenhangen."
-          }
-        ],
-        "Scope": "NOTHING"
-      },
-      "description": {
-        "nl": "Observaties waarvan de resultaten op een of andere manier samenhangen."
-      },
-      "codelist": [],
-      "domain": [
-        {
-          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
-          "EA-Name": "Observatie"
-        }
-      ],
-      "range": [
-        {
-          "EA-Name": "Observatie",
-          "EA-GUID": "{DD258C34-B88E-49a8-9FCC-E6FB7117FC87}",
-          "EA-Package": "OSLO-ObservatiesEnMetingen",
-          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
-        }
-      ],
-      "generalization": [],
-      "minCardinality": "0",
-      "maxCardinality": "*"
-    },
-    {
-      "@id": "http://def.isotc211.org/iso19156/2011/Observation#ObservationContext.relatedObservation",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "name": {
-        "nl": "geassocieerdeObservatie"
-      },
-      "inpackage": "OTHER_PACKAGE",
-      "ap-usageNote-nl": {
         "nl": "TODO"
       },
       "usage": {
@@ -12559,6 +12358,135 @@
         {
           "uri": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
           "EA-Name": "Bemonsteringsobject"
+        }
+      ],
+      "range": [
+        {
+          "EA-Name": "Observatie",
+          "EA-GUID": "{DD258C34-B88E-49a8-9FCC-E6FB7117FC87}",
+          "EA-Package": "OSLO-ObservatiesEnMetingen",
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
+        }
+      ],
+      "generalization": [],
+      "minCardinality": "0",
+      "maxCardinality": "*"
+    },
+    {
+      "@id": "http://def.isotc211.org/iso19156/2011/Observation#ObservationContext.relatedObservation",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "name": {
+        "nl": "geassocieerdeObservatie"
+      },
+      "inpackage": "OTHER_PACKAGE",
+      "ap-usageNote-nl": {
+        "nl": "Het gaat om samenhang die van belang is om het resultaat van individuele Observaties te begrijpen, bv biotische relaties (dier A is roofdier en is aanwezig omdat dier B prooi voorkomt). Dergelijke relaties vereisen expliciet te worden beschreven (in tegenstelling tot relaties zoals het samenvallen van resultaten van Observaties in ruimte of tijd die impliciet mogen blijven). Ook nuttig voor relaties waarbij de output van Observatie A de input vormt voor Observatie B."
+      },
+      "usage": {
+        "nl": "Het gaat om samenhang die van belang is om het resultaat van individuele Observaties te begrijpen, bv biotische relaties (dier A is roofdier en is aanwezig omdat dier B prooi voorkomt). Dergelijke relaties vereisen expliciet te worden beschreven (in tegenstelling tot relaties zoals het samenvallen van resultaten van Observaties in ruimte of tijd die impliciet mogen blijven). Ook nuttig voor relaties waarbij de output van Observatie A de input vormt voor Observatie B."
+      },
+      "definition": {
+        "nl": "Observaties waarvan de resultaten op een of andere manier samenhangen."
+      },
+      "label": {
+        "nl": "geassocieerdeObservatie"
+      },
+      "ap-label-nl": {
+        "nl": "geassocieerdeObservatie"
+      },
+      "ap-definition-nl": {
+        "nl": "Observaties waarvan de resultaten op een of andere manier samenhangen."
+      },
+      "extra": {
+        "EA-Name": "geassocieerdeObservatie",
+        "EA-Guid": "{26E59195-6002-4978-BDE0-D77DFDF4F335}",
+        "derived": "true",
+        "EA-Package": "",
+        "EA-Type": "connector",
+        "EA-Domain": "Observatie",
+        "EA-Domain-Guid": "{DD258C34-B88E-49a8-9FCC-E6FB7117FC87}",
+        "EA-Range": "Observatie",
+        "RangeData": {
+          "EA-Name": "Observatie",
+          "EA-GUID": "{DD258C34-B88E-49a8-9FCC-E6FB7117FC87}",
+          "EA-Package": "OSLO-ObservatiesEnMetingen",
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
+        },
+        "sourceRole": "null",
+        "destRole": "geassocieerdeObservatie",
+        "label": {
+          "nl": "geassocieerdeObservatie"
+        },
+        "definition": {
+          "nl": "Observaties waarvan de resultaten op een of andere manier samenhangen."
+        },
+        "usage": {
+          "nl": "Het gaat om samenhang die van belang is om het resultaat van individuele Observaties te begrijpen, bv biotische relaties (dier A is roofdier en is aanwezig omdat dier B prooi voorkomt). Dergelijke relaties vereisen expliciet te worden beschreven (in tegenstelling tot relaties zoals het samenvallen van resultaten van Observaties in ruimte of tijd die impliciet mogen blijven). Ook nuttig voor relaties waarbij de output van Observatie A de input vormt voor Observatie B."
+        },
+        "ap-label-nl": {
+          "nl": "geassocieerdeObservatie"
+        },
+        "ap-definition-nl": {
+          "nl": "Observaties waarvan de resultaten op een of andere manier samenhangen."
+        },
+        "ap-usageNote-nl": {
+          "nl": "Het gaat om samenhang die van belang is om het resultaat van individuele Observaties te begrijpen, bv biotische relaties (dier A is roofdier en is aanwezig omdat dier B prooi voorkomt). Dergelijke relaties vereisen expliciet te worden beschreven (in tegenstelling tot relaties zoals het samenvallen van resultaten van Observaties in ruimte of tijd die impliciet mogen blijven). Ook nuttig voor relaties waarbij de output van Observatie A de input vormt voor Observatie B."
+        },
+        "ap-codelist": "",
+        "RawTags": [
+          {
+            "key": "label-nl",
+            "value": "NOTE",
+            "note": "geassocieerdeObservatie"
+          },
+          {
+            "key": "uri",
+            "value": "NOTE",
+            "note": "http://def.isotc211.org/iso19156/2011/Observation#ObservationContext.relatedObservation"
+          },
+          {
+            "key": "ap-usageNote-nl",
+            "value": "NOTE",
+            "note": "Het gaat om samenhang die van belang is om het resultaat van individuele Observaties te begrijpen, bv biotische relaties (dier A is roofdier en is aanwezig omdat dier B prooi voorkomt). Dergelijke relaties vereisen expliciet te worden beschreven (in tegenstelling tot relaties zoals het samenvallen van resultaten van Observaties in ruimte of tijd die impliciet mogen blijven). Ook nuttig voor relaties waarbij de output van Observatie A de input vormt voor Observatie B."
+          },
+          {
+            "key": "ap-definition-nl",
+            "value": "NOTE",
+            "note": "Observaties waarvan de resultaten op een of andere manier samenhangen."
+          }
+        ],
+        "DestRoleTags": [
+          {
+            "key": "label-nl",
+            "value": "NOTE",
+            "note": "geassocieerdeObservatie"
+          },
+          {
+            "key": "uri",
+            "value": "NOTE",
+            "note": "http://def.isotc211.org/iso19156/2011/Observation#ObservationContext.relatedObservation"
+          },
+          {
+            "key": "ap-usageNote-nl",
+            "value": "NOTE",
+            "note": "Het gaat om samenhang die van belang is om het resultaat van individuele Observaties te begrijpen, bv biotische relaties (dier A is roofdier en is aanwezig omdat dier B prooi voorkomt). Dergelijke relaties vereisen expliciet te worden beschreven (in tegenstelling tot relaties zoals het samenvallen van resultaten van Observaties in ruimte of tijd die impliciet mogen blijven). Ook nuttig voor relaties waarbij de output van Observatie A de input vormt voor Observatie B."
+          },
+          {
+            "key": "ap-definition-nl",
+            "value": "NOTE",
+            "note": "Observaties waarvan de resultaten op een of andere manier samenhangen."
+          }
+        ],
+        "Scope": "NOTHING"
+      },
+      "description": {
+        "nl": "Observaties waarvan de resultaten op een of andere manier samenhangen."
+      },
+      "codelist": [],
+      "domain": [
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+          "EA-Name": "Observatie"
         }
       ],
       "range": [
@@ -18225,9 +18153,9 @@
   "repository": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond",
   "branchtag": "master",
   "filename": "config/OSLO-BodemEnOndergrond-AP.json",
-  "dummy": "001",
+  "dummy": "002",
   "navigation": {},
-  "documentcommit": "8fe39cea823a36927777f8d8f06dba4b9f31d7a5",
-  "toolchaincommit": "6058fa3ff357970ec1df2e22a73a82defcd785d0",
+  "documentcommit": "db3e86eca9a8832e22dfc7967a1a94fe0fe820f6",
+  "toolchaincommit": "0806edd39fbddb7cc0e219e648d49d2cad9deaad",
   "hostname": "https://test.data.vlaanderen.be"
 }
