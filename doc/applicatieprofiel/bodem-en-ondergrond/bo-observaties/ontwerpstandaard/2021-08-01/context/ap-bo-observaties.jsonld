@@ -1,0 +1,555 @@
+{
+  "@context": {
+    ".observatie(source)": {
+      "@id": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatiecontext.observatie.source",
+      "@type": "@id"
+    },
+    ".observatie(target)": {
+      "@id": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatiecontext.observatie.target",
+      "@type": "@id"
+    },
+    "Agent": "http://purl.org/dc/terms/Agent",
+    "Bemonsteringsobject": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
+    "Bemonsteringsobject.bemonsterdObject": {
+      "@container": "@set",
+      "@id": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature.sampledFeature",
+      "@type": "@id"
+    },
+    "Bemonsteringsobject.herkomst": {
+      "@id": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature.lineage",
+      "@type": "@id"
+    },
+    "Bemonsteringsobject.parameter": {
+      "@container": "@set",
+      "@id": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature.parameter",
+      "@type": "@id"
+    },
+    "Bemonsteringsobject.type": {
+      "@id": "https://data.vlaanderen.be/ns/observaties-en-metingen#type",
+      "@type": "@id"
+    },
+    "Bemonsteringsobjecttype": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Bemonsteringsobjecttype",
+    "BenoemdeWaarde": "http://def.isotc211.org/iso19156/2011/Observation#NamedValue",
+    "BenoemdeWaarde.naam": {
+      "@id": "http://def.isotc211.org/iso19156/2011/Observation#NamedValue.name",
+      "@type": "@id"
+    },
+    "BenoemdeWaarde.waarde": {
+      "@id": "http://def.isotc211.org/iso19156/2011/Observation#NamedValue.value",
+      "@type": "@id"
+    },
+    "Boorgat": "http://fixme.com#Boorgat",
+    "Boorgatmeting": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Boorgatmeting",
+    "Boorgatmeting.geobserveerdObject": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#geobserveerdObject",
+      "@type": "@id"
+    },
+    "Breukcriterium": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Breukcriterium",
+    "CVmeting": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#CVmeting",
+    "CVmeting.doorlatendheidscoëfficient": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#doorlatendheidscoëfficient",
+      "@type": "@id"
+    },
+    "CVmeting.n": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#n",
+      "@type": "@id"
+    },
+    "CVmeting.volgnummer": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#volgnummer",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "CiResponsibleParty": "http://def.isotc211.org/iso19115/2006/CitationAndResponsiblePartyInformation#CI_ResponsibleParty",
+    "DiscreetBereikObservatie": "https://data.vlaanderen.be/ns/observaties-en-metingen#DiscreetBereikObservatie",
+    "DiscreetCurvebereik": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#DiscreetCurveBereik",
+    "DoorlatendheidsproefCVresultaat": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#DoorlatendheidsproefCVresultaat",
+    "DoorlatendheidsproefCVresultaat.waarde": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#waarde",
+      "@type": "@id"
+    },
+    "DoorlatendheidsproefCvv": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#DoorlatendheidsproefCV",
+    "DoorlatendheidsproefCvv.^meetpuntparameter": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#^meetpuntparameter",
+      "@type": "@id"
+    },
+    "DoorlatendheidsproefCvv.^meetwaardeparameter": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#^meetwaardeparameter",
+      "@type": "@id"
+    },
+    "DoorlatendheidsproefCvv.geobserveerdObject": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#geobserveerdObject",
+      "@type": "@id"
+    },
+    "DoorlatendheidsproefCvv.resultaat": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#resultaat",
+      "@type": "@id"
+    },
+    "DoorlatendheidsproefHvVresultaat": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#DoorlatendheidsproefHVVresultaat",
+    "DoorlatendheidsproefHvVresultaat.waarde": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#waarde",
+      "@type": "@id"
+    },
+    "DoorlatendheidsproefHvv": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#DoorlatendheidsproefHVV",
+    "DoorlatendheidsproefHvv.^meetpuntparameter": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#^meetpuntparameter",
+      "@type": "@id"
+    },
+    "DoorlatendheidsproefHvv.^meetwaardeparameter": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#^meetwaardeparameter",
+      "@type": "@id"
+    },
+    "DoorlatendheidsproefHvv.geobserveerdObject": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#geobserveerdObject",
+      "@type": "@id"
+    },
+    "DoorlatendheidsproefHvv.resultaat": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#resultaat",
+      "@type": "@id"
+    },
+    "DoorlatendheidsproefVvVresultaat": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#DoorlatendheidsproefVVVresultaat",
+    "DoorlatendheidsproefVvVresultaat.waarde": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#waarde",
+      "@type": "@id"
+    },
+    "DoorlatendheidsproefVvv": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#DoorlatendheidsproefVVV",
+    "DoorlatendheidsproefVvv.^meetpuntparameter": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#^meetpuntparameter",
+      "@type": "@id"
+    },
+    "DoorlatendheidsproefVvv.^meetwaardeparameter": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#^meetwaardeparameter",
+      "@type": "@id"
+    },
+    "DoorlatendheidsproefVvv.geobserveerdObject": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#geobserveerdObject",
+      "@type": "@id"
+    },
+    "DoorlatendheidsproefVvv.resultaat": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#resultaat",
+      "@type": "@id"
+    },
+    "DqElement": "http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_Element",
+    "DqPositionalAccuracy": "http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_PositionalAccuracy",
+    "Fractiemeting": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemeting",
+    "Fractiemetingresultaat": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemetingresultaat",
+    "Fractiemetingresultaat.fractiemetingwaarde": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#fractiemetingwaarde",
+      "@type": "@id"
+    },
+    "Fractiemetingwaarde": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemetingwaarde",
+    "Fractiemetingwaarde.meetpunt": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#meetpunt",
+      "@type": "@id"
+    },
+    "Fractiemetingwaarde.meetpuntBovengrens": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#meetpuntBovengrens",
+      "@type": "@id"
+    },
+    "Fractiemetingwaarde.meetpuntOndergrens": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#meetpuntOndergrens",
+      "@type": "@id"
+    },
+    "Fractiemetingwaarde.meetwaardeparameter": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#meetwaarde",
+      "@type": "@id"
+    },
+    "GeneriekDatatype": "http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Any",
+    "GeneriekeNaam": "http://def.isotc211.org/iso19103/2005/Names#GenericName",
+    "Getal": "https://schema.org/Number",
+    "Grondmonster": "https://data.vlaanderen.be/ns/grondboringen#Grondmonster",
+    "Grondmonster.^bemonsteringsplaats": {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#^bemonsteringsplaats",
+      "@type": "@id"
+    },
+    "Grondmonster.^bemonsteringstijdstip": {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#^bemonsteringstijdstip",
+      "@type": "@id"
+    },
+    "Grondmonster.^grootte": {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#^grootte",
+      "@type": "@id"
+    },
+    "Grondmonster.^huidigeLocatie": {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#^huidigeLocatie",
+      "@type": "@id"
+    },
+    "Grondmonster.^materiaalklasse": {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#^materiaalklasse",
+      "@type": "@id"
+    },
+    "Grondmonster.monstertype": {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#monstertype",
+      "@type": "@id"
+    },
+    "HvVmeting": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#HVVmeting",
+    "HvVmeting.doorlatendheidscoëfficient": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#doorlatendheidscoëfficient",
+      "@type": "@id"
+    },
+    "HvVmeting.druk": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#druk",
+      "@type": "@id"
+    },
+    "HvVmeting.volgnummer": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#volgnummer",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "Identificator": "http://www.w3.org/ns/adms#Identifier",
+    "Input": "http://fixme.com#Input",
+    "Input.referentie": {
+      "@id": "http://fixme.com#referentie",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "Input.type": {
+      "@id": "http://fixme.com#type",
+      "@type": "@id"
+    },
+    "InputType": "http://fixme.com#InputType",
+    "Kenmerktype": "http://def.isotc211.org/iso19109/2005/GeneralFeatureModel#GF_PropertyType",
+    "Korrelverdeling": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Korrelverdeling",
+    "Korrelverdeling.^meetpuntparameter": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#^meetpuntparameter",
+      "@type": "@id"
+    },
+    "Korrelverdeling.^meetwaardeparameter": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#^meetwaardeparameter",
+      "@type": "@id"
+    },
+    "Korrelverdeling.geobserveerdObject": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#geobserveerdObject",
+      "@type": "@id"
+    },
+    "Korrelverdeling.humusKalkVerwijderd": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#humusKalkVerwijderd",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "Korrelverdeling.onderbrekingTot": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#onderbrekingTot",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "Korrelverdeling.onderbrekingVan": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#onderbrekingVan",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "Korrelverdeling.resultaat": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#^resultaat",
+      "@type": "@id"
+    },
+    "KwantitatieveWaarde": "https://schema.org/QuantitativeValue",
+    "KwantitatieveWaarde.eenheid": {
+      "@id": "https://schema.org/unitText",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "KwantitatieveWaarde.standaardEenheid": {
+      "@id": "https://schema.org/unitCode",
+      "@type": "@id"
+    },
+    "KwantitatieveWaarde.waarde": {
+      "@id": "https://schema.org/value",
+      "@type": "@id"
+    },
+    "LiLineage": "http://def.isotc211.org/iso19115/2006/DataQualityInformation#LI_Lineage",
+    "Meetreeks": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreeks",
+    "Object": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
+    "Observatie": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+    "Observatie.fenomeentijd": {
+      "@id": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.phenomenonTime",
+      "@type": "@id"
+    },
+    "Observatie.geassocieerdeObservatie": {
+      "@container": "@set",
+      "@id": "http://def.isotc211.org/iso19156/2011/Observation#ObservationContext.relatedObservation",
+      "@type": "@id"
+    },
+    "Observatie.geldigeTijd": {
+      "@id": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.validTime",
+      "@type": "@id"
+    },
+    "Observatie.geobserveerdKenmerk": {
+      "@id": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.observedProperty",
+      "@type": "@id"
+    },
+    "Observatie.geobserveerdObject": {
+      "@id": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.featureOfInterest",
+      "@type": "@id"
+    },
+    "Observatie.identificator": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/observaties-en-metingen#identificator",
+      "@type": "@id"
+    },
+    "Observatie.opdracht": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/observaties-en-metingen#opdracht",
+      "@type": "@id"
+    },
+    "Observatie.parameter": {
+      "@container": "@set",
+      "@id": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.parameter",
+      "@type": "@id"
+    },
+    "Observatie.resultaat": {
+      "@id": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.result",
+      "@type": "@id"
+    },
+    "Observatie.resultaatkwaliteit": {
+      "@container": "@set",
+      "@id": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.resultQuality",
+      "@type": "@id"
+    },
+    "Observatie.resultaattijd": {
+      "@id": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.resultTime",
+      "@type": "@id"
+    },
+    "Observatie.type": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/observaties-en-metingen#type",
+      "@type": "@id"
+    },
+    "Observatie.uitgevoerdDoor": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/observaties-en-metingen#uitgevoerdDoor",
+      "@type": "@id"
+    },
+    "Observatieprocedure": "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure",
+    "Observatieprocedure.implementedBy": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/ssn/implementedBy",
+      "@type": "@id"
+    },
+    "Observatieprocedure.input": {
+      "@container": "@set",
+      "@id": "http://fixme.com#input",
+      "@type": "@id"
+    },
+    "Observatieprocedure.output": {
+      "@container": "@set",
+      "@id": "http://fixme.com#output",
+      "@type": "@id"
+    },
+    "Observatieprocedure.parameter": {
+      "@container": "@set",
+      "@id": "http://fixme.com#parameter",
+      "@type": "@id"
+    },
+    "Observatieprocedure.specification": {
+      "@container": "@set",
+      "@id": "http://fixme.com#specificatie",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "Observatieprocedure.type": {
+      "@container": "@set",
+      "@id": "http://fixme.com#type",
+      "@type": "@id"
+    },
+    "Observatieproceduretype": "http://fixme.com#Observatieproceduretype",
+    "Observatietype": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatietype",
+    "Opdracht": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Opdracht",
+    "Output": "http://fixme.com#Output",
+    "Output.referentie": {
+      "@id": "http://fixme.com#referentie",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "Output.type": {
+      "@id": "http://fixme.com#type",
+      "@type": "@id"
+    },
+    "OutputType": "http://fixme.com#OutputType",
+    "Periode": "http://data.europa.eu/m8g/PeriodOfTime",
+    "Periode.begin": {
+      "@id": "http://data.europa.eu/m8g/startTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Periode.einde": {
+      "@id": "http://data.europa.eu/m8g/endTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Samendrukbaarheidsproef": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Samendrukbaarheidsproef",
+    "Samendrukbaarheidsproef.^meetpuntparameter": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#^meetpuntparameter",
+      "@type": "@id"
+    },
+    "Samendrukbaarheidsproef.^meetwaardeparameter": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#^meetwaardeparameter",
+      "@type": "@id"
+    },
+    "Samendrukbaarheidsproef.diameter": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#diameter",
+      "@type": "@id"
+    },
+    "Samendrukbaarheidsproef.geobserveerdObject": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#geobserveerdObject",
+      "@type": "@id"
+    },
+    "Samendrukbaarheidsproef.initiëleHoogte": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#initiëleHoogte",
+      "@type": "@id"
+    },
+    "Samendrukbaarheidsproef.massa": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#massa",
+      "@type": "@id"
+    },
+    "Samendrukbaarheidsproef.resultaat": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#resultaat",
+      "@type": "@id"
+    },
+    "Samendrukbaarheidsproefresultaat": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Samendrukbaarheidsproefresultaat",
+    "Samendrukbaarheidsproefresultaat.waarde": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#waarde",
+      "@type": "@id"
+    },
+    "Samendrukbaarheidstrap": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Samendrukbaarheidtrap",
+    "Samendrukbaarheidstrap.druk": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#druk",
+      "@type": "@id"
+    },
+    "Samendrukbaarheidstrap.hoogte": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#hoogte",
+      "@type": "@id"
+    },
+    "Samendrukbaarheidstrap.trap": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#trap",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "Samendrukbaarheidstrap.zwel": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#zwel",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "Schuifweerstandskarakteristiek": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Schuifweerstandskarakteristiek",
+    "Schuifweerstandskarakteristiek.breukcriterium": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#breukcriterium",
+      "@type": "@id"
+    },
+    "Schuifweerstandskarakteristiek.effectieveCohesie": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#effectieveCohesie",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "Schuifweerstandskarakteristiek.effectieveWrijvingshoek": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#effectieveWrijvingshoek",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "Schuifweerstandskarakteristiek.schijnbareCohesie": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#schijnbareCohesie",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "Schuifweerstandskarakteristiek.schijnbareWrijvingshoek": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#schijnbareWrijvingshoek",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "Schuifweerstandskarakteristieken": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Schuifweerstandskarakteristieken",
+    "Schuifweerstandskarakteristieken.^meetpuntparameter": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#^meetpuntparameter",
+      "@type": "@id"
+    },
+    "Schuifweerstandskarakteristieken.^meetwaardeparameter": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#^meetwaardeparameter",
+      "@type": "@id"
+    },
+    "Schuifweerstandskarakteristieken.geassocieerdeSchuifweerstandsproef": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#gassocieerdeSchuifweerstandsproef",
+      "@type": "@id"
+    },
+    "Schuifweerstandskarakteristieken.geobserveerdObject": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#geobserveerdObject",
+      "@type": "@id"
+    },
+    "Schuifweerstandskarakteristieken.resultaat": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#resultaat",
+      "@type": "@id"
+    },
+    "Schuifweerstandskarakteristiekenresultaat": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Schuifweerstandskarakteristiekenresultaat",
+    "Schuifweerstandskarakteristiekenresultaat.waarde": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#waarde",
+      "@type": "@id"
+    },
+    "Schuifweerstandsmeting": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Schuifweerstandsmeting",
+    "Schuifweerstandsmeting.breukcriterium": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#breukcriterium",
+      "@type": "@id"
+    },
+    "Schuifweerstandsmeting.sigma1Korrelspanning": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#sigma1Korrelspanning",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "Schuifweerstandsmeting.sigma1Totaalspanning": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#sigma1Totaalspanning",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "Schuifweerstandsmeting.sigma3Korrelspanning": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#sigma3Korrelspanning",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "Schuifweerstandsmeting.sigma3Totaalspanning": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#sigma3Totaalspanning",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "Schuifweerstandsmeting.vervorming": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#vervorming",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "Schuifweerstandsproef": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Schuifweerstandsproef",
+    "Schuifweerstandsproef.^meetpuntparameter": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#^meetpuntparameter",
+      "@type": "@id"
+    },
+    "Schuifweerstandsproef.^meetwaardeparameter": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#^meetwaardearameter",
+      "@type": "@id"
+    },
+    "Schuifweerstandsproef.geassocieerdeSchuifweerstandsproef": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#geassocieerdeSchuifweerstandsproef",
+      "@type": "@id"
+    },
+    "Schuifweerstandsproef.geobserveerdObject": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#geobserveerdObject",
+      "@type": "@id"
+    },
+    "Schuifweerstandsproef.resultaat": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#resultaat",
+      "@type": "@id"
+    },
+    "Schuifweerstandsproefresultaat": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Schuifweerstandsproefresultaat",
+    "Schuifweerstandsproefresultaat.consolidatiespanning": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#consolidatiespanning",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "Schuifweerstandsproefresultaat.typeBreuk": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#typeBreuk",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "Schuifweerstandsproefresultaat.waarde": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#waarde",
+      "@type": "@id"
+    },
+    "Sensor": "https://www.w3.org/TR/vocab-ssn/#SOSASensor",
+    "Sensor.implements": {
+      "@id": "http://www.w3.org/ns/ssn/implements",
+      "@type": "@id"
+    },
+    "StandaardEenheid": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid",
+    "TmInstant": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Instant",
+    "TmObject": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
+    "TmPeriod": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Period",
+    "VvvVmeting": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#VVVmeting",
+    "VvvVmeting.doorlatendheidscoëfficient": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#doorlatendheidscoëfficient",
+      "@type": "@id"
+    },
+    "VvvVmeting.druk": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#druk",
+      "@type": "@id"
+    },
+    "VvvVmeting.volgnummer": {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#volgnummer",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    }
+  }
+}
