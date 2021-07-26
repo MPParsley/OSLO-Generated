@@ -3,23 +3,23 @@
 @prefix shacl: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken> <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereikenshapes> <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#GeometrieShape>,
-    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#PuntWaardepaarShape>,
-    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#BereikShape>,
-    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#DomeinobjectShape>,
-    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#OmvangShape>,
-    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#AttribuutwaardenShape>,
-    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#DiscreetCurvebereikShape>,
-    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#CRSShape>,
-    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#CurveWaardepaarShape>,
-    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#PuntShape>,
+<https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken> <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereikenshapes> <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#AttribuutwaardenShape>,
     <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#DiscreetPuntbereikShape>,
-    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#CurveShape>,
+    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#DomeinobjectShape>,
+    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#DiscreetBereikShape>,
+    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#CRSShape>,
+    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#DiscreetCurvebereikShape>,
     <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#RecordShape>,
     <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#RecordtypeShape>,
+    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#PuntShape>,
+    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#CurveShape>,
+    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#GemeenschappelijkPuntregelShape>,
+    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#CurveWaardepaarShape>,
+    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#BereikShape>,
     <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#GeometrieWaardepaarShape>,
-    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#DiscreetBereikShape>,
-    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#GemeenschappelijkPuntregelShape> .
+    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#GeometrieShape>,
+    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#PuntWaardepaarShape>,
+    <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#OmvangShape> .
 
 <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#AttribuutwaardenShape> a shacl:NodeShape;
   shacl:closed false;
@@ -36,6 +36,18 @@
 <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#BereikShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <https://data.vlaanderen.be/ns/ruimtelijke-bereiken#CRS>;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "crs";
+    shacl:path <https://data.vlaanderen.be/ns/ruimtelijke-bereiken#crs>
+  ], [
+    shacl:class <https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Attribuutwaarden>;
+    shacl:description "TODO";
+    shacl:name "bereikElement";
+    shacl:path <https://data.vlaanderen.be/ns/ruimtelijke-bereiken#bereikElement>
+  ], [
     shacl:class <https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Omvang>;
     shacl:description "TODO";
     shacl:minCount 1;
@@ -55,24 +67,12 @@
     shacl:name "domeinElement";
     shacl:path <https://data.vlaanderen.be/ns/ruimtelijke-bereiken#domeinElement>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/ruimtelijke-bereiken#CRS>;
-    shacl:description "TODO";
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "crs";
-    shacl:path <https://data.vlaanderen.be/ns/ruimtelijke-bereiken#crs>
-  ], [
     shacl:class <https://data.vlaanderen.be/ns/ruimtelijke-bereiken#GemeenschappelijkPuntregel>;
     shacl:description "TODO";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "gemeenschappelijkPuntRegel";
     shacl:path <https://data.vlaanderen.be/ns/ruimtelijke-bereiken#gemeenschappelijkPuntRegel>
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Attribuutwaarden>;
-    shacl:description "TODO";
-    shacl:name "bereikElement";
-    shacl:path <https://data.vlaanderen.be/ns/ruimtelijke-bereiken#bereikElement>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Bereik> .
 
@@ -144,10 +144,10 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype rdfs:Literal;
-    shacl:description "Geometrie uitgedrukt in wkt-formaat.";
+    shacl:description "Geometrie uitgedrukt in gml-formaat.";
     shacl:maxCount 1;
-    shacl:name "wkt";
-    shacl:path <http://www.opengis.net/ont/geosparql#asWKT>
+    shacl:name "gml";
+    shacl:path <http://www.opengis.net/ont/geosparql#asGML>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/generiek#Opmeting>;
     shacl:description "TODO";
@@ -156,29 +156,29 @@
     shacl:path <https://data.vlaanderen.be/ns/generiek#opmeting>
   ], [
     shacl:datatype rdfs:Literal;
-    shacl:description "Geometrie uitgedrukt in gml-formaat.";
+    shacl:description "Geometrie uitgedrukt in wkt-formaat.";
     shacl:maxCount 1;
-    shacl:name "gml";
-    shacl:path <http://www.opengis.net/ont/geosparql#asGML>
+    shacl:name "wkt";
+    shacl:path <http://www.opengis.net/ont/geosparql#asWKT>
   ];
   shacl:targetClass <http://www.w3.org/ns/locn#Geometry> .
 
 <https://data.vlaanderen.be/shacl/ap-ruimtelijke-bereiken#GeometrieWaardepaarShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Domeinobject>;
-    shacl:description "Geometrie van het element.";
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "geometrie";
-    shacl:path <https://data.vlaanderen.be/ns/ruimtelijke-bereiken#geometrie>
-  ], [
     shacl:class <https://data.vlaanderen.be/ns/generiek#Record>;
     shacl:description "Waarde van het element.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "waarde";
     shacl:path <https://data.vlaanderen.be/ns/ruimtelijke-bereiken#waarde>
+  ], [
+    shacl:class <https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Domeinobject>;
+    shacl:description "Geometrie van het element.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "geometrie";
+    shacl:path <https://data.vlaanderen.be/ns/ruimtelijke-bereiken#geometrie>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/ruimtelijke-bereiken#GeometrieWaardepaar> .
 
