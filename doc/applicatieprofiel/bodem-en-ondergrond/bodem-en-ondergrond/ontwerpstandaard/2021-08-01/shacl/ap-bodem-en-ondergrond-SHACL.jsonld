@@ -306,6 +306,20 @@
       "sh:targetClass": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Profielelement"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/ap-bodem-en-ondergrond#GeneriekeNaamShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://def.isotc211.org/iso19103/2005/Names#GenericName"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-bodem-en-ondergrond#GeneriekDatatypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Any"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/ap-bodem-en-ondergrond#KenmerktypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -325,6 +339,13 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://def.isotc211.org/iso19115/2006/DataQualityInformation#LI_Lineage"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-bodem-en-ondergrond#ObjectShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-bodem-en-ondergrond#BenoemdeWaardeShape",
@@ -428,6 +449,13 @@
       "sh:targetClass": "http://def.isotc211.org/iso19156/2011/SpatialSamplingFeature#SF_SpatialSamplingFeature"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/ap-bodem-en-ondergrond#ObservatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Observatie"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/ap-bodem-en-ondergrond#PuntShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -492,11 +520,62 @@
       "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#Curve"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/ap-bodem-en-ondergrond#DirectePositieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:name": "gml",
+          "sh:path": "https://data.vlaanderen.be/ns/generiek#gml"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/generiek#Opmeting",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "methode",
+          "sh:path": "https://data.vlaanderen.be/ns/generiek#methode"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:name": "wkt",
+          "sh:path": "https://data.vlaanderen.be/ns/generiek#wkt"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#DirectePositie"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-bodem-en-ondergrond#RecordShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#Record"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-bodem-en-ondergrond#StandaardEenheidShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/ap-bodem-en-ondergrond#VlakShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#Vlak"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-bodem-en-ondergrond#BemonsteringscurveShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/observaties-en-metingen#Bemonsteringscurve"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-bodem-en-ondergrond#ProfielShape",
@@ -553,6 +632,43 @@
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#GeometrieWaardepaar"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-bodem-en-ondergrond#GetalShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://schema.org/Number"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-bodem-en-ondergrond#KwantitatieveWaardeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "De eenheid waarin de waarde is uitgedrukt.",
+          "sh:maxCount": "1",
+          "sh:name": "eenheid",
+          "sh:path": "https://schema.org/unitText"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid",
+          "sh:description": "De gestandaardiseerde eenheid waarin de waarde is uitgedrukt.",
+          "sh:maxCount": "1",
+          "sh:name": "standaardEenheid",
+          "sh:path": "https://schema.org/unitCode"
+        },
+        {
+          "sh:class": "https://schema.org/Number",
+          "sh:description": "Getal waarmee de kwantiteit van het kenmerk kan worden uitgedrukt.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "waarde",
+          "sh:path": "https://schema.org/value"
+        }
+      ],
+      "sh:targetClass": "https://schema.org/QuantitativeValue"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-bodem-en-ondergrond#BemonsteringsobjectComplexShape",
