@@ -166,6 +166,14 @@
           "sh:maxCount": "1",
           "sh:name": "boringLengte",
           "sh:path": "https://data.vlaanderen.be/ns/grondboringen#boringLengte"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/grondboringen#Grondboring",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "isResultaatVan",
+          "sh:path": "https://data.vlaanderen.be/ns/grondboringen#isResultaatVan"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/grondboringen#Boorgat"
@@ -298,6 +306,56 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "https://data.vlaanderen.be/ns/grondboringen#Boringdoeltype"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#GrondboringShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://def.isotc211.org/iso19115/2006/CitationAndResponsiblePartyInformation#CI_ResponsibleParty",
+          "sh:description": "Diegene die de Boring heeft uitgevoerd.",
+          "sh:maxCount": "1",
+          "sh:name": "boorder",
+          "sh:path": "https://data.vlaanderen.be/ns/grondboringen#boorder"
+        },
+        {
+          "sh:class": "http://def.isotc211.org/iso19115/2006/CitationAndResponsiblePartyInformation#CI_ResponsibleParty",
+          "sh:description": "Opzichter bij de Boring.",
+          "sh:maxCount": "1",
+          "sh:name": "boormeester",
+          "sh:path": "https://data.vlaanderen.be/ns/grondboringen#boormeester"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/PeriodOfTime",
+          "sh:description": "Periode waarbinnen de Grondboring plaatsvond.",
+          "sh:maxCount": "1",
+          "sh:name": "datumVanBoring",
+          "sh:path": "https://data.vlaanderen.be/ns/grondboringen#datumVanBoring"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/grondboringen#Boringdoeltype",
+          "sh:description": "Reden waarom de Grondboring werd uitgevoerd.",
+          "sh:name": "doel",
+          "sh:path": "https://data.vlaanderen.be/ns/grondboringen#doel"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/grondboringen#Boorgat",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "resultaat",
+          "sh:path": "https://data.vlaanderen.be/ns/grondboringen#resultaat"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/grondboringen#WettelijkKaderBoring",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:name": "wettelijkKader",
+          "sh:path": "https://data.vlaanderen.be/ns/grondboringen#wettelijkKader"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/grondboringen#Grondboring"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#GrondmonsterShape",
@@ -514,6 +572,13 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:class": "https://data.vlaanderen.be/ns/grondboringen#Grondobject",
+          "sh:description": "TODO",
+          "sh:minCount": "1",
+          "sh:name": "bemonsterdObject",
+          "sh:path": "http://fixme.com"
+        },
+        {
           "sh:class": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
           "sh:description": "Ander Bemonsteringsobject waarmee het Bemonsteringsobject geassocieerd is.",
           "sh:name": "geassocieerdBemonsteringsobject",
@@ -560,27 +625,7 @@
       "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#BO_RuimtelijkBemonsteringsobjectShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Diepte",
-          "sh:description": "TODO",
-          "sh:maxCount": "1",
-          "sh:name": "diepte",
-          "sh:path": "http://fixme.com#diepte"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/prov#Location",
-          "sh:description": "TODO",
-          "sh:name": "ligging",
-          "sh:path": "http://fixme.com#ligging"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Maaiveld",
-          "sh:description": "TODO",
-          "sh:name": "maaiveld",
-          "sh:path": "http://fixme.com#maaiveld"
-        }
-      ],
+      "sh:property": [],
       "sh:targetClass": "http://fixme.com#BO_RuimtelijkBemonsteringsobject"
     },
     {
@@ -623,6 +668,14 @@
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/grondboringen#Grondobject",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "bemonsterdObject",
+          "sh:path": "http://fixme.com"
+        },
         {
           "sh:class": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
           "sh:description": "TODO",
