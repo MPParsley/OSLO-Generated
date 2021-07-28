@@ -12,8 +12,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/tree/0c87a96fe6602ac07a235aa6cce7b9738a590225",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/blob/0c87a96fe6602ac07a235aa6cce7b9738a590225/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/tree/8b820014d11011b044f84b580e9f29f32cefc913",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/blob/8b820014d11011b044f84b580e9f29f32cefc913/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/standaarden-in-ontwikkeling/bodem-en-ondergrond/index.html",
     "usesVocs": [],
@@ -694,7 +694,44 @@
         "nl": "In de context van Observaties en Metingen is dit het geobserveerdObject waarvan een kenmerk wordt geobserveerd. Het geobserveerdObject kan ook een Object zijn dat de werkelijkheid bemonstert (subklasse Bemonsteringsobject). OPGELET: deze klasse is abstract, ze moet gespecialiseerd worden in functie van het applicatiedomein."
       },
       "parents": [],
-      "properties": []
+      "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#waardeverschaffer",
+          "name": {
+            "nl": "waardeverschaffer"
+          },
+          "sort_nl": "waardeverschaffer",
+          "description": {
+            "nl": "Observaties die een waarde geven aan Kenmerken van het Object;"
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
+              "EA-Name": "Object"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Observatie",
+              "range_uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Observatie",
+              "range_puri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "range_label": {
+                "nl": "Observatie"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
     },
     {
       "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
@@ -710,6 +747,108 @@
       },
       "parents": [],
       "properties": [
+        {
+          "uri": "http://fixme.com#gebruikteProcedure",
+          "name": {
+            "nl": "gebruikteProcedure"
+          },
+          "sort_nl": "gebruikteProcedure",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "EA-Name": "Observatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Observatieprocedure",
+              "range_uri": "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Observatieprocedure",
+              "range_puri": "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure",
+              "range_label": {
+                "nl": "Observatieprocedure"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com#metadata",
+          "name": {
+            "nl": "metadata"
+          },
+          "sort_nl": "metadata",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "EA-Name": "Observatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Metadata",
+              "range_uri": "http://def.isotc211.org/iso19115/2006/MetadataEntitySetInformation#MD_Metadata"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Metadata",
+              "range_puri": "http://def.isotc211.org/iso19115/2006/MetadataEntitySetInformation#MD_Metadata",
+              "range_label": {
+                "nl": "Metadata"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com#uitgevoerdMetSensor",
+          "name": {
+            "nl": "uitgevoerdMetSensor"
+          },
+          "sort_nl": "uitgevoerdMetSensor",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "EA-Name": "Observatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Sensor",
+              "range_uri": "https://www.w3.org/TR/vocab-ssn/#SOSASensor"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Sensor",
+              "range_puri": "https://www.w3.org/TR/vocab-ssn/#SOSASensor",
+              "range_label": {
+                "nl": "Sensor"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
         {
           "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.featureOfInterest",
           "name": {
@@ -1948,7 +2087,80 @@
           "scoped_uri": "#Bemonstering"
         }
       ],
-      "properties": []
+      "properties": [
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/Specimen#PreparationStep.processOperator",
+          "name": {
+            "nl": "procesoperator"
+          },
+          "sort_nl": "procesoperator",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Specimen#PreparationStep",
+              "EA-Name": "Monstervoorbereiding"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "CI_ResponsibleParty",
+              "range_uri": "http://def.isotc211.org/iso19115/2006/CitationAndResponsiblePartyInformation#CI_ResponsibleParty"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#CI_ResponsibleParty",
+              "range_puri": "http://def.isotc211.org/iso19115/2006/CitationAndResponsiblePartyInformation#CI_ResponsibleParty",
+              "range_label": {
+                "nl": "CI_ResponsibleParty"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/Specimen#PreparationStep.time",
+          "name": {
+            "nl": "tijdstip"
+          },
+          "sort_nl": "tijdstip",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Specimen#PreparationStep",
+              "EA-Name": "Monstervoorbereiding"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TM_Object",
+              "range_uri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TM_Object",
+              "range_puri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
+              "range_label": {
+                "nl": "TM_Object"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
     },
     {
       "uri": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Process",
@@ -5243,6 +5455,40 @@
       ],
       "properties": [
         {
+          "uri": "http://fixme.com#uitgevoerdeObservatie",
+          "name": {
+            "nl": "uitgevoerdeObservatie"
+          },
+          "sort_nl": "uitgevoerdeObservatie",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://www.w3.org/TR/vocab-ssn/#SOSASensor",
+              "EA-Name": "Sensor"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Observatie",
+              "range_uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Observatie",
+              "range_puri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "range_label": {
+                "nl": "Observatie"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://www.w3.org/ns/ssn/implements",
           "name": {
             "nl": "implements"
@@ -5728,9 +5974,43 @@
       "parents": []
     },
     {
+      "uri": "http://fixme.com#gebruikteProcedure",
+      "name": {
+        "nl": "gebruikteProcedure"
+      },
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
       "uri": "http://fixme.com#isResultaatVan",
       "name": {
         "nl": "isResultaatVan"
+      },
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "http://fixme.com#metadata",
+      "name": {
+        "nl": "metadata"
       },
       "description": {
         "nl": "TODO"
@@ -5765,6 +6045,40 @@
       "uri": "http://fixme.com#type",
       "name": {
         "nl": "type"
+      },
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "http://fixme.com#uitgevoerdMetSensor",
+      "name": {
+        "nl": "uitgevoerdMetSensor"
+      },
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "http://fixme.com#uitgevoerdeObservatie",
+      "name": {
+        "nl": "uitgevoerdeObservatie"
       },
       "description": {
         "nl": "TODO"
