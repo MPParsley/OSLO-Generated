@@ -12,8 +12,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/tree/837d270adbfbbfe9aa4d71f1536a3342546d77dd",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/blob/837d270adbfbbfe9aa4d71f1536a3342546d77dd/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/tree/b289233ddca7fbc7b3eb665f760eb0916327e15d",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/blob/b289233ddca7fbc7b3eb665f760eb0916327e15d/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/standaarden-in-ontwikkeling/bodem-en-ondergrond/index.html",
     "usesVocs": [],
@@ -48,7 +48,44 @@
         "nl": "In de context van Observaties en Metingen is dit het geobserveerdObject waarvan een kenmerk wordt geobserveerd. Het geobserveerdObject kan ook een Object zijn dat de werkelijkheid bemonstert (subklasse Bemonsteringsobject). OPGELET: deze klasse is abstract, ze moet gespecialiseerd worden in functie van het applicatiedomein."
       },
       "parents": [],
-      "properties": []
+      "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#waardeverschaffer",
+          "name": {
+            "nl": "waardeverschaffer"
+          },
+          "sort_nl": "waardeverschaffer",
+          "description": {
+            "nl": "Observaties die een waarde geven aan Kenmerken van het Object;"
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
+              "EA-Name": "Object"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Observatie",
+              "range_uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Observatie",
+              "range_puri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "range_label": {
+                "nl": "Observatie"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
     },
     {
       "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
@@ -389,6 +426,74 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://fixme.com",
+          "name": {
+            "nl": "uitgevoerdMetSensor"
+          },
+          "sort_nl": "uitgevoerdMetSensor",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "EA-Name": "Observatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Sensor",
+              "range_uri": "https://www.w3.org/TR/vocab-ssn/#SOSASensor"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Sensor",
+              "range_puri": "https://www.w3.org/TR/vocab-ssn/#SOSASensor",
+              "range_label": {
+                "nl": "Sensor"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com",
+          "name": {
+            "nl": "gebruikteProcedure"
+          },
+          "sort_nl": "gebruikteProcedure",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "EA-Name": "Observatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Observatieprocedure",
+              "range_uri": "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Observatieprocedure",
+              "range_puri": "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure",
+              "range_label": {
+                "nl": "Observatieprocedure"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#identificator",
           "name": {
             "nl": "identificator"
@@ -650,6 +755,42 @@
               "range_puri": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
               "range_label": {
                 "nl": "Object"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#identificator",
+          "name": {
+            "nl": "identificator"
+          },
+          "sort_nl": "identificator",
+          "description": {
+            "nl": "Verwijzing naar de informatie die het Bemonsteringsobject uniek identificeert."
+          },
+          "usage": {
+            "nl": "Bv het uniek nummer dat aan een Monster wordt toegekend of het numer van een meetstation."
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
+              "EA-Name": "Bemonsteringsobject"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Identificator",
+              "range_uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Identificator",
+              "range_puri": "http://www.w3.org/ns/adms#Identifier",
+              "range_label": {
+                "nl": "Identificator"
               }
             }
           ],
@@ -3270,9 +3411,9 @@
         {
           "uri": "http://fixme.com#specificatie",
           "name": {
-            "nl": "specification"
+            "nl": "specificatie"
           },
-          "sort_nl": "specification",
+          "sort_nl": "specificatie",
           "description": {
             "nl": "TODO"
           },
@@ -3338,11 +3479,11 @@
         {
           "uri": "http://www.w3.org/ns/ssn/implementedBy",
           "name": {
-            "nl": "implementedBy"
+            "nl": "geïmplementeerdMet"
           },
-          "sort_nl": "implementedBy",
+          "sort_nl": "geïmplementeerdMet",
           "description": {
-            "nl": "Relation between a Procedure (an algorithm, procedure or method) and an entity that implements that Procedure in some executable way."
+            "nl": "TODO"
           },
           "usage": {},
           "domain": [
@@ -3383,7 +3524,7 @@
       "usage": {},
       "parents": [
         {
-          "name": "System",
+          "name": "Systeem",
           "label": "System",
           "package": "SSN/SOSA",
           "uri": "https://www.w3.org/TR/vocab-ssn/#ssn-system",
@@ -3399,13 +3540,47 @@
       ],
       "properties": [
         {
+          "uri": "http://fixme.com",
+          "name": {
+            "nl": "uitgevoerdeObservatie"
+          },
+          "sort_nl": "uitgevoerdeObservatie",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://www.w3.org/TR/vocab-ssn/#SOSASensor",
+              "EA-Name": "Sensor"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Observatie",
+              "range_uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Observatie",
+              "range_puri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "range_label": {
+                "nl": "Observatie"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://www.w3.org/ns/ssn/implements",
           "name": {
-            "nl": "implements"
+            "nl": "implementeert"
           },
-          "sort_nl": "implements",
+          "sort_nl": "implementeert",
           "description": {
-            "nl": "Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method)."
+            "nl": "TODO"
           },
           "usage": {},
           "domain": [
