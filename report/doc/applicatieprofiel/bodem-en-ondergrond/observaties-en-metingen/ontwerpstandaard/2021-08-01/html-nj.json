@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/tree/e4e66d1f098928274f56a538bec7603678742e34",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/blob/e4e66d1f098928274f56a538bec7603678742e34/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/tree/8b820014d11011b044f84b580e9f29f32cefc913",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/blob/8b820014d11011b044f84b580e9f29f32cefc913/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/standaarden-in-ontwikkeling/bodem-en-ondergrond/index.html",
     "usesVocs": [],
@@ -98,7 +98,7 @@
         "nl": "Gegevens die informatie over gegevens bevatten."
       },
       "usage": {
-        "nl": "Observaties kunnen beschouwd worden als gegevens en dus zijn data over Observaties wel degelijk metadata. Omdat al heel wat metagegevens elders in het model kunnen worden meegegeven beperkt deze klasse zich tot beschrijvende metadata, ttz informatie zoals titel, samenvatting, auteur en sleutelwoorden. Dergelijke metadata is in hoofdzaak bedoeld voor identificatie en datacatalogen."
+        "nl": "Observaties kunnen beschouwd worden als gegevens en dus zijn data over Observaties wel degelijk metadata. Omdat al heel wat metagegevens elders in het model kunnen worden meegegeven beperkt deze klasse zich tot beschrijvende metadata, ttz informatie zoals titel, samenvatting, auteur en sleutelwoorden. Dergelijke metadata is in hoofdzaak bedoeld voor identificatie en datacatalogen. OPMERKING: Een meer uitgebreide beschrijving is te vinden in het AP OSLO-SensorenEnBemonstering."
       },
       "parents": [],
       "properties": []
@@ -356,7 +356,44 @@
         "nl": "In de context van Observaties en Metingen is dit het geobserveerdObject waarvan een kenmerk wordt geobserveerd. Het geobserveerdObject kan ook een Object zijn dat de werkelijkheid bemonstert (subklasse Bemonsteringsobject). OPGELET: deze klasse is abstract, ze moet gespecialiseerd worden in functie van het applicatiedomein."
       },
       "parents": [],
-      "properties": []
+      "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#waardeverschaffer",
+          "name": {
+            "nl": "waardeverschaffer"
+          },
+          "sort_nl": "waardeverschaffer",
+          "description": {
+            "nl": "Observaties die een waarde geven aan Kenmerken van het Object;"
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
+              "EA-Name": "Object"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Observatie",
+              "range_uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Observatie",
+              "range_puri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "range_label": {
+                "nl": "Observatie"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
     },
     {
       "uri": "http://def.isotc211.org/iso19156/2011/GeometryObservation#OM_GeometryObservation",
@@ -2140,6 +2177,78 @@
           ],
           "cardinality": "1",
           "codelist_uri": ""
+        },
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/Specimen#PreparationStep.processOperator",
+          "name": {
+            "nl": "procesoperator"
+          },
+          "sort_nl": "procesoperator",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Specimen#PreparationStep",
+              "EA-Name": "Monstervoorbereiding"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "CI_ResponsibleParty",
+              "range_uri": "http://def.isotc211.org/iso19115/2006/CitationAndResponsiblePartyInformation#CI_ResponsibleParty"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#CI_ResponsibleParty",
+              "range_puri": "http://def.isotc211.org/iso19115/2006/CitationAndResponsiblePartyInformation#CI_ResponsibleParty",
+              "range_label": {
+                "nl": "CI_ResponsibleParty"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/Specimen#PreparationStep.time",
+          "name": {
+            "nl": "tijdstip"
+          },
+          "sort_nl": "tijdstip",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Specimen#PreparationStep",
+              "EA-Name": "Monstervoorbereiding"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TM_Object",
+              "range_uri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TM_Object",
+              "range_puri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
+              "range_label": {
+                "nl": "TM_Object"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
         }
       ]
     },
@@ -2180,6 +2289,42 @@
         }
       ],
       "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#bemonsteringsmethode",
+          "name": {
+            "nl": "bemonsteringsmethode"
+          },
+          "sort_nl": "bemonsteringsmethode",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Specimen",
+              "EA-Name": "Monster"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "BemonsteringsProces",
+              "range_uri": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Process"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#BemonsteringsProces",
+              "range_puri": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Process",
+              "range_label": {
+                "nl": "BemonsteringsProces"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
         {
           "uri": "http://def.isotc211.org/iso19156/2011/Specimen#PreparationStep.processingDetails",
           "name": {
@@ -2609,8 +2754,21 @@
               "EA-Name": "WaarheidsObservatie"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         }
@@ -2858,6 +3016,25 @@
       "parents": []
     },
     {
+      "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#bemonsteringsmethode",
+      "name": {
+        "nl": "bemonsteringsmethode"
+      },
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {
+        "nl": "TODO"
+      },
+      "parents": []
+    },
+    {
       "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#identificator",
       "name": {
         "nl": "identificator"
@@ -2959,6 +3136,25 @@
         null
       ],
       "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#waardeverschaffer",
+      "name": {
+        "nl": "waardeverschaffer"
+      },
+      "description": {
+        "nl": "Observaties die een waarde geven aan Kenmerken van het Object;"
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {
+        "nl": "TODO"
+      },
       "parents": []
     }
   ],
