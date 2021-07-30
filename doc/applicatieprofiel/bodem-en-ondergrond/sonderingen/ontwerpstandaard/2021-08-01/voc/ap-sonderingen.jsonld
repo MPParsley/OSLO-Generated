@@ -174,18 +174,6 @@
       "usage": {}
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#SondeerKwaliteit",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "description": {
-        "nl": "TODO"
-      },
-      "name": {
-        "nl": "SondeerKwaliteit"
-      },
-      "parents": [],
-      "usage": {}
-    },
-    {
       "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#SondeerMeetlichaam",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {},
@@ -240,6 +228,16 @@
       "usage": {}
     },
     {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeerkwaliteit",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {},
+      "name": {
+        "nl": "Sondeerkwaliteit"
+      },
+      "parents": [],
+      "usage": {}
+    },
+    {
       "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeermeetpunt",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
@@ -279,6 +277,18 @@
       "usage": {}
     },
     {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeertechniek",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {},
+      "name": {
+        "nl": "Sondeertechniek"
+      },
+      "parents": [
+        "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#PuntWaardepaar"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeertechniekbereik",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
@@ -290,6 +300,16 @@
       "parents": [
         "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#DiscreetPuntbereik"
       ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeertechniektype",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {},
+      "name": {
+        "nl": "Sondeertechniektype"
+      },
+      "parents": [],
       "usage": {}
     },
     {
@@ -709,6 +729,42 @@
       "usage": {}
     },
     {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#diepteTechniek",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Diepte waarop de techniek toegepast werd."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeertechniek"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "diepte techniek"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/generiek#DirectePositie"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#diepteVan",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {},
+      "domain": [
+        "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeertechniek"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "diepte van"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/generiek#DirectePositie"
+      ],
+      "usage": {
+        "nl": "Enkel van toepassing voor het plaatsen van voerbuizen (code V) of het boren door een harde laag (code B)."
+      }
+    },
+    {
       "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#einddiepte",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
@@ -815,6 +871,24 @@
       },
       "range": [
         "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeerkwaliteit"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#kwaliteitsnorm",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "description": {
+        "nl": "De kwaliteitsnorm die gevolgd werd bij het uitvoeren en verwerken van de Sondering."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeerkwaliteit"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "kwaliteitsnorm"
+      },
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#string"
       ],
       "usage": {}
     },
@@ -941,24 +1015,6 @@
       },
       "range": [
         "https://schema.org/QuantitativeValue"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#norm",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "description": {
-        "nl": "TODO"
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/bodem-en-ondergrond#SondeerKwaliteit"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "norm"
-      },
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#string"
       ],
       "usage": {}
     },
@@ -1235,6 +1291,42 @@
       "usage": {}
     },
     {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#techniek",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Gebruikte techniek."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeertechniek"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "techniek"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeertechniektype"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#techniekAndere",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "description": {
+        "nl": "Gebruikte techniek."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeertechniek"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "techniek andere"
+      },
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#string"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#tijdstip",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "description": {
@@ -1256,10 +1348,10 @@
       "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#toepassingsklasse",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "description": {
-        "nl": "TODO"
+        "nl": "De berekende toepassingsklasse (1 tem 7)."
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/bodem-en-ondergrond#SondeerKwaliteit"
+        "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeerkwaliteit"
       ],
       "generalization": [],
       "name": {

@@ -159,29 +159,6 @@
       "sh:targetClass": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#SondeerApparaatType"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#SondeerKwaliteitShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "TODO",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "norm",
-          "sh:path": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#norm"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "TODO",
-          "sh:maxCount": "1",
-          "sh:name": "toepassingsklasse",
-          "sh:path": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#toepassingsklasse"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#SondeerKwaliteit"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#SondeerMeetlichaamShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -326,6 +303,29 @@
       "sh:targetClass": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeergat"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#SondeerkwaliteitShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "De kwaliteitsnorm die gevolgd werd bij het uitvoeren en verwerken van de Sondering.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "kwaliteitsnorm",
+          "sh:path": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#kwaliteitsnorm"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "De berekende toepassingsklasse (1 tem 7).",
+          "sh:maxCount": "1",
+          "sh:name": "toepassingsklasse",
+          "sh:path": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#toepassingsklasse"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeerkwaliteit"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#SondeermeetpuntShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -386,6 +386,43 @@
       "sh:targetClass": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeerprocedure"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#SondeertechniekShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/generiek#DirectePositie",
+          "sh:description": "Diepte waarop de techniek toegepast werd.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "diepteTechniek",
+          "sh:path": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#diepteTechniek"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/generiek#DirectePositie",
+          "sh:maxCount": "1",
+          "sh:name": "diepteVan",
+          "sh:path": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#diepteVan"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeertechniektype",
+          "sh:description": "Gebruikte techniek.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "techniek",
+          "sh:path": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#techniek"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Gebruikte techniek.",
+          "sh:maxCount": "1",
+          "sh:name": "techniekAndere",
+          "sh:path": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#techniekAndere"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeertechniek"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#SondeertechniekbereikShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -398,6 +435,13 @@
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeertechniekbereik"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#SondeertechniektypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeertechniektype"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#SondeertestShape",
@@ -675,6 +719,13 @@
       "sh:targetClass": "http://def.isotc211.org/iso19115/2006/DataQualityInformation#LI_Lineage"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#ObjectShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#BenoemdeWaardeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -703,6 +754,14 @@
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/grondboringen#Grondobject",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "^geobserveerdObject",
+          "sh:path": "http://fixme.com"
+        },
         {
           "sh:class": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
           "sh:description": "Het moment waarop het resultaat van de Observatie van toepassing was.",
@@ -792,6 +851,13 @@
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatiecontext.observatie.target"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#ProcesShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.OM_Process"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#BemonsteringsobjectShape",
@@ -885,6 +951,20 @@
         }
       ],
       "sh:targetClass": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SamplingFeatureComplex"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#BemonsteringsProcesShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Process"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#BO_RuimtelijkBemonsteringsobjectShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#BO_RuimtelijkBemonsteringsobject"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#BemonsteraarShape",
@@ -1057,6 +1137,20 @@
       "sh:targetClass": "http://fixme.com#Bemonsteringstype"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#DiscreetPuntbereikShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#DiscreetPuntbereik"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#DomeinobjectShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Domeinobject"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#InputShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -1079,6 +1173,13 @@
         }
       ],
       "sh:targetClass": "http://fixme.com#Input"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#InputTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#InputType"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#ObservatieproceduretypeShape",
@@ -1110,6 +1211,20 @@
         }
       ],
       "sh:targetClass": "http://fixme.com#Output"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#OutputTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#OutputType"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#ProcedureShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Procedure"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#AgentShape",
@@ -1206,11 +1321,25 @@
       "sh:targetClass": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Maaiveld"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#MaaiveldtypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Maaiveldtype"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#OpdrachtShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Opdracht"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#CurveShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#Curve"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#DirectePositieShape",
@@ -1277,6 +1406,13 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "https://data.vlaanderen.be/ns/grondboringen#Grondobjecttype"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#BemonsteringscurveShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/observaties-en-metingen#Bemonsteringscurve"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#ObservatietypeShape",
@@ -1427,6 +1563,13 @@
         }
       ],
       "sh:targetClass": "https://www.w3.org/TR/vocab-ssn/#SOSASensor"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#SysteemShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://www.w3.org/TR/vocab-ssn/#ssn-system"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-sonderingen#ObservatiecontextShape",

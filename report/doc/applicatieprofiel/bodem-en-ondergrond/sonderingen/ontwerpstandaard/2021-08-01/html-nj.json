@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/tree/66e2888241e797bcda9acef8813e8f3aa8fc3b76",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/blob/66e2888241e797bcda9acef8813e8f3aa8fc3b76/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/tree/06764a07ff8e93ecdfac2ae657c996701abe1e0c",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/blob/06764a07ff8e93ecdfac2ae657c996701abe1e0c/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/standaarden-in-ontwikkeling/bodem-en-ondergrond/index.html",
     "usesVocs": [],
@@ -428,14 +428,14 @@
           "label": "Bemonsteringscurve",
           "package": "OSLO-ObservatiesEnMetingen",
           "uri": "http://def.isotc211.org/iso19156/2011/SamplingCurve#SF_SamplingCurve",
-          "scoped_uri": "http://def.isotc211.org/iso19156/2011/SamplingCurve#SF_SamplingCurve"
+          "scoped_uri": "#Bemonsteringscurve"
         },
         {
           "name": "BO_RuimtelijkBemonsteringsobject",
           "label": "BO_RuimtelijkBemonsteringsobject",
           "package": "OSLO-BodemEnOndergrond",
           "uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_RuimtelijkBemonsteringsobject",
-          "scoped_uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_RuimtelijkBemonsteringsobject"
+          "scoped_uri": "#BO_RuimtelijkBemonsteringsobject"
         }
       ],
       "properties": [
@@ -497,7 +497,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.OM_Process",
+              "range_uri": "#Proces",
               "range_puri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.OM_Process",
               "range_label": {
                 "nl": "Proces"
@@ -531,7 +531,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "https://data.vlaanderen.be/ns/generiek#Curve",
+              "range_uri": "#Curve",
               "range_puri": "https://data.vlaanderen.be/ns/generiek#Curve",
               "range_label": {
                 "nl": "Curve"
@@ -661,7 +661,7 @@
           "label": "Proces",
           "package": "OSLO-ObservatiesEnMetingen",
           "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.OM_Process",
-          "scoped_uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.OM_Process"
+          "scoped_uri": "#Proces"
         },
         {
           "name": "Bemonsteringsprocedure",
@@ -696,7 +696,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeerkwaliteit",
+              "range_uri": "#Sondeerkwaliteit",
               "range_puri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeerkwaliteit",
               "range_label": {
                 "nl": "Sondeerkwaliteit"
@@ -792,7 +792,7 @@
           "label": "DiscreetPuntbereik",
           "package": "OSLO-RuimtelijkeBereiken",
           "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#DiscreetPuntbereik",
-          "scoped_uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#DiscreetPuntbereik"
+          "scoped_uri": "#DiscreetPuntbereik"
         }
       ],
       "properties": [
@@ -820,7 +820,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeertechniek",
+              "range_uri": "#Sondeertechniek",
               "range_puri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeertechniek",
               "range_label": {
                 "nl": "Sondeertechniek"
@@ -1098,7 +1098,7 @@
           "label": "DiscreetPuntbereik",
           "package": "OSLO-RuimtelijkeBereiken",
           "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#DiscreetPuntbereik",
-          "scoped_uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#DiscreetPuntbereik"
+          "scoped_uri": "#DiscreetPuntbereik"
         }
       ],
       "properties": [
@@ -1263,6 +1263,21 @@
           "codelist_uri": ""
         }
       ]
+    },
+    {
+      "uri": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
+      "name": {
+        "nl": "Object"
+      },
+      "sort_nl": "Object",
+      "description": {
+        "nl": "Klasse die instanties van om het even welk type vertegenwoordigt."
+      },
+      "usage": {
+        "nl": "In de context van Observaties en Metingen is dit het geobserveerdObject waarvan een kenmerk wordt geobserveerd. Het geobserveerdObject kan ook een Object zijn dat de werkelijkheid bemonstert (subklasse Bemonsteringsobject). OPGELET: deze klasse is abstract, ze moet gespecialiseerd worden in functie van het applicatiedomein."
+      },
+      "parents": [],
+      "properties": []
     },
     {
       "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
@@ -1533,6 +1548,40 @@
         {
           "uri": "http://fixme.com",
           "name": {
+            "nl": "uitgevoerdMetSensor"
+          },
+          "sort_nl": "uitgevoerdMetSensor",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "EA-Name": "Observatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Sensor",
+              "range_uri": "https://www.w3.org/TR/vocab-ssn/#SOSASensor"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Sensor",
+              "range_puri": "https://www.w3.org/TR/vocab-ssn/#SOSASensor",
+              "range_label": {
+                "nl": "Sensor"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com",
+          "name": {
             "nl": "gebruikteProcedure"
           },
           "sort_nl": "gebruikteProcedure",
@@ -1567,9 +1616,9 @@
         {
           "uri": "http://fixme.com",
           "name": {
-            "nl": "uitgevoerdMetSensor"
+            "nl": "^geobserveerdObject"
           },
-          "sort_nl": "uitgevoerdMetSensor",
+          "sort_nl": "^geobserveerdObject",
           "description": {
             "nl": "TODO"
           },
@@ -1582,16 +1631,16 @@
           ],
           "range": [
             {
-              "range_label": "Sensor",
-              "range_uri": "https://www.w3.org/TR/vocab-ssn/#SOSASensor"
+              "range_label": "Grondobject",
+              "range_uri": "https://data.vlaanderen.be/ns/grondboringen#Grondobject"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Sensor",
-              "range_puri": "https://www.w3.org/TR/vocab-ssn/#SOSASensor",
+              "range_uri": "#Grondobject",
+              "range_puri": "https://data.vlaanderen.be/ns/grondboringen#Grondobject",
               "range_label": {
-                "nl": "Sensor"
+                "nl": "Grondobject"
               }
             }
           ],
@@ -1737,6 +1786,21 @@
       ]
     },
     {
+      "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.OM_Process",
+      "name": {
+        "nl": "Proces"
+      },
+      "sort_nl": "Proces",
+      "description": {
+        "nl": "Manier waarop het resultaat van de Observatie is verkregen."
+      },
+      "usage": {
+        "nl": "Dat kan dmv een instrument of een sensor zijn; maar het kan ook een menselijke observator zijn of een simulatie of een verwerking of algoritme toegepast op meer primitieve resultaten. Het Proces vormt samen met het Bemonsteringsobject dat is gebruikt het zgn observatieprotocol. OPGELET: deze klasse is abstract, ze moet gespecialiseerd worden in functie van het applicatiedomein."
+      },
+      "parents": [],
+      "properties": []
+    },
+    {
       "uri": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
       "name": {
         "nl": "Bemonsteringsobject"
@@ -1754,7 +1818,7 @@
           "label": "Object",
           "package": "OSLO-ObservatiesEnMetingen",
           "uri": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
-          "scoped_uri": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature"
+          "scoped_uri": "#Object"
         }
       ],
       "properties": [
@@ -1905,40 +1969,6 @@
         {
           "uri": "http://fixme.com",
           "name": {
-            "nl": "isResultaatVan"
-          },
-          "sort_nl": "isResultaatVan",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
-              "EA-Name": "Bemonsteringsobject"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Bemonstering",
-              "range_uri": "http://fixme.com#Bemonstering"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Bemonstering",
-              "range_puri": "http://fixme.com#Bemonstering",
-              "range_label": {
-                "nl": "Bemonstering"
-              }
-            }
-          ],
-          "cardinality": "1..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
             "nl": "bemonsterdObject"
           },
           "sort_nl": "bemonsterdObject",
@@ -1964,6 +1994,40 @@
               "range_puri": "https://data.vlaanderen.be/ns/grondboringen#Grondobject",
               "range_label": {
                 "nl": "Grondobject"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com",
+          "name": {
+            "nl": "isResultaatVan"
+          },
+          "sort_nl": "isResultaatVan",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
+              "EA-Name": "Bemonsteringsobject"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Bemonstering",
+              "range_uri": "http://fixme.com#Bemonstering"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Bemonstering",
+              "range_puri": "http://fixme.com#Bemonstering",
+              "range_label": {
+                "nl": "Bemonstering"
               }
             }
           ],
@@ -2167,6 +2231,34 @@
       ]
     },
     {
+      "uri": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Process",
+      "name": {
+        "nl": "BemonsteringsProces"
+      },
+      "sort_nl": "BemonsteringsProces",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {
+        "nl": "TODO"
+      },
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "http://fixme.com#BO_RuimtelijkBemonsteringsobject",
+      "name": {
+        "nl": "BO_RuimtelijkBemonsteringsobject"
+      },
+      "sort_nl": "BO_RuimtelijkBemonsteringsobject",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
       "uri": "http://fixme.com#Bemonsteraar",
       "name": {
         "nl": "Bemonsteraar"
@@ -2182,14 +2274,14 @@
           "label": "BemonsteringsProces",
           "package": "OSLO-ObservatiesEnMetingen",
           "uri": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Process",
-          "scoped_uri": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Process"
+          "scoped_uri": "#BemonsteringsProces"
         },
         {
           "name": "Systeem",
           "label": "Systeem",
           "package": "SSN/SOSA",
           "uri": "https://www.w3.org/TR/vocab-ssn/#ssn-system",
-          "scoped_uri": "https://www.w3.org/TR/vocab-ssn/#ssn-system"
+          "scoped_uri": "#Systeem"
         }
       ],
       "properties": [
@@ -2312,40 +2404,6 @@
         {
           "uri": "http://fixme.com",
           "name": {
-            "nl": "resultaat"
-          },
-          "sort_nl": "resultaat",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://fixme.com#Bemonstering",
-              "EA-Name": "Bemonstering"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Bemonsteringsobject",
-              "range_uri": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Bemonsteringsobject",
-              "range_puri": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
-              "range_label": {
-                "nl": "Bemonsteringsobject"
-              }
-            }
-          ],
-          "cardinality": "1..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
             "nl": "bemonsterdObject"
           },
           "sort_nl": "bemonsterdObject",
@@ -2375,6 +2433,40 @@
             }
           ],
           "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com",
+          "name": {
+            "nl": "resultaat"
+          },
+          "sort_nl": "resultaat",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://fixme.com#Bemonstering",
+              "EA-Name": "Bemonstering"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Bemonsteringsobject",
+              "range_uri": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Bemonsteringsobject",
+              "range_puri": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
+              "range_label": {
+                "nl": "Bemonsteringsobject"
+              }
+            }
+          ],
+          "cardinality": "1..*",
           "codelist_uri": ""
         },
         {
@@ -2705,14 +2797,14 @@
           "label": "BemonsteringsProces",
           "package": "OSLO-ObservatiesEnMetingen",
           "uri": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Process",
-          "scoped_uri": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Process"
+          "scoped_uri": "#BemonsteringsProces"
         },
         {
           "name": "Procedure",
           "label": "Procedure",
           "package": "SSN/SOSA",
           "uri": "http://fixme.com#Procedure",
-          "scoped_uri": "http://fixme.com#Procedure"
+          "scoped_uri": "#Procedure"
         }
       ],
       "properties": [
@@ -2855,6 +2947,32 @@
       ]
     },
     {
+      "uri": "http://fixme.com#DiscreetPuntbereik",
+      "name": {
+        "nl": "DiscreetPuntbereik"
+      },
+      "sort_nl": "DiscreetPuntbereik",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "http://fixme.com#Domeinobject",
+      "name": {
+        "nl": "Domeinobject"
+      },
+      "sort_nl": "Domeinobject",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
       "uri": "http://fixme.com#Input",
       "name": {
         "nl": "Input"
@@ -2924,7 +3042,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "http://fixme.com#InputType",
+              "range_uri": "#InputType",
               "range_puri": "http://fixme.com#InputType",
               "range_label": {
                 "nl": "InputType"
@@ -3006,7 +3124,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "http://fixme.com#OutputType",
+              "range_uri": "#OutputType",
               "range_puri": "http://fixme.com#OutputType",
               "range_label": {
                 "nl": "OutputType"
@@ -3017,6 +3135,21 @@
           "codelist_uri": ""
         }
       ]
+    },
+    {
+      "uri": "http://fixme.com#Procedure",
+      "name": {
+        "nl": "Procedure"
+      },
+      "sort_nl": "Procedure",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {
+        "nl": "TODO"
+      },
+      "parents": [],
+      "properties": []
     },
     {
       "uri": "http://purl.org/dc/terms/Agent",
@@ -3075,7 +3208,7 @@
           "label": "Domeinobject",
           "package": "OSLO-SensorenEnBemonstering",
           "uri": "http://fixme.com#Domeinobject",
-          "scoped_uri": "http://fixme.com#Domeinobject"
+          "scoped_uri": "#Domeinobject"
         }
       ],
       "properties": [
@@ -3116,6 +3249,21 @@
       ]
     },
     {
+      "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#Bemonsteringscurve",
+      "name": {
+        "nl": "Bemonsteringscurve"
+      },
+      "sort_nl": "Bemonsteringscurve",
+      "description": {
+        "nl": "Een RuimtelijkBemonsteringsobject dat de vorm aanneemt van een Curve."
+      },
+      "usage": {
+        "nl": "Van het Object dat men wil observeren wordt in dat geval een representatief lijnvormig deel beschouwd. Voorbeelden zijn trajecten, boorgaten, profielen, intervallen Doorgaans specialiseert de Curve zich tot Lijnstring of Lijn. OPMERKING: Meer info over deze klasse in het AP Observaties en Metingen."
+      },
+      "parents": [],
+      "properties": []
+    },
+    {
       "uri": "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure",
       "name": {
         "nl": "Observatieprocedure"
@@ -3131,14 +3279,14 @@
           "label": "Proces",
           "package": "OSLO-ObservatiesEnMetingen",
           "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.OM_Process",
-          "scoped_uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.OM_Process"
+          "scoped_uri": "#Proces"
         },
         {
           "name": "Procedure",
           "label": "Procedure",
           "package": "SSN/SOSA",
           "uri": "http://fixme.com#Procedure",
-          "scoped_uri": "http://fixme.com#Procedure"
+          "scoped_uri": "#Procedure"
         }
       ],
       "properties": [
@@ -3364,14 +3512,14 @@
           "label": "Systeem",
           "package": "SSN/SOSA",
           "uri": "https://www.w3.org/TR/vocab-ssn/#ssn-system",
-          "scoped_uri": "https://www.w3.org/TR/vocab-ssn/#ssn-system"
+          "scoped_uri": "#Systeem"
         },
         {
           "name": "Proces",
           "label": "Proces",
           "package": "OSLO-ObservatiesEnMetingen",
           "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.OM_Process",
-          "scoped_uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.OM_Process"
+          "scoped_uri": "#Proces"
         }
       ],
       "properties": [
@@ -3444,6 +3592,19 @@
           "codelist_uri": ""
         }
       ]
+    },
+    {
+      "uri": "https://www.w3.org/TR/vocab-ssn/#ssn-system",
+      "name": {
+        "nl": "Systeem"
+      },
+      "sort_nl": "Systeem",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
     }
   ],
   "properties": [
@@ -3666,6 +3827,40 @@
         null
       ],
       "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#diepteTechniek",
+      "name": {
+        "nl": "diepte techniek"
+      },
+      "description": {
+        "nl": "Diepte waarop de techniek toegepast werd."
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#diepteVan",
+      "name": {
+        "nl": "diepte van"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {
+        "nl": "Enkel van toepassing voor het plaatsen van voerbuizen (code V) of het boren door een harde laag (code B)."
+      },
       "parents": []
     },
     {
@@ -4132,6 +4327,23 @@
       "parents": []
     },
     {
+      "uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#techniek",
+      "name": {
+        "nl": "techniek"
+      },
+      "description": {
+        "nl": "Gebruikte techniek."
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
       "uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#u",
       "name": {
         "nl": "u"
@@ -4564,31 +4776,29 @@
       ]
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#SondeerKwaliteit",
+      "uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeerkwaliteit",
       "name": {
-        "nl": "SondeerKwaliteit"
+        "nl": "Sondeerkwaliteit"
       },
-      "sort_nl": "SondeerKwaliteit",
-      "description": {
-        "nl": "TODO"
-      },
+      "sort_nl": "Sondeerkwaliteit",
+      "description": {},
       "usage": {},
       "parents": [],
       "properties": [
         {
-          "uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#norm",
+          "uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#kwaliteitsnorm",
           "name": {
-            "nl": "norm"
+            "nl": "kwaliteitsnorm"
           },
-          "sort_nl": "norm",
+          "sort_nl": "kwaliteitsnorm",
           "description": {
-            "nl": "TODO"
+            "nl": "De kwaliteitsnorm die gevolgd werd bij het uitvoeren en verwerken van de Sondering."
           },
           "usage": {},
           "domain": [
             {
-              "uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#SondeerKwaliteit",
-              "EA-Name": "SondeerKwaliteit"
+              "uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeerkwaliteit",
+              "EA-Name": "Sondeerkwaliteit"
             }
           ],
           "range": [
@@ -4616,13 +4826,13 @@
           },
           "sort_nl": "toepassingsklasse",
           "description": {
-            "nl": "TODO"
+            "nl": "De berekende toepassingsklasse (1 tem 7)."
           },
           "usage": {},
           "domain": [
             {
-              "uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#SondeerKwaliteit",
-              "EA-Name": "SondeerKwaliteit"
+              "uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeerkwaliteit",
+              "EA-Name": "Sondeerkwaliteit"
             }
           ],
           "range": [
@@ -4731,6 +4941,162 @@
             }
           ],
           "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeertechniek",
+      "name": {
+        "nl": "Sondeertechniek"
+      },
+      "sort_nl": "Sondeertechniek",
+      "description": {},
+      "usage": {},
+      "parents": [
+        {
+          "name": "PuntWaardepaar",
+          "label": "PuntWaardepaar",
+          "package": "OSLO-RuimtelijkeBereiken",
+          "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#PuntWaardepaar",
+          "scoped_uri": "#PuntWaardepaar"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#diepteTechniek",
+          "name": {
+            "nl": "diepte techniek"
+          },
+          "sort_nl": "diepte techniek",
+          "description": {
+            "nl": "Diepte waarop de techniek toegepast werd."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeertechniek",
+              "EA-Name": "Sondeertechniek"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DirectePositie",
+              "range_uri": "https://data.vlaanderen.be/ns/generiek#DirectePositie"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#DirectePositie",
+              "range_puri": "https://data.vlaanderen.be/ns/generiek#DirectePositie",
+              "range_label": {
+                "nl": "DirectePositie"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#diepteVan",
+          "name": {
+            "nl": "diepte van"
+          },
+          "sort_nl": "diepte van",
+          "description": {},
+          "usage": {
+            "nl": "Enkel van toepassing voor het plaatsen van voerbuizen (code V) of het boren door een harde laag (code B)."
+          },
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeertechniek",
+              "EA-Name": "Sondeertechniek"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DirectePositie",
+              "range_uri": "https://data.vlaanderen.be/ns/generiek#DirectePositie"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#DirectePositie",
+              "range_puri": "https://data.vlaanderen.be/ns/generiek#DirectePositie",
+              "range_label": {
+                "nl": "DirectePositie"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#techniek",
+          "name": {
+            "nl": "techniek"
+          },
+          "sort_nl": "techniek",
+          "description": {
+            "nl": "Gebruikte techniek."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeertechniek",
+              "EA-Name": "Sondeertechniek"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Sondeertechniektype",
+              "range_uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeertechniektype"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Sondeertechniektype",
+              "range_puri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeertechniektype",
+              "range_label": {
+                "nl": "Sondeertechniektype"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#techniekAndere",
+          "name": {
+            "nl": "techniek andere"
+          },
+          "sort_nl": "techniek andere",
+          "description": {
+            "nl": "Gebruikte techniek."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Sondeertechniek",
+              "EA-Name": "Sondeertechniek"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -5663,7 +6029,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Maaiveldtype",
+              "range_uri": "#Maaiveldtype",
               "range_puri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Maaiveldtype",
               "range_label": {
                 "nl": "Maaiveldtype"
@@ -5674,6 +6040,27 @@
           "codelist_uri": ""
         }
       ]
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/generiek#Curve",
+      "name": {
+        "nl": "Curve"
+      },
+      "sort_nl": "Curve",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {},
+      "parents": [
+        {
+          "name": "Geometrie",
+          "label": "Geometrie",
+          "package": "OSLO-Generiek",
+          "uri": "http://www.w3.org/ns/locn#Geometry",
+          "scoped_uri": "#Geometrie"
+        }
+      ],
+      "properties": []
     },
     {
       "uri": "https://data.vlaanderen.be/ns/generiek#DirectePositie",
@@ -5846,7 +6233,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Domeinobject",
+              "range_uri": "#Domeinobject",
               "range_puri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Domeinobject",
               "range_label": {
                 "nl": "Domeinobject"
