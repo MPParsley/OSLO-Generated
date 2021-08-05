@@ -494,6 +494,26 @@
           "sh:minCount": "1",
           "sh:name": "identificator",
           "sh:path": "http://www.w3.org/ns/adms#identifier"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/prov#Entity",
+          "sh:description": "Duidt een gerelateerde GRB object aan.",
+          "sh:name": "isGerelateerdAan",
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/prov#Entity",
+          "sh:description": "Duidt een gerelateerde GRB object aan.",
+          "sh:name": "isGerelateerdAan",
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Datum van oplevering.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "opnamedatum",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum"
         }
       ],
       "sh:targetClass": "http://www.w3.org/ns/prov#Entity"
@@ -503,14 +523,6 @@
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/ns/org#Organization",
-          "sh:description": "Organisatie die verantwoordelijk is voor het beheer van de perceelsinformatie (toegepast op het niveau van een gemeente).",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "beheerder",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#beheerder"
-        },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
           "sh:description": "\nDatum die per object verwijst naar het aanslagjaar volgend op het mutatiejaar waarin het object is ontstaan of gewijzigd.",
@@ -524,14 +536,6 @@
           "sh:description": "Adresseerbaar object waaraan het adres is toegekend.",
           "sh:name": "isToegekendAan",
           "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "Een beknopte beschrijving van de organisatie die verantwoordelijk is voor het beheer van de perceelsinformatie.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "labelBeheerder",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#labelBeheerder"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#AdministratiefPerceel"
@@ -657,6 +661,12 @@
           "sh:path": "http://purl.org/dc/terms/relation"
         },
         {
+          "sh:class": "https://data.vlaanderen.be/ns/adres#Adres",
+          "sh:description": "Adresseerbaar object waaraan het adres is toegekend.",
+          "sh:name": "isToegekendAan",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
+        },
+        {
           "sh:class": "https://schema.org/QuantitativeValue",
           "sh:description": "Lengte in meter van de geometrie van de omtreklijn.",
           "sh:maxCount": "1",
@@ -665,12 +675,12 @@
           "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "Datum van oplevering.",
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:description": "De oppervlakte in vierkante meter van de veelhoek",
           "sh:maxCount": "1",
           "sh:minCount": "1",
-          "sh:name": "opnamedatum",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum"
+          "sh:name": "oppervlakte",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond"
@@ -690,20 +700,18 @@
           "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheidtype"
         },
         {
+          "sh:class": "https://data.vlaanderen.be/ns/adres#Adres",
+          "sh:description": "Adresseerbaar object waaraan het adres is toegekend.",
+          "sh:name": "isToegekendAan",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
+        },
+        {
           "sh:class": "https://schema.org/QuantitativeValue",
           "sh:description": "Lengte in meter van de geometrie van de omtreklijn.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "lengteOmtreklijn",
           "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "Datum van de oplevering.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "opnamedatum",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum"
         },
         {
           "sh:class": "https://schema.org/QuantitativeValue",
@@ -729,14 +737,6 @@
           "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#bestaatuit"
         },
         {
-          "sh:class": "http://www.w3.org/ns/locn#Geometry",
-          "sh:description": "De geometrie van de gevellijn.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "geometrie",
-          "sh:path": "http://www.w3.org/ns/locn#Geometry"
-        },
-        {
           "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Gevellijntype",
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "Het type van de gevellijn.",
@@ -760,14 +760,6 @@
           "sh:minCount": "1",
           "sh:name": "lengte",
           "sh:path": "http://open.vocab.org/terms/length"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "De datum van oplevering.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "opnamedatum",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevellijn"
@@ -777,14 +769,6 @@
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/ns/locn#Geometry",
-          "sh:description": "De geometrie van het gevelpunt.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "geometrie",
-          "sh:path": "http://www.w3.org/ns/locn#Geometry"
-        },
         {
           "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Gevelpunttype",
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -801,22 +785,6 @@
           "sh:minCount": "1",
           "sh:name": "heeftGevelpunt",
           "sh:path": "http://purl.org/dc/terms/relation"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/adms#Identifier",
-          "sh:description": "Informatie gebruikt om een object uniek te identificeren.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "identificator",
-          "sh:path": "http://www.w3.org/ns/adms#identifier"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "Datum van oplevering.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "opnamedatum",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevelpunt"
@@ -826,6 +794,12 @@
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/adres#Adres",
+          "sh:description": "Addresseerbaar object waaraan het adres is toegekend.",
+          "sh:name": "isToegekendAan",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
+        },
         {
           "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Kunstwerktype",
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -842,14 +816,6 @@
           "sh:minCount": "1",
           "sh:name": "lengteOmtreklijn",
           "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteOmtreklijn"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "Datum van oplevering",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "opnamedatum",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum"
         },
         {
           "sh:class": "https://schema.org/QuantitativeValue",
@@ -918,14 +884,6 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "Datum van oplevering.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "opnamedatum",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum"
-        },
-        {
           "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/PuntvormigeInrichtingtype",
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "Aard van het puntvormige weginrichtingselement.",
@@ -949,14 +907,6 @@
           "sh:minCount": "1",
           "sh:name": "lengteOmtreklijn",
           "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "Datum van oplevering.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "opnamedatum",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum"
         },
         {
           "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/SpoorbaanFunctie",
@@ -990,14 +940,6 @@
           "sh:minCount": "1",
           "sh:name": "lijnnummer",
           "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lijnnummer"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "Datum van de oplevering.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "opnamedatum",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Spoorrail"
@@ -1014,14 +956,6 @@
           "sh:minCount": "1",
           "sh:name": "lengteOmtreklijn",
           "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "Datum van oplevering.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "opnamedatum",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Terrein"
@@ -1064,14 +998,6 @@
           "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "Datum van oplevering.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "opnamedatums",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum"
-        },
-        {
           "sh:class": "https://schema.org/QuantitativeValue",
           "sh:description": "Oppervlakte in vierkante meter van de veelhoek.",
           "sh:maxCount": "1",
@@ -1097,14 +1023,6 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "Datum van oplevering.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "opnamedatum",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum"
-        },
-        {
           "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Wegopdelingtype",
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "Aard van de wegopdeling.",
@@ -1126,6 +1044,24 @@
           "sh:description": "Adresseerbaar object waaraan het adres is toegekend.",
           "sh:name": "isToegekendAan",
           "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond",
+          "sh:description": "Adresseerbaar object waaraan het adres is toegekend.",
+          "sh:name": "isToegekendAan",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid",
+          "sh:description": "Adresseerbaar object waaraan het adres is toegekend.",
+          "sh:name": "isToegekendAan",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk",
+          "sh:description": "Addresseerbaar object waaraan het adres is toegekend.",
+          "sh:name": "isToegekendAan",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/adres#Adres"
@@ -1144,24 +1080,22 @@
           "sh:path": "http://www.w3.org/ns/adms#Identifier"
         },
         {
+          "sh:class": "https://data.vlaanderen.be/ns/weg#Wegsegment",
+          "sh:name": "gemeentenaam",
+          "sh:path": "http://fixme.com#gemeentenaam"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/weg#Wegsegment",
+          "sh:name": "gemeentenaam",
+          "sh:path": "http://fixme.com#gemeentenaam"
+        },
+        {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:description": "De naam van de gemeente.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "gemeentenaam",
           "sh:path": "http://www.w3.org/2000/01/rdf-schema#label"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/weg#Wegsegment",
-          "sh:description": "Naam van de gemeente links van de wegverbinding.",
-          "sh:name": "linkergemeentenaam",
-          "sh:path": "https://data.vlaanderen.be/ns/weg#linkergemeentenaam"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/weg#Wegsegment",
-          "sh:description": "Naam van de gemeente rechts van de wegverbinding.",
-          "sh:name": "rechtergemeentenaam",
-          "sh:path": "https://data.vlaanderen.be/ns/weg#rechtergemeentenaam"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/adres#Gemeentenaam"
@@ -1178,18 +1112,6 @@
           "sh:minCount": "1",
           "sh:name": "^identificator",
           "sh:path": "http://www.w3.org/ns/adms#Identifier"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/weg#Wegsegment",
-          "sh:description": "Straatnaam vookomend aan de linkerstraatkant.",
-          "sh:name": "linkerstraatnaam",
-          "sh:path": "https://data.vlaanderen.be/ns/adres#Straatnaam"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/weg#Wegsegment",
-          "sh:description": "Straatnaam vookomend aan de rechterstraatkant.",
-          "sh:name": "rechterstraatnaam",
-          "sh:path": "https://data.vlaanderen.be/ns/adres#Straatnaam"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/adres#Straatnaam"
@@ -1299,14 +1221,6 @@
           "sh:minCount": "1",
           "sh:name": "longitudinaleweginrichtingtype",
           "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#LongitudinaleWegrinrichtingtype"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "Datum van oplevering.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "opnamedatum",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#LongitudinaleWeginrichting"
@@ -1341,14 +1255,6 @@
           "sh:minCount": "1",
           "sh:name": "meetmethode",
           "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#meetmethode"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "Datum van oplevering.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "opnamedatum",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Putdeksel"
@@ -1365,14 +1271,6 @@
           "sh:minCount": "1",
           "sh:name": "lengte",
           "sh:path": "http://open.vocab.org/terms/length"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "Datum van oplevering.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "opnamedatum",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum"
         },
         {
           "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/TransversaleWeginrichtingtype",
@@ -1468,14 +1366,6 @@
           "sh:minCount": "1",
           "sh:name": "naam",
           "sh:path": "http://purl.org/dc/terms/title"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "Datum van oplevering.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "opnamedatum",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/openbaardomein/waterdeel#Waterdeel"
@@ -1498,13 +1388,6 @@
           "sh:minCount": "1",
           "sh:name": "geometrie",
           "sh:path": "https://data.vlaanderen.be/ns/perceel#RuimtelijkeEenheid.geometrie"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/adms#Identifier",
-          "sh:description": "De identificator van de Ruimtelijke Eenheid.",
-          "sh:minCount": "1",
-          "sh:name": "identificator",
-          "sh:path": "http://www.w3.org/ns/adms#identifier"
         },
         {
           "sh:class": "https://schema.org/QuantitativeValue",
@@ -1590,36 +1473,12 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "http://www.w3.org/ns/locn#Geometry",
-          "sh:description": "De geometrie overeenkomstig met een bepaald object.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "^geometrie",
-          "sh:path": "http://www.w3.org/ns/locn#Geometry"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/adms#Identifier",
-          "sh:description": "Informatie gebruikt om een object uniek te identificeren.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "^identificator",
-          "sh:path": "http://www.w3.org/ns/adms#Identifier"
-        },
-        {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
           "sh:description": "Datum waarop de huidige versie van het gebied of object in gebruik wordt genomen.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "begindatum",
           "sh:path": "http://www.w3.org/2001/XMLSchema#dateTime"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "Datum van oplevering.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "opnamedatum",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum"
         },
         {
           "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Wegknooptype",
@@ -1638,22 +1497,6 @@
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/ns/locn#Geometry",
-          "sh:description": "De geometrie overeenkomstig met een bepaald object.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "^geometrie",
-          "sh:path": "http://www.w3.org/ns/locn#Geometry"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/adms#Identifier",
-          "sh:description": "Informatie gebruikt om een object uniek te identificeren.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "^identificator",
-          "sh:path": "http://www.w3.org/ns/adms#Identifier"
-        },
         {
           "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Wegverhardgintype",
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -1711,14 +1554,6 @@
           "sh:minCount": "1",
           "sh:name": "morfologischeWegklasse",
           "sh:path": "https://data.vlaanderen.be/ns/weg#morfologischeWegklasse"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "Datum van oplevering.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "opnamedatum",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum"
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/adres#Gemeentenaam",

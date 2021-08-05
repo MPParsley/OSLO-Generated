@@ -1,10 +1,6 @@
 {
   "@context": {
     "AdministratiefPerceel": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#AdministratiefPerceel",
-    "AdministratiefPerceel.beheerder": {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#beheerder",
-      "@type": "@id"
-    },
     "AdministratiefPerceel.fiscaleToestandsdatum": {
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#fiscaleToestandsdatum",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
@@ -13,10 +9,6 @@
       "@container": "@set",
       "@id": "https://data.vlaanderen.be/ns/adres#isToegekendAan",
       "@type": "@id"
-    },
-    "AdministratiefPerceel.labelBeheerder": {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#labelBeheerder",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "Adres": "https://data.vlaanderen.be/ns/adres#Adres",
     "Adres.isToegekendAan": {
@@ -118,6 +110,20 @@
       "@id": "http://www.w3.org/ns/adms#identifier",
       "@type": "@id"
     },
+    "FysiekObject.isGerelateerdAan(source)": {
+      "@container": "@set",
+      "@id": "http://purl.org/dc/terms/relation",
+      "@type": "@id"
+    },
+    "FysiekObject.isGerelateerdAan(target)": {
+      "@container": "@set",
+      "@id": "http://purl.org/dc/terms/relation",
+      "@type": "@id"
+    },
+    "FysiekObject.opnamedatum": {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
     "GebouwAanDeGrond": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond",
     "GebouwAanDeGrond.gebouwtype": {
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#gebouwtype",
@@ -138,26 +144,32 @@
       "@id": "http://purl.org/dc/terms/relation",
       "@type": "@id"
     },
+    "GebouwAanDeGrond.isToegekendAan": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/adres#isToegekendAan",
+      "@type": "@id"
+    },
     "GebouwAanDeGrond.lengteOmtreklijn": {
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn",
       "@type": "@id"
     },
-    "GebouwAanDeGrond.opnamedatum": {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    "GebouwAanDeGrond.oppervlakte": {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte",
+      "@type": "@id"
     },
     "Gebouwaanhorigheid": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid",
     "Gebouwaanhorigheid.gebouwaanhorigheidtype": {
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheidtype",
       "@type": "@id"
     },
+    "Gebouwaanhorigheid.isToegekendAan": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/adres#isToegekendAan",
+      "@type": "@id"
+    },
     "Gebouwaanhorigheid.lengteOmtreklijn": {
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn",
       "@type": "@id"
-    },
-    "Gebouwaanhorigheid.opnamedatum": {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "Gebouwaanhorigheid.oppervlakte": {
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte",
@@ -172,16 +184,6 @@
     },
     "Gemeentenaam.identificator": {
       "@id": "http://www.w3.org/ns/adms#Identifier",
-      "@type": "@id"
-    },
-    "Gemeentenaam.linkergemeentenaam": {
-      "@container": "@set",
-      "@id": "https://data.vlaanderen.be/ns/weg#linkergemeentenaam",
-      "@type": "@id"
-    },
-    "Gemeentenaam.rechtergemeentenaam": {
-      "@container": "@set",
-      "@id": "https://data.vlaanderen.be/ns/weg#rechtergemeentenaam",
       "@type": "@id"
     },
     "GeografischeNaam": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -213,10 +215,6 @@
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#bestaatuit",
       "@type": "@id"
     },
-    "Gevellijn.geometrie": {
-      "@id": "http://www.w3.org/ns/locn#Geometry",
-      "@type": "@id"
-    },
     "Gevellijn.gevellijntype": {
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevellijntype",
       "@type": "@id"
@@ -229,16 +227,8 @@
       "@id": "http://open.vocab.org/terms/length",
       "@type": "@id"
     },
-    "Gevellijn.opnamedatum": {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
     "Gevellijntype": "http://www.w3.org/2004/02/skos/core#Concept",
     "Gevelpunt": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevelpunt",
-    "Gevelpunt.geometrie": {
-      "@id": "http://www.w3.org/ns/locn#Geometry",
-      "@type": "@id"
-    },
     "Gevelpunt.gevelpunttype": {
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevelpunttype",
       "@type": "@id"
@@ -246,14 +236,6 @@
     "Gevelpunt.heeftGevelpunt": {
       "@id": "http://purl.org/dc/terms/relation",
       "@type": "@id"
-    },
-    "Gevelpunt.identificator": {
-      "@id": "http://www.w3.org/ns/adms#identifier",
-      "@type": "@id"
-    },
-    "Gevelpunt.opnamedatum": {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "Gevelpunttype": "http://www.w3.org/2004/02/skos/core#Concept",
     "Gracht": "https://data.vlaanderen.be/ns/openbaardomein/waterdeel#Gracht",
@@ -293,6 +275,11 @@
       "@type": "@id"
     },
     "Kunstwerk": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk",
+    "Kunstwerk.isToegekendAan": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/adres#isToegekendAan",
+      "@type": "@id"
+    },
     "Kunstwerk.kunstwerktype": {
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#kunstwerktype",
       "@type": "@id"
@@ -300,10 +287,6 @@
     "Kunstwerk.lengteOmtreklijn": {
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteOmtreklijn",
       "@type": "@id"
-    },
-    "Kunstwerk.opnamedatum": {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "Kunstwerk.oppervlakte": {
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte",
@@ -355,10 +338,6 @@
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#LongitudinaleWegrinrichtingtype",
       "@type": "@id"
     },
-    "LongitudinaleWeginrichting.opnamedatum": {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
     "LongitudinaleWeginrichtingtype": "http://www.w3.org/2004/02/skos/core#Concept",
     "Meetmethode": "http://www.w3.org/2004/02/skos/core#Concept",
     "Meldingsobject": "http://fixme.com/#Meldingsobject",
@@ -396,10 +375,6 @@
     "Polygoon": "http://www.opengis.net/ont/sf#Polygon",
     "Punt": "http://www.opengis.net/ont/sf#Point",
     "PuntvormigeInrichting": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#PuntvormigeInrichting",
-    "PuntvormigeInrichting.opnamedatum": {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
     "PuntvormigeInrichting.puntvormigeInrichtingtype": {
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#PuntvormigeInrichtingtype",
       "@type": "@id"
@@ -418,10 +393,6 @@
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#meetmethode",
       "@type": "@id"
     },
-    "Putdeksel.opnamedatum": {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
     "RuimtelijkeEenheid": "https://data.vlaanderen.be/ns/perceel#RuimtelijkeEenheid",
     "RuimtelijkeEenheid.geldigheidsperiode": {
       "@id": "https://data.vlaanderen.be/ns/perceel#geldigheidsperiode",
@@ -430,11 +401,6 @@
     "RuimtelijkeEenheid.geometrie": {
       "@container": "@set",
       "@id": "https://data.vlaanderen.be/ns/perceel#RuimtelijkeEenheid.geometrie",
-      "@type": "@id"
-    },
-    "RuimtelijkeEenheid.identificator": {
-      "@container": "@set",
-      "@id": "http://www.w3.org/ns/adms#identifier",
       "@type": "@id"
     },
     "RuimtelijkeEenheid.lengteOmtreklijn": {
@@ -477,10 +443,6 @@
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn",
       "@type": "@id"
     },
-    "Spoorbaan.opnamedatum": {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
     "Spoorbaan.spoorbaanfunctie": {
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Spoorbaanfunctie",
       "@type": "@id"
@@ -495,24 +457,10 @@
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lijnnummer",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
-    "Spoorrail.opnamedatum": {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
     "StandaardEenheid": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid",
     "Straatnaam": "https://data.vlaanderen.be/ns/adres#Straatnaam",
     "Straatnaam.identificator": {
       "@id": "http://www.w3.org/ns/adms#Identifier",
-      "@type": "@id"
-    },
-    "Straatnaam.linkerstraatnaam": {
-      "@container": "@set",
-      "@id": "https://data.vlaanderen.be/ns/adres#Straatnaam",
-      "@type": "@id"
-    },
-    "Straatnaam.rechterstraatnaam": {
-      "@container": "@set",
-      "@id": "https://data.vlaanderen.be/ns/adres#Straatnaam",
       "@type": "@id"
     },
     "Taalstring": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -520,10 +468,6 @@
     "Terrein.lengteOmtreklijn": {
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn",
       "@type": "@id"
-    },
-    "Terrein.opnamedatum": {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "Terreindeel": "https://data.vlaanderen.be/ns/openbaardomein/terreindeel#Terreindeel",
     "Terreindeel.breedte": {
@@ -549,10 +493,6 @@
       "@id": "http://open.vocab.org/terms/length",
       "@type": "@id"
     },
-    "TransversaleWeginrichting.opnamedatum": {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
     "TransversaleWeginrichting.transversaleweginrichtingtype": {
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#transversaleweginrichtingtype",
       "@type": "@id"
@@ -573,10 +513,6 @@
       "@id": "http://purl.org/dc/terms/title",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
-    "Watergang.opnamedatum": {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
     "Waterloopsegment": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Waterloopsegment",
     "Waterloopsegment.identificator": {
       "@id": "http://www.w3.org/ns/adms#identifier",
@@ -590,10 +526,6 @@
     "Wegaanhorigheid.lengteOmtreklijn": {
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn",
       "@type": "@id"
-    },
-    "Wegaanhorigheid.opnamedatum": {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "Wegaanhorigheid.oppervlakte": {
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte",
@@ -615,28 +547,12 @@
       "@id": "http://www.w3.org/2001/XMLSchema#dateTime",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
-    "Wegknoop.geometrie": {
-      "@id": "http://www.w3.org/ns/locn#Geometry",
-      "@type": "@id"
-    },
-    "Wegknoop.identificator": {
-      "@id": "http://www.w3.org/ns/adms#Identifier",
-      "@type": "@id"
-    },
-    "Wegknoop.opnamedatum": {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
     "Wegknoop.wegknooptype": {
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegknooptype",
       "@type": "@id"
     },
     "Wegknooptype": "http://www.w3.org/2004/02/skos/core#Concept",
     "Wegopdeling": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegopdeling",
-    "Wegopdeling.opnamedatum": {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
     "Wegopdeling.wegopdelingtype": {
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegopdelingtype",
       "@type": "@id"
@@ -649,14 +565,6 @@
     },
     "Wegverbinding.eindknoop": {
       "@id": "https://data.vlaanderen.be/ns/weg#eindknoop",
-      "@type": "@id"
-    },
-    "Wegverbinding.geometrie": {
-      "@id": "http://www.w3.org/ns/locn#Geometry",
-      "@type": "@id"
-    },
-    "Wegverbinding.identificator": {
-      "@id": "http://www.w3.org/ns/adms#Identifier",
       "@type": "@id"
     },
     "Wegverbinding.lengte": {
@@ -674,10 +582,6 @@
     "Wegverbinding.morfologischeWegklasse": {
       "@id": "https://data.vlaanderen.be/ns/weg#morfologischeWegklasse",
       "@type": "@id"
-    },
-    "Wegverbinding.opnamedatum": {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "Wegverbinding.rechtergemeentenaam": {
       "@id": "https://data.vlaanderen.be/ns/weg#rechtergemeentenaam",
