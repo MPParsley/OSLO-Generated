@@ -34,47 +34,6 @@
   "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap",
   "shapes": [
     {
-      "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ErkenningsaanvraagShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "Een beknopte omschrijving van de erkenningsaanvraag.",
-          "sh:maxCount": "1",
-          "sh:name": "beschrijving",
-          "sh:path": "http://purl.org/dc/terms/description"
-        },
-        {
-          "sh:class": "http://data.europa.eu/m8g/CriterionRequirement",
-          "sh:description": "Verwijzing naar de criteriumvereiste dit van toepassing is op de erkenningsaanvraag.",
-          "sh:name": "criteriumvereiste",
-          "sh:path": "http://data.europa.eu/m8g/hasCriterion"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "Het resultaat van de erkenningsaanvraag.",
-          "sh:maxCount": "1",
-          "sh:name": "erkenningsbeslissing",
-          "sh:path": "http://data.vlaanderen.be/ns/besluit#erkenningsbeslissing"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "geeftRechtOp",
-          "sh:path": "http://fixme.com#geeftRechtOp"
-        },
-        {
-          "sh:class": "http://fixme.com#Bewijs",
-          "sh:description": "Bewijsstuk(ken) dat moet(en) voorgelegd worden om de erkenning te kunnen verkrijgen.",
-          "sh:name": "input",
-          "sh:path": "http://purl.org/vocab/cpsv#hasInput"
-        }
-      ],
-      "sh:targetClass": "To Do"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#CriteriumVereisteShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -165,6 +124,12 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
+          "sh:description": "Verwijzing naar de controle die de publieke organisatie doet in het kader van de erkenningsaavraag van de feitelijke vereniging.",
+          "sh:name": "controleert",
+          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#controleert"
+        },
+        {
           "sh:class": "http://fixme.com#Plaats",
           "sh:description": "Administratief gebied dat de Publieke Organisatie dekt.",
           "sh:name": "werkingsgebied",
@@ -172,47 +137,6 @@
         }
       ],
       "sh:targetClass": "http://data.europa.eu/m8g/PublicOrganisation"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#AdresvoorstellingShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:maxCount": "1",
-          "sh:name": "busnummer",
-          "sh:path": "http://fixme.com#busnummer"
-        },
-        {
-          "sh:maxCount": "1",
-          "sh:name": "gemeentenaam",
-          "sh:path": "http://fixme.com#gemeentenaam"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:maxCount": "1",
-          "sh:name": "huisnummer",
-          "sh:path": "http://fixme.com#huisnummer"
-        },
-        {
-          "sh:maxCount": "1",
-          "sh:name": "land",
-          "sh:path": "http://fixme.com#land"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:maxCount": "1",
-          "sh:name": "postcode",
-          "sh:path": "http://fixme.com#postcode"
-        },
-        {
-          "sh:maxCount": "1",
-          "sh:name": "straatnaam",
-          "sh:path": "http://fixme.com#straatnaam"
-        }
-      ],
-      "sh:targetClass": "http://fixme.com#Adresvoorstelling"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#AgentShape",
@@ -278,7 +202,7 @@
           "sh:path": "http://www.w3.org/2006/vcard/ns#honorific-prefix"
         },
         {
-          "sh:class": "http://fixme.com#Adresvoorstelling",
+          "sh:class": "http://www.w3.org/ns/locn#Address",
           "sh:description": "Adres dat men kan aanschrijven of bezoeken.",
           "sh:maxCount": "1",
           "sh:name": "adres",
@@ -349,6 +273,53 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#AdresvoorstellingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Officieel toegekende alfanumerieke code die wordt toegevoegd aan het huisnummer om meerdere gebouweenheden, standplaatsen, ligplaatsen of percelen te onderscheiden die eenzelfde huisnummer hebben.",
+          "sh:maxCount": "1",
+          "sh:name": "busnummer",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer"
+        },
+        {
+          "sh:description": "Gemeentenaam vh adres.",
+          "sh:maxCount": "1",
+          "sh:name": "gemeentenaam",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#gemeentenaam"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Alfanumerieke code officieel toegekend aan gebouweenheden, ligplaatsen, standplaatsen of percelen.",
+          "sh:maxCount": "1",
+          "sh:name": "huisnummer",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer"
+        },
+        {
+          "sh:description": "Land waarin het adres gelegen is.",
+          "sh:maxCount": "1",
+          "sh:name": "land",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#land"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Code waarmee het geografisch gebied dat adressen voor postale doeleinden groepeert wordt aangeduid.",
+          "sh:maxCount": "1",
+          "sh:name": "postcode",
+          "sh:path": "http://www.w3.org/ns/locn#postCode"
+        },
+        {
+          "sh:description": "Straatnaam vh adres.",
+          "sh:maxCount": "1",
+          "sh:name": "straatnaam",
+          "sh:path": "http://www.w3.org/ns/locn#thoroughfare"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/locn#Address"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#GeregistreerdeOrganisatieShape",
@@ -432,6 +403,48 @@
       "sh:targetClass": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ErkenningsaanvraagShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Een beknopte omschrijving van de erkenningsaanvraag.",
+          "sh:maxCount": "1",
+          "sh:name": "beschrijving",
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/CriterionRequirement",
+          "sh:description": "Verwijzing naar de criteriumvereiste dit van toepassing is op de erkenningsaanvraag.",
+          "sh:name": "criteriumvereiste",
+          "sh:path": "http://data.europa.eu/m8g/hasCriterion"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Het resultaat van de erkenningsaanvraag.",
+          "sh:maxCount": "1",
+          "sh:name": "erkenningsbeslissing",
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#erkenningsbeslissing"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
+          "sh:description": "De erkenning die toegekend wordt op basis van de ingediende erkenningsaanvraag.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "geeftRechtOp",
+          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geeftrechtOp"
+        },
+        {
+          "sh:class": "http://fixme.com#Bewijs",
+          "sh:description": "Bewijsstuk(ken) dat moet(en) voorgelegd worden om de erkenning te kunnen verkrijgen.",
+          "sh:name": "input",
+          "sh:path": "http://purl.org/vocab/cpsv#hasInput"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#FeitelijkeVerenigingShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -449,17 +462,18 @@
           "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Activiteit"
         },
         {
-          "sh:class": "http://fixme.com#Adresvoorstelling",
+          "sh:class": "http://www.w3.org/ns/locn#Address",
           "sh:description": "Geeft aan wat het adres is van de feitelijke vereniging.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "adres",
-          "sh:path": "To Do"
+          "sh:path": "https://data.vlaanderen.be/ns/adres#Adres"
         },
         {
-          "sh:class": "To Do",
+          "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
+          "sh:description": "De erkenningsaanvraag die ingediend wordt door de feitelijke vereninging.",
           "sh:name": "dientIn",
-          "sh:path": "http://fixme.com#dientIn"
+          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#dientIn"
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
