@@ -34,6 +34,28 @@
   "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap",
   "shapes": [
     {
+      "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#KostShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Beschrijving van de kost.",
+          "sh:maxCount": "1",
+          "sh:name": "beschrijving",
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "sh:description": "Omvang van de kost, uitgedrukt in de opgegeven munteenheid.",
+          "sh:maxCount": "1",
+          "sh:name": "waarde",
+          "sh:path": "http://data.europa.eu/m8g/value"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/Cost"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#CriteriumVereisteShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -42,14 +64,13 @@
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:description": "Een beknopte omschrijving van de criteriumvereiste.",
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": "beschrijving",
           "sh:path": "http://purl.org/dc/terms/description"
         },
         {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:description": "Officiële naam van de criteriumvereiste.",
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": "naam",
           "sh:path": "http://purl.org/dc/terms/title"
         }
@@ -62,6 +83,7 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:description": "Beschrijving van het bewijs.",
           "sh:maxCount": "1",
           "sh:name": "beschrijving",
@@ -74,6 +96,7 @@
           "sh:path": "http://xmlns.com/foaf/0.1/page"
         },
         {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:description": "Officiële naam van het bewijs.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -152,7 +175,7 @@
           "sh:path": "http://data.europa.eu/m8g/hasContactPoint"
         },
         {
-          "sh:class": "http://fixme.com#Identificator",
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
           "sh:description": "Identificator van het object.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -168,6 +191,7 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:class": "http://data.europa.eu/m8g/Cost",
           "sh:description": "Kostprijs verbonden aan het gebruik van de publieke dienstverlening.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -196,6 +220,7 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:description": "Titel waarmee iemand wordt aangescrheven of aangesproken of waarmee naar iemand wordt verwezen.",
           "sh:maxCount": "1",
           "sh:name": "aanschrijfvorm",
@@ -247,6 +272,13 @@
       "sh:targetClass": "http://schema.org/ContactPoint"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#TaalStringShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#BewijstypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -275,6 +307,13 @@
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#IdentificatorShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/ns/adms#Identifier"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#AdresvoorstellingShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -287,6 +326,7 @@
           "sh:path": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer"
         },
         {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:description": "Gemeentenaam vh adres.",
           "sh:maxCount": "1",
           "sh:name": "gemeentenaam",
@@ -300,6 +340,7 @@
           "sh:path": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer"
         },
         {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:description": "Land waarin het adres gelegen is.",
           "sh:maxCount": "1",
           "sh:name": "land",
@@ -313,6 +354,7 @@
           "sh:path": "http://www.w3.org/ns/locn#postCode"
         },
         {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:description": "Straatnaam vh adres.",
           "sh:maxCount": "1",
           "sh:name": "straatnaam",
@@ -342,6 +384,7 @@
           "sh:path": "http://www.w3.org/ns/org#hasSite"
         },
         {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:description": "Naam waarmee de organisatie bij voorkeur wordt aangeduid.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -356,7 +399,7 @@
           "sh:path": "https://data.vlaanderen.be/ns/organisatie#rechtsvorm"
         },
         {
-          "sh:class": "http://fixme.com#Identificator",
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
           "sh:description": "Identificator dat de organisatie verkreeg bij registratie.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -489,7 +532,7 @@
           "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftLid"
         },
         {
-          "sh:class": "http://fixme.com#Identificator",
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
           "sh:description": "Identificator van het object.",
           "sh:maxCount": "1",
           "sh:minCount": "1",

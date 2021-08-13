@@ -12,8 +12,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/tree/084196fb391a928840261affc18e306be53f37b6",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/blob/084196fb391a928840261affc18e306be53f37b6/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/tree/3e0bac1df066ba0dc3c2cbba594796a115d9e8a0",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/blob/3e0bac1df066ba0dc3c2cbba594796a115d9e8a0/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/standaard-in-ontwikkeling/vocabularium-en-applicatieprofielen-feitelijke-verenigingen.html",
     "usesVocs": [],
@@ -175,13 +175,13 @@
           "range": [
             {
               "range_label": "Identificator",
-              "range_uri": "http://fixme.com#Identificator"
+              "range_uri": "http://www.w3.org/ns/adms#Identifier"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://fixme.com#Identificator",
-              "range_puri": "http://fixme.com#Identificator",
+              "range_uri": "#Identificator",
+              "range_puri": "http://www.w3.org/ns/adms#Identifier",
               "range_label": {
                 "nl": "Identificator"
               }
@@ -256,8 +256,21 @@
               "EA-Name": "PubliekeDienstverlening"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Kost",
+              "range_uri": "http://data.europa.eu/m8g/Cost"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Kost",
+              "range_puri": "http://data.europa.eu/m8g/Cost",
+              "range_label": {
+                "nl": "Kost"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         },
@@ -320,9 +333,9 @@
         {
           "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
           "name": {
-            "nl": "^voorkeursnaam"
+            "nl": "voorkeursnaam"
           },
-          "sort_nl": "^voorkeursnaam",
+          "sort_nl": "voorkeursnaam",
           "description": {
             "nl": "Naam waarmee de organisatie bij voorkeur wordt aangeduid."
           },
@@ -333,8 +346,21 @@
               "EA-Name": "GeregistreerdeOrganisatie"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TaalString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         },
@@ -427,13 +453,13 @@
           "range": [
             {
               "range_label": "Identificator",
-              "range_uri": "http://fixme.com#Identificator"
+              "range_uri": "http://www.w3.org/ns/adms#Identifier"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://fixme.com#Identificator",
-              "range_puri": "http://fixme.com#Identificator",
+              "range_uri": "#Identificator",
+              "range_puri": "http://www.w3.org/ns/adms#Identifier",
               "range_label": {
                 "nl": "Identificator"
               }
@@ -885,13 +911,13 @@
           "range": [
             {
               "range_label": "Identificator",
-              "range_uri": "http://fixme.com#Identificator"
+              "range_uri": "http://www.w3.org/ns/adms#Identifier"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://fixme.com#Identificator",
-              "range_puri": "http://fixme.com#Identificator",
+              "range_uri": "#Identificator",
+              "range_puri": "http://www.w3.org/ns/adms#Identifier",
               "range_label": {
                 "nl": "Identificator"
               }
@@ -1369,6 +1395,88 @@
   ],
   "datatypes": [
     {
+      "uri": "http://data.europa.eu/m8g/Cost",
+      "name": {
+        "nl": "Kost"
+      },
+      "sort_nl": "Kost",
+      "description": {
+        "nl": "Deel vd kost verbonden aan de uitvoering van de dienstverlening te betalen door de gebruiker.\r\n"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://data.europa.eu/m8g/value",
+          "name": {
+            "nl": "waarde"
+          },
+          "sort_nl": "waarde",
+          "description": {
+            "nl": "Omvang van de kost, uitgedrukt in de opgegeven munteenheid."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://data.europa.eu/m8g/Cost",
+              "EA-Name": "Kost"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Double",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#double"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#double",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#double",
+              "range_label": {
+                "nl": "Double"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": {
+            "nl": "beschrijving"
+          },
+          "sort_nl": "beschrijving",
+          "description": {
+            "nl": "Beschrijving van de kost."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://data.europa.eu/m8g/Cost",
+              "EA-Name": "Kost"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
       "uri": "http://data.europa.eu/m8g/CriterionRequirement",
       "name": {
         "nl": "CriteriumVereiste"
@@ -1413,7 +1521,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -1432,9 +1540,22 @@
               "EA-Name": "CriteriumVereiste"
             }
           ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TaalString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -1467,8 +1588,21 @@
               "EA-Name": "Bewijs"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TaalString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
@@ -1509,8 +1643,21 @@
               "EA-Name": "Bewijs"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TaalString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         },
@@ -1802,8 +1949,21 @@
               "EA-Name": "Contactinfo"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TaalString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
@@ -1912,6 +2072,36 @@
       ]
     },
     {
+      "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+      "name": {
+        "nl": "TaalString"
+      },
+      "sort_nl": "TaalString",
+      "description": {
+        "nl": "Combinatie van een string en de taal waarin de inhoud ervan is gesteld.\r\n"
+      },
+      "usage": {
+        "nl": "Bvb 'Rue Mercator' als string en 'fr' als taal."
+      },
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "http://www.w3.org/ns/adms#Identifier",
+      "name": {
+        "nl": "Identificator"
+      },
+      "sort_nl": "Identificator",
+      "description": {
+        "nl": "Informatie gebruikt om een object uniek te identificeren."
+      },
+      "usage": {
+        "nl": "Uitgangspunt hier is dat deze string door een organisatie wordt toegekend en dat dit gebeurt volgens een welbepaald systeem."
+      },
+      "parents": [],
+      "properties": []
+    },
+    {
       "uri": "http://www.w3.org/ns/locn#Address",
       "name": {
         "nl": "Adresvoorstelling"
@@ -1973,8 +2163,21 @@
               "EA-Name": "Adresvoorstelling"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TaalString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
@@ -2062,8 +2265,21 @@
               "EA-Name": "Adresvoorstelling"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TaalString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
@@ -2083,8 +2299,21 @@
               "EA-Name": "Adresvoorstelling"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TaalString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         }
