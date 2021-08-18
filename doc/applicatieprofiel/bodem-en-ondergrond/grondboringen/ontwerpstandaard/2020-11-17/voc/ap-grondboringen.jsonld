@@ -47,7 +47,7 @@
   "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
   "namespace": null,
   "navigation": {},
-  "publication-date": "2021-02-22",
+  "publication-date": "2021-08-01",
   "publication-state": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
   "title": "Grondboringen (Applicatieprofiel)",
   "dcterms:license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
@@ -57,18 +57,6 @@
     "foaf:name": "Data Vlaanderen"
   },
   "classes": [
-    {
-      "@id": "https://data.vlaanderen.be/ns/grondboringen#Analysemethodeterm",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "description": {
-        "nl": "TODO"
-      },
-      "name": {
-        "nl": "Analysemethodeterm"
-      },
-      "parents": [],
-      "usage": {}
-    },
     {
       "@id": "https://data.vlaanderen.be/ns/grondboringen#Bekisting",
       "@type": "http://www.w3.org/2002/07/owl#Class",
@@ -99,6 +87,39 @@
       ],
       "usage": {
         "nl": "Specialisatie van een CurveWaardepaar, dit is een Curve en de waarde die eraan is toegekend. De waarde is hier de beschrijving van de Bekisting van een Grondboring, terwijl de Curve aangeeft op welke dieptes deze beschrijving geldig is. De Curve van de Grondboring wordt hierbij als referentiesysteem gebruikt. OPGELET: Als de Curve van de Grondboring niet recht in de grond werd geboord zijn de opgegeven dieptes eerder afstanden langs deze Curve."
+      }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#Boor",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "TODO"
+      },
+      "name": {
+        "nl": "Boor"
+      },
+      "parents": [
+        "http://fixme.com#Bemonsteraar",
+        "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#DiscreetCurvebereik"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#Boorgat",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Smalle schacht geboord in de grond."
+      },
+      "name": {
+        "nl": "Boorgat"
+      },
+      "parents": [
+        "http://def.isotc211.org/iso19156/2011/SamplingCurve#SF_SamplingCurve",
+        "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
+        "https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_RuimtelijkBemonsteringsobject"
+      ],
+      "usage": {
+        "nl": "Onder \"grond\" verstaan we hier het deel van de aardkorst onder het aardoppervlak. Het slaat zowel op de bodem als op wat zich daaronder bevindt (en hier ondergrond wordt genoemd)."
       }
     },
     {
@@ -157,7 +178,7 @@
         "nl": "Beschrijving van de Boormethode voor een bepaald diepte-interval."
       },
       "name": {
-        "nl": "Boormethodeinterval"
+        "nl": "BoormethodeInterval"
       },
       "parents": [
         "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#CurveWaardepaar"
@@ -173,24 +194,32 @@
         "nl": "TODO"
       },
       "name": {
-        "nl": "Boormethodetype"
+        "nl": "BoormethodeType"
       },
       "parents": [],
       "usage": {}
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/grondboringen#Boringdetails",
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#Boortype",
       "@type": "http://www.w3.org/2002/07/owl#Class",
-      "description": {
-        "nl": "Kenmerken van de Grondboring in zijn geheel."
-      },
+      "description": {},
       "name": {
-        "nl": "Boringdetails"
+        "nl": "Boortype"
       },
       "parents": [],
-      "usage": {
-        "nl": "Bv de datum waarop de Boring is uitgevoerd of de bij het boren vastgestelde grondwaterstand."
-      }
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#BoortypeInterval",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "TODO"
+      },
+      "name": {
+        "nl": "BoortypeInterval"
+      },
+      "parents": [],
+      "usage": {}
     },
     {
       "@id": "https://data.vlaanderen.be/ns/grondboringen#Boringdoeltype",
@@ -199,10 +228,27 @@
         "nl": "TODO"
       },
       "name": {
-        "nl": "Boringdoel"
+        "nl": "Boringdoeltype"
       },
       "parents": [],
       "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#Grondboring",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Smalle schacht geboord in de grond."
+      },
+      "name": {
+        "nl": "Grondboring"
+      },
+      "parents": [
+        "http://fixme.com#Bemonstering",
+        "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Boring"
+      ],
+      "usage": {
+        "nl": "Onder \"grond\" verstaan we hier het deel van de aardkorst onder het aardoppervlak. Het slaat zowel op de bodem als op wat zich daaronder bevindt (en hier ondergrond wordt genoemd)."
+      }
     },
     {
       "@id": "https://data.vlaanderen.be/ns/grondboringen#Grondmonster",
@@ -234,13 +280,37 @@
       "usage": {}
     },
     {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#Grondobject",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "TODO"
+      },
+      "name": {
+        "nl": "Grondobject"
+      },
+      "parents": [
+        "http://fixme.com#Domeinobject"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#Grondobjecttype",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {},
+      "name": {
+        "nl": "Grondobjecttype"
+      },
+      "parents": [],
+      "usage": {}
+    },
+    {
       "@id": "https://data.vlaanderen.be/ns/grondboringen#WettelijkKaderBoring",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
         "nl": "Beschrijft in welke mate voldaan is aan de wetgeving mbt Boringen."
       },
       "name": {
-        "nl": "WettelijkKader"
+        "nl": "WettelijkKaderBoring"
       },
       "parents": [
         "https://data.vlaanderen.be/ns/generiek#WettelijkKader"
@@ -280,10 +350,122 @@
       ],
       "generalization": [],
       "name": {
-        "nl": "bemonsteringstijdstip"
+        "nl": "^bemonsteringstijdstip"
       },
       "range": [
         "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Period"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#^diepte",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/grondboringen#Boorgat"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "diepte"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Diepte"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#^gehostPlatform",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/grondboringen#Boorgat"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "^gehostPlatform"
+      },
+      "range": [
+        "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.OM_Process"
+      ],
+      "usage": {
+        "nl": "TODO"
+      }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#^geometrie",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Curve die de vorm van de Grondboring beschrijft."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/grondboringen#Boorgat"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "^geometrie"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/generiek#Curve"
+      ],
+      "usage": {
+        "nl": "Loopt van de boorkraag (die zowel boven, op als onder het maaiveld - of ander referentievlak - kan liggen) tot het verste punt van de boring. De Curve kan gespecialiseerd worden tot Lijnstring, bv als de vorm door een set van lijnstukken of (typisch) door één lijnstuk wordt beschreven. Coördinaten worden minimaal in 2D maar bij voorkeur in 3D gegeven."
+      }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#^geometrie",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/grondboringen#Bekistinginterval"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "geometrie"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/generiek#Curve"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#^geometrie",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/grondboringen#Boorgatdiameterinterval"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "geometrie"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/generiek#Curve"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#^geometrie",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/grondboringen#BoormethodeInterval"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "geometrie"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/generiek#Curve"
       ],
       "usage": {}
     },
@@ -328,6 +510,42 @@
       }
     },
     {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#^ligging",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/grondboringen#Boorgat"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "ligging"
+      },
+      "range": [
+        "http://www.w3.org/ns/prov#Location"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#^maaiveld",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/grondboringen#Boorgat"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "maaiveld"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Maaiveld"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://data.vlaanderen.be/ns/grondboringen#^materiaalklasse",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
@@ -338,7 +556,7 @@
       ],
       "generalization": [],
       "name": {
-        "nl": "materiaalklasse"
+        "nl": "^materiaalklasse"
       },
       "range": [
         "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Materiaalklasse"
@@ -346,6 +564,64 @@
       "usage": {
         "nl": "Bv bodem, gesteente"
       }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#^positioneleNauwkeurigheid",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/grondboringen#Boorgat"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "^positioneleNauwkeurigheid"
+      },
+      "range": [
+        "http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_PositionalAccuracy"
+      ],
+      "usage": {
+        "nl": "TODO"
+      }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#aangenomenGrondwaterstand",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "De Grondwaterstand in het boorgat, al dan niet gebaseerd op meerdere Observaties."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/grondboringen#Boorgat"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "aangenomenGrondwaterstand"
+      },
+      "range": [
+        "https://schema.org/QuantitativeValue"
+      ],
+      "usage": {
+        "nl": "Die Observaties kunnen ook apart beschreven worden via de associatie grondwaterstand van de Boringdetails."
+      }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#bekisting",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Verwijzing naar de beschrijving van de Bekisting van het boorgat."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/grondboringen#Boorgat"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "bekisting"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/grondboringen#Bekisting"
+      ],
+      "usage": {}
     },
     {
       "@id": "https://data.vlaanderen.be/ns/grondboringen#bekisting",
@@ -366,98 +642,78 @@
       "usage": {}
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/grondboringen#boorgatmetingUitgevoerd",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#boorder",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
-        "nl": "Geeft aan of al dan niet Boorgatmetingen werden uitgevoerd."
+        "nl": "Diegene die de Boring heeft uitgevoerd."
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/grondboringen#Boringdetails"
+        "https://data.vlaanderen.be/ns/grondboringen#Grondboring"
       ],
       "generalization": [],
       "name": {
-        "nl": "boorgatmetingUitgevoerd"
+        "nl": "boorder"
       },
       "range": [
-        "http://www.w3.org/2001/XMLSchema#boolean"
+        "http://def.isotc211.org/iso19115/2006/CitationAndResponsiblePartyInformation#CI_ResponsibleParty"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#boordiameter",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Verwijzing naar de beschrijving van de Boordiameter van het boorgat."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/grondboringen#Boorgat"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "boordiameter"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/grondboringen#Boorgatdiameter"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#boormeester",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Opzichter bij de Boring."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/grondboringen#Grondboring"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "boormeester"
+      },
+      "range": [
+        "http://def.isotc211.org/iso19115/2006/CitationAndResponsiblePartyInformation#CI_ResponsibleParty"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#boringLengte",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Lengte van de Grondboring."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/grondboringen#Boorgat"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "boringLengte"
+      },
+      "range": [
+        "https://schema.org/QuantitativeValue"
       ],
       "usage": {
-        "nl": "Deze Boorgatmetingen worden eventueel apart uitgewisseld."
+        "nl": "Zoals verstrekt door de dataleverancier. Kan bv afgeleid zijn uit de geometrie van de Grondboring maar ook uit bv het resultaat van de LithologischeInterpretatie of de lengte is gemeten op het terrein."
       }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/grondboringen#boorstaalBewaard",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "description": {
-        "nl": "Geeft aan of het boorstaal al dan niet werd bewaard."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/grondboringen#Boringdetails"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "boorstaalBewaard"
-      },
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#boolean"
-      ],
-      "usage": {
-        "nl": "Werd het boorstaal bewaard dan kan men dit uitwisselen als Grondmonster."
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/grondboringen#boringmatariaalbewaarder",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Diegene die het materiaal dat werd opgeboord bewaart."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/grondboringen#Boringdetails"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "boringmatariaalbewaarder"
-      },
-      "range": [
-        "http://def.isotc211.org/iso19115/2006/CitationAndResponsiblePartyInformation#CI_ResponsibleParty"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/grondboringen#databewaarder",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Diegene die de gegevens over de Grondboring bewaart."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/grondboringen#Boringdetails"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "databewaarder"
-      },
-      "range": [
-        "http://def.isotc211.org/iso19115/2006/CitationAndResponsiblePartyInformation#CI_ResponsibleParty"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/grondboringen#dataleverancier",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Diegene die de gegevens over de Grondboring heeft aangeleverd."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/grondboringen#Boringdetails"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "dataleverancier"
-      },
-      "range": [
-        "http://def.isotc211.org/iso19115/2006/CitationAndResponsiblePartyInformation#CI_ResponsibleParty"
-      ],
-      "usage": {}
     },
     {
       "@id": "https://data.vlaanderen.be/ns/grondboringen#diameter",
@@ -470,7 +726,7 @@
       ],
       "generalization": [],
       "name": {
-        "nl": "boorgatdiameter"
+        "nl": "diameter"
       },
       "range": [
         "https://data.vlaanderen.be/ns/grondboringen#Boorgatdiameterinterval"
@@ -496,46 +752,6 @@
       "usage": {}
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/grondboringen#diepteTot",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "TODO"
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/grondboringen#Boringdetails"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "diepteTot"
-      },
-      "range": [
-        "https://schema.org/QuantitativeValue"
-      ],
-      "usage": {
-        "nl": "TODO"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/grondboringen#diepteVan",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "TODO"
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/grondboringen#Boringdetails"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "diepteVan"
-      },
-      "range": [
-        "https://schema.org/QuantitativeValue"
-      ],
-      "usage": {
-        "nl": "TODO"
-      }
-    },
-    {
       "@id": "https://data.vlaanderen.be/ns/grondboringen#dikte",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "description": {
@@ -554,24 +770,42 @@
       "usage": {}
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/grondboringen#helling",
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#doel",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
-        "nl": "Helling van de Boring."
+        "nl": "Reden waarom de Grondboring werd uitgevoerd."
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/grondboringen#Boringdetails"
+        "https://data.vlaanderen.be/ns/grondboringen#Grondboring"
       ],
       "generalization": [],
       "name": {
-        "nl": "helling"
+        "nl": "doel"
       },
       "range": [
-        "https://schema.org/QuantitativeValue"
+        "https://data.vlaanderen.be/ns/grondboringen#Boringdoeltype"
       ],
       "usage": {
-        "nl": "Evt ook af te leiden uit de geometrie van de Boring."
+        "nl": "Vb exploitatie, onderzoek, bemaling etc."
       }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#grondboring",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Verwijzing naar de Grondboring waarmee het grondmonster is bekomen."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/grondboringen#Grondmonster"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "grondboring"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/grondboringen#Boorgat"
+      ],
+      "usage": {}
     },
     {
       "@id": "https://data.vlaanderen.be/ns/grondboringen#inclinatietype",
@@ -592,6 +826,24 @@
       "usage": {
         "nl": "Verticaal, schuin, horizontaal..."
       }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#isResultaatVan",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/grondboringen#Boorgat"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "isResultaatVan"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/grondboringen#Grondboring"
+      ],
+      "usage": {}
     },
     {
       "@id": "https://data.vlaanderen.be/ns/grondboringen#materiaal",
@@ -648,6 +900,24 @@
       "usage": {}
     },
     {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#methode",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Methode van de Boring."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/grondboringen#BoortypeInterval"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "methode"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/grondboringen#Boortype"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://data.vlaanderen.be/ns/grondboringen#monstertype",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
@@ -668,24 +938,22 @@
       }
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/grondboringen#richting",
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#resultaat",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
-        "nl": "Richting van de Boring."
+        "nl": "TODO"
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/grondboringen#Boringdetails"
+        "https://data.vlaanderen.be/ns/grondboringen#Grondboring"
       ],
       "generalization": [],
       "name": {
-        "nl": "richting"
+        "nl": "resultaat"
       },
       "range": [
-        "https://schema.org/QuantitativeValue"
+        "https://data.vlaanderen.be/ns/grondboringen#Boorgat"
       ],
-      "usage": {
-        "nl": "Evt ook af te leiden uit de geometrie van de Boring."
-      }
+      "usage": {}
     },
     {
       "@id": "https://data.vlaanderen.be/ns/grondboringen#startpunt",
@@ -706,6 +974,60 @@
       "usage": {
         "nl": "Doorgaans het maaiveld maar andere mogelijkheden zijn bv bouwput, boortafel, dijk, bestaand boorgat"
       }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#type",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/grondboringen#Boor"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "type"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/grondboringen#BoortypeInterval"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#type",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/grondboringen#Grondobject"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "type"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/grondboringen#Grondobjecttype"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/grondboringen#wettelijkKader",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/grondboringen#Grondboring"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "wettelijkKader"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/grondboringen#WettelijkKaderBoring"
+      ],
+      "usage": {}
     },
     {
       "@id": "https://data.vlaanderen.be/ns/grondboringen#wettelijkKaderBoorder",
