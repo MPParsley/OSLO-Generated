@@ -12,20 +12,20 @@ dc:Agent a rdfs:Class;
   rdfs:label "Agent"@nl .
 
 skos:Concept a rdfs:Class;
-  rdfs:label "Walsmethode"@nl,
+  rdfs:label "Provincie"@nl,
     "Duurzaamheidsklasse van hout"@nl,
+    "Betonsterkteklasse"@nl,
+    "Betonomgevingsklasse"@nl,
+    "Kwaliteitsklasse van hout"@nl,
+    "Gebruiksdomein"@nl,
+    "Walsmethode"@nl,
     "Mimetype"@nl,
     "Gemeente"@nl,
-    "Gebruiksdomein"@nl,
-    "Kwaliteitsklasse van hout"@nl,
-    "AIM toestand"@nl,
-    "Betonomgevingsklasse"@nl,
     "Constructiestaalsoort"@nl,
-    "Betonsterkteklasse"@nl,
-    "Provincie"@nl,
-    "Schermelement type"@nl,
     "Sterkteklasse van hout"@nl,
     "Betonmilieuklasse"@nl,
+    "AIM toestand"@nl,
+    "Schermelement type"@nl,
     "Opstelling"@nl .
 
 schemas:ContactPoint a rdfs:Class;
@@ -1486,8 +1486,8 @@ schemas:opens a rdf:Property;
   rdfs:label "Derdenobject"@nl;
   rdfs:comment "Object niet in eigendom van de assetbeheerder dat zonder verdere typering bewaard wordt om relaties met getypeerde assets te kunnen beheren."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand>,
-    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus> .
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus>,
+    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#RelatieObject> a owl:Class;
   rdfs:label "Relatieobject"@nl;
@@ -1509,8 +1509,8 @@ schemas:opens a rdf:Property;
   rdfs:label "AIM object"@nl;
   rdfs:comment "Abstracte als de basisklasse voor alle uniek geïdentificeerde OTL objecten met de basiseigenschappen die elk OTL object minstens heeft."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand>,
-    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus> .
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus>,
+    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAdres> a owl:Class;
   rdfs:label "Adres"@nl;
@@ -1543,8 +1543,8 @@ schemas:opens a rdf:Property;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> a owl:Ontology;
-  rdfs:label "wegenenverkeer-implementatieelement"@en,
-    "wegenenverkeer-implementatieelement"@nl;
+  rdfs:label "wegenenverkeer-implementatieelement"@nl,
+    "wegenenverkeer-implementatieelement"@en;
   dc:issued "TODO";
   dc:license <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>,
     "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0";
@@ -1553,22 +1553,22 @@ schemas:opens a rdf:Property;
     foaf:mbox <mailto:oslo@kb.vlaanderen.be>;
     foaf:name "Data Vlaanderen"
   ];
-  rdfs:seeAlso foaf:page,
-    schema:email,
+  rdfs:seeAlso schemas:OpeningHoursSpecification,
+    schema:telephone,
     dc:Agent.naam,
-    schemas:DayOfWeek,
+    schema:email,
+    dc:Agent.agentId,
+    schemas:ContactPoint,
     schemas:dayOfWeek,
     schemas:closes,
-    schema:hoursAvailable,
-    dc:Agent,
-    foaf:name,
     <http://www.w3.org/ns/locn#address>,
-    schema:telephone,
+    foaf:name,
     skos:Concept,
-    schemas:ContactPoint,
+    schemas:ContactPoint.opmerkingen,
     schema:faxNumber,
-    dc:Agent.contactinfo,
-    schemas:OpeningHoursSpecification,
-    dc:Agent.agentId,
+    dc:Agent,
+    schemas:DayOfWeek,
     schemas:opens,
-    schemas:ContactPoint.opmerkingen .
+    foaf:page,
+    dc:Agent.contactinfo,
+    schema:hoursAvailable .
