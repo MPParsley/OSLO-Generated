@@ -4,7 +4,7 @@
       "nl": "Observaties en Metingen (Applicatieprofiel)"
     },
     "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen",
-    "issued": "2021-02-17",
+    "issued": "2021-08-01",
     "baseURI": "https://data.vlaanderen.be/ns/observaties-en-metingen#",
     "filename": "ap-observaties-en-metingen",
     "navigation": {
@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/tree/4f977c9eb9a812ce28a84bc9f54a780132cd0581",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/blob/4f977c9eb9a812ce28a84bc9f54a780132cd0581/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/tree/6331fabfc95a0cb9ee220ccf7df41f1089d401f0",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/blob/6331fabfc95a0cb9ee220ccf7df41f1089d401f0/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-bodemEnOndergrond/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/standaarden-in-ontwikkeling/bodem-en-ondergrond/index.html",
     "usesVocs": [],
@@ -61,7 +61,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "https://schema.org/QuantitativeValue",
+              "range_uri": "#KwantitatieveWaarde",
               "range_puri": "https://schema.org/QuantitativeValue",
               "range_label": {
                 "nl": "KwantitatieveWaarde"
@@ -98,7 +98,7 @@
         "nl": "Gegevens die informatie over gegevens bevatten."
       },
       "usage": {
-        "nl": "Observaties kunnen beschouwd worden als gegevens en dus zijn data over Observaties wel degelijk metadata. Omdat al heel wat metagegevens elders in het model kunnen worden meegegeven beperkt deze klasse zich tot beschrijvende metadata, ttz informatie zoals titel, samenvatting, auteur en sleutelwoorden. Dergelijke metadata is in hoofdzaak bedoeld voor identificatie en datacatalogen."
+        "nl": "Observaties kunnen beschouwd worden als gegevens en dus zijn data over Observaties wel degelijk metadata. Omdat al heel wat metagegevens elders in het model kunnen worden meegegeven beperkt deze klasse zich tot beschrijvende metadata, ttz informatie zoals titel, samenvatting, auteur en sleutelwoorden. Dergelijke metadata is in hoofdzaak bedoeld voor identificatie en datacatalogen. OPMERKING: Een meer uitgebreide beschrijving is te vinden in het AP OSLO-SensorenEnBemonstering."
       },
       "parents": [],
       "properties": []
@@ -331,7 +331,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#DiscreetBereik",
+              "range_uri": "#DiscreetBereik",
               "range_puri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#DiscreetBereik",
               "range_label": {
                 "nl": "DiscreetBereik"
@@ -356,7 +356,44 @@
         "nl": "In de context van Observaties en Metingen is dit het geobserveerdObject waarvan een kenmerk wordt geobserveerd. Het geobserveerdObject kan ook een Object zijn dat de werkelijkheid bemonstert (subklasse Bemonsteringsobject). OPGELET: deze klasse is abstract, ze moet gespecialiseerd worden in functie van het applicatiedomein."
       },
       "parents": [],
-      "properties": []
+      "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#waardeverschaffer",
+          "name": {
+            "nl": "waardeverschaffer"
+          },
+          "sort_nl": "waardeverschaffer",
+          "description": {
+            "nl": "Observaties die een waarde geven aan Kenmerken van het Object;"
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
+              "EA-Name": "Object"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Observatie",
+              "range_uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Observatie",
+              "range_puri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "range_label": {
+                "nl": "Observatie"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
     },
     {
       "uri": "http://def.isotc211.org/iso19156/2011/GeometryObservation#OM_GeometryObservation",
@@ -493,9 +530,48 @@
       "parents": [],
       "properties": [
         {
+          "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#identificator",
+          "name": {
+            "nl": "identificator"
+          },
+          "sort_nl": "identificator",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "EA-Name": "Observatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Identificator",
+              "range_uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Identificator",
+              "range_puri": "http://www.w3.org/ns/adms#Identifier",
+              "range_label": {
+                "nl": "Identificator"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#opdracht",
-          "name": {},
-          "description": {},
+          "name": {
+            "nl": "opdracht"
+          },
+          "sort_nl": "opdracht",
+          "description": {
+            "nl": "TODO"
+          },
           "usage": {},
           "domain": [
             {
@@ -523,8 +599,13 @@
         },
         {
           "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#type",
-          "name": {},
-          "description": {},
+          "name": {
+            "nl": "type"
+          },
+          "sort_nl": "type",
+          "description": {
+            "nl": "TODO"
+          },
           "usage": {},
           "domain": [
             {
@@ -552,8 +633,13 @@
         },
         {
           "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#uitgevoerdDoor",
-          "name": {},
-          "description": {},
+          "name": {
+            "nl": "uitgevoerdDoor"
+          },
+          "sort_nl": "uitgevoerdDoor",
+          "description": {
+            "nl": "TODO"
+          },
           "usage": {},
           "domain": [
             {
@@ -990,7 +1076,44 @@
         "nl": "Dat kan dmv een instrument of een sensor zijn; maar het kan ook een menselijke observator zijn of een simulatie of een verwerking of algoritme toegepast op meer primitieve resultaten. Het Proces vormt samen met het Bemonsteringsobject dat is gebruikt het zgn observatieprotocol. OPGELET: deze klasse is abstract, ze moet gespecialiseerd worden in functie van het applicatiedomein."
       },
       "parents": [],
-      "properties": []
+      "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#gegenereerdeObservatie",
+          "name": {
+            "nl": "gegenereerdeObservatie"
+          },
+          "sort_nl": "gegenereerdeObservatie",
+          "description": {
+            "nl": "Verwijzing naar de verkregen Observatie."
+          },
+          "usage": {
+            "nl": "Het Proces dat gebruikt werd om het resultaat van de Observatie te verkrijgen levert mogelijk ook resultaten voor andere Observaties."
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.OM_Process",
+              "EA-Name": "Proces"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Observatie",
+              "range_uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Observatie",
+              "range_puri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "range_label": {
+                "nl": "Observatie"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
     },
     {
       "uri": "http://def.isotc211.org/iso19156/2011/Observation#ObservationContext",
@@ -1164,7 +1287,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#DiscreetPuntbereik",
+              "range_uri": "#DiscreetPuntbereik",
               "range_puri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#DiscreetPuntbereik",
               "range_label": {
                 "nl": "DiscreetPuntbereik"
@@ -1258,6 +1381,76 @@
         }
       ],
       "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#identificator",
+          "name": {
+            "nl": "identificator"
+          },
+          "sort_nl": "identificator",
+          "description": {
+            "nl": "Verwijzing naar de informatie die het Bemonsteringsobject uniek identificeert."
+          },
+          "usage": {
+            "nl": "Bv het uniek nummer dat aan een Monster wordt toegekend of het numer van een meetstation."
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
+              "EA-Name": "Bemonsteringsobject"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Identificator",
+              "range_uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Identificator",
+              "range_puri": "http://www.w3.org/ns/adms#Identifier",
+              "range_label": {
+                "nl": "Identificator"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#type",
+          "name": {
+            "nl": "type"
+          },
+          "sort_nl": "type",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
+              "EA-Name": "Bemonsteringsobject"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Bemonsteringsobjecttype",
+              "range_uri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Bemonsteringsobjecttype"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Bemonsteringsobjecttype",
+              "range_puri": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Bemonsteringsobjecttype",
+              "range_label": {
+                "nl": "Bemonsteringsobjecttype"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
         {
           "uri": "http://def.isotc211.org/iso19156/2011/Observation#ObservationContext.relatedObservation",
           "name": {
@@ -1821,9 +2014,9 @@
         {
           "uri": "http://def.isotc211.org/iso19156/2011/SpatialSamplingFeature#SF_SpatialSamplingFeature.hostedProcedure",
           "name": {
-            "nl": "gehost platform"
+            "nl": "gehostPlatform"
           },
-          "sort_nl": "gehost platform",
+          "sort_nl": "gehostPlatform",
           "description": {
             "nl": "TODO"
           },
@@ -1931,9 +2124,9 @@
     {
       "uri": "http://def.isotc211.org/iso19156/2011/Specimen#PreparationStep",
       "name": {
-        "nl": "VoorbereidendeStap"
+        "nl": "Monstervoorbereiding"
       },
-      "sort_nl": "VoorbereidendeStap",
+      "sort_nl": "Monstervoorbereiding",
       "description": {
         "nl": "TODO"
       },
@@ -2021,6 +2214,78 @@
           ],
           "cardinality": "1",
           "codelist_uri": ""
+        },
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/Specimen#PreparationStep.processOperator",
+          "name": {
+            "nl": "procesoperator"
+          },
+          "sort_nl": "procesoperator",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Specimen#PreparationStep",
+              "EA-Name": "Monstervoorbereiding"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "CI_ResponsibleParty",
+              "range_uri": "http://def.isotc211.org/iso19115/2006/CitationAndResponsiblePartyInformation#CI_ResponsibleParty"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#CI_ResponsibleParty",
+              "range_puri": "http://def.isotc211.org/iso19115/2006/CitationAndResponsiblePartyInformation#CI_ResponsibleParty",
+              "range_label": {
+                "nl": "CI_ResponsibleParty"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/Specimen#PreparationStep.time",
+          "name": {
+            "nl": "tijdstip"
+          },
+          "sort_nl": "tijdstip",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Specimen#PreparationStep",
+              "EA-Name": "Monstervoorbereiding"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TM_Object",
+              "range_uri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TM_Object",
+              "range_puri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
+              "range_label": {
+                "nl": "TM_Object"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
         }
       ]
     },
@@ -2062,6 +2327,42 @@
       ],
       "properties": [
         {
+          "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#bemonsteringsmethode",
+          "name": {
+            "nl": "bemonsteringsmethode"
+          },
+          "sort_nl": "bemonsteringsmethode",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Specimen",
+              "EA-Name": "Monster"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "BemonsteringsProces",
+              "range_uri": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Process"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#BemonsteringsProces",
+              "range_puri": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Process",
+              "range_label": {
+                "nl": "BemonsteringsProces"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://def.isotc211.org/iso19156/2011/Specimen#PreparationStep.processingDetails",
           "name": {
             "nl": "verwerkingsdetails"
@@ -2100,9 +2401,9 @@
         {
           "uri": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Specimen.currentLocation",
           "name": {
-            "nl": "huidige locatie"
+            "nl": "huidigeLocatie"
           },
-          "sort_nl": "huidige locatie",
+          "sort_nl": "huidigeLocatie",
           "description": {
             "nl": "TODO"
           },
@@ -2123,7 +2424,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/ns/prov#Location",
+              "range_uri": "#Locatie",
               "range_puri": "http://www.w3.org/ns/prov#Location",
               "range_label": {
                 "nl": "Locatie"
@@ -2316,6 +2617,21 @@
       ]
     },
     {
+      "uri": "http://def.isotc211.org/iso19156/2011/TemporalCoverage#CVT_DiscreteTimeInstantCoverage",
+      "name": {
+        "nl": "TemporeelMomentBereik"
+      },
+      "sort_nl": "TemporeelMomentBereik",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {
+        "nl": "TODO"
+      },
+      "parents": [],
+      "properties": []
+    },
+    {
       "uri": "http://def.isotc211.org/iso19156/2011/TemporalObservation#OM_TemporalObservation",
       "name": {
         "nl": "TemporeleObservatie"
@@ -2475,8 +2791,21 @@
               "EA-Name": "WaarheidsObservatie"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         }
@@ -2496,185 +2825,113 @@
       "properties": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Bereik",
+      "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#DiscreetBereik",
       "name": {
-        "nl": "Bereik"
+        "nl": "DiscreetBereik"
       },
-      "sort_nl": "Bereik",
+      "sort_nl": "DiscreetBereik",
       "description": {
         "nl": "TODO"
       },
       "usage": {},
-      "parents": [],
+      "parents": [
+        {
+          "name": "Bereik",
+          "label": "Bereik",
+          "package": "OSLO-RuimtelijkeBereiken",
+          "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Bereik",
+          "scoped_uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Bereik"
+        }
+      ],
       "properties": [
         {
-          "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#bereikElement",
+          "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#element",
           "name": {
-            "nl": "bereikElement"
+            "nl": "element"
           },
-          "sort_nl": "bereikElement",
+          "sort_nl": "element",
           "description": {
             "nl": "TODO"
           },
           "usage": {},
           "domain": [
             {
-              "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Bereik",
-              "EA-Name": "Bereik"
+              "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#DiscreetBereik",
+              "EA-Name": "DiscreetBereik"
             }
           ],
           "range": [
             {
-              "range_label": "Attribuutwaarden",
-              "range_uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Attribuutwaarden"
+              "range_label": "GeometrieWaardepaar",
+              "range_uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#GeometrieWaardepaar"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Attribuutwaarden",
-              "range_puri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Attribuutwaarden",
+              "range_uri": "#GeometrieWaardepaar",
+              "range_puri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#GeometrieWaardepaar",
               "range_label": {
-                "nl": "Attribuutwaarden"
+                "nl": "GeometrieWaardepaar"
               }
             }
           ],
           "cardinality": "0..*",
           "codelist_uri": ""
-        },
+        }
+      ]
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#DiscreetPuntbereik",
+      "name": {
+        "nl": "DiscreetPuntbereik"
+      },
+      "sort_nl": "DiscreetPuntbereik",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {},
+      "parents": [
         {
-          "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#domeinElement",
+          "name": "DiscreetBereik",
+          "label": "DiscreetBereik",
+          "package": "OSLO-RuimtelijkeBereiken",
+          "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#DiscreetBereik",
+          "scoped_uri": "#DiscreetBereik"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#element",
           "name": {
-            "nl": "domeinElement"
+            "nl": "element"
           },
-          "sort_nl": "domeinElement",
+          "sort_nl": "element",
           "description": {
             "nl": "TODO"
           },
           "usage": {},
           "domain": [
             {
-              "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Bereik",
-              "EA-Name": "Bereik"
+              "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#DiscreetPuntbereik",
+              "EA-Name": "DiscreetPuntbereik"
             }
           ],
           "range": [
             {
-              "range_label": "Domeinobject",
-              "range_uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Domeinobject"
+              "range_label": "PuntWaardepaar",
+              "range_uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#PuntWaardepaar"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Domeinobject",
-              "range_puri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Domeinobject",
+              "range_uri": "#PuntWaardepaar",
+              "range_puri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#PuntWaardepaar",
               "range_label": {
-                "nl": "Domeinobject"
+                "nl": "PuntWaardepaar"
               }
             }
           ],
-          "cardinality": "1..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#domeinOmvang",
-          "name": {
-            "nl": "domeinOmvang"
-          },
-          "sort_nl": "domeinOmvang",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Bereik",
-              "EA-Name": "Bereik"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Omvang",
-              "range_uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Omvang"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Omvang",
-              "range_puri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Omvang",
-              "range_label": {
-                "nl": "Omvang"
-              }
-            }
-          ],
-          "cardinality": "1..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#gemeenschappelijkPuntRegel",
-          "name": {
-            "nl": "gemeenschappelijkPuntRegel"
-          },
-          "sort_nl": "gemeenschappelijkPuntRegel",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Bereik",
-              "EA-Name": "Bereik"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "GemeenschappelijkPuntregel",
-              "range_uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#GemeenschappelijkPuntregel"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#GemeenschappelijkPuntregel",
-              "range_puri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#GemeenschappelijkPuntregel",
-              "range_label": {
-                "nl": "GemeenschappelijkPuntregel"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#typeBereik",
-          "name": {
-            "nl": "typeBereik"
-          },
-          "sort_nl": "typeBereik",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Bereik",
-              "EA-Name": "Bereik"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Recordtype",
-              "range_uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Recordtype"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Recordtype",
-              "range_puri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Recordtype",
-              "range_label": {
-                "nl": "Recordtype"
-              }
-            }
-          ],
-          "cardinality": "1",
+          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]
@@ -2796,9 +3053,87 @@
       "parents": []
     },
     {
+      "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#bemonsteringsmethode",
+      "name": {
+        "nl": "bemonsteringsmethode"
+      },
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {
+        "nl": "TODO"
+      },
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#gegenereerdeObservatie",
+      "name": {
+        "nl": "gegenereerdeObservatie"
+      },
+      "description": {
+        "nl": "Verwijzing naar de verkregen Observatie."
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {
+        "nl": "Het Proces dat gebruikt werd om het resultaat van de Observatie te verkrijgen levert mogelijk ook resultaten voor andere Observaties."
+      },
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#identificator",
+      "name": {
+        "nl": "identificator"
+      },
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#identificator",
+      "name": {
+        "nl": "identificator"
+      },
+      "description": {
+        "nl": "Verwijzing naar de informatie die het Bemonsteringsobject uniek identificeert."
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {
+        "nl": "Bv het uniek nummer dat aan een Monster wordt toegekend of het numer van een meetstation."
+      },
+      "parents": []
+    },
+    {
       "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#opdracht",
-      "name": {},
-      "description": {},
+      "name": {
+        "nl": "opdracht"
+      },
+      "description": {
+        "nl": "TODO"
+      },
       "domain": [
         null
       ],
@@ -2810,8 +3145,29 @@
     },
     {
       "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#type",
-      "name": {},
-      "description": {},
+      "name": {
+        "nl": "type"
+      },
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#type",
+      "name": {
+        "nl": "type"
+      },
+      "description": {
+        "nl": "TODO"
+      },
       "domain": [
         null
       ],
@@ -2823,8 +3179,12 @@
     },
     {
       "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#uitgevoerdDoor",
-      "name": {},
-      "description": {},
+      "name": {
+        "nl": "uitgevoerdDoor"
+      },
+      "description": {
+        "nl": "TODO"
+      },
       "domain": [
         null
       ],
@@ -2832,6 +3192,25 @@
         null
       ],
       "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#waardeverschaffer",
+      "name": {
+        "nl": "waardeverschaffer"
+      },
+      "description": {
+        "nl": "Observaties die een waarde geven aan Kenmerken van het Object;"
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {
+        "nl": "TODO"
+      },
       "parents": []
     }
   ],
@@ -2955,7 +3334,15 @@
       "usage": {
         "nl": "TODO"
       },
-      "parents": [],
+      "parents": [
+        {
+          "name": "Dekking",
+          "label": "Dekking",
+          "package": "DublinCore",
+          "uri": "http://fixme.com#Dekking",
+          "scoped_uri": "http://fixme.com#Dekking"
+        }
+      ],
       "properties": []
     },
     {
@@ -3107,21 +3494,6 @@
       ]
     },
     {
-      "uri": "http://def.isotc211.org/iso19156/2011/TemporalCoverage#CVT_DiscreteTimeInstantCoverage",
-      "name": {
-        "nl": "TemporeelMomentBereik"
-      },
-      "sort_nl": "TemporeelMomentBereik",
-      "description": {
-        "nl": "TODO"
-      },
-      "usage": {
-        "nl": "TODO"
-      },
-      "parents": [],
-      "properties": []
-    },
-    {
       "uri": "http://www.opengis.net/ont/sf#Point",
       "name": {
         "nl": "Punt"
@@ -3140,6 +3512,21 @@
           "scoped_uri": "#Geometrie"
         }
       ],
+      "properties": []
+    },
+    {
+      "uri": "http://www.w3.org/ns/adms#Identifier",
+      "name": {
+        "nl": "Identificator"
+      },
+      "sort_nl": "Identificator",
+      "description": {
+        "nl": "Informatie gebruikt om een object uniek te identificeren."
+      },
+      "usage": {
+        "nl": "Uitgangspunt hier is dat deze string door een organisatie wordt toegekend en dat dit gebeurt volgens een welbepaald systeem. Meer uitgebreide beschrijving in het AP OSLO-Generiek."
+      },
+      "parents": [],
       "properties": []
     },
     {
@@ -3227,8 +3614,65 @@
           ],
           "cardinality": "0..1",
           "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/generiek#opmeting",
+          "name": {
+            "nl": "opmeting"
+          },
+          "sort_nl": "opmeting",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://www.w3.org/ns/locn#Geometry",
+              "EA-Name": "Geometrie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Opmeting",
+              "range_uri": "https://data.vlaanderen.be/ns/generiek#Opmeting"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://data.vlaanderen.be/ns/generiek#Opmeting",
+              "range_puri": "https://data.vlaanderen.be/ns/generiek#Opmeting",
+              "range_label": {
+                "nl": "Opmeting"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
         }
       ]
+    },
+    {
+      "uri": "http://www.w3.org/ns/prov#Location",
+      "name": {
+        "nl": "Locatie"
+      },
+      "sort_nl": "Locatie",
+      "description": {
+        "nl": "Aanduiding van een geografische positie,dmv coordinaten,een toponiem,een adreslabel,een verwijzing naar een plaats/regio of verwijzing naar een adres."
+      },
+      "usage": {
+        "nl": "Te gebruiken als de manier waarop de geografische positie wordt aangeduid pas zal worden vastgelegd bij implementatie. Is deze manier nu al gekend dan moet direct gewerkt worden met Geometrie, GeografischeNaam, Adres etc."
+      },
+      "parents": [
+        {
+          "name": "Dekking",
+          "label": "Dekking",
+          "package": "DublinCore",
+          "uri": "http://fixme.com#Dekking",
+          "scoped_uri": "http://fixme.com#Dekking"
+        }
+      ],
+      "properties": []
     },
     {
       "uri": "https://data.vlaanderen.be/ns/generiek#3Dobject",
@@ -3273,6 +3717,21 @@
       "properties": []
     },
     {
+      "uri": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid",
+      "name": {
+        "nl": "StandaardEenheid"
+      },
+      "sort_nl": "StandaardEenheid",
+      "description": {
+        "nl": "Eenheid vastgelegd door een standaardiserende organisatie."
+      },
+      "usage": {
+        "nl": "Datatype kan een URI zijn of een GetypeerdeString. In het eerste geval wordt verwezen naar op het web gepubliceerde eenheden, bij voorkeur deze van qudt, bv http://qudt.org/vocab/unit/M voor meter. In het geval van een  GetypeerdeString gaat de voorkeur naar de UCUM-codes, bv \"km/h\"^^http://w3id.org/lindt/custom_datatypes#ucumunit."
+      },
+      "parents": [],
+      "properties": []
+    },
+    {
       "uri": "https://data.vlaanderen.be/ns/generiek#Vlak",
       "name": {
         "nl": "Vlak"
@@ -3292,6 +3751,281 @@
         }
       ],
       "properties": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#GeometrieWaardepaar",
+      "name": {
+        "nl": "GeometrieWaardepaar"
+      },
+      "sort_nl": "GeometrieWaardepaar",
+      "description": {
+        "nl": "Element van een DiscreetRuimtelijkBereik."
+      },
+      "usage": {
+        "nl": "Een GeometrieWaardepaar beschrijft de geometrie van een stuk van de ruimte (Punt, Lijn, Vlak etc.) en de waarde van een continu variërend fenomeen die men voor dat stuk heeft vastgesteld. Bv de luchtkwaliteit in een meetstation in een bepaald gebied of de waarde van een pixel in een luchtfoto."
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#geometrie",
+          "name": {
+            "nl": "geometrie"
+          },
+          "sort_nl": "geometrie",
+          "description": {
+            "nl": "Geometrie van het element."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#GeometrieWaardepaar",
+              "EA-Name": "GeometrieWaardepaar"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Domeinobject",
+              "range_uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Domeinobject"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Domeinobject",
+              "range_puri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Domeinobject",
+              "range_label": {
+                "nl": "Domeinobject"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#waarde",
+          "name": {
+            "nl": "waarde"
+          },
+          "sort_nl": "waarde",
+          "description": {
+            "nl": "Waarde van het element."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#GeometrieWaardepaar",
+              "EA-Name": "GeometrieWaardepaar"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Record",
+              "range_uri": "https://data.vlaanderen.be/ns/generiek#Record"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Record",
+              "range_puri": "https://data.vlaanderen.be/ns/generiek#Record",
+              "range_label": {
+                "nl": "Record"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#PuntWaardepaar",
+      "name": {
+        "nl": "PuntWaardepaar"
+      },
+      "sort_nl": "PuntWaardepaar",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {},
+      "parents": [
+        {
+          "name": "GeometrieWaardepaar",
+          "label": "GeometrieWaardepaar",
+          "package": "OSLO-RuimtelijkeBereiken",
+          "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#GeometrieWaardepaar",
+          "scoped_uri": "#GeometrieWaardepaar"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#geometrie",
+          "name": {
+            "nl": "geometrie"
+          },
+          "sort_nl": "geometrie",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#PuntWaardepaar",
+              "EA-Name": "PuntWaardepaar"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Punt",
+              "range_uri": "http://www.opengis.net/ont/sf#Point"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Punt",
+              "range_puri": "http://www.opengis.net/ont/sf#Point",
+              "range_label": {
+                "nl": "Punt"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://schema.org/Number",
+      "name": {
+        "nl": "Getal"
+      },
+      "sort_nl": "Getal",
+      "description": {
+        "nl": "Aanduiding van een hoeveelheid."
+      },
+      "usage": {
+        "nl": "In praktijk de primitieve datatypes waarmee een hoeveelheid kan worden aangeduid,zie xsd datatypes float,double,decimal,integer etc."
+      },
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "https://schema.org/QuantitativeValue",
+      "name": {
+        "nl": "KwantitatieveWaarde"
+      },
+      "sort_nl": "KwantitatieveWaarde",
+      "description": {
+        "nl": "Aanduiding van de kwantiteit van een bepaald kenmerk van een object."
+      },
+      "usage": {
+        "nl": "Bv de hoogte van een object,het gewicht,de temperatuur etc. Het gaat om een kenmerk dat numeriek uitgedrukt kan worden en in een bepaalde eenheid. Kwalitatieve aanduidingen zoals hoog,laag ed vallen hier dus niet onder."
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://schema.org/unitCode",
+          "name": {
+            "nl": "standaard eenheid"
+          },
+          "sort_nl": "standaard eenheid",
+          "description": {
+            "nl": "De gestandaardiseerde eenheid waarin de waarde is uitgedrukt."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://schema.org/QuantitativeValue",
+              "EA-Name": "KwantitatieveWaarde"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StandaardEenheid",
+              "range_uri": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#StandaardEenheid",
+              "range_puri": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid",
+              "range_label": {
+                "nl": "StandaardEenheid"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://schema.org/unitText",
+          "name": {
+            "nl": "eenheid"
+          },
+          "sort_nl": "eenheid",
+          "description": {
+            "nl": "De eenheid waarin de waarde is uitgedrukt."
+          },
+          "usage": {
+            "nl": "Te gebruiken als geen standaard eenheid gekend is."
+          },
+          "domain": [
+            {
+              "uri": "https://schema.org/QuantitativeValue",
+              "EA-Name": "KwantitatieveWaarde"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://schema.org/value",
+          "name": {
+            "nl": "waarde"
+          },
+          "sort_nl": "waarde",
+          "description": {
+            "nl": "Getal waarmee de kwantiteit van het kenmerk kan worden uitgedrukt."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://schema.org/QuantitativeValue",
+              "EA-Name": "KwantitatieveWaarde"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Getal",
+              "range_uri": "https://schema.org/Number"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Getal",
+              "range_puri": "https://schema.org/Number",
+              "range_label": {
+                "nl": "Getal"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
     }
   ],
   "parents": [],

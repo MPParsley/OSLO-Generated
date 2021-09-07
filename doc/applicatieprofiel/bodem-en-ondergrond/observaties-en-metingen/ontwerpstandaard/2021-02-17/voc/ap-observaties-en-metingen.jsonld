@@ -47,7 +47,7 @@
   "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
   "namespace": null,
   "navigation": {},
-  "publication-date": "2021-02-17",
+  "publication-date": "2021-08-01",
   "publication-state": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
   "title": "Observaties en Metingen (Applicatieprofiel)",
   "dcterms:license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
@@ -61,7 +61,9 @@
       "@id": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatietype",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {},
-      "name": {},
+      "name": {
+        "nl": "Observatietype"
+      },
       "parents": [],
       "usage": {}
     }
@@ -176,14 +178,96 @@
       "usage": {}
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/observaties-en-metingen#opdracht",
+      "@id": "https://data.vlaanderen.be/ns/observaties-en-metingen#bemonsteringsmethode",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {},
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        "http://def.isotc211.org/iso19156/2011/Specimen#SF_Specimen"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "bemonsteringsmethode"
+      },
+      "range": [
+        "http://def.isotc211.org/iso19156/2011/Specimen#SF_Process"
+      ],
+      "usage": {
+        "nl": "TODO"
+      }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/observaties-en-metingen#gegenereerdeObservatie",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Verwijzing naar de verkregen Observatie."
+      },
+      "domain": [
+        "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.OM_Process"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "gegenereerdeObservatie"
+      },
+      "range": [
+        "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
+      ],
+      "usage": {
+        "nl": "Het Proces dat gebruikt werd om het resultaat van de Observatie te verkrijgen levert mogelijk ook resultaten voor andere Observaties."
+      }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/observaties-en-metingen#identificator",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "TODO"
+      },
       "domain": [
         "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
       ],
       "generalization": [],
-      "name": {},
+      "name": {
+        "nl": "identificator"
+      },
+      "range": [
+        "http://www.w3.org/ns/adms#Identifier"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/observaties-en-metingen#identificator",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Verwijzing naar de informatie die het Bemonsteringsobject uniek identificeert."
+      },
+      "domain": [
+        "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "identificator"
+      },
+      "range": [
+        "http://www.w3.org/ns/adms#Identifier"
+      ],
+      "usage": {
+        "nl": "Bv het uniek nummer dat aan een Monster wordt toegekend of het numer van een meetstation."
+      }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/observaties-en-metingen#opdracht",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "opdracht"
+      },
       "range": [
         "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Opdracht"
       ],
@@ -192,30 +276,76 @@
     {
       "@id": "https://data.vlaanderen.be/ns/observaties-en-metingen#type",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {},
+      "description": {
+        "nl": "TODO"
+      },
       "domain": [
         "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
       ],
       "generalization": [],
-      "name": {},
+      "name": {
+        "nl": "type"
+      },
       "range": [
         "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatietype"
       ],
       "usage": {}
     },
     {
+      "@id": "https://data.vlaanderen.be/ns/observaties-en-metingen#type",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "type"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Bemonsteringsobjecttype"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://data.vlaanderen.be/ns/observaties-en-metingen#uitgevoerdDoor",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {},
+      "description": {
+        "nl": "TODO"
+      },
       "domain": [
         "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
       ],
       "generalization": [],
-      "name": {},
+      "name": {
+        "nl": "uitgevoerdDoor"
+      },
       "range": [
         "http://purl.org/dc/terms/Agent"
       ],
       "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/observaties-en-metingen#waardeverschaffer",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Observaties die een waarde geven aan Kenmerken van het Object;"
+      },
+      "domain": [
+        "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "waardeverschaffer"
+      },
+      "range": [
+        "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
+      ],
+      "usage": {
+        "nl": "TODO"
+      }
     }
   ],
   "externals": [
@@ -454,7 +584,7 @@
       "@id": "http://def.isotc211.org/iso19156/2011/Specimen#PreparationStep",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "VoorbereidendeStap"
+        "nl": "Monstervoorbereiding"
       }
     },
     {
@@ -469,6 +599,13 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "Monster"
+      }
+    },
+    {
+      "@id": "http://def.isotc211.org/iso19156/2011/TemporalCoverage#CVT_DiscreteTimeInstantCoverage",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "TemporeelMomentBereik"
       }
     },
     {
@@ -729,7 +866,7 @@
       "@id": "http://def.isotc211.org/iso19156/2011/SpatialSamplingFeature#SF_SpatialSamplingFeature.hostedProcedure",
       "@type": "rdf:Property",
       "name": {
-        "nl": "gehost platform"
+        "nl": "gehostPlatform"
       }
     },
     {
@@ -747,6 +884,13 @@
       }
     },
     {
+      "@id": "http://def.isotc211.org/iso19156/2011/Specimen#PreparationStep.processOperator",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "procesoperator"
+      }
+    },
+    {
       "@id": "http://def.isotc211.org/iso19156/2011/Specimen#PreparationStep.processingDetails",
       "@type": "rdf:Property",
       "name": {
@@ -754,10 +898,17 @@
       }
     },
     {
+      "@id": "http://def.isotc211.org/iso19156/2011/Specimen#PreparationStep.time",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "tijdstip"
+      }
+    },
+    {
       "@id": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Specimen.currentLocation",
       "@type": "rdf:Property",
       "name": {
-        "nl": "huidige locatie"
+        "nl": "huidigeLocatie"
       }
     },
     {

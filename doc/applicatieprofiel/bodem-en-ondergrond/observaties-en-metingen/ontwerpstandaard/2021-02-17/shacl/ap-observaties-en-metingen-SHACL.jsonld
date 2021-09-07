@@ -208,7 +208,14 @@
       "@id": "https://data.vlaanderen.be/shacl/ap-observaties-en-metingen#ObjectShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
+      "sh:property": [
+        {
+          "sh:class": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+          "sh:description": "Observaties die een waarde geven aan Kenmerken van het Object;",
+          "sh:name": "waardeverschaffer",
+          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#waardeverschaffer"
+        }
+      ],
       "sh:targetClass": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature"
     },
     {
@@ -310,6 +317,12 @@
           "sh:path": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.featureOfInterest"
         },
         {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "TODO",
+          "sh:name": "identificator",
+          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#identificator"
+        },
+        {
           "sh:class": "http://def.isotc211.org/iso19115/2006/MetadataEntitySetInformation#MD_Metadata",
           "sh:description": "Verwijzing naar Metadata over de Observatie.",
           "sh:maxCount": "1",
@@ -318,6 +331,7 @@
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Opdracht",
+          "sh:description": "TODO",
           "sh:name": "opdracht",
           "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#opdracht"
         },
@@ -359,11 +373,13 @@
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatietype",
+          "sh:description": "TODO",
           "sh:name": "type",
           "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#type"
         },
         {
           "sh:class": "http://purl.org/dc/terms/Agent",
+          "sh:description": "TODO",
           "sh:name": "uitgevoerdDoor",
           "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#uitgevoerdDoor"
         }
@@ -374,7 +390,14 @@
       "@id": "https://data.vlaanderen.be/shacl/ap-observaties-en-metingen#ProcesShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
+      "sh:property": [
+        {
+          "sh:class": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+          "sh:description": "Verwijzing naar de verkregen Observatie.",
+          "sh:name": "gegenereerdeObservatie",
+          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#gegenereerdeObservatie"
+        }
+      ],
       "sh:targetClass": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.OM_Process"
     },
     {
@@ -473,10 +496,24 @@
           "sh:path": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature.lineage"
         },
         {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "Verwijzing naar de informatie die het Bemonsteringsobject uniek identificeert.",
+          "sh:minCount": "1",
+          "sh:name": "identificator",
+          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#identificator"
+        },
+        {
           "sh:class": "http://def.isotc211.org/iso19156/2011/Observation#NamedValue",
           "sh:description": "Willekeurig gegeven gassocieerd met het Bemonsteringsobject.",
           "sh:name": "parameter",
           "sh:path": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature.parameter"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Bemonsteringsobjecttype",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:name": "type",
+          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#type"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/observaties-en-metingen#BemonsteringsobjectComplex.bemonsteringsobject.target"
@@ -625,6 +662,21 @@
           "sh:minCount": "1",
           "sh:name": "Monster",
           "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#Monstervoorbereiding.monster"
+        },
+        {
+          "sh:class": "http://def.isotc211.org/iso19115/2006/CitationAndResponsiblePartyInformation#CI_ResponsibleParty",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:name": "procesoperator",
+          "sh:path": "http://def.isotc211.org/iso19156/2011/Specimen#PreparationStep.processOperator"
+        },
+        {
+          "sh:class": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "tijdstip",
+          "sh:path": "http://def.isotc211.org/iso19156/2011/Specimen#PreparationStep.time"
         }
       ],
       "sh:targetClass": "http://def.isotc211.org/iso19156/2011/Specimen#PreparationStep"
@@ -641,6 +693,14 @@
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
+        {
+          "sh:class": "http://def.isotc211.org/iso19156/2011/Specimen#SF_Process",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "bemonsteringsmethode",
+          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#bemonsteringsmethode"
+        },
         {
           "sh:class": "http://www.w3.org/ns/locn#Geometry",
           "sh:description": "TODO",
@@ -739,6 +799,7 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
           "sh:description": "TODO",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -756,6 +817,13 @@
       "sh:targetClass": "http://www.opengis.net/ont/sf#Point"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/ap-observaties-en-metingen#IdentificatorShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/ns/adms#Identifier"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/ap-observaties-en-metingen#GeometrieShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -768,6 +836,13 @@
           "sh:path": "http://www.opengis.net/ont/geosparql#asGML"
         },
         {
+          "sh:class": "https://data.vlaanderen.be/ns/generiek#Opmeting",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:name": "opmeting",
+          "sh:path": "https://data.vlaanderen.be/ns/generiek#opmeting"
+        },
+        {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:description": "Geometrie uitgedrukt in wkt-formaat.",
           "sh:maxCount": "1",
@@ -776,6 +851,20 @@
         }
       ],
       "sh:targetClass": "http://www.w3.org/ns/locn#Geometry"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-observaties-en-metingen#LocatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/ns/prov#Location"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-observaties-en-metingen#BemonsteringsobjecttypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Bemonsteringsobjecttype"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-observaties-en-metingen#3DobjectShape",
@@ -799,6 +888,13 @@
       "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#Record"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/ap-observaties-en-metingen#StandaardEenheidShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/ap-observaties-en-metingen#VlakShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -806,48 +902,109 @@
       "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#Vlak"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/ap-observaties-en-metingen#BereikShape",
+      "@id": "https://data.vlaanderen.be/shacl/ap-observaties-en-metingen#DiscreetBereikShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Attribuutwaarden",
+          "sh:class": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#GeometrieWaardepaar",
           "sh:description": "TODO",
-          "sh:name": "bereikElement",
-          "sh:path": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#bereikElement"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Domeinobject",
-          "sh:description": "TODO",
-          "sh:minCount": "1",
-          "sh:name": "domeinElement",
-          "sh:path": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#domeinElement"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Omvang",
-          "sh:description": "TODO",
-          "sh:minCount": "1",
-          "sh:name": "domeinOmvang",
-          "sh:path": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#domeinOmvang"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#GemeenschappelijkPuntregel",
-          "sh:description": "TODO",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "gemeenschappelijkPuntRegel",
-          "sh:path": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#gemeenschappelijkPuntRegel"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Recordtype",
-          "sh:description": "TODO",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "typeBereik",
-          "sh:path": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#typeBereik"
+          "sh:name": "element",
+          "sh:path": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#element"
         }
       ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Bereik"
+      "sh:targetClass": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#DiscreetBereik"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-observaties-en-metingen#DiscreetPuntbereikShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#PuntWaardepaar",
+          "sh:description": "TODO",
+          "sh:name": "element",
+          "sh:path": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#element"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#DiscreetPuntbereik"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-observaties-en-metingen#GeometrieWaardepaarShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#Domeinobject",
+          "sh:description": "Geometrie van het element.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "geometrie",
+          "sh:path": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#geometrie"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/generiek#Record",
+          "sh:description": "Waarde van het element.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "waarde",
+          "sh:path": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#waarde"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#GeometrieWaardepaar"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-observaties-en-metingen#PuntWaardepaarShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.opengis.net/ont/sf#Point",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "geometrie",
+          "sh:path": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#geometrie"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#PuntWaardepaar"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-observaties-en-metingen#GetalShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://schema.org/Number"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-observaties-en-metingen#KwantitatieveWaardeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "De eenheid waarin de waarde is uitgedrukt.",
+          "sh:maxCount": "1",
+          "sh:name": "eenheid",
+          "sh:path": "https://schema.org/unitText"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid",
+          "sh:description": "De gestandaardiseerde eenheid waarin de waarde is uitgedrukt.",
+          "sh:maxCount": "1",
+          "sh:name": "standaardEenheid",
+          "sh:path": "https://schema.org/unitCode"
+        },
+        {
+          "sh:class": "https://schema.org/Number",
+          "sh:description": "Getal waarmee de kwantiteit van het kenmerk kan worden uitgedrukt.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "waarde",
+          "sh:path": "https://schema.org/value"
+        }
+      ],
+      "sh:targetClass": "https://schema.org/QuantitativeValue"
     }
   ]
 }
