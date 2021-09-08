@@ -1,5 +1,5 @@
 {
-  "@id": "http://fixme.com",
+  "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen",
   "@type": "http://www.w3.org/2002/07/owl#Ontology",
   "authors": [
     {
@@ -13,7 +13,7 @@
       "foaf:mbox": "mailto:auteurvoornaam.auteurnaam@auteurdomein"
     }
   ],
-  "baseURI": null,
+  "baseURI": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#",
   "baseURIabbrev": null,
   "contributors": [
     {
@@ -58,33 +58,454 @@
   },
   "classes": [
     {
-      "@id": "http://fixme.com/#Meldingsobject",
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#AdministratiefPerceel",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
-        "nl": "Het Meldingsobject identificeert een resource,een specifiek deel van een resource,een bepaalde representatie van een resource of een combinatie hiervan welke gebruikt wordt binnen de Melding.\r\n"
+        "nl": "Een administratief perceel (Adp) is een grafische voorstelling van de vermoedelijke ligging van het kadastraal perceel, waarbij de perceelsgrenzen werden geïnterpreteerd rekening houdend met de terreinsituatie."
       },
       "name": {
-        "nl": "Meldingsobject"
+        "nl": "Administratief Perceel"
+      },
+      "parents": [
+        "https://data.vlaanderen.be/ns/perceel#KadastraalPlanperceel",
+        "https://data.vlaanderen.be/ns/perceel#RuimtelijkeEenheid"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Anomalie",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Een anomalie is een geverifieerde GRB-meldingsobject. GRB-meldingsobjecten worden door een grote groep van gebruikers aan Digitaal Vlaanderen gemeld, die ze controleert en beheert als anomalieën."
+      },
+      "name": {
+        "nl": "Anomalie"
+      },
+      "parents": [
+        "https://data.vlaanderen.be/ns/perceel#RuimtelijkeEenheid"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Een gebouw aan de grond (Gbg) is een duurzaam bouwwerk, vast met het aardoppervlak verbonden, dat een voor mensen toegankelijke ruimte omsluit. Een gelijkvloerse toegang voor ondergrondse of hangende constructies wordt eveneens als gebouw aan de grond beschouwd. Bepaalde duurzame bouwsels die aan bovenstaande definitie beantwoorden, worden echter in andere GRB-entiteiten opgenomen en niet hier. Bijvoorbeeld koeltorens, watertorens, e.d. worden opgenomen als kunstwerk (entiteit Knw)."
+      },
+      "name": {
+        "nl": "GebouwAanDeGrond"
+      },
+      "parents": [
+        "http://www.w3.org/ns/prov#Entity"
+      ],
+      "usage": {
+        "nl": "Een gelijkvloerse toegang voor ondergrondse of hangende constructies wordt eveneens als gebouw aan de grond beschouwd. Bepaalde duurzame bouwsels die aan bovenstaande definitie beantwoorden, worden echter in andere GRB-entiteiten opgenomen en niet hier. B"
+      }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Een gebouwaanhorigheid (Gba) is een duurzame constructie die aanleunt bij en behoort tot een in het GRB opgenomen gebouw aan de grond (Gbg)."
+      },
+      "name": {
+        "nl": "Gebouwaanhorigheid"
+      },
+      "parents": [
+        "http://www.w3.org/ns/prov#Entity"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevellijn",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Een gevellijn (Gvl) volgt de verticale projectie van het gevelvlak op het maaiveld en verbindt twee verschillende gevelpunten (Gvp). In zijn meest eenvoudige vorm wordt een gebouw aan de grond beschreven door vier elementaire gevelvlakken."
+      },
+      "name": {
+        "nl": "Gevellijn"
+      },
+      "parents": [
+        "http://www.w3.org/ns/prov#Entity"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevelpunt",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Een gevelpunt is elk beduidend vormpunt van de gevellijn van een gebouw aan de grond."
+      },
+      "name": {
+        "nl": "Gevelpunt"
+      },
+      "parents": [
+        "http://www.w3.org/ns/prov#Entity"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Een kunstwerk is een civieltechnische constructie, of specifiek type gebouw, niet opgenomen als gebouw aan de grond, opgetrokken uit duurzame materialen en zichtbaar aan het aardoppervlak."
+      },
+      "name": {
+        "nl": "Kunstwerk"
+      },
+      "parents": [
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#LokaleBijhoudingszone",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Een GRB-lokale bijhoudingszone is een contour van een zone waar het GRB werd bijgewerkt door een in grootte beperkte, lokale bijhoudingsopdracht zoals bijvoorbeeld voor een kruispunt van Wegen."
+      },
+      "name": {
+        "nl": "LokaleBijhoudingszone"
+      },
+      "parents": [
+        "https://data.vlaanderen.be/ns/perceel#RuimtelijkeEenheid"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#PuntvormigeInrichting",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Een puntvormig weginrichtingselement (Wpi) is een inrichtingselement behorende bij de wegbaan (Wbn), waarvan het contact met het grondoppervlak onvoldoende groot is om als lijn of veelhoek gekarteerd te worden."
+      },
+      "name": {
+        "nl": "PuntvormigeInrichting"
+      },
+      "parents": [
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Spoorbaan",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "De spoorbaan (Sbn) is de corridor van het transportnetwerk bedoeld voor het spoorverkeer. De spoorcorridor stelt de zone voor waar exclusief spoorverkeer (train, metro of tram) plaatsgrijpt."
+      },
+      "name": {
+        "nl": "Spoorbaan"
+      },
+      "parents": [
+        "https://data.vlaanderen.be/ns/openbaardomein/terreindeel#Terreindeel"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Spoorrail",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Een spoorrail is een metalen spoorstaaf die spoorverkeer mogelijk maakt binnen de wegbaan (Wbn) en de spoorbaan."
+      },
+      "name": {
+        "nl": "Spoorrail"
+      },
+      "parents": [
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Terrein",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Een terrein (Trn) is een surplusgebied dat deel uitmaakt van het openbaar domein en grenst aan een weg-, spoor- of watercorridor."
+      },
+      "name": {
+        "nl": "Terrein"
+      },
+      "parents": [
+        "https://data.vlaanderen.be/ns/openbaardomein/terreindeel#Terreindeel"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Waterloopsegment",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Een VHA-waterloopsegment is de aslijn van een segment van het VHA-waterlopennetwerk van de Vlaamse Hydrografische Atlas."
+      },
+      "name": {
+        "nl": "Waterloopsegment"
       },
       "parents": [],
       "usage": {}
     },
     {
-      "@id": "http://fixme.com/#Terugmelding",
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegaanhorigheid",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
-        "nl": "Een terugmelding kan gebruikt worden om bijvoorbeeld een foutief adres te melden op een website of een fout in de digitale weergave van een diploma."
+        "nl": "Een wegaanhorigheid is een constructie die binnen de wegbaan of binnen een terrein met verkeersfunctie opgericht werd om onderdak te bieden aan personen, vervoersmiddelen en goederen, maar niet als zelfstandig gebouw beschouwd kan worden."
       },
       "name": {
-        "nl": "Terugmelding"
+        "nl": "Wegaanhorigheid"
       },
-      "parents": [],
+      "parents": [
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegopdeling",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "De wegopdeling is de fysieke begrenzing van goed identificeerbare functionele stroken binnen de wegbaan."
+      },
+      "name": {
+        "nl": "Wegopdeling"
+      },
+      "parents": [
+        "https://data.vlaanderen.be/ns/openbaardomein/terreindeel#Terreindeel"
+      ],
       "usage": {}
     }
   ],
   "properties": [
     {
-      "@id": "http://fixme.com#bodemgebruik",
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Bodembedekking",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Code voor de aard van de bodembedekking."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Terrein"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "Bodembedekking"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheidtype",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Het type van de gebouwaanhorigheid."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "gebouwaanhorigheidtype"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevellijntype",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Het type van de gevellijn."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevellijn"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "gevellijntype"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevelpunttype",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "De manier van opname van een gevelpunt."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevelpunt"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "gevelpunttype"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#LokaleBijhoudingtype",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Type van de lokale bijhouding"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#LokaleBijhoudingszone"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "lokalebijhoudingtype"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#LongitudinaleWegrinrichtingtype",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Aard van het weginrichtingselement."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#LongitudinaleWeginrichting"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "longitudinaleweginrichtingtype"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#PuntvormigeInrichtingtype",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Aard van het puntvormige weginrichtingselement."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#PuntvormigeInrichting"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "puntvormigeInrichtingtype"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Spoorbaanfunctie",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Aard van het spoorverkeer"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Spoorbaan"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "spoorbaanfunctie"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegaanhorigheidtype",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Aard van de wegaanhorigheid."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegaanhorigheid"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "wegaanhorigheidtype"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegbaantype",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Aard van de wegbaan"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/openbaardomein/terreindeel#Wegbaan"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "wegbaantype"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegknooptype",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Aard van de wegknoop."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/weg#Wegknoop"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "wegknooptype"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegopdelingtype",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Aard van de wegopdeling."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegopdeling"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "wegopdelingtype"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#asbuiltplan",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Code die aangeeft of er een as-builtplan wordt verwacht."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Anomalie"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "as-builtplan"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#bodemgebruik",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
         "nl": "Code voor het hoofdgebruik van het betreffende terrein."
@@ -100,9 +521,453 @@
         "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#fiscaleToestandsdatum",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "description": {
+        "nl": "\nDatum die per object verwijst naar het aanslagjaar volgend op het mutatiejaar waarin het object is ontstaan of gewijzigd."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#AdministratiefPerceel"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "fiscaleToestandsdatum"
+      },
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#dateTime"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#gebouwtype",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Het type van het gebouw."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "gebouwtype"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#hoogte",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Hoogteligging van het putdeksel in meter."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Putdeksel"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "hoogte"
+      },
+      "range": [
+        "https://schema.org/QuantitativeValue"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#kunstwerktype",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Type van het kunstwerk."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "kunstwerktype"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Lengte in meter van de geometrie van de omtreklijn."
+      },
+      "domain": [
+        "http://www.w3.org/ns/prov#Entity"
+      ],
+      "generalization": [],
+      "name": {},
+      "range": [
+        "https://schema.org/QuantitativeValue"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lijnnummer",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "description": {
+        "nl": "Het lijnnummer toegekend aan de spooras door de beheerder."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Spoorrail"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "lijnnummer"
+      },
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#string"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#meetmethode",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Code van de meetmethode."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Putdeksel"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "meetmethode"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#melder",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Naam van de organisatie die de afwijking heeft gemeld."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Anomalie"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "melder"
+      },
+      "range": [
+        "http://www.w3.org/ns/org#Organization"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oorzaak",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "De oorzaak van de anomalie."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Anomalie"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "oorzaak"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opdrachtgever",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Opdrachtgever of eigenaar van het as-builtplan."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#LokaleBijhoudingszone"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "opdrachtgever"
+      },
+      "range": [
+        "http://www.w3.org/ns/org#Organization"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opmetingsdatum",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "description": {
+        "nl": "Datum van de opmeting op het terrein."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#LokaleBijhoudingszone"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "opmetingsdatum"
+      },
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#dateTime"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "description": {
+        "nl": "Datum van oplevering."
+      },
+      "domain": [
+        "http://www.w3.org/ns/prov#Entity"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "opnamedatum"
+      },
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#dateTime"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "De oppervlakte in vierkante meter van de veelhoek"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "oppervlakte"
+      },
+      "range": [
+        "https://schema.org/QuantitativeValue"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "De oppervlakte in vierkante meter van de veelhoek."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "oppervlakte"
+      },
+      "range": [
+        "https://schema.org/QuantitativeValue"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Oppervlakte in m2 van de veelhoek."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "oppervlakte"
+      },
+      "range": [
+        "https://schema.org/QuantitativeValue"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Oppervlakte in vierkante meter van de veelhoek."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegaanhorigheid"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "oppervlakte"
+      },
+      "range": [
+        "https://schema.org/QuantitativeValue"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#referentiecode",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "description": {
+        "nl": "Alfanummerieke unieke referentiecode van het as-builtplan of een lokale bijhouding."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#LokaleBijhoudingszone"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "referentiecode"
+      },
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#integer"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#releasedatum",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "description": {
+        "nl": "Datum waarop het as-builtplan of lokale bijhouding beschikbaar komt."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#LokaleBijhoudingszone"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "releasedatum"
+      },
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#dateTime"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#status",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Status van de anomalie die aangeeft in welke fase de anomalie zich bevindt."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Anomalie"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "status"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#thema",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Het thema van de anomalie."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Anomalie"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "thema"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#themaverduidelijking",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Verduidelijking van het thema van de anomalie."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Anomalie"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "themaVerduidelijking"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#transversaleweginrichtingtype",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Type van het weginrichtingselement."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#TransversaleWeginrichting"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "transversaleweginrichtingtype"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#vormtype",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Aanduiding of een kunstwerk enkelvoudig is, dan wel samengesteld uit een verzameling van gelijksoortige inrichtingen."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "vormtype"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#vrijetekst",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "description": {
+        "nl": "Detaillering over de oorzaak van de anomalie."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Anomalie"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "vrijetekst"
+      },
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#string"
+      ],
+      "usage": {}
     }
   ],
   "externals": [
+    {
+      "@id": "http://fixme.com/#Meldingsobject",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Meldingsobject"
+      }
+    },
+    {
+      "@id": "http://fixme.com/#Terugmelding",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Terugmelding"
+      }
+    },
     {
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
@@ -286,111 +1151,6 @@
       }
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#AdministratiefPerceel",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Administratief Perceel"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Anomalie",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Anomalie"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "GebouwAanDeGrond"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Gebouwaanhorigheid"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevellijn",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Gevellijn"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevelpunt",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Gevelpunt"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Kunstwerk"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#LokaleBijhoudingszone",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "LokaleBijhoudingszone"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#PuntvormigeInrichting",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "PuntvormigeInrichting"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Spoorbaan",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Spoorbaan"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Spoorrail",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Spoorrail"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Terrein",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Terrein"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Waterloopsegment",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Waterloopsegment"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegaanhorigheid",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Wegaanhorigheid"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegopdeling",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Wegopdeling"
-      }
-    },
-    {
       "@id": "https://data.vlaanderen.be/ns/adres#Adres",
       "@type": "rdfs:Class",
       "name": {
@@ -543,77 +1303,77 @@
       "@id": "http://purl.org/dc/terms/relation",
       "@type": "rdf:Property",
       "name": {
+        "nl": "isGerelateerdAan"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/relation",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "isGerelateerdAan"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/relation",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "heeftGevelpunt"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/relation",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "heeftGevelpunt"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/relation",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "isGerelateerdAan"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/relation",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "isGerelateerdAan"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/relation",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "heeftGevellijn"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/relation",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "heeftGevellijn"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/relation",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "isGerelateerdAan"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/relation",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "isGerelateerdAan"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/relation",
+      "@type": "rdf:Property",
+      "name": {
         "nl": "heeft gebouwaanhorigheid"
-      }
-    },
-    {
-      "@id": "http://purl.org/dc/terms/relation",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "isGerelateerdAan"
-      }
-    },
-    {
-      "@id": "http://purl.org/dc/terms/relation",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "isGerelateerdAan"
-      }
-    },
-    {
-      "@id": "http://purl.org/dc/terms/relation",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "isGerelateerdAan"
-      }
-    },
-    {
-      "@id": "http://purl.org/dc/terms/relation",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "isGerelateerdAan"
-      }
-    },
-    {
-      "@id": "http://purl.org/dc/terms/relation",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "isGerelateerdAan"
-      }
-    },
-    {
-      "@id": "http://purl.org/dc/terms/relation",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "isGerelateerdAan"
-      }
-    },
-    {
-      "@id": "http://purl.org/dc/terms/relation",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "heeftGevellijn"
-      }
-    },
-    {
-      "@id": "http://purl.org/dc/terms/relation",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "heeftGevellijn"
-      }
-    },
-    {
-      "@id": "http://purl.org/dc/terms/relation",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "heeftGevelpunt"
-      }
-    },
-    {
-      "@id": "http://purl.org/dc/terms/relation",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "heeftGevelpunt"
       }
     },
     {
@@ -701,267 +1461,10 @@
       }
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Bodembedekking",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "Bodembedekking"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheidtype",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "gebouwaanhorigheidtype"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevellijntype",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "gevellijntype"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevelpunttype",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "gevelpunttype"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#LokaleBijhoudingtype",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "lokalebijhoudingtype"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#LongitudinaleWegrinrichtingtype",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "longitudinaleweginrichtingtype"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#PuntvormigeInrichtingtype",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "puntvormigeInrichtingtype"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Spoorbaanfunctie",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "spoorbaanfunctie"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegaanhorigheidtype",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "wegaanhorigheidtype"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegbaantype",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "wegbaantype"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegknooptype",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "wegknooptype"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegopdelingtype",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "wegopdelingtype"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#asbuiltplan",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "as-builtplan"
-      }
-    },
-    {
       "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#bestaatuit",
       "@type": "rdf:Property",
       "name": {
         "nl": "bestaat uit"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#fiscaleToestandsdatum",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "fiscaleToestandsdatum"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#gebouwtype",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "gebouwtype"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#hoogte",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "hoogte"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#kunstwerktype",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "kunstwerktype"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn",
-      "@type": "rdf:Property",
-      "name": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lijnnummer",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "lijnnummer"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#meetmethode",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "meetmethode"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#melder",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "melder"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oorzaak",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "oorzaak"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opdrachtgever",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "opdrachtgever"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opmetingsdatum",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "opmetingsdatum"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "opnamedatum"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "oppervlakte"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "oppervlakte"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "oppervlakte"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "oppervlakte"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#referentiecode",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "referentiecode"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#releasedatum",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "releasedatum"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#status",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "status"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#thema",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "thema"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#themaverduidelijking",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "themaVerduidelijking"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#transversaleweginrichtingtype",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "transversaleweginrichtingtype"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#vormtype",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "vormtype"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#vrijetekst",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "vrijetekst"
       }
     },
     {

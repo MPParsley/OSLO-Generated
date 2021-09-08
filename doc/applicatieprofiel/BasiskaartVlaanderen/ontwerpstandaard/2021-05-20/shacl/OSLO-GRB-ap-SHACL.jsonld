@@ -34,6 +34,523 @@
   "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap",
   "shapes": [
     {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#AdministratiefPerceelShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "\nDatum die per object verwijst naar het aanslagjaar volgend op het mutatiejaar waarin het object is ontstaan of gewijzigd.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "fiscaleToestandsdatum",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#fiscaleToestandsdatum"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/adres#Adres",
+          "sh:description": "Adresseerbaar object waaraan het adres is toegekend.",
+          "sh:name": "isToegekendAan",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#AdministratiefPerceel"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#AnomalieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/AsBuiltplan",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Code die aangeeft of er een as-builtplan wordt verwacht.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "asbuiltplan",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#asbuiltplan"
+        },
+        {
+          "sh:class": "http://fixme.com/#Meldingsobject",
+          "sh:description": "Het meldingsobject waaraan de anomalie kan verbonden worden.",
+          "sh:name": "isGerelateerdAan",
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "sh:class": "http://fixme.com/#Terugmelding",
+          "sh:description": "De terugmelding waaraan de anomalie kan verbonden worden.",
+          "sh:name": "isGerelateerdAan",
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit#Inname",
+          "sh:description": "Inname waaraan de anomalie kan verbonden worden.",
+          "sh:name": "isGerelateerdAan",
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/org#Organization",
+          "sh:description": "Naam van de organisatie die de afwijking heeft gemeld.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "melder",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#melder"
+        },
+        {
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/AnomalieOorzaak",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "De oorzaak van de anomalie.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "oorzaak",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oorzaak"
+        },
+        {
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/AnomalieStatus",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Status van de anomalie die aangeeft in welke fase de anomalie zich bevindt.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "status",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#status"
+        },
+        {
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/AnomalieThema",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Het thema van de anomalie.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "thema",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#thema"
+        },
+        {
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/ThemaVerduidelijking",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Verduidelijking van het thema van de anomalie.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "themaVerduidelijking",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#themaverduidelijking"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Detaillering over de oorzaak van de anomalie.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "vrijetekst",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#vrijetekst"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Anomalie"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#GebouwAanDeGrondShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Gebouwtype",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Het type van het gebouw.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "gebouwtype",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#gebouwtype"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid",
+          "sh:description": "Verwijst naar de gebouwaanhorigheid dat geassocieerd is met het gebouw aan de grond.",
+          "sh:name": "heeftGebouwaanhorigheid",
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevellijn",
+          "sh:description": "Verwijst naar de gevellijn(en) die kunnen geassocieerd worden met het gebouw aan de grond.",
+          "sh:name": "heeftGevellijn",
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevelpunt",
+          "sh:description": "Verwijst naar het (de) gevelpunt(en) dat geassocieerd zijn met het gebouw aan de grond.",
+          "sh:minCount": "1",
+          "sh:name": "heeftGevelpunt",
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/adres#Adres",
+          "sh:description": "Adresseerbaar object waaraan het adres is toegekend.",
+          "sh:name": "isToegekendAan",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
+        },
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:description": "De oppervlakte in vierkante meter van de veelhoek",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "oppervlakte",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#GebouwaanhorigheidShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Gebouwaanhorigheidtype",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Het type van de gebouwaanhorigheid.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "gebouwaanhorigheidtype",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheidtype"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/adres#Adres",
+          "sh:description": "Adresseerbaar object waaraan het adres is toegekend.",
+          "sh:name": "isToegekendAan",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
+        },
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:description": "De oppervlakte in vierkante meter van de veelhoek.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "oppervlakte",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#GevellijnShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevelpunt",
+          "sh:description": "Verwijst naar de gevelpunten waaruit de gevellijn bestaat.",
+          "sh:minCount": "1",
+          "sh:name": "bestaatUit",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#bestaatuit"
+        },
+        {
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Gevellijntype",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Het type van de gevellijn.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "gevellijntype",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevellijntype"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond",
+          "sh:description": "Verwijst naar de gevellijn(en) die kunnen geassocieerd worden met het gebouw aan de grond.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "heeftGevellijn",
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:description": "Lengte in meter van de lijngeometrie.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "lengte",
+          "sh:path": "http://open.vocab.org/terms/length"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevellijn"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#GevelpuntShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Gevelpunttype",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "De manier van opname van een gevelpunt.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "gevelpunttype",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevelpunttype"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond",
+          "sh:description": "Verwijst naar het (de) gevelpunt(en) dat geassocieerd zijn met het gebouw aan de grond.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "heeftGevelpunt",
+          "sh:path": "http://purl.org/dc/terms/relation"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevelpunt"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#KunstwerkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/adres#Adres",
+          "sh:description": "Addresseerbaar object waaraan het adres is toegekend.",
+          "sh:name": "isToegekendAan",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
+        },
+        {
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Kunstwerktype",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Type van het kunstwerk.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "kunstwerktype",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#kunstwerktype"
+        },
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:description": "Oppervlakte in m2 van de veelhoek.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "oppervlakte",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte"
+        },
+        {
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Vormtype",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Aanduiding of een kunstwerk enkelvoudig is, dan wel samengesteld uit een verzameling van gelijksoortige inrichtingen.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "vormtype",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#vormtype"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#LokaleBijhoudingszoneShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/LokaleBijhoudingtype",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Type van de lokale bijhouding",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "lokalebijhoudingtype",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#LokaleBijhoudingtype"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/org#Organization",
+          "sh:description": "Opdrachtgever of eigenaar van het as-builtplan.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "opdrachtgever",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opdrachtgever"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Datum van de opmeting op het terrein.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "opmetingsdatum",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opmetingsdatum"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:description": "Alfanummerieke unieke referentiecode van het as-builtplan of een lokale bijhouding.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "referentiecode",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#referentiecode"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Datum waarop het as-builtplan of lokale bijhouding beschikbaar komt.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "releasedatum",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#releasedatum"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#LokaleBijhoudingszone"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#PuntvormigeInrichtingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/PuntvormigeInrichtingtype",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Aard van het puntvormige weginrichtingselement.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "puntvormigeInrichtingtype",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#PuntvormigeInrichtingtype"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#PuntvormigeInrichting"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#SpoorbaanShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/SpoorbaanFunctie",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Aard van het spoorverkeer",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "spoorbaanfunctie",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Spoorbaanfunctie"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Spoorbaan"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#SpoorrailShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:description": "Lengte in meter van de lijngeometrie.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "lengte",
+          "sh:path": "http://open.vocab.org/terms/length"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Het lijnnummer toegekend aan de spooras door de beheerder.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "lijnnummer",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lijnnummer"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Spoorrail"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#TerreinShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Bodembedekking",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Code voor de aard van de bodembedekking.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "bodembedekking",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Bodembedekking"
+        },
+        {
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Bodemgebruik",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Code voor het hoofdgebruik van het betreffende terrein.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "bodemgebruik",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#bodemgebruik"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Terrein"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#WaterloopsegmentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "Informatie gebruikt om een object uniek te identificeren.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "identificator",
+          "sh:path": "http://www.w3.org/ns/adms#identifier"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/openbaardomein/waterdeel#Waterdeel",
+          "sh:description": "Duidt het waterloopsegment aan waaraan de watergang kan gekoppeld worden.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "isGerelateerdAan",
+          "sh:path": "http://purl.org/dc/terms/relation"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Waterloopsegment"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#WegaanhorigheidShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:description": "Oppervlakte in vierkante meter van de veelhoek.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "oppervlakte",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte"
+        },
+        {
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Wegaanhorigheidtype",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Aard van de wegaanhorigheid.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "wegaanhorigheidtype",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegaanhorigheidtype"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegaanhorigheid"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#WegopdelingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Wegopdelingtype",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Aard van de wegopdeling.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "wegopdelingtype",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegopdelingtype"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegopdeling"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#PeriodeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Aanvanh van de tijdsduur.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "begin",
+          "sh:path": "http://data.europa.eu/m8g/startTime"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Einde vd tijdsduur.",
+          "sh:maxCount": "1",
+          "sh:name": "einde",
+          "sh:path": "http://data.europa.eu/m8g/endTime"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/PeriodOfTime"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#GeneriekeTerugmeldfaciliteit::MeldingsobjectShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -80,29 +597,6 @@
         }
       ],
       "sh:targetClass": "http://fixme.com/#Terugmelding"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#PeriodeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "Aanvanh van de tijdsduur.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "begin",
-          "sh:path": "http://data.europa.eu/m8g/startTime"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "Einde vd tijdsduur.",
-          "sh:maxCount": "1",
-          "sh:name": "einde",
-          "sh:path": "http://data.europa.eu/m8g/endTime"
-        }
-      ],
-      "sh:targetClass": "http://data.europa.eu/m8g/PeriodOfTime"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#ContactinfoShape",
@@ -540,500 +1034,6 @@
       "sh:targetClass": "http://www.w3.org/ns/prov#Entity"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#AdministratiefPerceelShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "\nDatum die per object verwijst naar het aanslagjaar volgend op het mutatiejaar waarin het object is ontstaan of gewijzigd.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "fiscaleToestandsdatum",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#fiscaleToestandsdatum"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/adres#Adres",
-          "sh:description": "Adresseerbaar object waaraan het adres is toegekend.",
-          "sh:name": "isToegekendAan",
-          "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#AdministratiefPerceel"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#AnomalieShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/AsBuiltplan",
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Code die aangeeft of er een as-builtplan wordt verwacht.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "asbuiltplan",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#asbuiltplan"
-        },
-        {
-          "sh:class": "http://fixme.com/#Meldingsobject",
-          "sh:description": "Het meldingsobject waaraan de anomalie kan verbonden worden.",
-          "sh:name": "isGerelateerdAan",
-          "sh:path": "http://purl.org/dc/terms/relation"
-        },
-        {
-          "sh:class": "http://fixme.com/#Terugmelding",
-          "sh:description": "De terugmelding waaraan de anomalie kan verbonden worden.",
-          "sh:name": "isGerelateerdAan",
-          "sh:path": "http://purl.org/dc/terms/relation"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit#Inname",
-          "sh:description": "Inname waaraan de anomalie kan verbonden worden.",
-          "sh:name": "isGerelateerdAan",
-          "sh:path": "http://purl.org/dc/terms/relation"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/org#Organization",
-          "sh:description": "Naam van de organisatie die de afwijking heeft gemeld.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "melder",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#melder"
-        },
-        {
-          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/AnomalieOorzaak",
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "De oorzaak van de anomalie.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "oorzaak",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oorzaak"
-        },
-        {
-          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/AnomalieStatus",
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Status van de anomalie die aangeeft in welke fase de anomalie zich bevindt.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "status",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#status"
-        },
-        {
-          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/AnomalieThema",
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Het thema van de anomalie.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "thema",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#thema"
-        },
-        {
-          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/ThemaVerduidelijking",
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Verduidelijking van het thema van de anomalie.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "themaVerduidelijking",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#themaverduidelijking"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "Detaillering over de oorzaak van de anomalie.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "vrijetekst",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#vrijetekst"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Anomalie"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#GebouwAanDeGrondShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Gebouwtype",
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Het type van het gebouw.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "gebouwtype",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#gebouwtype"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid",
-          "sh:description": "Verwijst naar de gebouwaanhorigheid dat geassocieerd is met het gebouw aan de grond.",
-          "sh:name": "heeftGebouwaanhorigheid",
-          "sh:path": "http://purl.org/dc/terms/relation"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevellijn",
-          "sh:description": "Verwijst naar de gevellijn(en) die kunnen geassocieerd worden met het gebouw aan de grond.",
-          "sh:name": "heeftGevellijn",
-          "sh:path": "http://purl.org/dc/terms/relation"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevelpunt",
-          "sh:description": "Verwijst naar het (de) gevelpunt(en) dat geassocieerd zijn met het gebouw aan de grond.",
-          "sh:minCount": "1",
-          "sh:name": "heeftGevelpunt",
-          "sh:path": "http://purl.org/dc/terms/relation"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/adres#Adres",
-          "sh:description": "Adresseerbaar object waaraan het adres is toegekend.",
-          "sh:name": "isToegekendAan",
-          "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
-        },
-        {
-          "sh:class": "https://schema.org/QuantitativeValue",
-          "sh:description": "De oppervlakte in vierkante meter van de veelhoek",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "oppervlakte",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#GebouwaanhorigheidShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Gebouwaanhorigheidtype",
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Het type van de gebouwaanhorigheid.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "gebouwaanhorigheidtype",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheidtype"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/adres#Adres",
-          "sh:description": "Adresseerbaar object waaraan het adres is toegekend.",
-          "sh:name": "isToegekendAan",
-          "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
-        },
-        {
-          "sh:class": "https://schema.org/QuantitativeValue",
-          "sh:description": "De oppervlakte in vierkante meter van de veelhoek.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "oppervlakte",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#GevellijnShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevelpunt",
-          "sh:description": "Verwijst naar de gevelpunten waaruit de gevellijn bestaat.",
-          "sh:minCount": "1",
-          "sh:name": "bestaatUit",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#bestaatuit"
-        },
-        {
-          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Gevellijntype",
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Het type van de gevellijn.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "gevellijntype",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevellijntype"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond",
-          "sh:description": "Verwijst naar de gevellijn(en) die kunnen geassocieerd worden met het gebouw aan de grond.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "heeftGevellijn",
-          "sh:path": "http://purl.org/dc/terms/relation"
-        },
-        {
-          "sh:class": "https://schema.org/QuantitativeValue",
-          "sh:description": "Lengte in meter van de lijngeometrie.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "lengte",
-          "sh:path": "http://open.vocab.org/terms/length"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevellijn"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#GevelpuntShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Gevelpunttype",
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "De manier van opname van een gevelpunt.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "gevelpunttype",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevelpunttype"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond",
-          "sh:description": "Verwijst naar het (de) gevelpunt(en) dat geassocieerd zijn met het gebouw aan de grond.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "heeftGevelpunt",
-          "sh:path": "http://purl.org/dc/terms/relation"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevelpunt"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#KunstwerkShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/adres#Adres",
-          "sh:description": "Addresseerbaar object waaraan het adres is toegekend.",
-          "sh:name": "isToegekendAan",
-          "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
-        },
-        {
-          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Kunstwerktype",
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Type van het kunstwerk.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "kunstwerktype",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#kunstwerktype"
-        },
-        {
-          "sh:class": "https://schema.org/QuantitativeValue",
-          "sh:description": "Oppervlakte in m2 van de veelhoek.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "oppervlakte",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte"
-        },
-        {
-          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Vormtype",
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Aanduiding of een kunstwerk enkelvoudig is, dan wel samengesteld uit een verzameling van gelijksoortige inrichtingen.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "vormtype",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#vormtype"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#LokaleBijhoudingszoneShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/LokaleBijhoudingtype",
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Type van de lokale bijhouding",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "lokalebijhoudingtype",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#LokaleBijhoudingtype"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/org#Organization",
-          "sh:description": "Opdrachtgever of eigenaar van het as-builtplan.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "opdrachtgever",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opdrachtgever"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "Datum van de opmeting op het terrein.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "opmetingsdatum",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opmetingsdatum"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
-          "sh:description": "Alfanummerieke unieke referentiecode van het as-builtplan of een lokale bijhouding.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "referentiecode",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#referentiecode"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "Datum waarop het as-builtplan of lokale bijhouding beschikbaar komt.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "releasedatum",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#releasedatum"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#LokaleBijhoudingszone"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#PuntvormigeInrichtingShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/PuntvormigeInrichtingtype",
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Aard van het puntvormige weginrichtingselement.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "puntvormigeInrichtingtype",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#PuntvormigeInrichtingtype"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#PuntvormigeInrichting"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#SpoorbaanShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/SpoorbaanFunctie",
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Aard van het spoorverkeer",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "spoorbaanfunctie",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Spoorbaanfunctie"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Spoorbaan"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#SpoorrailShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "https://schema.org/QuantitativeValue",
-          "sh:description": "Lengte in meter van de lijngeometrie.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "lengte",
-          "sh:path": "http://open.vocab.org/terms/length"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "Het lijnnummer toegekend aan de spooras door de beheerder.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "lijnnummer",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lijnnummer"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Spoorrail"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#TerreinShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Bodembedekking",
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Code voor de aard van de bodembedekking.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "bodembedekking",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Bodembedekking"
-        },
-        {
-          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Bodemgebruik",
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Code voor het hoofdgebruik van het betreffende terrein.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "bodemgebruik",
-          "sh:path": "http://fixme.com#bodemgebruik"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Terrein"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#WaterloopsegmentShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/ns/adms#Identifier",
-          "sh:description": "Informatie gebruikt om een object uniek te identificeren.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "identificator",
-          "sh:path": "http://www.w3.org/ns/adms#identifier"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/openbaardomein/waterdeel#Waterdeel",
-          "sh:description": "Duidt het waterloopsegment aan waaraan de watergang kan gekoppeld worden.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "isGerelateerdAan",
-          "sh:path": "http://purl.org/dc/terms/relation"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Waterloopsegment"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#WegaanhorigheidShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "https://schema.org/QuantitativeValue",
-          "sh:description": "Oppervlakte in vierkante meter van de veelhoek.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "oppervlakte",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte"
-        },
-        {
-          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Wegaanhorigheidtype",
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Aard van de wegaanhorigheid.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "wegaanhorigheidtype",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegaanhorigheidtype"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegaanhorigheid"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#WegopdelingShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Wegopdelingtype",
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Aard van de wegopdeling.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "wegopdelingtype",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegopdelingtype"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegopdeling"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#Adresregister::AdresShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -1051,13 +1051,13 @@
           "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#AdministratiefPerceel",
+          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond",
           "sh:description": "Adresseerbaar object waaraan het adres is toegekend.",
           "sh:name": "isToegekendAan",
           "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond",
+          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#AdministratiefPerceel",
           "sh:description": "Adresseerbaar object waaraan het adres is toegekend.",
           "sh:name": "isToegekendAan",
           "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
