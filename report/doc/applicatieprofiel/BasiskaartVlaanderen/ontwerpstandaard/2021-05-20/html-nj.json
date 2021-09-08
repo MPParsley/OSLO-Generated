@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-grb/tree/f1b82f93f345c4d6667ab041d98821e4801fef40",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-grb/blob/f1b82f93f345c4d6667ab041d98821e4801fef40/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-grb/tree/d1643230bd820603a4b63f30ab233398822f1931",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-grb/blob/d1643230bd820603a4b63f30ab233398822f1931/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-grb/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/TODO/CORRECT-URL/index.html",
     "usesVocs": [],
@@ -100,7 +100,7 @@
           ],
           "range": [
             {
-              "range_label": "Adresregister::Adres",
+              "range_label": "Adres",
               "range_uri": "https://data.vlaanderen.be/ns/adres#Adres"
             }
           ],
@@ -383,6 +383,40 @@
           },
           "sort_nl": "isGerelateerdAan",
           "description": {
+            "nl": "Inname waaraan de anomalie kan verbonden worden."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Anomalie",
+              "EA-Name": "Anomalie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Inname",
+              "range_uri": "https://data.vlaanderen.be/ns/mobiliteit#Inname"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Inname",
+              "range_puri": "https://data.vlaanderen.be/ns/mobiliteit#Inname",
+              "range_label": {
+                "nl": "Inname"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/relation",
+          "name": {
+            "nl": "isGerelateerdAan"
+          },
+          "sort_nl": "isGerelateerdAan",
+          "description": {
             "nl": "Het meldingsobject waaraan de anomalie kan verbonden worden."
           },
           "usage": {},
@@ -394,7 +428,7 @@
           ],
           "range": [
             {
-              "range_label": "GeneriekeTerugmeldfaciliteit::Meldingsobject",
+              "range_label": "Meldingsobject",
               "range_uri": "http://fixme.com/#Meldingsobject"
             }
           ],
@@ -428,7 +462,7 @@
           ],
           "range": [
             {
-              "range_label": "GeneriekeTerugmeldfaciliteit::Terugmelding",
+              "range_label": "Terugmelding",
               "range_uri": "http://fixme.com/#Terugmelding"
             }
           ],
@@ -443,39 +477,254 @@
           ],
           "cardinality": "0..*",
           "codelist_uri": ""
-        },
+        }
+      ]
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object",
+      "name": {
+        "nl": "GRB-Object"
+      },
+      "sort_nl": "GRB-Object",
+      "description": {
+        "nl": "De hoofdklasse waar alle objecten die geïnventariseerd kunnen worden van afgeleid worden."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
         {
-          "uri": "http://purl.org/dc/terms/relation",
-          "name": {
-            "nl": "isGerelateerdAan"
-          },
-          "sort_nl": "isGerelateerdAan",
+          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn",
+          "name": {},
           "description": {
-            "nl": "Inname waaraan de anomalie kan verbonden worden."
+            "nl": "Lengte in meter van de geometrie van de omtreklijn."
           },
           "usage": {},
           "domain": [
             {
-              "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Anomalie",
-              "EA-Name": "Anomalie"
+              "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object",
+              "EA-Name": "GRB-Object"
             }
           ],
           "range": [
             {
-              "range_label": "InnameOpenbaarDomein::Inname",
-              "range_uri": "https://data.vlaanderen.be/ns/mobiliteit#Inname"
+              "range_label": "KwantitatieveWaarde",
+              "range_uri": "https://schema.org/QuantitativeValue"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Inname",
-              "range_puri": "https://data.vlaanderen.be/ns/mobiliteit#Inname",
+              "range_uri": "#Kwantitatieve Waarde",
+              "range_puri": "https://schema.org/QuantitativeValue",
               "range_label": {
-                "nl": "Inname"
+                "nl": "Kwantitatieve Waarde"
               }
             }
           ],
-          "cardinality": "0..*",
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum",
+          "name": {
+            "nl": "opnamedatum"
+          },
+          "sort_nl": "opnamedatum",
+          "description": {
+            "nl": "Datum van oplevering."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object",
+              "EA-Name": "GRB-Object"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "nl": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/relation",
+          "name": {
+            "nl": "isGerelateerdAan (target)"
+          },
+          "sort_nl": "isGerelateerdAan (target)",
+          "description": {
+            "nl": "Duidt een gerelateerde GRB object aan."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object",
+              "EA-Name": "GRB-Object"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "GRB-Object",
+              "range_uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#GRB-Object",
+              "range_puri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object",
+              "range_label": {
+                "nl": "GRB-Object"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/relation",
+          "name": {
+            "nl": "isGerelateerdAan (source)"
+          },
+          "sort_nl": "isGerelateerdAan (source)",
+          "description": {
+            "nl": "Duidt een gerelateerde GRB object aan."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object",
+              "EA-Name": "GRB-Object"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "GRB-Object",
+              "range_uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#GRB-Object",
+              "range_puri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object",
+              "range_label": {
+                "nl": "GRB-Object"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/adms#identifier",
+          "name": {
+            "nl": "identificator"
+          },
+          "sort_nl": "identificator",
+          "description": {
+            "nl": "Informatie gebruikt om een object uniek te identificeren."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object",
+              "EA-Name": "GRB-Object"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Identificator",
+              "range_uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Identificator",
+              "range_puri": "http://www.w3.org/ns/adms#Identifier",
+              "range_label": {
+                "nl": "Identificator"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#Geometry",
+          "name": {
+            "nl": "geometrie"
+          },
+          "sort_nl": "geometrie",
+          "description": {
+            "nl": "De geometrie overeenkomstig met een bepaald object."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object",
+              "EA-Name": "GRB-Object"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Geometrie",
+              "range_uri": "http://www.w3.org/ns/locn#Geometry"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Geometrie",
+              "range_puri": "http://www.w3.org/ns/locn#Geometry",
+              "range_label": {
+                "nl": "Geometrie"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/openbaardomein#beheerder",
+          "name": {
+            "nl": "beheerder"
+          },
+          "sort_nl": "beheerder",
+          "description": {
+            "nl": "Instantie (tot op team- of dienstniveau) die instaat voor het beheer van het gebied."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object",
+              "EA-Name": "GRB-Object"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Organisatie",
+              "range_uri": "http://www.w3.org/ns/org#Organization"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Organisatie",
+              "range_puri": "http://www.w3.org/ns/org#Organization",
+              "range_label": {
+                "nl": "Organisatie"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -497,7 +746,7 @@
           "name": "GRB-Object",
           "label": "GRB-Object",
           "package": "GRB-Model",
-          "uri": "http://www.w3.org/ns/prov#Entity",
+          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object",
           "scoped_uri": "#GRB-Object"
         }
       ],
@@ -573,40 +822,6 @@
         {
           "uri": "http://purl.org/dc/terms/relation",
           "name": {
-            "nl": "heeftGevelpunt"
-          },
-          "sort_nl": "heeftGevelpunt",
-          "description": {
-            "nl": "Verwijst naar het (de) gevelpunt(en) dat geassocieerd zijn met het gebouw aan de grond."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond",
-              "EA-Name": "GebouwAanDeGrond"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Gevelpunt",
-              "range_uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevelpunt"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Gevelpunt",
-              "range_puri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevelpunt",
-              "range_label": {
-                "nl": "Gevelpunt"
-              }
-            }
-          ],
-          "cardinality": "1..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/relation",
-          "name": {
             "nl": "heeftGevellijn"
           },
           "sort_nl": "heeftGevellijn",
@@ -636,6 +851,40 @@
             }
           ],
           "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/relation",
+          "name": {
+            "nl": "heeftGevelpunt"
+          },
+          "sort_nl": "heeftGevelpunt",
+          "description": {
+            "nl": "Verwijst naar het (de) gevelpunt(en) dat geassocieerd zijn met het gebouw aan de grond."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond",
+              "EA-Name": "GebouwAanDeGrond"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Gevelpunt",
+              "range_uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevelpunt"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Gevelpunt",
+              "range_puri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevelpunt",
+              "range_label": {
+                "nl": "Gevelpunt"
+              }
+            }
+          ],
+          "cardinality": "1..*",
           "codelist_uri": ""
         },
         {
@@ -690,7 +939,7 @@
           ],
           "range": [
             {
-              "range_label": "Adresregister::Adres",
+              "range_label": "Adres",
               "range_uri": "https://data.vlaanderen.be/ns/adres#Adres"
             }
           ],
@@ -723,7 +972,7 @@
           "name": "GRB-Object",
           "label": "GRB-Object",
           "package": "GRB-Model",
-          "uri": "http://www.w3.org/ns/prov#Entity",
+          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object",
           "scoped_uri": "#GRB-Object"
         }
       ],
@@ -814,7 +1063,7 @@
           ],
           "range": [
             {
-              "range_label": "Adresregister::Adres",
+              "range_label": "Adres",
               "range_uri": "https://data.vlaanderen.be/ns/adres#Adres"
             }
           ],
@@ -847,7 +1096,7 @@
           "name": "GRB-Object",
           "label": "GRB-Object",
           "package": "GRB-Model",
-          "uri": "http://www.w3.org/ns/prov#Entity",
+          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object",
           "scoped_uri": "#GRB-Object"
         }
       ],
@@ -1005,7 +1254,7 @@
           "name": "GRB-Object",
           "label": "GRB-Object",
           "package": "GRB-Model",
-          "uri": "http://www.w3.org/ns/prov#Entity",
+          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object",
           "scoped_uri": "#GRB-Object"
         }
       ],
@@ -1220,7 +1469,7 @@
           ],
           "range": [
             {
-              "range_label": "Adresregister::Adres",
+              "range_label": "Adres",
               "range_uri": "https://data.vlaanderen.be/ns/adres#Adres"
             }
           ],
@@ -1977,7 +2226,7 @@
           "domain": [
             {
               "uri": "http://fixme.com/#Meldingsobject",
-              "EA-Name": "GeneriekeTerugmeldfaciliteit::Meldingsobject"
+              "EA-Name": "Meldingsobject"
             }
           ],
           "range": [
@@ -2011,7 +2260,7 @@
           "domain": [
             {
               "uri": "http://fixme.com/#Meldingsobject",
-              "EA-Name": "GeneriekeTerugmeldfaciliteit::Meldingsobject"
+              "EA-Name": "Meldingsobject"
             }
           ],
           "range": [
@@ -2059,7 +2308,7 @@
           "domain": [
             {
               "uri": "http://fixme.com/#Terugmelding",
-              "EA-Name": "GeneriekeTerugmeldfaciliteit::Terugmelding"
+              "EA-Name": "Terugmelding"
             }
           ],
           "range": [
@@ -2093,7 +2342,7 @@
           "domain": [
             {
               "uri": "http://fixme.com/#Terugmelding",
-              "EA-Name": "GeneriekeTerugmeldfaciliteit::Terugmelding"
+              "EA-Name": "Terugmelding"
             }
           ],
           "range": [
@@ -2235,255 +2484,6 @@
       ]
     },
     {
-      "uri": "http://www.w3.org/ns/prov#Entity",
-      "name": {
-        "nl": "GRB-Object"
-      },
-      "sort_nl": "GRB-Object",
-      "description": {
-        "nl": "De hoofdklasse waar alle objecten die geïnventariseerd kunnen worden van afgeleid worden."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn",
-          "name": {},
-          "description": {
-            "nl": "Lengte in meter van de geometrie van de omtreklijn."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://www.w3.org/ns/prov#Entity",
-              "EA-Name": "GRB-Object"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KwantitatieveWaarde",
-              "range_uri": "https://schema.org/QuantitativeValue"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Kwantitatieve Waarde",
-              "range_puri": "https://schema.org/QuantitativeValue",
-              "range_label": {
-                "nl": "Kwantitatieve Waarde"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum",
-          "name": {
-            "nl": "opnamedatum"
-          },
-          "sort_nl": "opnamedatum",
-          "description": {
-            "nl": "Datum van oplevering."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://www.w3.org/ns/prov#Entity",
-              "EA-Name": "GRB-Object"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_label": {
-                "nl": "DateTime"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/relation",
-          "name": {
-            "nl": "isGerelateerdAan (target)"
-          },
-          "sort_nl": "isGerelateerdAan (target)",
-          "description": {
-            "nl": "Duidt een gerelateerde GRB object aan."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://www.w3.org/ns/prov#Entity",
-              "EA-Name": "GRB-Object"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "GRB-Object",
-              "range_uri": "http://www.w3.org/ns/prov#Entity"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#GRB-Object",
-              "range_puri": "http://www.w3.org/ns/prov#Entity",
-              "range_label": {
-                "nl": "GRB-Object"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/relation",
-          "name": {
-            "nl": "isGerelateerdAan (source)"
-          },
-          "sort_nl": "isGerelateerdAan (source)",
-          "description": {
-            "nl": "Duidt een gerelateerde GRB object aan."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://www.w3.org/ns/prov#Entity",
-              "EA-Name": "GRB-Object"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "GRB-Object",
-              "range_uri": "http://www.w3.org/ns/prov#Entity"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#GRB-Object",
-              "range_puri": "http://www.w3.org/ns/prov#Entity",
-              "range_label": {
-                "nl": "GRB-Object"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/adms#identifier",
-          "name": {
-            "nl": "identificator"
-          },
-          "sort_nl": "identificator",
-          "description": {
-            "nl": "Informatie gebruikt om een object uniek te identificeren."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://www.w3.org/ns/prov#Entity",
-              "EA-Name": "GRB-Object"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Identificator",
-              "range_uri": "http://www.w3.org/ns/adms#Identifier"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Identificator",
-              "range_puri": "http://www.w3.org/ns/adms#Identifier",
-              "range_label": {
-                "nl": "Identificator"
-              }
-            }
-          ],
-          "cardinality": "1..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#Geometry",
-          "name": {
-            "nl": "geometrie"
-          },
-          "sort_nl": "geometrie",
-          "description": {
-            "nl": "De geometrie overeenkomstig met een bepaald object."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://www.w3.org/ns/prov#Entity",
-              "EA-Name": "GRB-Object"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Geometrie",
-              "range_uri": "http://www.w3.org/ns/locn#Geometry"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Geometrie",
-              "range_puri": "http://www.w3.org/ns/locn#Geometry",
-              "range_label": {
-                "nl": "Geometrie"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/openbaardomein#beheerder",
-          "name": {
-            "nl": "beheerder"
-          },
-          "sort_nl": "beheerder",
-          "description": {
-            "nl": "Instantie (tot op team- of dienstniveau) die instaat voor het beheer van het gebied."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://www.w3.org/ns/prov#Entity",
-              "EA-Name": "GRB-Object"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Organisatie",
-              "range_uri": "http://www.w3.org/ns/org#Organization"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Organisatie",
-              "range_puri": "http://www.w3.org/ns/org#Organization",
-              "range_label": {
-                "nl": "Organisatie"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
       "uri": "https://data.vlaanderen.be/ns/adres#Adres",
       "name": {
         "nl": "Adres"
@@ -2502,81 +2502,13 @@
           },
           "sort_nl": "isToegekendAan",
           "description": {
-            "nl": "Addresseerbaar object waaraan het adres is toegekend."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/adres#Adres",
-              "EA-Name": "Adresregister::Adres"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Kunstwerk",
-              "range_uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Kunstwerk",
-              "range_puri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk",
-              "range_label": {
-                "nl": "Kunstwerk"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/adres#isToegekendAan",
-          "name": {
-            "nl": "isToegekendAan"
-          },
-          "sort_nl": "isToegekendAan",
-          "description": {
             "nl": "Adresseerbaar object waaraan het adres is toegekend."
           },
           "usage": {},
           "domain": [
             {
               "uri": "https://data.vlaanderen.be/ns/adres#Adres",
-              "EA-Name": "Adresregister::Adres"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Gebouwaanhorigheid",
-              "range_uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Gebouwaanhorigheid",
-              "range_puri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid",
-              "range_label": {
-                "nl": "Gebouwaanhorigheid"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/adres#isToegekendAan",
-          "name": {
-            "nl": "isToegekendAan"
-          },
-          "sort_nl": "isToegekendAan",
-          "description": {
-            "nl": "Adresseerbaar object waaraan het adres is toegekend."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/adres#Adres",
-              "EA-Name": "Adresregister::Adres"
+              "EA-Name": "Adres"
             }
           ],
           "range": [
@@ -2610,7 +2542,7 @@
           "domain": [
             {
               "uri": "https://data.vlaanderen.be/ns/adres#Adres",
-              "EA-Name": "Adresregister::Adres"
+              "EA-Name": "Adres"
             }
           ],
           "range": [
@@ -2630,6 +2562,74 @@
           ],
           "cardinality": "0..*",
           "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/adres#isToegekendAan",
+          "name": {
+            "nl": "isToegekendAan"
+          },
+          "sort_nl": "isToegekendAan",
+          "description": {
+            "nl": "Adresseerbaar object waaraan het adres is toegekend."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/adres#Adres",
+              "EA-Name": "Adres"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Gebouwaanhorigheid",
+              "range_uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Gebouwaanhorigheid",
+              "range_puri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid",
+              "range_label": {
+                "nl": "Gebouwaanhorigheid"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/adres#isToegekendAan",
+          "name": {
+            "nl": "isToegekendAan"
+          },
+          "sort_nl": "isToegekendAan",
+          "description": {
+            "nl": "Addresseerbaar object waaraan het adres is toegekend."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/adres#Adres",
+              "EA-Name": "Adres"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Kunstwerk",
+              "range_uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Kunstwerk",
+              "range_puri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk",
+              "range_label": {
+                "nl": "Kunstwerk"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
         }
       ]
     },
@@ -2643,15 +2643,7 @@
         "nl": "Adrescomponent die verwijst naar de naam van een gemeente, namelijk het kleinste administratieve deel van het Belgisch grondgebied waarvan de grenzen enkel door de wetgever kunnen worden gewijzigd."
       },
       "usage": {},
-      "parents": [
-        {
-          "name": "Object",
-          "label": "Object",
-          "package": "OSLO-OpenbaarDomein",
-          "uri": "http://test.data.vlaanderen.be/ns/openbaardomein#Object",
-          "scoped_uri": "http://test.data.vlaanderen.be/ns/openbaardomein#Object"
-        }
-      ],
+      "parents": [],
       "properties": [
         {
           "uri": "http://www.w3.org/2000/01/rdf-schema#label",
@@ -2735,15 +2727,7 @@
         "nl": "Adrescomponent met de naam die officieel werd toegekend aan een straat (baan, doorgang, plein) of aan een gehucht en waaraan adressen kunnen zijn gekoppeld."
       },
       "usage": {},
-      "parents": [
-        {
-          "name": "Object",
-          "label": "Object",
-          "package": "OSLO-OpenbaarDomein",
-          "uri": "http://test.data.vlaanderen.be/ns/openbaardomein#Object",
-          "scoped_uri": "http://test.data.vlaanderen.be/ns/openbaardomein#Object"
-        }
-      ],
+      "parents": [],
       "properties": [
         {
           "uri": "http://www.w3.org/ns/adms#Identifier",
@@ -2806,7 +2790,7 @@
           "domain": [
             {
               "uri": "https://data.vlaanderen.be/ns/mobiliteit#Inname",
-              "EA-Name": "InnameOpenbaarDomein::Inname"
+              "EA-Name": "Inname"
             }
           ],
           "range": [
@@ -2842,7 +2826,7 @@
           "domain": [
             {
               "uri": "https://data.vlaanderen.be/ns/mobiliteit#Inname",
-              "EA-Name": "InnameOpenbaarDomein::Inname"
+              "EA-Name": "Inname"
             }
           ],
           "range": [
@@ -2880,7 +2864,7 @@
           "name": "GRB-Object",
           "label": "GRB-Object",
           "package": "GRB-Model",
-          "uri": "http://www.w3.org/ns/prov#Entity",
+          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object",
           "scoped_uri": "#GRB-Object"
         }
       ],
@@ -2943,7 +2927,7 @@
           "name": "GRB-Object",
           "label": "GRB-Object",
           "package": "GRB-Model",
-          "uri": "http://www.w3.org/ns/prov#Entity",
+          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object",
           "scoped_uri": "#GRB-Object"
         }
       ],
@@ -3536,7 +3520,7 @@
           "name": "GRB-Object",
           "label": "GRB-Object",
           "package": "GRB-Model",
-          "uri": "http://www.w3.org/ns/prov#Entity",
+          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object",
           "scoped_uri": "#GRB-Object"
         }
       ],
@@ -3659,7 +3643,7 @@
         {
           "name": "Wegknoop",
           "label": "Wegknoop",
-          "package": "OSLO²_applicatieprofiel_Wegenregister",
+          "package": "OSLO-Wegenregister",
           "uri": "https://data.vlaanderen.be/ns/weg#Wegknoop",
           "scoped_uri": "#Wegknoop"
         },
@@ -3667,7 +3651,7 @@
           "name": "GRB-Object",
           "label": "GRB-Object",
           "package": "GRB-Model",
-          "uri": "http://www.w3.org/ns/prov#Entity",
+          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object",
           "scoped_uri": "#GRB-Object"
         }
       ],
@@ -3754,18 +3738,18 @@
       "usage": {},
       "parents": [
         {
-          "name": "Wegsegment",
-          "label": "Wegsegment",
-          "package": "OSLO²_applicatieprofiel_Wegenregister",
-          "uri": "https://data.vlaanderen.be/ns/weg#Wegsegment",
-          "scoped_uri": "https://data.vlaanderen.be/ns/weg#Wegsegment"
-        },
-        {
           "name": "GRB-Object",
           "label": "GRB-Object",
           "package": "GRB-Model",
-          "uri": "http://www.w3.org/ns/prov#Entity",
+          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object",
           "scoped_uri": "#GRB-Object"
+        },
+        {
+          "name": "Wegsegment",
+          "label": "Wegsegment",
+          "package": "OSLO-Wegenregister",
+          "uri": "https://data.vlaanderen.be/ns/weg#Wegsegment",
+          "scoped_uri": "https://data.vlaanderen.be/ns/weg#Wegsegment"
         }
       ],
       "properties": [

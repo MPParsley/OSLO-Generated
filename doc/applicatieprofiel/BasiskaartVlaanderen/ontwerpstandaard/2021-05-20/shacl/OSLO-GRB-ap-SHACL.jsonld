@@ -70,6 +70,12 @@
           "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#asbuiltplan"
         },
         {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit#Inname",
+          "sh:description": "Inname waaraan de anomalie kan verbonden worden.",
+          "sh:name": "isGerelateerdAan",
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
           "sh:class": "http://fixme.com/#Meldingsobject",
           "sh:description": "Het meldingsobject waaraan de anomalie kan verbonden worden.",
           "sh:name": "isGerelateerdAan",
@@ -78,12 +84,6 @@
         {
           "sh:class": "http://fixme.com/#Terugmelding",
           "sh:description": "De terugmelding waaraan de anomalie kan verbonden worden.",
-          "sh:name": "isGerelateerdAan",
-          "sh:path": "http://purl.org/dc/terms/relation"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit#Inname",
-          "sh:description": "Inname waaraan de anomalie kan verbonden worden.",
           "sh:name": "isGerelateerdAan",
           "sh:path": "http://purl.org/dc/terms/relation"
         },
@@ -141,6 +141,63 @@
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Anomalie"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#GRB-ObjectShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/org#Organization",
+          "sh:description": "Instantie (tot op team- of dienstniveau) die instaat voor het beheer van het gebied.",
+          "sh:maxCount": "1",
+          "sh:name": "beheerder",
+          "sh:path": "https://data.vlaanderen.be/ns/openbaardomein#beheerder"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Geometry",
+          "sh:description": "De geometrie overeenkomstig met een bepaald object.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "geometrie",
+          "sh:path": "http://www.w3.org/ns/locn#Geometry"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "Informatie gebruikt om een object uniek te identificeren.",
+          "sh:minCount": "1",
+          "sh:name": "identificator",
+          "sh:path": "http://www.w3.org/ns/adms#identifier"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object",
+          "sh:description": "Duidt een gerelateerde GRB object aan.",
+          "sh:name": "isGerelateerdAan",
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object",
+          "sh:description": "Duidt een gerelateerde GRB object aan.",
+          "sh:name": "isGerelateerdAan",
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:description": "Lengte in meter van de geometrie van de omtreklijn.",
+          "sh:maxCount": "1",
+          "sh:name": "lengteOmtreklijn",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Datum van oplevering.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "opnamedatum",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#GebouwAanDeGrondShape",
@@ -551,7 +608,7 @@
       "sh:targetClass": "http://data.europa.eu/m8g/PeriodOfTime"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#GeneriekeTerugmeldfaciliteit::MeldingsobjectShape",
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#MeldingsobjectShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
@@ -575,7 +632,7 @@
       "sh:targetClass": "http://fixme.com/#Meldingsobject"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#GeneriekeTerugmeldfaciliteit::TerugmeldingShape",
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#TerugmeldingShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
@@ -977,70 +1034,19 @@
       "sh:targetClass": "http://www.w3.org/ns/org#Organization"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#GRB-ObjectShape",
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#AdresShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "http://www.w3.org/ns/org#Organization",
-          "sh:description": "Instantie (tot op team- of dienstniveau) die instaat voor het beheer van het gebied.",
-          "sh:maxCount": "1",
-          "sh:name": "beheerder",
-          "sh:path": "https://data.vlaanderen.be/ns/openbaardomein#beheerder"
+          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond",
+          "sh:description": "Adresseerbaar object waaraan het adres is toegekend.",
+          "sh:name": "isToegekendAan",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
         },
         {
-          "sh:class": "http://www.w3.org/ns/locn#Geometry",
-          "sh:description": "De geometrie overeenkomstig met een bepaald object.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "geometrie",
-          "sh:path": "http://www.w3.org/ns/locn#Geometry"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/adms#Identifier",
-          "sh:description": "Informatie gebruikt om een object uniek te identificeren.",
-          "sh:minCount": "1",
-          "sh:name": "identificator",
-          "sh:path": "http://www.w3.org/ns/adms#identifier"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/prov#Entity",
-          "sh:description": "Duidt een gerelateerde GRB object aan.",
-          "sh:name": "isGerelateerdAan",
-          "sh:path": "http://purl.org/dc/terms/relation"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/prov#Entity",
-          "sh:description": "Duidt een gerelateerde GRB object aan.",
-          "sh:name": "isGerelateerdAan",
-          "sh:path": "http://purl.org/dc/terms/relation"
-        },
-        {
-          "sh:class": "https://schema.org/QuantitativeValue",
-          "sh:description": "Lengte in meter van de geometrie van de omtreklijn.",
-          "sh:maxCount": "1",
-          "sh:name": "lengteOmtreklijn",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "Datum van oplevering.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "opnamedatum",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum"
-        }
-      ],
-      "sh:targetClass": "http://www.w3.org/ns/prov#Entity"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#Adresregister::AdresShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk",
-          "sh:description": "Addresseerbaar object waaraan het adres is toegekend.",
+          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#AdministratiefPerceel",
+          "sh:description": "Adresseerbaar object waaraan het adres is toegekend.",
           "sh:name": "isToegekendAan",
           "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
         },
@@ -1051,14 +1057,8 @@
           "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond",
-          "sh:description": "Adresseerbaar object waaraan het adres is toegekend.",
-          "sh:name": "isToegekendAan",
-          "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#AdministratiefPerceel",
-          "sh:description": "Adresseerbaar object waaraan het adres is toegekend.",
+          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk",
+          "sh:description": "Addresseerbaar object waaraan het adres is toegekend.",
           "sh:name": "isToegekendAan",
           "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
         }
@@ -1144,7 +1144,7 @@
       "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#InnameOpenbaarDomein::InnameShape",
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#InnameShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
