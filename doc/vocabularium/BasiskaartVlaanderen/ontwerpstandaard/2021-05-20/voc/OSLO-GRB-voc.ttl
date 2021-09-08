@@ -2,7 +2,6 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
@@ -10,56 +9,32 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://fixme.com/#Meldingsobject> a rdfs:Class;
-  rdfs:label "Meldingsobject"@nl .
-
-<http://fixme.com/#Terugmelding> a rdfs:Class;
-  rdfs:label "Terugmelding"@nl .
-
 skos:Concept a rdfs:Class;
-  rdfs:label "Kunstwerktype"@nl,
-    "Wegknooptype"@nl,
-    "LokaleBijhoudingtype"@nl,
-    "TransversaleWeginrichtingtype"@nl,
-    "Gevelpunttype"@nl,
-    "Wegopdelingtype"@nl,
-    "Bodembedekkingtype"@nl,
-    "AsBuiltplan"@nl,
-    "Wegverhardingtype"@nl,
-    "AnomalieStatus"@nl,
-    "Gebouwtype"@nl,
-    "ThemaVerduidelijking"@nl,
-    "Gebouwaanhorigheidtype"@nl,
-    "LongitudinaleWeginrichtingtype"@nl,
-    "Wegaanhorigheidtype"@nl,
-    "Vormtype"@nl,
-    "PuntvormigeInrichtingtype"@nl,
-    "SpoorbaanFunctie"@nl,
-    "MorfologischeWegklassetype"@nl,
-    "AnomalieOorzaak"@nl,
-    "AnomalieThema"@nl,
-    "Bodemgebruiktype"@nl,
-    "Wegbaantype"@nl,
+  rdfs:label "LongitudinaleWeginrichtingtype"@nl,
     "Gevellijntype"@nl,
-    "Meetmethode"@nl .
-
-prov:Entity a rdfs:Class;
-  rdfs:label "GRB-Object"@nl .
-
-<https://data.vlaanderen.be/ns/adres#Adres> a rdfs:Class;
-  rdfs:label "Adres"@nl .
-
-<https://data.vlaanderen.be/ns/adres#Gemeentenaam> a rdfs:Class;
-  rdfs:label "Gemeentenaam"@nl .
-
-<https://data.vlaanderen.be/ns/adres#Straatnaam> a rdf:Property,
-    rdfs:Class;
-  rdfs:label "Straatnaam"@nl,
-    "rechterstraatnaam"@nl,
-    "linkerstraatnaam"@nl .
-
-<https://data.vlaanderen.be/ns/mobiliteit#Inname> a rdfs:Class;
-  rdfs:label "Inname"@nl .
+    "AsBuiltplan"@nl,
+    "Gevelpunttype"@nl,
+    "Vormtype"@nl,
+    "AnomalieStatus"@nl,
+    "Wegopdelingtype"@nl,
+    "Gebouwtype"@nl,
+    "Wegverhardingtype"@nl,
+    "LokaleBijhoudingtype"@nl,
+    "MorfologischeWegklassetype"@nl,
+    "TransversaleWeginrichtingtype"@nl,
+    "Gebouwaanhorigheidtype"@nl,
+    "Wegknooptype"@nl,
+    "Meetmethode"@nl,
+    "SpoorbaanFunctie"@nl,
+    "PuntvormigeInrichtingtype"@nl,
+    "Wegbaantype"@nl,
+    "Bodemgebruiktype"@nl,
+    "Wegaanhorigheidtype"@nl,
+    "Kunstwerktype"@nl,
+    "AnomalieOorzaak"@nl,
+    "Bodembedekkingtype"@nl,
+    "AnomalieThema"@nl,
+    "ThemaVerduidelijking"@nl .
 
 <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#LongitudinaleWeginrichting> a rdfs:Class;
   rdfs:label "LongitudinaleWeginrichting"@nl .
@@ -219,7 +194,7 @@ Datum die per object verwijst naar het aanslagjaar volgend op het mutatiejaar wa
 
 <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn> a owl:ObjectProperty;
   rdfs:comment "Lengte in meter van de geometrie van de omtreklijn."@nl;
-  rdfs:domain prov:Entity;
+  rdfs:domain <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/BasiskaartVlaanderen>;
   rdfs:range schemas:QuantitativeValue .
 
@@ -268,18 +243,18 @@ Datum die per object verwijst naar het aanslagjaar volgend op het mutatiejaar wa
 <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#opnamedatum> a owl:DatatypeProperty;
   rdfs:label "opnamedatum"@nl;
   rdfs:comment "Datum van oplevering."@nl;
-  rdfs:domain prov:Entity;
+  rdfs:domain <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/BasiskaartVlaanderen>;
   rdfs:range xsd:dateTime .
 
 <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte> a owl:ObjectProperty;
   rdfs:label "oppervlakte"@nl;
-  rdfs:comment "De oppervlakte in vierkante meter van de veelhoek"@nl,
+  rdfs:comment "Oppervlakte in vierkante meter van de veelhoek."@nl,
+    "De oppervlakte in vierkante meter van de veelhoek"@nl,
     "Oppervlakte in m2 van de veelhoek."@nl,
-    "Oppervlakte in vierkante meter van de veelhoek."@nl,
     "De oppervlakte in vierkante meter van de veelhoek."@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid>,
-    <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond>,
+  rdfs:domain <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond>,
+    <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid>,
     <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk>,
     <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegaanhorigheid>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/BasiskaartVlaanderen>;
@@ -345,21 +320,15 @@ Datum die per object verwijst naar het aanslagjaar volgend op het mutatiejaar wa
   rdfs:label "lengte"@nl .
 
 dc:relation a rdf:Property;
-  rdfs:label "isGerelateerdAan"@nl,
-    "heeftGevellijn"@nl,
-    "isGerelateerdAan (source)"@nl,
+  rdfs:label "heeftGevelpunt"@nl,
     "heeft gebouwaanhorigheid"@nl,
-    "heeftGevelpunt"@nl,
-    "isGerelateerdAan (target)"@nl .
+    "isGerelateerdAan"@nl,
+    "isGerelateerdAan (target)"@nl,
+    "isGerelateerdAan (source)"@nl,
+    "heeftGevellijn"@nl .
 
 dc:title a rdf:Property;
   rdfs:label "naam"@nl .
-
-rdfs:label a rdf:Property;
-  rdfs:label "gemeentenaam"@nl .
-
-<http://www.w3.org/ns/adms#Identifier> a rdf:Property;
-  rdfs:label "identificator"@nl .
 
 <http://www.w3.org/ns/adms#identifier> a rdf:Property;
   rdfs:label "identificator"@nl .
@@ -371,20 +340,20 @@ rdfs:label a rdf:Property;
   rdfs:label "Administratief Perceel"@nl;
   rdfs:comment "Een administratief perceel (Adp) is een grafische voorstelling van de vermoedelijke ligging van het kadastraal perceel, waarbij de perceelsgrenzen werden geïnterpreteerd rekening houdend met de terreinsituatie."@nl;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/BasiskaartVlaanderen>;
-  rdfs:subClassOf <https://data.vlaanderen.be/ns/perceel#KadastraalPlanperceel>,
-    <https://data.vlaanderen.be/ns/perceel#RuimtelijkeEenheid> .
+  rdfs:subClassOf <https://data.vlaanderen.be/ns/perceel#RuimtelijkeEenheid>,
+    <https://data.vlaanderen.be/ns/perceel#KadastraalPlanperceel> .
 
 <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevellijn> a owl:Class;
   rdfs:label "Gevellijn"@nl;
   rdfs:comment "Een gevellijn (Gvl) volgt de verticale projectie van het gevelvlak op het maaiveld en verbindt twee verschillende gevelpunten (Gvp). In zijn meest eenvoudige vorm wordt een gebouw aan de grond beschreven door vier elementaire gevelvlakken."@nl;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/BasiskaartVlaanderen>;
-  rdfs:subClassOf prov:Entity .
+  rdfs:subClassOf <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object> .
 
 <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevelpunt> a owl:Class;
   rdfs:label "Gevelpunt"@nl;
   rdfs:comment "Een gevelpunt is elk beduidend vormpunt van de gevellijn van een gebouw aan de grond."@nl;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/BasiskaartVlaanderen>;
-  rdfs:subClassOf prov:Entity .
+  rdfs:subClassOf <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object> .
 
 <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#PuntvormigeInrichting> a owl:Class;
   rdfs:label "PuntvormigeInrichting"@nl;
@@ -413,9 +382,6 @@ rdfs:label a rdf:Property;
 <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#bestaatuit> a rdf:Property;
   rdfs:label "bestaat uit"@nl .
 
-<https://data.vlaanderen.be/ns/adres#isToegekendAan> a rdf:Property;
-  rdfs:label "isToegekendAan"@nl .
-
 <https://data.vlaanderen.be/ns/openbaardomein#beheerder> a rdf:Property;
   rdfs:label "beheerder"@nl .
 
@@ -428,14 +394,8 @@ rdfs:label a rdf:Property;
 <https://data.vlaanderen.be/ns/weg#eindknoop> a rdf:Property;
   rdfs:label "eindknoop"@nl .
 
-<https://data.vlaanderen.be/ns/weg#linkergemeentenaam> a rdf:Property;
-  rdfs:label "linkergemeentenaam"@nl .
-
 <https://data.vlaanderen.be/ns/weg#morfologischeWegklasse> a rdf:Property;
   rdfs:label "morfologischeWegklasse"@nl .
-
-<https://data.vlaanderen.be/ns/weg#rechtergemeentenaam> a rdf:Property;
-  rdfs:label "rechtergemeentenaam"@nl .
 
 <https://data.vlaanderen.be/ns/weg#wegverharding> a rdf:Property;
   rdfs:label "wegverharding"@nl .
@@ -445,13 +405,13 @@ rdfs:label a rdf:Property;
   <http://purl.org/vocab/vann/usageNote> "Een gelijkvloerse toegang voor ondergrondse of hangende constructies wordt eveneens als gebouw aan de grond beschouwd. Bepaalde duurzame bouwsels die aan bovenstaande definitie beantwoorden, worden echter in andere GRB-entiteiten opgenomen en niet hier. B"@nl;
   rdfs:comment "Een gebouw aan de grond (Gbg) is een duurzaam bouwwerk, vast met het aardoppervlak verbonden, dat een voor mensen toegankelijke ruimte omsluit. Een gelijkvloerse toegang voor ondergrondse of hangende constructies wordt eveneens als gebouw aan de grond beschouwd. Bepaalde duurzame bouwsels die aan bovenstaande definitie beantwoorden, worden echter in andere GRB-entiteiten opgenomen en niet hier. Bijvoorbeeld koeltorens, watertorens, e.d. worden opgenomen als kunstwerk (entiteit Knw)."@nl;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/BasiskaartVlaanderen>;
-  rdfs:subClassOf prov:Entity .
+  rdfs:subClassOf <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object> .
 
 <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid> a owl:Class;
   rdfs:label "Gebouwaanhorigheid"@nl;
   rdfs:comment "Een gebouwaanhorigheid (Gba) is een duurzame constructie die aanleunt bij en behoort tot een in het GRB opgenomen gebouw aan de grond (Gbg)."@nl;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/BasiskaartVlaanderen>;
-  rdfs:subClassOf prov:Entity .
+  rdfs:subClassOf <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object> .
 
 <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Terrein> a owl:Class;
   rdfs:label "Terrein"@nl;
@@ -483,6 +443,11 @@ xsd:dateTime a rdf:Property;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/BasiskaartVlaanderen>;
   rdfs:subClassOf <https://data.vlaanderen.be/ns/perceel#RuimtelijkeEenheid> .
 
+<https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object> a owl:Class;
+  rdfs:label "GRB-Object"@nl;
+  rdfs:comment "De hoofdklasse waar alle objecten die geïnventariseerd kunnen worden van afgeleid worden."@nl;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/BasiskaartVlaanderen> .
+
 <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Anomalie> a owl:Class;
   rdfs:label "Anomalie"@nl;
   rdfs:comment "Een anomalie is een geverifieerde GRB-meldingsobject. GRB-meldingsobjecten worden door een grote groep van gebruikers aan Digitaal Vlaanderen gemeld, die ze controleert en beheert als anomalieën."@nl;
@@ -503,48 +468,36 @@ xsd:dateTime a rdf:Property;
     foaf:mbox <mailto:medewerkervoornaam.medewerkernaam@medewerkerdomein>
   ];
   dc:issued "TODO";
-  dc:license <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>,
-    "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0";
+  dc:license "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
+    <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
   dc:mediator [
     foaf:homepage <https://data.vlaanderen.be>;
     foaf:mbox <mailto:oslo@kb.vlaanderen.be>;
     foaf:name "Data Vlaanderen"
   ];
-  rdfs:seeAlso <http://www.w3.org/ns/locn#Geometry>,
-    <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#dekselVorm>,
-    <https://data.vlaanderen.be/ns/adres#Gemeentenaam>,
+  rdfs:seeAlso skos:Concept,
     <https://data.vlaanderen.be/ns/openbaardomein/waterdeel#Gracht>,
-    xsd:dateTime,
-    prov:Entity,
-    <https://data.vlaanderen.be/ns/adres#Straatnaam>,
-    <https://data.vlaanderen.be/ns/weg#wegverharding>,
-    <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Putdeksel>,
-    <https://data.vlaanderen.be/ns/mobiliteit#Inname>,
-    <http://www.w3.org/ns/adms#identifier>,
-    <http://fixme.com/#Meldingsobject>,
-    dc:relation,
-    <https://data.vlaanderen.be/ns/openbaardomein/terreindeel#Wegbaan>,
-    <https://data.vlaanderen.be/ns/weg#Wegsegment>,
-    skos:Concept,
-    <https://data.vlaanderen.be/ns/adres#Adres>,
-    <http://www.w3.org/ns/adms#Identifier>,
-    xsd:string,
     <https://data.vlaanderen.be/ns/BasiskaartVlaanderen#bestaatuit>,
-    <http://fixme.com/#Terugmelding>,
-    <https://data.vlaanderen.be/ns/weg#beginknoop>,
-    <https://data.vlaanderen.be/ns/weg#rechtergemeentenaam>,
+    dc:relation,
+    <https://data.vlaanderen.be/ns/weg#Wegsegment>,
+    xsd:dateTime,
+    <https://data.vlaanderen.be/ns/weg#wegverharding>,
+    <http://www.w3.org/ns/adms#identifier>,
     <https://data.vlaanderen.be/ns/openbaardomein/waterdeel#Waterdeel>,
-    <https://data.vlaanderen.be/ns/weg#linkergemeentenaam>,
-    <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#TransversaleWeginrichting>,
+    xsd:string,
     dc:title,
-    <https://data.vlaanderen.be/ns/weg#Wegknoop>,
+    <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Putdeksel>,
     <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#LongitudinaleWeginrichting>,
+    <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#TransversaleWeginrichting>,
+    <https://data.vlaanderen.be/ns/weg#Wegknoop>,
+    <http://www.w3.org/ns/locn#Geometry>,
     <https://data.vlaanderen.be/ns/openbaardomein#beheerder>,
-    <https://data.vlaanderen.be/ns/adres#isToegekendAan>,
+    <https://data.vlaanderen.be/ns/weg#beginknoop>,
+    <https://data.vlaanderen.be/ns/weg#eindknoop>,
     <https://data.vlaanderen.be/ns/weg#morfologischeWegklasse>,
-    <http://open.vocab.org/terms/length>,
-    rdfs:label,
-    <https://data.vlaanderen.be/ns/weg#eindknoop>;
+    <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#dekselVorm>,
+    <https://data.vlaanderen.be/ns/openbaardomein/terreindeel#Wegbaan>,
+    <http://open.vocab.org/terms/length>;
   <http://www.w3.org/2001/02pd/rec54#editor> [
     a foaf:Person;
     schema:affiliation [
