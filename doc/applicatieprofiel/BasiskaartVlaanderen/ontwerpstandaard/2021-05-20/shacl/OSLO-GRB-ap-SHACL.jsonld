@@ -372,6 +372,20 @@
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#BodembedekkingtypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#BodemgebruiktypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#IdentificatorShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -506,6 +520,13 @@
           "sh:description": "Duidt een gerelateerde GRB object aan.",
           "sh:name": "isGerelateerdAan",
           "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:description": "Lengte in meter van de geometrie van de omtreklijn.",
+          "sh:maxCount": "1",
+          "sh:name": "lengteOmtreklijn",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
@@ -668,14 +689,6 @@
         },
         {
           "sh:class": "https://schema.org/QuantitativeValue",
-          "sh:description": "Lengte in meter van de geometrie van de omtreklijn.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "lengteOmtreklijn",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn"
-        },
-        {
-          "sh:class": "https://schema.org/QuantitativeValue",
           "sh:description": "De oppervlakte in vierkante meter van de veelhoek",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -704,14 +717,6 @@
           "sh:description": "Adresseerbaar object waaraan het adres is toegekend.",
           "sh:name": "isToegekendAan",
           "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
-        },
-        {
-          "sh:class": "https://schema.org/QuantitativeValue",
-          "sh:description": "Lengte in meter van de geometrie van de omtreklijn.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "lengteOmtreklijn",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn"
         },
         {
           "sh:class": "https://schema.org/QuantitativeValue",
@@ -811,14 +816,6 @@
         },
         {
           "sh:class": "https://schema.org/QuantitativeValue",
-          "sh:description": "Lengte in meter van de geometrie van de omtreklijn.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "lengteOmtreklijn",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteOmtreklijn"
-        },
-        {
-          "sh:class": "https://schema.org/QuantitativeValue",
           "sh:description": "Oppervlakte in m2 van de veelhoek.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -909,14 +906,6 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://schema.org/QuantitativeValue",
-          "sh:description": "Lengte in meter van de geometrie van de omtreklijn.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "lengteOmtreklijn",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn"
-        },
-        {
           "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/SpoorbaanFunctie",
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "Aard van het spoorverkeer",
@@ -958,12 +947,22 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://schema.org/QuantitativeValue",
-          "sh:description": "Lengte in meter van de geometrie van de omtreklijn.",
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Bodembedekking",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Code voor de aard van de bodembedekking.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
-          "sh:name": "lengteOmtreklijn",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn"
+          "sh:name": "bodembedekking",
+          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Bodembedekking"
+        },
+        {
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/Bodemgebruik",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Code voor het hoofdgebruik van het betreffende terrein.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "bodemgebruik",
+          "sh:path": "http://fixme.com#bodemgebruik"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Terrein"
@@ -997,14 +996,6 @@
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
-        {
-          "sh:class": "https://schema.org/QuantitativeValue",
-          "sh:description": "Lengte in meter van de geometrie van de omtreklijn.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "lengteOmtreklijn",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn"
-        },
         {
           "sh:class": "https://schema.org/QuantitativeValue",
           "sh:description": "Oppervlakte in vierkante meter van de veelhoek.",
@@ -1048,7 +1039,13 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond",
+          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk",
+          "sh:description": "Addresseerbaar object waaraan het adres is toegekend.",
+          "sh:name": "isToegekendAan",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid",
           "sh:description": "Adresseerbaar object waaraan het adres is toegekend.",
           "sh:name": "isToegekendAan",
           "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
@@ -1060,13 +1057,7 @@
           "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk",
-          "sh:description": "Addresseerbaar object waaraan het adres is toegekend.",
-          "sh:name": "isToegekendAan",
-          "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid",
+          "sh:class": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond",
           "sh:description": "Adresseerbaar object waaraan het adres is toegekend.",
           "sh:name": "isToegekendAan",
           "sh:path": "https://data.vlaanderen.be/ns/adres#isToegekendAan"
@@ -1325,16 +1316,7 @@
       "@id": "https://data.vlaanderen.be/shacl/OSLO-GRB-ap#GrachtShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "https://schema.org/QuantitativeValue",
-          "sh:description": "Lengte in meter van de lijngeometrie.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "lengte",
-          "sh:path": "http://open.vocab.org/terms/length"
-        }
-      ],
+      "sh:property": [],
       "sh:targetClass": "https://data.vlaanderen.be/ns/openbaardomein/waterdeel#Gracht"
     },
     {
@@ -1348,14 +1330,6 @@
           "sh:minCount": "1",
           "sh:name": "isGerelateerdAan",
           "sh:path": "http://purl.org/dc/terms/relation"
-        },
-        {
-          "sh:class": "https://schema.org/QuantitativeValue",
-          "sh:description": "Lengte in meter van de geometrie van de omtreklijn.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "lengteOmtreklijn",
-          "sh:path": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -1386,13 +1360,6 @@
           "sh:minCount": "1",
           "sh:name": "geometrie",
           "sh:path": "https://data.vlaanderen.be/ns/perceel#RuimtelijkeEenheid.geometrie"
-        },
-        {
-          "sh:class": "https://schema.org/QuantitativeValue",
-          "sh:description": "Lengte in meter van de geometrie van de omtreklijn.",
-          "sh:maxCount": "1",
-          "sh:name": "lengteOmtreklijn",
-          "sh:path": "https://www.data.vlaanderen.be/ns/GRB#lengteOmtreklijn"
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/perceel#RuimtelijkeEenheidOppervlakte",
