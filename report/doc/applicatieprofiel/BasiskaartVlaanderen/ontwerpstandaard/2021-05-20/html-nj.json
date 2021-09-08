@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-grb/tree/79da0eb52f565bee39980b0cac35f27c7d0573d2",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-grb/blob/79da0eb52f565bee39980b0cac35f27c7d0573d2/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-grb/tree/23ebe2af1dbd130c39cf7c897b758198ad8729ea",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-grb/blob/23ebe2af1dbd130c39cf7c897b758198ad8729ea/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-grb/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/TODO/CORRECT-URL/index.html",
     "usesVocs": [],
@@ -383,40 +383,6 @@
           },
           "sort_nl": "isGerelateerdAan",
           "description": {
-            "nl": "Het meldingsobject waaraan de anomalie kan verbonden worden."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Anomalie",
-              "EA-Name": "Anomalie"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Meldingsobject",
-              "range_uri": "http://fixme.com/#Meldingsobject"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Meldingsobject",
-              "range_puri": "http://fixme.com/#Meldingsobject",
-              "range_label": {
-                "nl": "Meldingsobject"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/relation",
-          "name": {
-            "nl": "isGerelateerdAan"
-          },
-          "sort_nl": "isGerelateerdAan",
-          "description": {
             "nl": "De terugmelding waaraan de anomalie kan verbonden worden."
           },
           "usage": {},
@@ -477,6 +443,40 @@
           ],
           "cardinality": "0..*",
           "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/relation",
+          "name": {
+            "nl": "isGerelateerdAan"
+          },
+          "sort_nl": "isGerelateerdAan",
+          "description": {
+            "nl": "Het meldingsobject waaraan de anomalie kan verbonden worden."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Anomalie",
+              "EA-Name": "Anomalie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Meldingsobject",
+              "range_uri": "http://fixme.com/#Meldingsobject"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Meldingsobject",
+              "range_puri": "http://fixme.com/#Meldingsobject",
+              "range_label": {
+                "nl": "Meldingsobject"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
         }
       ]
     },
@@ -493,7 +493,7 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn",
+          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengte",
           "name": {},
           "description": {
             "nl": "Lengte in meter van de geometrie van de omtreklijn."
@@ -551,6 +551,40 @@
               "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
               "range_label": {
                 "nl": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte",
+          "name": {
+            "nl": "oppervlakte"
+          },
+          "sort_nl": "oppervlakte",
+          "description": {
+            "nl": "De oppervlakte in vierkante meter van de veelhoek."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GRB-Object",
+              "EA-Name": "GRB-Object"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "KwantitatieveWaarde",
+              "range_uri": "https://schema.org/QuantitativeValue"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Kwantitatieve Waarde",
+              "range_puri": "https://schema.org/QuantitativeValue",
+              "range_label": {
+                "nl": "Kwantitatieve Waarde"
               }
             }
           ],
@@ -786,13 +820,13 @@
           "codelist_uri": "https://data.vlaanderen.be/id/conceptscheme/Gebouwtype"
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte",
+          "uri": "http://purl.org/dc/terms/relation",
           "name": {
-            "nl": "oppervlakte"
+            "nl": "heeft gebouwaanhorigheid"
           },
-          "sort_nl": "oppervlakte",
+          "sort_nl": "heeft gebouwaanhorigheid",
           "description": {
-            "nl": "De oppervlakte in vierkante meter van de veelhoek"
+            "nl": "Verwijst naar de gebouwaanhorigheid dat geassocieerd is met het gebouw aan de grond."
           },
           "usage": {},
           "domain": [
@@ -803,20 +837,20 @@
           ],
           "range": [
             {
-              "range_label": "KwantitatieveWaarde",
-              "range_uri": "https://schema.org/QuantitativeValue"
+              "range_label": "Gebouwaanhorigheid",
+              "range_uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Kwantitatieve Waarde",
-              "range_puri": "https://schema.org/QuantitativeValue",
+              "range_uri": "#Gebouwaanhorigheid",
+              "range_puri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid",
               "range_label": {
-                "nl": "Kwantitatieve Waarde"
+                "nl": "Gebouwaanhorigheid"
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -856,40 +890,6 @@
         {
           "uri": "http://purl.org/dc/terms/relation",
           "name": {
-            "nl": "heeft gebouwaanhorigheid"
-          },
-          "sort_nl": "heeft gebouwaanhorigheid",
-          "description": {
-            "nl": "Verwijst naar de gebouwaanhorigheid dat geassocieerd is met het gebouw aan de grond."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond",
-              "EA-Name": "GebouwAanDeGrond"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Gebouwaanhorigheid",
-              "range_uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Gebouwaanhorigheid",
-              "range_puri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid",
-              "range_label": {
-                "nl": "Gebouwaanhorigheid"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/relation",
-          "name": {
             "nl": "heeftGevellijn"
           },
           "sort_nl": "heeftGevellijn",
@@ -919,6 +919,40 @@
             }
           ],
           "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#isAfgeleidvan",
+          "name": {
+            "nl": "isAfgeleidVan"
+          },
+          "sort_nl": "isAfgeleidVan",
+          "description": {
+            "nl": "Het gebouw aan de grond waarvan het Gebouw is afgeleid."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond",
+              "EA-Name": "GebouwAanDeGrond"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Gebouw",
+              "range_uri": "https://data.vlaanderen.be/ns/gebouw#Gebouw"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Gebouw",
+              "range_puri": "https://data.vlaanderen.be/ns/gebouw#Gebouw",
+              "range_label": {
+                "nl": "Gebouw"
+              }
+            }
+          ],
+          "cardinality": "",
           "codelist_uri": ""
         },
         {
@@ -1012,40 +1046,6 @@
           "codelist_uri": "https://data.vlaanderen.be/id/conceptscheme/Gebouwaanhorigheidtype"
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte",
-          "name": {
-            "nl": "oppervlakte"
-          },
-          "sort_nl": "oppervlakte",
-          "description": {
-            "nl": "De oppervlakte in vierkante meter van de veelhoek."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gebouwaanhorigheid",
-              "EA-Name": "Gebouwaanhorigheid"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KwantitatieveWaarde",
-              "range_uri": "https://schema.org/QuantitativeValue"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Kwantitatieve Waarde",
-              "range_puri": "https://schema.org/QuantitativeValue",
-              "range_label": {
-                "nl": "Kwantitatieve Waarde"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://data.vlaanderen.be/ns/adres#isToegekendAan",
           "name": {
             "nl": "isToegekendAan"
@@ -1134,40 +1134,6 @@
           ],
           "cardinality": "1",
           "codelist_uri": "https://data.vlaanderen.be/id/conceptscheme/Gevellijntype"
-        },
-        {
-          "uri": "http://open.vocab.org/terms/length",
-          "name": {
-            "nl": "lengte"
-          },
-          "sort_nl": "lengte",
-          "description": {
-            "nl": "Lengte in meter van de lijngeometrie."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Gevellijn",
-              "EA-Name": "Gevellijn"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KwantitatieveWaarde",
-              "range_uri": "https://schema.org/QuantitativeValue"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Kwantitatieve Waarde",
-              "range_puri": "https://schema.org/QuantitativeValue",
-              "range_label": {
-                "nl": "Kwantitatieve Waarde"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
         },
         {
           "uri": "http://purl.org/dc/terms/relation",
@@ -1384,40 +1350,6 @@
           "codelist_uri": "https://data.vlaanderen.be/id/conceptscheme/Kunstwerktype"
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte",
-          "name": {
-            "nl": "oppervlakte"
-          },
-          "sort_nl": "oppervlakte",
-          "description": {
-            "nl": "Oppervlakte in m2 van de veelhoek."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk",
-              "EA-Name": "Kunstwerk"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KwantitatieveWaarde",
-              "range_uri": "https://schema.org/QuantitativeValue"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Kwantitatieve Waarde",
-              "range_puri": "https://schema.org/QuantitativeValue",
-              "range_label": {
-                "nl": "Kwantitatieve Waarde"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#vormtype",
           "name": {
             "nl": "vormtype"
@@ -1450,6 +1382,40 @@
           ],
           "cardinality": "1",
           "codelist_uri": "https://data.vlaanderen.be/id/conceptscheme/Vormtype"
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#isAfgeleidvan",
+          "name": {
+            "nl": "isAfgeleidVan"
+          },
+          "sort_nl": "isAfgeleidVan",
+          "description": {
+            "nl": "Het gebouw aan de grond waarvan het Gebouw is afgeleid."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk",
+              "EA-Name": "Kunstwerk"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Gebouw",
+              "range_uri": "https://data.vlaanderen.be/ns/gebouw#Gebouw"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Gebouw",
+              "range_puri": "https://data.vlaanderen.be/ns/gebouw#Gebouw",
+              "range_label": {
+                "nl": "Gebouw"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
         },
         {
           "uri": "https://data.vlaanderen.be/ns/adres#isToegekendAan",
@@ -1844,40 +1810,6 @@
           ],
           "cardinality": "1",
           "codelist_uri": ""
-        },
-        {
-          "uri": "http://open.vocab.org/terms/length",
-          "name": {
-            "nl": "lengte"
-          },
-          "sort_nl": "lengte",
-          "description": {
-            "nl": "Lengte in meter van de lijngeometrie."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Spoorrail",
-              "EA-Name": "Spoorrail"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KwantitatieveWaarde",
-              "range_uri": "https://schema.org/QuantitativeValue"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Kwantitatieve Waarde",
-              "range_puri": "https://schema.org/QuantitativeValue",
-              "range_label": {
-                "nl": "Kwantitatieve Waarde"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
         }
       ]
     },
@@ -2108,40 +2040,6 @@
           ],
           "cardinality": "1",
           "codelist_uri": "https://data.vlaanderen.be/id/conceptscheme/Wegaanhorigheidtype"
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte",
-          "name": {
-            "nl": "oppervlakte"
-          },
-          "sort_nl": "oppervlakte",
-          "description": {
-            "nl": "Oppervlakte in vierkante meter van de veelhoek."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Wegaanhorigheid",
-              "EA-Name": "Wegaanhorigheid"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KwantitatieveWaarde",
-              "range_uri": "https://schema.org/QuantitativeValue"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Kwantitatieve Waarde",
-              "range_puri": "https://schema.org/QuantitativeValue",
-              "range_label": {
-                "nl": "Kwantitatieve Waarde"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
         }
       ]
     },
@@ -2502,40 +2400,6 @@
           },
           "sort_nl": "isToegekendAan",
           "description": {
-            "nl": "Addresseerbaar object waaraan het adres is toegekend."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/adres#Adres",
-              "EA-Name": "Adres"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Kunstwerk",
-              "range_uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Kunstwerk",
-              "range_puri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk",
-              "range_label": {
-                "nl": "Kunstwerk"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/adres#isToegekendAan",
-          "name": {
-            "nl": "isToegekendAan"
-          },
-          "sort_nl": "isToegekendAan",
-          "description": {
             "nl": "Adresseerbaar object waaraan het adres is toegekend."
           },
           "usage": {},
@@ -2557,6 +2421,40 @@
               "range_puri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#AdministratiefPerceel",
               "range_label": {
                 "nl": "Administratief Perceel"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/adres#isToegekendAan",
+          "name": {
+            "nl": "isToegekendAan"
+          },
+          "sort_nl": "isToegekendAan",
+          "description": {
+            "nl": "Addresseerbaar object waaraan het adres is toegekend."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/adres#Adres",
+              "EA-Name": "Adres"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Kunstwerk",
+              "range_uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Kunstwerk",
+              "range_puri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk",
+              "range_label": {
+                "nl": "Kunstwerk"
               }
             }
           ],
@@ -2761,6 +2659,88 @@
             }
           ],
           "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/gebouw#Gebouw",
+      "name": {
+        "nl": "Gebouw"
+      },
+      "sort_nl": "Gebouw",
+      "description": {
+        "nl": "Een gesloten en/of overdekt, bovengronds of ondergronds bouwwerk, dat dient of bestemd is, ofwel om mensen, dieren en voorwerpen onder te brengen, ofwel om economische goederen te vervaardigen of diensten te verstrekken. Een gebouw verwijst naar gelijk we"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#isAfgeleidvan",
+          "name": {
+            "nl": "isAfgeleidVan"
+          },
+          "sort_nl": "isAfgeleidVan",
+          "description": {
+            "nl": "Het gebouw aan de grond waarvan het Gebouw is afgeleid."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/gebouw#Gebouw",
+              "EA-Name": "Gebouw"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Kunstwerk",
+              "range_uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Kunstwerk",
+              "range_puri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#Kunstwerk",
+              "range_label": {
+                "nl": "Kunstwerk"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#isAfgeleidvan",
+          "name": {
+            "nl": "isAfgeleidVan"
+          },
+          "sort_nl": "isAfgeleidVan",
+          "description": {
+            "nl": "Het gebouw aan de grond waarvan het Gebouw is afgeleid."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/gebouw#Gebouw",
+              "EA-Name": "Gebouw"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "GebouwAanDeGrond",
+              "range_uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#GebouwAanDeGrond",
+              "range_puri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#GebouwAanDeGrond",
+              "range_label": {
+                "nl": "GebouwAanDeGrond"
+              }
+            }
+          ],
+          "cardinality": "",
           "codelist_uri": ""
         }
       ]
@@ -2986,40 +2966,6 @@
           ],
           "cardinality": "1",
           "codelist_uri": "https://data.vlaanderen.be/id/conceptscheme/LongitudinaleWeginrichtingtype"
-        },
-        {
-          "uri": "http://open.vocab.org/terms/length",
-          "name": {
-            "nl": "lengte"
-          },
-          "sort_nl": "lengte",
-          "description": {
-            "nl": "Lengte in meter van de lijngeometrie."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#LongitudinaleWeginrichting",
-              "EA-Name": "LongitudinaleWeginrichting"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KwantitatieveWaarde",
-              "range_uri": "https://schema.org/QuantitativeValue"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Kwantitatieve Waarde",
-              "range_puri": "https://schema.org/QuantitativeValue",
-              "range_label": {
-                "nl": "Kwantitatieve Waarde"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
         }
       ]
     },
@@ -3200,40 +3146,6 @@
           ],
           "cardinality": "1",
           "codelist_uri": "https://data.vlaanderen.be/id/conceptscheme/TransversaleWeginrichtingtype"
-        },
-        {
-          "uri": "http://open.vocab.org/terms/length",
-          "name": {
-            "nl": "lengte"
-          },
-          "sort_nl": "lengte",
-          "description": {
-            "nl": "Lengte in meter van de lijngeometrie."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#TransversaleWeginrichting",
-              "EA-Name": "TransversaleWeginrichting"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KwantitatieveWaarde",
-              "range_uri": "https://schema.org/QuantitativeValue"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Kwantitatieve Waarde",
-              "range_puri": "https://schema.org/QuantitativeValue",
-              "range_label": {
-                "nl": "Kwantitatieve Waarde"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
         }
       ]
     },
@@ -3256,76 +3168,7 @@
           "scoped_uri": "#Deel"
         }
       ],
-      "properties": [
-        {
-          "uri": "http://open.vocab.org/terms/length",
-          "name": {
-            "nl": "lengte"
-          },
-          "sort_nl": "lengte",
-          "description": {
-            "nl": "De lineare grootte van het object."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/openbaardomein/terreindeel#Terreindeel",
-              "EA-Name": "Terreindeel"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KwantitatieveWaarde",
-              "range_uri": "https://schema.org/QuantitativeValue"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Kwantitatieve Waarde",
-              "range_puri": "https://schema.org/QuantitativeValue",
-              "range_label": {
-                "nl": "Kwantitatieve Waarde"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://schema.org/width",
-          "name": {
-            "nl": "breedte"
-          },
-          "sort_nl": "breedte",
-          "description": {
-            "nl": "De breedte van het object. In geval van een ongelijkmatige breedte wordt de gemiddelde breedte opgenomen."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/openbaardomein/terreindeel#Terreindeel",
-              "EA-Name": "Terreindeel"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KwantitatieveWaarde",
-              "range_uri": "https://schema.org/QuantitativeValue"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Kwantitatieve Waarde",
-              "range_puri": "https://schema.org/QuantitativeValue",
-              "range_label": {
-                "nl": "Kwantitatieve Waarde"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        }
-      ]
+      "properties": []
     },
     {
       "uri": "https://data.vlaanderen.be/ns/openbaardomein/terreindeel#Wegbaan",
@@ -3754,40 +3597,6 @@
       ],
       "properties": [
         {
-          "uri": "http://open.vocab.org/terms/length",
-          "name": {
-            "nl": "lengte"
-          },
-          "sort_nl": "lengte",
-          "description": {
-            "nl": "Lengte in meter van de lijngeometrie."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/weg#Wegsegment",
-              "EA-Name": "Wegverbinding"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KwantitatieveWaarde",
-              "range_uri": "https://schema.org/QuantitativeValue"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Kwantitatieve Waarde",
-              "range_puri": "https://schema.org/QuantitativeValue",
-              "range_label": {
-                "nl": "Kwantitatieve Waarde"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "http://www.w3.org/2001/XMLSchema#string",
           "name": {
             "nl": "wegnummer"
@@ -3824,11 +3633,11 @@
         {
           "uri": "https://data.vlaanderen.be/ns/adres#Straatnaam",
           "name": {
-            "nl": "linkerstraatnaam"
+            "nl": "rechterstraatnaam"
           },
-          "sort_nl": "linkerstraatnaam",
+          "sort_nl": "rechterstraatnaam",
           "description": {
-            "nl": "Straatnaam vookomend aan de linkerstraatkant."
+            "nl": "Straatnaam vookomend aan de rechterstraatkant."
           },
           "usage": {},
           "domain": [
@@ -3858,11 +3667,11 @@
         {
           "uri": "https://data.vlaanderen.be/ns/adres#Straatnaam",
           "name": {
-            "nl": "rechterstraatnaam"
+            "nl": "linkerstraatnaam"
           },
-          "sort_nl": "rechterstraatnaam",
+          "sort_nl": "linkerstraatnaam",
           "description": {
-            "nl": "Straatnaam vookomend aan de rechterstraatkant."
+            "nl": "Straatnaam vookomend aan de linkerstraatkant."
           },
           "usage": {},
           "domain": [
@@ -4387,7 +4196,7 @@
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengteomtreklijn",
+      "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#lengte",
       "name": {},
       "description": {
         "nl": "Lengte in meter van de geometrie van de omtreklijn."
@@ -4475,58 +4284,7 @@
         "nl": "oppervlakte"
       },
       "description": {
-        "nl": "De oppervlakte in vierkante meter van de veelhoek"
-      },
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "usage": {},
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte",
-      "name": {
-        "nl": "oppervlakte"
-      },
-      "description": {
         "nl": "De oppervlakte in vierkante meter van de veelhoek."
-      },
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "usage": {},
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte",
-      "name": {
-        "nl": "oppervlakte"
-      },
-      "description": {
-        "nl": "Oppervlakte in m2 van de veelhoek."
-      },
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "usage": {},
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/BasiskaartVlaanderen#oppervlakte",
-      "name": {
-        "nl": "oppervlakte"
-      },
-      "description": {
-        "nl": "Oppervlakte in vierkante meter van de veelhoek."
       },
       "domain": [
         null
