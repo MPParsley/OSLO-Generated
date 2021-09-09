@@ -522,77 +522,30 @@
   ],
   "properties": [
     {
-      "@id": "https://data.vlaanderen.be/ns/organisatie#aantalHouders",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "Maximale aantal agents die tegelijk deze positie kunnen invullen."
-      },
-      "domain": [
-        "http://www.w3.org/ns/org#Post"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#integer"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/organisatie#bestaatUit",
+      "@id": "https://data.vlaanderen.be/ns/organisatie#redenStopzetting",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "nl": "Adresseerbaar object dat met de vestiging overeenstemt."
-      },
-      "domain": [
-        "http://www.w3.org/ns/org#Site"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/adres#AdresseerbaarObject"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/organisatie#contactinfo",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Informatie zoals email, telefoon die toelaat de hoedanigheid te contacteren."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/organisatie#Hoedanigheid"
-      ],
-      "range": [
-        "http://schema.org/ContactPoint"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/organisatie#heeftPrimaireVestiging",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "domain": [
-        "http://www.w3.org/ns/org#Organization"
-      ],
-      "range": [
-        "http://www.w3.org/ns/org#Site"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/organisatie#heeftVestiging",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "domain": [
-        "http://www.w3.org/ns/org#Organization"
-      ],
-      "range": [
-        "http://www.w3.org/ns/org#Site"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/organisatie#rechtspersoonlijkheid",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Geeft aan of de rechtspersoonlijkheid van de geregistreerde organisatie deze is van een natuurlijk persoon of van een rechtspersoon. "
+        "nl": "Reden waarom de organisatie is stopgezet."
       },
       "usage": {
-        "nl": "Een rechtspersoon is een juridische constructie die een organisatie dezelfde rechtspersoonlijkheid geeft als een natuurlijk persoon (kan bv ook schulden hebben, contracten afsluiten, aangeklaagd worden etc). Vb privaatrechterlijke rechtspersonen: vennootschappen, vzw's etc.; vb publiekrechterlijke rechtspersonen: steden, gemeenten etc. Een feitelijke vereniging is in principe geen rechtspersoon maar wordt als ze geregistreerd is id KBO toch als dusdanig geklasseerd."
+        "nl": "Bvb pensionering, faillissement"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/organisatie#Stopzetting"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/organisatie#rechtsvorm",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Juridisch statuut van de geregistreerde organisatie."
+      },
+      "usage": {
+        "nl": "Stemt in de KBO overeen met rechtsvorm, bvb NV, VZW, Stad/Gemeente, OCMW etc."
       },
       "domain": [
         "http://www.w3.org/ns/regorg#RegisteredOrganization"
@@ -624,13 +577,13 @@
       ]
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/organisatie#rechtsvorm",
+      "@id": "https://data.vlaanderen.be/ns/organisatie#rechtspersoonlijkheid",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "nl": "Juridisch statuut van de geregistreerde organisatie."
+        "nl": "Geeft aan of de rechtspersoonlijkheid van de geregistreerde organisatie deze is van een natuurlijk persoon of van een rechtspersoon. "
       },
       "usage": {
-        "nl": "Stemt in de KBO overeen met rechtsvorm, bvb NV, VZW, Stad/Gemeente, OCMW etc."
+        "nl": "Een rechtspersoon is een juridische constructie die een organisatie dezelfde rechtspersoonlijkheid geeft als een natuurlijk persoon (kan bv ook schulden hebben, contracten afsluiten, aangeklaagd worden etc). Vb privaatrechterlijke rechtspersonen: vennootschappen, vzw's etc.; vb publiekrechterlijke rechtspersonen: steden, gemeenten etc. Een feitelijke vereniging is in principe geen rechtspersoon maar wordt als ze geregistreerd is id KBO toch als dusdanig geklasseerd."
       },
       "domain": [
         "http://www.w3.org/ns/regorg#RegisteredOrganization"
@@ -643,19 +596,66 @@
       ]
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/organisatie#redenStopzetting",
+      "@id": "https://data.vlaanderen.be/ns/organisatie#heeftVestiging",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Reden waarom de organisatie is stopgezet."
-      },
-      "usage": {
-        "nl": "Bvb pensionering, faillissement"
-      },
       "domain": [
-        "https://data.vlaanderen.be/ns/organisatie#Stopzetting"
+        "http://www.w3.org/ns/org#Organization"
       ],
       "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
+        "http://www.w3.org/ns/org#Site"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/organisatie#heeftPrimaireVestiging",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "domain": [
+        "http://www.w3.org/ns/org#Organization"
+      ],
+      "range": [
+        "http://www.w3.org/ns/org#Site"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/organisatie#contactinfo",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Informatie zoals email, telefoon die toelaat de hoedanigheid te contacteren."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/organisatie#Hoedanigheid"
+      ],
+      "range": [
+        "http://schema.org/ContactPoint"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/organisatie#bestaatUit",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Adresseerbaar object dat met de vestiging overeenstemt."
+      },
+      "domain": [
+        "http://www.w3.org/ns/org#Site"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/adres#AdresseerbaarObject"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/organisatie#aantalHouders",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "Maximale aantal agents die tegelijk deze positie kunnen invullen."
+      },
+      "domain": [
+        "http://www.w3.org/ns/org#Post"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#integer"
       ],
       "generalization": []
     }
@@ -663,303 +663,9 @@
   "externalproperties": [
     {
       "name": {
-        "nl": "heeft formeel kader"
+        "nl": "homepage"
       },
-      "@id": "http://data.europa.eu/m8g/hasFormalFramework",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "datum"
-      },
-      "@id": "http://purl.org/dc/terms/date",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "beschrijving"
-      },
-      "@id": "http://purl.org/dc/terms/description",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "ruimtelijk"
-      },
-      "@id": "http://purl.org/dc/terms/spatial",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "contactpunt"
-      },
-      "@id": "http://schema.org/contactPoint",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "logo"
-      },
-      "@id": "http://schema.org/logo",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "alternatieve label"
-      },
-      "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "voorkeurslabel"
-      },
-      "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "heeft standplaats"
-      },
-      "@id": "http://www.w3.org/ns/org#basedAt",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "veranderd door"
-      },
-      "@id": "http://www.w3.org/ns/org#changedBy",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "classificatie"
-      },
-      "@id": "http://www.w3.org/ns/org#classification",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "heeft lidmaatschap"
-      },
-      "@id": "http://www.w3.org/ns/org#hasMembership",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "heeft positie"
-      },
-      "@id": "http://www.w3.org/ns/org#hasPost",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "heeft primaire vestiging"
-      },
-      "@id": "http://www.w3.org/ns/org#hasPrimarySite",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "heeft geregistreerde vestiging"
-      },
-      "@id": "http://www.w3.org/ns/org#hasRegisteredSite",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "heeft vestiging"
-      },
-      "@id": "http://www.w3.org/ns/org#hasSite",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "heeft suborganisatie"
-      },
-      "@id": "http://www.w3.org/ns/org#hasSubOrganization",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "heeft eenheid"
-      },
-      "@id": "http://www.w3.org/ns/org#hasUnit",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "hoofd van"
-      },
-      "@id": "http://www.w3.org/ns/org#headOf",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "ingevuld door"
-      },
-      "@id": "http://www.w3.org/ns/org#heldBy",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "houdt"
-      },
-      "@id": "http://www.w3.org/ns/org#holds",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "gelinkt met"
-      },
-      "@id": "http://www.w3.org/ns/org#linkedTo",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "lid"
-      },
-      "@id": "http://www.w3.org/ns/org#member",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "lid gedurende"
-      },
-      "@id": "http://www.w3.org/ns/org#memberDuring",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "lid van"
-      },
-      "@id": "http://www.w3.org/ns/org#memberOf",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "is lidmaatschap bij"
-      },
-      "@id": "http://www.w3.org/ns/org#organization",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "originele organisatie"
-      },
-      "@id": "http://www.w3.org/ns/org#originalOrganization",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "positie bij"
-      },
-      "@id": "http://www.w3.org/ns/org#postIn",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "doel"
-      },
-      "@id": "http://www.w3.org/ns/org#purpose",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "rapporteert aan"
-      },
-      "@id": "http://www.w3.org/ns/org#reportsTo",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "rapporteert aan"
-      },
-      "@id": "http://www.w3.org/ns/org#reportsTo",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "gevolg van"
-      },
-      "@id": "http://www.w3.org/ns/org#resultedFrom",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "resulterende organisatie"
-      },
-      "@id": "http://www.w3.org/ns/org#resultingOrganization",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "rol"
-      },
-      "@id": "http://www.w3.org/ns/org#role",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "rol"
-      },
-      "@id": "http://www.w3.org/ns/org#role",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "vestigingsadres"
-      },
-      "@id": "http://www.w3.org/ns/org#siteAddress",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "suborganisatie van"
-      },
-      "@id": "http://www.w3.org/ns/org#subOrganizationOf",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "eenheid van"
-      },
-      "@id": "http://www.w3.org/ns/org#unitOf",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "heeft geregistreerde organisatie"
-      },
-      "@id": "http://www.w3.org/ns/regorg#hasRegisteredOrganization",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "wettelijke naam"
-      },
-      "@id": "http://www.w3.org/ns/regorg#legalName",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "organisatieactiviteit"
-      },
-      "@id": "http://www.w3.org/ns/regorg#orgActivity",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "organisatiestatus"
-      },
-      "@id": "http://www.w3.org/ns/regorg#orgStatus",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "organisatietype"
-      },
-      "@id": "http://www.w3.org/ns/regorg#orgType",
+      "@id": "http://xmlns.com/foaf/0.1/homepage",
       "@type": "rdf:Property"
     },
     {
@@ -971,9 +677,303 @@
     },
     {
       "name": {
-        "nl": "homepage"
+        "nl": "organisatietype"
       },
-      "@id": "http://xmlns.com/foaf/0.1/homepage",
+      "@id": "http://www.w3.org/ns/regorg#orgType",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "organisatiestatus"
+      },
+      "@id": "http://www.w3.org/ns/regorg#orgStatus",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "organisatieactiviteit"
+      },
+      "@id": "http://www.w3.org/ns/regorg#orgActivity",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "wettelijke naam"
+      },
+      "@id": "http://www.w3.org/ns/regorg#legalName",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "heeft geregistreerde organisatie"
+      },
+      "@id": "http://www.w3.org/ns/regorg#hasRegisteredOrganization",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "eenheid van"
+      },
+      "@id": "http://www.w3.org/ns/org#unitOf",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "suborganisatie van"
+      },
+      "@id": "http://www.w3.org/ns/org#subOrganizationOf",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "vestigingsadres"
+      },
+      "@id": "http://www.w3.org/ns/org#siteAddress",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "rol"
+      },
+      "@id": "http://www.w3.org/ns/org#role",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "rol"
+      },
+      "@id": "http://www.w3.org/ns/org#role",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "resulterende organisatie"
+      },
+      "@id": "http://www.w3.org/ns/org#resultingOrganization",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "gevolg van"
+      },
+      "@id": "http://www.w3.org/ns/org#resultedFrom",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "rapporteert aan"
+      },
+      "@id": "http://www.w3.org/ns/org#reportsTo",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "rapporteert aan"
+      },
+      "@id": "http://www.w3.org/ns/org#reportsTo",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "doel"
+      },
+      "@id": "http://www.w3.org/ns/org#purpose",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "positie bij"
+      },
+      "@id": "http://www.w3.org/ns/org#postIn",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "originele organisatie"
+      },
+      "@id": "http://www.w3.org/ns/org#originalOrganization",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "is lidmaatschap bij"
+      },
+      "@id": "http://www.w3.org/ns/org#organization",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "lid van"
+      },
+      "@id": "http://www.w3.org/ns/org#memberOf",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "lid gedurende"
+      },
+      "@id": "http://www.w3.org/ns/org#memberDuring",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "lid"
+      },
+      "@id": "http://www.w3.org/ns/org#member",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "gelinkt met"
+      },
+      "@id": "http://www.w3.org/ns/org#linkedTo",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "houdt"
+      },
+      "@id": "http://www.w3.org/ns/org#holds",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "ingevuld door"
+      },
+      "@id": "http://www.w3.org/ns/org#heldBy",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "hoofd van"
+      },
+      "@id": "http://www.w3.org/ns/org#headOf",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "heeft eenheid"
+      },
+      "@id": "http://www.w3.org/ns/org#hasUnit",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "heeft suborganisatie"
+      },
+      "@id": "http://www.w3.org/ns/org#hasSubOrganization",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "heeft vestiging"
+      },
+      "@id": "http://www.w3.org/ns/org#hasSite",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "heeft geregistreerde vestiging"
+      },
+      "@id": "http://www.w3.org/ns/org#hasRegisteredSite",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "heeft primaire vestiging"
+      },
+      "@id": "http://www.w3.org/ns/org#hasPrimarySite",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "heeft positie"
+      },
+      "@id": "http://www.w3.org/ns/org#hasPost",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "heeft lidmaatschap"
+      },
+      "@id": "http://www.w3.org/ns/org#hasMembership",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "classificatie"
+      },
+      "@id": "http://www.w3.org/ns/org#classification",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "veranderd door"
+      },
+      "@id": "http://www.w3.org/ns/org#changedBy",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "heeft standplaats"
+      },
+      "@id": "http://www.w3.org/ns/org#basedAt",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "voorkeurslabel"
+      },
+      "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "alternatieve label"
+      },
+      "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "logo"
+      },
+      "@id": "http://schema.org/logo",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "contactpunt"
+      },
+      "@id": "http://schema.org/contactPoint",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "ruimtelijk"
+      },
+      "@id": "http://purl.org/dc/terms/spatial",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "beschrijving"
+      },
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "datum"
+      },
+      "@id": "http://purl.org/dc/terms/date",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "heeft formeel kader"
+      },
+      "@id": "http://data.europa.eu/m8g/hasFormalFramework",
       "@type": "rdf:Property"
     }
   ],

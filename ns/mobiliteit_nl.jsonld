@@ -975,25 +975,75 @@
   ],
   "properties": [
     {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#GIPODContactInfo.isPubliek",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#wanddikte",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
-        "nl": "Duidt aan of de contactinfo door iedereen gezien mag worden."
+        "nl": "Dikte van de wand in millimeter."
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#ContactinfoVolgensRol"
+        "https://data.vlaanderen.be/ns/mobiliteit#Steun"
       ],
-      "range": [],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#integer"
+      ],
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#GIPODContactInfo.rol",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#vorm",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "nl": "Functie die bij de contactinfo hoort, bijvoorbeeld van de hoofdverantwoordelijke"
+        "nl": "Vorm van de steun."
+      },
+      "usage": {
+        "nl": "Bijvoorbeeld: rond, rechthoekig"
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#ContactinfoVolgensRol"
+        "https://data.vlaanderen.be/ns/mobiliteit#Steun"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#volgtUit",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Project dat ontstaan is uit een samenwerkingsaanvraag."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Project"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsaanvraag"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#verhindert",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Agents die hinder ondervinden."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder"
+      ],
+      "range": [
+        "http://purl.org/dc/terms/Agent"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#variabelOpschrift",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "Variabele tekst gedeeld op een bepaald soort bord."
+      },
+      "usage": {
+        "nl": "Indien het gaat om iconen of symbolen worden deze omschreven."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#string"
@@ -1001,52 +1051,27 @@
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Inname.geeftAanleidingTot",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#synergieStatus",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "nl": "Samenwerkingsaanvraag die het gevolg is van de inname."
+        "nl": "Status van de synergie."
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Inname"
+        "https://data.vlaanderen.be/ns/mobiliteit#Synergie"
       ],
       "range": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsaanvraag"
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Inname.heeftGevolg",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Mobiliteitshinder (bv.: afgesloten weg) die ontstaan is door het innemen van de openbare ruimte."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Inname"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Inname.innamezone",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Gebied waar de inname doorgaat."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Inname"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Innamezone"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Inname.openbaarDomein",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#stilzwijgend",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "Duidt aan of het advies stilzwijgend (true) of niet (false) is."
+      },
       "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Inname"
+        "https://data.vlaanderen.be/ns/mobiliteit#Advies"
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#boolean"
@@ -1054,217 +1079,60 @@
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Inname.plaatsbeschrijving",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#status",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "nl": "Tekstuele weergave van de locatie van de inname."
+        "nl": "Status van de opstelling."
+      },
+      "usage": {
+        "nl": "Bijvoorbeeld: schets (test), voorstel (ingediend als voorstel en onderdeel van een nieuw reglement), gepland (beslist, maar nog uit te voeren), uitgevoerd"
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Inname"
+        "https://data.vlaanderen.be/ns/mobiliteit#Opstelling"
       ],
       "range": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Inname.tijdsintervalEffectief",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#registratieDatum",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
-        "nl": "Tijd wanneer de inname werkelijk doorgaat."
+        "nl": "Datum waarop de synergie geregistreerd werd."
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Inname"
+        "https://data.vlaanderen.be/ns/mobiliteit#Synergie"
       ],
       "range": [
-        "http://data.europa.eu/m8g/PeriodOfTime"
+        "http://www.w3.org/2001/XMLSchema#date"
       ],
       "generalization": [
-        "http://purl.org/dc/terms/temporal"
+        "http://purl.org/dc/elements/1.1/date"
       ]
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Inname.tijdsintervalGepland",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Tijd wanneer de inname mogelijks door kan gaan."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Inname"
-      ],
-      "range": [
-        "http://data.europa.eu/m8g/PeriodOfTime"
-      ],
-      "generalization": [
-        "http://purl.org/dc/terms/temporal"
-      ]
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Inname.type",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Type van inname"
-      },
-      "usage": {
-        "nl": "Voorbeelden: markt, werken, wielerwedstrijd, wegeniswerken"
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Inname"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Inname.vereist",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Mobiliteitsmaatregel die vereist is om een inname tot stand te brengen."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Inname"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Innamezone.beheerder",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Beheerder van de innamezone."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Innamezone"
-      ],
-      "range": [
-        "http://purl.org/dc/terms/Agent"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder.doelgroep",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Groep die belang heeft bij de mobiliteitshinder."
-      },
-      "usage": {
-        "nl": "Voorbeelden: handelaars, een bedrijf, voetgangers..."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder.tijdsinterval",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Tijd wanneer mobiliteitshinder van toepassing is."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder"
-      ],
-      "range": [
-        "http://data.europa.eu/m8g/PeriodOfTime"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder.type",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Type mobiliteitshinder."
-      },
-      "usage": {
-        "nl": "In te vullen door business werkgroep GIPOD"
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel.doelgroep",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Groep of categorie die belang hebben bij de mobiliteitsmaatregel."
-      },
-      "usage": {
-        "nl": "Bijvoorbeeld: alle bewoners uit een bepaalde straat"
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel"
-      ],
-      "range": [
-        "http://purl.org/dc/terms/Agent"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel.heeftGevolg",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Mobiliteitshinder (bv.: afgesloten weg) die ontstaan is door het invoeren van een mobiliteitsmaatregel."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel.plaatsbeschrijving",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#reden",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
-        "nl": "Tekstuele beschrijving van de locatie van de mobiliteitsmaatregel."
+        "nl": "Waarom een bepaalde beoordeling gegeven werd."
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel"
+        "https://data.vlaanderen.be/ns/mobiliteit#Advies"
       ],
       "range": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        "http://www.w3.org/2001/XMLSchema#string"
       ],
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel.type",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#realiseert",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "nl": "Type mobiliteitsmaatregel."
-      },
-      "usage": {
-        "nl": "Voorbeelden: straat afzetten, trager rijden, extra fietsstallingen, shuttledienst etc."
+        "nl": "Relateert een verkeersbord op het openbaar domein tot de verkeersbordbasis gerealiseerd door het (fysieke) verkeersbord."
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel.wordtAangeduidDoor",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Verkeersbordbasis dat bijdraagt tot de aanduiding van een mobiliteitsmaatregel."
-      },
-      "usage": {
-        "nl": "Op het moment van het besluit kan nog niet gerefereerd worden naar de fysieke verkeersborden die gerealiseerd worden. Verkeersbordbasis bevat de informatie om die uiteindelijk op het openbaar domein te plaatsen."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel"
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Verkeersbord"
       ],
       "range": [
         "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
@@ -1272,27 +1140,238 @@
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Project.geeftAanleidingTot",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#positieTenOpzichtVanRijweg",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "nl": "Samenwerkingsaanvraag die het gevolg is van het project."
+        "nl": "Manier waarop de opstelling zich verhoudt tot de rijbaan."
+      },
+      "usage": {
+        "nl": "Bijvoorbeeld: boven, rechts, links"
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Project"
+        "https://data.vlaanderen.be/ns/mobiliteit#Opstelling"
       ],
       "range": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsaanvraag"
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Project.omvat",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#opstelhoogte",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
-        "nl": "Entiteit dat dit project omvat."
+        "nl": "Afstand tussen het maaiveld en de onderrand van het bord."
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Project"
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Verkeersbord"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#string"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#lengteOndergronds",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "Lengte van de steun onder het verhardingsniveau of maaiveld."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Steun"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#integer"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#lengteBovengronds",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "Lengte van de steun boven het verhardingsniveau of maaiveld."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Steun"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#integer"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#leidtTot",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Innameverbod dat het gevolg is van een inname."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Inname"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Innameverbod"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#isZonebord",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "Duidt aan of het verkeersbord een zonebord is."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#boolean"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftVerkeersbordconcept",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Algemeen verkeersbordconcept van de verkeersbordbasis."
+      },
+      "usage": {
+        "nl": "Bijvoorbeeld: de algemene wegwijzer 'F29'. Verkeersbordbasis is dan een specifieke uitwerking hiervan met als variabel opschrift de naam van de gemeente of stad."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordconcept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftVerkeersbord",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Verkeersbord die op de opstelling staat."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Opstelling"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Verkeersbord"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftVerankering",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Waarmee het infrastructuurelement verankerd is."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Verankering"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftRoute",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Traject dat bij een mobiliteitsmaatregel hoort."
+      },
+      "usage": {
+        "nl": "[TBC] Bijvoorbeeld bij het invoeren van eenrichting kan hiermee de verzameling netwerkelementen aangeduid worden."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/weg#TransportLinkSequentie"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftOorzaakWerk",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Werk die de oorzaak is dat een ander werk uitgevoerd wordt."
+      },
+      "usage": {
+        "nl": "Bijvoorbeeld heraanlegging straat na kabelwerken."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Werken"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Werken"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftOnderbord",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Onderbord die behoort tot dit verkeersbordbasis."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftInfrastructuurelement",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Infrastructuurelement die voor de ondersteuning zorgt in de opstelling."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Opstelling"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftGerelateerdBord",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Verkeersbordbasis die hieraan gerelateerd is."
+      },
+      "usage": {
+        "nl": "Bijvoorbeeld: verkeersbord F1 heeft gerelateerd bord F3 om het begin en einde van een bebouwde kom aan te duiden."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftBevestiging",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Waarmee het verkeersbord is bevestigd aan een infrastructuurelement."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Verkeersbord"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Bevestiging"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftBetrekkingTot",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Entiteiten die mede-oorzaak zijn van het ruimtelijke conflict."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#RuimtelijkConflict"
       ],
       "range": [
         "http://www.w3.org/2000/01/rdf-schema#Resource"
@@ -1300,27 +1379,286 @@
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Project.type",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftAntwoord",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "nl": "Type van het project."
+        "nl": "Antwoord van een samenwerkingsaanvraag."
       },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsaanvraag"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsantwoord"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#grafischeWeergave",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Het signalisatieplan als bijlage."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Signalisatieplan"
+      ],
+      "range": [
+        "http://xmlns.com/foaf/0.1/Document"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#fabricagevoorschrift",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "Genormaliseerde referentie waaraan het fysieke bord voldoet."
+      },
+      "usage": {
+        "nl": "Bijvoorbeeld: SB20, G2000"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Verkeersbord"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#string"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#coordinatieVergaderingsdatum",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "Datum ter coördinering van de synergie."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Synergie"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#date"
+      ],
+      "generalization": [
+        "http://purl.org/dc/elements/1.1/date"
+      ]
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#conformStandaard",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "Duidt de standaard aan waarmee het conform is."
+      },
+      "usage": {
+        "nl": "Bijvoorbeeld: SB250"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Bevestiging"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#string"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#categorie",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Verbodscategorie van de innameverbod."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Innameverbod"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#bindend",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "Geeft aan of het advies bindend (true) of niet-bindend is (false)."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Advies"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#boolean"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#bijlage",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Extra document die bij de samenwerkingsaanvraag hoort."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsaanvraag"
+      ],
+      "range": [
+        "http://xmlns.com/foaf/0.1/Document"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#betrokkenOrganisatie",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Organisatie die antwoordt op de samenwerkingsaanvraag."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsantwoord"
+      ],
+      "range": [
+        "http://purl.org/dc/terms/Agent"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#beoordelingsdatum",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "Wanneer de beoordeling gegeven werd."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Advies"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#dateTime"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#beoordeling",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Beoordeling van het advies."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Advies"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#beoordeeldDoor",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Agent die het advies beoordeeld heeft."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Advies"
+      ],
+      "range": [
+        "http://purl.org/dc/terms/Agent"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#beheerder",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Beheerder van het advies."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Advies"
+      ],
+      "range": [
+        "http://purl.org/dc/terms/Agent"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#beheerder",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Persoon of organisatie die verantwoordelijk is voor het beheer."
+      },
+      "domain": [
+        "http://www.w3.org/2000/01/rdf-schema#Resource"
+      ],
+      "range": [
+        "http://purl.org/dc/terms/Agent"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#beheerder",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Innameverbod"
+      ],
+      "range": [
+        "http://purl.org/dc/terms/Agent"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#beheerder",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsaanvraag"
+      ],
+      "range": [
+        "http://purl.org/dc/terms/Agent"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#beheerder",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "domain": [
         "https://data.vlaanderen.be/ns/mobiliteit#Project"
       ],
       "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
+        "http://purl.org/dc/terms/Agent"
       ],
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#RuimtelijkConflict.type",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#beheerder",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel"
+      ],
+      "range": [
+        "http://purl.org/dc/terms/Agent"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#beheerder",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder"
+      ],
+      "range": [
+        "http://purl.org/dc/terms/Agent"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#beheerder",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Inname"
+      ],
+      "range": [
+        "http://purl.org/dc/terms/Agent"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#afmeting",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "nl": "Type ruimtelijk conflict."
+        "nl": "Afmeting (lengte) van het verkeersbord."
+      },
+      "usage": {
+        "nl": "Dit wordt gemeten volgens de richting beschreven in het reglement voor de wegbeheerder: cfr. artikels 6.4.1 en 6.4.2"
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#RuimtelijkConflict"
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Verkeersbord"
       ],
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
@@ -1328,13 +1666,206 @@
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsaanvraag.lanceringsdatum",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#adviseert",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Waarover input wordt gegeven."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Advies"
+      ],
+      "range": [
+        "http://www.w3.org/2000/01/rdf-schema#Resource"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#adresVoorstelling",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Adresvoorstelling van het verkeersbordbasis."
+      },
+      "usage": {
+        "nl": "Ter hoogte van welk adres de fysieke opstelling uiteindelijk zal komen. De preciese locatie kan enkel via de opstelling bepaald worden."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
+      ],
+      "range": [
+        "http://www.w3.org/ns/locn#Address"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#aanzicht",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
-        "nl": "Datum waarop de samenwerkingsaanvraag uitgestuurd wordt."
+        "nl": "De hoek waarin het fysiek bord gepositioneerd is ten opzichte van een vooropgestelde as."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Verkeersbord"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#boolean"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#aanvraagStatus",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Status om samen te werken."
       },
       "domain": [
         "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsaanvraag"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Werken.voorlopigeOplevering",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "Tijdsstip wanneer het werk geacht opgeleverd te worden."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Werken"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#dateTime"
+      ],
+      "generalization": [
+        "http://www.w3.org/ns/prov#endedAtTime"
+      ]
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Werken.verplaatsingswerk",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "Aanduiding of de werkopdracht veroorzaakt wordt door andere werkopdrachten."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Werken"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#boolean"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Werken.tijdsduur",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "Aantal minuten dat een werk duurt."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Werken"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#integer"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Werken.categorie",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "De categorie van de werken (in functie van de grootte van de werf)."
+      },
+      "usage": {
+        "nl": "Bijvoorbeeld: categorie 1 - grote werken"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Werken"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis.status",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Status van de verkeersbordbasis."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis.plaatsbeschrijving",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "Tekstuele beschrijving waar het verkeersbord zal komen."
+      },
+      "usage": {
+        "nl": "Komt voort uit het lokaal besluit, bijvoorbeeld aanvullend reglement."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#string"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Synergieaanvraag.volgensAfspraken",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Afspraken die gevolgd moeten worden om de synergie uit te voeren."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Synergieaanvraag"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Synergie.volgensAfspraken",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Afspraken die gevolgd moeten worden om een synergie uit te voeren."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Synergie"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsantwoord.gaatAkkoord",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "Geeft aan of de betrokken organisatie wil samenwerken of niet.."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsantwoord"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#boolean"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsantwoord.antwoordDatum",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "Datum waarop het antwoord gegeven werd."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsantwoord"
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#date"
@@ -1360,13 +1891,13 @@
       ]
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsantwoord.antwoordDatum",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsaanvraag.lanceringsdatum",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
-        "nl": "Datum waarop het antwoord gegeven werd."
+        "nl": "Datum waarop de samenwerkingsaanvraag uitgestuurd wordt."
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsantwoord"
+        "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsaanvraag"
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#date"
@@ -1376,849 +1907,52 @@
       ]
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsantwoord.gaatAkkoord",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "Geeft aan of de betrokken organisatie wil samenwerken of niet.."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsantwoord"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#boolean"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Synergie.volgensAfspraken",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#RuimtelijkConflict.type",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "nl": "Afspraken die gevolgd moeten worden om een synergie uit te voeren."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Synergie"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Synergieaanvraag.volgensAfspraken",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Afspraken die gevolgd moeten worden om de synergie uit te voeren."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Synergieaanvraag"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis.plaatsbeschrijving",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "Tekstuele beschrijving waar het verkeersbord zal komen."
-      },
-      "usage": {
-        "nl": "Komt voort uit het lokaal besluit, bijvoorbeeld aanvullend reglement."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis.status",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Status van de verkeersbordbasis."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Werken.categorie",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "De categorie van de werken (in functie van de grootte van de werf)."
-      },
-      "usage": {
-        "nl": "Bijvoorbeeld: categorie 1 - grote werken"
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Werken"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Werken.tijdsduur",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "Aantal minuten dat een werk duurt."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Werken"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#integer"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Werken.verplaatsingswerk",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "Aanduiding of de werkopdracht veroorzaakt wordt door andere werkopdrachten."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Werken"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#boolean"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Werken.voorlopigeOplevering",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "Tijdsstip wanneer het werk geacht opgeleverd te worden."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Werken"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#dateTime"
-      ],
-      "generalization": [
-        "http://www.w3.org/ns/prov#endedAtTime"
-      ]
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#aanvraagStatus",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Status om samen te werken."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsaanvraag"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#aanzicht",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "De hoek waarin het fysiek bord gepositioneerd is ten opzichte van een vooropgestelde as."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Verkeersbord"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#boolean"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#adresVoorstelling",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Adresvoorstelling van het verkeersbordbasis."
-      },
-      "usage": {
-        "nl": "Ter hoogte van welk adres de fysieke opstelling uiteindelijk zal komen. De preciese locatie kan enkel via de opstelling bepaald worden."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
-      ],
-      "range": [
-        "http://www.w3.org/ns/locn#Address"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#adviseert",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Waarover input wordt gegeven."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Advies"
-      ],
-      "range": [
-        "http://www.w3.org/2000/01/rdf-schema#Resource"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#afmeting",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Afmeting (lengte) van het verkeersbord."
-      },
-      "usage": {
-        "nl": "Dit wordt gemeten volgens de richting beschreven in het reglement voor de wegbeheerder: cfr. artikels 6.4.1 en 6.4.2"
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Verkeersbord"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#beheerder",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Beheerder van het advies."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Advies"
-      ],
-      "range": [
-        "http://purl.org/dc/terms/Agent"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#beheerder",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Innameverbod"
-      ],
-      "range": [
-        "http://purl.org/dc/terms/Agent"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#beheerder",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Persoon of organisatie die verantwoordelijk is voor het beheer."
-      },
-      "domain": [
-        "http://www.w3.org/2000/01/rdf-schema#Resource"
-      ],
-      "range": [
-        "http://purl.org/dc/terms/Agent"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#beheerder",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsaanvraag"
-      ],
-      "range": [
-        "http://purl.org/dc/terms/Agent"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#beheerder",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Project"
-      ],
-      "range": [
-        "http://purl.org/dc/terms/Agent"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#beheerder",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel"
-      ],
-      "range": [
-        "http://purl.org/dc/terms/Agent"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#beheerder",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder"
-      ],
-      "range": [
-        "http://purl.org/dc/terms/Agent"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#beheerder",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Inname"
-      ],
-      "range": [
-        "http://purl.org/dc/terms/Agent"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#beoordeeldDoor",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Agent die het advies beoordeeld heeft."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Advies"
-      ],
-      "range": [
-        "http://purl.org/dc/terms/Agent"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#beoordeling",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Beoordeling van het advies."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Advies"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#beoordelingsdatum",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "Wanneer de beoordeling gegeven werd."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Advies"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#dateTime"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#betrokkenOrganisatie",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Organisatie die antwoordt op de samenwerkingsaanvraag."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsantwoord"
-      ],
-      "range": [
-        "http://purl.org/dc/terms/Agent"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#bijlage",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Extra document die bij de samenwerkingsaanvraag hoort."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsaanvraag"
-      ],
-      "range": [
-        "http://xmlns.com/foaf/0.1/Document"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#bindend",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "Geeft aan of het advies bindend (true) of niet-bindend is (false)."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Advies"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#boolean"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#categorie",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Verbodscategorie van de innameverbod."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Innameverbod"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#conformStandaard",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "Duidt de standaard aan waarmee het conform is."
-      },
-      "usage": {
-        "nl": "Bijvoorbeeld: SB250"
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Bevestiging"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#coordinatieVergaderingsdatum",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "Datum ter coördinering van de synergie."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Synergie"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#date"
-      ],
-      "generalization": [
-        "http://purl.org/dc/elements/1.1/date"
-      ]
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#fabricagevoorschrift",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "Genormaliseerde referentie waaraan het fysieke bord voldoet."
-      },
-      "usage": {
-        "nl": "Bijvoorbeeld: SB20, G2000"
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Verkeersbord"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#grafischeWeergave",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Het signalisatieplan als bijlage."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Signalisatieplan"
-      ],
-      "range": [
-        "http://xmlns.com/foaf/0.1/Document"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftAntwoord",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Antwoord van een samenwerkingsaanvraag."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsaanvraag"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsantwoord"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftBetrekkingTot",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Entiteiten die mede-oorzaak zijn van het ruimtelijke conflict."
+        "nl": "Type ruimtelijk conflict."
       },
       "domain": [
         "https://data.vlaanderen.be/ns/mobiliteit#RuimtelijkConflict"
       ],
       "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Project.type",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Type van het project."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Project"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Project.omvat",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Entiteit dat dit project omvat."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Project"
+      ],
+      "range": [
         "http://www.w3.org/2000/01/rdf-schema#Resource"
       ],
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftBevestiging",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Project.geeftAanleidingTot",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "nl": "Waarmee het verkeersbord is bevestigd aan een infrastructuurelement."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Verkeersbord"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Bevestiging"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftGerelateerdBord",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Verkeersbordbasis die hieraan gerelateerd is."
-      },
-      "usage": {
-        "nl": "Bijvoorbeeld: verkeersbord F1 heeft gerelateerd bord F3 om het begin en einde van een bebouwde kom aan te duiden."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftInfrastructuurelement",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Infrastructuurelement die voor de ondersteuning zorgt in de opstelling."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Opstelling"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftOnderbord",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Onderbord die behoort tot dit verkeersbordbasis."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftOorzaakWerk",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Werk die de oorzaak is dat een ander werk uitgevoerd wordt."
-      },
-      "usage": {
-        "nl": "Bijvoorbeeld heraanlegging straat na kabelwerken."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Werken"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Werken"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftRoute",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Traject dat bij een mobiliteitsmaatregel hoort."
-      },
-      "usage": {
-        "nl": "[TBC] Bijvoorbeeld bij het invoeren van eenrichting kan hiermee de verzameling netwerkelementen aangeduid worden."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/weg#TransportLinkSequentie"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftVerankering",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Waarmee het infrastructuurelement verankerd is."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Verankering"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftVerkeersbord",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Verkeersbord die op de opstelling staat."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Opstelling"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Verkeersbord"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftVerkeersbordconcept",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Algemeen verkeersbordconcept van de verkeersbordbasis."
-      },
-      "usage": {
-        "nl": "Bijvoorbeeld: de algemene wegwijzer 'F29'. Verkeersbordbasis is dan een specifieke uitwerking hiervan met als variabel opschrift de naam van de gemeente of stad."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordconcept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#isZonebord",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "Duidt aan of het verkeersbord een zonebord is."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#boolean"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#leidtTot",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Innameverbod dat het gevolg is van een inname."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Inname"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Innameverbod"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#lengteBovengronds",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "Lengte van de steun boven het verhardingsniveau of maaiveld."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Steun"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#integer"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#lengteOndergronds",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "Lengte van de steun onder het verhardingsniveau of maaiveld."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Steun"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#integer"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#opstelhoogte",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "Afstand tussen het maaiveld en de onderrand van het bord."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Verkeersbord"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#positieTenOpzichtVanRijweg",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Manier waarop de opstelling zich verhoudt tot de rijbaan."
-      },
-      "usage": {
-        "nl": "Bijvoorbeeld: boven, rechts, links"
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Opstelling"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#realiseert",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Relateert een verkeersbord op het openbaar domein tot de verkeersbordbasis gerealiseerd door het (fysieke) verkeersbord."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Verkeersbord"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#reden",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "Waarom een bepaalde beoordeling gegeven werd."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Advies"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#registratieDatum",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "Datum waarop de synergie geregistreerd werd."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Synergie"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#date"
-      ],
-      "generalization": [
-        "http://purl.org/dc/elements/1.1/date"
-      ]
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#status",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Status van de opstelling."
-      },
-      "usage": {
-        "nl": "Bijvoorbeeld: schets (test), voorstel (ingediend als voorstel en onderdeel van een nieuw reglement), gepland (beslist, maar nog uit te voeren), uitgevoerd"
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Opstelling"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#stilzwijgend",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "Duidt aan of het advies stilzwijgend (true) of niet (false) is."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Advies"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#boolean"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#synergieStatus",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Status van de synergie."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Synergie"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#variabelOpschrift",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "nl": "Variabele tekst gedeeld op een bepaald soort bord."
-      },
-      "usage": {
-        "nl": "Indien het gaat om iconen of symbolen worden deze omschreven."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#verhindert",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Agents die hinder ondervinden."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder"
-      ],
-      "range": [
-        "http://purl.org/dc/terms/Agent"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#volgtUit",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "nl": "Project dat ontstaan is uit een samenwerkingsaanvraag."
+        "nl": "Samenwerkingsaanvraag die het gevolg is van het project."
       },
       "domain": [
         "https://data.vlaanderen.be/ns/mobiliteit#Project"
@@ -2229,16 +1963,33 @@
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#vorm",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel.wordtAangeduidDoor",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "nl": "Vorm van de steun."
+        "nl": "Verkeersbordbasis dat bijdraagt tot de aanduiding van een mobiliteitsmaatregel."
       },
       "usage": {
-        "nl": "Bijvoorbeeld: rond, rechthoekig"
+        "nl": "Op het moment van het besluit kan nog niet gerefereerd worden naar de fysieke verkeersborden die gerealiseerd worden. Verkeersbordbasis bevat de informatie om die uiteindelijk op het openbaar domein te plaatsen."
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Steun"
+        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordbasis"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel.type",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Type mobiliteitsmaatregel."
+      },
+      "usage": {
+        "nl": "Voorbeelden: straat afzetten, trager rijden, extra fietsstallingen, shuttledienst etc."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel"
       ],
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
@@ -2246,218 +1997,280 @@
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#wanddikte",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel.plaatsbeschrijving",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
-        "nl": "Dikte van de wand in millimeter."
+        "nl": "Tekstuele beschrijving van de locatie van de mobiliteitsmaatregel."
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/mobiliteit#Steun"
+        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel"
       ],
       "range": [
-        "http://www.w3.org/2001/XMLSchema#integer"
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
       ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel.heeftGevolg",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Mobiliteitshinder (bv.: afgesloten weg) die ontstaan is door het invoeren van een mobiliteitsmaatregel."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel.doelgroep",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Groep of categorie die belang hebben bij de mobiliteitsmaatregel."
+      },
+      "usage": {
+        "nl": "Bijvoorbeeld: alle bewoners uit een bepaalde straat"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel"
+      ],
+      "range": [
+        "http://purl.org/dc/terms/Agent"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder.type",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Type mobiliteitshinder."
+      },
+      "usage": {
+        "nl": "In te vullen door business werkgroep GIPOD"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder.tijdsinterval",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Tijd wanneer mobiliteitshinder van toepassing is."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder"
+      ],
+      "range": [
+        "http://data.europa.eu/m8g/PeriodOfTime"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder.doelgroep",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Groep die belang heeft bij de mobiliteitshinder."
+      },
+      "usage": {
+        "nl": "Voorbeelden: handelaars, een bedrijf, voetgangers..."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Innamezone.beheerder",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Beheerder van de innamezone."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Innamezone"
+      ],
+      "range": [
+        "http://purl.org/dc/terms/Agent"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Inname.vereist",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Mobiliteitsmaatregel die vereist is om een inname tot stand te brengen."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Inname"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Inname.type",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Type van inname"
+      },
+      "usage": {
+        "nl": "Voorbeelden: markt, werken, wielerwedstrijd, wegeniswerken"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Inname"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Inname.tijdsintervalGepland",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Tijd wanneer de inname mogelijks door kan gaan."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Inname"
+      ],
+      "range": [
+        "http://data.europa.eu/m8g/PeriodOfTime"
+      ],
+      "generalization": [
+        "http://purl.org/dc/terms/temporal"
+      ]
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Inname.tijdsintervalEffectief",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Tijd wanneer de inname werkelijk doorgaat."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Inname"
+      ],
+      "range": [
+        "http://data.europa.eu/m8g/PeriodOfTime"
+      ],
+      "generalization": [
+        "http://purl.org/dc/terms/temporal"
+      ]
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Inname.plaatsbeschrijving",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "Tekstuele weergave van de locatie van de inname."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Inname"
+      ],
+      "range": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Inname.openbaarDomein",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Inname"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#boolean"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Inname.innamezone",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Gebied waar de inname doorgaat."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Inname"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Innamezone"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Inname.heeftGevolg",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Mobiliteitshinder (bv.: afgesloten weg) die ontstaan is door het innemen van de openbare ruimte."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Inname"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#Inname.geeftAanleidingTot",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "nl": "Samenwerkingsaanvraag die het gevolg is van de inname."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Inname"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit#Samenwerkingsaanvraag"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#GIPODContactInfo.rol",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "Functie die bij de contactinfo hoort, bijvoorbeeld van de hoofdverantwoordelijke"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#ContactinfoVolgensRol"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#string"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#GIPODContactInfo.isPubliek",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "definition": {
+        "nl": "Duidt aan of de contactinfo door iedereen gezien mag worden."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/mobiliteit#ContactinfoVolgensRol"
+      ],
+      "range": [],
       "generalization": []
     }
   ],
   "externalproperties": [
     {
-      "name": {
-        "nl": "bijdrager"
-      },
-      "@id": "http://purl.org/dc/elements/1.1/contributor",
-      "@type": "rdf:Property"
-    },
-    {
       "name": {},
-      "@id": "http://purl.org/dc/elements/1.1/contributor",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftRoute",
       "@type": "rdf:Property"
     },
     {
       "name": {
-        "nl": "bijdrager"
+        "nl": "classificatie"
       },
-      "@id": "http://purl.org/dc/elements/1.1/contributor",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://purl.org/dc/elements/1.1/contributor",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "beschrijving"
-      },
-      "@id": "http://purl.org/dc/elements/1.1/description",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "beschrijving"
-      },
-      "@id": "http://purl.org/dc/terms/description",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://purl.org/dc/terms/description",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://purl.org/dc/terms/description",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://purl.org/dc/terms/description",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://purl.org/dc/terms/description",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://purl.org/dc/terms/description",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://purl.org/dc/terms/description",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://purl.org/dc/terms/temporal",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://purl.org/dc/terms/temporal",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://purl.org/dc/terms/temporal",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://purl.org/dc/terms/temporal",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://schema.org/contactPoint",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://schema.org/contactPoint",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://schema.org/contactPoint",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://schema.org/contactPoint",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "contactinfo"
-      },
-      "@id": "http://schema.org/contactPoint",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "contactinfo"
-      },
-      "@id": "http://schema.org/contactPoint",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "identificator"
-      },
-      "@id": "http://www.w3.org/ns/adms#identifier",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://www.w3.org/ns/adms#identifier",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://www.w3.org/ns/adms#identifier",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://www.w3.org/ns/adms#identifier",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://www.w3.org/ns/adms#identifier",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://www.w3.org/ns/adms#identifier",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://www.w3.org/ns/adms#identifier",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "status"
-      },
-      "@id": "http://www.w3.org/ns/adms#status",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "status"
-      },
-      "@id": "http://www.w3.org/ns/adms#status",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://www.w3.org/ns/locn#address",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "adresvoorstelling"
-      },
-      "@id": "http://www.w3.org/ns/locn#address",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "adresvoorstelling"
-      },
-      "@id": "http://www.w3.org/ns/locn#address",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "adresvoorstelling"
-      },
-      "@id": "http://www.w3.org/ns/locn#address",
+      "@id": "http://www.w3.org/ns/org#classification",
       "@type": "rdf:Property"
     },
     {
@@ -2499,14 +2312,201 @@
     },
     {
       "name": {
-        "nl": "classificatie"
+        "nl": "adresvoorstelling"
       },
-      "@id": "http://www.w3.org/ns/org#classification",
+      "@id": "http://www.w3.org/ns/locn#address",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "adresvoorstelling"
+      },
+      "@id": "http://www.w3.org/ns/locn#address",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "adresvoorstelling"
+      },
+      "@id": "http://www.w3.org/ns/locn#address",
       "@type": "rdf:Property"
     },
     {
       "name": {},
-      "@id": "https://data.vlaanderen.be/ns/mobiliteit#heeftRoute",
+      "@id": "http://www.w3.org/ns/locn#address",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "status"
+      },
+      "@id": "http://www.w3.org/ns/adms#status",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "status"
+      },
+      "@id": "http://www.w3.org/ns/adms#status",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "identificator"
+      },
+      "@id": "http://www.w3.org/ns/adms#identifier",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://www.w3.org/ns/adms#identifier",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://www.w3.org/ns/adms#identifier",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://www.w3.org/ns/adms#identifier",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://www.w3.org/ns/adms#identifier",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://www.w3.org/ns/adms#identifier",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://www.w3.org/ns/adms#identifier",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "contactinfo"
+      },
+      "@id": "http://schema.org/contactPoint",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "contactinfo"
+      },
+      "@id": "http://schema.org/contactPoint",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://schema.org/contactPoint",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://schema.org/contactPoint",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://schema.org/contactPoint",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://schema.org/contactPoint",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://purl.org/dc/terms/temporal",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://purl.org/dc/terms/temporal",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://purl.org/dc/terms/temporal",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://purl.org/dc/terms/temporal",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "beschrijving"
+      },
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "beschrijving"
+      },
+      "@id": "http://purl.org/dc/elements/1.1/description",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "bijdrager"
+      },
+      "@id": "http://purl.org/dc/elements/1.1/contributor",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "bijdrager"
+      },
+      "@id": "http://purl.org/dc/elements/1.1/contributor",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://purl.org/dc/elements/1.1/contributor",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://purl.org/dc/elements/1.1/contributor",
       "@type": "rdf:Property"
     }
   ],

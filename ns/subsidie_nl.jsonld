@@ -208,58 +208,52 @@
   ],
   "properties": [
     {
-      "@id": "https://data.vlaanderen.be/ns/subsidie#begrotingsartikel",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "@id": "https://data.vlaanderen.be/ns/subsidie#vastgelegdBedrag",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
       "definition": {
-        "nl": "Het laagste niveau binnen de Vlaamse begrotingstabel. Begrotingsartikelen vormen de basis bij het opstellen, aanpassen en uitvoeren van de begroting."
-      },
-      "usage": {
-        "nl": "Bijvoorbeeld DB0/9DG-C-T-G/OW. Voor meer informatie zie: http://vormingbegroting.fenb.be/handboek-begroting/begrotingsartikelen"
+        "nl": "Het bedrag dat werd vastgelegd voor uitbetaling aan de begunstigde van een subsidiemaatregel of een intermediaire betrokkene in een bepaalde periode."
       },
       "domain": [
-        "http://purl.org/vocab/cpsv#PublicService"
+        "https://lod.milieuinfo.be/ns/dossier"
       ],
-      "range": [
-        "http://www.w3.org/2000/01/rdf-schema#Literal"
-      ],
+      "range": [],
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/subsidie#de-minimis",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "@id": "https://data.vlaanderen.be/ns/subsidie#uitgekeerdBedrag",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
       "definition": {
-        "nl": "True wanneer de steun die niet onder een vrijstellingsgrond valt en de subsidiemaatregel onderhevig is aan de de-minimisregel. "
+        "nl": "Het bedrag dat werd uitbetaald aan de begunstigde, of een intermediaire betrokkene van de subsidiemaatregel."
       },
       "domain": [
-        "http://purl.org/vocab/cpsv#PublicService"
+        "http://www.w3.org/2000/01/rdf-schema#Resource"
       ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#boolean"
-      ],
+      "range": [],
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/subsidie#dienstverlener",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "@id": "https://data.vlaanderen.be/ns/subsidie#toegekendBedrag",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "definition": {
+        "nl": "Het bedrag dat werd toegekend aan de begunstigde van de subsidiemaatregel en waar deze bijgevolg recht op heeft om te ontvangen."
+      },
       "domain": [
-        "http://purl.org/vocab/cpsv#PublicService"
+        "http://www.w3.org/2000/01/rdf-schema#Resource"
       ],
-      "range": [
-        "http://purl.org/dc/terms/Agent"
-      ],
+      "range": [],
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/subsidie#gesubsidieerdePeriode",
+      "@id": "https://data.vlaanderen.be/ns/subsidie#heeftRechtsgrond",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "nl": "De periode waarop de subsidie betrekking heeft."
+        "nl": "De rechtsgrond op basis waarvan de subsidiemaatregel werd toegekend."
       },
       "domain": [
+        "http://purl.org/vocab/cpsv#PublicService"
+      ],
+      "range": [
         "https://data.vlaanderen.be/ns/subsidie#RechtsgrondToekenningSubsidie"
-      ],
-      "range": [
-        "http://purl.org/dc/terms/PeriodOfTime"
       ],
       "generalization": []
     },
@@ -278,247 +272,68 @@
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/subsidie#heeftRechtsgrond",
+      "@id": "https://data.vlaanderen.be/ns/subsidie#gesubsidieerdePeriode",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "nl": "De rechtsgrond op basis waarvan de subsidiemaatregel werd toegekend."
+        "nl": "De periode waarop de subsidie betrekking heeft."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/subsidie#RechtsgrondToekenningSubsidie"
+      ],
+      "range": [
+        "http://purl.org/dc/terms/PeriodOfTime"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/subsidie#dienstverlener",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "domain": [
+        "http://purl.org/vocab/cpsv#PublicService"
+      ],
+      "range": [
+        "http://purl.org/dc/terms/Agent"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/subsidie#de-minimis",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "nl": "True wanneer de steun die niet onder een vrijstellingsgrond valt en de subsidiemaatregel onderhevig is aan de de-minimisregel. "
       },
       "domain": [
         "http://purl.org/vocab/cpsv#PublicService"
       ],
       "range": [
-        "https://data.vlaanderen.be/ns/subsidie#RechtsgrondToekenningSubsidie"
+        "http://www.w3.org/2001/XMLSchema#boolean"
       ],
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/subsidie#toegekendBedrag",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@id": "https://data.vlaanderen.be/ns/subsidie#begrotingsartikel",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
-        "nl": "Het bedrag dat werd toegekend aan de begunstigde van de subsidiemaatregel en waar deze bijgevolg recht op heeft om te ontvangen."
+        "nl": "Het laagste niveau binnen de Vlaamse begrotingstabel. Begrotingsartikelen vormen de basis bij het opstellen, aanpassen en uitvoeren van de begroting."
+      },
+      "usage": {
+        "nl": "Bijvoorbeeld DB0/9DG-C-T-G/OW. Voor meer informatie zie: http://vormingbegroting.fenb.be/handboek-begroting/begrotingsartikelen"
       },
       "domain": [
-        "http://www.w3.org/2000/01/rdf-schema#Resource"
+        "http://purl.org/vocab/cpsv#PublicService"
       ],
-      "range": [],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/subsidie#uitgekeerdBedrag",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "definition": {
-        "nl": "Het bedrag dat werd uitbetaald aan de begunstigde, of een intermediaire betrokkene van de subsidiemaatregel."
-      },
-      "domain": [
-        "http://www.w3.org/2000/01/rdf-schema#Resource"
+      "range": [
+        "http://www.w3.org/2000/01/rdf-schema#Literal"
       ],
-      "range": [],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/subsidie#vastgelegdBedrag",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "definition": {
-        "nl": "Het bedrag dat werd vastgelegd voor uitbetaling aan de begunstigde van een subsidiemaatregel of een intermediaire betrokkene in een bepaalde periode."
-      },
-      "domain": [
-        "https://lod.milieuinfo.be/ns/dossier"
-      ],
-      "range": [],
       "generalization": []
     }
   ],
   "externalproperties": [
     {
       "name": {
-        "nl": "taal"
+        "nl": "is instantie van"
       },
-      "@id": "http://data.europa.eu/eli/ontology#language",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "aangenomen door"
-      },
-      "@id": "http://data.europa.eu/eli/ontology#passed_by",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://data.europa.eu/m8g/hasAddress",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "heeft criterium"
-      },
-      "@id": "http://data.europa.eu/m8g/hasCriterion",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "heeft participatie"
-      },
-      "@id": "http://data.europa.eu/m8g/hasParticipation",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "rol"
-      },
-      "@id": "http://data.europa.eu/m8g/role",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "sector"
-      },
-      "@id": "http://data.europa.eu/m8g/sector",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "onderwerp"
-      },
-      "@id": "http://data.europa.eu/m8g/subject",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "territoriale toepassing"
-      },
-      "@id": "http://data.europa.eu/m8g/territorialApplication",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "subsidie-instrument"
-      },
-      "@id": "http://data.europa.eu/stateaidtransparency/sat#aidInstrument",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "staatssteunnummer"
-      },
-      "@id": "http://data.europa.eu/stateaidtransparency/sat#aidMeasure",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "datum"
-      },
-      "@id": "http://purl.org/dc/terms/date",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "beschrijving"
-      },
-      "@id": "http://purl.org/dc/terms/description",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "beschrijving"
-      },
-      "@id": "http://purl.org/dc/terms/description",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "beschrijving"
-      },
-      "@id": "http://purl.org/dc/terms/description",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "beschrijving"
-      },
-      "@id": "http://purl.org/dc/terms/description",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "taal"
-      },
-      "@id": "http://purl.org/dc/terms/language",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {},
-      "@id": "http://purl.org/dc/terms/title",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "titel"
-      },
-      "@id": "http://purl.org/dc/terms/title",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "titel"
-      },
-      "@id": "http://purl.org/dc/terms/title",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "titel"
-      },
-      "@id": "http://purl.org/dc/terms/title",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "type"
-      },
-      "@id": "http://purl.org/dc/terms/type",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "type"
-      },
-      "@id": "http://purl.org/dc/terms/type",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "volgt"
-      },
-      "@id": "http://purl.org/vocab/cpsv#follows",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "produceert"
-      },
-      "@id": "http://purl.org/vocab/cpsv#produces",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "referentie"
-      },
-      "@id": "http://www.w3.org/ns/adms#identifier",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "referentie"
-      },
-      "@id": "http://www.w3.org/ns/adms#identifier",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "nl": "status"
-      },
-      "@id": "http://www.w3.org/ns/adms#status",
+      "@id": "https://data.vlaanderen.be/ns/transactie#isInstantieVan",
       "@type": "rdf:Property"
     },
     {
@@ -530,9 +345,194 @@
     },
     {
       "name": {
-        "nl": "is instantie van"
+        "nl": "status"
       },
-      "@id": "https://data.vlaanderen.be/ns/transactie#isInstantieVan",
+      "@id": "http://www.w3.org/ns/adms#status",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "referentie"
+      },
+      "@id": "http://www.w3.org/ns/adms#identifier",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "referentie"
+      },
+      "@id": "http://www.w3.org/ns/adms#identifier",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "produceert"
+      },
+      "@id": "http://purl.org/vocab/cpsv#produces",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "volgt"
+      },
+      "@id": "http://purl.org/vocab/cpsv#follows",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "type"
+      },
+      "@id": "http://purl.org/dc/terms/type",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "type"
+      },
+      "@id": "http://purl.org/dc/terms/type",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "titel"
+      },
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "titel"
+      },
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "titel"
+      },
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "taal"
+      },
+      "@id": "http://purl.org/dc/terms/language",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "beschrijving"
+      },
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "beschrijving"
+      },
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "beschrijving"
+      },
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "beschrijving"
+      },
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "datum"
+      },
+      "@id": "http://purl.org/dc/terms/date",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "staatssteunnummer"
+      },
+      "@id": "http://data.europa.eu/stateaidtransparency/sat#aidMeasure",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "subsidie-instrument"
+      },
+      "@id": "http://data.europa.eu/stateaidtransparency/sat#aidInstrument",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "territoriale toepassing"
+      },
+      "@id": "http://data.europa.eu/m8g/territorialApplication",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "onderwerp"
+      },
+      "@id": "http://data.europa.eu/m8g/subject",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "sector"
+      },
+      "@id": "http://data.europa.eu/m8g/sector",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "rol"
+      },
+      "@id": "http://data.europa.eu/m8g/role",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "heeft participatie"
+      },
+      "@id": "http://data.europa.eu/m8g/hasParticipation",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "heeft criterium"
+      },
+      "@id": "http://data.europa.eu/m8g/hasCriterion",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {},
+      "@id": "http://data.europa.eu/m8g/hasAddress",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "aangenomen door"
+      },
+      "@id": "http://data.europa.eu/eli/ontology#passed_by",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "nl": "taal"
+      },
+      "@id": "http://data.europa.eu/eli/ontology#language",
       "@type": "rdf:Property"
     }
   ],
