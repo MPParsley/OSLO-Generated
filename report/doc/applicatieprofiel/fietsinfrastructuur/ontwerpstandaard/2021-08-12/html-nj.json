@@ -12,14 +12,37 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-fietsinfrastructuur/tree/c6d8fc456d7f592ee0717a3ff3db04266c2a57cc",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-fietsinfrastructuur/blob/c6d8fc456d7f592ee0717a3ff3db04266c2a57cc/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-fietsinfrastructuur/tree/4665ff8019dc8fd4faae17b68cd5c5898a40d260",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-fietsinfrastructuur/blob/4665ff8019dc8fd4faae17b68cd5c5898a40d260/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-fietsinfrastructuur/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/standaard-in-ontwikkeling/vocabularium-en-applicatieprofiel-fietsinfrastructuur.html",
     "usesVocs": [],
     "usesAPs": []
   },
   "classes": [
+    {
+      "uri": "http://fixme.com#Fietsparking",
+      "name": {},
+      "description": {},
+      "usage": {},
+      "parents": [
+        {
+          "name": "Parkeerfaciliteit",
+          "label": "Parkeerfaciliteit",
+          "package": "Mobivoc",
+          "uri": "http://fixme.com#Parkeerfaciliteit",
+          "scoped_uri": "http://fixme.com#Parkeerfaciliteit"
+        },
+        {
+          "name": "Fietsinfrastructuurobject",
+          "label": "Fietsinfrastructuurobject",
+          "package": "OSLO-Fietsinfrastructuur",
+          "uri": "https://fixme.com",
+          "scoped_uri": "#Fietsinfrastructuurobject"
+        }
+      ],
+      "properties": []
+    },
     {
       "uri": "http://fixme.com#OngelijkgrondseKruising",
       "name": {
@@ -37,25 +60,13 @@
           "package": "INSPIRE-Netwerk",
           "uri": "http://fixme.com#Netwerkelement",
           "scoped_uri": "http://fixme.com#Netwerkelement"
-        },
-        {
-          "name": "Fietsnetwerkelement",
-          "label": "Fietsnetwerkelement",
-          "package": "Fietsinfrastructuur",
-          "uri": "https://fixme.com",
-          "scoped_uri": "#Fietsnetwerkelement"
         }
       ],
       "properties": [
         {
-          "uri": "https://fixme.com",
-          "name": {
-            "nl": "onderliggendWegsegment"
-          },
-          "sort_nl": "onderliggendWegsegment",
-          "description": {
-            "nl": "To Do"
-          },
+          "uri": "http://fixme.com#^identificator",
+          "name": {},
+          "description": {},
           "usage": {},
           "domain": [
             {
@@ -65,31 +76,26 @@
           ],
           "range": [
             {
-              "range_label": "Fietssegment",
-              "range_uri": "https://fixme.com"
+              "range_label": "Identificator",
+              "range_uri": "http://www.w3.org/ns/adms#Identifier"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Fietssegment",
-              "range_puri": "https://fixme.com",
+              "range_uri": "http://www.w3.org/ns/adms#Identifier",
+              "range_puri": "http://www.w3.org/ns/adms#Identifier",
               "range_label": {
-                "nl": "Fietssegment"
+                "nl": "Identificator"
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
-          "uri": "https://fixme.com",
-          "name": {
-            "nl": "bovenliggendWegsegment"
-          },
-          "sort_nl": "bovenliggendWegsegment",
-          "description": {
-            "nl": "To Do"
-          },
+          "uri": "http://fixme.com#link",
+          "name": {},
+          "description": {},
           "usage": {},
           "domain": [
             {
@@ -99,20 +105,20 @@
           ],
           "range": [
             {
-              "range_label": "Fietssegment",
-              "range_uri": "https://fixme.com"
+              "range_label": "Link",
+              "range_uri": "http://fixme.com#Link"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Fietssegment",
-              "range_puri": "https://fixme.com",
+              "range_uri": "http://fixme.com#Link",
+              "range_puri": "http://fixme.com#Link",
               "range_label": {
-                "nl": "Fietssegment"
+                "nl": "Link"
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "2..*",
           "codelist_uri": ""
         }
       ]
@@ -216,7 +222,7 @@
         {
           "name": "Weginrichting",
           "label": "Weginrichting",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Weginrichting"
         }
@@ -265,82 +271,14 @@
       "usage": {},
       "parents": [
         {
-          "name": "OpenbaarDomein::Infrastructuurelement",
+          "name": "Infrastructuurelement",
           "label": "OpenbaarDomein::Infrastructuurelement",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-OpenbaarDomein",
           "uri": "https://fixme.com",
-          "scoped_uri": "https://fixme.com"
+          "scoped_uri": "#OpenbaarDomein::Infrastructuurelement"
         }
       ],
       "properties": [
-        {
-          "uri": "https://fixme.com",
-          "name": {
-            "nl": "^geometrie"
-          },
-          "sort_nl": "^geometrie",
-          "description": {
-            "nl": "To Do"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://fixme.com",
-              "EA-Name": "Fietsinfrastructuurobject"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Geometrie",
-              "range_uri": "http://www.w3.org/ns/locn#Geometry"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Geometrie",
-              "range_puri": "http://www.w3.org/ns/locn#Geometry",
-              "range_label": {
-                "nl": "Geometrie"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://fixme.com",
-          "name": {
-            "nl": "^geldigheidsperiode"
-          },
-          "sort_nl": "^geldigheidsperiode",
-          "description": {
-            "nl": "To Do"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://fixme.com",
-              "EA-Name": "Fietsinfrastructuurobject"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "OSLO-Generiek::Periode",
-              "range_uri": "https://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#OSLO-Generiek::Periode",
-              "range_puri": "https://fixme.com",
-              "range_label": {
-                "nl": "OSLO-Generiek::Periode"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
         {
           "uri": "https://fixme.com",
           "name": {
@@ -474,14 +412,9 @@
       ],
       "properties": [
         {
-          "uri": "https://fixme.com",
-          "name": {
-            "nl": "netwerk"
-          },
-          "sort_nl": "netwerk",
-          "description": {
-            "nl": "To Do"
-          },
+          "uri": "http://fixme.com#transportobject",
+          "name": {},
+          "description": {},
           "usage": {},
           "domain": [
             {
@@ -491,20 +424,20 @@
           ],
           "range": [
             {
-              "range_label": "Fietsnetwerk",
-              "range_uri": "https://fixme.com"
+              "range_label": "Transportobject",
+              "range_uri": "http://fixme.com#Transportobject"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Fietsnetwerk",
-              "range_puri": "https://fixme.com",
+              "range_uri": "http://fixme.com#Transportobject",
+              "range_puri": "http://fixme.com#Transportobject",
               "range_label": {
-                "nl": "Fietsnetwerk"
+                "nl": "Transportobject"
               }
             }
           ],
-          "cardinality": "1..*",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -578,6 +511,40 @@
         {
           "uri": "https://fixme.com",
           "name": {
+            "nl": "netwerk"
+          },
+          "sort_nl": "netwerk",
+          "description": {
+            "nl": "To Do"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://fixme.com",
+              "EA-Name": "Fietsnetwerkelement"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Fietsnetwerk",
+              "range_uri": "https://fixme.com"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Fietsnetwerk",
+              "range_puri": "https://fixme.com",
+              "range_label": {
+                "nl": "Fietsnetwerk"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://fixme.com",
+          "name": {
             "nl": "geografische naam"
           },
           "sort_nl": "geografische naam",
@@ -646,7 +613,7 @@
         {
           "name": "Fietsnetwerkelement",
           "label": "Fietsnetwerkelement",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Fietsnetwerkelement"
         },
@@ -777,7 +744,7 @@
         {
           "name": "Fietsnetwerkelement",
           "label": "Fietsnetwerkelement",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Fietsnetwerkelement"
         },
@@ -791,7 +758,7 @@
         {
           "name": "GeneriekeFietslink",
           "label": "GeneriekeFietslink",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#GeneriekeFietslink"
         }
@@ -829,74 +796,6 @@
             }
           ],
           "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://fixme.com",
-          "name": {
-            "nl": "onderliggendWegsegment"
-          },
-          "sort_nl": "onderliggendWegsegment",
-          "description": {
-            "nl": "To Do"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://fixme.com",
-              "EA-Name": "Fietssegment"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "OngelijkgrondseKruising",
-              "range_uri": "http://fixme.com#OngelijkgrondseKruising"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#OngelijkgrondseKruising",
-              "range_puri": "http://fixme.com#OngelijkgrondseKruising",
-              "range_label": {
-                "nl": "OngelijkgrondseKruising"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://fixme.com",
-          "name": {
-            "nl": "bovenliggendWegsegment"
-          },
-          "sort_nl": "bovenliggendWegsegment",
-          "description": {
-            "nl": "To Do"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://fixme.com",
-              "EA-Name": "Fietssegment"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "OngelijkgrondseKruising",
-              "range_uri": "http://fixme.com#OngelijkgrondseKruising"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#OngelijkgrondseKruising",
-              "range_puri": "http://fixme.com#OngelijkgrondseKruising",
-              "range_label": {
-                "nl": "OngelijkgrondseKruising"
-              }
-            }
-          ],
-          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -956,14 +855,14 @@
         {
           "name": "Fietsnetwerkelement",
           "label": "Fietsnetwerkelement",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Fietsnetwerkelement"
         },
         {
           "name": "GeneriekeFietslink",
           "label": "GeneriekeFietslink",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#GeneriekeFietslink"
         }
@@ -1111,16 +1010,16 @@
           ],
           "range": [
             {
-              "range_label": "GeneriekeFietslink",
+              "range_label": "Fietsnetwerkelement",
               "range_uri": "https://fixme.com"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#GeneriekeFietslink",
+              "range_uri": "#Fietsnetwerkelement",
               "range_puri": "https://fixme.com",
               "range_label": {
-                "nl": "GeneriekeFietslink"
+                "nl": "Fietsnetwerkelement"
               }
             }
           ],
@@ -1145,16 +1044,16 @@
           ],
           "range": [
             {
-              "range_label": "Fietsnetwerkelement",
+              "range_label": "GeneriekeFietslink",
               "range_uri": "https://fixme.com"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Fietsnetwerkelement",
+              "range_uri": "#GeneriekeFietslink",
               "range_puri": "https://fixme.com",
               "range_label": {
-                "nl": "Fietsnetwerkelement"
+                "nl": "GeneriekeFietslink"
               }
             }
           ],
@@ -1175,11 +1074,11 @@
       "usage": {},
       "parents": [
         {
-          "name": "Fietsinfrastructuurobject",
-          "label": "Fietsinfrastructuurobject",
-          "package": "Fietsinfrastructuur",
+          "name": "Infrastructuurelement",
+          "label": "OpenbaarDomein::Infrastructuurelement",
+          "package": "OSLO-OpenbaarDomein",
           "uri": "https://fixme.com",
-          "scoped_uri": "#Fietsinfrastructuurobject"
+          "scoped_uri": "#OpenbaarDomein::Infrastructuurelement"
         }
       ],
       "properties": [
@@ -1196,7 +1095,7 @@
           "domain": [
             {
               "uri": "https://fixme.com",
-              "EA-Name": "OSLO-Verkeersbord::Verkeersbord"
+              "EA-Name": "Verkeersbord"
             }
           ],
           "range": [
@@ -1230,7 +1129,7 @@
           "domain": [
             {
               "uri": "https://fixme.com",
-              "EA-Name": "OSLO-Verkeersbord::Verkeersbord"
+              "EA-Name": "Verkeersbord"
             }
           ],
           "range": [
@@ -1264,7 +1163,7 @@
           "domain": [
             {
               "uri": "https://fixme.com",
-              "EA-Name": "OSLO-Verkeersbord::Verkeersbord"
+              "EA-Name": "Verkeersbord"
             }
           ],
           "range": [
@@ -1298,7 +1197,7 @@
           "domain": [
             {
               "uri": "https://fixme.com",
-              "EA-Name": "OSLO-Verkeersbord::Verkeersbord"
+              "EA-Name": "Verkeersbord"
             }
           ],
           "range": [
@@ -1332,7 +1231,7 @@
           "domain": [
             {
               "uri": "https://fixme.com",
-              "EA-Name": "OSLO-Verkeersbord::Verkeersbord"
+              "EA-Name": "Verkeersbord"
             }
           ],
           "range": [],
@@ -1353,7 +1252,7 @@
           "domain": [
             {
               "uri": "https://fixme.com",
-              "EA-Name": "OSLO-Verkeersbord::Verkeersbord"
+              "EA-Name": "Verkeersbord"
             }
           ],
           "range": [
@@ -1387,203 +1286,11 @@
           "domain": [
             {
               "uri": "https://fixme.com",
-              "EA-Name": "OSLO-Verkeersbord::Verkeersbord"
+              "EA-Name": "Verkeersbord"
             }
           ],
           "range": [],
           "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "https://fixme.com",
-      "name": {
-        "nl": "OSLO-Infrastructuurelement::Fietsstalling"
-      },
-      "sort_nl": "OSLO-Infrastructuurelement::Fietsstalling",
-      "description": {
-        "nl": "To Do"
-      },
-      "usage": {},
-      "parents": [
-        {
-          "name": "Fietsinfrastructuurobject",
-          "label": "Fietsinfrastructuurobject",
-          "package": "Fietsinfrastructuur",
-          "uri": "https://fixme.com",
-          "scoped_uri": "#Fietsinfrastructuurobject"
-        }
-      ],
-      "properties": [
-        {
-          "uri": "https://fixme.com",
-          "name": {
-            "nl": "^afsluitbaar"
-          },
-          "sort_nl": "^afsluitbaar",
-          "description": {
-            "nl": "To Do"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://fixme.com",
-              "EA-Name": "OSLO-Infrastructuurelement::Fietsstalling"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Boolean",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_label": {
-                "nl": "Boolean"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://fixme.com",
-          "name": {
-            "nl": "^capaciteit"
-          },
-          "sort_nl": "^capaciteit",
-          "description": {
-            "nl": "To Do"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://fixme.com",
-              "EA-Name": "OSLO-Infrastructuurelement::Fietsstalling"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Integer",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
-              "range_label": {
-                "nl": "Integer"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://fixme.com",
-          "name": {
-            "nl": "^fietsdelen"
-          },
-          "sort_nl": "^fietsdelen",
-          "description": {
-            "nl": "To Do"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://fixme.com",
-              "EA-Name": "OSLO-Infrastructuurelement::Fietsstalling"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Boolean",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_label": {
-                "nl": "Boolean"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://fixme.com",
-          "name": {
-            "nl": "^overdekt"
-          },
-          "sort_nl": "^overdekt",
-          "description": {
-            "nl": "To Do"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://fixme.com",
-              "EA-Name": "OSLO-Infrastructuurelement::Fietsstalling"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Boolean",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_label": {
-                "nl": "Boolean"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://fixme.com",
-          "name": {
-            "nl": "^verplaatsbaar"
-          },
-          "sort_nl": "^verplaatsbaar",
-          "description": {
-            "nl": "To Do"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://fixme.com",
-              "EA-Name": "OSLO-Infrastructuurelement::Fietsstalling"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Boolean",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_label": {
-                "nl": "Boolean"
-              }
-            }
-          ],
           "cardinality": "1",
           "codelist_uri": ""
         }
@@ -1599,15 +1306,7 @@
         "nl": "To Do"
       },
       "usage": {},
-      "parents": [
-        {
-          "name": "Fietsinfrastructuurobject",
-          "label": "Fietsinfrastructuurobject",
-          "package": "Fietsinfrastructuur",
-          "uri": "https://fixme.com",
-          "scoped_uri": "#Fietsinfrastructuurobject"
-        }
-      ],
+      "parents": [],
       "properties": []
     },
     {
@@ -1622,9 +1321,16 @@
       "usage": {},
       "parents": [
         {
+          "name": "Infrastructuurelement",
+          "label": "OpenbaarDomein::Infrastructuurelement",
+          "package": "OSLO-OpenbaarDomein",
+          "uri": "https://fixme.com",
+          "scoped_uri": "#OpenbaarDomein::Infrastructuurelement"
+        },
+        {
           "name": "Fietsinfrastructuurobject",
           "label": "Fietsinfrastructuurobject",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Fietsinfrastructuurobject"
         }
@@ -1643,7 +1349,7 @@
           "domain": [
             {
               "uri": "https://fixme.com",
-              "EA-Name": "OSLO-Infrastructuurelement::Fietstelpaal"
+              "EA-Name": "Fietstelpaal"
             }
           ],
           "range": [
@@ -1677,7 +1383,7 @@
           "domain": [
             {
               "uri": "https://fixme.com",
-              "EA-Name": "OSLO-Infrastructuurelement::Fietstelpaal"
+              "EA-Name": "Fietstelpaal"
             }
           ],
           "range": [
@@ -1805,40 +1511,6 @@
         {
           "uri": "https://fixme.com",
           "name": {
-            "nl": "kenmerk"
-          },
-          "sort_nl": "kenmerk",
-          "description": {
-            "nl": "To Do"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://fixme.com",
-              "EA-Name": "GeneriekeFietslink"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Fietsnetwerkkenmerk",
-              "range_uri": "https://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Fietsnetwerkkenmerk",
-              "range_puri": "https://fixme.com",
-              "range_label": {
-                "nl": "Fietsnetwerkkenmerk"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://fixme.com",
-          "name": {
             "nl": "aankomstknoop"
           },
           "sort_nl": "aankomstknoop",
@@ -1903,6 +1575,40 @@
           ],
           "cardinality": "1",
           "codelist_uri": ""
+        },
+        {
+          "uri": "https://fixme.com",
+          "name": {
+            "nl": "kenmerk"
+          },
+          "sort_nl": "kenmerk",
+          "description": {
+            "nl": "To Do"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://fixme.com",
+              "EA-Name": "GeneriekeFietslink"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Fietsnetwerkkenmerk",
+              "range_uri": "https://fixme.com"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Fietsnetwerkkenmerk",
+              "range_puri": "https://fixme.com",
+              "range_label": {
+                "nl": "Fietsnetwerkkenmerk"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
         }
       ]
     },
@@ -1920,7 +1626,7 @@
         {
           "name": "Linkreferentie",
           "label": "Linkreferentie",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Linkreferentie"
         }
@@ -2130,7 +1836,7 @@
         {
           "name": "Linkreferentie",
           "label": "Linkreferentie",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Linkreferentie"
         }
@@ -2186,7 +1892,7 @@
         {
           "name": "Fietsnetwerkelement",
           "label": "Fietsnetwerkelement",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Fietsnetwerkelement"
         },
@@ -2283,7 +1989,7 @@
         {
           "name": "Weginrichting",
           "label": "Weginrichting",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Weginrichting"
         }
@@ -2373,7 +2079,7 @@
         {
           "name": "Weginrichting",
           "label": "Weginrichting",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Weginrichting"
         }
@@ -2429,7 +2135,7 @@
         {
           "name": "Verkeer",
           "label": "Verkeer",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Verkeer"
         }
@@ -2485,7 +2191,7 @@
         {
           "name": "Omgeving",
           "label": "Omgeving",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Omgeving"
         }
@@ -2541,7 +2247,7 @@
         {
           "name": "Weginrichting",
           "label": "Weginrichting",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Weginrichting"
         }
@@ -2597,7 +2303,7 @@
         {
           "name": "Omgeving",
           "label": "Omgeving",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Omgeving"
         }
@@ -2687,7 +2393,7 @@
         {
           "name": "Omgeving",
           "label": "Omgeving",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Omgeving"
         }
@@ -2743,7 +2449,7 @@
         {
           "name": "Wegconditie",
           "label": "Wegconditie",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Wegconditie"
         }
@@ -2833,7 +2539,7 @@
         {
           "name": "Verkeer",
           "label": "Verkeer",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Verkeer"
         }
@@ -2889,7 +2595,7 @@
         {
           "name": "Verkeer",
           "label": "Verkeer",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Verkeer"
         }
@@ -3000,7 +2706,7 @@
         {
           "name": "Fietsnetwerkobservatie",
           "label": "Fietsnetwerkobservatie",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Fietsnetwerkobservatie"
         }
@@ -3109,11 +2815,11 @@
       "usage": {},
       "parents": [
         {
-          "name": "Fietsinfrastructuurobject",
-          "label": "Fietsinfrastructuurobject",
-          "package": "Fietsinfrastructuur",
+          "name": "Infrastructuurelement",
+          "label": "OpenbaarDomein::Infrastructuurelement",
+          "package": "OSLO-OpenbaarDomein",
           "uri": "https://fixme.com",
-          "scoped_uri": "#Fietsinfrastructuurobject"
+          "scoped_uri": "#OpenbaarDomein::Infrastructuurelement"
         }
       ],
       "properties": []
@@ -3132,7 +2838,7 @@
         {
           "name": "Wegconditie",
           "label": "Wegconditie",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Wegconditie"
         }
@@ -3188,7 +2894,7 @@
         {
           "name": "Fietsnetwerkkenmerk",
           "label": "Fietsnetwerkkenmerk",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Fietsnetwerkkenmerk"
         }
@@ -3209,7 +2915,7 @@
         {
           "name": "Fietsnetwerkkenmerk",
           "label": "Fietsnetwerkkenmerk",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Fietsnetwerkkenmerk"
         }
@@ -3230,7 +2936,7 @@
         {
           "name": "Fietsnetwerkkenmerk",
           "label": "Fietsnetwerkkenmerk",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Fietsnetwerkkenmerk"
         }
@@ -3251,14 +2957,14 @@
         {
           "name": "Observatie",
           "label": "Observatie",
-          "package": "ObservatiesEnMetingen",
+          "package": "OSLO-ObservatiesEnMetingen",
           "uri": "http://fixme.com#Observatie",
           "scoped_uri": "http://fixme.com#Observatie"
         },
         {
           "name": "Fietsnetwerkkenmerk",
           "label": "Fietsnetwerkkenmerk",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Fietsnetwerkkenmerk"
         }
@@ -3279,7 +2985,7 @@
         {
           "name": "Fietsnetwerkobservatie",
           "label": "Fietsnetwerkobservatie",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Fietsnetwerkobservatie"
         }
@@ -3411,7 +3117,7 @@
         {
           "name": "Weginrichting",
           "label": "Weginrichting",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Weginrichting"
         }
@@ -3468,40 +3174,6 @@
         {
           "uri": "https://fixme.com",
           "name": {
-            "nl": "realiseert"
-          },
-          "sort_nl": "realiseert",
-          "description": {
-            "nl": "To Do"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://fixme.com",
-              "EA-Name": "Verkeersbord-verkeersteken"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "OSLO-Verkeersbord::Verkeersbord",
-              "range_uri": "https://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#OSLO-Verkeersbord::Verkeersbord",
-              "range_puri": "https://fixme.com",
-              "range_label": {
-                "nl": "OSLO-Verkeersbord::Verkeersbord"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://fixme.com",
-          "name": {
             "nl": "heeftVerkeersbordconcept"
           },
           "sort_nl": "heeftVerkeersbordconcept",
@@ -3527,6 +3199,40 @@
               "range_puri": "https://fixme.com",
               "range_label": {
                 "nl": "Verkeersbordconcept"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://fixme.com",
+          "name": {
+            "nl": "realiseert"
+          },
+          "sort_nl": "realiseert",
+          "description": {
+            "nl": "To Do"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://fixme.com",
+              "EA-Name": "Verkeersbord-verkeersteken"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Verkeersbord",
+              "range_uri": "https://fixme.com"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#OSLO-Verkeersbord::Verkeersbord",
+              "range_puri": "https://fixme.com",
+              "range_label": {
+                "nl": "OSLO-Verkeersbord::Verkeersbord"
               }
             }
           ],
@@ -3618,40 +3324,6 @@
         {
           "uri": "https://fixme.com",
           "name": {
-            "nl": "verwijstNaar"
-          },
-          "sort_nl": "verwijstNaar",
-          "description": {
-            "nl": "To Do"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://fixme.com",
-              "EA-Name": "Verkeersbordconcept"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "OSLO-Wetgeving::Rechtsgrondonderdeel",
-              "range_uri": "https://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#OSLO-Wetgeving::Rechtsgrondonderdeel",
-              "range_puri": "https://fixme.com",
-              "range_label": {
-                "nl": "OSLO-Wetgeving::Rechtsgrondonderdeel"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://fixme.com",
-          "name": {
             "nl": "heeftVerkeersbordconcept"
           },
           "sort_nl": "heeftVerkeersbordconcept",
@@ -3677,6 +3349,40 @@
               "range_puri": "https://fixme.com",
               "range_label": {
                 "nl": "Verkeersbord-verkeersteken"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://fixme.com",
+          "name": {
+            "nl": "verwijstNaar"
+          },
+          "sort_nl": "verwijstNaar",
+          "description": {
+            "nl": "To Do"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://fixme.com",
+              "EA-Name": "Verkeersbordconcept"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rechtsgrondonderdeel",
+              "range_uri": "https://fixme.com"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#OSLO-Wetgeving::Rechtsgrondonderdeel",
+              "range_puri": "https://fixme.com",
+              "range_label": {
+                "nl": "OSLO-Wetgeving::Rechtsgrondonderdeel"
               }
             }
           ],
@@ -3788,7 +3494,7 @@
         {
           "name": "Rechtsgrond",
           "label": "Rechtsgrond",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "https://fixme.com"
         }
@@ -3807,7 +3513,7 @@
           "domain": [
             {
               "uri": "https://fixme.com",
-              "EA-Name": "OSLO-Wetgeving::Rechtsgrondonderdeel"
+              "EA-Name": "Rechtsgrondonderdeel"
             }
           ],
           "range": [
@@ -3844,7 +3550,7 @@
         {
           "name": "Weginrichting",
           "label": "Weginrichting",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Weginrichting"
         }
@@ -3957,27 +3663,6 @@
     {
       "uri": "https://fixme.com",
       "name": {
-        "nl": "Velopark::BicycleParkingStation"
-      },
-      "sort_nl": "Velopark::BicycleParkingStation",
-      "description": {
-        "nl": "To Do"
-      },
-      "usage": {},
-      "parents": [
-        {
-          "name": "Fietsinfrastructuurobject",
-          "label": "Fietsinfrastructuurobject",
-          "package": "Fietsinfrastructuur",
-          "uri": "https://fixme.com",
-          "scoped_uri": "#Fietsinfrastructuurobject"
-        }
-      ],
-      "properties": []
-    },
-    {
-      "uri": "https://fixme.com",
-      "name": {
         "nl": "Omgeving"
       },
       "sort_nl": "Omgeving",
@@ -3989,7 +3674,7 @@
         {
           "name": "Fietsnetwerkkenmerk",
           "label": "Fietsnetwerkkenmerk",
-          "package": "Fietsinfrastructuur",
+          "package": "OSLO-Fietsinfrastructuur",
           "uri": "https://fixme.com",
           "scoped_uri": "#Fietsnetwerkkenmerk"
         }
@@ -4027,6 +3712,295 @@
             }
           ],
           "cardinality": "1..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://fixme.com",
+      "name": {
+        "nl": "OpenbaarDomein::Infrastructuurelement"
+      },
+      "sort_nl": "OpenbaarDomein::Infrastructuurelement",
+      "description": {
+        "nl": "To Do"
+      },
+      "usage": {},
+      "parents": [
+        {
+          "name": "Element",
+          "label": "Element",
+          "package": "OSLO-OpenbaarDomein",
+          "uri": "http://fixme.com#Element",
+          "scoped_uri": "http://fixme.com#Element"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://fixme.com",
+          "name": {
+            "nl": "^geometrie"
+          },
+          "sort_nl": "^geometrie",
+          "description": {
+            "nl": "To Do"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://fixme.com",
+              "EA-Name": "Infrastructuurelement"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Geometrie",
+              "range_uri": "http://www.w3.org/ns/locn#Geometry"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Geometrie",
+              "range_puri": "http://www.w3.org/ns/locn#Geometry",
+              "range_label": {
+                "nl": "Geometrie"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://fixme.com",
+          "name": {
+            "nl": "^geldigheidsperiode"
+          },
+          "sort_nl": "^geldigheidsperiode",
+          "description": {
+            "nl": "To Do"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://fixme.com",
+              "EA-Name": "Infrastructuurelement"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Periode",
+              "range_uri": "http://data.europa.eu/m8g/PeriodOfTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://data.europa.eu/m8g/PeriodOfTime",
+              "range_puri": "http://data.europa.eu/m8g/PeriodOfTime",
+              "range_label": {
+                "nl": "Periode"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://fixme.com",
+      "name": {
+        "nl": "OSLO-Infrastructuurelement::Fietsstalling"
+      },
+      "sort_nl": "OSLO-Infrastructuurelement::Fietsstalling",
+      "description": {
+        "nl": "To Do"
+      },
+      "usage": {},
+      "parents": [
+        {
+          "name": "Infrastructuurelement",
+          "label": "OpenbaarDomein::Infrastructuurelement",
+          "package": "OSLO-OpenbaarDomein",
+          "uri": "https://fixme.com",
+          "scoped_uri": "#OpenbaarDomein::Infrastructuurelement"
+        },
+        {
+          "name": "Fietsparking",
+          "label": "Fietsparking",
+          "package": "Mobivoc",
+          "uri": "http://fixme.com#Fietsparking",
+          "scoped_uri": "#Fietsparking"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://fixme.com",
+          "name": {
+            "nl": "^afsluitbaar"
+          },
+          "sort_nl": "^afsluitbaar",
+          "description": {
+            "nl": "To Do"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://fixme.com",
+              "EA-Name": "Fietsstalling"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://fixme.com",
+          "name": {
+            "nl": "^capaciteit"
+          },
+          "sort_nl": "^capaciteit",
+          "description": {
+            "nl": "To Do"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://fixme.com",
+              "EA-Name": "Fietsstalling"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_label": {
+                "nl": "Integer"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://fixme.com",
+          "name": {
+            "nl": "^fietsdelen"
+          },
+          "sort_nl": "^fietsdelen",
+          "description": {
+            "nl": "To Do"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://fixme.com",
+              "EA-Name": "Fietsstalling"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://fixme.com",
+          "name": {
+            "nl": "^overdekt"
+          },
+          "sort_nl": "^overdekt",
+          "description": {
+            "nl": "To Do"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://fixme.com",
+              "EA-Name": "Fietsstalling"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://fixme.com",
+          "name": {
+            "nl": "^verplaatsbaar"
+          },
+          "sort_nl": "^verplaatsbaar",
+          "description": {
+            "nl": "To Do"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://fixme.com",
+              "EA-Name": "Fietsstalling"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "1",
           "codelist_uri": ""
         }
       ]
@@ -4069,6 +4043,19 @@
       "usage": {
         "nl": ""
       },
+      "parents": []
+    },
+    {
+      "uri": "http://fixme.com#transportobject",
+      "name": {},
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
       "parents": []
     }
   ],
@@ -4346,88 +4333,6 @@
       "usage": {},
       "parents": [],
       "properties": []
-    },
-    {
-      "uri": "https://fixme.com",
-      "name": {
-        "nl": "OSLO-Generiek::Periode"
-      },
-      "sort_nl": "OSLO-Generiek::Periode",
-      "description": {
-        "nl": "To Do"
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "https://fixme.com",
-          "name": {
-            "nl": "begin"
-          },
-          "sort_nl": "begin",
-          "description": {
-            "nl": "To Do"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://fixme.com",
-              "EA-Name": "OSLO-Generiek::Periode"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_label": {
-                "nl": "DateTime"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://fixme.com",
-          "name": {
-            "nl": "einde"
-          },
-          "sort_nl": "einde",
-          "description": {
-            "nl": "To Do"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://fixme.com",
-              "EA-Name": "OSLO-Generiek::Periode"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_label": {
-                "nl": "DateTime"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        }
-      ]
     },
     {
       "uri": "https://fixme.com",

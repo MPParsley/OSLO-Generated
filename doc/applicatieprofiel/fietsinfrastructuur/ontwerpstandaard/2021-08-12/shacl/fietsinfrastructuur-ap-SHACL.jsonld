@@ -34,25 +34,28 @@
   "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap",
   "shapes": [
     {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#FietsparkingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Fietsparking"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#OngelijkgrondseKruisingShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://fixme.com",
-          "sh:description": "To Do",
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
           "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "bovenliggendWegsegment",
-          "sh:path": "https://fixme.com"
+          "sh:name": "^identificator",
+          "sh:path": "http://fixme.com#^identificator"
         },
         {
-          "sh:class": "https://fixme.com",
-          "sh:description": "To Do",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "onderliggendWegsegment",
-          "sh:path": "https://fixme.com"
+          "sh:class": "http://fixme.com#Link",
+          "sh:minCount": "2",
+          "sh:name": "link",
+          "sh:path": "http://fixme.com#link"
         }
       ],
       "sh:targetClass": "http://fixme.com#OngelijkgrondseKruising"
@@ -152,19 +155,9 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://fixme.com",
           "sh:description": "To Do",
-          "sh:maxCount": "1",
           "sh:minCount": "1",
-          "sh:name": "^geldigheidsperiode",
-          "sh:path": "https://fixme.com"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/locn#Geometry",
-          "sh:description": "To Do",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "^geometrie",
+          "sh:name": "beheerder",
           "sh:path": "https://fixme.com"
         },
         {
@@ -172,13 +165,7 @@
           "sh:description": "To Do",
           "sh:maxCount": "1",
           "sh:minCount": "1",
-          "sh:name": "^identificator",
-          "sh:path": "https://fixme.com"
-        },
-        {
-          "sh:description": "To Do",
-          "sh:minCount": "1",
-          "sh:name": "beheerder",
+          "sh:name": "identificator",
           "sh:path": "https://fixme.com"
         },
         {
@@ -227,15 +214,21 @@
         {
           "sh:class": "https://fixme.com",
           "sh:description": "To Do",
-          "sh:name": "kenmerk",
+          "sh:minCount": "1",
+          "sh:name": "fietsnetwerk",
           "sh:path": "https://fixme.com"
         },
         {
           "sh:class": "https://fixme.com",
           "sh:description": "To Do",
-          "sh:minCount": "1",
-          "sh:name": "netwerk",
+          "sh:name": "kenmerk",
           "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "http://fixme.com#Transportobject",
+          "sh:maxCount": "1",
+          "sh:name": "transportobject",
+          "sh:path": "http://fixme.com#transportobject"
         }
       ],
       "sh:targetClass": "https://fixme.com"
@@ -290,18 +283,6 @@
           "sh:maxCount": "1",
           "sh:name": "^identificator",
           "sh:path": "https://INSPIRE-Netwerk.TODO.fixme.com#Netwerkelement.identificator"
-        },
-        {
-          "sh:class": "http://fixme.com#OngelijkgrondseKruising",
-          "sh:description": "To Do",
-          "sh:name": "bovenliggendWegsegment",
-          "sh:path": "https://fixme.com"
-        },
-        {
-          "sh:class": "http://fixme.com#OngelijkgrondseKruising",
-          "sh:description": "To Do",
-          "sh:name": "onderliggendWegsegment",
-          "sh:path": "https://fixme.com"
         }
       ],
       "sh:targetClass": "https://fixme.com"
@@ -359,7 +340,7 @@
       "sh:targetClass": "http://fixme.com#Linkreferentie.fietsnetwerkkenmerk"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#OSLO-Verkeersbord::VerkeersbordShape",
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#VerkeersbordShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
@@ -419,62 +400,14 @@
       "sh:targetClass": "https://fixme.com"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#OSLO-Infrastructuurelement::FietsstallingShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
-          "sh:description": "To Do",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "^afsluitbaar",
-          "sh:path": "https://fixme.com"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
-          "sh:description": "To Do",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "^capaciteit",
-          "sh:path": "https://fixme.com"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
-          "sh:description": "To Do",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "^fietsdelen",
-          "sh:path": "https://fixme.com"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
-          "sh:description": "To Do",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "^overdekt",
-          "sh:path": "https://fixme.com"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
-          "sh:description": "To Do",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "^verplaatsbaar",
-          "sh:path": "https://fixme.com"
-        }
-      ],
-      "sh:targetClass": "https://fixme.com"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#HoppinpuntShape",
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#VervoersknooppuntShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "https://fixme.com"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#OSLO-Infrastructuurelement::FietstelpaalShape",
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#FietstelpaalShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
@@ -483,7 +416,7 @@
           "sh:description": "To Do",
           "sh:maxCount": "1",
           "sh:minCount": "1",
-          "sh:name": "Telmethode",
+          "sh:name": "telmethode",
           "sh:path": "https://fixme.com"
         },
         {
@@ -491,7 +424,7 @@
           "sh:description": "To Do",
           "sh:maxCount": "1",
           "sh:minCount": "1",
-          "sh:name": "Telpaaltype",
+          "sh:name": "telpaaltype",
           "sh:path": "https://fixme.com"
         }
       ],
@@ -947,29 +880,6 @@
       "sh:targetClass": "https://fixme.com"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#OSLO-Generiek::PeriodeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "To Do",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "begin",
-          "sh:path": "https://fixme.com"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "To Do",
-          "sh:maxCount": "1",
-          "sh:name": "einde",
-          "sh:path": "https://fixme.com"
-        }
-      ],
-      "sh:targetClass": "https://fixme.com"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#OplaadwijzesShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -1016,7 +926,7 @@
       "sh:targetClass": "https://fixme.com"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#OSLO-Infrastructuurelement::VerkeerslichtVoetgangerFietserShape",
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#VerkeerslichtVoetgangerFietserShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
@@ -1252,7 +1162,7 @@
       "sh:targetClass": "https://fixme.com"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#OSLO-Wetgeving::RechtsgrondonderdeelShape",
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#RechtsgrondonderdeelShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
@@ -1404,10 +1314,75 @@
       "sh:targetClass": "https://fixme.com"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#Velopark::BicycleParkingStationShape",
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#InfrastructuurelementShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
+      "sh:property": [
+        {
+          "sh:class": "http://data.europa.eu/m8g/PeriodOfTime",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "^geldigheidsperiode",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Geometry",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "^geometrie",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#FietsstallingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "afsluitbaar",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "capaciteit",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "fietsdelen",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "overdekt",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "verplaatsbaar",
+          "sh:path": "https://fixme.com"
+        }
+      ],
       "sh:targetClass": "https://fixme.com"
     },
     {
