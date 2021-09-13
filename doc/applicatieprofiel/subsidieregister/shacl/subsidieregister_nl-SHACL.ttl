@@ -6,34 +6,34 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://data.dev-vlaanderen.be/shacl/subsidieregister_nl> <https://data.dev-vlaanderen.be/shacl/subsidieregister_nlshapes> <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#IdentificatorShape>,
-    <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#OrganisatieShape>,
-    <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#DossierShape>,
-    <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#StatusVlaamseCodeShape>,
-    <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#FormeleOrganisatieShape>,
-    <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#StatusVlaamseFaseShape>,
-    <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#RechtsgrondToekenningSubsidieShape>,
-    <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#ParticipatieRolShape>,
-    <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#FinancieelVoordeelShape>,
+<https://data.dev-vlaanderen.be/shacl/subsidieregister_nl> <https://data.dev-vlaanderen.be/shacl/subsidieregister_nlshapes> <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#AgentShape>,
     <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#PubliekeOrganisatieShape>,
-    <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#AgentShape>,
+    <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#GeregistreerdeOrganisatieShape>,
+    <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#OrganisatieShape>,
+    <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#StatusVlaamseCodeShape>,
+    <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#FinancieelVoordeelShape>,
+    <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#RechtsgrondToekenningSubsidieShape>,
+    <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#IdentificatorShape>,
+    <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#ParticipatieRolShape>,
+    <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#DossierShape>,
+    <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#StatusVlaamseFaseShape>,
     <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#AdresvoorstellingShape>,
-    <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#GeregistreerdeOrganisatieShape> .
+    <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#FormeleOrganisatieShape> .
 
 <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#AdresvoorstellingShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class rdf:langString;
-    shacl:definition "Land waarin het adres gelegen is."@nl;
-    shacl:maxCount 1;
-    shacl:name "land"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/adres#land>
-  ], [
     shacl:datatype xsd:string;
-    shacl:definition "Postbusnummer in een postkantoor."@nl;
+    shacl:definition "Alfanumerieke code die de adreslocator uniek identificeert binnen de straat, administratieve eenheid etc."@nl;
     shacl:maxCount 1;
-    shacl:name "postbus"@nl;
-    shacl:path <http://www.w3.org/ns/locn#poBox>
+    shacl:name "locatieaanduiding"@nl;
+    shacl:path <http://www.w3.org/ns/locn#locatorDesignator>
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "Het complete adres in één string, al dan niet geformatteerd."@nl;
+    shacl:maxCount 1;
+    shacl:name "volledig adres"@nl;
+    shacl:path <http://www.w3.org/ns/locn#fullAddress>
   ], [
     shacl:class rdf:langString;
     shacl:definition "De regio vh adres, doorgaans een provincie of deelstaat of gelijkaardig gebied dat typisch meerdere plaatsen omvat."@nl;
@@ -42,34 +42,10 @@
     shacl:path <http://www.w3.org/ns/locn#adminUnitL2>
   ], [
     shacl:class rdf:langString;
-    shacl:definition "Naam of omschrijving vh het geografisch object dat de adreslocator aanduidt."@nl;
+    shacl:definition "Naam waarmee het geografisch gebied dat adressen voor postale doeleinden groepeert wordt aangeduid."@nl;
     shacl:maxCount 1;
-    shacl:name "locatienaam"@nl;
-    shacl:path <http://www.w3.org/ns/locn#locatorName>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Alfanumerieke code die de adreslocator uniek identificeert binnen de straat, administratieve eenheid etc."@nl;
-    shacl:maxCount 1;
-    shacl:name "locatieaanduiding"@nl;
-    shacl:path <http://www.w3.org/ns/locn#locatorDesignator>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Alfanumerieke code officieel toegekend aan gebouweenheden, ligplaatsen, standplaatsen of percelen."@nl;
-    shacl:maxCount 1;
-    shacl:name "huisnummer"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Officieel toegekende alfanumerieke code die wordt toegevoegd aan het huisnummer om meerdere gebouweenheden, standplaatsen, ligplaatsen of percelen te onderscheiden die eenzelfde huisnummer hebben."@nl;
-    shacl:maxCount 1;
-    shacl:name "busnummer"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer>
-  ], [
-    shacl:class rdf:langString;
-    shacl:definition "Gemeentenaam vh adres."@nl;
-    shacl:maxCount 1;
-    shacl:name "gemeentenaam"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/adres#gemeentenaam>
+    shacl:name "postnaam"@nl;
+    shacl:path <http://www.w3.org/ns/locn#postName>
   ], [
     shacl:class rdf:langString;
     shacl:definition "Hoogste Administratieve eenheid vh adres, doorgaans een land."@nl;
@@ -78,22 +54,22 @@
     shacl:path <http://www.w3.org/ns/locn#adminUnitL1>
   ], [
     shacl:class rdf:langString;
+    shacl:definition "Gemeentenaam vh adres."@nl;
+    shacl:maxCount 1;
+    shacl:name "gemeentenaam"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/adres#gemeentenaam>
+  ], [
+    shacl:class rdf:langString;
     shacl:definition "Naam ve geografisch gebied of plaats die een aantal adresseerbare objecten groepeert om deze te adresseren zonder dat het gebied of de plaats een administratieve eenheid is"@nl;
     shacl:maxCount 1;
     shacl:name "adresgebied"@nl;
     shacl:path <http://www.w3.org/ns/locn#addressArea>
   ], [
-    shacl:class rdf:langString;
-    shacl:definition "Naam waarmee het geografisch gebied dat adressen voor postale doeleinden groepeert wordt aangeduid."@nl;
+    shacl:datatype xsd:string;
+    shacl:definition "Alfanumerieke code officieel toegekend aan gebouweenheden, ligplaatsen, standplaatsen of percelen."@nl;
     shacl:maxCount 1;
-    shacl:name "postnaam"@nl;
-    shacl:path <http://www.w3.org/ns/locn#postName>
-  ], [
-    shacl:class rdf:langString;
-    shacl:definition "Straatnaam vh adres."@nl;
-    shacl:maxCount 1;
-    shacl:name "straatnaam"@nl;
-    shacl:path <http://www.w3.org/ns/locn#thoroughfare>
+    shacl:name "huisnummer"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "Code waarmee het geografisch gebied dat adressen voor postale doeleinden groepeert wordt aangeduid."@nl;
@@ -102,16 +78,46 @@
     shacl:path <http://www.w3.org/ns/locn#postCode>
   ], [
     shacl:class rdf:langString;
-    shacl:definition "Het complete adres in één string, al dan niet geformatteerd."@nl;
+    shacl:definition "Naam of omschrijving vh het geografisch object dat de adreslocator aanduidt."@nl;
     shacl:maxCount 1;
-    shacl:name "volledig adres"@nl;
-    shacl:path <http://www.w3.org/ns/locn#fullAddress>
+    shacl:name "locatienaam"@nl;
+    shacl:path <http://www.w3.org/ns/locn#locatorName>
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "Land waarin het adres gelegen is."@nl;
+    shacl:maxCount 1;
+    shacl:name "land"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/adres#land>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "Officieel toegekende alfanumerieke code die wordt toegevoegd aan het huisnummer om meerdere gebouweenheden, standplaatsen, ligplaatsen of percelen te onderscheiden die eenzelfde huisnummer hebben."@nl;
+    shacl:maxCount 1;
+    shacl:name "busnummer"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "Postbusnummer in een postkantoor."@nl;
+    shacl:maxCount 1;
+    shacl:name "postbus"@nl;
+    shacl:path <http://www.w3.org/ns/locn#poBox>
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "Straatnaam vh adres."@nl;
+    shacl:maxCount 1;
+    shacl:name "straatnaam"@nl;
+    shacl:path <http://www.w3.org/ns/locn#thoroughfare>
   ];
   shacl:targetClass <http://www.w3.org/ns/locn#Address> .
 
 <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#AgentShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <http://www.w3.org/ns/locn#Address>;
+    shacl:definition "Adres vd dienstverlener."@nl;
+    shacl:maxCount 1;
+    shacl:name "adres"@nl;
+    shacl:path <http://data.europa.eu/m8g/hasAddress>
+  ], [
     shacl:class <http://data.europa.eu/m8g/Participation>;
     shacl:definition "De manier waarop de agent participeert wordt beschreven door de entiteit Participatie. Laat oa toe om de bestaande associaties PubliekeDienstverlening-wordtUitgevoerdDoor-Agent en PubliekeDienstverlening-heeftVerantwoordelijke-PubliekeOrganisatie meer in detail te beschrijven."@nl;
     shacl:name "speelt rol"@nl;
@@ -122,12 +128,6 @@
     shacl:maxCount 1;
     shacl:name "naam"@nl;
     shacl:path dc:title
-  ], [
-    shacl:class <http://www.w3.org/ns/locn#Address>;
-    shacl:definition "Adres vd dienstverlener."@nl;
-    shacl:maxCount 1;
-    shacl:name "adres"@nl;
-    shacl:path <http://data.europa.eu/m8g/hasAddress>
   ];
   shacl:targetClass dc:Agent .
 
@@ -152,6 +152,12 @@
 <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#FinancieelVoordeelShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:definition "Identificator voor het dossier."@nl;
+    shacl:maxCount 1;
+    shacl:name "referentie"@nl;
+    shacl:path <http://www.w3.org/ns/adms#identifier>
+  ], [
     shacl:datatype xsd:date;
     shacl:definition "De datum waarop de FinanciëleOutput werd uitebetaald of teruggevorderd. "@nl;
     shacl:maxCount 1;
@@ -164,12 +170,6 @@
     shacl:minCount 1;
     shacl:name "uitgekeerd bedrag"@nl;
     shacl:path <https://data.vlaanderen.be/ns/subsidie#uitgekeerdBedrag>
-  ], [
-    shacl:class <http://www.w3.org/ns/adms#Identifier>;
-    shacl:definition "Identificator voor het dossier."@nl;
-    shacl:maxCount 1;
-    shacl:name "referentie"@nl;
-    shacl:path <http://www.w3.org/ns/adms#identifier>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/subsidie#FinancieelVoordeel> .
 
@@ -187,12 +187,6 @@
     shacl:name "registratie"@nl;
     shacl:path <http://www.w3.org/ns/regorg#registration>
   ], [
-    shacl:class skos:Concept;
-    shacl:definition "Status van de geregistreerde organisatie."@nl;
-    shacl:maxCount 1;
-    shacl:name "rechtstoestand"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/organisatie#rechtstoestand>
-  ], [
     shacl:datatype rdf:langString;
     shacl:definition "Wettelijk geregistreerde naam vd organisatie."@nl;
     shacl:maxCount 1;
@@ -200,16 +194,22 @@
     shacl:path <http://www.w3.org/ns/regorg#legalName>
   ], [
     shacl:class skos:Concept;
-    shacl:definition "Juridisch statuut van de geregistreerde organisatie."@nl;
-    shacl:maxCount 1;
-    shacl:name "rechtsvorm"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/organisatie#rechtsvorm>
-  ], [
-    shacl:class skos:Concept;
     shacl:definition "Geeft aan of de rechtspersoonlijkheid van de geregistreerde organisatie deze is van een natuurlijk persoon of van een rechtspersoon. "@nl;
     shacl:maxCount 1;
     shacl:name "rechtspersoonlijkheid"@nl;
     shacl:path <https://data.vlaanderen.be/ns/organisatie#rechtspersoonlijkheid>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Status van de geregistreerde organisatie."@nl;
+    shacl:maxCount 1;
+    shacl:name "rechtstoestand"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/organisatie#rechtstoestand>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Juridisch statuut van de geregistreerde organisatie."@nl;
+    shacl:maxCount 1;
+    shacl:name "rechtsvorm"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/organisatie#rechtsvorm>
   ];
   shacl:targetClass <http://www.w3.org/ns/regorg#RegisteredOrganization> .
 
@@ -228,18 +228,18 @@
     shacl:name "toegekend door (String)"@nl;
     shacl:path <http://www.w3.org/ns/adms#schemaAgency>
   ], [
+    shacl:datatype xsd:dateTime;
+    shacl:definition "Tijdstip waarop de identificator werd uitgegeven."@nl;
+    shacl:maxCount 1;
+    shacl:name "toegekend op"@nl;
+    shacl:path dc:issued
+  ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "String gebruikt om de instantie ve object uniek te identificeren. "@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "identificator"@nl;
     shacl:path skos:notation
-  ], [
-    shacl:datatype xsd:dateTime;
-    shacl:definition "Tijdstip waarop de identificator werd uitgegeven."@nl;
-    shacl:maxCount 1;
-    shacl:name "toegekend op"@nl;
-    shacl:path dc:issued
   ];
   shacl:targetClass <http://www.w3.org/ns/adms#Identifier> .
 
@@ -258,17 +258,17 @@
 <https://data.dev-vlaanderen.be/shacl/subsidieregister_nl#RechtsgrondToekenningSubsidieShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:definition "Het bedrag dat werd toegekend aan de begunstigde van de subsidiemaatregel en waar deze bijgevolg recht op heeft om te ontvangen."@nl;
-    shacl:maxCount 1;
-    shacl:name "toegekend bedrag"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/subsidie#toegekendBedrag>
-  ], [
     shacl:class dc:PeriodOfTime;
     shacl:definition "De periode waarop de subsidie betrekking heeft."@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "gesubsidieerde periode"@nl;
     shacl:path <https://data.vlaanderen.be/ns/subsidie#gesubsidieerdePeriode>
+  ], [
+    shacl:definition "Het bedrag dat werd toegekend aan de begunstigde van de subsidiemaatregel en waar deze bijgevolg recht op heeft om te ontvangen."@nl;
+    shacl:maxCount 1;
+    shacl:name "toegekend bedrag"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/subsidie#toegekendBedrag>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/subsidie#RechtsgrondToekenningSubsidie> .
 
@@ -326,6 +326,30 @@
   ] .
 
  [
+    <http://purl.org/linked-data/cube#codeList> <http://ec.europa.eu/competition/state_aid/studies_reports/conceptual_remarks.html#categ_aid>;
+    shacl:class skos:Concept;
+    shacl:definition """	Type van de steunmaatregel. Bv. belastingsvermindering, subsidie, etc."""@nl;
+    shacl:maxCount 1;
+    shacl:name "subsidie-instrument"@nl;
+    shacl:path <http://data.europa.eu/stateaidtransparency/sat#aidInstrument>
+  ] .
+
+ [
+    shacl:datatype xsd:string;
+    shacl:definition "Identificatie van de steunmaatregel. Dit is de identificator van het State Aid Case Management systeem van de Europese Commissie."@nl;
+    shacl:maxCount 1;
+    shacl:name "staatssteunnummer"@nl;
+    shacl:path <http://data.europa.eu/stateaidtransparency/sat#aidMeasure>
+  ] .
+
+ [
+    shacl:class skos:Concept;
+    shacl:definition "Sector of bedrijvigheid waarop de publieke dienstverlening betrekking heeft of waarvoor deze is bedoeld."@nl;
+    shacl:name "sector"@nl;
+    shacl:path <http://data.europa.eu/m8g/sector>
+  ] .
+
+ [
     shacl:datatype xsd:boolean;
     shacl:definition "True wanneer de steun die niet onder een vrijstellingsgrond valt en de subsidiemaatregel onderhevig is aan de de-minimisregel. "@nl;
     shacl:maxCount 1;
@@ -362,28 +386,4 @@
     shacl:definition """Linkt een bepaalde consumptie van een subsidiemaatregel (een tansactie) met de subsidiemaatregel uit het dienstverleningsregister.	"""@nl;
     shacl:name "is instantie van"@nl;
     shacl:path <https://data.vlaanderen.be/ns/transactie#isInstantieVan>
-  ] .
-
- [
-    <http://purl.org/linked-data/cube#codeList> <http://ec.europa.eu/competition/state_aid/studies_reports/conceptual_remarks.html#categ_aid>;
-    shacl:class skos:Concept;
-    shacl:definition """	Type van de steunmaatregel. Bv. belastingsvermindering, subsidie, etc."""@nl;
-    shacl:maxCount 1;
-    shacl:name "subsidie-instrument"@nl;
-    shacl:path <http://data.europa.eu/stateaidtransparency/sat#aidInstrument>
-  ] .
-
- [
-    shacl:datatype xsd:string;
-    shacl:definition "Identificatie van de steunmaatregel. Dit is de identificator van het State Aid Case Management systeem van de Europese Commissie."@nl;
-    shacl:maxCount 1;
-    shacl:name "staatssteunnummer"@nl;
-    shacl:path <http://data.europa.eu/stateaidtransparency/sat#aidMeasure>
-  ] .
-
- [
-    shacl:class skos:Concept;
-    shacl:definition "Sector of bedrijvigheid waarop de publieke dienstverlening betrekking heeft of waarvoor deze is bedoeld."@nl;
-    shacl:name "sector"@nl;
-    shacl:path <http://data.europa.eu/m8g/sector>
   ] .

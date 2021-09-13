@@ -237,8 +237,8 @@ foaf:homepage a rdf:Property;
 <https://data.vlaanderen.be/ns/organisatie#Hoedanigheid> a owl:Class;
   <http://purl.org/vocab/vann/usageNote> "Laat een functie toe om te handelen,bv ihkv een dienstverlening (bv diversiteitsplan wordt opgemaakt door diversiteitsambtenaar)."@nl;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/organisatie>;
-  rdfs:subClassOf org:Post,
-    dc:Agent .
+  rdfs:subClassOf dc:Agent,
+    org:Post .
 
 <https://data.vlaanderen.be/ns/organisatie#Stopzetting> a owl:Class;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/organisatie>;
@@ -256,84 +256,21 @@ foaf:homepage a rdf:Property;
   dc:contributor [
     a foaf:Person;
     schema:affiliation [
-      foaf:homepage <https://www.rwo.be/>;
-      foaf:name "OE"
-    ];
-    foaf:firstName "Maarten";
-    foaf:lastName "Vermeyen";
-    foaf:mbox <mailto:maarten.vermeyen@rwo.vlaanderen.be>
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.vlaanderen.be/nl/contact/adressengids/diensten-van-de-vlaamse-overheid/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-financien-en-begroting/departement-financien-en-begroting>;
-      foaf:name "DFB"
-    ];
-    foaf:firstName "Farah";
-    foaf:lastName "Decamps";
-    foaf:mbox <mailto:farah.decamps@fb.vlaanderen.be>
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <http://binnenland.vlaanderen.be/>;
-      foaf:name "ABB"
-    ];
-    foaf:firstName "Wim";
-    foaf:lastName "Devroey";
-    foaf:mbox <mailto:wim.devroey@kb.vlaanderen.be>
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://overheid.vlaanderen.be/>;
-      foaf:name "AgO"
-    ];
-    foaf:firstName "Gijs";
-    foaf:lastName "Martens";
-    foaf:mbox <mailto:gijs.martens@bz.vlaanderen.be>
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://overheid.vlaanderen.be/>;
-      foaf:name "Informatie Vlaanderen"
-    ];
-    foaf:firstName "Yvan";
-    foaf:lastName "Samson";
-    foaf:mbox <mailto:yvan.samson@bz.vlaanderen.be>
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.vlaanderen.be/nl/contact/adressengids/diensten-van-de-vlaamse-overheid/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-financien-en-begroting/departement-financien-en-begroting>;
-      foaf:name "DFB"
-    ];
-    foaf:firstName "Peter";
-    foaf:lastName "Vandenneucker";
-    foaf:mbox <mailto:peter.vandenneucker@fb.vlaanderen.be>
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://overheid.vlaanderen.be/>;
-      foaf:name "ABB"
-    ];
-    foaf:firstName "Hannes";
-    foaf:lastName "Lombaert";
-    foaf:mbox <mailto:hannes.lombaert@bz.vlaanderen.be>
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://overheid.vlaanderen.be/>;
-      foaf:name "AgO"
-    ];
-    foaf:firstName "Luk";
-    foaf:lastName "Verschooren";
-    foaf:mbox <mailto:luk.verschooren@bz.vlaanderen.be>
-  ], [
-    a foaf:Person;
-    schema:affiliation [
       foaf:homepage <http://vlm.be>;
       foaf:name "VLM"
     ];
     foaf:firstName "Annita";
     foaf:lastName "Stevens";
     foaf:mbox <mailto:Annita.Stevens@vlm.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://vlaanderen.be/welzijnengezondheid>;
+      foaf:name "DWVG"
+    ];
+    foaf:firstName "Sammy";
+    foaf:lastName "Roos";
+    foaf:mbox <mailto:sammy.roos@wvg.vlaanderen.be>
   ], [
     a foaf:Person;
     schema:affiliation [
@@ -355,12 +292,57 @@ foaf:homepage a rdf:Property;
   ], [
     a foaf:Person;
     schema:affiliation [
+      foaf:homepage <https://www.vlaanderen.be/nl/contact/adressengids/diensten-van-de-vlaamse-overheid/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-financien-en-begroting/departement-financien-en-begroting>;
+      foaf:name "DFB"
+    ];
+    foaf:firstName "Peter";
+    foaf:lastName "Vandenneucker";
+    foaf:mbox <mailto:peter.vandenneucker@fb.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
       foaf:homepage <https://www.lne.be/>;
       foaf:name "ANB"
     ];
     foaf:firstName "Geert";
     foaf:lastName "Vermeiren";
     foaf:mbox <mailto:geert.vermeiren@lne.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vlaanderen.be/nl/contact/adressengids/diensten-van-de-vlaamse-overheid/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-financien-en-begroting/departement-financien-en-begroting>;
+      foaf:name "DFB"
+    ];
+    foaf:firstName "Farah";
+    foaf:lastName "Decamps";
+    foaf:mbox <mailto:farah.decamps@fb.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/>;
+      foaf:name "Informatie Vlaanderen"
+    ];
+    foaf:firstName "Yvan";
+    foaf:lastName "Samson";
+    foaf:mbox <mailto:yvan.samson@bz.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.rwo.be/>;
+      foaf:name "OE"
+    ];
+    foaf:firstName "Maarten";
+    foaf:lastName "Vermeyen";
+    foaf:mbox <mailto:maarten.vermeyen@rwo.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/>;
+      foaf:name "AgO"
+    ];
+    foaf:firstName "Gijs";
+    foaf:lastName "Martens";
+    foaf:mbox <mailto:gijs.martens@bz.vlaanderen.be>
   ], [
     a foaf:Person;
     schema:affiliation [
@@ -373,87 +355,96 @@ foaf:homepage a rdf:Property;
   ], [
     a foaf:Person;
     schema:affiliation [
-      foaf:homepage <http://vlaanderen.be/welzijnengezondheid>;
-      foaf:name "DWVG"
+      foaf:homepage <https://overheid.vlaanderen.be/>;
+      foaf:name "ABB"
     ];
-    foaf:firstName "Sammy";
-    foaf:lastName "Roos";
-    foaf:mbox <mailto:sammy.roos@wvg.vlaanderen.be>
+    foaf:firstName "Hannes";
+    foaf:lastName "Lombaert";
+    foaf:mbox <mailto:hannes.lombaert@bz.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://binnenland.vlaanderen.be/>;
+      foaf:name "ABB"
+    ];
+    foaf:firstName "Wim";
+    foaf:lastName "Devroey";
+    foaf:mbox <mailto:wim.devroey@kb.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/>;
+      foaf:name "AgO"
+    ];
+    foaf:firstName "Luk";
+    foaf:lastName "Verschooren";
+    foaf:mbox <mailto:luk.verschooren@bz.vlaanderen.be>
   ];
   dc:issued "2018-10-04";
-  dc:license <https://overheid.vlaanderen.be/sites/default/files/documenten/ict-egov/licenties/hergebruik/modellicentie_gratis_hergebruik_v1_0.html>,
-    "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0";
+  dc:license "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
+    <https://overheid.vlaanderen.be/sites/default/files/documenten/ict-egov/licenties/hergebruik/modellicentie_gratis_hergebruik_v1_0.html>;
   dc:mediator [
     foaf:homepage <https://data.vlaanderen.be>;
     foaf:mbox <mailto:oslo@kb.vlaanderen.be>;
     foaf:name "Data Vlaanderen"
   ];
-  rdfs:seeAlso org:hasRegisteredSite,
-    org:organization,
-    org:subOrganizationOf,
-    org:originalOrganization,
-    foaf:homepage,
+  rdfs:seeAlso <http://data.europa.eu/m8g/FoundationEvent>,
     org:Role,
-    org:unitOf,
-    org:Post,
-    <http://www.w3.org/ns/regorg#orgActivity>,
-    schema:contactPoint,
-    org:classification,
-    org:postIn,
-    org:Organization,
-    org:role,
-    org:Membership,
-    org:headOf,
-    <http://www.w3.org/ns/regorg#orgStatus>,
-    <http://www.w3.org/ns/regorg#hasRegisteredOrganization>,
-    org:resultingOrganization,
-    org:FormalOrganization,
-    <http://www.w3.org/ns/regorg#orgType>,
     <http://www.w3.org/ns/regorg#registration>,
-    <http://data.europa.eu/m8g/PublicOrganisation>,
+    org:ChangeEvent,
+    org:Organization,
     <http://www.w3.org/ns/regorg#RegisteredOrganization>,
-    org:hasUnit,
-    skos:prefLabel,
-    org:purpose,
-    <http://data.europa.eu/m8g/FoundationEvent>,
-    skos:Concept,
-    org:hasSubOrganization,
+    org:organization,
     org:OrganizationalUnit,
-    org:memberDuring,
-    org:changedBy,
-    org:hasMembership,
-    dc:date,
-    org:basedAt,
+    org:resultingOrganization,
+    org:hasSubOrganization,
     <http://data.europa.eu/m8g/hasFormalFramework>,
-    org:linkedTo,
-    dc:spatial,
+    org:OrganizationalCollaboration,
+    org:purpose,
+    <http://www.w3.org/ns/regorg#legalName>,
+    org:role,
+    <http://data.europa.eu/m8g/PublicOrganisation>,
+    foaf:homepage,
+    <http://www.w3.org/ns/regorg#orgStatus>,
+    org:Post,
+    <http://www.w3.org/ns/regorg#orgType>,
+    org:headOf,
+    org:memberDuring,
+    skos:Concept,
+    dc:date,
+    org:Site,
+    org:FormalOrganization,
+    org:siteAddress,
+    org:Membership,
     org:hasSite,
     skos:altLabel,
-    org:member,
-    org:heldBy,
-    org:Site,
+    org:linkedTo,
     org:reportsTo,
-    <http://www.w3.org/ns/regorg#legalName>,
+    skos:prefLabel,
+    org:originalOrganization,
+    org:member,
+    org:hasUnit,
+    org:postIn,
     dc:description,
-    org:siteAddress,
-    org:resultedFrom,
-    org:ChangeEvent,
-    org:hasPost,
+    org:unitOf,
+    org:subOrganizationOf,
+    schema:contactPoint,
+    org:hasMembership,
     org:holds,
-    org:hasPrimarySite,
+    org:changedBy,
+    org:resultedFrom,
+    <http://www.w3.org/ns/regorg#orgActivity>,
+    <http://www.w3.org/ns/regorg#hasRegisteredOrganization>,
+    org:heldBy,
+    dc:spatial,
+    org:classification,
     schema:logo,
-    org:OrganizationalCollaboration,
-    org:memberOf;
+    org:memberOf,
+    org:hasPrimarySite,
+    org:basedAt,
+    org:hasRegisteredSite,
+    org:hasPost;
   <http://www.w3.org/2001/02pd/rec54#editor> [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <http://idlab.ugent.be>;
-      foaf:name "imec - UGent"
-    ];
-    foaf:firstName "Laurens";
-    foaf:lastName "De Vocht";
-    foaf:mbox <mailto:laurens.devocht@ugent.be>
-  ], [
     a foaf:Person;
     schema:affiliation [
       foaf:homepage <http://idlab.ugent.be>;
@@ -462,6 +453,15 @@ foaf:homepage a rdf:Property;
     foaf:firstName "Erik";
     foaf:lastName "Mannens";
     foaf:mbox <mailto:erik.mannens@ugent.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://idlab.ugent.be>;
+      foaf:name "imec - UGent"
+    ];
+    foaf:firstName "Laurens";
+    foaf:lastName "De Vocht";
+    foaf:mbox <mailto:laurens.devocht@ugent.be>
   ];
   foaf:maker [
     a foaf:Person;
@@ -475,66 +475,12 @@ foaf:homepage a rdf:Property;
   ], [
     a foaf:Person;
     schema:affiliation [
-      foaf:homepage <https://overheid.vlaanderen.be/>;
-      foaf:name "Informatie Vlaanderen"
-    ];
-    foaf:firstName "Henk";
-    foaf:lastName "Vanderstraeten";
-    foaf:mbox <mailto:henk.vanderstraeten@bz.vlaanderen.be>
-  ], [
-    a foaf:Person;
-    schema:affiliation [
       foaf:homepage <https://www.lne.be/>;
       foaf:name "LNE"
     ];
     foaf:firstName "Geert";
     foaf:lastName "Van Haute";
     foaf:mbox <mailto:geert.vanhaute@lne.vlaanderen.be>
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.lne.be/>;
-      foaf:name "ANB"
-    ];
-    foaf:firstName "Marie-Kristine";
-    foaf:lastName "Van der Meersch";
-    foaf:mbox <mailto:mariekristine.vandermeersch@lne.vlaanderen.be>
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
-      foaf:name "Informatie Vlaanderen"
-    ];
-    foaf:firstName "Dries";
-    foaf:lastName "Beheydt";
-    foaf:mbox <mailto:dries.beheydt@kb.vlaanderen.be>
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
-      foaf:name "Informatie Vlaanderen"
-    ];
-    foaf:firstName "Björn";
-    foaf:lastName "De Vidts";
-    foaf:mbox <mailto:bjorn.devidts@kb.vlaanderen.be>
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://overheid.vlaanderen.be/>;
-      foaf:name "ABB"
-    ];
-    foaf:firstName "Suzy";
-    foaf:lastName "Favere";
-    foaf:mbox <mailto:suzie.favere@bz.vlaanderen.be>
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
-      foaf:name "Informatie Vlaanderen"
-    ];
-    foaf:firstName "Ziggy";
-    foaf:lastName "Vanlishout";
-    foaf:mbox <mailto:siegfried.vanlishout@kb.vlaanderen.be>
   ], [
     a foaf:Person;
     schema:affiliation [
@@ -547,21 +493,21 @@ foaf:homepage a rdf:Property;
   ], [
     a foaf:Person;
     schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
+      foaf:name "Informatie Vlaanderen"
+    ];
+    foaf:firstName "Björn";
+    foaf:lastName "De Vidts";
+    foaf:mbox <mailto:bjorn.devidts@kb.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
       foaf:homepage <http://cipalschaubroeck.be>;
       foaf:name "Cipal Schaubroeck"
     ];
     foaf:firstName "Willem";
     foaf:lastName "Van Hoecke";
     foaf:mbox <mailto:willem.vanhoecke@cipalschaubroeck.be>
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://overheid.vlaanderen.be/>;
-      foaf:name "Informatie Vlaanderen"
-    ];
-    foaf:firstName "Thomas";
-    foaf:lastName "D'haenens";
-    foaf:mbox <mailto:thomas.dhaenens@bz.vlaanderen.be>
   ], [
     a foaf:Person;
     schema:affiliation [
@@ -583,12 +529,57 @@ foaf:homepage a rdf:Property;
   ], [
     a foaf:Person;
     schema:affiliation [
-      foaf:homepage <https://www.vlaanderen.be/nl/contact/adressengids/diensten-van-de-vlaamse-overheid/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-financien-en-begroting/departement-financien-en-begroting>;
-      foaf:name "DFB"
+      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
+      foaf:name "Informatie Vlaanderen"
     ];
-    foaf:firstName "Ward";
-    foaf:lastName "Bemelmans";
-    foaf:mbox <mailto:ward.bemelmans@fb.vlaanderen.be>
+    foaf:firstName "Dries";
+    foaf:lastName "Beheydt";
+    foaf:mbox <mailto:dries.beheydt@kb.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.lne.be/>;
+      foaf:name "ANB"
+    ];
+    foaf:firstName "Marie-Kristine";
+    foaf:lastName "Van der Meersch";
+    foaf:mbox <mailto:mariekristine.vandermeersch@lne.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/>;
+      foaf:name "Informatie Vlaanderen"
+    ];
+    foaf:firstName "Henk";
+    foaf:lastName "Vanderstraeten";
+    foaf:mbox <mailto:henk.vanderstraeten@bz.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/>;
+      foaf:name "ABB"
+    ];
+    foaf:firstName "Suzy";
+    foaf:lastName "Favere";
+    foaf:mbox <mailto:suzie.favere@bz.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/>;
+      foaf:name "Informatie Vlaanderen"
+    ];
+    foaf:firstName "Thomas";
+    foaf:lastName "D'haenens";
+    foaf:mbox <mailto:thomas.dhaenens@bz.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
+      foaf:name "Informatie Vlaanderen"
+    ];
+    foaf:firstName "Ziggy";
+    foaf:lastName "Vanlishout";
+    foaf:mbox <mailto:siegfried.vanlishout@kb.vlaanderen.be>
   ], [
     a foaf:Person;
     schema:affiliation [
@@ -598,4 +589,13 @@ foaf:homepage a rdf:Property;
     foaf:firstName "Raf";
     foaf:lastName "Buyle";
     foaf:mbox <mailto:raf.buyle@kb.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vlaanderen.be/nl/contact/adressengids/diensten-van-de-vlaamse-overheid/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-financien-en-begroting/departement-financien-en-begroting>;
+      foaf:name "DFB"
+    ];
+    foaf:firstName "Ward";
+    foaf:lastName "Bemelmans";
+    foaf:mbox <mailto:ward.bemelmans@fb.vlaanderen.be>
   ] .
