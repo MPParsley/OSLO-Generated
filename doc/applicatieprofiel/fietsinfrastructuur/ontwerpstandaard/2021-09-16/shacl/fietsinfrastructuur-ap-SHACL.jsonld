@@ -1,0 +1,1671 @@
+{
+  "@context": {
+    "@vocab": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap",
+    "qb": "http://purl.org/linked-data/cube#",
+    "qb:codeList": {
+      "@type": "@id"
+    },
+    "sh": "http://www.w3.org/ns/shacl#",
+    "sh:class": {
+      "@type": "@id"
+    },
+    "sh:datatype": {
+      "@type": "@id"
+    },
+    "sh:maxCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:minCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:path": {
+      "@type": "@id"
+    },
+    "sh:property": {
+      "@type": "@id"
+    },
+    "sh:targetClass": {
+      "@type": "@id"
+    },
+    "shapes": {
+      "@type": "@id"
+    }
+  },
+  "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap",
+  "shapes": [
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#FietsverkeerstekenShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Fietsverkeersteken"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#FietswegverhardingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "^wegverharding",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#Fietswegverharding"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#SnelheidGemotoriseerdVerkeerShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "minmaxType",
+          "sh:path": "http://fixme.com#minmaxType"
+        },
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "snelheid",
+          "sh:path": "http://fixme.com#snelheid"
+        },
+        {
+          "sh:class": "http://fixme.com#Verkeersteken",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:name": "verkeersteken",
+          "sh:path": "http://fixme.com#verkeersteken"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#SnelheidGemotoriseerdVerkeer"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#VerkeersdeelnameShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#Verkeersteken",
+          "sh:description": "To Do",
+          "sh:name": "verkeersteken",
+          "sh:path": "http://fixme.com#verkeersteken"
+        },
+        {
+          "sh:class": "http://fixme.com#Vervoersvorm",
+          "sh:description": "To Do",
+          "sh:minCount": "1",
+          "sh:name": "vervoersvorm",
+          "sh:path": "http://fixme.com#vervoersvorm"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#Verkeersdeelname"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#VerkeersintensiteitShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://xmlns.com/foaf/0.1/Document",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "meetmethode",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "niveau",
+          "sh:path": "http://fixme.com#niveau"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#Verkeersintensiteit"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#PeriodeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Aanvang van de tijdsduur.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "begin",
+          "sh:path": "http://data.europa.eu/m8g/startTime"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Einde vd tijdsduur.",
+          "sh:maxCount": "1",
+          "sh:name": "einde",
+          "sh:path": "http://data.europa.eu/m8g/endTime"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/PeriodOfTime"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#ElementShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Element"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#GeneriekeLinkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#GeneriekeLink"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#LengteShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Lengte"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#NetwerkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Netwerk"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#NetwerkelementShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Netwerkelement"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#ObservatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Observatie"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#ParkeerfaciliteitShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Parkeerfaciliteit"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#TransporteigenschapShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Transporteigenschap"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#TransportknoopShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Transportknoop"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#TransportlinkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Transportlink"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#TransportlinksequentieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Transportlinksequentie"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#TransportlinksetShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Transportlinkset"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#TransportobjectShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Transportobject"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#VerkeerstekenShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Verkeersteken"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#WegbreedteShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Wegbreedte"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#WegmarkeringShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Wegmarkering"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#WegsignalisatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Wegsignalisatie"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#ContactInfoShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://schema.org/ContactPoint"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#LijnStringShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.opengis.net/ont/sf#LineString"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#PuntShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.opengis.net/ont/sf#Point"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#GeografischeNaamShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#GetypeerdeStringShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#TekenShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#IdentificatorShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/ns/adms#Identifier"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#AdresvoorstellingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Officieel toegekende alfanumerieke code die wordt toegevoegd aan het huisnummer om meerdere gebouweenheden, standplaatsen, ligplaatsen of percelen te onderscheiden die eenzelfde huisnummer hebben.",
+          "sh:maxCount": "1",
+          "sh:name": "busnummer",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer"
+        },
+        {
+          "sh:description": "Gemeentenaam vh adres.",
+          "sh:maxCount": "1",
+          "sh:name": "gemeentenaam",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#gemeentenaam"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Alfanumerieke code officieel toegekend aan gebouweenheden, ligplaatsen, standplaatsen of percelen.",
+          "sh:maxCount": "1",
+          "sh:name": "huisnummer",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer"
+        },
+        {
+          "sh:description": "Land waarin het adres gelegen is.",
+          "sh:maxCount": "1",
+          "sh:name": "land",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#land"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Postbusnummer in een postkantoor.",
+          "sh:maxCount": "1",
+          "sh:name": "postbus",
+          "sh:path": "http://www.w3.org/ns/locn#poBox"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Code waarmee het geografisch gebied dat adressen voor postale doeleinden groepeert wordt aangeduid.",
+          "sh:maxCount": "1",
+          "sh:name": "postcode",
+          "sh:path": "http://www.w3.org/ns/locn#postCode"
+        },
+        {
+          "sh:description": "Straatnaam vh adres.",
+          "sh:maxCount": "1",
+          "sh:name": "straatnaam",
+          "sh:path": "http://www.w3.org/ns/locn#thoroughfare"
+        },
+        {
+          "sh:description": "Het complete adres in één string, al dan niet geformatteerd.",
+          "sh:maxCount": "1",
+          "sh:name": "volledigAdres",
+          "sh:path": "http://www.w3.org/ns/locn#fullAddress"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/locn#Address"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#GeometrieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:description": "Geometrie uitgedrukt in gml-formaat.",
+          "sh:maxCount": "1",
+          "sh:name": "gml",
+          "sh:path": "http://www.opengis.net/ont/geosparql#asGML"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:description": "Geometrie uitgedrukt in wkt-formaat.",
+          "sh:maxCount": "1",
+          "sh:name": "wkt",
+          "sh:path": "http://www.opengis.net/ont/geosparql#asWKT"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/locn#Geometry"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#OrganisatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://schema.org/ContactPoint",
+          "sh:description": "Informatie zoals email, telefoon... die toelaat de Organisatie te contacteren.",
+          "sh:name": "contactinfo",
+          "sh:path": "http://schema.org/contactPoint"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Naam waarmee de organisatie bij voorkeur wordt aangeduid.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "voorkeursnaam",
+          "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/org#Organization"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#GeregistreerdeOrganisatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "Identificator dat de organisatie verkreeg bij registratie.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "registratie",
+          "sh:path": "http://www.w3.org/ns/regorg#registration"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/regorg#RegisteredOrganization"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#DocumentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://xmlns.com/foaf/0.1/Document"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#FietsinfrastructuurobjectShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/org#Organization",
+          "sh:description": "To Do",
+          "sh:minCount": "1",
+          "sh:name": "beheerder",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:name": "fietsnetwerkelement",
+          "sh:path": "http://fixme.com#fietsnetwerkelement"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "identificator",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/org#Organization",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:name": "leverancier",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "onderhoud",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#FietsnetwerkelementShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Naam van het Transportobject.",
+          "sh:maxCount": "1",
+          "sh:name": "^geografischeNaam",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:minCount": "1",
+          "sh:name": "^netwerk",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/org#Organization",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "beheerder",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:name": "fietsinfrastructuurobject",
+          "sh:path": "http://fixme.com#fietsinfrastructuurobject"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:minCount": "1",
+          "sh:name": "fietsnetwerk",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:name": "kenmerk",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "http://fixme.com#Transportobject",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:name": "transportobject",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#FietsknoopShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.opengis.net/ont/sf#Point",
+          "sh:description": "Locatie van de Transportknoop.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "^geometrie",
+          "sh:path": "https://INSPIRE-Netwerk.TODO.fixme.com#Netwerkgebied.geometrie"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "Identificator van de Transportknoop.",
+          "sh:maxCount": "1",
+          "sh:name": "^identificator",
+          "sh:path": "https://INSPIRE-Netwerk.TODO.fixme.com#Netwerkelement.identificator"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "Aard van de Fietsnetwerkknoop.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "type",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#FietssegmentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.opengis.net/ont/sf#LineString",
+          "sh:description": "Geometrie van de midellijn van de Link.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "^geometriemiddenlijn",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "Identificator van de Transportlink.",
+          "sh:maxCount": "1",
+          "sh:name": "^identificator",
+          "sh:path": "https://INSPIRE-Netwerk.TODO.fixme.com#Netwerkelement.identificator"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#FietslinksequentieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "Identificator van de Transportlinksequentie.",
+          "sh:maxCount": "1",
+          "sh:name": "^identificator",
+          "sh:path": "https://INSPIRE-Netwerk.TODO.fixme.com#Netwerkelement.identificator"
+        },
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "afstand",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "TODO",
+          "sh:minCount": "1",
+          "sh:name": "link",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#FietsnetwerkkenmerkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:minCount": "1",
+          "sh:name": "element",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:minCount": "1",
+          "sh:name": "element",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#Linkreferentie.fietsnetwerkkenmerk"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#VerkeersbordShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:name": "^breedte",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:name": "^hoogte",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "aanzicht",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "http://xmlns.com/foaf/0.1/Document",
+          "sh:description": "To Do",
+          "sh:name": "afbeelding",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:name": "afmeting",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:name": "operationeleStatus",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "http://fixme.com#Verkeersteken",
+          "sh:description": "To Do",
+          "sh:minCount": "1",
+          "sh:name": "realiseert",
+          "sh:path": "http://fixme.com#realiseert"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#VervoersknooppuntShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#FietstelpaalShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "telmethode",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "telpaaltype",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#FietsnetwerkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:name": "element",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Naam van het Netwerk.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "geografischeNaam",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#GerichteFietslinkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "link",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Geeft aan of de richting van de link overeenstemt met zijn positieve of zijn negatieve richting.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "richting",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#TransportnetwerkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Naam van het Netwerk.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "^geografischeNaam",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Aard van het Transportnetwerk volgens het type infrastructuur.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "transporttype",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#GeneriekeFietslinkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "Fietsnetwerkknoop waar het Fietsnetwerksegment eindigt.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "aankomstknoop",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:name": "kenmerk",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "Fietsnetwerkknoop waar het Fietsnetwerksegment begint.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "vertrekknoop",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#Linkreferentie.generiekeFietslink"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#LineaireReferentieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#Lengte",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "totPositie",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "http://fixme.com#Lengte",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "vanPositie",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#LinkreferentieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "Referentie naar verbonden klasse.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "Fietsnetwerkkenmerk",
+          "sh:path": "http://fixme.com#Linkreferentie.fietsnetwerkkenmerk"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "Referentie naar verbonden klasse.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "GeneriekeFietslink",
+          "sh:path": "http://fixme.com#Linkreferentie.generiekeFietslink"
+        },
+        {
+          "sh:class": "http://fixme.com#Linkrichtingwaarde",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:name": "richting",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#PuntreferentieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#Lengte",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "opPositie",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#FietslinksetShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "Identificator van de Transportlinkset",
+          "sh:maxCount": "1",
+          "sh:name": "^identificator",
+          "sh:path": "https://INSPIRE-Netwerk.TODO.fixme.com#Netwerkelement.identificator"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:minCount": "1",
+          "sh:name": "link",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#FietswegmarkeringstypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#StandaardEenheidShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#OpgemetendeelShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#RichtingTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#HoogteklasseShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#BreedteKlasseShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#BreedteShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "breedte",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "deel",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#FietswegmarkeringShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#Verkeersteken",
+          "sh:description": "To Do",
+          "sh:minCount": "1",
+          "sh:name": "^realiseert",
+          "sh:path": "http://fixme.com#^realiseert"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:minCount": "1",
+          "sh:name": "wegmarkering",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#RichtingVerkeerShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "richtingVerkeer",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "http://fixme.com#Verkeersteken",
+          "sh:description": "To Do",
+          "sh:name": "verkeersteken",
+          "sh:path": "http://fixme.com#verkeersteken"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#RijstrookaanduidingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#LuchtkwaliteitShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "waarde",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#VerlichtingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "verlichtingsgraad",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#GeluidShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:minCount": "1",
+          "sh:name": "bron",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "waarde",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#OmgevingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:minCount": "1",
+          "sh:name": "type",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#WinterdienstShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "sneeuwruiming",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "strooien",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#OngelijkgrondseKruisingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:name": "^identificator",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "http://fixme.com#Link",
+          "sh:description": "To Do",
+          "sh:minCount": "2",
+          "sh:name": "link",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#GebruikShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:minCount": "1",
+          "sh:name": "type",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#IntensiteitShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:name": "intensiteitFietsVerkeer",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:name": "intensiteitGemotoriseerdVerkeer",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#OngevalShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://schema.org/Number",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "aantal",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/PeriodOfTime",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "periode",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "type",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#StekkertypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#OnderhoudShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "ingebruiksname",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "onderhoudsdatum",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "onderhoudstype",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#VerkeerslichtVoetgangerFietserShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#Verkeersteken",
+          "sh:description": "To Do",
+          "sh:minCount": "1",
+          "sh:name": "realiseert",
+          "sh:path": "http://fixme.com#realiseert"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#OmgevingstypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#ComfortShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "comfort",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#IntensiteitsNiveauShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#ComfortniveauShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#WegverhardingTypeWaardeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#WeginrichtingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#VerkeerShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#WegconditieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#FietsnetwerkobservatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#VerkeerstellingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://schema.org/Number",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "aantal",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/PeriodOfTime",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "periode",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "rijrichting",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#VerlichtingsgraadShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#GebruiksTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#GeluidsgraadShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#FietsinrichtingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "type",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#LuchtkwaliteitsgraadShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#BufferzoneShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "breedte",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "hoogte",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "type",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#FietsinrichtingtypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#BufferzoneTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#BufferzoneAfmetingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "afmeting",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "afmetingklasse",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "oorsprong",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#GeluidsBronShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#TelpaaltypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#TelmethodeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#FietsparkingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#InfrastructuurelementShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://data.europa.eu/m8g/PeriodOfTime",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "^geldigheidsperiode",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Geometry",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "^geometrie",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#FietsstallingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "afsluitbaar",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "capaciteit",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "fietsdelen",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "overdekt",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "verplaatsbaar",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#RechtsgrondShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#WegverhardingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#GetalShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://schema.org/Number"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/fietsinfrastructuur-ap#KwantitatieveWaardeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "De eenheid waarin de waarde is uitgedrukt.",
+          "sh:maxCount": "1",
+          "sh:name": "eenheid",
+          "sh:path": "https://schema.org/unitText"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:description": "De gestandaardiseerde eenheid waarin de waarde is uitgedrukt.",
+          "sh:maxCount": "1",
+          "sh:name": "standaardEenheid",
+          "sh:path": "https://schema.org/unitCode"
+        },
+        {
+          "sh:class": "https://schema.org/Number",
+          "sh:description": "Getal waarmee de kwantiteit van het kenmerk kan worden uitgedrukt.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "waarde",
+          "sh:path": "https://schema.org/value"
+        }
+      ],
+      "sh:targetClass": "https://schema.org/QuantitativeValue"
+    }
+  ]
+}
