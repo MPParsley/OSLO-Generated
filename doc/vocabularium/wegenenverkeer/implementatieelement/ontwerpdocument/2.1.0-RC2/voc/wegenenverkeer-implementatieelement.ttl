@@ -12,20 +12,20 @@ dc:Agent a rdfs:Class;
   rdfs:label "Agent"@nl .
 
 skos:Concept a rdfs:Class;
-  rdfs:label "Betonmilieuklasse"@nl,
-    "Constructiestaalsoort"@nl,
-    "Gebruiksdomein"@nl,
-    "Sterkteklasse van hout"@nl,
-    "Betonsterkteklasse"@nl,
-    "AIM toestand"@nl,
-    "Betonomgevingsklasse"@nl,
-    "Schoorhoek"@nl,
-    "Gemeente"@nl,
+  rdfs:label "Mimetype"@nl,
+    "Kwaliteitsklasse van hout"@nl,
+    "Betonmilieuklasse"@nl,
     "Duurzaamheidsklasse van hout"@nl,
-    "Provincie"@nl,
-    "Mimetype"@nl,
+    "Gebruiksdomein"@nl,
     "Walsmethode"@nl,
-    "Kwaliteitsklasse van hout"@nl .
+    "Schoorhoek"@nl,
+    "Betonomgevingsklasse"@nl,
+    "Gemeente"@nl,
+    "AIM toestand"@nl,
+    "Constructiestaalsoort"@nl,
+    "Betonsterkteklasse"@nl,
+    "Provincie"@nl,
+    "Sterkteklasse van hout"@nl .
 
 schemas:ContactPoint a rdfs:Class;
   rdfs:label "Contactinfo"@nl .
@@ -1623,8 +1623,8 @@ schemas:opens a rdf:Property;
   rdfs:label "Derdenobject"@nl;
   rdfs:comment "Object niet in eigendom van de assetbeheerder dat zonder verdere typering bewaard wordt om relaties met getypeerde assets te kunnen beheren."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand>,
-    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus> .
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus>,
+    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#RelatieObject> a owl:Class;
   rdfs:label "Relatieobject"@nl;
@@ -1646,8 +1646,8 @@ schemas:opens a rdf:Property;
   rdfs:label "AIM object"@nl;
   rdfs:comment "Abstracte als de basisklasse voor alle uniek geïdentificeerde OTL objecten met de basiseigenschappen die elk OTL object minstens heeft."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand>,
-    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus> .
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus>,
+    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAdres> a owl:Class;
   rdfs:label "Adres"@nl;
@@ -1680,32 +1680,32 @@ schemas:opens a rdf:Property;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> a owl:Ontology;
-  rdfs:label "wegenenverkeer-implementatieelement"@nl,
-    "wegenenverkeer-implementatieelement"@en;
+  rdfs:label "wegenenverkeer-implementatieelement"@en,
+    "wegenenverkeer-implementatieelement"@nl;
   dc:issued "TODO";
-  dc:license <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>,
-    "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0";
+  dc:license "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
+    <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
   dc:mediator [
     foaf:homepage <https://data.vlaanderen.be>;
     foaf:mbox <mailto:oslo@kb.vlaanderen.be>;
     foaf:name "Data Vlaanderen"
   ];
-  rdfs:seeAlso dc:Agent.naam,
-    schemas:OpeningHoursSpecification,
-    schema:faxNumber,
-    foaf:page,
-    schema:email,
-    skos:Concept,
-    <http://www.w3.org/ns/locn#address>,
+  rdfs:seeAlso schema:telephone,
+    dc:Agent.naam,
     schemas:DayOfWeek,
-    foaf:name,
     dc:Agent,
-    schema:telephone,
-    schemas:ContactPoint,
-    dc:Agent.contactinfo,
-    schemas:ContactPoint.opmerkingen,
-    schemas:closes,
-    schemas:opens,
     schema:hoursAvailable,
+    foaf:name,
     schemas:dayOfWeek,
-    dc:Agent.agentId .
+    schemas:opens,
+    schema:email,
+    schemas:ContactPoint,
+    skos:Concept,
+    foaf:page,
+    <http://www.w3.org/ns/locn#address>,
+    dc:Agent.contactinfo,
+    dc:Agent.agentId,
+    schemas:closes,
+    schema:faxNumber,
+    schemas:OpeningHoursSpecification,
+    schemas:ContactPoint.opmerkingen .
