@@ -12,21 +12,20 @@ dc:Agent a rdfs:Class;
   rdfs:label "Agent"@nl .
 
 skos:Concept a rdfs:Class;
-  rdfs:label "Constructiestaalsoort"@nl,
-    "Gemeente"@nl,
-    "Provincie"@nl,
-    "Kwaliteitsklasse van hout"@nl,
-    "Mimetype"@nl,
-    "Walsmethode"@nl,
-    "Duurzaamheidsklasse van hout"@nl,
+  rdfs:label "Betonmilieuklasse"@nl,
+    "Constructiestaalsoort"@nl,
+    "Gebruiksdomein"@nl,
+    "Sterkteklasse van hout"@nl,
     "Betonsterkteklasse"@nl,
     "AIM toestand"@nl,
-    "Betonmilieuklasse"@nl,
-    "Opstelling"@nl,
     "Betonomgevingsklasse"@nl,
-    "Sterkteklasse van hout"@nl,
-    "Gebruiksdomein"@nl,
-    "Schermelement type"@nl .
+    "Schoorhoek"@nl,
+    "Gemeente"@nl,
+    "Duurzaamheidsklasse van hout"@nl,
+    "Provincie"@nl,
+    "Mimetype"@nl,
+    "Walsmethode"@nl,
+    "Kwaliteitsklasse van hout"@nl .
 
 schemas:ContactPoint a rdfs:Class;
   rdfs:label "Contactinfo"@nl .
@@ -662,6 +661,34 @@ schemas:OpeningHoursSpecification a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:range xsd:string .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtuDwarsafmetingen.rechthoekig> a owl:ObjectProperty;
+  rdfs:label "rechthoekig"@nl;
+  rdfs:comment "Afmetingen voor breedte, lengte en hoogte van een rechthoekig object."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtuDwarsafmetingen>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInMm> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtuDwarsafmetingen.rond> a owl:ObjectProperty;
+  rdfs:label "rond"@nl;
+  rdfs:comment "Afmeting van de diameter in milimeter van een rond object."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtuDwarsafmetingen>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingDiameterInMm> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtuHellingsSchoorhoek.hellingshoek> a owl:ObjectProperty;
+  rdfs:label "hellingshoek"@nl;
+  rdfs:comment "Hoek die het object maakt ten opzichte van de verticale, uitgedrukt in decimale graden."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtuHellingsSchoorhoek>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInDecimaleGraden> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtuHellingsSchoorhoek.schoorhoek> a owl:ObjectProperty;
+  rdfs:label "schoorhoek"@nl;
+  rdfs:comment "Hoek die het object maakt ten opzichte van de verticale, uitgedrukt in 1 op x (vb.: 1/4)."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtuHellingsSchoorhoek>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range skos:Concept .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInAmpere.standaardEenheid> a owl:DatatypeProperty;
   rdfs:label "standaard eenheid"@nl;
   <http://purl.org/vocab/vann/usageNote> "\"A\"^^cdt:ucumunit"@nl;
@@ -680,7 +707,7 @@ schemas:OpeningHoursSpecification a rdfs:Class;
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInBar.standaardEenheid> a owl:DatatypeProperty;
   rdfs:label "standaard eenheid"@nl;
   <http://purl.org/vocab/vann/usageNote> "\"bar\"^^cdt:ucumunit"@nl;
-  rdfs:comment "De standaard eenheid bij dit datatype is uitgedrukt in inch als internationale eenheid (eengemaakte Britse en Amerikaanse systeem)."@nl;
+  rdfs:comment "De standaard eenheid bij dit datatype is uitgedrukt in bar."@nl;
   rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInBar>;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:range rdfs:Literal .
@@ -797,6 +824,36 @@ schemas:OpeningHoursSpecification a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:range xsd:nonNegativeInteger .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewton.standaardEenheid> a owl:DatatypeProperty;
+  rdfs:label "standaard eenheid"@nl;
+  <http://purl.org/vocab/vann/usageNote> "\"kN\"^^cdt:ucumunit"@nl;
+  rdfs:comment "De standaard eenheid bij dit datatype is uitgedrukt in kiloNewton."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewton>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range rdfs:Literal .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewton.waarde> a owl:ObjectProperty;
+  rdfs:label "waarde"@nl;
+  rdfs:comment "Bevat een getal die bij het datatype hoort."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewton>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range xsd:decimal .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewtonPerMeter.standaardEenheid> a owl:DatatypeProperty;
+  rdfs:label "standaard eenheid"@nl;
+  <http://purl.org/vocab/vann/usageNote> "\"kN/m\"^^cdt:ucumunit"@nl;
+  rdfs:comment "De standaard eenheid bij dit datatype is uitgedrukt in kiloNewton per meter."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewtonPerMeter>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range rdfs:Literal .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewtonPerMeter.waarde> a owl:ObjectProperty;
+  rdfs:label "waarde"@nl;
+  rdfs:comment "Bevat een getal die bij het datatype hoort."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewtonPerMeter>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range xsd:decimal .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewtonPerVierkanteMeter.standaardEenheid> a owl:DatatypeProperty;
   rdfs:label "standaard eenheid"@nl;
   <http://purl.org/vocab/vann/usageNote> "\"kN/m2\"^^cdt:ucumunit"@nl;
@@ -872,6 +929,36 @@ schemas:OpeningHoursSpecification a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:range xsd:decimal .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogramPerKubiekeMeter.standaardEenheid> a owl:DatatypeProperty;
+  rdfs:label "standaard eenheid"@nl;
+  <http://purl.org/vocab/vann/usageNote> "\"kg/m3\"^^cdt:ucumunit"@nl;
+  rdfs:comment "De standaard eenheid bij dit datatype is uitgedrukt in kilogram per kubieke meter."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogramPerKubiekeMeter>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range rdfs:Literal .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogramPerKubiekeMeter.waarde> a owl:ObjectProperty;
+  rdfs:label "waarde"@nl;
+  rdfs:comment "Bevat een getal die bij het datatype hoort."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogramPerKubiekeMeter>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range xsd:decimal .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeCentimeterPerMeter.standaardEenheid> a owl:DatatypeProperty;
+  rdfs:label "standaard eenheid"@nl;
+  <http://purl.org/vocab/vann/usageNote> "\"cm3/m\"^^cdt:ucumunit"@nl;
+  rdfs:comment "De standaard eenheid bij dit datatype is uitgedrukt in kubieke centimeter per meter."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeCentimeterPerMeter>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range rdfs:Literal .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeCentimeterPerMeter.waarde> a owl:ObjectProperty;
+  rdfs:label "waarde"@nl;
+  rdfs:comment "Bevat een getal die bij het datatype hoort."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeCentimeterPerMeter>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range xsd:decimal .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter.standaardEenheid> a owl:DatatypeProperty;
   rdfs:label "standaard eenheid"@nl;
   <http://purl.org/vocab/vann/usageNote> "\"m3\"^^cdt:ucumunit"@nl;
@@ -916,6 +1003,21 @@ schemas:OpeningHoursSpecification a rdfs:Class;
   rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand>;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:range xsd:nonNegativeInteger .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMegaPascal.standaardEenheid> a owl:DatatypeProperty;
+  rdfs:label "standaard eenheid"@nl;
+  <http://purl.org/vocab/vann/usageNote> "\"MPa\"^^cdt:ucumunit"@nl;
+  rdfs:comment "De standaard eenheid bij dit datatype is uitgedrukt in mega pascal."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMegaPascal>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range rdfs:Literal .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMegaPascal.waarde> a owl:ObjectProperty;
+  rdfs:label "waarde"@nl;
+  rdfs:comment "Bevat een getal die bij het datatype hoort."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMegaPascal>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range xsd:decimal .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter.standaardEenheid> a owl:DatatypeProperty;
   rdfs:label "standaard eenheid"@nl;
@@ -1230,11 +1332,6 @@ schemas:opens a rdf:Property;
   rdfs:comment "Complex datatype voor de afmeting van een diameter in centimeter."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingDiameterInMm> a owl:Class;
-  rdfs:label "Afmeting diameter in millimeter"@nl;
-  rdfs:comment "Complex datatype voor de afmeting van een diameter in millimeter."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
-
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingZijdeInMm> a owl:Class;
   rdfs:label "Afmeting zijde in millimeter"@nl;
   rdfs:comment "Complex datatype voor de afmeting van een zijde in millimeter."@nl;
@@ -1282,6 +1379,11 @@ schemas:opens a rdf:Property;
   rdfs:comment "Complex datatype voor de afmeting van de breedte en de lengte in meter."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingDiameterInMm> a owl:Class;
+  rdfs:label "Afmeting diameter in millimeter"@nl;
+  rdfs:comment "Complex datatype voor de afmeting van een diameter in millimeter."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcConstructiestaalspecificaties> a owl:Class;
   rdfs:label "Constructiestaalspecificaties"@nl;
   rdfs:comment "Complex datatype om de eigenschappen van constructiestaal te bundelen."@nl;
@@ -1290,6 +1392,16 @@ schemas:opens a rdf:Property;
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DteTekstblok> a owl:Class;
   rdfs:label "Tekstblok"@nl;
   rdfs:comment "Een tekst welke uit meerdere zinnen bestaat, en ook regeleindes kan bevatten. Een tekstblok bevat maximaal 65.000 karakters."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtuDwarsafmetingen> a owl:Class;
+  rdfs:label "Dwarsafmetingen"@nl;
+  rdfs:comment "Union datatype voor de dwarsafmetingen van een object volgens zijn vorm."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtuHellingsSchoorhoek> a owl:Class;
+  rdfs:label "Hellings- of schoorhoek"@nl;
+  rdfs:comment "Union datatype voor de hellings- of de schoorhoek."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInAmpere> a owl:Class;
@@ -1305,11 +1417,6 @@ schemas:opens a rdf:Property;
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCelsius> a owl:Class;
   rdfs:label "Kwantitatieve waarde in Celsius"@nl;
   rdfs:comment "Een kwantitatieve waarde die een getal in graden celsius uitdrukt."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInDecimaleGraden> a owl:Class;
-  rdfs:label "Kwantitatieve waarde in decimale graden"@nl;
-  rdfs:comment "Een kwantitatieve waarde die een getal in decimale graden uitdrukt."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInEuro> a owl:Class;
@@ -1330,6 +1437,16 @@ schemas:opens a rdf:Property;
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInJaar> a owl:Class;
   rdfs:label "Kwantitatieve waarde in aantal jaar"@nl;
   rdfs:comment "Een kwantitatieve waarde die een getal in aantal jaar uitdrukt."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewton> a owl:Class;
+  rdfs:label "Kwantitatieve waarde in kN"@nl;
+  rdfs:comment "Een kwantitatieve waarde die een getal in KiloNewton uitdrukt."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewtonPerMeter> a owl:Class;
+  rdfs:label "Kwantitatieve waarde in kiloNewton per meter"@nl;
+  rdfs:comment "Een kwantitatieve waarde die een getal in  kiloNewton per meter uitdrukt."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewtonPerVierkanteMeter> a owl:Class;
@@ -1357,6 +1474,16 @@ schemas:opens a rdf:Property;
   rdfs:comment "Een kwantitatieve waarde die een getal in kilogram uitdrukt."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogramPerKubiekeMeter> a owl:Class;
+  rdfs:label "Kwantitatieve waarde in kilogram per kubieke meter"@nl;
+  rdfs:comment "Een kwantitatieve waarde die een getal in kilogram per kubieke meter uitdrukt."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeCentimeterPerMeter> a owl:Class;
+  rdfs:label "Kwantitatieve waarde in kubieke centimeter per meter"@nl;
+  rdfs:comment "Een kwantitatieve waarde die een getal in kubieke centimeter per meter uitdrukt."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter> a owl:Class;
   rdfs:label "Kwantitatieve waarde in kubieke meter"@nl;
   rdfs:comment "Een kwantitatieve waarde die een getal in kubieke meter uitdrukt."@nl;
@@ -1365,6 +1492,11 @@ schemas:opens a rdf:Property;
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeterPerSeconde> a owl:Class;
   rdfs:label "Kwantitatieve waarde in kubieke meter per seconde"@nl;
   rdfs:comment "Een kwantitatieve waarde die een getal in kubieke meter per seconde uitdrukt."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMegaPascal> a owl:Class;
+  rdfs:label "Kwantitatieve waarde in MPa"@nl;
+  rdfs:comment "Een kwantitatieve waarde die een getal in megapascal uitdrukt."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeterTAW> a owl:Class;
@@ -1432,14 +1564,14 @@ schemas:opens a rdf:Property;
   rdfs:comment "Complex datatype voor de afmeting van de breedte, de lengte en hoogte in meter."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInMm> a owl:Class;
-  rdfs:label "Afmeting bxlxh in millimeter"@nl;
-  rdfs:comment "Complex datatype voor de afmeting van de breedte,de lengte en hoogte in millimeter."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
-
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur> a owl:Class;
   rdfs:label "Tijdsduur"@nl;
   rdfs:comment "Complex datatype voor de instelling van een tijdsbepaling."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInDecimaleGraden> a owl:Class;
+  rdfs:label "Kwantitatieve waarde in decimale graden"@nl;
+  rdfs:comment "Een kwantitatieve waarde die een getal in decimale graden uitdrukt."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand> a owl:Class;
@@ -1465,6 +1597,11 @@ schemas:opens a rdf:Property;
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus> a owl:Class;
   rdfs:label "AIM databank status"@nl;
   rdfs:comment "Voegt een attribuut toe aan de subklasse dat aangeeft of de asset zichtbaar is in de databank of (zacht) verwijderd is."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInMm> a owl:Class;
+  rdfs:label "Afmeting bxlxh in millimeter"@nl;
+  rdfs:comment "Complex datatype voor de afmeting van de breedte,de lengte en hoogte in millimeter."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcHoutspecificaties> a owl:Class;
@@ -1546,29 +1683,29 @@ schemas:opens a rdf:Property;
   rdfs:label "wegenenverkeer-implementatieelement"@nl,
     "wegenenverkeer-implementatieelement"@en;
   dc:issued "TODO";
-  dc:license "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
-    <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
+  dc:license <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>,
+    "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0";
   dc:mediator [
     foaf:homepage <https://data.vlaanderen.be>;
     foaf:mbox <mailto:oslo@kb.vlaanderen.be>;
     foaf:name "Data Vlaanderen"
   ];
-  rdfs:seeAlso schemas:ContactPoint,
-    schema:hoursAvailable,
-    schemas:opens,
-    skos:Concept,
-    dc:Agent.naam,
-    dc:Agent,
-    schemas:ContactPoint.opmerkingen,
-    schema:email,
-    foaf:name,
-    dc:Agent.agentId,
-    <http://www.w3.org/ns/locn#address>,
-    schemas:dayOfWeek,
-    schemas:DayOfWeek,
+  rdfs:seeAlso dc:Agent.naam,
     schemas:OpeningHoursSpecification,
-    foaf:page,
     schema:faxNumber,
+    foaf:page,
+    schema:email,
+    skos:Concept,
+    <http://www.w3.org/ns/locn#address>,
+    schemas:DayOfWeek,
+    foaf:name,
+    dc:Agent,
     schema:telephone,
+    schemas:ContactPoint,
     dc:Agent.contactinfo,
-    schemas:closes .
+    schemas:ContactPoint.opmerkingen,
+    schemas:closes,
+    schemas:opens,
+    schema:hoursAvailable,
+    schemas:dayOfWeek,
+    dc:Agent.agentId .

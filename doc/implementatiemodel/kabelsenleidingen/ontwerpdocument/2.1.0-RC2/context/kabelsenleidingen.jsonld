@@ -1,0 +1,569 @@
+{
+  "@context": {
+    "AIMDBStatus": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus",
+    "AIMNaamObject": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject",
+    "AIMObject": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject",
+    "AIMToestand": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand",
+    "Aardingspen": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Aardingspen",
+    "Activiteitencomplex": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Activiteitencomplex",
+    "AnyURI": "http://www.w3.org/2001/XMLSchema#anyURI",
+    "Behuizing": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Behuizing",
+    "Bevestiging": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+    "Boolean": "http://www.w3.org/2001/XMLSchema#boolean",
+    "Buis": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Buis",
+    "Buis.SluitAanOp": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/kabels-en-leidingen/#Sluit aan op",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Buis"
+    },
+    "Buis.breedte": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Buis.breedte",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter"
+    },
+    "Buis.breedteBinnenzijde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Buis.breedteBinnenzijde",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter"
+    },
+    "Buis.breedteBuitenzijde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Buis.breedteBuitenzijde",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter"
+    },
+    "Buis.hoogteBinnenzijde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Buis.hoogteBinnenzijde",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter"
+    },
+    "Buis.hoogteBuitenzijde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Buis.hoogteBuitenzijde",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter"
+    },
+    "Buis.lengte": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Buis.lengte",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter"
+    },
+    "Buis.technischeFiche": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Buis.technischeFiche",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument"
+    },
+    "Buis.toestandBuis": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Buis.toestandBuis",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DteTekstblok"
+    },
+    "Buis.vorm": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Buis.vorm",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "BuisBovengronds": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#BuisBovengronds",
+    "BuisBovengronds.SluitAanOp": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/kabels-en-leidingen/#Sluit aan op",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Buis"
+    },
+    "BuisBovengronds.breedteBinnenzijde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#BuisBovengronds.breedteBinnenzijde",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter"
+    },
+    "BuisBovengronds.breedteBuitenzijde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#BuisBovengronds.breedteBuitenzijde",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter"
+    },
+    "BuisBovengronds.hoogteBinnenzijde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#BuisBovengronds.hoogteBinnenzijde",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter"
+    },
+    "BuisBovengronds.hoogteBuitenzijde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#BuisBovengronds.hoogteBuitenzijde",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter"
+    },
+    "BuisBovengronds.lengte": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#BuisBovengronds.lengte",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter"
+    },
+    "BuisBovengronds.technischeFiche": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#BuisBovengronds.technischeFiche",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument"
+    },
+    "BuisBovengronds.toestandBuis": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#BuisBovengronds.toestandBuis",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DteTekstblok"
+    },
+    "BuisBovengronds.vorm": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#BuisBovengronds.vorm",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "Camera": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Camera",
+    "Camera.merk": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Camera.merk",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "Camera.modelnaam": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Camera.modelnaam",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "Camera.technischeFiche": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Camera.technischeFiche",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument"
+    },
+    "ContainerBuis": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ContainerBuis",
+    "ContainerBuis.Omhult": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/kabels-en-leidingen/#Omhult",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Telecomkabel"
+    },
+    "ContainerBuis.kleur": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ContainerBuis.kleur",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Date": "http://www.w3.org/2001/XMLSchema#date",
+    "Decimal": "http://www.w3.org/2001/XMLSchema#decimal",
+    "DtcAdres": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAdres",
+    "DtcAfmetingBxlxhInMm": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInMm",
+    "DtcAfmetingBxlxhInMm.breedte": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInMm.breedte",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter"
+    },
+    "DtcAfmetingBxlxhInMm.lengte": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInMm.lengte",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter"
+    },
+    "DtcDocument": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument",
+    "DtcIdentificator": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator",
+    "DteIPv4Adres": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DteIPv4Adres",
+    "DteIPv4Adres.waarde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DteIPv4Adres.waarde",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "DteTekstblok": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DteTekstblok",
+    "DteTekstblok.waarde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DteTekstblok.waarde",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Elektriciteitskabel": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Elektriciteitskabel",
+    "Elektriciteitskabel.Bevestiging": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/kabels-en-leidingen/#Bevestiging",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Kabelmof"
+    },
+    "Elektriciteitskabel.kabelDiameter": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Elektriciteitskabel.kabelDiameter",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter"
+    },
+    "Elektriciteitskabel.kleur": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Elektriciteitskabel.kleur",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "HoortBij": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/kabels-en-leidingen/#Hoort bij",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Activiteitencomplex"
+    },
+    "IMKLElektrisch": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#IMKLElektrisch",
+    "IMKLElektrisch.Bevestiging": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/kabels-en-leidingen/#Bevestiging",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#IMKLElektrisch"
+    },
+    "IMKLElektrisch.subthema": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#IMKLElektrisch.subthema",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "IMKLElement": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#IMKLElement",
+    "IMKLTelecom": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#IMKLTelecom",
+    "IMKLTelecom.Bevestiging": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/kabels-en-leidingen/#Bevestiging",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#IMKLTelecom"
+    },
+    "IMKLTelecom.subthema": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#IMKLTelecom.subthema",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "KabelEnLeidingGoot": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#KabelEnLeidingGoot",
+    "Kabelmof": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Kabelmof",
+    "Kabelmof.Bevestiging": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/kabels-en-leidingen/#Bevestiging",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Elektriciteitskabel"
+    },
+    "Kast": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Kast",
+    "Kast.Bevestiging": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/kabels-en-leidingen/#Bevestiging",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Telecomkabel"
+    },
+    "KlAIMToestand": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlAlgGemeente": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlAlgMateriaal": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlAlgMimeType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlAlgProvincie": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlCameraMerk": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlCameraModelnaam": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlElektriciteitSubThemaWaarde": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlKabelmofType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlNetwerkType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlPersleidingMateriaal": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlRioleringVorm": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlRioleringsbuisMateriaal": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlSDRKlasse": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlTelecomSubThemaWaarde": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlTelecomkabelMateriaalTypeWaarde": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlVerkeerslichtMasker": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlVerkeerslichtMerk": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlVerkeerslichtModelnaam": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlVerlichtingstoestelMerk": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlVerlichtingstoestelModelnaam": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlVerlichtingstoestelVerlichtGebied": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KwantWrdInMaand": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand",
+    "KwantWrdInMaand.standaardEenheid": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand.standaardEenheid",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "KwantWrdInMaand.waarde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand.waarde",
+      "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "KwantWrdInMeter": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter",
+    "KwantWrdInMeter.standaardEenheid": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter.standaardEenheid",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "KwantWrdInMeter.waarde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter.waarde",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "KwantWrdInMeterTAW": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeterTAW",
+    "KwantWrdInMeterTAW.standaardEenheid": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeterTAW.standaardEenheid",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "KwantWrdInMeterTAW.waarde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeterTAW.waarde",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "KwantWrdInMillimeter": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter",
+    "KwantWrdInMillimeter.standaardEenheid": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter.standaardEenheid",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "KwantWrdInMillimeter.waarde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter.waarde",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "KwantWrdInPromille": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInPromille",
+    "KwantWrdInPromille.standaardEenheid": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInPromille.standaardEenheid",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "KwantWrdInPromille.waarde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInPromille.waarde",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "KwantWrdInVolt": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt",
+    "KwantWrdInVolt.standaardEenheid": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.standaardEenheid",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "KwantWrdInVolt.waarde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.waarde",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "KwantWrdInWatt": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt",
+    "KwantWrdInWatt.standaardEenheid": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt.standaardEenheid",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "KwantWrdInWatt.waarde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt.waarde",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "Literal": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "Mantelbuis": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Mantelbuis",
+    "Mantelbuis.materiaal": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Mantelbuis.materiaal",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "MantelbuisBovengronds": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#MantelbuisBovengronds",
+    "NaampadObject": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#NaampadObject",
+    "NonNegativeInteger": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "Omhult": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Omhult",
+    "PersleidingBovengronds": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#PersleidingBovengronds",
+    "PersleidingBovengronds.materiaal": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#PersleidingBovengronds.materiaal",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "SluitAanOp": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#SluitAanOp",
+    "String": "http://www.w3.org/2001/XMLSchema#string",
+    "TechnischePut": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#TechnischePut",
+    "TechnischePut.Bevestiging": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/kabels-en-leidingen/#Bevestiging",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Telecomkabel"
+    },
+    "Telecomkabel": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Telecomkabel",
+    "Telecomkabel.Bevestiging": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/kabels-en-leidingen/#Bevestiging",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Kast"
+    },
+    "Telecomkabel.kabelDiameter": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Telecomkabel.kabelDiameter",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter"
+    },
+    "Telecomkabel.kleur": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Telecomkabel.kleur",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Verkeerslicht": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Verkeerslicht",
+    "Verkeerslicht.merk": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Verkeerslicht.merk",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "Verkeerslicht.modelnaam": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Verkeerslicht.modelnaam",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "Verlichtingstoestel": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel",
+    "Verlichtingstoestel.merk": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.merk",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "Verlichtingstoestel.modelnaam": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.modelnaam",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "adres": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Behuizing.adres",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAdres"
+    },
+    "afmeting": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Kast.afmeting",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInMm"
+    },
+    "assetId": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.assetId",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator"
+    },
+    "bestandsnaam": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument.bestandsnaam",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "bestekPostNummer": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.bestekPostNummer",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "bokAfwaarts": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Buis.bokAfwaarts",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeterTAW"
+    },
+    "bokOpwaarts": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Buis.bokOpwaarts",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeterTAW"
+    },
+    "bus": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAdres.bus",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "configBestandAid": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Camera.configBestandAid",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument"
+    },
+    "datumOprichtingObject": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.datumOprichtingObject",
+      "@type": "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "diepteAfwaarts": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Buis.diepteAfwaarts",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter"
+    },
+    "diepteOpwaarts": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Buis.diepteOpwaarts",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter"
+    },
+    "dnsNaam": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Camera.dnsNaam",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "functie": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Activiteitencomplex.functie",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "gebruiksspanning": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Elektriciteitskabel.gebruiksspanning",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt"
+    },
+    "gemeente": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAdres.gemeente",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "heeftAansluitkastGeintegreerd": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.heeftAansluitkastGeintegreerd",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "heeftAid": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Camera.heeftAid",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "heeftSpitsstrook": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Camera.heeftSpitsstrook",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "heeftVerlichting": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Kast.heeftVerlichting",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "helling": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Buis.helling",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInPromille"
+    },
+    "hoogte": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInMm.hoogte",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter"
+    },
+    "huisnummer": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAdres.huisnummer",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "identificator": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "inNetwerk": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Activiteitencomplex.inNetwerk",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "indelingsplan": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Kast.indelingsplan",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument"
+    },
+    "ipAdres": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Camera.ipAdres",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DteIPv4Adres"
+    },
+    "isActief": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus.isActief",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "isGesloten": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#KabelEnLeidingGoot.isGesloten",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "isManToegankelijk": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Buis.isManToegankelijk",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "isOpgevuld": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Buis.isOpgevuld",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "isPtz": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Camera.isPtz",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "kastmateriaal": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Kast.kastmateriaal",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "masker": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Verkeerslicht.masker",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "mimeType": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument.mimeType",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "naam": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject.naam",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "naampad": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#NaampadObject.naampad",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "nominaleSpanning": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Elektriciteitskabel.nominaleSpanning",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt"
+    },
+    "notitie": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.notitie",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "omschrijving": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument.omschrijving",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DteTekstblok"
+    },
+    "opstelhoogte": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Camera.opstelhoogte",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter"
+    },
+    "postcode": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAdres.postcode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "provincie": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAdres.provincie",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "sdrKlasse": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#PersleidingBovengronds.sdrKlasse",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "standaardBestekPostNummer": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.standaardBestekPostNummer",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "straatnaam": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAdres.straatnaam",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "stroomkringnummer": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.stroomkringnummer",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "systeemvermogen": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.systeemvermogen",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt"
+    },
+    "telecomkabelMateriaal": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Telecomkabel.telecomkabelMateriaal",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "theoretischeLevensduur": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.theoretischeLevensduur",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand"
+    },
+    "toegekendDoor": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.toegekendDoor",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "toestand": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand.toestand",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "type": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Kabelmof.type",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "typeURI": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.typeURI",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "uri": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument.uri",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "verlichtGebied": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Verlichtingstoestel.verlichtGebied",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "vermogen": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Verkeerslicht.vermogen",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt"
+    }
+  }
+}

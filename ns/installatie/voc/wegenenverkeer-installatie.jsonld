@@ -14,9 +14,9 @@
   "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
   "namespace": null,
   "navigation": {
-    "prev": "/doc/vocabularium/wegenenverkeer/installatie/ontwerpdocument/1.1.0-RC3"
+    "prev": "/doc/vocabularium/wegenenverkeer/installatie/ontwerpdocument/2.0.0-RC3"
   },
-  "publication-date": "2021-06-07",
+  "publication-date": "2021-09-15",
   "publication-state": "https://data.vlaanderen.be/doc/concept/StandaardStatus/KandidaatStandaard",
   "title": "Installatie",
   "dcterms:license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
@@ -26,6 +26,22 @@
     "foaf:name": "Data Vlaanderen"
   },
   "classes": [
+    {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Activiteitencomplex",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Een enkele eenheid zowel technisch als economisch, onder het beheer van een wettelijke entiteit (exploitant), die activiteiten verricht als vermeld in de Eurostat NACE-classificatie die is vastgesteld in Verordening (EG) nr. 1893/2006 van het Europese Parlement en de Raad. Onder Activiteitencomplex valt het gehele gebied dat door dezelfde exploitant op dezelfde locatie of op verschillende geografische locaties wordt beheerd, inclusief alle infrastructuur, apparatuur en materialen."
+      },
+      "name": {
+        "nl": "Activiteitencomplex"
+      },
+      "parents": [
+        "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#NaampadObject"
+      ],
+      "usage": {
+        "nl": "Hierin worden alle complexe zones opgenomen waarbinnen in principe geen graafwerken kunnen gebeuren. Dit zijn bv. gebouwen van AWV of sluizencomplexen."
+      }
+    },
     {
       "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Baanlichaam",
       "@type": "http://www.w3.org/2002/07/owl#Class",
@@ -168,13 +184,13 @@
       "usage": {}
     },
     {
-      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidswerendeConstructie",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
         "nl": "Een geluidswerende wandvormige constructie bestaande uit een desgevallend geluidsisolerend materiaal en/of geluidsabsorberend materiaal en voorzien van de nodige structuren om de bouwkundige stabiliteit te verzekeren."
       },
       "name": {
-        "nl": "Geluidswerende constructie"
+        "nl": "Geluidwerende constructie"
       },
       "parents": [
         "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject"
@@ -238,6 +254,20 @@
       "usage": {}
     },
     {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#IPBackbone",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Netwerk dat bestaat uit meerdere L3 switches. Zij verbinden de verschillende L2 access structuren met de datacentres"
+      },
+      "name": {
+        "nl": "IP backbone"
+      },
+      "parents": [
+        "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#NaampadObject"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#InspectieputRiolering",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
@@ -249,6 +279,20 @@
       "parents": [
         "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject",
         "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Put"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#L2AccessStructuur",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Opstelling die het mogelijk maakt om een techniek direct te koppelen met het IP telematica netwerk. Een L2 access structuur bestaat uit meerdere L2 Switches die met elkaar verbonden zijn."
+      },
+      "name": {
+        "nl": "L2 access structuur"
+      },
+      "parents": [
+        "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#NaampadObject"
       ],
       "usage": {}
     },
@@ -379,6 +423,20 @@
       "usage": {}
     },
     {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VLAN",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Binnen de L2 access structuur vormt de VLAN een specifieke virtuele LAN. De toepassingen zijn verbonden met een specifieke VLAN.   Rechtstreekse communicatie tussen toepassingen is enkel mogelijk indien deze zijn verbonden met dezelfde VLAN."
+      },
+      "name": {
+        "nl": "VLAN"
+      },
+      "parents": [
+        "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#NaampadObject"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VerkeersbordConcept",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
@@ -410,7 +468,7 @@
       "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
-        "nl": "Het geheel van verticale verkeersborden op éénzelfde geolocatie."
+        "nl": "Het geheel van verticale verkeerssignalisatie die bevestigd is aan één of meerdere draagconstructies op éénzelfde geolocatie."
       },
       "name": {
         "nl": "Verkeersbordopstelling"
@@ -452,6 +510,44 @@
     }
   ],
   "properties": [
+    {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Activiteitencomplex.functie",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "description": {
+        "nl": "Functie van het complex."
+      },
+      "domain": [
+        "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Activiteitencomplex"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "functie"
+      },
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#string"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Activiteitencomplex.inNetwerk",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Geeft aan tot welk utility netwerk het object behoort."
+      },
+      "domain": [
+        "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Activiteitencomplex"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "in netwerk"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {
+        "nl": "Slechts 3 mogelijkheden zijn toegelaten binnen AWV: elektriciteit, telecommunicatie en gemengd."
+      }
+    },
     {
       "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Baanlichaam.dwarsprofiel",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
@@ -603,13 +699,13 @@
       "usage": {}
     },
     {
-      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidswerendeConstructie.detailplanHoogteverloop",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie.detailplanHoogteverloop",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
         "nl": "Dit is een detailplan in de vorm van een lijn waarin het verloop van de absolute hoogte van de top van de geluidswerende constructie wordt weergegeven. Minstens om de 10 meter wordt de hoogte van de top van de constructie bepaald. Het detailplan wordt gebruikt voor akoestische modellering."
       },
       "domain": [
-        "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidswerendeConstructie"
+        "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie"
       ],
       "generalization": [],
       "name": {
@@ -623,13 +719,13 @@
       }
     },
     {
-      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidswerendeConstructie.horizontaalRuimtebeslag",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie.horizontaalRuimtebeslag",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
         "nl": "Document waarin de variatie in horizontaal ruimtebeslag over het verloop van de geluidswerende constructie is weergegeven. Het horizontaal ruimtebeslag is de breedte die de gehele constructie inneemt op het maaiveld, loodrecht op de richting waarin de schermelementen op elkaar aangesloten zijn. Er moet een nieuwe waarde ingegeven worden elke keer als de hoogte van de constructie wijzigt."
       },
       "domain": [
-        "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidswerendeConstructie"
+        "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie"
       ],
       "generalization": [],
       "name": {
@@ -641,13 +737,13 @@
       "usage": {}
     },
     {
-      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidswerendeConstructie.overzichtsafbeelding",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie.overzichtsafbeelding",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
         "nl": "Dit een overzichtsfoto van de hele constructie. Op basis van deze afbeelding kan je snel bekijken hoe de kleur of hoogte varieert over het verloop van de geluidswerende constructie."
       },
       "domain": [
-        "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidswerendeConstructie"
+        "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie"
       ],
       "generalization": [],
       "name": {
@@ -659,13 +755,13 @@
       "usage": {}
     },
     {
-      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidswerendeConstructie.rekennota",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie.rekennota",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
         "nl": "Dit is een document waarin allerlei berekeningen bijgehouden worden omtrent de stabiliteit en sterkte van de geluidswerende constructie (oa de variatie in statische belasting en windbelasting over het verloop van geluidswerende constructie)."
       },
       "domain": [
-        "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidswerendeConstructie"
+        "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie"
       ],
       "generalization": [],
       "name": {
@@ -677,13 +773,13 @@
       "usage": {}
     },
     {
-      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidswerendeConstructie.technischeFiche",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie.technischeFiche",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
         "nl": "Dit document geeft volgende zaken mee: producent, productnaam (type), beschrijving van de geplaatste constructie, certificatie (CE en ISO), montage, akoestische karakteristieken, duurzaamheid en brandwerende kenmerken."
       },
       "domain": [
-        "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidswerendeConstructie"
+        "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie"
       ],
       "generalization": [],
       "name": {
@@ -695,13 +791,13 @@
       "usage": {}
     },
     {
-      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidswerendeConstructie.totaleLengte",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie.totaleLengte",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
         "nl": "De afstand in meter gemeten tussen het beginpunt en het eindpunt van de geluidswerende constructie."
       },
       "domain": [
-        "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidswerendeConstructie"
+        "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie"
       ],
       "generalization": [],
       "name": {
@@ -713,13 +809,13 @@
       "usage": {}
     },
     {
-      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidswerendeConstructie.totaleOppervlakte",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie.totaleOppervlakte",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
         "nl": "De totale oppervlakte van het naar de weg gerichte vlak van alle geplaatste schermelementen van de geluidswerende constructie."
       },
       "domain": [
-        "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidswerendeConstructie"
+        "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GeluidwerendeConstructie"
       ],
       "generalization": [],
       "name": {
@@ -947,6 +1043,24 @@
       "usage": {}
     },
     {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Link.mediumtype",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Geeft aan hoe de verbinding tussen Netwerkelementen fysiek gerealiseerd wordt"
+      },
+      "domain": [
+        "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Link"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "mediumtype"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Link.ring",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "description": {
@@ -1052,6 +1166,26 @@
       "generalization": [],
       "name": {
         "nl": "rioleringsstelsel"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {
+        "nl": "Attribuut uit gebruik sinds versie 2.1.0-RC2"
+      }
+    },
+    {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Rioleringsstelsel.systeemtype",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Geeft aan wat voor afvoerwater er door de riolering afgevoerd wordt."
+      },
+      "domain": [
+        "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Rioleringsstelsel"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "systeemtype"
       },
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
@@ -1301,6 +1435,24 @@
       }
     },
     {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling.isBotsvriendelijk",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "description": {
+        "nl": "Een botsvriendelijk obstakel is een voorwerp dat bij aanrijding door een voertuig de letselernst voor de inzittenden reduceert."
+      },
+      "domain": [
+        "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "is botsvriendelijk"
+      },
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#boolean"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling.operationeleStatus",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
@@ -1475,6 +1627,13 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "Wegberm type"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Netwerk type"
       }
     },
     {
