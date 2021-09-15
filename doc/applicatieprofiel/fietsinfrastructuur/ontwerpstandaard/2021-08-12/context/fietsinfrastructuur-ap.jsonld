@@ -1,5 +1,38 @@
 {
   "@context": {
+    "Adresvoorstelling": "http://www.w3.org/ns/locn#Address",
+    "Adresvoorstelling.busnummer": {
+      "@id": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Adresvoorstelling.gemeentenaam": {
+      "@id": "https://data.vlaanderen.be/ns/adres#gemeentenaam",
+      "@type": ""
+    },
+    "Adresvoorstelling.huisnummer": {
+      "@id": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Adresvoorstelling.land": {
+      "@id": "https://data.vlaanderen.be/ns/adres#land",
+      "@type": ""
+    },
+    "Adresvoorstelling.postbus": {
+      "@id": "http://www.w3.org/ns/locn#poBox",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Adresvoorstelling.postcode": {
+      "@id": "http://www.w3.org/ns/locn#postCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Adresvoorstelling.straatnaam": {
+      "@id": "http://www.w3.org/ns/locn#thoroughfare",
+      "@type": ""
+    },
+    "Adresvoorstelling.volledigAdres": {
+      "@id": "http://www.w3.org/ns/locn#fullAddress",
+      "@type": ""
+    },
     "Breedte": "https://fixme.com",
     "Breedte.breedte": {
       "@id": "https://fixme.com",
@@ -23,29 +56,16 @@
       "@id": "https://fixme.com",
       "@type": "@id"
     },
-    "BufferzoneBreedte": "https://fixme.com",
-    "BufferzoneBreedte.breedte": {
+    "BufferzoneAfmeting": "https://fixme.com",
+    "BufferzoneAfmeting.afmeting": {
       "@id": "https://fixme.com",
       "@type": "@id"
     },
-    "BufferzoneBreedte.breedteKlasse": {
+    "BufferzoneAfmeting.afmetingklasse": {
       "@id": "https://fixme.com",
       "@type": "@id"
     },
-    "BufferzoneBreedte.oorsprong": {
-      "@id": "https://fixme.com",
-      "@type": "http://www.w3.org/2001/XMLSchema#integer"
-    },
-    "BufferzoneHoogte": "https://fixme.com",
-    "BufferzoneHoogte.breedteHoogte": {
-      "@id": "https://fixme.com",
-      "@type": "@id"
-    },
-    "BufferzoneHoogte.hoogte": {
-      "@id": "https://fixme.com",
-      "@type": "@id"
-    },
-    "BufferzoneHoogte.oorsprong": {
+    "BufferzoneAfmeting.oorsprong": {
       "@id": "https://fixme.com",
       "@type": "http://www.w3.org/2001/XMLSchema#integer"
     },
@@ -56,11 +76,19 @@
       "@type": "@id"
     },
     "Comfortniveau": "https://fixme.com",
+    "Contactinfo": "http://schema.org/ContactPoint",
+    "Document": "http://xmlns.com/foaf/0.1/Document",
+    "Element": "http://fixme.com#Element",
     "Fietsinfrastructuurobject": "https://fixme.com",
     "Fietsinfrastructuurobject.beheerder": {
       "@container": "@set",
       "@id": "https://fixme.com",
-      "@type": ""
+      "@type": "@id"
+    },
+    "Fietsinfrastructuurobject.fietsnetwerkelement": {
+      "@container": "@set",
+      "@id": "http://fixme.com#fietsnetwerkelement",
+      "@type": "@id"
     },
     "Fietsinfrastructuurobject.identificator": {
       "@id": "https://fixme.com",
@@ -68,14 +96,14 @@
     },
     "Fietsinfrastructuurobject.leverancier": {
       "@id": "https://fixme.com",
-      "@type": ""
+      "@type": "@id"
     },
     "Fietsinfrastructuurobject.onderhoud": {
       "@id": "https://fixme.com",
       "@type": "@id"
     },
     "Fietsinrichting": "https://fixme.com",
-    "Fietsinrichting.fietsinrichting": {
+    "Fietsinrichting.type": {
       "@id": "https://fixme.com",
       "@type": "@id"
     },
@@ -135,7 +163,12 @@
     },
     "Fietsnetwerkelement.beheerder": {
       "@id": "https://fixme.com",
-      "@type": ""
+      "@type": "@id"
+    },
+    "Fietsnetwerkelement.fietsinfrastructuurobject": {
+      "@container": "@set",
+      "@id": "http://fixme.com#fietsinfrastructuurobject",
+      "@type": "@id"
     },
     "Fietsnetwerkelement.fietsnetwerk": {
       "@container": "@set",
@@ -202,6 +235,12 @@
       "@id": "https://fixme.com",
       "@type": "@id"
     },
+    "Fietsverkeersteken": "http://fixme.com#Fietsverkeersteken",
+    "Fietswegverharding": "http://fixme.com#Fietswegverharding",
+    "Fietswegverharding.^wegverharding": {
+      "@id": "https://fixme.com",
+      "@type": "@id"
+    },
     "Gebruik": "https://fixme.com",
     "Gebruik.type": {
       "@container": "@set",
@@ -235,6 +274,8 @@
       "@id": "https://fixme.com",
       "@type": "@id"
     },
+    "GeneriekeLink": "http://fixme.com#GeneriekeLink",
+    "GeografischeNaam": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
     "Geometrie": "http://www.w3.org/ns/locn#Geometry",
     "Geometrie.gml": {
       "@id": "http://www.opengis.net/ont/geosparql#asGML",
@@ -243,6 +284,11 @@
     "Geometrie.wkt": {
       "@id": "http://www.opengis.net/ont/geosparql#asWKT",
       "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "GeregistreerdeOrganisatie": "http://www.w3.org/ns/regorg#RegisteredOrganization",
+    "GeregistreerdeOrganisatie.registratie": {
+      "@id": "http://www.w3.org/ns/regorg#registration",
+      "@type": "@id"
     },
     "GerichteLink": "https://fixme.com",
     "GerichteLink.link": {
@@ -254,7 +300,9 @@
       "@type": "@id"
     },
     "Getal": "https://schema.org/Number",
+    "GetypeerdeString": "http://www.w3.org/2000/01/rdf-schema#Literal",
     "Hoogteklasse": "https://fixme.com",
+    "Identificator": "http://www.w3.org/ns/adms#Identifier",
     "Infrastructuurelement": "https://fixme.com",
     "Infrastructuurelement.^geldigheidsperiode": {
       "@id": "https://fixme.com",
@@ -273,10 +321,6 @@
       "@id": "https://fixme.com",
       "@type": "@id"
     },
-    "Intensiteit.meetmethode": {
-      "@id": "https://fixme.com",
-      "@type": ""
-    },
     "IntensiteitsNiveau": "https://fixme.com",
     "KwantitatieveWaarde": "https://schema.org/QuantitativeValue",
     "KwantitatieveWaarde.eenheid": {
@@ -291,6 +335,7 @@
       "@id": "https://schema.org/value",
       "@type": "@id"
     },
+    "Lengte": "http://fixme.com#Lengte",
     "LijnString": "http://www.opengis.net/ont/sf#LineString",
     "LineaireReferentie": "https://fixme.com",
     "LineaireReferentie.totPositie": {
@@ -320,6 +365,9 @@
       "@type": "@id"
     },
     "Luchtkwaliteitsgraad": "https://fixme.com",
+    "Netwerk": "http://fixme.com#Netwerk",
+    "Netwerkelement": "http://fixme.com#Netwerkelement",
+    "Observatie": "http://fixme.com#Observatie",
     "Omgeving": "https://fixme.com",
     "Omgeving.type": {
       "@container": "@set",
@@ -364,6 +412,17 @@
       "@type": "@id"
     },
     "Opgemetendeel": "https://fixme.com",
+    "Organisatie": "http://www.w3.org/ns/org#Organization",
+    "Organisatie.contactinfo": {
+      "@container": "@set",
+      "@id": "http://schema.org/contactPoint",
+      "@type": "@id"
+    },
+    "Organisatie.voorkeursnaam": {
+      "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Parkeerfaciliteit": "http://fixme.com#Parkeerfaciliteit",
     "Periode": "http://data.europa.eu/m8g/PeriodOfTime",
     "Periode.begin": {
       "@id": "http://data.europa.eu/m8g/startTime",
@@ -379,24 +438,42 @@
       "@id": "https://fixme.com",
       "@type": "@id"
     },
-    "Rechtsgrondonderdeel": "https://fixme.com",
-    "Rechtsgrondonderdeel.verwijstNaar": {
-      "@container": "@set",
-      "@id": "https://fixme.com",
-      "@type": "@id"
-    },
+    "Rechtsgrond": "https://fixme.com",
     "RichtingType": "https://fixme.com",
     "RichtingVerkeer": "https://fixme.com",
     "RichtingVerkeer.richtingVerkeer": {
       "@id": "https://fixme.com",
       "@type": "@id"
     },
+    "RichtingVerkeer.verkeersteken": {
+      "@container": "@set",
+      "@id": "http://fixme.com#verkeersteken",
+      "@type": "@id"
+    },
     "Rijstrookaanduiding": "https://fixme.com",
+    "SnelheidGemotoriseerdVerkeer": "http://fixme.com#SnelheidGemotoriseerdVerkeer",
+    "SnelheidGemotoriseerdVerkeer.minmaxType": {
+      "@id": "http://fixme.com#minmaxType",
+      "@type": "@id"
+    },
+    "SnelheidGemotoriseerdVerkeer.snelheid": {
+      "@id": "http://fixme.com#snelheid",
+      "@type": "@id"
+    },
+    "SnelheidGemotoriseerdVerkeer.verkeersteken": {
+      "@id": "http://fixme.com#verkeersteken",
+      "@type": "@id"
+    },
     "StandaardEenheid": "https://fixme.com",
     "Stekkertype": "https://fixme.com",
     "Teken": "http://www.w3.org/2004/02/skos/core#Concept",
     "Telmethode": "https://fixme.com",
     "Telpaaltype": "https://fixme.com",
+    "Transporteigenschap": "http://fixme.com#Transporteigenschap",
+    "Transportknoop": "http://fixme.com#Transportknoop",
+    "Transportlink": "http://fixme.com#Transportlink",
+    "Transportlinksequentie": "http://fixme.com#Transportlinksequentie",
+    "Transportllinkset": "http://fixme.com#Transportlinkset",
     "Transportnetwerk": "https://fixme.com",
     "Transportnetwerk.geografischeNaam": {
       "@id": "https://fixme.com",
@@ -406,6 +483,7 @@
       "@id": "https://fixme.com",
       "@type": "@id"
     },
+    "Transportobject": "http://fixme.com#Transportobject",
     "Verkeer": "https://fixme.com",
     "Verkeersbord": "https://fixme.com",
     "Verkeersbord.^breedte": {
@@ -421,8 +499,9 @@
       "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
     "Verkeersbord.afbeelding": {
+      "@container": "@set",
       "@id": "https://fixme.com",
-      "@type": ""
+      "@type": "@id"
     },
     "Verkeersbord.afmeting": {
       "@id": "https://fixme.com",
@@ -434,52 +513,36 @@
     },
     "Verkeersbord.realiseert": {
       "@container": "@set",
+      "@id": "http://fixme.com#realiseert",
+      "@type": "@id"
+    },
+    "Verkeersdeelname": "http://fixme.com#Verkeersdeelname",
+    "Verkeersdeelname.verkeersteken": {
+      "@container": "@set",
+      "@id": "http://fixme.com#verkeersteken",
+      "@type": "@id"
+    },
+    "Verkeersdeelname.vervoersvorm": {
+      "@container": "@set",
+      "@id": "http://fixme.com#vervoersvorm",
+      "@type": "@id"
+    },
+    "Verkeersintensiteit": "http://fixme.com#Verkeersintensiteit",
+    "Verkeersintensiteit.meetmethode": {
       "@id": "https://fixme.com",
       "@type": "@id"
     },
-    "VerkeersbordVerkeersteken": "https://fixme.com",
-    "VerkeersbordVerkeersteken.heeftVerkeersbordconcept": {
-      "@container": "@set",
-      "@id": "https://fixme.com",
-      "@type": "@id"
-    },
-    "VerkeersbordVerkeersteken.isBeginRonze": {
-      "@id": "https://fixme.com",
-      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
-    },
-    "VerkeersbordVerkeersteken.isEindeZone": {
-      "@id": "https://fixme.com",
-      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
-    },
-    "VerkeersbordVerkeersteken.realiseert": {
-      "@container": "@set",
-      "@id": "https://fixme.com",
-      "@type": "@id"
-    },
-    "Verkeersbordconcept": "https://fixme.com",
-    "Verkeersbordconcept.afbeelding": {
-      "@id": "https://fixme.com",
-      "@type": ""
-    },
-    "Verkeersbordconcept.betekenis": {
-      "@id": "https://fixme.com",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "Verkeersbordconcept.heeftVerkeersbordconcept": {
-      "@container": "@set",
-      "@id": "https://fixme.com",
-      "@type": "@id"
-    },
-    "Verkeersbordconcept.verkeersbordcode": {
-      "@id": "https://fixme.com",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "Verkeersbordconcept.verwijstNaar": {
-      "@container": "@set",
-      "@id": "https://fixme.com",
+    "Verkeersintensiteit.niveau": {
+      "@id": "http://fixme.com#niveau",
       "@type": "@id"
     },
     "VerkeerslichtVoetgangerFietser": "https://fixme.com",
+    "VerkeerslichtVoetgangerFietser.realiseert": {
+      "@container": "@set",
+      "@id": "http://fixme.com#realiseert",
+      "@type": "@id"
+    },
+    "Verkeersteken": "http://fixme.com#Verkeersteken",
     "Verkeerstelling": "https://fixme.com",
     "Verkeerstelling.aantal": {
       "@id": "https://fixme.com",
@@ -500,20 +563,24 @@
     },
     "Verlichtingsgraad": "https://fixme.com",
     "Vervoersknooppunt": "https://fixme.com",
+    "Wegbreedte": "http://fixme.com#Wegbreedte",
     "Wegconditie": "https://fixme.com",
     "Weginrichting": "https://fixme.com",
+    "Wegmarkering": "http://fixme.com#Wegmarkering",
     "Wegmarkeringstype": "https://fixme.com",
     "Wegmarking": "https://fixme.com",
+    "Wegmarking.^realiseert": {
+      "@container": "@set",
+      "@id": "http://fixme.com#^realiseert",
+      "@type": "@id"
+    },
     "Wegmarking.wegmarkering": {
       "@container": "@set",
       "@id": "https://fixme.com",
       "@type": "@id"
     },
+    "Wegsignalisatie": "http://fixme.com#Wegsignalisatie",
     "Wegverharding": "https://fixme.com",
-    "Wegverharding.^wegverharding": {
-      "@id": "https://fixme.com",
-      "@type": "@id"
-    },
     "WegverhardingTypeWaarde": "https://fixme.com",
     "Winterdienst": "https://fixme.com",
     "Winterdienst.sneeuwruiming": {
