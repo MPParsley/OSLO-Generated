@@ -6,23 +6,23 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl> <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nlshapes> <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#MobiliteitshinderShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#VoorwaardeShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#OSLO-Weg::TransportLinkSetShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#VerkeerstekenShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#VerkeersmaatregelShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#SignalisatievergunningShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#RechtsgrondonderdeelShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#InnamevergunningShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#OmleidingShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#MobiliteitsmaatregelShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#AanvullendReglementShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#InnameShape>,
+<https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl> <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nlshapes> <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#VerkeerstekenShape>,
     <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#SignalisatieplanShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#TijdelijkReglementShape>,
+    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#OmleidingShape>,
+    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#AanvullendReglementShape>,
+    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#SignalisatievergunningShape>,
+    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#VerkeersmaatregelShape>,
     <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#ArtikelShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#VergunningShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#BesluitShape> .
+    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#InnameShape>,
+    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#MobiliteitshinderShape>,
+    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#OSLO-Weg::TransportLinkSetShape>,
+    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#MobiliteitsmaatregelShape>,
+    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#InnamevergunningShape>,
+    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#TijdelijkReglementShape>,
+    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#RechtsgrondonderdeelShape>,
+    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#BesluitShape>,
+    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#VoorwaardeShape>,
+    <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#VergunningShape> .
 
 <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#AanvullendReglementShape> a shacl:NodeShape;
   shacl:closed false;
@@ -60,18 +60,25 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype xsd:string;
+    shacl:definition "Een beknopte beschrijving van het besluit."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "beschrijving"@nl;
+    shacl:path <http://data.europa.eu/eli/ontology#description>
+  ], [
+    shacl:datatype xsd:string;
     shacl:definition "De beknopte titel of officiële korte naam van een decreet, wet, besluit... Deze wordt officieel vastgelegd. Deze benaming wordt in de praktijk gebruikt om naar de rechtsgrond te verwijzen."@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "citeeropschrift"@nl;
     shacl:path <http://data.europa.eu/eli/ontology#title_short>
   ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Een beknopte beschrijving van het besluit."@nl;
+    shacl:datatype xsd:date;
+    shacl:definition "De officiële publicatiedatum van het besluit."@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "beschrijving"@nl;
-    shacl:path <http://data.europa.eu/eli/ontology#description>
+    shacl:name "publicatiedatum"@nl;
+    shacl:path <http://data.europa.eu/eli/ontology#date_publication>
   ], [
     shacl:datatype rdf:langString;
     shacl:definition "Beschrijving van de juridische en feitelijke motivering achter de beslissing die wordt uitgedrukt in het besluit."@nl;
@@ -84,41 +91,16 @@
     shacl:definition "Voorwaarde waaraan het besluit gebonden is."@nl;
     shacl:name "heeft voorwaarde"@nl;
     shacl:path <http://data.vlaanderen.be/ns/besluit#heeftVoorwaarde>
-  ], [
-    shacl:datatype xsd:date;
-    shacl:definition "De officiële publicatiedatum van het besluit."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "publicatiedatum"@nl;
-    shacl:path <http://data.europa.eu/eli/ontology#date_publication>
   ];
   shacl:targetClass <http://data.vlaanderen.be/ns/besluit#Besluit> .
 
 <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#InnameShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype rdf:langString;
-    shacl:definition "Beschrijving van de inname."@nl;
-    shacl:maxCount 1;
-    shacl:name "beschrijving"@nl;
-    shacl:path dc:description
-  ], [
-    shacl:class <http://data.europa.eu/m8g/PeriodOfTime>;
-    shacl:definition "Tijd wanneer de inname mogelijks door kan gaan."@nl;
-    shacl:minCount 1;
-    shacl:name "gepland tijdsinterval"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Inname.tijdsintervalGepland>
-  ], [
-    shacl:datatype xsd:boolean;
-    shacl:definition "Duidt aan of het in gebied met openbaar karakter doorgaat."@nl;
-    shacl:maxCount 1;
-    shacl:name "openbaar domein"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Inname.openbaarDomein>
-  ], [
-    shacl:class <http://www.w3.org/ns/locn#Address>;
-    shacl:definition "Hiermee wordt bedoeld dat de inname in de buurt van dit adres doorgaat, bijvoorbeeld voor een put aan de straatkant."@nl;
-    shacl:name "adresvoorstelling"@nl;
-    shacl:path <http://www.w3.org/ns/locn#address>
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:definition "Additionele gegevens om te identificeren."@nl;
+    shacl:name "identificator"@nl;
+    shacl:path <http://www.w3.org/ns/adms#identifier>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Innamezone>;
     shacl:definition "Gebied waar de inname doorgaat."@nl;
@@ -126,15 +108,22 @@
     shacl:name "innamezone"@nl;
     shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Inname.innamezone>
   ], [
-    shacl:class <http://www.w3.org/ns/adms#Identifier>;
-    shacl:definition "Additionele gegevens om te identificeren."@nl;
-    shacl:name "identificator"@nl;
-    shacl:path <http://www.w3.org/ns/adms#identifier>
+    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#ContactinfoVolgensRol>;
+    shacl:definition "Contactgegevens per specifieke rol."@nl;
+    shacl:name "contactinfo"@nl;
+    shacl:path schema:contactPoint
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel>;
-    shacl:definition "Mobiliteitsmaatregel die vereist is om een inname tot stand te brengen."@nl;
-    shacl:name "vereist"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Inname.vereist>
+    shacl:datatype rdf:langString;
+    shacl:definition "Tekstuele weergave van de locatie van de inname."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "plaatsbeschrijving"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Inname.plaatsbeschrijving>
+  ], [
+    shacl:class <http://www.w3.org/ns/locn#Address>;
+    shacl:definition "Hiermee wordt bedoeld dat de inname in de buurt van dit adres doorgaat, bijvoorbeeld voor een put aan de straatkant."@nl;
+    shacl:name "adresvoorstelling"@nl;
+    shacl:path <http://www.w3.org/ns/locn#address>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder>;
     shacl:definition "Mobiliteitshinder (bv.: afgesloten weg) die ontstaan is door het innemen van de openbare ruimte."@nl;
@@ -148,17 +137,28 @@
     shacl:name "type"@nl;
     shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Inname.type>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#ContactinfoVolgensRol>;
-    shacl:definition "Contactgegevens per specifieke rol."@nl;
-    shacl:name "contactinfo"@nl;
-    shacl:path schema:contactPoint
+    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel>;
+    shacl:definition "Mobiliteitsmaatregel die vereist is om een inname tot stand te brengen."@nl;
+    shacl:name "vereist"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Inname.vereist>
   ], [
     shacl:datatype rdf:langString;
-    shacl:definition "Tekstuele weergave van de locatie van de inname."@nl;
+    shacl:definition "Beschrijving van de inname."@nl;
     shacl:maxCount 1;
+    shacl:name "beschrijving"@nl;
+    shacl:path dc:description
+  ], [
+    shacl:datatype xsd:boolean;
+    shacl:definition "Duidt aan of het in gebied met openbaar karakter doorgaat."@nl;
+    shacl:maxCount 1;
+    shacl:name "openbaar domein"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Inname.openbaarDomein>
+  ], [
+    shacl:class <http://data.europa.eu/m8g/PeriodOfTime>;
+    shacl:definition "Tijd wanneer de inname mogelijks door kan gaan."@nl;
     shacl:minCount 1;
-    shacl:name "plaatsbeschrijving"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Inname.plaatsbeschrijving>
+    shacl:name "gepland tijdsinterval"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Inname.tijdsintervalGepland>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/mobiliteit#Inname> .
 
@@ -177,10 +177,22 @@
 <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#MobiliteitshinderShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://www.w3.org/ns/locn#Address>;
-    shacl:definition "Basisgegevens van het adres van mobiliteitshinder."@nl;
-    shacl:name "adresvoorstelling"@nl;
-    shacl:path <http://www.w3.org/ns/locn#address>
+    shacl:class skos:Concept;
+    shacl:definition "Type mobiliteitshinder."@nl;
+    shacl:maxCount 1;
+    shacl:name "type"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder.type>
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:definition "Tekstuele weergave van de mobiliteitshinder."@nl;
+    shacl:maxCount 1;
+    shacl:name "beschrijving"@nl;
+    shacl:path dc:description
+  ], [
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:definition "Identificatie-gegevens van de mobiliteitshinder."@nl;
+    shacl:name "identificator"@nl;
+    shacl:path <http://www.w3.org/ns/adms#identifier>
   ], [
     shacl:class dc:Agent;
     shacl:definition "Agents die hinder ondervinden."@nl;
@@ -194,10 +206,9 @@
     shacl:path <http://www.w3.org/ns/locn#geometry>
   ], [
     shacl:class skos:Concept;
-    shacl:definition "Type mobiliteitshinder."@nl;
-    shacl:maxCount 1;
-    shacl:name "type"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder.type>
+    shacl:definition "Groep die belang heeft bij de mobiliteitshinder."@nl;
+    shacl:name "doelgroep"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder.doelgroep>
   ], [
     shacl:class <http://data.europa.eu/m8g/PeriodOfTime>;
     shacl:definition "Tijd wanneer mobiliteitshinder van toepassing is."@nl;
@@ -205,26 +216,15 @@
     shacl:name "tijdsinterval"@nl;
     shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder.tijdsinterval>
   ], [
+    shacl:class <http://www.w3.org/ns/locn#Address>;
+    shacl:definition "Basisgegevens van het adres van mobiliteitshinder."@nl;
+    shacl:name "adresvoorstelling"@nl;
+    shacl:path <http://www.w3.org/ns/locn#address>
+  ], [
     shacl:class <https://data.vlaanderen.be/ns/mobiliteit#ContactinfoVolgensRol>;
     shacl:definition "Contactgegevens per specifieke rol."@nl;
     shacl:name "contactinfo"@nl;
     shacl:path schema:contactPoint
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "Groep die belang heeft bij de mobiliteitshinder."@nl;
-    shacl:name "doelgroep"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder.doelgroep>
-  ], [
-    shacl:class <http://www.w3.org/ns/adms#Identifier>;
-    shacl:definition "Identificatie-gegevens van de mobiliteitshinder."@nl;
-    shacl:name "identificator"@nl;
-    shacl:path <http://www.w3.org/ns/adms#identifier>
-  ], [
-    shacl:datatype rdf:langString;
-    shacl:definition "Tekstuele weergave van de mobiliteitshinder."@nl;
-    shacl:maxCount 1;
-    shacl:name "beschrijving"@nl;
-    shacl:path dc:description
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder> .
 
@@ -236,12 +236,45 @@
     shacl:name "adresvoorstelling"@nl;
     shacl:path <http://www.w3.org/ns/locn#address>
   ], [
+    shacl:class dc:Agent;
+    shacl:definition "Groep of categorie die belang hebben bij de mobiliteitsmaatregel."@nl;
+    shacl:name "doelgroep"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel.doelgroep>
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:definition "Tekstuele beschrijving van de locatie van de mobiliteitsmaatregel."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "plaatsbeschrijving"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel.plaatsbeschrijving>
+  ], [
     shacl:datatype rdf:langString;
     shacl:definition "Tekstuele weergave van de mobiliteitsmaatregel."@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "beschrijving"@nl;
     shacl:path dc:description
+  ], [
+    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#ContactinfoVolgensRol>;
+    shacl:definition "Contactgegevens per specifieke rol."@nl;
+    shacl:name "contactinfo"@nl;
+    shacl:path schema:contactPoint
+  ], [
+    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Verkeersteken>;
+    shacl:definition "Een verkeersteken dat bijdraagt tot de aanduiding van een mobiliteitsmaatregel."@nl;
+    shacl:name "wordt aangeduid door"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#wordtAangeduidDoor>
+  ], [
+    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder>;
+    shacl:definition "Mobiliteitshinder (bv.: afgesloten weg) die ontstaan is door het invoeren van een mobiliteitsmaatregel."@nl;
+    shacl:name "heeft gevolg"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel.heeftGevolg>
+  ], [
+    shacl:class <http://www.w3.org/ns/locn#Geometry>;
+    shacl:definition "Geografische weergave van de mobiliteitsmaatregel."@nl;
+    shacl:minCount 1;
+    shacl:name "zone"@nl;
+    shacl:path <http://www.w3.org/ns/locn#geometry>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/weg#TransportLinkSet>;
     shacl:definition "Route die bij de mobiliteitsmaatregel hoort."@nl;
@@ -254,32 +287,11 @@
     shacl:name "tijdsinterval"@nl;
     shacl:path dc:temporal
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Verkeersteken>;
-    shacl:definition "Een verkeersteken dat bijdraagt tot de aanduiding van een mobiliteitsmaatregel."@nl;
-    shacl:name "wordt aangeduid door"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#wordtAangeduidDoor>
-  ], [
-    shacl:datatype rdf:langString;
-    shacl:definition "Tekstuele beschrijving van de locatie van de mobiliteitsmaatregel."@nl;
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:definition "Identificatie-gegevens van de mobiliteitsmaatregel."@nl;
     shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "plaatsbeschrijving"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel.plaatsbeschrijving>
-  ], [
-    shacl:class dc:Agent;
-    shacl:definition "Groep of categorie die belang hebben bij de mobiliteitsmaatregel."@nl;
-    shacl:name "doelgroep"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel.doelgroep>
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#ContactinfoVolgensRol>;
-    shacl:definition "Contactgegevens per specifieke rol."@nl;
-    shacl:name "contactinfo"@nl;
-    shacl:path schema:contactPoint
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder>;
-    shacl:definition "Mobiliteitshinder (bv.: afgesloten weg) die ontstaan is door het invoeren van een mobiliteitsmaatregel."@nl;
-    shacl:name "heeft gevolg"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel.heeftGevolg>
+    shacl:name "identificator"@nl;
+    shacl:path <http://www.w3.org/ns/adms#identifier>
   ], [
     shacl:class skos:Concept;
     shacl:definition "Type mobiliteitsmaatregel."@nl;
@@ -292,18 +304,6 @@
     shacl:definition "Artikel beschreven in de wegcode waarvan de verkeersmaatregel de uitvoering is."@nl;
     shacl:name "verwijst naar"@nl;
     shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Verkeersmaatregel.verwijstNaar>
-  ], [
-    shacl:class <http://www.w3.org/ns/adms#Identifier>;
-    shacl:definition "Identificatie-gegevens van de mobiliteitsmaatregel."@nl;
-    shacl:maxCount 1;
-    shacl:name "identificator"@nl;
-    shacl:path <http://www.w3.org/ns/adms#identifier>
-  ], [
-    shacl:class <http://www.w3.org/ns/locn#Geometry>;
-    shacl:definition "Geografische weergave van de mobiliteitsmaatregel."@nl;
-    shacl:minCount 1;
-    shacl:name "zone"@nl;
-    shacl:path <http://www.w3.org/ns/locn#geometry>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel> .
 
@@ -329,18 +329,18 @@
 <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#SignalisatieplanShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:datatype xsd:string;
+    shacl:definition "Tekstuele weergave van elementen die op het signalisatieplan staan."@nl;
+    shacl:maxCount 1;
+    shacl:name "beschrijving"@nl;
+    shacl:path dc:description
+  ], [
     shacl:class foaf:Document;
     shacl:definition "Het signalisatieplan als bijlage."@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "grafischeWeergave"@nl;
     shacl:path <https://data.vlaanderen.be/ns/mobiliteit#grafischeWeergave>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Tekstuele weergave van elementen die op het signalisatieplan staan."@nl;
-    shacl:maxCount 1;
-    shacl:name "beschrijving"@nl;
-    shacl:path dc:description
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/mobiliteit#Signalisatieplan> .
 
@@ -354,16 +354,16 @@
     shacl:name "vergunt type"@nl;
     shacl:path <http://data.vlaanderen.be/ns/besluit#Signalisatievergunning.verguntType>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Signalisatieplan>;
-    shacl:definition "Signalisatieplan die bij de signalisatievergunning hoort."@nl;
-    shacl:name "heeft signalisatieplan"@nl;
-    shacl:path <http://data.vlaanderen.be/ns/besluit#heeftSignalisatieplan>
-  ], [
     shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Verkeersteken>;
     shacl:definition "Verkeersteken (Verkeersbord, Wegmarkering of Verkeerslicht) dat vergunt is in de signalisatievergunning."@nl;
     shacl:minCount 1;
     shacl:name "vergunt"@nl;
     shacl:path <https://data.vlaanderen.be/ns/mobiliteit#vergunt>
+  ], [
+    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Signalisatieplan>;
+    shacl:definition "Signalisatieplan die bij de signalisatievergunning hoort."@nl;
+    shacl:name "heeft signalisatieplan"@nl;
+    shacl:path <http://data.vlaanderen.be/ns/besluit#heeftSignalisatieplan>
   ];
   shacl:targetClass <http://data.vlaanderen.be/ns/besluit#Signalisatievergunning> .
 
@@ -382,20 +382,6 @@
 <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#VergunningShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:string;
-    shacl:definition "Waarvoor de vergunning nodig is."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "reden"@nl;
-    shacl:path <http://data.vlaanderen.be/ns/besluit#reden>
-  ], [
-    shacl:datatype xsd:dateTime;
-    shacl:definition "Datum waarop de vergunning is goedgekeurd."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "vergunningsdatum"@nl;
-    shacl:path <http://data.vlaanderen.be/ns/besluit#vergunningsdatum>
-  ], [
     shacl:datatype xsd:boolean;
     shacl:definition "Duidt aan of  er belastingen op de vergunning betaald zal moeten worden."@nl;
     shacl:maxCount 1;
@@ -403,12 +389,26 @@
     shacl:name "belastingsplichtig"@nl;
     shacl:path <http://data.vlaanderen.be/ns/besluit#belastingsplichtig>
   ], [
-    shacl:class <http://data.europa.eu/m8g/PeriodOfTime>;
-    shacl:definition "Periode waarbinnen de vergunning geldig is."@nl;
+    shacl:datatype xsd:string;
+    shacl:definition "Waarvoor de vergunning nodig is."@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "tijdsinterval"@nl;
-    shacl:path dc:temporal
+    shacl:name "reden"@nl;
+    shacl:path <http://data.vlaanderen.be/ns/besluit#reden>
+  ], [
+    shacl:class dc:Agent;
+    shacl:definition "Persoon of organisatie die de uitvoering doet waarvoor de vergunning toelating gegeven heeft."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "uitvoerder"@nl;
+    shacl:path <http://data.vlaanderen.be/ns/besluit#uitvoerder>
+  ], [
+    shacl:datatype xsd:dateTime;
+    shacl:definition "Datum waarop de vergunning is goedgekeurd."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "vergunningsdatum"@nl;
+    shacl:path <http://data.vlaanderen.be/ns/besluit#vergunningsdatum>
   ], [
     shacl:class dc:Agent;
     shacl:definition "Wie de vergunning aanvraagt."@nl;
@@ -425,18 +425,18 @@
     shacl:path <http://data.vlaanderen.be/ns/besluit#aanvraagDatum>
   ], [
     shacl:class dc:Agent;
-    shacl:definition "Persoon of organisatie die de uitvoering doet waarvoor de vergunning toelating gegeven heeft."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "uitvoerder"@nl;
-    shacl:path <http://data.vlaanderen.be/ns/besluit#uitvoerder>
-  ], [
-    shacl:class dc:Agent;
     shacl:definition "Persoon of organisatie die opdracht gegeven heeft om een vergunning aan te vragen."@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "opdrachtgever"@nl;
     shacl:path <http://data.vlaanderen.be/ns/besluit#opdrachtgever>
+  ], [
+    shacl:class <http://data.europa.eu/m8g/PeriodOfTime>;
+    shacl:definition "Periode waarbinnen de vergunning geldig is."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "tijdsinterval"@nl;
+    shacl:path dc:temporal
   ];
   shacl:targetClass <http://data.vlaanderen.be/ns/besluit#Vergunning> .
 
@@ -447,33 +447,24 @@
 <https://data.dev-vlaanderen.be/shacl/besluit-mobiliteit_nl#VerkeerstekenShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Verkeersteken>;
-    shacl:definition "Onderbord dat behoort tot dit verkeersteken."@nl;
-    shacl:name "heeft onderbord"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#heeftOnderbord>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Tekstuele beschrijving waar het verkeersteken zal komen."@nl;
+    shacl:datatype xsd:boolean;
+    shacl:definition "Duidt aan of het verkeersteken het einde van een zone aanduidt."@nl;
     shacl:maxCount 1;
-    shacl:name "plaatsbeschrijving"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Verkeersteken.plaatsbeschrijving>
-  ], [
-    shacl:class <http://www.w3.org/ns/locn#Address>;
-    shacl:definition "Adresvoorstelling van het verkeersteken."@nl;
-    shacl:maxCount 1;
-    shacl:name "adresvoorstelling"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#adresVoorstelling>
-  ], [
-    shacl:class foaf:Document;
-    shacl:definition "Foto van het verkeersteken."@nl;
-    shacl:name "afbeelding"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#grafischeWeergave>
+    shacl:minCount 1;
+    shacl:name "is einde zone"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#isEindeZone>
   ], [
     shacl:datatype xsd:boolean;
     shacl:definition "Duidt aan of het verkeersteken het begin van een zone aanduidt."@nl;
     shacl:maxCount 1;
     shacl:name "is begin zone"@nl;
     shacl:path <https://data.vlaanderen.be/ns/mobiliteit#isBeginZone>
+  ], [
+    shacl:class <http://www.w3.org/ns/locn#Address>;
+    shacl:definition "Adresvoorstelling van het verkeersteken."@nl;
+    shacl:maxCount 1;
+    shacl:name "adresvoorstelling"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#adresVoorstelling>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Verkeersteken>;
     shacl:definition "Verkeersteken dat hieraan gerelateerd is."@nl;
@@ -486,23 +477,32 @@
     shacl:name "status"@nl;
     shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Verkeersteken.status>
   ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Variabele tekst die op het verkeersbordconcept komt te staan."@nl;
-    shacl:maxCount 1;
-    shacl:name "variabel opschrift"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#variabelOpschrift>
+    shacl:class foaf:Document;
+    shacl:definition "Foto van het verkeersteken."@nl;
+    shacl:name "afbeelding"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#grafischeWeergave>
+  ], [
+    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Verkeersteken>;
+    shacl:definition "Onderbord dat behoort tot dit verkeersteken."@nl;
+    shacl:name "heeft onderbord"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#heeftOnderbord>
   ], [
     shacl:class schema:OpeningHoursSpecification;
     shacl:definition "Periode waarbinnen het verkeersteken niet geldig is."@nl;
     shacl:name "buitenwerkingtreding"@nl;
     shacl:path <https://data.vlaanderen.be/ns/mobiliteit#buitenwerkingtreding>
   ], [
-    shacl:datatype xsd:boolean;
-    shacl:definition "Duidt aan of het verkeersteken het einde van een zone aanduidt."@nl;
+    shacl:datatype xsd:string;
+    shacl:definition "Variabele tekst die op het verkeersbordconcept komt te staan."@nl;
     shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "is einde zone"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#isEindeZone>
+    shacl:name "variabel opschrift"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#variabelOpschrift>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "Tekstuele beschrijving waar het verkeersteken zal komen."@nl;
+    shacl:maxCount 1;
+    shacl:name "plaatsbeschrijving"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Verkeersteken.plaatsbeschrijving>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/mobiliteit#Verkeersteken> .
 
