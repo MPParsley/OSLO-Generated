@@ -9,24 +9,8 @@
 skos:Concept a rdfs:Class;
   rdfs:label "Wegberm type"@nl,
     "Z-pad type"@nl,
-    "Netwerk type"@nl,
-    "Pad netwerkprotectie"@nl,
-    "Wegberm BIO"@nl .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Activiteitencomplex.functie> a owl:DatatypeProperty;
-  rdfs:label "functie"@nl;
-  rdfs:comment "Functie van het complex."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Activiteitencomplex>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range xsd:string .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Activiteitencomplex.inNetwerk> a owl:ObjectProperty;
-  rdfs:label "in netwerk"@nl;
-  <http://purl.org/vocab/vann/usageNote> "Slechts 3 mogelijkheden zijn toegelaten binnen AWV: elektriciteit, telecommunicatie en gemengd."@nl;
-  rdfs:comment "Geeft aan tot welk utility netwerk het object behoort."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Activiteitencomplex>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range skos:Concept .
+    "Wegberm BIO"@nl,
+    "Pad netwerkprotectie"@nl .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Baanlichaam.dwarsprofiel> a owl:ObjectProperty;
   rdfs:label "dwarsprofiel"@nl;
@@ -518,8 +502,8 @@ skos:Concept a rdfs:Class;
   rdfs:label "Blinde put"@nl;
   rdfs:comment "Een put waar de riolering op aangesloten is maar die niet meer zichtbaar is."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Put>,
-    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject>,
+    <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Put> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Ecoduct> a owl:Class;
   rdfs:label "Ecoduct"@nl;
@@ -563,13 +547,6 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
 
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Activiteitencomplex> a owl:Class;
-  rdfs:label "Activiteitencomplex"@nl;
-  <http://purl.org/vocab/vann/usageNote> "Hierin worden alle complexe zones opgenomen waarbinnen in principe geen graafwerken kunnen gebeuren. Dit zijn bv. gebouwen van AWV of sluizencomplexen."@nl;
-  rdfs:comment "Een enkele eenheid zowel technisch als economisch, onder het beheer van een wettelijke entiteit (exploitant), die activiteiten verricht als vermeld in de Eurostat NACE-classificatie die is vastgesteld in Verordening (EG) nr. 1893/2006 van het Europese Parlement en de Raad. Onder Activiteitencomplex valt het gehele gebied dat door dezelfde exploitant op dezelfde locatie of op verschillende geografische locaties wordt beheerd, inclusief alle infrastructuur, apparatuur en materialen."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
-
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GroepDwarseMarkeringEnFiguratie> a owl:Class;
   rdfs:label "Groep dwarse- en figuratiemarkering"@nl;
   rdfs:comment "Groepering van de dwarse- en figuratiemarkering."@nl;
@@ -580,8 +557,8 @@ skos:Concept a rdfs:Class;
   rdfs:label "Inspectieput riolering"@nl;
   rdfs:comment "Dient om de aanwezige riolering te kunnen inspecteren, reinigen of onderhouden. "@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Put>,
-    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject>,
+    <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Put> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#MIVInstallatie> a owl:Class;
   rdfs:label "MIV-installatie"@nl;
@@ -660,11 +637,11 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie> a owl:Ontology;
-  rdfs:label "wegenenverkeer-installatie"@en,
-    "wegenenverkeer-installatie"@nl;
+  rdfs:label "wegenenverkeer-installatie"@nl,
+    "wegenenverkeer-installatie"@en;
   dc:issued "TODO";
-  dc:license "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
-    <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
+  dc:license <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>,
+    "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0";
   dc:mediator [
     foaf:homepage <https://data.vlaanderen.be>;
     foaf:mbox <mailto:oslo@kb.vlaanderen.be>;
