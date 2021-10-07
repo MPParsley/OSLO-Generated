@@ -287,7 +287,15 @@
       "@id": "https://data.vlaanderen.be/shacl/begraafplaatsenbeheer-ap#ElementShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/openbaardomein/terreindeel#Terreindeel",
+          "sh:description": "Het specifieke Element dat een obstakel vormt.",
+          "sh:maxCount": "1",
+          "sh:name": "heeftObstakel",
+          "sh:path": "https://data.vlaanderen.be/ns/openbaardomein/terreindeel#Element.heeftObstakel"
+        }
+      ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/openbaardomein#Element"
     },
     {
@@ -307,14 +315,14 @@
           "sh:description": "Instantie die instaat voor het beheer van het object.",
           "sh:maxCount": "1",
           "sh:name": "beheerder",
-          "sh:path": "https://data.vlaanderen.be/ns/openbaardomein#beheerder"
+          "sh:path": "http://fixme.com#beheerder"
         },
         {
           "sh:class": "http://www.w3.org/ns/org#Organization",
           "sh:description": "De entiteit (bv. de gemeente) die eigenaar is van het object.",
           "sh:maxCount": "1",
           "sh:name": "eigenaar",
-          "sh:path": "https://data.vlaanderen.be/ns/openbaardomein#eigenaar"
+          "sh:path": "http://fixme.com#eigenaar"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
@@ -475,6 +483,20 @@
           "sh:maxCount": "1",
           "sh:name": "begindatum",
           "sh:path": "https://data.vlaanderen.be/ns/openbaardomein/gebied#begindatum"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/org#Organization",
+          "sh:description": "Instantie die instaat voor het beheer van het gebied.",
+          "sh:maxCount": "1",
+          "sh:name": "beheerder",
+          "sh:path": "http://fixme.com#beheerder"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/org#Organization",
+          "sh:description": "De entiteit (bv. de gemeente) die eigenaar is van het gebied.",
+          "sh:maxCount": "1",
+          "sh:name": "eigenaar",
+          "sh:path": "http://fixme.com#eigenaar"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
@@ -790,7 +812,7 @@
       "sh:property": [
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Eigenschap die aangeeft of er binnen het beheerdeel  al dan niet objecten voorkomen die de vrije werking van machines of andere werktuigen kan verhinderen",
+          "sh:description": "Eigenschap die aangeeft of er binnen het beheerdeel al dan niet objecten voorkomen die de vrije werking van machines of andere werktuigen kan verhinderen.",
           "sh:maxCount": "1",
           "sh:name": "obstakels",
           "sh:path": "https://data.vlaanderen.be/ns/openbaardomein/terreindeel#obstakels"
@@ -817,6 +839,12 @@
           "sh:maxCount": "1",
           "sh:name": "breedte",
           "sh:path": "http://schema.org/width"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/openbaardomein#Element",
+          "sh:description": "Het specifieke Element dat een obstakel vormt.",
+          "sh:name": "heeftObstakel",
+          "sh:path": "https://data.vlaanderen.be/ns/openbaardomein/terreindeel#Terreindeel.heeftObstakel"
         },
         {
           "sh:class": "https://schema.org/QuantitativeValue",
