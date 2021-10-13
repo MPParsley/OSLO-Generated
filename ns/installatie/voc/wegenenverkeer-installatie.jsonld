@@ -14,9 +14,9 @@
   "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
   "namespace": null,
   "navigation": {
-    "prev": "/doc/vocabularium/wegenenverkeer/installatie/ontwerpdocument/1.1.0"
+    "prev": "/doc/vocabularium/wegenenverkeer/installatie/ontwerpdocument/2.0.0"
   },
-  "publication-date": "2021-07-02",
+  "publication-date": "2021-10-13",
   "publication-state": "https://data.vlaanderen.be/id/concept/StandaardStatus/ErkendeStandaard",
   "title": "Installatie",
   "dcterms:license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
@@ -238,6 +238,20 @@
       "usage": {}
     },
     {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#IPBackbone",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Netwerk dat bestaat uit meerdere L3 switches. Zij verbinden de verschillende L2 access structuren met de datacentres"
+      },
+      "name": {
+        "nl": "IP backbone"
+      },
+      "parents": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#InspectieputRiolering",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
@@ -249,6 +263,20 @@
       "parents": [
         "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject",
         "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Put"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#L2AccessStructuur",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Opstelling die het mogelijk maakt om een techniek direct te koppelen met het IP telematica netwerk. Een L2 access structuur bestaat uit meerdere L2 Switches die met elkaar verbonden zijn."
+      },
+      "name": {
+        "nl": "L2 access structuur"
+      },
+      "parents": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject"
       ],
       "usage": {}
     },
@@ -379,6 +407,20 @@
       "usage": {}
     },
     {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VLAN",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Binnen de L2 access structuur vormt de VLAN een specifieke virtuele LAN. De toepassingen zijn verbonden met een specifieke VLAN.   Rechtstreekse communicatie tussen toepassingen is enkel mogelijk indien deze zijn verbonden met dezelfde VLAN."
+      },
+      "name": {
+        "nl": "VLAN"
+      },
+      "parents": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordConcept",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
@@ -410,7 +452,7 @@
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
-        "nl": "Het geheel van verticale verkeersborden op éénzelfde geolocatie."
+        "nl": "Het geheel van verticale verkeerssignalisatie die bevestigd is aan één of meerdere draagconstructies op éénzelfde geolocatie."
       },
       "name": {
         "nl": "Verkeersbordopstelling"
@@ -947,6 +989,24 @@
       "usage": {}
     },
     {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link.mediumtype",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Geeft aan hoe de verbinding tussen Netwerkelementen fysiek gerealiseerd wordt"
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "mediumtype"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link.ring",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "description": {
@@ -1052,6 +1112,26 @@
       "generalization": [],
       "name": {
         "nl": "rioleringsstelsel"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {
+        "nl": "Attribuut uit gebruik sinds versie 2.1.0-RC2"
+      }
+    },
+    {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Rioleringsstelsel.systeemtype",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Geeft aan wat voor afvoerwater er door de riolering afgevoerd wordt."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Rioleringsstelsel"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "systeemtype"
       },
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
@@ -1301,6 +1381,24 @@
       }
     },
     {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling.isBotsvriendelijk",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "description": {
+        "nl": "Een botsvriendelijk obstakel is een voorwerp dat bij aanrijding door een voertuig de letselernst voor de inzittenden reduceert."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "is botsvriendelijk"
+      },
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#boolean"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling.operationeleStatus",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
@@ -1474,14 +1572,14 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "Wegberm BIO"
+        "nl": "Wegberm type"
       }
     },
     {
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "Wegberm type"
+        "nl": "Wegberm BIO"
       }
     },
     {

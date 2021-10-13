@@ -14,9 +14,9 @@
   "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
   "namespace": null,
   "navigation": {
-    "prev": "/doc/vocabularium/wegenenverkeer/abstracten/ontwerpdocument/1.1.0"
+    "prev": "/doc/vocabularium/wegenenverkeer/abstracten/ontwerpdocument/2.0.0"
   },
-  "publication-date": "2021-07-02",
+  "publication-date": "2021-10-13",
   "publication-state": "https://data.vlaanderen.be/id/concept/StandaardStatus/ErkendeStandaard",
   "title": "Abstracten",
   "dcterms:license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
@@ -355,6 +355,18 @@
       },
       "name": {
         "nl": "Constructie elementen geluidswerende constructie"
+      },
+      "parents": [],
+      "usage": {}
+    },
+    {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Abstracte voor het groeperen van eigenschappen en relaties van buisvormige container elementen. Dit zijn buizen die kabels of andere leidingen kunnen bevatten."
+      },
+      "name": {
+        "nl": "Container buis"
       },
       "parents": [],
       "usage": {}
@@ -1175,7 +1187,7 @@
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Verkeersbord",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
-        "nl": "Abstracte klasse voor borden die een fysieke drager van verkeerstekens kunnen zijn waarvan de betekenis bepaald wordt door een verkeersbordconcept. "
+        "nl": "Abstracte klasse voor borden die een fysieke drager van verkeerstekens kunnen zijn waarvan de betekenis bepaald wordt door een verkeersbordconcept."
       },
       "name": {
         "nl": "Verkeersbord"
@@ -1283,10 +1295,10 @@
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ZenderOntvangerToegang",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
-        "nl": "Abstracte voor relaties van Zender, Ontvanger en Repeater met andere apparatuur."
+        "nl": "Abstracte voor relaties van Zender,Ontvanger en Repeater met andere apparatuur."
       },
       "name": {
-        "nl": "Communicatieapparatuur"
+        "nl": "Zender en Ontvanger toegang tot relaties"
       },
       "parents": [
         "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Communicatieapparatuur",
@@ -1401,6 +1413,24 @@
       },
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie.metTandGroef",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "description": {
+        "nl": "Geeft aan of de afschermende constructie bevestigd is aan de onderliggende laag door middel van een tand-groef aansluiting."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AfschermendeConstructie"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "met tand-groef"
+      },
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#boolean"
       ],
       "usage": {}
     },
@@ -1755,6 +1785,46 @@
       "usage": {}
     },
     {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing.risicoanalyse",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Een bestandsbijlage met de risicoanalyse voor werken in en rond een behuizing."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "risicoanalyse"
+      },
+      "range": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument"
+      ],
+      "usage": {
+        "nl": "De risicoanalyse heeft in eerste instantie betrekking op werken in en rond een behuziing met elektrische installaties. Voor behuizingen met installaties van de distributienetbeheerder wordt de risicoanalyse bestemd voor die beheerder, bewaard in het gelijknamig attribuut van het onderdeel van die beheerder, bv. EnergiemeterDNB."
+      }
+    },
+    {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing.tabelUitwendigeInvloeden",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Een bestandsbijlage met de ingevulde en actuele tabel uitwendige invloeden zoals vereist door het AREI voor bepaalde elektrische installaties."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "tabel uitwendige invloeden"
+      },
+      "range": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument"
+      ],
+      "usage": {
+        "nl": "De tabel is in eerste instantie enkel vereist voor behuizingen die elektrische installaties bevatten die onder het AREI vallen. "
+      }
+    },
+    {
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Bestrating.kleur",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
@@ -1986,6 +2056,44 @@
       "generalization": [],
       "name": {
         "nl": "breedte"
+      },
+      "range": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter"
+      ],
+      "usage": {
+        "nl": "Attribuut uit gebruik sinds versie 2.1.0-RC2"
+      }
+    },
+    {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.breedteBinnenzijde",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "De breedte van de binnenzijde van de buis in millimeter. Bij cirkelvormige buizen is dit de binnendiameter."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "breedte binnenzijde"
+      },
+      "range": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis.breedteBuitenzijde",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "De breedte van de buitenzijde van de buis in millimeter. Bij cirkelvormige buizen is dit de buitendiameter."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Buis"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "breedte buitenzijde"
       },
       "range": [
         "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter"
@@ -2243,6 +2351,24 @@
       },
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis.kleur",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "description": {
+        "nl": "De kleur van de coating."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ContainerBuis"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "kleur"
+      },
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#string"
       ],
       "usage": {}
     },
@@ -5347,14 +5473,14 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "EM-draagconstructie elektrische beveiliging"
+        "nl": "Draagconstructie bijzonder transport"
       }
     },
     {
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "Draagconstructie bijzonder transport"
+        "nl": "EM-draagconstructie elektrische beveiliging"
       }
     },
     {

@@ -28,8 +28,8 @@
 
 <dc:issued>TODO</dc:issued>
 
-<dc:license rdf:resource='https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0' />
- <dc:license>https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0</dc:license>
+<dc:license>https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0</dc:license>
+ <dc:license rdf:resource='https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0' />
 
 <dc:mediator>
 <rdf:Description rdf:nodeID='g432020'>
@@ -532,6 +532,17 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
 
 </owl:Class>
 
+<owl:Class rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#IPBackbone'>
+<rdfs:label xml:lang='nl'>IP backbone</rdfs:label>
+
+<rdfs:comment xml:lang='nl'>Netwerk dat bestaat uit meerdere L3 switches. Zij verbinden de verschillende L2 access structuren met de datacentres</rdfs:comment>
+
+<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/installatie' />
+
+<rdfs:subClassOf rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject' />
+
+</owl:Class>
+
 <owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#InspectieputRiolering.hoekverdraaiing'>
 <rdfs:label xml:lang='nl'>hoekverdraaiing</rdfs:label>
 
@@ -571,6 +582,17 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
 
 </owl:ObjectProperty>
 
+<owl:Class rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#L2AccessStructuur'>
+<rdfs:label xml:lang='nl'>L2 access structuur</rdfs:label>
+
+<rdfs:comment xml:lang='nl'>Opstelling die het mogelijk maakt om een techniek direct te koppelen met het IP telematica netwerk. Een L2 access structuur bestaat uit meerdere L2 Switches die met elkaar verbonden zijn.</rdfs:comment>
+
+<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/installatie' />
+
+<rdfs:subClassOf rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject' />
+
+</owl:Class>
+
 <owl:DatatypeProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link.geleidingsgroepTnummer'>
 <rdfs:label xml:lang='nl'>geleidingsgroep T-nummer</rdfs:label>
 
@@ -595,6 +617,19 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
 <rdfs:range rdf:resource='http://www.w3.org/2001/XMLSchema#integer' />
 
 </owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link.mediumtype'>
+<rdfs:label xml:lang='nl'>mediumtype</rdfs:label>
+
+<rdfs:comment xml:lang='nl'>Geeft aan hoe de verbinding tussen Netwerkelementen fysiek gerealiseerd wordt</rdfs:comment>
+
+<rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link' />
+
+<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/installatie' />
+
+<rdfs:range rdf:resource='http://www.w3.org/2004/02/skos/core#Concept' />
+
+</owl:ObjectProperty>
 
 <owl:DatatypeProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link.ring'>
 <rdfs:label xml:lang='nl'>ring</rdfs:label>
@@ -726,6 +761,8 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
 <owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Rioleringsstelsel.rioleringsstelsel'>
 <rdfs:label xml:lang='nl'>rioleringsstelsel</rdfs:label>
 
+<ns0:usageNote xml:lang='nl'>Attribuut uit gebruik sinds versie 2.1.0-RC2</ns0:usageNote>
+
 <rdfs:comment xml:lang='nl'>Geeft aan wat voor afvoerwater er door de riolering afgevoerd wordt.</rdfs:comment>
 
 <rdfs:domain>
@@ -741,6 +778,19 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
 </owl:Class>
 
 </rdfs:domain>
+
+<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/installatie' />
+
+<rdfs:range rdf:resource='http://www.w3.org/2004/02/skos/core#Concept' />
+
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Rioleringsstelsel.systeemtype'>
+<rdfs:label xml:lang='nl'>systeemtype</rdfs:label>
+
+<rdfs:comment xml:lang='nl'>Geeft aan wat voor afvoerwater er door de riolering afgevoerd wordt.</rdfs:comment>
+
+<rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Rioleringsstelsel' />
 
 <rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/installatie' />
 
@@ -824,6 +874,17 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
 <rdfs:range rdf:resource='http://www.w3.org/2004/02/skos/core#Concept' />
 
 </owl:ObjectProperty>
+
+<owl:Class rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VLAN'>
+<rdfs:label xml:lang='nl'>VLAN</rdfs:label>
+
+<rdfs:comment xml:lang='nl'>Binnen de L2 access structuur vormt de VLAN een specifieke virtuele LAN. De toepassingen zijn verbonden met een specifieke VLAN.   Rechtstreekse communicatie tussen toepassingen is enkel mogelijk indien deze zijn verbonden met dezelfde VLAN.</rdfs:comment>
+
+<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/installatie' />
+
+<rdfs:subClassOf rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject' />
+
+</owl:Class>
 
 <owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordConcept.afbeelding'>
 <rdfs:label xml:lang='nl'>afbeelding</rdfs:label>
@@ -968,12 +1029,12 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
 <owl:Class rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling'>
 <rdfs:label xml:lang='nl'>Verkeersbordopstelling</rdfs:label>
 
-<rdfs:comment xml:lang='nl'>Het geheel van verticale verkeersborden op éénzelfde geolocatie.</rdfs:comment>
+<rdfs:comment xml:lang='nl'>Het geheel van verticale verkeerssignalisatie die bevestigd is aan één of meerdere draagconstructies op éénzelfde geolocatie.</rdfs:comment>
 
 <rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/installatie' />
 
-<rdfs:subClassOf rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Signalisatie' />
- <rdfs:subClassOf rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject' />
+<rdfs:subClassOf rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject' />
+ <rdfs:subClassOf rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Signalisatie' />
 
 </owl:Class>
 
@@ -984,6 +1045,19 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
 <rdfs:range rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument' />
 
 </owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling.isBotsvriendelijk'>
+<rdfs:label xml:lang='nl'>is botsvriendelijk</rdfs:label>
+
+<rdfs:comment xml:lang='nl'>Een botsvriendelijk obstakel is een voorwerp dat bij aanrijding door een voertuig de letselernst voor de inzittenden reduceert.</rdfs:comment>
+
+<rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling' />
+
+<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/installatie' />
+
+<rdfs:range rdf:resource='http://www.w3.org/2001/XMLSchema#boolean' />
+
+</owl:DatatypeProperty>
 
 <owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling.operationeleStatus'>
 <rdfs:label xml:lang='nl'>operationele status</rdfs:label>
@@ -1043,8 +1117,8 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
 
 <rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/installatie' />
 
-<rdfs:subClassOf rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#TerreinDeel' />
- <rdfs:subClassOf rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject' />
+<rdfs:subClassOf rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject' />
+ <rdfs:subClassOf rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#TerreinDeel' />
 
 </owl:Class>
 

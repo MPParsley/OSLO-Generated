@@ -12,20 +12,20 @@ dc:Agent a rdfs:Class;
   rdfs:label "Agent"@nl .
 
 skos:Concept a rdfs:Class;
-  rdfs:label "Schoorhoek"@nl,
-    "Provincie"@nl,
-    "Duurzaamheidsklasse van hout"@nl,
-    "Mimetype"@nl,
-    "Walsmethode"@nl,
-    "Betonsterkteklasse"@nl,
-    "AIM toestand"@nl,
-    "Constructiestaalsoort"@nl,
-    "Betonomgevingsklasse"@nl,
-    "Gemeente"@nl,
+  rdfs:label "Constructiestaalsoort"@nl,
     "Kwaliteitsklasse van hout"@nl,
     "Gebruiksdomein"@nl,
+    "Provincie"@nl,
+    "Betonsterkteklasse"@nl,
+    "AIM toestand"@nl,
+    "Sterkteklasse van hout"@nl,
+    "Walsmethode"@nl,
+    "Schoorhoek"@nl,
+    "Duurzaamheidsklasse van hout"@nl,
+    "Betonomgevingsklasse"@nl,
+    "Gemeente"@nl,
     "Betonmilieuklasse"@nl,
-    "Sterkteklasse van hout"@nl .
+    "Mimetype"@nl .
 
 schemas:ContactPoint a rdfs:Class;
   rdfs:label "Contactinfo"@nl .
@@ -707,7 +707,7 @@ schemas:OpeningHoursSpecification a rdfs:Class;
 <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInBar.standaardEenheid> a owl:DatatypeProperty;
   rdfs:label "standaard eenheid"@nl;
   <http://purl.org/vocab/vann/usageNote> "\"bar\"^^cdt:ucumunit"@nl;
-  rdfs:comment "De standaard eenheid bij dit datatype is uitgedrukt in inch als internationale eenheid (eengemaakte Britse en Amerikaanse systeem)."@nl;
+  rdfs:comment "De standaard eenheid bij dit datatype is uitgedrukt in bar."@nl;
   rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInBar>;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:range rdfs:Literal .
@@ -1680,8 +1680,8 @@ schemas:opens a rdf:Property;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement> .
 
 <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement> a owl:Ontology;
-  rdfs:label "wegenenverkeer-implementatieelement"@en,
-    "wegenenverkeer-implementatieelement"@nl;
+  rdfs:label "wegenenverkeer-implementatieelement"@nl,
+    "wegenenverkeer-implementatieelement"@en;
   dc:issued "TODO";
   dc:license <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>,
     "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0";
@@ -1690,22 +1690,22 @@ schemas:opens a rdf:Property;
     foaf:mbox <mailto:oslo@kb.vlaanderen.be>;
     foaf:name "Data Vlaanderen"
   ];
-  rdfs:seeAlso foaf:page,
+  rdfs:seeAlso skos:Concept,
+    schemas:OpeningHoursSpecification,
+    dc:Agent.agentId,
+    foaf:page,
+    schemas:ContactPoint,
+    dc:Agent.contactinfo,
+    schema:email,
+    schema:hoursAvailable,
+    schemas:DayOfWeek,
+    schema:faxNumber,
+    schemas:opens,
+    schema:telephone,
     <http://www.w3.org/ns/locn#address>,
     schemas:dayOfWeek,
     dc:Agent,
-    schema:email,
-    dc:Agent.contactinfo,
-    dc:Agent.naam,
-    schemas:ContactPoint.opmerkingen,
-    schemas:DayOfWeek,
-    schemas:OpeningHoursSpecification,
-    dc:Agent.agentId,
     schemas:closes,
-    skos:Concept,
-    schema:faxNumber,
-    schema:telephone,
-    schema:hoursAvailable,
-    schemas:ContactPoint,
-    schemas:opens,
+    schemas:ContactPoint.opmerkingen,
+    dc:Agent.naam,
     foaf:name .

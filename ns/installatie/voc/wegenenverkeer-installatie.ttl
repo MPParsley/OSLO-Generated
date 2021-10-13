@@ -7,10 +7,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 skos:Concept a rdfs:Class;
-  rdfs:label "Wegberm type"@nl,
-    "Pad netwerkprotectie"@nl,
-    "Z-pad type"@nl,
-    "Wegberm BIO"@nl .
+  rdfs:label "Z-pad type"@nl,
+    "Wegberm type"@nl,
+    "Wegberm BIO"@nl,
+    "Pad netwerkprotectie"@nl .
 
 <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Baanlichaam.dwarsprofiel> a owl:ObjectProperty;
   rdfs:label "dwarsprofiel"@nl;
@@ -214,6 +214,12 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
 
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#IPBackbone> a owl:Class;
+  rdfs:label "IP backbone"@nl;
+  rdfs:comment "Netwerk dat bestaat uit meerdere L3 switches. Zij verbinden de verschillende L2 access structuren met de datacentres"@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
+
 <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#InspectieputRiolering.hoekverdraaiing> a owl:ObjectProperty;
   rdfs:label "hoekverdraaiing"@nl;
   rdfs:comment "Verschil in richting tussen inkomende en uitgaande rioolbuis."@nl;
@@ -228,12 +234,25 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
   rdfs:range skos:Concept .
 
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#L2AccessStructuur> a owl:Class;
+  rdfs:label "L2 access structuur"@nl;
+  rdfs:comment "Opstelling die het mogelijk maakt om een techniek direct te koppelen met het IP telematica netwerk. Een L2 access structuur bestaat uit meerdere L2 Switches die met elkaar verbonden zijn."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
+
 <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link.geleidingsgroepTnummer> a owl:DatatypeProperty;
   rdfs:label "geleidingsgroep T-nummer"@nl;
   rdfs:comment "T-nummer van de geleidingsgroep in de kabelnet toepassing."@nl;
   rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link>;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
   rdfs:range xsd:integer .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link.mediumtype> a owl:ObjectProperty;
+  rdfs:label "mediumtype"@nl;
+  rdfs:comment "Geeft aan hoe de verbinding tussen Netwerkelementen fysiek gerealiseerd wordt"@nl;
+  rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link>;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:range skos:Concept .
 
 <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link.ring> a owl:DatatypeProperty;
   rdfs:label "ring"@nl;
@@ -286,6 +305,14 @@ skos:Concept a rdfs:Class;
 
 <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Rioleringsstelsel.rioleringsstelsel> a owl:ObjectProperty;
   rdfs:label "rioleringsstelsel"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Attribuut uit gebruik sinds versie 2.1.0-RC2"@nl;
+  rdfs:comment "Geeft aan wat voor afvoerwater er door de riolering afgevoerd wordt."@nl;
+  rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Rioleringsstelsel>;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:range skos:Concept .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Rioleringsstelsel.systeemtype> a owl:ObjectProperty;
+  rdfs:label "systeemtype"@nl;
   rdfs:comment "Geeft aan wat voor afvoerwater er door de riolering afgevoerd wordt."@nl;
   rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Rioleringsstelsel>;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
@@ -325,6 +352,12 @@ skos:Concept a rdfs:Class;
   rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Trajectcontrole>;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
   rdfs:range skos:Concept .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VLAN> a owl:Class;
+  rdfs:label "VLAN"@nl;
+  rdfs:comment "Binnen de L2 access structuur vormt de VLAN een specifieke virtuele LAN. De toepassingen zijn verbonden met een specifieke VLAN.   Rechtstreekse communicatie tussen toepassingen is enkel mogelijk indien deze zijn verbonden met dezelfde VLAN."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
 
 <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordConcept.afbeelding> a owl:ObjectProperty;
   rdfs:label "afbeelding"@nl;
@@ -391,6 +424,13 @@ skos:Concept a rdfs:Class;
   rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling>;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
   rdfs:range <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling.isBotsvriendelijk> a owl:DatatypeProperty;
+  rdfs:label "is botsvriendelijk"@nl;
+  rdfs:comment "Een botsvriendelijk obstakel is een voorwerp dat bij aanrijding door een voertuig de letselernst voor de inzittenden reduceert."@nl;
+  rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling>;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:range xsd:boolean .
 
 <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling.operationeleStatus> a owl:ObjectProperty;
   rdfs:label "operationele status"@nl;
@@ -507,12 +547,6 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
 
-<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Rioleringsstelsel> a owl:Class;
-  rdfs:label "Rioleringsstelsel"@nl;
-  rdfs:comment "De groepering van de objecten die behoren tot de riolering."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
-
 <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#GroepDwarseMarkeringEnFiguratie> a owl:Class;
   rdfs:label "Groep dwarse- en figuratiemarkering"@nl;
   rdfs:comment "Groepering van de dwarse- en figuratiemarkering."@nl;
@@ -526,17 +560,17 @@ skos:Concept a rdfs:Class;
   rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject>,
     <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Put> .
 
-<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link> a owl:Class;
-  rdfs:label "Link"@nl;
-  rdfs:comment "Het (glasvezel) traject tussen twee toestellen (NetwerkElementen) die rechtstreeks met mekaar communiceren."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
-
 <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#MIVInstallatie> a owl:Class;
   rdfs:label "MIV-installatie"@nl;
   rdfs:comment "De volledige opstelling voor meten in Vlaanderen op een bepaalde locatie."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Rioleringsstelsel> a owl:Class;
+  rdfs:label "Rioleringsstelsel"@nl;
+  rdfs:comment "De groepering van de objecten die behoren tot de riolering."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
 
 <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VerkeersbordVerkeersteken> a owl:Class;
   rdfs:label "Verkeersbord - verkeersteken"@nl;
@@ -548,8 +582,8 @@ skos:Concept a rdfs:Class;
   rdfs:label "Wegberm"@nl;
   rdfs:comment "Gedeelte van het wegplatform dat buiten de rijbanen ligt. Een wegberm kan sloten en bijzonder ingerichte onderdelen bevatten."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#TerreinDeel>,
-    <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
+  rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject>,
+    <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#TerreinDeel> .
 
 <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Baanlichaam> a owl:Class;
   rdfs:label "Baanlichaam"@nl;
@@ -557,24 +591,30 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
 
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link> a owl:Class;
+  rdfs:label "Link"@nl;
+  rdfs:comment "Het (glasvezel) traject tussen twee toestellen (NetwerkElementen) die rechtstreeks met mekaar communiceren."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
+
 <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Trajectcontrole> a owl:Class;
   rdfs:label "Trajectcontrole"@nl;
   rdfs:comment "Trajectcontrole is een systeem waarbij de gemiddelde snelheid over een langere afstand wordt gemeten."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
 
-<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling> a owl:Class;
-  rdfs:label "Verkeersbordopstelling"@nl;
-  rdfs:comment "Het geheel van verticale verkeersborden op éénzelfde geolocatie."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Signalisatie>,
-    <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
-
 <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Zpad> a owl:Class;
   rdfs:label "Zpad"@nl;
   rdfs:comment "End-to-end gebruikersverbinding over het transport netwerk."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling> a owl:Class;
+  rdfs:label "Verkeersbordopstelling"@nl;
+  rdfs:comment "Het geheel van verticale verkeerssignalisatie die bevestigd is aan één of meerdere draagconstructies op éénzelfde geolocatie."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject>,
+    <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Signalisatie> .
 
 <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gronddam> a owl:Class;
   rdfs:label "Gronddam"@nl;
@@ -600,8 +640,8 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
   rdfs:label "wegenenverkeer-installatie"@nl,
     "wegenenverkeer-installatie"@en;
   dc:issued "TODO";
-  dc:license <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>,
-    "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0";
+  dc:license "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
+    <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
   dc:mediator [
     foaf:homepage <https://data.vlaanderen.be>;
     foaf:mbox <mailto:oslo@kb.vlaanderen.be>;
