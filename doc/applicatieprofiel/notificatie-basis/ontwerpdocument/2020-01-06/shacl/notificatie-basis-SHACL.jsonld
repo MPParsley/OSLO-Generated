@@ -1,0 +1,642 @@
+{
+  "@context": {
+    "@vocab": "https://data.dev-vlaanderen.be/shacl/notificatie-basis-SHACL_nl",
+    "qb": "http://purl.org/linked-data/cube#",
+    "qb:codeList": {
+      "@type": "@id"
+    },
+    "sh": "http://www.w3.org/ns/shacl#",
+    "sh:class": {
+      "@type": "@id"
+    },
+    "sh:datatype": {
+      "@type": "@id"
+    },
+    "sh:definition": {
+      "@container": "@language"
+    },
+    "sh:maxCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:minCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:name": {
+      "@container": "@language"
+    },
+    "sh:path": {
+      "@type": "@id"
+    },
+    "sh:property": {
+      "@type": "@id"
+    },
+    "sh:targetClass": {
+      "@type": "@id"
+    },
+    "shapes": {
+      "@type": "@id"
+    }
+  },
+  "@id": "https://data.dev-vlaanderen.be/shacl/notificatie-basis-SHACL_nl",
+  "shapes": [
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/notificatie-basis-SHACL_nl#NotificatieberichtShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://schema.org/Brand",
+          "sh:definition": {
+            "nl": "De afzender van het Notificatiebericht."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "afzender"
+          },
+          "sh:path": "http://schema.org/sender"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Agent",
+          "sh:definition": {
+            "nl": "De agent die het notificatiebericht ontvangt."
+          },
+          "sh:name": {
+            "nl": "bestemmeling"
+          },
+          "sh:path": "https://schema.org/recipient"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "nl": "De datum waarop het Notificatiebericht gecreëerd werd."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "datum creatie"
+          },
+          "sh:path": "https://schema.org/dateCreated"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "nl": "De datum waarop het Notificatiebericht werd gelezen door de bestemmeling. "
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "datum gelezen"
+          },
+          "sh:path": "http://schema.org/dateRead"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "nl": "De datum waarop het Notificatiebericht werd ontvangen door de bestemmeling."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "datum ontvangen"
+          },
+          "sh:path": "http://schema.org/dateReceived"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "nl": "De datum waarop het Notificatiebericht werd verzonden naar de bestemmeling. "
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "datum verzending"
+          },
+          "sh:path": "http://schema.org/dateSent"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Het notificatiekanaal duidt het technisch medium aan waarlangs het Notificatiebericht wordt verzonden."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "notificatiekanaal"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/notificatie#notificatiekanaal"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "De tekstuele inhoud van het Notificatiebericht."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "tekst"
+          },
+          "sh:path": "https://schema.org/text"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "Een titel voor het Notificatiebericht."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "titel"
+          },
+          "sh:path": "https://schema.org/name"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "nl": "Een url voor het Notificatiebericht."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "url"
+          },
+          "sh:path": "http://schema.org/url"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "nl": "De datum waarop een Notificatiebericht vervalt."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "vervalt"
+          },
+          "sh:path": "http://schema.org/expires"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/notificatie#Notificatiebericht"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/notificatie-basis-SHACL_nl#TijdsintervalShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "nl": "Moment waarop het tijdsinterval begint."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "begin"
+          },
+          "sh:path": "http://data.europa.eu/m8g/startTime"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "nl": "Moment waarop het tijdsinterval eindigt."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "einde"
+          },
+          "sh:path": "http://data.europa.eu/m8g/endTime"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/PeriodOfTime"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/notificatie-basis-SHACL_nl#PubliekeOrganisatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://schema.org/Brand",
+          "sh:definition": {
+            "nl": "Het merk dat geassocieerd is met één of meerdere Publieke Organisatie(s), in de context van Publieke Dienstverlening. "
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "heeft merk"
+          },
+          "sh:path": "http://schema.org/brand"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/PublicOrganisation"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/notificatie-basis-SHACL_nl#AgentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://purl.org/dc/terms/Agent"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/notificatie-basis-SHACL_nl#PubliekeDienstverleningShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://data.europa.eu/m8g/PublicOrganisation",
+          "sh:definition": {
+            "nl": "Publieke Organisatie die verantwoordelijk is voor het aanbieden en beheren van de Publieke dienstverlening."
+          },
+          "sh:name": {
+            "nl": "heeft verantwoordelijke autoriteit"
+          },
+          "sh:path": "http://data.europa.eu/m8g/hasCompetentAuthority"
+        }
+      ],
+      "sh:targetClass": "http://purl.org/vocab/cpsv#PublicService"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/notificatie-basis-SHACL_nl#ContactInfoShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Titel waarmee iemand wordt aangeschreven of aangesproken of waarmee naar iemand wordt verwezen."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "aanschrijfvorm"
+          },
+          "sh:path": "http://www.w3.org/2006/vcard/ns#honorific-prefix"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Address",
+          "sh:definition": {
+            "nl": "Adres dat men kan aanschrijven of bezoeken."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "adres"
+          },
+          "sh:path": "http://www.w3.org/ns/locn#address"
+        },
+        {
+          "sh:class": "http://schema.org/OpeningHoursSpecification",
+          "sh:definition": {
+            "nl": "Periode waarin contact kan worden opgenomen."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "beschikbaarheid"
+          },
+          "sh:path": "http://schema.org/hoursAvailable"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "Naam van bvb de persoon die men kan contacteren."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "contactnaam"
+          },
+          "sh:path": "http://xmlns.com/foaf/0.1/name"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "Email-adres waarnaar men kan mailen."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "email"
+          },
+          "sh:path": "http://schema.org/email"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "Faxnummer waarnaar men kan faxen."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "fax"
+          },
+          "sh:path": "http://schema.org/faxNumber"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "nl": "Uren waarbinnen contact kan worden opgenomen."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "openingsuren"
+          },
+          "sh:path": "http://schema.org/openingHours"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "Telefoonnummer waarop men kan bellen."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "telefoon"
+          },
+          "sh:path": "http://schema.org/telephone"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "nl": "Website waarnaar men kan surfen."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "website"
+          },
+          "sh:path": "http://xmlns.com/foaf/0.1/page"
+        }
+      ],
+      "sh:targetClass": "http://schema.org/ContactPoint"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/notificatie-basis-SHACL_nl#GeografischeNaamShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/notificatie-basis-SHACL_nl#GetypeerdeStringShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/notificatie-basis-SHACL_nl#GeometrieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "nl": "Geometrie uitgedrukt in gml-formaat."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "gml"
+          },
+          "sh:path": "http://www.opengis.net/ont/geosparql#asGML"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "nl": "Geometrie uitgedrukt in wkt-formaat."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "wkt"
+          },
+          "sh:path": "http://www.opengis.net/ont/geosparql#asWKT"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/locn#Geometry"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/notificatie-basis-SHACL_nl#AdministratieveEenheidShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Geometry",
+          "sh:definition": {
+            "nl": "De geometrische voorstelling van het object."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "geometrie"
+          },
+          "sh:path": "http://www.w3.org/ns/locn#geometry"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Naam van de Administratieve Eenheid."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "naam"
+          },
+          "sh:path": "https://schema.org/name"
+        }
+      ],
+      "sh:targetClass": "https://schema.org/AdministrativeArea"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/notificatie-basis-SHACL_nl#DoelgroepShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "Een typering van de doelgroep."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "doelgroep type"
+          },
+          "sh:path": "https://schema.org/audienceType"
+        },
+        {
+          "sh:class": "https://schema.org/AdministrativeArea",
+          "sh:definition": {
+            "nl": "Het geografisch gebied geassocieerd met de doelgroep."
+          },
+          "sh:name": {
+            "nl": "geografisch gebied"
+          },
+          "sh:path": "https://schema.org/geographicArea"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:definition": {
+            "nl": "Een identificator voor de doelgroep."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "identificator"
+          },
+          "sh:path": "http://www.w3.org/ns/adms#identifier"
+        }
+      ],
+      "sh:targetClass": "https://schema.org/Audience"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/notificatie-basis-SHACL_nl#MerkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://schema.org/ContactPoint",
+          "sh:definition": {
+            "nl": "Informatie zoals email, telefoon... die toelaat de entiteit te contacteren."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "contactinfo"
+          },
+          "sh:path": "http://schema.org/contactPoint"
+        },
+        {
+          "sh:class": "http://purl.org/vocab/cpsv#PublicService",
+          "sh:definition": {
+            "nl": "De Publieke Dienstverlening waar het Merk aan gerelateerd is."
+          },
+          "sh:name": {
+            "nl": "is gerelateerd met"
+          },
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "De naam van het Merk."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "naam"
+          },
+          "sh:path": "http://schema.org/name"
+        }
+      ],
+      "sh:targetClass": "https://schema.org/Brand"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/notificatie-basis-SHACL_nl#InformeerActieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://data.europa.eu/m8g/PublicOrganisation",
+          "sh:definition": {
+            "nl": "Duidt de agent aan die aanleiding gaf tot de InformeerActie."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "agent"
+          },
+          "sh:path": "https://schema.org/agent"
+        },
+        {
+          "sh:class": "https://schema.org/Audience",
+          "sh:definition": {
+            "nl": "De bestemmeling(en) die de informatie dien(t)(en) te ontvangen."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "doelgroep"
+          },
+          "sh:path": "http://schema.org/recipient"
+        },
+        {
+          "sh:class": "https://schema.org/PropertyValue",
+          "sh:definition": {
+            "nl": "De inhoud van een Notificatiebericht."
+          },
+          "sh:name": {
+            "nl": "inhoud"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/notificatie#inhoud"
+        },
+        {
+          "sh:class": "https://schema.org/InformAction",
+          "sh:definition": {
+            "nl": "Een relatie tussen twee Informeer Acties."
+          },
+          "sh:name": {
+            "nl": "is gerelateerd met"
+          },
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Het notificatiekanaal duidt het technisch medium aan waarlangs het Notificatiebericht wordt verzonden."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "notificatiekanaal"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/notificatie#notificatiekanaal"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Het onderwerp van de informeer actie."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "onderwerp"
+          },
+          "sh:path": "https://schema.org/about"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/PeriodOfTime",
+          "sh:definition": {
+            "nl": "Het tijdsinterval waarbinnen de Informeer Actie relevant is en bijgevolg kan resulteren in de verzending van notificatieberichten."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "periode verzending"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/notificatie#periodeVerzending"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/notificatie#Notificatiebericht",
+          "sh:definition": {
+            "nl": "De relatie tussen een Informeer Actie en het (de) Notificatiebericht(en) die hier uit voortkomen."
+          },
+          "sh:name": {
+            "nl": "resulteert in"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/notificatie#resulteertIn"
+        }
+      ],
+      "sh:targetClass": "https://schema.org/InformAction"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/notificatie-basis-SHACL_nl#SleutelWaardeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "Het label is de sleutel van het sleutel/waarde paar."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "naam"
+          },
+          "sh:path": "https://schema.org/name"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "De waarde van het sleutel/waarde paar."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "waarde"
+          },
+          "sh:path": "https://schema.org/value"
+        }
+      ],
+      "sh:targetClass": "https://schema.org/PropertyValue"
+    }
+  ]
+}

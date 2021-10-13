@@ -66,6 +66,41 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://purl.org/dc/terms/date",
+          "name": "datum",
+          "sort": "datum",
+          "label": {
+            "nl": "datum"
+          },
+          "description": {
+            "nl": "De datum waarop de FinanciëleOutput werd uitebetaald of teruggevorderd. "
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "FinancieelVoordeel",
+              "uri": "https://data.vlaanderen.be/ns/subsidie#FinancieelVoordeel"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Date",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_label": {
+                "nl": "Date"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://www.w3.org/ns/adms#identifier",
           "name": "referentie",
           "sort": "referentie",
@@ -101,41 +136,6 @@
           ],
           "cardinality": "0..1",
           "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/date",
-          "name": "datum",
-          "sort": "datum",
-          "label": {
-            "nl": "datum"
-          },
-          "description": {
-            "nl": "De datum waarop de FinanciëleOutput werd uitebetaald of teruggevorderd. "
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "FinancieelVoordeel",
-              "uri": "https://data.vlaanderen.be/ns/subsidie#FinancieelVoordeel"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Date",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#date"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#date",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#date",
-              "range_label": {
-                "nl": "Date"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
         }
       ]
     },
@@ -160,28 +160,6 @@
         }
       ],
       "properties": [
-        {
-          "uri": "https://data.vlaanderen.be/ns/subsidie#toegekendBedrag",
-          "name": "toegekend bedrag",
-          "sort": "toegekend bedrag",
-          "label": {
-            "nl": "toegekend bedrag"
-          },
-          "description": {
-            "nl": "Het bedrag dat werd toegekend aan de begunstigde van de subsidiemaatregel en waar deze bijgevolg recht op heeft om te ontvangen."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "RechtsgrondToekenningSubsidie",
-              "uri": "http://www.w3.org/2000/01/rdf-schema#Resource"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
         {
           "uri": "https://data.vlaanderen.be/ns/subsidie#gesubsidieerdePeriode",
           "name": "gesubsidieerde periode",
@@ -217,6 +195,28 @@
             }
           ],
           "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/subsidie#toegekendBedrag",
+          "name": "toegekend bedrag",
+          "sort": "toegekend bedrag",
+          "label": {
+            "nl": "toegekend bedrag"
+          },
+          "description": {
+            "nl": "Het bedrag dat werd toegekend aan de begunstigde van de subsidiemaatregel en waar deze bijgevolg recht op heeft om te ontvangen."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "RechtsgrondToekenningSubsidie",
+              "uri": "http://www.w3.org/2000/01/rdf-schema#Resource"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -259,17 +259,17 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://purl.org/dc/terms/title",
-          "name": "naam",
-          "sort": "naam",
+          "uri": "http://data.europa.eu/m8g/hasAddress",
+          "name": "adres",
+          "sort": "adres",
           "label": {
-            "nl": "naam"
+            "nl": "adres"
           },
           "description": {
-            "nl": "Naam vd dienstverlener."
+            "nl": "Adres vd dienstverlener."
           },
           "usage": {
-            "nl": "De naam moet gehaald worden bij de instantie vd subklasse (vb voorkeurnaam bij Organisatie, volledigeNaam bij Persoon)."
+            "nl": "Het adres moet gehaald worden bij de instantie vd subklasse (vb vestigingsadres bij Organisatie, verblijfsadres bij Persoon)"
           },
           "domain": [
             {
@@ -279,16 +279,16 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "Adresvoorstelling",
+              "range_uri": "http://www.w3.org/ns/locn#Address"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "#Adresvoorstelling",
+              "range_puri": "http://www.w3.org/ns/locn#Address",
               "range_label": {
-                "nl": "String"
+                "nl": "Adresvoorstelling"
               }
             }
           ],
@@ -331,17 +331,17 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/hasAddress",
-          "name": "adres",
-          "sort": "adres",
+          "uri": "http://purl.org/dc/terms/title",
+          "name": "naam",
+          "sort": "naam",
           "label": {
-            "nl": "adres"
+            "nl": "naam"
           },
           "description": {
-            "nl": "Adres vd dienstverlener."
+            "nl": "Naam vd dienstverlener."
           },
           "usage": {
-            "nl": "Het adres moet gehaald worden bij de instantie vd subklasse (vb vestigingsadres bij Organisatie, verblijfsadres bij Persoon)"
+            "nl": "De naam moet gehaald worden bij de instantie vd subklasse (vb voorkeurnaam bij Organisatie, volledigeNaam bij Persoon)."
           },
           "domain": [
             {
@@ -351,16 +351,16 @@
           ],
           "range": [
             {
-              "range_label": "Adresvoorstelling",
-              "range_uri": "http://www.w3.org/ns/locn#Address"
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Adresvoorstelling",
-              "range_puri": "http://www.w3.org/ns/locn#Address",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
               "range_label": {
-                "nl": "Adresvoorstelling"
+                "nl": "String"
               }
             }
           ],
@@ -392,6 +392,37 @@
         }
       ],
       "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/subsidie#dienstverlener",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Subsidiemaatregel (consumptie)",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://purl.org/dc/terms/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Agent (in de rol van dienstverlener/participant)",
+              "range_puri": "http://purl.org/dc/terms/Agent",
+              "range_label": {
+                "nl": "Agent (in de rol van dienstverlener/participant)"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
         {
           "uri": "https://data.vlaanderen.be/ns/subsidie#heeftRechtsgrond",
           "name": "heeft rechtsgrond",
@@ -428,12 +459,90 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/subsidie#dienstverlener",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "uri": "http://data.europa.eu/m8g/hasCompetentAuthority",
+          "name": "heeft verantwoordelijke autoriteit",
+          "sort": "heeft verantwoordelijke autoriteit",
+          "label": {
+            "nl": "heeft verantwoordelijke autoriteit"
+          },
+          "description": {
+            "nl": "Publieke Organisatie die verantwoordelijk is voor het aanbieden en beheren van de Publieke dienstverlening."
+          },
+          "usage": {
+            "nl": "Of de Publieke Organisatie zelf de dienstverlening aanbiedt of deze uitbesteedt is irrelevant. De Publieke Organisatie verantwoordelijk voor het aanbieden en beheren van de dienstverlening wordt ook wel de Bevoegde Instantie genoemd en wordt in Europese Richtlijn 2006/123/EC gedefinieerd als volgt: \"elk orgaan of autoriteit dat in een lidstaat en toezichthoudende of regelgevende rol vervult ten aanzien van dienstenactiviteiten, met name bestuurlijke instanties, met inbegrip van rechterlijke instanties die als zodanig optreden, beroepsorden en de beroepsverenigingen en -organisaties of andere beroepsorganisaties die in de uitoefening van hun juridisch autonome bevoegdheden de toegang tot of de uitoefening van dienstenactiviteiten collectief reguleren\"."
+          },
+          "domain": [
+            {
+              "EA-Name": "Subsidiemaatregel (consumptie)",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PubliekeOrganisatie",
+              "range_uri": "http://data.europa.eu/m8g/PublicOrganisation"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Publieke Organisatie",
+              "range_puri": "http://data.europa.eu/m8g/PublicOrganisation",
+              "range_label": {
+                "nl": "Publieke Organisatie"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/hasParticipation",
+          "name": "heeft participatie",
+          "sort": "heeft participatie",
+          "label": {
+            "nl": "heeft participatie"
+          },
+          "description": {
+            "nl": "Participatie (van een agent) aan de publieke dienstverlening."
+          },
           "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Subsidiemaatregel (consumptie)",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Participatie",
+              "range_uri": "http://data.europa.eu/m8g/Participation"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://data.europa.eu/m8g/Participation",
+              "range_puri": "http://data.europa.eu/m8g/Participation",
+              "range_label": {
+                "nl": "Participatie"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/serviceProvider",
+          "name": "dienstverlener",
+          "sort": "dienstverlener",
+          "label": {
+            "nl": "dienstverlener"
+          },
+          "description": {
+            "nl": "Agent die de Publieke Dienstverlening verstrekt."
+          },
+          "usage": {
+            "nl": "Staat los van de rol die de bevoegde instantie speelt, kan een externe aannemer zijn."
+          },
           "domain": [
             {
               "EA-Name": "Subsidiemaatregel (consumptie)",
@@ -459,16 +568,18 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/transactie#isInstantieVan",
-          "name": "is instantie van",
-          "sort": "is instantie van",
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "beschrijving",
+          "sort": "beschrijving",
           "label": {
-            "nl": "is instantie van"
+            "nl": "beschrijving"
           },
           "description": {
-            "nl": "Linkt een bepaalde consumptie van een subsidiemaatregel (een tansactie) met de subsidiemaatregel uit het dienstverleningsregister.\t"
+            "nl": "Tekstuele beschrijving gerelateerd aan de consumptie van een subsidiemaatregel."
           },
-          "usage": {},
+          "usage": {
+            "nl": "Kan bijvoorbeeld meer informatie bevatten over de activiteit die gesubsidieerd wordt."
+          },
           "domain": [
             {
               "EA-Name": "Subsidiemaatregel (consumptie)",
@@ -477,51 +588,16 @@
           ],
           "range": [
             {
-              "range_label": "Subsidiemaatregel (aanbod)",
-              "range_uri": "http://purl.org/vocab/cpsv#PublicService"
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Publieke Dienstverlening",
-              "range_puri": "http://purl.org/vocab/cpsv#PublicService",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "Publieke Dienstverlening"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/transactie#isGedocumenteerdDoor",
-          "name": "isGedocumenteerdDoor",
-          "sort": "isGedocumenteerdDoor",
-          "label": {
-            "nl": "isGedocumenteerdDoor"
-          },
-          "description": {
-            "nl": "Verwijzing naar een dossier met een logische bundeling van documenten binnen een bepaalde consumptie van een Subsidiemaatregel."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Subsidiemaatregel (consumptie)",
-              "uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Dossier",
-              "range_uri": "https://lod.milieuinfo.be/ns/dossier"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Dossier",
-              "range_puri": "https://lod.milieuinfo.be/ns/dossier",
-              "range_label": {
-                "nl": "Dossier"
+                "nl": "TaalString"
               }
             }
           ],
@@ -566,88 +642,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://purl.org/dc/terms/description",
-          "name": "beschrijving",
-          "sort": "beschrijving",
+          "uri": "https://data.vlaanderen.be/ns/transactie#isGedocumenteerdDoor",
+          "name": "isGedocumenteerdDoor",
+          "sort": "isGedocumenteerdDoor",
           "label": {
-            "nl": "beschrijving"
+            "nl": "isGedocumenteerdDoor"
           },
           "description": {
-            "nl": "Tekstuele beschrijving gerelateerd aan de consumptie van een subsidiemaatregel."
-          },
-          "usage": {
-            "nl": "Kan bijvoorbeeld meer informatie bevatten over de activiteit die gesubsidieerd wordt."
-          },
-          "domain": [
-            {
-              "EA-Name": "Subsidiemaatregel (consumptie)",
-              "uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "TaalString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "nl": "TaalString"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://data.europa.eu/m8g/serviceProvider",
-          "name": "dienstverlener",
-          "sort": "dienstverlener",
-          "label": {
-            "nl": "dienstverlener"
-          },
-          "description": {
-            "nl": "Agent die de Publieke Dienstverlening verstrekt."
-          },
-          "usage": {
-            "nl": "Staat los van de rol die de bevoegde instantie speelt, kan een externe aannemer zijn."
-          },
-          "domain": [
-            {
-              "EA-Name": "Subsidiemaatregel (consumptie)",
-              "uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Agent",
-              "range_uri": "http://purl.org/dc/terms/Agent"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Agent (in de rol van dienstverlener/participant)",
-              "range_puri": "http://purl.org/dc/terms/Agent",
-              "range_label": {
-                "nl": "Agent (in de rol van dienstverlener/participant)"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://data.europa.eu/m8g/hasParticipation",
-          "name": "heeft participatie",
-          "sort": "heeft participatie",
-          "label": {
-            "nl": "heeft participatie"
-          },
-          "description": {
-            "nl": "Participatie (van een agent) aan de publieke dienstverlening."
+            "nl": "Verwijzing naar een dossier met een logische bundeling van documenten binnen een bepaalde consumptie van een Subsidiemaatregel."
           },
           "usage": {},
           "domain": [
@@ -658,35 +660,33 @@
           ],
           "range": [
             {
-              "range_label": "Participatie",
-              "range_uri": "http://data.europa.eu/m8g/Participation"
+              "range_label": "Dossier",
+              "range_uri": "https://lod.milieuinfo.be/ns/dossier"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://data.europa.eu/m8g/Participation",
-              "range_puri": "http://data.europa.eu/m8g/Participation",
+              "range_uri": "#Dossier",
+              "range_puri": "https://lod.milieuinfo.be/ns/dossier",
               "range_label": {
-                "nl": "Participatie"
+                "nl": "Dossier"
               }
             }
           ],
-          "cardinality": "0..*",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/hasCompetentAuthority",
-          "name": "heeft verantwoordelijke autoriteit",
-          "sort": "heeft verantwoordelijke autoriteit",
+          "uri": "https://data.vlaanderen.be/ns/transactie#isInstantieVan",
+          "name": "is instantie van",
+          "sort": "is instantie van",
           "label": {
-            "nl": "heeft verantwoordelijke autoriteit"
+            "nl": "is instantie van"
           },
           "description": {
-            "nl": "Publieke Organisatie die verantwoordelijk is voor het aanbieden en beheren van de Publieke dienstverlening."
+            "nl": "Linkt een bepaalde consumptie van een subsidiemaatregel (een tansactie) met de subsidiemaatregel uit het dienstverleningsregister.\t"
           },
-          "usage": {
-            "nl": "Of de Publieke Organisatie zelf de dienstverlening aanbiedt of deze uitbesteedt is irrelevant. De Publieke Organisatie verantwoordelijk voor het aanbieden en beheren van de dienstverlening wordt ook wel de Bevoegde Instantie genoemd en wordt in Europese Richtlijn 2006/123/EC gedefinieerd als volgt: \"elk orgaan of autoriteit dat in een lidstaat en toezichthoudende of regelgevende rol vervult ten aanzien van dienstenactiviteiten, met name bestuurlijke instanties, met inbegrip van rechterlijke instanties die als zodanig optreden, beroepsorden en de beroepsverenigingen en -organisaties of andere beroepsorganisaties die in de uitoefening van hun juridisch autonome bevoegdheden de toegang tot of de uitoefening van dienstenactiviteiten collectief reguleren\"."
-          },
+          "usage": {},
           "domain": [
             {
               "EA-Name": "Subsidiemaatregel (consumptie)",
@@ -695,20 +695,20 @@
           ],
           "range": [
             {
-              "range_label": "PubliekeOrganisatie",
-              "range_uri": "http://data.europa.eu/m8g/PublicOrganisation"
+              "range_label": "Subsidiemaatregel (aanbod)",
+              "range_uri": "http://purl.org/vocab/cpsv#PublicService"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Publieke Organisatie",
-              "range_puri": "http://data.europa.eu/m8g/PublicOrganisation",
+              "range_uri": "#Publieke Dienstverlening",
+              "range_puri": "http://purl.org/vocab/cpsv#PublicService",
               "range_label": {
-                "nl": "Publieke Organisatie"
+                "nl": "Publieke Dienstverlening"
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "",
           "codelist_uri": ""
         }
       ]
@@ -736,41 +736,6 @@
         }
       ],
       "properties": [
-        {
-          "uri": "https://data.vlaanderen.be/ns/subsidie#de-minimis",
-          "name": "de-minimis",
-          "sort": "de-minimis",
-          "label": {
-            "nl": "de-minimis"
-          },
-          "description": {
-            "nl": "True wanneer de steun die niet onder een vrijstellingsgrond valt en de subsidiemaatregel onderhevig is aan de de-minimisregel. "
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Subsidiemaatregel (aanbod)",
-              "uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Boolean",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_label": {
-                "nl": "Boolean"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
         {
           "uri": "https://data.vlaanderen.be/ns/subsidie#begrotingsartikel",
           "name": "begrotingsartikel",
@@ -809,14 +774,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/stateaidtransparency/sat#aidMeasure",
-          "name": "staatssteunnummer",
-          "sort": "staatssteunnummer",
+          "uri": "https://data.vlaanderen.be/ns/subsidie#de-minimis",
+          "name": "de-minimis",
+          "sort": "de-minimis",
           "label": {
-            "nl": "staatssteunnummer"
+            "nl": "de-minimis"
           },
           "description": {
-            "nl": "Identificatie van de steunmaatregel. Dit is de identificator van het State Aid Case Management systeem van de Europese Commissie."
+            "nl": "True wanneer de steun die niet onder een vrijstellingsgrond valt en de subsidiemaatregel onderhevig is aan de de-minimisregel. "
           },
           "usage": {},
           "domain": [
@@ -827,51 +792,21 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
               "range_label": {
-                "nl": "String"
+                "nl": "Boolean"
               }
             }
           ],
           "cardinality": "0..1",
           "codelist_uri": ""
-        },
-        {
-          "uri": "http://data.europa.eu/stateaidtransparency/sat#aidInstrument",
-          "name": "subsidie-instrument",
-          "sort": "subsidie-instrument",
-          "label": {
-            "nl": "subsidie-instrument"
-          },
-          "description": {
-            "nl": "\tType van de steunmaatregel. Bv. belastingsvermindering, subsidie, etc."
-          },
-          "usage": {
-            "nl": "In de context van het Subsidieregister ontwikkeld door Informatie Vlaanderen zal het subsidie-instrument steeds \"Grant\" zijn (cf. codelijst)."
-          },
-          "domain": [
-            {
-              "EA-Name": "Subsidiemaatregel (aanbod)",
-              "uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "range": [],
-          "scopedrange": [
-            {
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": "Concept",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": "http://ec.europa.eu/competition/state_aid/studies_reports/conceptual_remarks.html#categ_aid"
         },
         {
           "uri": "http://data.europa.eu/m8g/sector",
@@ -908,6 +843,71 @@
             }
           ],
           "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/stateaidtransparency/sat#aidInstrument",
+          "name": "subsidie-instrument",
+          "sort": "subsidie-instrument",
+          "label": {
+            "nl": "subsidie-instrument"
+          },
+          "description": {
+            "nl": "\tType van de steunmaatregel. Bv. belastingsvermindering, subsidie, etc."
+          },
+          "usage": {
+            "nl": "In de context van het Subsidieregister ontwikkeld door Informatie Vlaanderen zal het subsidie-instrument steeds \"Grant\" zijn (cf. codelijst)."
+          },
+          "domain": [
+            {
+              "EA-Name": "Subsidiemaatregel (aanbod)",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [],
+          "scopedrange": [
+            {
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": "Concept",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": "http://ec.europa.eu/competition/state_aid/studies_reports/conceptual_remarks.html#categ_aid"
+        },
+        {
+          "uri": "http://data.europa.eu/stateaidtransparency/sat#aidMeasure",
+          "name": "staatssteunnummer",
+          "sort": "staatssteunnummer",
+          "label": {
+            "nl": "staatssteunnummer"
+          },
+          "description": {
+            "nl": "Identificatie van de steunmaatregel. Dit is de identificator van het State Aid Case Management systeem van de Europese Commissie."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Subsidiemaatregel (aanbod)",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -984,17 +984,17 @@
       ],
       "properties": [
         {
-          "uri": "https://data.vlaanderen.be/ns/organisatie#rechtsvorm",
-          "name": "rechtsvorm",
-          "sort": "rechtsvorm",
+          "uri": "http://www.w3.org/ns/regorg#legalName",
+          "name": "wettelijke naam",
+          "sort": "wettelijke naam",
           "label": {
-            "nl": "rechtsvorm"
+            "nl": "wettelijke naam"
           },
           "description": {
-            "nl": "Juridisch statuut van de geregistreerde organisatie."
+            "nl": "Wettelijk geregistreerde naam vd organisatie."
           },
           "usage": {
-            "nl": "Stemt in de KBO overeen met rechtsvorm, bvb NV, VZW, Stad/Gemeente, OCMW etc."
+            "nl": "Evt in verschillende talen."
           },
           "domain": [
             {
@@ -1004,90 +1004,16 @@
           ],
           "range": [
             {
-              "range_label": "Rechtsvormtype",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "Rechtsvormtype"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/organisatie#rechtstoestand",
-          "name": "rechtstoestand",
-          "sort": "rechtstoestand",
-          "label": {
-            "nl": "rechtstoestand"
-          },
-          "description": {
-            "nl": "Status van de geregistreerde organisatie."
-          },
-          "usage": {
-            "nl": "Stemt in de KBO overeen met rechtstoestand, bvb normale toestand, gerechtelijk akkoord, opening faillissement etc."
-          },
-          "domain": [
-            {
-              "EA-Name": "GeregistreerdeOrganisatie",
-              "uri": "http://www.w3.org/ns/regorg#RegisteredOrganization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Rechtstoestandtype",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "Rechtstoestandtype"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/organisatie#rechtspersoonlijkheid",
-          "name": "rechtspersoonlijkheid",
-          "sort": "rechtspersoonlijkheid",
-          "label": {
-            "nl": "rechtspersoonlijkheid"
-          },
-          "description": {
-            "nl": "Geeft aan of de rechtspersoonlijkheid van de geregistreerde organisatie deze is van een natuurlijk persoon of van een rechtspersoon. "
-          },
-          "usage": {
-            "nl": "Een rechtspersoon is een juridische constructie die een organisatie dezelfde rechtspersoonlijkheid geeft als een natuurlijk persoon (kan bv ook schulden hebben, contracten afsluiten, aangeklaagd worden etc). Vb privaatrechterlijke rechtspersonen: vennootschappen, vzw's etc.; vb publiekrechterlijke rechtspersonen: steden, gemeenten etc. Een feitelijke vereniging is in principe geen rechtspersoon maar wordt als ze geregistreerd is id KBO toch als dusdanig geklasseerd."
-          },
-          "domain": [
-            {
-              "EA-Name": "GeregistreerdeOrganisatie",
-              "uri": "http://www.w3.org/ns/regorg#RegisteredOrganization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Rechtspersoonlijkheidtype",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "Rechtspersoonlijkheidtype"
+                "nl": "TaalString"
               }
             }
           ],
@@ -1132,17 +1058,17 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/regorg#legalName",
-          "name": "wettelijke naam",
-          "sort": "wettelijke naam",
+          "uri": "https://data.vlaanderen.be/ns/organisatie#rechtspersoonlijkheid",
+          "name": "rechtspersoonlijkheid",
+          "sort": "rechtspersoonlijkheid",
           "label": {
-            "nl": "wettelijke naam"
+            "nl": "rechtspersoonlijkheid"
           },
           "description": {
-            "nl": "Wettelijk geregistreerde naam vd organisatie."
+            "nl": "Geeft aan of de rechtspersoonlijkheid van de geregistreerde organisatie deze is van een natuurlijk persoon of van een rechtspersoon. "
           },
           "usage": {
-            "nl": "Evt in verschillende talen."
+            "nl": "Een rechtspersoon is een juridische constructie die een organisatie dezelfde rechtspersoonlijkheid geeft als een natuurlijk persoon (kan bv ook schulden hebben, contracten afsluiten, aangeklaagd worden etc). Vb privaatrechterlijke rechtspersonen: vennootschappen, vzw's etc.; vb publiekrechterlijke rechtspersonen: steden, gemeenten etc. Een feitelijke vereniging is in principe geen rechtspersoon maar wordt als ze geregistreerd is id KBO toch als dusdanig geklasseerd."
           },
           "domain": [
             {
@@ -1152,16 +1078,90 @@
           ],
           "range": [
             {
-              "range_label": "TaalString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+              "range_label": "Rechtspersoonlijkheidtype",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "nl": "TaalString"
+                "nl": "Rechtspersoonlijkheidtype"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/organisatie#rechtstoestand",
+          "name": "rechtstoestand",
+          "sort": "rechtstoestand",
+          "label": {
+            "nl": "rechtstoestand"
+          },
+          "description": {
+            "nl": "Status van de geregistreerde organisatie."
+          },
+          "usage": {
+            "nl": "Stemt in de KBO overeen met rechtstoestand, bvb normale toestand, gerechtelijk akkoord, opening faillissement etc."
+          },
+          "domain": [
+            {
+              "EA-Name": "GeregistreerdeOrganisatie",
+              "uri": "http://www.w3.org/ns/regorg#RegisteredOrganization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rechtstoestandtype",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Rechtstoestandtype"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/organisatie#rechtsvorm",
+          "name": "rechtsvorm",
+          "sort": "rechtsvorm",
+          "label": {
+            "nl": "rechtsvorm"
+          },
+          "description": {
+            "nl": "Juridisch statuut van de geregistreerde organisatie."
+          },
+          "usage": {
+            "nl": "Stemt in de KBO overeen met rechtsvorm, bvb NV, VZW, Stad/Gemeente, OCMW etc."
+          },
+          "domain": [
+            {
+              "EA-Name": "GeregistreerdeOrganisatie",
+              "uri": "http://www.w3.org/ns/regorg#RegisteredOrganization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rechtsvormtype",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Rechtsvormtype"
               }
             }
           ],
@@ -1251,10 +1251,9 @@
   ],
   "properties": [
     {
-      "uri": "https://data.vlaanderen.be/ns/subsidie#heeftRechtsgrond",
+      "uri": "https://data.vlaanderen.be/ns/subsidie#dienstverlener",
       "name": {
-        "nl": "heeft rechtsgrond",
-        "undefined": "heeft rechtsgrond"
+        "undefined": ""
       },
       "description": {},
       "domain": [
@@ -1281,9 +1280,10 @@
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/subsidie#dienstverlener",
+      "uri": "https://data.vlaanderen.be/ns/subsidie#heeftRechtsgrond",
       "name": {
-        "undefined": ""
+        "nl": "heeft rechtsgrond",
+        "undefined": "heeft rechtsgrond"
       },
       "description": {},
       "domain": [
@@ -1298,16 +1298,6 @@
   "contributors": [
     {
       "role": "A",
-      "first_name": "Sarah",
-      "last_name": "Spiessens",
-      "affiliation": {
-        "name": "Informatie Vlaanderen",
-        "website": "https://overheid.vlaanderen.be/"
-      },
-      "email": "sarah.spiessens@bz.vlaanderen.be"
-    },
-    {
-      "role": "A",
       "first_name": "Dorien",
       "last_name": "Bauwens",
       "affiliation": {
@@ -1317,14 +1307,24 @@
       "email": "dorien.bauwens@bz.vlaanderen.be"
     },
     {
+      "role": "A",
+      "first_name": "Sarah",
+      "last_name": "Spiessens",
+      "affiliation": {
+        "name": "Informatie Vlaanderen",
+        "website": "https://overheid.vlaanderen.be/"
+      },
+      "email": "sarah.spiessens@bz.vlaanderen.be"
+    },
+    {
       "role": "E",
-      "first_name": "Carmen",
-      "last_name": "Vandeloo",
+      "first_name": "Michiel",
+      "last_name": "De Keyzer",
       "affiliation": {
         "name": "PwC",
         "website": "http://www.pwc.be"
       },
-      "email": "carmen.vandeloo@pwc.com"
+      "email": "michiel.de.keyzer@pwc.com"
     },
     {
       "role": "E",
@@ -1338,13 +1338,13 @@
     },
     {
       "role": "E",
-      "first_name": "Michiel",
-      "last_name": "De Keyzer",
+      "first_name": "Carmen",
+      "last_name": "Vandeloo",
       "affiliation": {
         "name": "PwC",
         "website": "http://www.pwc.be"
       },
-      "email": "michiel.de.keyzer@pwc.com"
+      "email": "carmen.vandeloo@pwc.com"
     }
   ],
   "datatypes": [
@@ -1364,14 +1364,14 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://www.w3.org/ns/adms#schemaAgency",
-          "name": "toegekend door (String)",
-          "sort": "toegekend door (String)",
+          "uri": "http://purl.org/dc/terms/creator",
+          "name": "toegekend door",
+          "sort": "toegekend door",
           "label": {
-            "nl": "toegekend door (String)"
+            "nl": "toegekend door"
           },
           "description": {
-            "nl": "Naam vd agent die de identificator heeft toegekend."
+            "nl": "Link naar de agent die de identificator heeft uitgegeven."
           },
           "usage": {
             "nl": " "
@@ -1384,16 +1384,53 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "Agent",
+              "range_uri": "http://purl.org/dc/terms/Agent"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "#Agent (in de rol van dienstverlener/participant)",
+              "range_puri": "http://purl.org/dc/terms/Agent",
               "range_label": {
-                "nl": "String"
+                "nl": "Agent (in de rol van dienstverlener/participant)"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/issued",
+          "name": "toegekend op",
+          "sort": "toegekend op",
+          "label": {
+            "nl": "toegekend op"
+          },
+          "description": {
+            "nl": "Tijdstip waarop de identificator werd uitgegeven."
+          },
+          "usage": {
+            "nl": " "
+          },
+          "domain": [
+            {
+              "EA-Name": "Identificator",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "nl": "DateTime"
               }
             }
           ],
@@ -1438,14 +1475,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://purl.org/dc/terms/issued",
-          "name": "toegekend op",
-          "sort": "toegekend op",
+          "uri": "http://www.w3.org/ns/adms#schemaAgency",
+          "name": "toegekend door (String)",
+          "sort": "toegekend door (String)",
           "label": {
-            "nl": "toegekend op"
+            "nl": "toegekend door (String)"
           },
           "description": {
-            "nl": "Tijdstip waarop de identificator werd uitgegeven."
+            "nl": "Naam vd agent die de identificator heeft toegekend."
           },
           "usage": {
             "nl": " "
@@ -1458,53 +1495,16 @@
           ],
           "range": [
             {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
               "range_label": {
-                "nl": "DateTime"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/creator",
-          "name": "toegekend door",
-          "sort": "toegekend door",
-          "label": {
-            "nl": "toegekend door"
-          },
-          "description": {
-            "nl": "Link naar de agent die de identificator heeft uitgegeven."
-          },
-          "usage": {
-            "nl": " "
-          },
-          "domain": [
-            {
-              "EA-Name": "Identificator",
-              "uri": "http://www.w3.org/ns/adms#Identifier"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Agent",
-              "range_uri": "http://purl.org/dc/terms/Agent"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Agent (in de rol van dienstverlener/participant)",
-              "range_puri": "http://purl.org/dc/terms/Agent",
-              "range_label": {
-                "nl": "Agent (in de rol van dienstverlener/participant)"
+                "nl": "String"
               }
             }
           ],
@@ -1529,14 +1529,51 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://data.vlaanderen.be/ns/adres#land",
-          "name": "land",
-          "sort": "land",
+          "uri": "http://www.w3.org/ns/locn#addressArea",
+          "name": "adresgebied",
+          "sort": "adresgebied",
           "label": {
-            "nl": "land"
+            "nl": "adresgebied"
           },
           "description": {
-            "nl": "Land waarin het adres gelegen is."
+            "nl": "Naam ve geografisch gebied of plaats die een aantal adresseerbare objecten groepeert om deze te adresseren zonder dat het gebied of de plaats een administratieve eenheid is"
+          },
+          "usage": {
+            "nl": "Bvb de naam vh gehucht waarin het adres ligt."
+          },
+          "domain": [
+            {
+              "EA-Name": "Adresvoorstelling",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Taalstring",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Taalstring"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#adminUnitL1",
+          "name": "administratieve eenheid niveau 1",
+          "sort": "administratieve eenheid niveau 1",
+          "label": {
+            "nl": "administratieve eenheid niveau 1"
+          },
+          "description": {
+            "nl": "Hoogste Administratieve eenheid vh adres, doorgaans een land."
           },
           "usage": {
             "nl": " "
@@ -1566,14 +1603,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/adres#gemeentenaam",
-          "name": "gemeentenaam",
-          "sort": "gemeentenaam",
+          "uri": "http://www.w3.org/ns/locn#adminUnitL2",
+          "name": "administratieve eenheid niveau 2",
+          "sort": "administratieve eenheid niveau 2",
           "label": {
-            "nl": "gemeentenaam"
+            "nl": "administratieve eenheid niveau 2"
           },
           "description": {
-            "nl": "Gemeentenaam vh adres."
+            "nl": "De regio vh adres, doorgaans een provincie of deelstaat of gelijkaardig gebied dat typisch meerdere plaatsen omvat."
           },
           "usage": {
             "nl": " "
@@ -1603,91 +1640,17 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer",
-          "name": "huisnummer",
-          "sort": "huisnummer",
+          "uri": "http://www.w3.org/ns/locn#fullAddress",
+          "name": "volledig adres",
+          "sort": "volledig adres",
           "label": {
-            "nl": "huisnummer"
+            "nl": "volledig adres"
           },
           "description": {
-            "nl": "Alfanumerieke code officieel toegekend aan gebouweenheden, ligplaatsen, standplaatsen of percelen."
+            "nl": "Het complete adres in één string, al dan niet geformatteerd."
           },
           "usage": {
-            "nl": "Specialisatie van Adresvoorstelling:locatieaanduiding tbv Belgische adressen."
-          },
-          "domain": [
-            {
-              "EA-Name": "Adresvoorstelling",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer",
-          "name": "busnummer",
-          "sort": "busnummer",
-          "label": {
-            "nl": "busnummer"
-          },
-          "description": {
-            "nl": "Officieel toegekende alfanumerieke code die wordt toegevoegd aan het huisnummer om meerdere gebouweenheden, standplaatsen, ligplaatsen of percelen te onderscheiden die eenzelfde huisnummer hebben."
-          },
-          "usage": {
-            "nl": "Specialisatie van Adresvoorstelling:locatieaanduiding tbv Belgische adressen."
-          },
-          "domain": [
-            {
-              "EA-Name": "Adresvoorstelling",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#thoroughfare",
-          "name": "straatnaam",
-          "sort": "straatnaam",
-          "label": {
-            "nl": "straatnaam"
-          },
-          "description": {
-            "nl": "Straatnaam vh adres."
-          },
-          "usage": {
-            "nl": " "
+            "nl": "Vermijdt fouten tgv het opsplitsen ve adres in zijn onderdelen. Geeft de voorgeschreven volgorde vd verschillende onderdelen weer. "
           },
           "domain": [
             {
@@ -1714,88 +1677,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/locn#postName",
-          "name": "postnaam",
-          "sort": "postnaam",
+          "uri": "http://www.w3.org/ns/locn#locatorDesignator",
+          "name": "locatieaanduiding",
+          "sort": "locatieaanduiding",
           "label": {
-            "nl": "postnaam"
+            "nl": "locatieaanduiding"
           },
           "description": {
-            "nl": "Naam waarmee het geografisch gebied dat adressen voor postale doeleinden groepeert wordt aangeduid."
-          },
-          "usage": {
-            "nl": " "
-          },
-          "domain": [
-            {
-              "EA-Name": "Adresvoorstelling",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Taalstring",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "nl": "Taalstring"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#postCode",
-          "name": "postcode",
-          "sort": "postcode",
-          "label": {
-            "nl": "postcode"
-          },
-          "description": {
-            "nl": "Code waarmee het geografisch gebied dat adressen voor postale doeleinden groepeert wordt aangeduid."
-          },
-          "usage": {
-            "nl": " "
-          },
-          "domain": [
-            {
-              "EA-Name": "Adresvoorstelling",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#poBox",
-          "name": "postbus",
-          "sort": "postbus",
-          "label": {
-            "nl": "postbus"
-          },
-          "description": {
-            "nl": "Postbusnummer in een postkantoor."
+            "nl": "Alfanumerieke code die de adreslocator uniek identificeert binnen de straat, administratieve eenheid etc."
           },
           "usage": {
             "nl": " "
@@ -1862,14 +1751,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/locn#locatorDesignator",
-          "name": "locatieaanduiding",
-          "sort": "locatieaanduiding",
+          "uri": "http://www.w3.org/ns/locn#poBox",
+          "name": "postbus",
+          "sort": "postbus",
           "label": {
-            "nl": "locatieaanduiding"
+            "nl": "postbus"
           },
           "description": {
-            "nl": "Alfanumerieke code die de adreslocator uniek identificeert binnen de straat, administratieve eenheid etc."
+            "nl": "Postbusnummer in een postkantoor."
           },
           "usage": {
             "nl": " "
@@ -1899,17 +1788,17 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/locn#fullAddress",
-          "name": "volledig adres",
-          "sort": "volledig adres",
+          "uri": "http://www.w3.org/ns/locn#postCode",
+          "name": "postcode",
+          "sort": "postcode",
           "label": {
-            "nl": "volledig adres"
+            "nl": "postcode"
           },
           "description": {
-            "nl": "Het complete adres in één string, al dan niet geformatteerd."
+            "nl": "Code waarmee het geografisch gebied dat adressen voor postale doeleinden groepeert wordt aangeduid."
           },
           "usage": {
-            "nl": "Vermijdt fouten tgv het opsplitsen ve adres in zijn onderdelen. Geeft de voorgeschreven volgorde vd verschillende onderdelen weer. "
+            "nl": " "
           },
           "domain": [
             {
@@ -1919,16 +1808,16 @@
           ],
           "range": [
             {
-              "range_label": "Taalstring",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
               "range_label": {
-                "nl": "Taalstring"
+                "nl": "String"
               }
             }
           ],
@@ -1936,14 +1825,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/locn#adminUnitL2",
-          "name": "administratieve eenheid niveau 2",
-          "sort": "administratieve eenheid niveau 2",
+          "uri": "http://www.w3.org/ns/locn#postName",
+          "name": "postnaam",
+          "sort": "postnaam",
           "label": {
-            "nl": "administratieve eenheid niveau 2"
+            "nl": "postnaam"
           },
           "description": {
-            "nl": "De regio vh adres, doorgaans een provincie of deelstaat of gelijkaardig gebied dat typisch meerdere plaatsen omvat."
+            "nl": "Naam waarmee het geografisch gebied dat adressen voor postale doeleinden groepeert wordt aangeduid."
           },
           "usage": {
             "nl": " "
@@ -1973,14 +1862,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/locn#adminUnitL1",
-          "name": "administratieve eenheid niveau 1",
-          "sort": "administratieve eenheid niveau 1",
+          "uri": "http://www.w3.org/ns/locn#thoroughfare",
+          "name": "straatnaam",
+          "sort": "straatnaam",
           "label": {
-            "nl": "administratieve eenheid niveau 1"
+            "nl": "straatnaam"
           },
           "description": {
-            "nl": "Hoogste Administratieve eenheid vh adres, doorgaans een land."
+            "nl": "Straatnaam vh adres."
           },
           "usage": {
             "nl": " "
@@ -2010,17 +1899,128 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/locn#addressArea",
-          "name": "adresgebied",
-          "sort": "adresgebied",
+          "uri": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer",
+          "name": "busnummer",
+          "sort": "busnummer",
           "label": {
-            "nl": "adresgebied"
+            "nl": "busnummer"
           },
           "description": {
-            "nl": "Naam ve geografisch gebied of plaats die een aantal adresseerbare objecten groepeert om deze te adresseren zonder dat het gebied of de plaats een administratieve eenheid is"
+            "nl": "Officieel toegekende alfanumerieke code die wordt toegevoegd aan het huisnummer om meerdere gebouweenheden, standplaatsen, ligplaatsen of percelen te onderscheiden die eenzelfde huisnummer hebben."
           },
           "usage": {
-            "nl": "Bvb de naam vh gehucht waarin het adres ligt."
+            "nl": "Specialisatie van Adresvoorstelling:locatieaanduiding tbv Belgische adressen."
+          },
+          "domain": [
+            {
+              "EA-Name": "Adresvoorstelling",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer",
+          "name": "huisnummer",
+          "sort": "huisnummer",
+          "label": {
+            "nl": "huisnummer"
+          },
+          "description": {
+            "nl": "Alfanumerieke code officieel toegekend aan gebouweenheden, ligplaatsen, standplaatsen of percelen."
+          },
+          "usage": {
+            "nl": "Specialisatie van Adresvoorstelling:locatieaanduiding tbv Belgische adressen."
+          },
+          "domain": [
+            {
+              "EA-Name": "Adresvoorstelling",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/adres#gemeentenaam",
+          "name": "gemeentenaam",
+          "sort": "gemeentenaam",
+          "label": {
+            "nl": "gemeentenaam"
+          },
+          "description": {
+            "nl": "Gemeentenaam vh adres."
+          },
+          "usage": {
+            "nl": " "
+          },
+          "domain": [
+            {
+              "EA-Name": "Adresvoorstelling",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Taalstring",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Taalstring"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/adres#land",
+          "name": "land",
+          "sort": "land",
+          "label": {
+            "nl": "land"
+          },
+          "description": {
+            "nl": "Land waarin het adres gelegen is."
+          },
+          "usage": {
+            "nl": " "
           },
           "domain": [
             {

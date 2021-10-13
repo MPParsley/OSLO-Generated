@@ -1,0 +1,1032 @@
+{
+  "@context": {
+    "@vocab": "https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl",
+    "qb": "http://purl.org/linked-data/cube#",
+    "qb:codeList": {
+      "@type": "@id"
+    },
+    "sh": "http://www.w3.org/ns/shacl#",
+    "sh:class": {
+      "@type": "@id"
+    },
+    "sh:datatype": {
+      "@type": "@id"
+    },
+    "sh:definition": {
+      "@container": "@language"
+    },
+    "sh:maxCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:minCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:name": {
+      "@container": "@language"
+    },
+    "sh:path": {
+      "@type": "@id"
+    },
+    "sh:property": {
+      "@type": "@id"
+    },
+    "sh:targetClass": {
+      "@type": "@id"
+    },
+    "shapes": {
+      "@type": "@id"
+    }
+  },
+  "@id": "https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl",
+  "shapes": [
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#AgendapuntShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/besluit#Agendapunt",
+          "sh:definition": {
+            "nl": "Het agendapunt dat op de agenda direct dit agendapunt voorafging."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "aangebracht na"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#aangebrachtNa"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "Korte beschrijving van het agendapunt."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "beschrijving"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "nl": "Geeft aan of het agendapunt al dan niet bedoeld is om openbaar te bespreken."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "gepland openbaar"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#geplandOpenbaar"
+        },
+        {
+          "sh:class": "http://xmlns.com/foaf/0.1/Document",
+          "sh:definition": {
+            "nl": "Een (mogelijks nog aan te vullen of aan te passen) ontwerp voor het besluit dat uit dit agendapunt zou voortkomen."
+          },
+          "sh:name": {
+            "nl": "heeft ontwerpbesluit"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#heeftOntwerpbesluit"
+        },
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/besluit#Agendapunt",
+          "sh:definition": {
+            "nl": "Een ander agendapunt waarnaar verwezen wordt vanuit dit agendapunt."
+          },
+          "sh:name": {
+            "nl": "refereert aan"
+          },
+          "sh:path": "http://purl.org/dc/terms/references"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "De naam van het agendapunt."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "titel"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Type van het agendapunt."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "type"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#Agendapunt.type"
+        }
+      ],
+      "sh:targetClass": "http://data.vlaanderen.be/ns/besluit#Agendapunt"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#ArtikelShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "Het nummer van het artikel."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "nummer"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#number"
+        },
+        {
+          "sh:class": "http://data.europa.eu/eli/ontology#LegalResourceSubdivision",
+          "sh:definition": {
+            "nl": "De rechtsgrond beschreven door dit artikel."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "realiseert"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#realizes"
+        }
+      ],
+      "sh:targetClass": "http://data.vlaanderen.be/ns/besluit#Artikel"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#BehandelingVanAgendapuntShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt",
+          "sh:definition": {
+            "nl": "Verwijzing naar het voorgaand behandeld agendapunt binnen dezelfde zitting. Laat toe om de volgorde van de behandelingen op te bouwen."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "gebeurt na"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#gebeurtNa"
+        },
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/besluit#Besluit",
+          "sh:definition": {
+            "nl": "Een besluit dat is opgemaakt naar aanleiding van de behandeling van het agendapunt."
+          },
+          "sh:name": {
+            "nl": "geeft aanleiding tot"
+          },
+          "sh:path": "http://www.w3.org/ns/prov#generated"
+        },
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/mandaat#Mandataris",
+          "sh:definition": {
+            "nl": "Een mandataris (van het orgaan dat de zitting houdt) die aanwezig was tijdens (een deel van) de behandeling."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "heeft aanwezige"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#heeftAanwezige"
+        },
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/besluit#Agendapunt",
+          "sh:definition": {
+            "nl": "Het onderwerp van de activiteit."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "heeft onderwerp"
+          },
+          "sh:path": "http://purl.org/dc/terms/subject"
+        },
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/mandaat#Mandataris",
+          "sh:definition": {
+            "nl": "De mandataris die de rol van secretaris heeft gedurende de behandeling van het agendapunt."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "heeft secretaris"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#heeftSecretaris"
+        },
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/besluit#Stemming",
+          "sh:definition": {
+            "nl": "Een stemming die plaatsvond tijdens de behandeling van het agendapunt."
+          },
+          "sh:name": {
+            "nl": "heeft stemming"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#heeftStemming"
+        },
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/mandaat#Mandataris",
+          "sh:definition": {
+            "nl": "De mandataris die de rol als voorzitter heeft gedurende de behandeling van het agendapunt."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "heeft voorzitter"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#heeftVoorzitter"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "nl": "Geeft aan of de bespreking effectief openbaar verlopen is."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "openbaar"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#openbaar"
+        }
+      ],
+      "sh:targetClass": "http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#BesluitShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "Een beknopte beschrijving van het besluit."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "beschrijving"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "De beknopte titel of officiële korte naam van een decreet, wet, besluit... Deze wordt officieel vastgelegd. Deze benaming wordt in de praktijk gebruikt om naar de rechtsgrond te verwijzen."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "citeeropschrift"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#title_short"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Beschrijving van de juridische en feitelijke motivering achter de beslissing die wordt uitgedrukt in het besluit."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "motivering"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#motivering"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "sh:definition": {
+            "nl": "De officiële publicatiedatum van het besluit."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "publicatiedatum"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#date_publication"
+        },
+        {
+          "sh:class": "http://data.europa.eu/eli/ontology#LegalResource",
+          "sh:definition": {
+            "nl": "De rechtsgrond beschreven door dit besluit."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "realiseert"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#realizes"
+        },
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt",
+          "sh:definition": {
+            "nl": "De behandeling van het agendapunt die tot dit besluit heeft geleid."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "volgt uit"
+          },
+          "sh:path": "http://www.w3.org/ns/prov#wasGeneratedBy"
+        }
+      ],
+      "sh:targetClass": "http://data.vlaanderen.be/ns/besluit#Besluit"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#BestuurseenheidShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Classificatie van de bestuurseenheid."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "classificatie"
+          },
+          "sh:path": "http://www.w3.org/ns/org#classification"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "nl": "Naam van de bestuurseenheid."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "naam"
+          },
+          "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/prov#Location",
+          "sh:definition": {
+            "nl": "Geografische gebied waarbinnen de bestuurseenheid bepaalde verantwoordelijkheden heeft waarbinnen het bestuurshandelingen kan stellen."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "werkingsgebied"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#werkingsgebied"
+        }
+      ],
+      "sh:targetClass": "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#BestuursorgaanShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
+          "sh:definition": {
+            "nl": "De bestuurseenheid die door het orgaan bestuurd wordt."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "bestuurt"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#bestuurt"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Het type bestuursorgaan."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "classificatie"
+          },
+          "sh:path": "http://www.w3.org/ns/org#classification"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "nl": "Naam van de eenheid."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "naam"
+          },
+          "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
+        }
+      ],
+      "sh:targetClass": "http://data.vlaanderen.be/ns/besluit#Bestuursorgaan"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#StemmingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "nl": "Het aantal stemmers dat als onthouding heeft gestemd."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "aantal onthouders"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#aantalOnthouders"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "nl": "Het aantal stemmers dat als tegenstander heeft gestemd."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "aantal tegenstanders"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#aantalTegenstanders"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "nl": "Het aantal stemmers dat als voorstander heeft gestemd."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "aantal voorstanders"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#aantalVoorstanders"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "nl": "Geeft aan of de stemming geheim was. Bij een geheime stemming wordt niet individueel bekend gemaakt wie op wat heeft gestemd."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "geheim"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#geheim"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Het gevolg van de stemming."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "gevolg"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#gevolg"
+        },
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/mandaat#Mandataris",
+          "sh:definition": {
+            "nl": "Een mandataris die als onthouder heeft gestemd op het onderwerp van de stemming."
+          },
+          "sh:name": {
+            "nl": "heeft onthouder"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#heeftOnthouder"
+        },
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/mandaat#Mandataris",
+          "sh:definition": {
+            "nl": "Een mandataris die deelneemt aan de stemming."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "heeft stemmer"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#heeftStemmer"
+        },
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/mandaat#Mandataris",
+          "sh:definition": {
+            "nl": "Een mandataris die als tegenstander heeft gestemd op het onderwerp van de stemming."
+          },
+          "sh:name": {
+            "nl": "heeft tegenstander"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#heeftTegenstander"
+        },
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/mandaat#Mandataris",
+          "sh:definition": {
+            "nl": "Een mandataris die als voorstander heeft gestemd op het onderwerp van de stemming."
+          },
+          "sh:name": {
+            "nl": "heeft voorstander"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#heeftVoorstander"
+        },
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/mandaat#Mandataris",
+          "sh:definition": {
+            "nl": "Een mandataris (van het orgaan dat de zitting houdt) die aanwezig was tijdens de stemming."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "heeft aanwezige"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#heeftAanwezige"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "De beschrijving van het onderwerp waarover de stemming gaat."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "onderwerp"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#onderwerp"
+        }
+      ],
+      "sh:targetClass": "http://data.vlaanderen.be/ns/besluit#Stemming"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#VergaderactiviteitShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://purl.org/dc/terms/Agent",
+          "sh:definition": {
+            "nl": "Een agent (bvb: mandataris) die aanwezig was tijdens (een deel van) de activiteit waar hij een zekere verantwoordelijkheid had."
+          },
+          "sh:name": {
+            "nl": "heeft aanwezige"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#heeftAanwezige"
+        }
+      ],
+      "sh:targetClass": "http://data.vlaanderen.be/ns/besluit#Vergaderactiviteit"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#ZittingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/besluit#Agendapunt",
+          "sh:definition": {
+            "nl": "Een formeel vastgelegd agendapunt van de zitting."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "behandelt"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#behandelt"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "nl": "Tijdstip waarop de zitting eindigt."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "geëindigd op tijdstip"
+          },
+          "sh:path": "http://www.w3.org/ns/prov#endedAtTime"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "nl": "Het tijdstip waarop de zitting gepland is om te beginnen."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "geplande start"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#geplandeStart"
+        },
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/mandaat#Mandataris",
+          "sh:definition": {
+            "nl": "Een mandataris (van het bestuursorsgaan die de zitting hield) die aanwezig was bij de start van de zitting."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "heeft aanwezige bij start"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#heeftAanwezigeBijStart"
+        },
+        {
+          "sh:class": "http://xmlns.com/foaf/0.1/Document",
+          "sh:definition": {
+            "nl": "De formele notulen van de zitting."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "heeft notulen"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#heeftNotulen"
+        },
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/mandaat#Mandataris",
+          "sh:definition": {
+            "nl": "De mandataris die de rol van secretaris heeft gedurende de zitting."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "heeft secretaris"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#heeftSecretaris"
+        },
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/mandaat#Mandataris",
+          "sh:definition": {
+            "nl": "De mandataris die de rol als voorzitter heeft gedurende de zitting."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "heeft voorzitter"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#heeftVoorzitter"
+        },
+        {
+          "sh:class": "http://xmlns.com/foaf/0.1/Document",
+          "sh:definition": {
+            "nl": "Een verslag van de zitting."
+          },
+          "sh:name": {
+            "nl": "heeft zittingsverslag"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#heeftZittingsverslag"
+        },
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/besluit#Bestuursorgaan",
+          "sh:definition": {
+            "nl": "Duidt aan door welk orgaan de zitting is gehouden."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "is gehouden door"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#isGehoudenDoor"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/prov#Location",
+          "sh:definition": {
+            "nl": "Locatie waar de zitting plaatsvindt. Doorgaans is dit een zaal in een gebouw."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "op locatie"
+          },
+          "sh:path": "http://www.w3.org/ns/prov#atLocation"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "nl": "Tijdstip waarop de zitting begint."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "gestart op tijdstip"
+          },
+          "sh:path": "http://www.w3.org/ns/prov#startedAtTime"
+        }
+      ],
+      "sh:targetClass": "http://data.vlaanderen.be/ns/besluit#Zitting"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#LegaleVerschijningsvormShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://data.europa.eu/eli/ontology#LegalExpression",
+          "sh:definition": {
+            "nl": "Een citatie in de wettelijke tekst. Dit omvat zowel woordelijke citaten als citaten in verwijzingen."
+          },
+          "sh:name": {
+            "nl": "citeert"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#cites"
+        },
+        {
+          "sh:class": "http://data.europa.eu/eli/ontology#LegalExpression",
+          "sh:definition": {
+            "nl": "Duidt aan dat deze legale verschijningsvorm tekstuele veranderingen zonder legale impact aanbrengt in een andere legale verschijningsvorm."
+          },
+          "sh:name": {
+            "nl": "corrigeert"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#corrects"
+        },
+        {
+          "sh:class": "http://data.europa.eu/eli/ontology#LegalExpression",
+          "sh:definition": {
+            "nl": "Duidt een legale verschijningsvorm aan die een tekstuele verandering zonder legale impact aan deze legale verschijningsvorm aanbrengt."
+          },
+          "sh:name": {
+            "nl": "gecorrigeerd door"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#corrected_by"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "nl": "De beschrijving van de beoogde rechtsgevolgen, het zogenaamde beschikkend gedeelte."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "inhoud"
+          },
+          "sh:path": "http://www.w3.org/ns/prov#value"
+        },
+        {
+          "qb:codeList": "http://publications.europa.eu/mdr/authority/language/index.html",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "De taal van de verschijningsvorm."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "taal"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#language"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "Titel van de legale verschijningsvorm."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "titel"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#title"
+        },
+        {
+          "sh:class": "http://data.europa.eu/eli/ontology#LegalExpression",
+          "sh:definition": {
+            "nl": "Duidt aan dat deze legale verschijningsvorm een verandering met legale gevolgen heeft ondergaan door een andere legale verschijningsvorm. Dit omvat amendementen, vervangingen, herroepingen en andere types verandering."
+          },
+          "sh:name": {
+            "nl": "veranderd door"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#changed_by"
+        },
+        {
+          "sh:class": "http://data.europa.eu/eli/ontology#LegalExpression",
+          "sh:definition": {
+            "nl": "Duidt aan dat deze legale verschijningsvorm een verandering met legale gevolgen doorvoert op een andere legale verschijningsvorm. Dit omvat amendementen, vervangingen, herroepingen en andere types verandering."
+          },
+          "sh:name": {
+            "nl": "verandert"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#changes"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/eli/ontology#LegalExpression"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#Rechtsgrond (Besluit)Shape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/besluit#Bestuursorgaan",
+          "sh:definition": {
+            "nl": "Het orgaan dat de rechtsgrond heeft goedgekeurd, waardoor er een rechtsgevolg ontstond."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "aangenomen door"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#passed_by"
+        },
+        {
+          "sh:class": "http://data.europa.eu/eli/ontology#LegalResourceSubdivision",
+          "sh:definition": {
+            "nl": "Duidt een artikel aan van dit besluit."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "heeft deel"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#has_part"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/eli/ontology#LegalResource"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#RechtsgrondShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "sh:definition": {
+            "nl": "De laatste dag waarop de regelgeving nog van kracht is."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "buitenwerkingtreding"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#date_no_longer_in_force"
+        },
+        {
+          "sh:class": "http://data.europa.eu/eli/ontology#LegalResource",
+          "sh:definition": {
+            "nl": "Een citatie in de wettelijke tekst. Dit omvat zowel woordelijke citaten als citaten in verwijzingen."
+          },
+          "sh:name": {
+            "nl": "citeert"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#cites"
+        },
+        {
+          "sh:class": "http://data.europa.eu/eli/ontology#LegalResource",
+          "sh:definition": {
+            "nl": "Duidt aan dat deze rechtsgrond tekstuele veranderingen zonder legale impact aanbrengt in een andere rechtsgrond."
+          },
+          "sh:name": {
+            "nl": "corrigeert"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#corrects"
+        },
+        {
+          "sh:class": "http://data.europa.eu/eli/ontology#LegalResource",
+          "sh:definition": {
+            "nl": "Duidt een rechtsgrond aan die een tekstuele verandering zonder legale impact aan deze rechtsgrond aanbrengt."
+          },
+          "sh:name": {
+            "nl": "gecorrigeerd door"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#corrected_by"
+        },
+        {
+          "sh:class": "http://xmlns.com/foaf/0.1/Document",
+          "sh:definition": {
+            "nl": "Een bijlage waarnaar verwezen wordt."
+          },
+          "sh:name": {
+            "nl": "heeft bijlage"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#cites"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "sh:definition": {
+            "nl": "De datum waarop de regelgeving van kracht wordt."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "inwerkingtreding"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#first_date_entry_in_force"
+        },
+        {
+          "sh:class": "http://data.europa.eu/eli/ontology#ResourceType",
+          "sh:definition": {
+            "nl": "Het type van de rechtsgrond."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "type document"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#type_document"
+        },
+        {
+          "sh:class": "http://data.europa.eu/eli/ontology#LegalResource",
+          "sh:definition": {
+            "nl": "Duidt aan dat deze rechtsgrond een verandering met legale gevolgen heeft ondergaan door een andere rechtsgrond. Dit omvat amendementen, vervangingen, herroepingen en andere types verandering."
+          },
+          "sh:name": {
+            "nl": "veranderd door"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#changed_by"
+        },
+        {
+          "sh:class": "http://data.europa.eu/eli/ontology#LegalResource",
+          "sh:definition": {
+            "nl": "Duidt aan dat deze rechtsgrond een verandering met legale gevolgen doorvoert op een andere rechtsgrond. Dit omvat amendementen, vervangingen, herroepingen en andere types verandering."
+          },
+          "sh:name": {
+            "nl": "verandert"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#changes"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/eli/ontology#LegalResource"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#Rechtsgrondonderdeel (Artikel)Shape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://data.europa.eu/eli/ontology#LegalResource",
+          "sh:definition": {
+            "nl": "Het besluit waar dit artikel onderdeel van is."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "is deel van"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#is_part_of"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/eli/ontology#LegalResourceSubdivision"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#RechtsgrondonderdeelShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://data.europa.eu/eli/ontology#LegalResourceSubdivision"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#MandatarisShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://data.vlaanderen.be/ns/mandaat#Mandataris"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#AgentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://purl.org/dc/terms/Agent"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#DocumentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://xmlns.com/foaf/0.1/Document"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#DocumentOnderdeelShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/generiek#DocumentOnderdeel",
+          "sh:definition": {
+            "nl": "Een verwante bron waarin de beschreven bron fysiek of logisch is opgenomen."
+          },
+          "sh:name": {
+            "nl": "is deel van"
+          },
+          "sh:path": "http://purl.org/dc/terms/isPartOf"
+        },
+        {
+          "sh:class": "http://xmlns.com/foaf/0.1/Document",
+          "sh:definition": {
+            "nl": "Een verwante bron waarin de beschreven bron fysiek of logisch is opgenomen."
+          },
+          "sh:name": {
+            "nl": "is onderdeel van"
+          },
+          "sh:path": "http://purl.org/dc/terms/isPartOf"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "nl": "Nummer vh documentonderdeel."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "nummer"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/generiek#nummer"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Aard van het documentonderdeel."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#DocumentOnderdeel"
+    }
+  ]
+}

@@ -1,0 +1,804 @@
+{
+  "@context": {
+    "@vocab": "https://data.dev-vlaanderen.be/shacl/dossier-ap-SHACL_nl",
+    "qb": "http://purl.org/linked-data/cube#",
+    "qb:codeList": {
+      "@type": "@id"
+    },
+    "sh": "http://www.w3.org/ns/shacl#",
+    "sh:class": {
+      "@type": "@id"
+    },
+    "sh:datatype": {
+      "@type": "@id"
+    },
+    "sh:definition": {
+      "@container": "@language"
+    },
+    "sh:maxCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:minCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:name": {
+      "@container": "@language"
+    },
+    "sh:path": {
+      "@type": "@id"
+    },
+    "sh:property": {
+      "@type": "@id"
+    },
+    "sh:targetClass": {
+      "@type": "@id"
+    },
+    "shapes": {
+      "@type": "@id"
+    }
+  },
+  "@id": "https://data.dev-vlaanderen.be/shacl/dossier-ap-SHACL_nl",
+  "shapes": [
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dossier-ap-SHACL_nl#ActiviteitContextShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/prov#Activity",
+          "sh:definition": {
+            "nl": "URI van de activiteit."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "activiteit"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#activiteit"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/dossier#ActiviteitContext"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dossier-ap-SHACL_nl#DossierShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/dossier#Stuk",
+          "sh:definition": {
+            "nl": "Een dossier bestaat uit dossierstukken."
+          },
+          "sh:name": {
+            "nl": "bestaat uit"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#Dossier.bestaatUit"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "De informatieclassificatie van het dossier."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "informatieclassificatie"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#informatieclassificatie"
+        },
+        {
+          "sh:class": "http://dbpedia.org/ontology/Case",
+          "sh:definition": {
+            "nl": "Een dossier is een neerslag van een zaak."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "is neerslag van"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#Dossier.isNeerslagVan"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "De naam van het dossier."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "naam"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/dossier#Dossier"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dossier-ap-SHACL_nl#ProcedurestapShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "sh:definition": {
+            "nl": "De einddatum van de procedurestap."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "einddatum"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#Procedurestap.einddatum"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "De naam van de procedurestap."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "naam"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "sh:definition": {
+            "nl": "De startdatum van de procedurestap."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "startdatum"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#Procedurestap.startdatum"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/dossier#Procedurestap"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dossier-ap-SHACL_nl#SerieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/dossier#Serie"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dossier-ap-SHACL_nl#StukShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/prov#Agent",
+          "sh:definition": {
+            "nl": "De auteur van het stuk."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "auteur"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#auteur"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/prov#Entity",
+          "sh:definition": {
+            "nl": "Een stuk beschrijft een object."
+          },
+          "sh:name": {
+            "nl": "beschrijft"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#beschrijft"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "sh:definition": {
+            "nl": "De creatiedatum van het stuk."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "creatiedatum"
+          },
+          "sh:path": "http://purl.org/dc/terms/created"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/dossier#Stuk",
+          "sh:definition": {
+            "nl": "Een stuk kan een relatie hebben tot een ander stuk."
+          },
+          "sh:name": {
+            "nl": "heeft relatie tot"
+          },
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "De informatieclassificatie van het stuk."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "informatieclassificatie"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#informatieclassificatie"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/dcat#Distribution",
+          "sh:definition": {
+            "nl": "Een stuk of een onderdeel daarvan worden voorgesteld door een representatie."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "is voorgesteld door"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#isVoorgesteldDoor"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "De naam van het stuk."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "naam"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/dossier#Stuk"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dossier-ap-SHACL_nl#StukonderdeelShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/prov#Agent",
+          "sh:definition": {
+            "nl": "De auteur van het stukonderdeel."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "auteur"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#auteur"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "sh:definition": {
+            "nl": "De creatiedatum van het stukonderdeel."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "creatiedatum"
+          },
+          "sh:path": "http://purl.org/dc/terms/created"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "De informatieclassificatie van het stukonderdeel."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "informatieclassificatie"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#informatieclassificatie"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/dossier#Stuk",
+          "sh:definition": {
+            "nl": "Een stukonderdeel maakt deel uit van een stuk."
+          },
+          "sh:name": {
+            "nl": "is deel van"
+          },
+          "sh:path": "http://purl.org/dc/terms/isPartOf"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/dossier#Stukonderdeel",
+          "sh:definition": {
+            "nl": "Een stukonderdeel kan deel zijn van een ander stukonderdeel."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "is deel van"
+          },
+          "sh:path": "http://purl.org/dc/terms/isPartOf"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/dcat#Distribution",
+          "sh:definition": {
+            "nl": "Een stuk of een onderdeel daarvan worden voorgesteld door een representatie."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "is voorgesteld door"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#isVoorgesteldDoor"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "De naam van het stukonderdeel."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "naam"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/dossier#Stukonderdeel"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dossier-ap-SHACL_nl#ParticipatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://data.europa.eu/m8g/Participation"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dossier-ap-SHACL_nl#BesluitShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "De beknopte beschrijving van de beslissing."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "beschrijving"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "De beknopte titel of officiële korte naam van een decreet, wet, besluit... Deze wordt officieel vastgelegd. Deze benaming wordt in de praktijk gebruikt om naar de rechtsgrond te verwijzen."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "citeeropschrift"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#title_short"
+        }
+      ],
+      "sh:targetClass": "http://data.vlaanderen.be/ns/besluit#Besluit"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dossier-ap-SHACL_nl#ZaakShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/prov#Entity",
+          "sh:definition": {
+            "nl": "Een zaak behandelt een object."
+          },
+          "sh:name": {
+            "nl": "behandelt"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#behandelt"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/dossier#Procedurestap",
+          "sh:definition": {
+            "nl": "Een zaak doorloopt procedurestappen."
+          },
+          "sh:name": {
+            "nl": "doorloopt"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#doorloopt"
+        },
+        {
+          "sh:class": "http://dbpedia.org/ontology/Case",
+          "sh:definition": {
+            "nl": "Een zaak kan een relatie hebben tot een andere zaak."
+          },
+          "sh:name": {
+            "nl": "heeft relatie tot"
+          },
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "sh:class": "http://dbpedia.org/ontology/Project",
+          "sh:definition": {
+            "nl": "Een zaak kan onderdeel uitmaken van een project."
+          },
+          "sh:name": {
+            "nl": "is deel van"
+          },
+          "sh:path": "http://purl.org/dc/terms/isPartOf"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "De naam van de zaak."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "naam"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "sh:definition": {
+            "nl": "De openingsdatum van de zaak."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "openingsdatum"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#openingsdatum"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "sh:definition": {
+            "nl": "De sluitingsdatum van de zaak."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "sluitingsdatum"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#sluitingsdatum"
+        }
+      ],
+      "sh:targetClass": "http://dbpedia.org/ontology/Case"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dossier-ap-SHACL_nl#ProjectShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://dbpedia.org/ontology/Project"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dossier-ap-SHACL_nl#EenheidVanWerkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://dbpedia.org/ontology/UnitOfWork"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dossier-ap-SHACL_nl#PubliekeDienstverleningShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Andere naam waaronder de dienstverlening bekend is."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "alternatieve naam"
+          },
+          "sh:path": "http://www.w3.org/2004/02/skos/core#altLabel"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Beschrijving van de Publieke Dienstverlening.\r\n"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "beschrijving"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://schema.org/ContactPoint",
+          "sh:definition": {
+            "nl": "Informatie waarmee de Publieke Dienstverlening kan worden gecontacteerd."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "heeft contactpunt"
+          },
+          "sh:path": "http://data.europa.eu/m8g/hasContactPoint"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/Cost",
+          "sh:definition": {
+            "nl": "Kostprijs verbonden aan het gebruik van de Publieke dienstverlening."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "heeft kost"
+          },
+          "sh:path": "http://data.europa.eu/m8g/hasCost"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Officiële naam van de Publieke Dienstverlening."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "titel"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "qb:codeList": "http://publications.europa.eu/mdr/authority/atu/index.html",
+          "sh:class": "http://purl.org/dc/terms/Location",
+          "sh:definition": {
+            "nl": "Gebied waarin de Publieke Dienstverlening beschikbaar is."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "ruimtelijke dekking"
+          },
+          "sh:path": "http://purl.org/dc/terms/spatial"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Sector of bedrijvigheid waarop de Publieke Dienstverlening betrekking heeft of waarvoor deze is bedoeld."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "sector"
+          },
+          "sh:path": "http://data.europa.eu/m8g/sector"
+        },
+        {
+          "qb:codeList": " http://purl.org/adms/status/",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Geeft aan of een Publieke Dienstverlening actief, inactief, in ontwikkeling etc is."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "status"
+          },
+          "sh:path": "http://www.w3.org/ns/adms#status"
+        },
+        {
+          "qb:codeList": "http://publications.europa.eu/mdr/authority/language/",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Taal waarin een Publieke Dienstverlening wordt aangeboden."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "taal"
+          },
+          "sh:path": "http://purl.org/dc/terms/language"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Sleutelwoord, term, begrip dat de Publieke Dienst beschrijft."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "trefwoord"
+          },
+          "sh:path": "http://www.w3.org/ns/dcat#keyword"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Soort Publieke Dienstverlening."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "nl": "Geschatte tijd nodig om de Publieke Dienstverlening af te leveren."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "verwerkingstijd"
+          },
+          "sh:path": "http://data.europa.eu/m8g/processingTime"
+        }
+      ],
+      "sh:targetClass": "http://purl.org/vocab/cpsv#PublicService"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dossier-ap-SHACL_nl#InformatieclassificatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dossier-ap-SHACL_nl#RepresentatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/ns/dcat#Distribution"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dossier-ap-SHACL_nl#ActiviteitShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "sh:definition": {
+            "nl": "De einddatum van de activiteit."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "einddatum"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#Activiteit.einddatum"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/dossier#Stuk",
+          "sh:definition": {
+            "nl": "Een activiteit kan een stuk genereren."
+          },
+          "sh:name": {
+            "nl": "genereert"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#genereert"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "De naam van de activiteit."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "naam"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/prov#Agent",
+          "sh:definition": {
+            "nl": "Participatie van de agent (aan een publieke dienstverlening)."
+          },
+          "sh:name": {
+            "nl": "speelt rol"
+          },
+          "sh:path": "http://data.europa.eu/m8g/playsRole"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "sh:definition": {
+            "nl": "De startdatum van de activiteit."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "startdatum"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#Activiteit.startdatum"
+        },
+        {
+          "sh:class": "http://dbpedia.org/ontology/UnitOfWork",
+          "sh:definition": {
+            "nl": "Een activiteit vindt plaats tijdens een eenheid van werk."
+          },
+          "sh:name": {
+            "nl": "vindt plaats tijdens"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#vindtPlaatsTijdens"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/dossier#Procedurestap",
+          "sh:definition": {
+            "nl": "Een activiteit vindt plaats tijdens een procedurestap."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "vindt plaats tijdens"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#vindtPlaatsTijdens"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/prov#Activity"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dossier-ap-SHACL_nl#AgentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/prov#Agent",
+          "sh:definition": {
+            "nl": "Een agent kan handelen in opdracht van een andere agent."
+          },
+          "sh:name": {
+            "nl": "handelt in opdracht van"
+          },
+          "sh:path": "http://www.w3.org/ns/prov#actedOnBehalfOf"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/prov#Agent"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dossier-ap-SHACL_nl#CollectieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/prov#Entity",
+          "sh:definition": {
+            "nl": "Een collectie bestaat uit entiteiten."
+          },
+          "sh:name": {
+            "nl": "bestaat uit"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#Collectie.bestaatUit"
+        },
+        {
+          "sh:class": "http://dbpedia.org/ontology/UnitOfWork",
+          "sh:definition": {
+            "nl": "Een collectie is een neerslag van een eenheid van werk."
+          },
+          "sh:name": {
+            "nl": "is neerslag van"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/dossier#Collectie.isNeerslagVan"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/prov#Collection"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dossier-ap-SHACL_nl#ObjectShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:definition": {
+            "nl": "Identificator van het object."
+          },
+          "sh:name": {
+            "nl": "identificator"
+          },
+          "sh:path": "http://www.w3.org/ns/adms#identifier"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/prov#Entity"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dossier-ap-SHACL_nl#EntiteitShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/ns/prov#Entity"
+    }
+  ]
+}

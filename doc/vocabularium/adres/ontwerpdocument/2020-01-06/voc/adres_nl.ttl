@@ -1,0 +1,473 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+skos:Concept a rdfs:Class .
+
+<http://www.w3.org/ns/locn#Address> a rdfs:Class;
+  rdfs:label "Adresvoorstelling"@nl .
+
+<https://data.vlaanderen.be/ns/adres#Adres.status> a owl:ObjectProperty;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Adres>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range skos:Concept .
+
+<https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer> a owl:DatatypeProperty;
+  <http://purl.org/vocab/vann/usageNote> "Specialisatie van Adresvoorstelling:locatieaanduiding tbv Belgische adressen."@nl;
+  rdfs:domain <http://www.w3.org/ns/locn#Address>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range xsd:string;
+  rdfs:subPropertyOf <http://www.w3.org/ns/locn#locatorDesignator> .
+
+<https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer> a owl:DatatypeProperty;
+  <http://purl.org/vocab/vann/usageNote> "Specialisatie van Adresvoorstelling:locatieaanduiding tbv Belgische adressen."@nl;
+  rdfs:domain <http://www.w3.org/ns/locn#Address>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range xsd:string;
+  rdfs:subPropertyOf <http://www.w3.org/ns/locn#locatorDesignator> .
+
+<https://data.vlaanderen.be/ns/adres#Ligplaats> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "Bv plaats voor woonboot."@nl;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:subClassOf prov:Entity,
+    <https://data.vlaanderen.be/ns/adres#AdresseerbaarObject> .
+
+<https://data.vlaanderen.be/ns/adres#Locatieaanduiding.aanduiding> a owl:DatatypeProperty;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Locatieaanduiding>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range xsd:string .
+
+<https://data.vlaanderen.be/ns/adres#Locatieaanduiding.type> a owl:ObjectProperty;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Locatieaanduiding>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range skos:Concept .
+
+<https://data.vlaanderen.be/ns/adres#Locatienaam.type> a owl:ObjectProperty;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Locatienaam>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range skos:Concept .
+
+<https://data.vlaanderen.be/ns/adres#Standplaats> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "Bv plaats voor stacaravan."@nl;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:subClassOf prov:Entity,
+    <https://data.vlaanderen.be/ns/adres#AdresseerbaarObject> .
+
+<https://data.vlaanderen.be/ns/adres#Straatnaam.status> a owl:ObjectProperty;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Straatnaam>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range skos:Concept .
+
+<https://data.vlaanderen.be/ns/adres#aanduiding> a owl:ObjectProperty;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Adreslocator>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range <https://data.vlaanderen.be/ns/adres#Locatieaanduiding> .
+
+<https://data.vlaanderen.be/ns/adres#adresIsGelegenIn> a owl:ObjectProperty;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Adresuitbreiding>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range dc:Location .
+
+<https://data.vlaanderen.be/ns/adres#adreslocator> a owl:ObjectProperty;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Adresuitbreiding>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range <https://data.vlaanderen.be/ns/adres#Adreslocator> .
+
+<https://data.vlaanderen.be/ns/adres#busnummer> a owl:DatatypeProperty;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Adres>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range xsd:string .
+
+<https://data.vlaanderen.be/ns/adres#gemeentenaam> a owl:DatatypeProperty;
+  rdfs:domain <http://www.w3.org/ns/locn#Address>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range rdf:langString;
+  rdfs:subPropertyOf <http://www.w3.org/ns/locn#postName> .
+
+<https://data.vlaanderen.be/ns/adres#heeftGemeentenaam> a owl:ObjectProperty;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Adres>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range <https://data.vlaanderen.be/ns/adres#Gemeentenaam> .
+
+<https://data.vlaanderen.be/ns/adres#heeftPostinfo> a owl:ObjectProperty;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Adres>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range <https://data.vlaanderen.be/ns/adres#Postinfo> .
+
+<https://data.vlaanderen.be/ns/adres#heeftStraatnaam> a owl:ObjectProperty;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Adres>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range <https://data.vlaanderen.be/ns/adres#Straatnaam> .
+
+<https://data.vlaanderen.be/ns/adres#homoniemToevoeging> a owl:DatatypeProperty;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Straatnaam>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range xsd:string .
+
+<https://data.vlaanderen.be/ns/adres#huisnummer> a owl:DatatypeProperty;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Adres>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range xsd:string .
+
+<https://data.vlaanderen.be/ns/adres#isAfgeleidVan> a owl:ObjectProperty;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Gemeentenaam>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range <https://data.vlaanderen.be/ns/generiek#Gemeente> .
+
+<https://data.vlaanderen.be/ns/adres#isToegekendAan> a owl:ObjectProperty;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Adres>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range <https://data.vlaanderen.be/ns/adres#AdresseerbaarObject> .
+
+<https://data.vlaanderen.be/ns/adres#isVerrijktMet> a owl:ObjectProperty;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Adres>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range <https://data.vlaanderen.be/ns/adres#Adresuitbreiding> .
+
+<https://data.vlaanderen.be/ns/adres#land> a owl:DatatypeProperty;
+  rdfs:domain <http://www.w3.org/ns/locn#Address>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range rdf:langString;
+  rdfs:subPropertyOf <http://www.w3.org/ns/locn#adminUnitL1> .
+
+<https://data.vlaanderen.be/ns/adres#naam> a owl:ObjectProperty;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Adreslocator>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range <https://data.vlaanderen.be/ns/adres#Locatienaam> .
+
+<https://data.vlaanderen.be/ns/adres#niveau> a owl:ObjectProperty;
+  <http://purl.org/vocab/vann/usageNote> "Waarbij het niveau staat voor de geografische granulariteit vd locator: zo verwijzen locators vh type huisnummer doorgaans naar het gebouw terwijl busnummers naar een deel vh gebouw verwijzen."@nl;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Adreslocator>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range skos:Concept .
+
+<https://data.vlaanderen.be/ns/adres#officieelToegekend> a owl:DatatypeProperty;
+  <http://purl.org/vocab/vann/usageNote> "Een adres is niet-officieel wanneer het bestaan ervan niet gekend was vanuit de administratieve procedures, maar pas nadat nadat het feitelijk is vastgesteld op het terrein."@nl;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Adres>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range xsd:boolean .
+
+<https://data.vlaanderen.be/ns/adres#positie> a owl:ObjectProperty;
+  <http://purl.org/vocab/vann/usageNote> "Moet een punt zijn."@nl;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Adres>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range <https://data.vlaanderen.be/ns/generiek#GeografischePositie>;
+  rdfs:subPropertyOf <http://www.w3.org/ns/locn#geometry> .
+
+<https://data.vlaanderen.be/ns/adres#postcode> a owl:DatatypeProperty;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Postinfo>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range xsd:string .
+
+<https://data.vlaanderen.be/ns/adres#postnaam> a owl:DatatypeProperty;
+  <http://purl.org/vocab/vann/usageNote> "Typisch de namen van vroegere gemeenten waarmee het gebied samenvalt."@nl;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Postinfo>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range rdf:langString .
+
+<https://data.vlaanderen.be/ns/adres#verwijstNaar> a owl:ObjectProperty;
+  <http://purl.org/vocab/vann/usageNote> "Dit kan enkel voor Belgische adressen aangezien onder adres een Belgisch adres wordt verstaan."@nl;
+  rdfs:domain <http://www.w3.org/ns/locn#Address>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range <https://data.vlaanderen.be/ns/adres#Adres> .
+
+<https://data.vlaanderen.be/ns/adres#volledigAdres> a owl:DatatypeProperty;
+  <http://purl.org/vocab/vann/usageNote> "Vermijdt fouten tgv het opsplitsen ve adres in zijn onderdelen. Geeft de voorgeschreven volgorde vd verschillende onderdelen weer. "@nl;
+  rdfs:domain <https://data.vlaanderen.be/ns/adres#Adresuitbreiding>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:range rdf:langString .
+
+rdfs:label a rdf:Property;
+  rdfs:label "label"@nl .
+
+<http://www.w3.org/ns/locn#addressArea> a rdf:Property;
+  rdfs:label "adresgebied"@nl .
+
+<http://www.w3.org/ns/locn#adminUnitL2> a rdf:Property;
+  rdfs:label "administratieve eenheid niveau 2"@nl .
+
+<http://www.w3.org/ns/locn#fullAddress> a rdf:Property;
+  rdfs:label "volledig adres"@nl .
+
+<http://www.w3.org/ns/locn#locatorName> a rdf:Property;
+  rdfs:label "locatienaam"@nl .
+
+<http://www.w3.org/ns/locn#poBox> a rdf:Property;
+  rdfs:label "postbus"@nl .
+
+<http://www.w3.org/ns/locn#postCode> a rdf:Property;
+  rdfs:label "postcode"@nl .
+
+<http://www.w3.org/ns/locn#thoroughfare> a rdf:Property;
+  rdfs:label "straatnaam"@nl .
+
+prov:wasAttributedTo a rdf:Property;
+  rdfs:label "toegeschreven aan"@nl .
+
+<http://www.w3.org/ns/locn#adminUnitL1> a rdf:Property;
+  rdfs:label "administratieve eenheid niveau 1"@nl .
+
+<http://www.w3.org/ns/locn#postName> a rdf:Property;
+  rdfs:label "postnaam"@nl .
+
+<https://data.vlaanderen.be/ns/adres#Gemeentenaam> a owl:Class;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:subClassOf prov:Entity .
+
+<https://data.vlaanderen.be/ns/adres#Locatienaam> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "Bvb de naam ve gebouw of deel ve gebouw of de naam ve kamer in een gebouw."@nl;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<http://www.w3.org/ns/locn#locatorDesignator> a rdf:Property;
+  rdfs:label "locatieaanduiding"@nl .
+
+<https://data.vlaanderen.be/ns/adres#AdresseerbaarObject> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "Is abstract, ttz het type adresseerbaar object moet altijd worden opgegeven (vb gebouweenheid, perceel)."@nl;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<https://data.vlaanderen.be/ns/adres#Locatieaanduiding> a owl:Class;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<https://data.vlaanderen.be/ns/adres#Postinfo> a owl:Class;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:subClassOf prov:Entity .
+
+<https://data.vlaanderen.be/ns/adres#Straatnaam> a owl:Class;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:subClassOf prov:Entity .
+
+<https://data.vlaanderen.be/ns/adres#Adreslocator> a owl:Class;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<https://data.vlaanderen.be/ns/adres#Adresuitbreiding> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "Gegevens die officieel geen deel uitmaken ve adres, bv de verdieping of de provincie"@nl;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres> .
+
+<https://data.vlaanderen.be/ns/adres#Adres> a owl:Class;
+  <http://purl.org/vocab/vann/usageNote> "De definitie heeft betrekking op Belgische adressen. In andere landen kan een adres eventueel verwijzen naar andere geografisch objecten (niet gebouweenheid of perceel) of bestaan uit andere aanduidingen (verschillend van huisnummer en busnummer) of uit andere componenten dan straatnaam, gemeentenaam of postcode. Alternatieve adresaanduidingen dan huisnummer of busnummer (bv ingangaanduiding, trapaanduiding, verdiepaanduiding...) of een gebouwnaam of kamernaam ed zijn mogelijk dmv een associatie met adresuitbreiding. Uitwisseling van buitenlandse adressen moet gebeuren mbv het object adresvoorstelling."@nl;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/adres>;
+  rdfs:subClassOf prov:Entity .
+
+<https://data.vlaanderen.be/ns/adres> a owl:Ontology;
+  rdfs:label "adres"@nl,
+    "adres"@en;
+  dc:contributor [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://idlab.ugent.be>;
+      foaf:name "imec - UGent"
+    ];
+    foaf:firstName "Erik";
+    foaf:lastName "Mannens";
+    foaf:mbox <mailto:erik.mannens@ugent.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://idlab.ugent.be>;
+      foaf:name "imec - UGent"
+    ];
+    foaf:firstName "Laurens";
+    foaf:lastName "De Vocht";
+    foaf:mbox <mailto:laurens.devocht@ugent.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.antwerpen.be>;
+      foaf:name "Stad Antwerpen"
+    ];
+    foaf:firstName "Christiaan";
+    foaf:lastName "Bos";
+    foaf:mbox <mailto:christiaan.bos@stad.antwerpen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vmsw.be>;
+      foaf:name "VMSW"
+    ];
+    foaf:firstName "Wout";
+    foaf:lastName "Groniger";
+    foaf:mbox <mailto:Wout.groniger@vmsw.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vlaamsbrabant.be>;
+      foaf:name "Provincie Vlaams-Brabant"
+    ];
+    foaf:firstName "Ireen";
+    foaf:lastName "Librecht";
+    foaf:mbox <mailto:ireen.librecht@vlaamsbrabant.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
+      foaf:name "Informatie Vlaanderen"
+    ];
+    foaf:firstName "Barbara";
+    foaf:lastName "Van Broeckhoven";
+    foaf:mbox <mailto:barbara.vanbroeckhoven@kb.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
+      foaf:name "Informatie Vlaanderen"
+    ];
+    foaf:firstName "Raf";
+    foaf:lastName "Buyle";
+    foaf:mbox <mailto:raf.buyle@kb.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
+      foaf:name "Informatie Vlaanderen"
+    ];
+    foaf:firstName "Katrien";
+    foaf:lastName "Geerts";
+    foaf:mbox <mailto:katrien.geerts@kb.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.fednot.be>;
+      foaf:name "Fednot"
+    ];
+    foaf:firstName "Paul";
+    foaf:lastName "Verbeeck";
+    foaf:mbox <mailto:Paul.Verbeeck@fednot.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.telenet.be>;
+      foaf:name "Telenet"
+    ];
+    foaf:firstName "Koen";
+    foaf:lastName "D'Haen";
+    foaf:mbox <mailto:koen.dhaen1@staff.telenet.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vmm.be>;
+      foaf:name "VMM"
+    ];
+    foaf:firstName "Katleen";
+    foaf:lastName "Miserez";
+    foaf:mbox <mailto:k.miserez@vmm.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://stad.gent>;
+      foaf:name "Stad Gent"
+    ];
+    foaf:firstName "Diedrik";
+    foaf:lastName "Gaus";
+    foaf:mbox <mailto:Diedrik.Gaus@stad.gent>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.wonenvlaanderen.be>;
+      foaf:name "Wonen-Vlaanderen"
+    ];
+    foaf:firstName "Olivier";
+    foaf:lastName "Heyvaert";
+    foaf:mbox <mailto:olivier.heyvaert@rwo.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://idlab.ugent.be>;
+      foaf:name "imec - UGent"
+    ];
+    foaf:firstName "Dieter";
+    foaf:lastName "De Paepe";
+    foaf:mbox <mailto:dieter.depaepe@ugent.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.leuven.be>;
+      foaf:name "Stad Leuven"
+    ];
+    foaf:firstName "Michaël";
+    foaf:lastName "Sibiet";
+    foaf:mbox <mailto:Michael.Sibiet@leuven.be>
+  ];
+  dc:issued "2018-10-04";
+  dc:license <https://overheid.vlaanderen.be/sites/default/files/documenten/ict-egov/licenties/hergebruik/modellicentie_gratis_hergebruik_v1_0.html>,
+    "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0";
+  dc:mediator [
+    foaf:homepage <https://data.vlaanderen.be>;
+    foaf:mbox <mailto:oslo@kb.vlaanderen.be>;
+    foaf:name "Data Vlaanderen"
+  ];
+  rdfs:seeAlso <http://www.w3.org/ns/locn#locatorDesignator>,
+    <http://www.w3.org/ns/locn#locatorName>,
+    skos:Concept,
+    prov:wasAttributedTo,
+    <http://www.w3.org/ns/locn#adminUnitL2>,
+    <http://www.w3.org/ns/locn#thoroughfare>,
+    <http://www.w3.org/ns/locn#Address>,
+    <http://www.w3.org/ns/locn#fullAddress>,
+    <http://www.w3.org/ns/locn#postCode>,
+    <http://www.w3.org/ns/locn#adminUnitL1>,
+    rdfs:label,
+    <http://www.w3.org/ns/locn#addressArea>,
+    <http://www.w3.org/ns/locn#postName>,
+    <http://www.w3.org/ns/locn#poBox>;
+  <http://www.w3.org/2001/02pd/rec54#editor> [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://tenforce.com>;
+      foaf:name "Tenforce"
+    ];
+    foaf:firstName "Bert";
+    foaf:lastName "Van Nuffelen";
+    foaf:mbox <mailto:bert.van.nuffelen@tenforce.com>
+  ];
+  foaf:maker [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
+      foaf:name "Informatie Vlaanderen"
+    ];
+    foaf:firstName "Geert";
+    foaf:lastName "Thijs";
+    foaf:mbox <mailto:geert.thijs@kb.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
+      foaf:name "Informatie Vlaanderen"
+    ];
+    foaf:firstName "Jan";
+    foaf:lastName "Laporte";
+    foaf:mbox <mailto:jan.laporte@kb.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
+      foaf:name "Informatie Vlaanderen"
+    ];
+    foaf:firstName "Ziggy";
+    foaf:lastName "Vanlishout";
+    foaf:mbox <mailto:siegfried.vanlishout@kb.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
+      foaf:name "Informatie Vlaanderen"
+    ];
+    foaf:firstName "Ruben";
+    foaf:lastName "Capiau";
+    foaf:mbox <mailto:ruben.capiau@kb.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/informatie-vlaanderen>;
+      foaf:name "Informatie Vlaanderen"
+    ];
+    foaf:firstName "Veerle";
+    foaf:lastName "Beyaert";
+    foaf:mbox <mailto:veerle.beyaert@kb.vlaanderen.be>
+  ] .

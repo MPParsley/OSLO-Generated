@@ -1,0 +1,1906 @@
+{
+  "metadata": {
+    "title": "Vlaamse Codex",
+    "uri": "https://data.vlaanderen.be/ns/wetgeving",
+    "issued": "2019-02-07",
+    "baseURI": "https://data.vlaanderen.be/ns/wetgeving#",
+    "filename": "vlaamse-codex",
+    "navigation": {
+      "prev": "/doc/applicatieprofiel/vlaamse-codex/standaard/2019-02-07",
+      "self": "https://data.dev-vlaanderen.be/doc/applicatieprofiel/vlaamse-codex/ontwerpdocument/2020-01-06"
+    },
+    "license": "https://overheid.vlaanderen.be/sites/default/files/documenten/ict-egov/licenties/hergebruik/modellicentie_gratis_hergebruik_v1_0.html",
+    "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/Standaard",
+    "statuslabel": "Standaard",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-VlaamseCodex/tree/7ac7f1fda414b90d3e81d020df0c56442e481066",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-VlaamseCodex/blob/7ac7f1fda414b90d3e81d020df0c56442e481066/CHANGELOG",
+    "feedbackurl": "https://github.com/informatievlaanderen/OSLO-Discussion",
+    "standaardregisterurl": "https://data.vlaanderen.be/standaarden/erkende-standaarden/applicatieprofiel-vlaamse-codex/",
+    "usesVocs": [],
+    "usesAPs": []
+  },
+  "classes": [
+    {
+      "uri": "http://data.europa.eu/eli/ontology#LegalExpression",
+      "name": "Verschijningsvorm",
+      "label": {
+        "nl": "Verschijningsvorm"
+      },
+      "sort": "Verschijningsvorm",
+      "description": {
+        "nl": "De intellectuele realisatie van een rechtsbron in de vorm van een \"reeks van tekens\" (meestal alfanumerieke tekens in een juridische context)."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://data.europa.eu/eli/ontology#consolidates",
+          "name": "consolideert",
+          "sort": "consolideert",
+          "label": {
+            "nl": "consolideert"
+          },
+          "description": {
+            "nl": "Geeft aan dat deze geconsolideerde juridische bron of uitdrukking (meestal het product van een redactioneel proces dat de wetgeving herziet) rekening houdt met een andere."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Verschijningsvorm",
+              "uri": "http://data.europa.eu/eli/ontology#LegalExpression"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rechtsbron",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rechtsbron",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "nl": "Rechtsbron"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#corrected_by",
+          "name": "errata",
+          "sort": "errata",
+          "label": {
+            "nl": "errata"
+          },
+          "description": {
+            "nl": "Geeft een hulpmiddel aan dat tekstuele wijzigingen introduceert (zoals correctie of spelfouten) zonder juridische wijzigingen in deze bron, uitdrukking of indeling."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Verschijningsvorm",
+              "uri": "http://data.europa.eu/eli/ontology#LegalExpression"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Verschijningsvorm",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalExpression"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Verschijningsvorm",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalExpression",
+              "range_label": {
+                "nl": "Verschijningsvorm"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#date_applicability",
+          "name": "datum toepasbaarheid",
+          "sort": "datum toepasbaarheid",
+          "label": {
+            "nl": "datum toepasbaarheid"
+          },
+          "description": {
+            "nl": "De datum waarop de wetgeving van toepassing wordt."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Verschijningsvorm",
+              "uri": "http://data.europa.eu/eli/ontology#LegalExpression"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Date",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_label": {
+                "nl": "Date"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#date_no_longer_in_force",
+          "name": "buitenwerkingtreding",
+          "sort": "buitenwerkingtreding",
+          "label": {
+            "nl": "buitenwerkingtreding"
+          },
+          "description": {
+            "nl": "De laatste dag waarop de regelgeving nog van kracht is."
+          },
+          "usage": {
+            "nl": "De informatie over wanneer de regelgeving globaal inwerking of buitenwerking trad is terug te vinden op niveau van de Rechtsbron."
+          },
+          "domain": [
+            {
+              "EA-Name": "Verschijningsvorm",
+              "uri": "http://data.europa.eu/eli/ontology#LegalExpression"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Date",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_label": {
+                "nl": "Date"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#date_publication",
+          "name": "publicatiedatum",
+          "sort": "publicatiedatum",
+          "label": {
+            "nl": "publicatiedatum"
+          },
+          "description": {
+            "nl": "De officiële publicatiedatum van de verschijningsvorm."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Verschijningsvorm",
+              "uri": "http://data.europa.eu/eli/ontology#LegalExpression"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Date",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_label": {
+                "nl": "Date"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#first_date_entry_in_force",
+          "name": "inwerkingtreding",
+          "sort": "inwerkingtreding",
+          "label": {
+            "nl": "inwerkingtreding"
+          },
+          "description": {
+            "nl": "De laatste dag waarop een specifieke versie van de regelgeving of een onderdeel ervan nog van kracht is."
+          },
+          "usage": {
+            "nl": "De informatie over wanneer de regelgeving globaal inwerking of buitenwerking trad is terug te vinden op niveau van de Rechtsbron."
+          },
+          "domain": [
+            {
+              "EA-Name": "Verschijningsvorm",
+              "uri": "http://data.europa.eu/eli/ontology#LegalExpression"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Date",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_label": {
+                "nl": "Date"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#id_local",
+          "name": "lokaleid",
+          "sort": "lokaleid",
+          "label": {
+            "nl": "lokaleid"
+          },
+          "description": {
+            "nl": "De unieke ID die wordt gebruikt in een lokaal referentiesysteem om compatibiliteit met eerdere versies te handhaven."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Verschijningsvorm",
+              "uri": "http://data.europa.eu/eli/ontology#LegalExpression"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Identificator",
+              "range_uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Identificator",
+              "range_puri": "http://www.w3.org/ns/adms#Identifier",
+              "range_label": {
+                "nl": "Identificator"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#is_about",
+          "name": "thema",
+          "sort": "thema",
+          "label": {
+            "nl": "thema"
+          },
+          "description": {
+            "nl": "Term uit een thesaurus die verwijst naar een bevoegdheidsdomein."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Verschijningsvorm",
+              "uri": "http://data.europa.eu/eli/ontology#LegalExpression"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#language",
+          "name": "taal",
+          "sort": "taal",
+          "label": {
+            "nl": "taal"
+          },
+          "description": {
+            "nl": "De taal van de verschijningsvorm."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Verschijningsvorm",
+              "uri": "http://data.europa.eu/eli/ontology#LegalExpression"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#number",
+          "name": "nummer",
+          "sort": "nummer",
+          "label": {
+            "nl": "nummer"
+          },
+          "description": {
+            "nl": "Een identificator of een ander onderscheidend kenmerk voor een verschijningsvorm."
+          },
+          "usage": {
+            "nl": "Bijvoorbeeld het nummer van een artikel."
+          },
+          "domain": [
+            {
+              "EA-Name": "Verschijningsvorm",
+              "uri": "http://data.europa.eu/eli/ontology#LegalExpression"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#realizes",
+          "name": "realiseert",
+          "sort": "realiseert",
+          "label": {
+            "nl": "realiseert"
+          },
+          "description": {
+            "nl": "Heeft betrekking op de rechtsbron die door de verschijningsvorm gematerialiseerd wordt."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Verschijningsvorm",
+              "uri": "http://data.europa.eu/eli/ontology#LegalExpression"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rechtsbron",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rechtsbron",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "nl": "Rechtsbron"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#title",
+          "name": "opschrift",
+          "sort": "opschrift",
+          "label": {
+            "nl": "opschrift"
+          },
+          "description": {
+            "nl": "De titel of officiële naam van een decreet, wet, besluit... Deze wordt officieel vastgelegd."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Verschijningsvorm",
+              "uri": "http://data.europa.eu/eli/ontology#LegalExpression"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#title_short",
+          "name": "citeeropschrift",
+          "sort": "citeeropschrift",
+          "label": {
+            "nl": "citeeropschrift"
+          },
+          "description": {
+            "nl": "De beknopte titel of officiële korte naam van een decreet, wet, besluit..."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Verschijningsvorm",
+              "uri": "http://data.europa.eu/eli/ontology#LegalExpression"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "commentaar",
+          "sort": "commentaar",
+          "label": {
+            "nl": "commentaar"
+          },
+          "description": {
+            "nl": "Een verslag van de bron."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Verschijningsvorm",
+              "uri": "http://data.europa.eu/eli/ontology#LegalExpression"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/subject",
+          "name": "trefwoord",
+          "sort": "trefwoord",
+          "label": {
+            "nl": "trefwoord"
+          },
+          "description": {
+            "nl": "Vrije term als extra zoekingang tot de rechtsbron."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Verschijningsvorm",
+              "uri": "http://data.europa.eu/eli/ontology#LegalExpression"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/prov#value",
+          "name": "inhoud",
+          "sort": "inhoud",
+          "label": {
+            "nl": "inhoud"
+          },
+          "description": {
+            "nl": "De beschrijving van de beoogde rechtsgevolgen, het zogenaamde beschikkend gedeelte."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Verschijningsvorm",
+              "uri": "http://data.europa.eu/eli/ontology#LegalExpression"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://data.europa.eu/eli/ontology#LegalResource",
+      "name": "Rechtsbron",
+      "label": {
+        "nl": "Rechtsbron"
+      },
+      "sort": "Rechtsbron",
+      "description": {
+        "nl": "Een legaal concept dat los staat van een bepaalde vorm (het achterliggende idee)."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/wetgeving#bekrachtigdBij",
+          "name": "bekrachtigd bij",
+          "sort": "bekrachtigd bij",
+          "label": {
+            "nl": "bekrachtigd bij"
+          },
+          "description": {
+            "nl": "Inverse van bekrachtigt."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbron",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rechtsbron",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rechtsbron",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "nl": "Rechtsbron"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/wetgeving#bekrachtigt",
+          "name": "bekrachtigt",
+          "sort": "bekrachtigt",
+          "label": {
+            "nl": "bekrachtigt"
+          },
+          "description": {
+            "nl": "Betekent dat dit document instemt met een ander type document waardoor dat laatste volledige rechtskracht krijgt. De bekrachtiging is in dit geval een opschortende voorwaarde."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbron",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rechtsbron",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rechtsbron",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "nl": "Rechtsbron"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/wetgeving#heftOp",
+          "name": "heft op",
+          "sort": "heft op",
+          "label": {
+            "nl": "heft op"
+          },
+          "description": {
+            "nl": "Geeft aan dat deze bron een andere buiten werking stelt"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbron",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rechtsbron",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rechtsbron",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "nl": "Rechtsbron"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/wetgeving#ingetrokkenBij",
+          "name": "ingetrokken bij",
+          "sort": "ingetrokken bij",
+          "label": {
+            "nl": "ingetrokken bij"
+          },
+          "description": {
+            "nl": "Geeft aan dat deze bron volledig wordt geannuleerd door een andere bron."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbron",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rechtsbron",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rechtsbron",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "nl": "Rechtsbron"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/wetgeving#ingevoegdBij",
+          "name": "ingevoegd bij",
+          "sort": "ingevoegd bij",
+          "label": {
+            "nl": "ingevoegd bij"
+          },
+          "description": {
+            "nl": "Geeft een bron aan die deze bron aanvult met juridische impact."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbron",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rechtsbron",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rechtsbron",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "nl": "Rechtsbron"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/wetgeving#opgehevenBij",
+          "name": "opgeheven bij",
+          "sort": "opgeheven bij",
+          "label": {
+            "nl": "opgeheven bij"
+          },
+          "description": {
+            "nl": "Geeft aan dat deze juridische bron of juridische uitdrukking volledig wordt ingetrokken door een andere juridische hulpbron."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbron",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rechtsbron",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rechtsbron",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "nl": "Rechtsbron"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/wetgeving#trektIn",
+          "name": "trekt in",
+          "sort": "trekt in",
+          "label": {
+            "nl": "trekt in"
+          },
+          "description": {
+            "nl": "Geeft aan dat deze juridische bron of juridische uitdrukking volledig kan worden geannuleerd door een andere."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbron",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rechtsbron",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rechtsbron",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "nl": "Rechtsbron"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/wetgeving#vervangenBij",
+          "name": "vervangen bij",
+          "sort": "vervangen bij",
+          "label": {
+            "nl": "vervangen bij"
+          },
+          "description": {
+            "nl": "Geeft een bron aan die volledig vernieuwd is door een andere."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbron",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rechtsbron",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rechtsbron",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "nl": "Rechtsbron"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/wetgeving#vervangt",
+          "name": "vervangt",
+          "sort": "vervangt",
+          "label": {
+            "nl": "vervangt"
+          },
+          "description": {
+            "nl": "Geeft aan dat deze bron een andere volledig vernieuwt."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbron",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rechtsbron",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rechtsbron",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "nl": "Rechtsbron"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/wetgeving#voegtIn",
+          "name": "voegt in",
+          "sort": "voegt in",
+          "label": {
+            "nl": "voegt in"
+          },
+          "description": {
+            "nl": "Deze bron vult een andere aan met legale impact."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbron",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rechtsbron",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rechtsbron",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "nl": "Rechtsbron"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#amended_by",
+          "name": "gewijzigd bij",
+          "sort": "gewijzigd bij",
+          "label": {
+            "nl": "gewijzigd bij"
+          },
+          "description": {
+            "nl": "Duidt aan dat deze rechtsbron een verandering met legale gevolgen heeft ondergaan door een andere rechtsbron. Dit omvat amendementen, vervangingen, herroepingen en andere types verandering."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbron",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rechtsbron",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rechtsbron",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "nl": "Rechtsbron"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#amends",
+          "name": "wijzigt",
+          "sort": "wijzigt",
+          "label": {
+            "nl": "wijzigt"
+          },
+          "description": {
+            "nl": "Duidt aan dat deze rechtsbron een verandering met legale gevolgen doorvoert op een andere rechtsbron. Dit omvat amendementen, vervangingen, herroepingen en andere types verandering."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbron",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rechtsbron",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rechtsbron",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "nl": "Rechtsbron"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#cites",
+          "name": "citeert",
+          "sort": "citeert",
+          "label": {
+            "nl": "citeert"
+          },
+          "description": {
+            "nl": "Een citatie in de wettelijke tekst. Dit omvat zowel woordelijke citaten als citaten in verwijzingen."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbron",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rechtsbron",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rechtsbron",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "nl": "Rechtsbron"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#date_document",
+          "name": "datum document",
+          "sort": "datum document",
+          "label": {
+            "nl": "datum document"
+          },
+          "description": {
+            "nl": "Adoptiedatum of handtekendatum (in de vorm jjjj-mm-dd)."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbron",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Date",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_label": {
+                "nl": "Date"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#date_no_longer_in_force",
+          "name": "buitenwerkingtreding",
+          "sort": "buitenwerkingtreding",
+          "label": {
+            "nl": "buitenwerkingtreding"
+          },
+          "description": {
+            "nl": "De laatste dag waarop de regelgeving nog van kracht is."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbron",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Date",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_label": {
+                "nl": "Date"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#first_date_entry_in_force",
+          "name": "inwerkingtreding",
+          "sort": "inwerkingtreding",
+          "label": {
+            "nl": "inwerkingtreding"
+          },
+          "description": {
+            "nl": "De datum waarop de regelgeving van kracht wordt."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbron",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Date",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#date",
+              "range_label": {
+                "nl": "Date"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#is_realized_by",
+          "name": "is gerealiseerd door",
+          "sort": "is gerealiseerd door",
+          "label": {
+            "nl": "is gerealiseerd door"
+          },
+          "description": {
+            "nl": "De verschijningsvorm die deze rechtsbron materialiseert in een concrete tekst."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbron",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Verschijningsvorm",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalExpression"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Verschijningsvorm",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalExpression",
+              "range_label": {
+                "nl": "Verschijningsvorm"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#related_to",
+          "name": "zie ook",
+          "sort": "zie ook",
+          "label": {
+            "nl": "zie ook"
+          },
+          "description": {
+            "nl": "Duidt op een of ander manier gerelateerd ander document, niet noodzakelijk een legale bron."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbron",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rechtsbron",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rechtsbron",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "nl": "Rechtsbron"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#responsibility_of",
+          "name": "verantwoordelijke",
+          "sort": "verantwoordelijke",
+          "label": {
+            "nl": "verantwoordelijke"
+          },
+          "description": {
+            "nl": "Een aparte intellectuele creatie (d.w.z. de intellectuele inhoud)."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbron",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://purl.org/dc/terms/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Agent",
+              "range_puri": "http://purl.org/dc/terms/Agent",
+              "range_label": {
+                "nl": "Agent"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#transposes",
+          "name": "zet om",
+          "sort": "zet om",
+          "label": {
+            "nl": "zet om"
+          },
+          "description": {
+            "nl": "Geeft aan dat deze wetgeving (of een deel van de wetgeving) voldoet aan de doelstellingen van een andere wetgeving, door het nemen van passende uitvoeringsmaatregelen."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbron",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rechtsbron",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rechtsbron",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "nl": "Rechtsbron"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/eli/ontology#type_document",
+          "name": "type document",
+          "sort": "type document",
+          "label": {
+            "nl": "type document"
+          },
+          "description": {
+            "nl": "Het type van het regelgevend document."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbron",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "AardWetgeving",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#aard van de wetgeving",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "aard van de wetgeving"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": "https://data.vlaanderen.be/id/conceptscheme/AardWetgeving"
+        },
+        {
+          "uri": "http://purl.org/dc/terms/hasPart",
+          "name": "heeft deel",
+          "sort": "heeft deel",
+          "label": {
+            "nl": "heeft deel"
+          },
+          "description": {
+            "nl": "Geeft aan dat deze bron uit deelbronnen bestaat."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbron",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rechtsbrononderdeel",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResourceSubdivision"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rechtsbrononderdeel",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResourceSubdivision",
+              "range_label": {
+                "nl": "Rechtsbrononderdeel"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://data.europa.eu/eli/ontology#LegalResourceSubdivision",
+      "name": "Rechtsbrononderdeel",
+      "label": {
+        "nl": "Rechtsbrononderdeel"
+      },
+      "sort": "Rechtsbrononderdeel",
+      "description": {
+        "nl": "Een onderdeel van een rechtshandeling, op een willekeurig niveau van nauwkeurigheid, zoals een hoofdstuk, een artikel, een alinea, een alinea of een lijstitem."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Rechtsbron",
+          "name": "Rechtsbron",
+          "package": "Applicatieprofiel Vlaamse Codex",
+          "uri": "http://data.europa.eu/eli/ontology#LegalResource",
+          "scoped_uri": "#Rechtsbron"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "http://data.europa.eu/eli/ontology#is_part_of",
+          "name": "is deel van",
+          "sort": "is deel van",
+          "label": {
+            "nl": "is deel van"
+          },
+          "description": {
+            "nl": "Relatie die documenten en onderdelen (hoofdstukken, artikels...) aan elkaar linkt."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbrononderdeel",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResourceSubdivision"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rechtsbron",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rechtsbron",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "nl": "Rechtsbron"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/type",
+          "name": "type",
+          "sort": "type",
+          "label": {
+            "nl": "type"
+          },
+          "description": {
+            "nl": "Het type van het rechtsbrononderdeel."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rechtsbrononderdeel",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResourceSubdivision"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TypeRechtsbrononderdeel",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Type rechtsbron onderdeel",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Type rechtsbron onderdeel"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": "https://data.vlaanderen.be/id/conceptscheme/TypeRechtsbrononderdeel"
+        }
+      ]
+    },
+    {
+      "uri": "http://purl.org/dc/terms/Agent",
+      "name": "Agent",
+      "label": {
+        "nl": "Agent"
+      },
+      "sort": "Agent",
+      "description": {
+        "nl": "Iemand die of iets dat kan handelen of een effect kan teweeg brengen."
+      },
+      "usage": {
+        "nl": " "
+      },
+      "parents": [],
+      "properties": []
+    }
+  ],
+  "properties": [
+    {
+      "uri": "https://data.vlaanderen.be/ns/wetgeving#bekrachtigdBij",
+      "name": {
+        "nl": "bekrachtigd bij",
+        "undefined": "bekrachtigd bij"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/wetgeving#bekrachtigt",
+      "name": {
+        "nl": "bekrachtigt",
+        "undefined": "bekrachtigt"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/wetgeving#heftOp",
+      "name": {
+        "nl": "heft op",
+        "undefined": "heft op"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": [
+        "http://data.europa.eu/eli/ontology#repeals"
+      ]
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/wetgeving#ingetrokkenBij",
+      "name": {
+        "nl": "ingetrokken bij",
+        "undefined": "ingetrokken bij"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": [
+        "http://data.europa.eu/eli/ontology#repealed_by"
+      ]
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/wetgeving#ingevoegdBij",
+      "name": {
+        "nl": "ingevoegd bij",
+        "undefined": "ingevoegd bij"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": [
+        "http://data.europa.eu/eli/ontology#amended_by"
+      ]
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/wetgeving#opgehevenBij",
+      "name": {
+        "nl": "opgeheven bij",
+        "undefined": "opgeheven bij"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": [
+        "http://data.europa.eu/eli/ontology#repealed_by"
+      ]
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/wetgeving#trektIn",
+      "name": {
+        "nl": "trekt in",
+        "undefined": "trekt in"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": [
+        "http://data.europa.eu/eli/ontology#repeals"
+      ]
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/wetgeving#vervangenBij",
+      "name": {
+        "nl": "vervangen bij",
+        "undefined": "vervangen bij"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/wetgeving#vervangt",
+      "name": {
+        "nl": "vervangt",
+        "undefined": "vervangt"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": [
+        "http://data.europa.eu/eli/ontology#repeals"
+      ]
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/wetgeving#voegtIn",
+      "name": {
+        "nl": "voegt in",
+        "undefined": "voegt in"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": [
+        "http://data.europa.eu/eli/ontology#amends"
+      ]
+    }
+  ],
+  "contributors": [
+    {
+      "role": "A",
+      "first_name": "Frank",
+      "last_name": "Steenput",
+      "affiliation": {
+        "name": "Departement Kanselarij en Bestuur",
+        "website": "https://overheid.vlaanderen.be/"
+      },
+      "email": "codex@vlaanderen.be"
+    },
+    {
+      "role": "A",
+      "first_name": "Christel",
+      "last_name": "Van Keer",
+      "affiliation": {
+        "name": "Departement Kanselarij en Bestuur",
+        "website": "https://overheid.vlaanderen.be/"
+      },
+      "email": "codex@vlaanderen.be"
+    },
+    {
+      "role": "E",
+      "first_name": "Yves",
+      "last_name": "Meersmans",
+      "affiliation": {
+        "name": "PwC",
+        "website": "https://www.pwc.be"
+      },
+      "email": "yves.meersmans@pwc.com"
+    },
+    {
+      "role": "E",
+      "first_name": "Jens",
+      "last_name": "Scheerlinck",
+      "affiliation": {
+        "name": "PwC",
+        "website": "http://www.pwc.be"
+      },
+      "email": "jens.scheerlinck@pwc.com"
+    },
+    {
+      "role": "E",
+      "first_name": "Carmen",
+      "last_name": "Vandeloo",
+      "affiliation": {
+        "name": "PwC",
+        "website": "http://www.pwc.be"
+      },
+      "email": "carmen.vandeloo@pwc.com"
+    },
+    {
+      "role": "C",
+      "first_name": "Domien",
+      "last_name": "Decloedt",
+      "affiliation": {
+        "name": "Agentschap Binnenlands Bestuur",
+        "website": "http://binnenland.vlaanderen.be/"
+      },
+      "email": "domien.decloedt@bz.vlaanderen.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Geert",
+      "last_name": "Van Haute",
+      "affiliation": {
+        "name": "Departement Omgeving",
+        "website": "https://www.lne.be/"
+      },
+      "email": "geert.vanhaute@lne.vlaanderen.be"
+    }
+  ],
+  "datatypes": [
+    {
+      "uri": "http://www.w3.org/ns/adms#Identifier",
+      "name": "Identificator",
+      "label": {
+        "nl": "Identificator"
+      },
+      "sort": "Identificator",
+      "description": {
+        "nl": "Informatie gebruikt om een object uniek te identificeren. "
+      },
+      "usage": {
+        "nl": "Uitgangspunt hier is dat deze string door een organisatie wordt toegekend en dat dit gebeurt volgens een welbepaald systeem."
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://purl.org/dc/terms/creator",
+          "name": "toegekend door",
+          "sort": "toegekend door",
+          "label": {
+            "nl": "toegekend door"
+          },
+          "description": {
+            "nl": "Link naar de agent die de identificator heeft uitgegeven."
+          },
+          "usage": {
+            "nl": " "
+          },
+          "domain": [
+            {
+              "EA-Name": "Identificator",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://purl.org/dc/terms/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Agent",
+              "range_puri": "http://purl.org/dc/terms/Agent",
+              "range_label": {
+                "nl": "Agent"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/issued",
+          "name": "toegekend op",
+          "sort": "toegekend op",
+          "label": {
+            "nl": "toegekend op"
+          },
+          "description": {
+            "nl": "Tijdstip waarop de identificator werd uitgegeven."
+          },
+          "usage": {
+            "nl": " "
+          },
+          "domain": [
+            {
+              "EA-Name": "Identificator",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "nl": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/2004/02/skos/core#notation",
+          "name": "identificator",
+          "sort": "identificator",
+          "label": {
+            "nl": "identificator"
+          },
+          "description": {
+            "nl": "String gebruikt om het object uniek te identificeren. "
+          },
+          "usage": {
+            "nl": "Type vd string slaat op het identificatiesysteem (incl de versie ervan), de string zelf op de eigenlijke identificator."
+          },
+          "domain": [
+            {
+              "EA-Name": "Identificator",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "GetypeerdeString",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "nl": "GetypeerdeString"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/adms#schemaAgency",
+          "name": "toegekend door (String)",
+          "sort": "toegekend door (String)",
+          "label": {
+            "nl": "toegekend door (String)"
+          },
+          "description": {
+            "nl": "Naam vd agent die de identificator heeft toegekend."
+          },
+          "usage": {
+            "nl": " "
+          },
+          "domain": [
+            {
+              "EA-Name": "Identificator",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    }
+  ],
+  "parents": [],
+  "documentroot": "/doc/applicatieprofiel/vlaamse-codex/ontwerpdocument/2020-01-06"
+}

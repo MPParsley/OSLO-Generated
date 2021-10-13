@@ -1,0 +1,629 @@
+{
+  "@context": {
+    "@vocab": "https://data.dev-vlaanderen.be/shacl/metadata-voor-services-ap-SHACL_nl",
+    "qb": "http://purl.org/linked-data/cube#",
+    "qb:codeList": {
+      "@type": "@id"
+    },
+    "sh": "http://www.w3.org/ns/shacl#",
+    "sh:class": {
+      "@type": "@id"
+    },
+    "sh:datatype": {
+      "@type": "@id"
+    },
+    "sh:definition": {
+      "@container": "@language"
+    },
+    "sh:maxCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:minCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:name": {
+      "@container": "@language"
+    },
+    "sh:path": {
+      "@type": "@id"
+    },
+    "sh:property": {
+      "@type": "@id"
+    },
+    "sh:targetClass": {
+      "@type": "@id"
+    },
+    "shapes": {
+      "@type": "@id"
+    }
+  },
+  "@id": "https://data.dev-vlaanderen.be/shacl/metadata-voor-services-ap-SHACL_nl",
+  "shapes": [
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/metadata-voor-services-ap-SHACL_nl#AgentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "De naam van de agent"
+          },
+          "sh:maxCount": "n",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "naam"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/generiek#naam"
+        }
+      ],
+      "sh:targetClass": "http://purl.org/dc/terms/Agent"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/metadata-voor-services-ap-SHACL_nl#Contactinfo Shape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "nl": "Het e-mail adres waarmee je contact kan opnemen."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "e-mail"
+          },
+          "sh:path": "http://www.w3.org/2006/vcard/ns#hasEmail"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/2006/vcard/ns#Kind"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/metadata-voor-services-ap-SHACL_nl#CatalogusShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "een bondige omschrijving van de catalogus"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "beschrijving"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://www.w3.org/2006/vcard/ns#Kind",
+          "sh:definition": {
+            "nl": "De contactinformatie via men in contact kan treden met de verantwoordelijken van de catalogus"
+          },
+          "sh:maxCount": "n",
+          "sh:name": {
+            "nl": "contactinformatie"
+          },
+          "sh:path": "http://www.w3.org/ns/dcat#contactPoint"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/dcat#DataService",
+          "sh:definition": {
+            "nl": "geregistreerde DataServices in de catalogus"
+          },
+          "sh:name": {
+            "nl": "heeft DataService"
+          },
+          "sh:path": "http://www.w3.org/ns/dcat#service"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/dcat#Dataset",
+          "sh:definition": {
+            "nl": "geregistreerde dataset in de catalogus "
+          },
+          "sh:name": {
+            "nl": "heeft Dataset"
+          },
+          "sh:path": "http://www.w3.org/ns/dcat#dataset"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:definition": {
+            "nl": "een identificator voor de catalogus"
+          },
+          "sh:maxCount": "n",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "identificator"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/LicenseDocument",
+          "sh:definition": {
+            "nl": "de licentie voor de catalogus"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "licentie"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#licentie"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/dcat#CatalogRecord",
+          "sh:definition": {
+            "nl": "provenance informatie over de registratie van een catalogsResource in de catalogus "
+          },
+          "sh:name": {
+            "nl": "record"
+          },
+          "sh:path": "http://www.w3.org/ns/dcat#record"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "de naam voor de catalogus"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "titel"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Agent",
+          "sh:definition": {
+            "nl": "de uitgever van een catalogus"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "uitgever"
+          },
+          "sh:path": "http://purl.org/dc/terms/publisher"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/dcat#Catalog"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/metadata-voor-services-ap-SHACL_nl#CatalogusRecordShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "nl": "Het moment waarop de registratie van de catalogusResource voor de eerste keer gebeurde in de catalogus"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "aanmaakdatum"
+          },
+          "sh:path": "http://purl.org/dc/terms/issued"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/dcat#Resource",
+          "sh:definition": {
+            "nl": "de geregistreerde catalogusResource"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "hoofdonderwerp"
+          },
+          "sh:path": "http://xmlns.com/foaf/0.1/primaryTopic"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:definition": {
+            "nl": "een identificator van het catalogusrecord"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "identificator"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "de naam van het registratie van de catalogusresource "
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "titel"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/dcat#CatalogRecord"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/metadata-voor-services-ap-SHACL_nl#DataServiceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "nl": "landingspagina met informatie over authenticatie"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "authenticatie"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#authenticatie"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Een bondige omschrijving van de dataService"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "beschrijving"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/dcat#Dataset",
+          "sh:definition": {
+            "nl": "data die aangeboden wordt door de datasService"
+          },
+          "sh:name": {
+            "nl": "biedt informatie aan over"
+          },
+          "sh:path": "http://www.w3.org/ns/dcat#servesdataset"
+        },
+        {
+          "sh:class": "http://www.w3.org/2006/vcard/ns#Kind",
+          "sh:definition": {
+            "nl": "De contactinformatie via men in contact kan treden met de verantwoordelijken van de dataservice. "
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "contactinformatie"
+          },
+          "sh:path": "http://www.w3.org/ns/dcat#contactPoint"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "nl": "landingspagina met informatie over kwaliteit van de dienstverlening"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "dienstverleningskwaliteit"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#dienstverleningsKwaliteit"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "nl": "landingspagina met informatie over de doelpopulatie"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "doelpopulatie"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#doelpopulatie"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "nl": "De rootlocatie of het primaire eindpunt van de dienst (een web-resolvable URI)"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "endpointURL"
+          },
+          "sh:path": "http://www.w3.org/ns/dcat#endpointURL"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "nl": "Een beschrijving van de diensten die beschikbaar zijn via de end-points, met inbegrip van hun werking, parameters, enz. "
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "endpointbeschrijving"
+          },
+          "sh:path": "http://www.w3.org/ns/dcat#endpointDescription"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "nl": "landingspagina met informatie over de genomen voorwaarden om de service te mogen gebruiken. "
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "gebruiksbepaling"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#gebruiksbepaling"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:definition": {
+            "nl": "Een unieke identificator van de dataService"
+          },
+          "sh:maxCount": "n",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "identificator"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "nl": "Algemene pagina met vaak beschrijvende tekst"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "landingspagina"
+          },
+          "sh:path": "http://www.w3.org/ns/dcat#landingPage"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "huidige toestand van gebruiksmogelijkheden"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "gebruiksstatus"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#statusVanGebruik"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "huidige toestand van de ontwikkelingsstatus "
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "ontwikkelingsstatus"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#statusVanOntwikkeling"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "naam voor de dataService. "
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "titel"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Een trefwoord of tag die de resource beschrijft"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "trefwoord"
+          },
+          "sh:path": "http://www.w3.org/ns/dcat#keyword"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "unieke aanduiding van de gedeployde service toestand gegeven door de endpointbeheerder"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "versie"
+          },
+          "sh:path": "http://www.w3.org/2002/07/owl#versionInfo"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "nl": "landingspagina met informatie over de wettelijke beperkingen i.v.m. dataService"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "wettelijke beperkingen"
+          },
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#wettelijkeBeperkingen"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/dcat#DataService"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/metadata-voor-services-ap-SHACL_nl#DatasetShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": " Een bondige omschrijving van de dataset."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "beschrijving"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://schema.org/ContactPoint",
+          "sh:definition": {
+            "nl": "De contactinformatie via men in contact kan treden met de verantwoordelijken van de dataset"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "contactinformatie"
+          },
+          "sh:path": "http://www.w3.org/ns/dcat#contactPoint"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/dcat#Distribution",
+          "sh:definition": {
+            "nl": "een distributie van de de dataset."
+          },
+          "sh:name": {
+            "nl": "distributie"
+          },
+          "sh:path": "http://www.w3.org/ns/dcat#distribution"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:definition": {
+            "nl": "Een unieke identificator van de dataset"
+          },
+          "sh:maxCount": "n",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "identificator"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "nl": "Een webpagina waar via een browser informatie kan gevonden worden over de dataset."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "landingspagina"
+          },
+          "sh:path": "http://www.w3.org/ns/dcat#landingPage"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Het thema waartoe de dataset behoort"
+          },
+          "sh:maxCount": "n",
+          "sh:name": {
+            "nl": "thema"
+          },
+          "sh:path": "http://www.w3.org/ns/dcat#theme"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "De naam van de dataset"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "titel"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "qb:codeList": "https://publications.europa.eu/en/web/eu-vocabularies/at-dataset/-/resource/dataset/access-right",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "De toegankelijkheidscategorie van de dataset."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "toegankelijkheid"
+          },
+          "sh:path": "http://purl.org/dc/terms/accessRights"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/dcat#Dataset"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/metadata-voor-services-ap-SHACL_nl#DistributieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "nl": "De URL waar de data gedownload kan worden. "
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "downloadURL"
+          },
+          "sh:path": "http://www.w3.org/ns/dcat#downloadURL"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:definition": {
+            "nl": "Een unieke identificator van de distributie"
+          },
+          "sh:maxCount": "n",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "identificator"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/LicenseDocument",
+          "sh:definition": {
+            "nl": "de licentie van de distributie"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "licentie"
+          },
+          "sh:path": "http://purl.org/dc/terms/license"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "naam van de distributie"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "titel"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "nl": "De URL waar de data kan gevonden worden."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "toegangsURL"
+          },
+          "sh:path": "http://www.w3.org/ns/dcat#accessURL"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/dcat#DataService",
+          "sh:definition": {
+            "nl": "de dataservice die deze distributie aanbiedt"
+          },
+          "sh:name": {
+            "nl": "wordt aangeboden door"
+          },
+          "sh:path": "http://www.w3.org/ns/dcat#accessService"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/dcat#Distribution"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/metadata-voor-services-ap-SHACL_nl#CatalogusResourceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://purl.org/dc/terms/Agent",
+          "sh:definition": {
+            "nl": "De uitgever van de catalogusResource"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "uitgever"
+          },
+          "sh:path": "http://purl.org/dc/terms/publisher"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/dcat#Resource"
+    }
+  ]
+}

@@ -1,669 +1,723 @@
-@prefix dbo: <http://dbpedia.org/ontology/> .
-@prefix dc: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix org: <http://www.w3.org/ns/org#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <http://schema.org/> .
-@prefix shacl: <http://www.w3.org/ns/shacl#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix qb:      <http://purl.org/linked-data/cube#> .
+<https://data.vlaanderen.be/shacl/verkeersborden#VerkeerstekenWettelijkeStatusShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/mobiliteit#VerkeerstekenWettelijkeStatus> ;
+	sh:property [
+		sh:name "veroorzaaktDoor" ;
+		sh:description "De mobiliteitsmaatregel die ervoor gezorgd heeft dat het verkeersteken een bepaalde wettelijke status bekomen heeft." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#VerkeerstekenWettelijkeStatus.veroorzaaktDoor> ;
+		sh:class <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "status" ;
+		sh:description "Duidt de wettelijke status aan van het verkeersteken." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#VerkeerstekenWettelijkeStatus.status> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl> <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nlshapes> <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#VerkeersbordcategorieShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#VerkeersbordconceptShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#MobiliteitsmaatregelShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#DraagconstructieRetroreflecterendeVerkeersbordenShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::AfsluitingShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::StraatspiegelShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::FietstelpaalShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#RechtsgrondonderdeelShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::ElektriciteitspaalShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::BestendigeAfsluitingShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::VangrailShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::NadarShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::StootbandNewJerseyShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::OpenbareVerlichtingShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::DraadafsluitingShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#VerkeersbordconceptStatusShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#VerankeringShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#Verkeersbord-VerkeerstekenShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::FietsstallingShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#BevestigingShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::SchampblokShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::GalgsteunShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#DraagconstructieVerkeersbordenShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::KnipperlichtShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::GeluidschermShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::SlagboomShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OpstellingShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::VerlichtingspaalShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::MuurShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::PaalBovenleidingTramTreinTrolleyShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#RetroreflecterendVerkeersbordShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::FlitspaalShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#SteunRetroreflecterendVerkeersbordShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::VerkeerslichtShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::NewJerseyShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::SignalisatieEnLeidingenportiekShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#VerkeerstekenWettelijkeStatusShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::MuurBinnenDeWegbaanShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::BorstweringShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::VakwerksteunShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::PijlerShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::VerkeersbordShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#VerkeerstekenShape>,
-    <https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#SignalisatievergunningShape> .
+<https://data.vlaanderen.be/shacl/verkeersborden#VerkeersbordconceptStatusShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/mobiliteit#VerkeersbordconceptStatus> ;
+	sh:property [
+		sh:name "veroorzaaktDoor" ;
+		sh:description "Door welk rechtsgrondonderdeel het verkeersbordconcept in deze status bekomen is." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#VerkeersbordconceptStatus.veroorzaaktDoor> ;
+		sh:class <http://data.europa.eu/eli/ontology#LegalResourceSubdivision> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "status" ;
+		sh:description "Duidt of het verkeersbordconcept nog gebruikt wordt." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#VerkeersbordconceptStatus.status> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#BevestigingShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:datatype xsd:string;
-    shacl:definition "Tot welke standaard deze bevestiging conform is."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "conform standaard"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#conformStandaard>
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#RetroreflecterendVerkeersbord>;
-    shacl:definition "Verkeersbord die met deze bevestiging is opgehangen."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "hangt op"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#isOpgehangenAan>
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#DraagconstructieRetroreflecterendeVerkeersborden>;
-    shacl:definition "Infrastructuurelement waaraan bevestigd is."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "is bevestigd aan"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#isOpgehangenAan>
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "Waarmee de bevestiging gemonteerd is."@nl;
-    shacl:maxCount 1;
-    shacl:name "montagetype"@nl;
-    shacl:path dc:type
-  ];
-  shacl:targetClass <https://data.vlaanderen.be/ns/mobiliteit#Bevestiging> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::MuurBinnenDeWegbaanShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#MuurBinnenDeWegbaan> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#DraagconstructieRetroreflecterendeVerkeersbordenShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:class skos:Concept;
-    shacl:definition "Kleur van de draagconstructie."@nl;
-    shacl:maxCount 1;
-    shacl:name "kleur"@nl;
-    shacl:path dbo:colour
-  ], [
-    shacl:class dc:Agent;
-    shacl:definition "Agent die de draagconstructie aanlevert."@nl;
-    shacl:maxCount 1;
-    shacl:name "leverancier"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#leverancier>
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "Materiaal waaruit de draagconstructie voor retroreflecterende verkeersborden is uit opgebouwd."@nl;
-    shacl:name "materiaal"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#materiaal>
-  ], [
-    shacl:class org:Organization;
-    shacl:definition "Instantie (tot op team- of dienstniveau) die instaat voor het beheer van het object."@nl;
-    shacl:maxCount 1;
-    shacl:name "beheerder"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/openbaardomein#beheerder>
-  ];
-  shacl:targetClass <https://data.vlaanderen.be/ns/mobiliteit#DraagconstructieRetroreflecterendeVerkeersborden> .
+<https://data.vlaanderen.be/shacl/verkeersborden#DraagconstructieVerkeersbordenShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/mobiliteit#DraagconstructieVerkeersborden> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#DraagconstructieVerkeersbordenShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/mobiliteit#DraagconstructieVerkeersborden> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::MuurShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Muur> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#MobiliteitsmaatregelShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Verkeersteken>;
-    shacl:definition "Een verkeersteken dat bijdraagt tot de aanduiding van een mobiliteitsmaatregel."@nl;
-    shacl:name "wordt aangeduid door"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#wordtAangeduidDoor>
-  ];
-  shacl:targetClass <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::StraatspiegelShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Straatspiegel> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::AfsluitingShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Afsluiting> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::StootbandNewJerseyShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#StootbandNewJersey> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::BestendigeAfsluitingShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#BestendigeAfsluiting> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::SlagboomShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Slagboom> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::BorstweringShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Borstwering> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::SchampblokShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Schampblok> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::DraadafsluitingShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Draadafsluiting> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::PijlerShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Pijler> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::ElektriciteitspaalShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Elektriciteitspaal> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::PaalBovenleidingTramTreinTrolleyShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#PaalBovenleidingTramTreinTrolley> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::FietsstallingShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Fietsstalling> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::OpenbareVerlichtingShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#OpenbareVerlichting> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::FietstelpaalShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Fietstelpaal> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::KnipperlichtShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Knipperlicht> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::FlitspaalShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Flitspaal> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::GeluidschermShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Geluidscherm> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::GalgsteunShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/mobiliteit#OSLO-OpenbaarDomein::Galgsteun> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::FlitspaalShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Flitspaal> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::GeluidschermShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Geluidscherm> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::FietstelpaalShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Fietstelpaal> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::KnipperlichtShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Knipperlicht> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::FietsstallingShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Fietsstalling> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::MuurBinnenDeWegbaanShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#MuurBinnenDeWegbaan> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::ElektriciteitspaalShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Elektriciteitspaal> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::MuurShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Muur> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::DraadafsluitingShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Draadafsluiting> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::NadarShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Nadar> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::BestendigeAfsluitingShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#BestendigeAfsluiting> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::NewJerseyShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#NewJersey> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::VerkeersbordShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Verkeersbord> ;
+	sh:property [
+		sh:name "realiseert" ;
+		sh:description "Relateert een verkeersbord op het openbaar domein tot het verkeersteken." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#realiseert> ;
+		sh:class <https://data.vlaanderen.be/ns/mobiliteit#Verkeersbord-Verkeersteken> ;
+		sh:minCount 1 ;
+	] ;
+	sh:property [
+		sh:name "aanzicht" ;
+		sh:description "De hoek waarin het fysiek bord gepositioneerd is ten opzichte van een vooropgestelde as." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#aanzicht> ;
+		sh:datatype <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "afbeelding" ;
+		sh:description "Weergave van het geïnstalleerde verkeersbord op het openbaar domein." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#grafischeWeergave> ;
+		sh:class <http://xmlns.com/foaf/0.1/Document> ;
+	] ;
+	sh:property [
+		sh:name "beheerder" ;
+		sh:description "Instantie die instaat voor het beheer van het verkeersbord." ;
+		sh:path <https://data.vlaanderen.be/ns/openbaardomein#beheerder> ;
+		sh:class <http://www.w3.org/ns/org#Organization> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "leverancier" ;
+		sh:description "Agent die het verkeersbord aanlevert en verantwoordlijkheid heeft over de productkwaliteit." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#leverancier> ;
+		sh:class <http://purl.org/dc/terms/Agent> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "operationeleStatus" ;
+		sh:description "Operationele status van een verkeersbord." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#Verkeersbord.operationeleStatus> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "opmerking" ;
+		sh:description "Opmerking over het verkeersbord." ;
+		sh:path <http://schema.org/comment> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+	] ;
+	sh:property [
+		sh:name "afmeting" ;
+		sh:description "Afmeting (lengte) van het verkeersbord." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#Verkeersbord.afmeting> ;
+		sh:class <http://schema.org/QuantitativeValue> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "opstelhoogte" ;
+		sh:description "Afstand tussen het maaiveld en de onderrand van het bord." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#opstelhoogte> ;
+		sh:class <http://schema.org/QuantitativeValue> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "breedte" ;
+		sh:description "Breedte van het verkeersbord." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#breedte> ;
+		sh:class <http://schema.org/QuantitativeValue> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "hoogte" ;
+		sh:description "Hoogte van het verkeersbord." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#hoogte> ;
+		sh:class <http://schema.org/QuantitativeValue> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::OpenbareVerlichtingShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#OpenbareVerlichting> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::BorstweringShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Borstwering> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::PaalBovenleidingTramTreinTrolleyShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#PaalBovenleidingTramTreinTrolley> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::VangrailShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuurelement#Vangrail> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::PijlerShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Pijler> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::NadarShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Nadar> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::SchampblokShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Schampblok> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::VakwerksteunShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Vakwerksteun> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::SignalisatieEnLeidingenportiekShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuurelement#SignalisatieEnLeidingenportiek> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::SignalisatieEnLeidingenportiekShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#SignalisatieEnLeidingenportiek> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::SlagboomShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Slagboom> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::VerlichtingspaalShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuurelement#Verlichtingspaal> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::StootbandNewJerseyShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#StootbandNewJersey> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::VerkeerslichtShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Verkeerslicht> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::StraatspiegelShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Straatspiegel> .
+<https://data.vlaanderen.be/shacl/verkeersborden#Verkeersbord-VerkeerstekenShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/mobiliteit#Verkeersbord-Verkeersteken> ;
+	sh:property [
+		sh:name "heeftVerkeersbordconcept" ;
+		sh:description "Verwijzing naar de eigenlijke betekenis van het verkeersbord zoals vastgelegd in het verkeersbordconcept van het verkeersteken." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#heeftVerkeersbordconcept> ;
+		sh:class <https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordconcept> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "heeftOnderbord" ;
+		sh:description "Onderbord dat een bepaling toevoegt aan het verkeersteken." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#heeftOnderbord> ;
+		sh:class <https://data.vlaanderen.be/ns/mobiliteit#Verkeersbord-Verkeersteken> ;
+	] ;
+	sh:property [
+		sh:name "isBeginZone" ;
+		sh:description "Duidt aan of het verkeersbord-verkeersteken het begin van een zone aanduidt." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#isBeginZone> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#boolean> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "isEindeZone" ;
+		sh:description "Duidt aan of het verkeerbord-verkeersteken het einde van een zone aanduidt." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#isEindeZone> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#boolean> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::VakwerksteunShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Vakwerksteun> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::NewJerseyShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#NewJersey> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::VangrailShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuurelement#Vangrail> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::GalgsteunShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/mobiliteit#OSLO-OpenbaarDomein::Galgsteun> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::VerkeersbordShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:class foaf:Document;
-    shacl:definition "Weergave van het geïnstalleerde verkeersbord op het openbaar domein."@nl;
-    shacl:name "afbeelding"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#grafischeWeergave>
-  ], [
-    shacl:class schema:QuantitativeValue;
-    shacl:definition "Breedte van het verkeersbord."@nl;
-    shacl:maxCount 1;
-    shacl:name "breedte"@nl;
-    shacl:path dbo:width
-  ], [
-    shacl:class schema:QuantitativeValue;
-    shacl:definition "Afmeting (lengte) van het verkeersbord."@nl;
-    shacl:maxCount 1;
-    shacl:name "afmeting"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Verkeersbord.afmeting>
-  ], [
-    shacl:class org:Organization;
-    shacl:definition "Instantie (tot op team- of dienstniveau) die instaat voor het beheer van het verkeersbord."@nl;
-    shacl:maxCount 1;
-    shacl:name "beheerder"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/openbaardomein#beheerder>
-  ], [
-    shacl:class dc:Agent;
-    shacl:definition "Agent die het verkeersbord aanlevert."@nl;
-    shacl:maxCount 1;
-    shacl:name "leverancier"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#leverancier>
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "De hoek waarin het fysiek bord gepositioneerd is ten opzichte van een vooropgestelde as."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "aanzicht"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#aanzicht>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Opmerking over het verkeersbord."@nl;
-    shacl:name "opmerking"@nl;
-    shacl:path schema:comment
-  ], [
-    shacl:class schema:QuantitativeValue;
-    shacl:definition "Hoogte van het verkeersbord."@nl;
-    shacl:maxCount 1;
-    shacl:name "hoogte"@nl;
-    shacl:path schema:height
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "Operationele status van een verkeersbord."@nl;
-    shacl:maxCount 1;
-    shacl:name "operationele status"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Verkeersbord.operationeleStatus>
-  ], [
-    shacl:class schema:QuantitativeValue;
-    shacl:definition "Afstand tussen het maaiveld en de onderrand van het bord."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "opstelhoogte"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#opstelhoogte>
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Verkeersbord-Verkeersteken>;
-    shacl:definition "Relateert een verkeersbord op het openbaar domein tot het verkeersteken."@nl;
-    shacl:minCount 1;
-    shacl:name "realiseert"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#realiseert>
-  ];
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Verkeersbord> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OSLO-OpenbaarDomein::AfsluitingShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Afsluiting> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::VerkeerslichtShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Verkeerslicht> .
+<https://data.vlaanderen.be/shacl/verkeersborden#DraagconstructieRetroreflecterendeVerkeersbordenShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/mobiliteit#DraagconstructieRetroreflecterendeVerkeersborden> ;
+	sh:property [
+		sh:name "isOpgehangenAan" ;
+		sh:description "Bevestiging waarmee een verkeersbord aan dit infrastructuurelement is opgehangen." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#Infrastructuurelement.heeftBevestiging> ;
+		sh:class <https://data.vlaanderen.be/ns/mobiliteit#Bevestiging> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "beheerder" ;
+		sh:description "Instantie tot op team- of dienstniveau die instaat voor het beheer van het object." ;
+		sh:path <https://data.vlaanderen.be/ns/openbaardomein#beheerder> ;
+		sh:class <http://www.w3.org/ns/org#Organization> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "kleur" ;
+		sh:description "Kleur van de draagconstructie." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#kleur> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "leverancier" ;
+		sh:description "Agent die de draagconstructie aanlevert." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#leverancier> ;
+		sh:class <http://purl.org/dc/terms/Agent> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "materiaal" ;
+		sh:description "Materiaal waaruit de draagconstructie voor retroreflecterende verkeersborden is uit opgebouwd." ;
+		sh:path <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#materiaal> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+	] ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OSLO-OpenbaarDomein::VerlichtingspaalShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuurelement#Verlichtingspaal> .
+<https://data.vlaanderen.be/shacl/verkeersborden#MobiliteitsmaatregelShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel> ;
+	sh:property [
+		sh:name "wordtAangeduidDoor" ;
+		sh:description "Een verkeersteken dat bijdraagt tot de aanduiding van een mobiliteitsmaatregel." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#wordtAangeduidDoor> ;
+		sh:class <https://data.vlaanderen.be/ns/mobiliteit#Verkeersteken> ;
+	] ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#OpstellingShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:class <http://www.w3.org/ns/locn#Geometry>;
-    shacl:definition "Geolocatie van de opstelling met ook haar geometrie indien geen puntlocatie."@nl;
-    shacl:maxCount 1;
-    shacl:name "geometrie"@nl;
-    shacl:path <http://www.w3.org/ns/locn#geometry>
-  ], [
-    shacl:class foaf:Document;
-    shacl:definition "Grafische weergave van de opstelling geplaatst op het openbaar domein."@nl;
-    shacl:name "afbeelding"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#grafischeWeergave>
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "Status van de opstelling."@nl;
-    shacl:maxCount 1;
-    shacl:name "operationele status"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Opstelling.operationeleStatus>
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "De plaatsing van het verkeersbord ten aanzien van de rijbaan."@nl;
-    shacl:maxCount 1;
-    shacl:name "positie ten opzichte van rijbaan"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#positieTenOpzichtVanRijbaan>
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#DraagconstructieVerkeersborden>;
-    shacl:definition "Draagconstructie die voor de ondersteuning zorgt in de opstelling."@nl;
-    shacl:name "omvat draagconstructie verkeersborden"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#omvatDraagconstructieVerkeersborden>
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/weg#Wegsegment>;
-    shacl:definition "Wegsegment waarbij de opstellling geplaatst is."@nl;
-    shacl:name "hoort bij"@nl;
-    shacl:path <http://www.w3.org/ns/locn#geometry>
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Verkeersbord>;
-    shacl:definition "Verkeersbord die op de opstelling staat."@nl;
-    shacl:minCount 1;
-    shacl:name "omvat verkeersbord"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#omvatVerkeersbord>
-  ];
-  shacl:targetClass <https://data.vlaanderen.be/ns/mobiliteit#Opstelling> .
+<https://data.vlaanderen.be/shacl/verkeersborden#BevestigingShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/mobiliteit#Bevestiging> ;
+	sh:property [
+		sh:name "isOpgehangenAan" ;
+		sh:description "Verkeersbord die met deze bevestiging is opgehangen." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#isOpgehangenAan> ;
+		sh:class <https://data.vlaanderen.be/ns/mobiliteit#RetroreflecterendVerkeersbord> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "isOpgehangenAan" ;
+		sh:description "Infrastructuurelement waaraan de bevestiging is bevestigd." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#isOpgehangenAan> ;
+		sh:class <https://data.vlaanderen.be/ns/mobiliteit#DraagconstructieRetroreflecterendeVerkeersborden> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "conformStandaard" ;
+		sh:description "Tot welke standaard deze bevestiging conform is." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#conformStandaard> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "montageType" ;
+		sh:description "Waarmee de bevestiging gemonteerd is." ;
+		sh:path <http://purl.org/dc/terms/type> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#RechtsgrondonderdeelShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <http://data.europa.eu/eli/ontology#LegalResourceSubdivision> .
+<https://data.vlaanderen.be/shacl/verkeersborden#SignalisatievergunningShape>
+	a sh:NodeShape ;
+	sh:targetClass <http://data.vlaanderen.be/ns/besluit#Signalisatievergunning> ;
+	sh:property [
+		sh:name "vergunt" ;
+		sh:description "Verkeersteken dat vergunt wordt." ;
+		sh:path <http://data.vlaanderen.be/ns/besluit#vergunt> ;
+		sh:class <https://data.vlaanderen.be/ns/mobiliteit#Verkeersteken> ;
+	] ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#RetroreflecterendVerkeersbordShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:class skos:Concept;
-    shacl:definition "Kleur van het retroreflecterend verkeersbord."@nl;
-    shacl:maxCount 1;
-    shacl:name "kleur"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#kleurAchterkant>
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "Type van de folie die bevestigd is aan het verkeersbord."@nl;
-    shacl:maxCount 1;
-    shacl:name "folietype"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#folietype>
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "Materiaal waaruit het retroreflecterend verkeersbord is uit opgebouwd."@nl;
-    shacl:name "materiaal"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#materiaal>
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Bevestiging>;
-    shacl:definition "Bevestiging waarmee een verkeersbord aan dit infrastructuurelement is opgehangen."@nl;
-    shacl:name "heeft bevestiging"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Verkeersbord.heeftBevestiging>
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Bevestiging>;
-    shacl:definition "Bevestiging waarmee een verkeersbord aan dit infrastructuurelement is opgehangen."@nl;
-    shacl:name "heeft bevestiging"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Verkeersbord.heeftBevestiging>
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "Genormaliseerde referentie waaraan het verkeersbord voldoet."@nl;
-    shacl:maxCount 1;
-    shacl:name "fabricagevoorschrift"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#fabricagevoorschrift>
-  ], [
-    shacl:datatype xsd:boolean;
-    shacl:definition "Duidt aan of het verkeersbord bevestigd is aan een muur zonder armatuur."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "aan muur zonder armatuur"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#aanMuurZonderArmatuur>
-  ];
-  shacl:targetClass <https://data.vlaanderen.be/ns/mobiliteit#RetroreflecterendVerkeersbord> .
+<https://data.vlaanderen.be/shacl/verkeersborden#VerkeersbordcategorieShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordcategorie> ;
+	sh:property [
+		sh:name "voorkeursnaam" ;
+		sh:description "Benaming van de verkeersbordcategorie." ;
+		sh:path <http://www.w3.org/2004/02/skos/core#prefLabel> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#SignalisatievergunningShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Verkeersteken>;
-    shacl:definition "Verkeersteken dat vergunt wordt."@nl;
-    shacl:name "vergunt"@nl;
-    shacl:path <http://data.vlaanderen.be/ns/besluit#vergunt>
-  ];
-  shacl:targetClass <http://data.vlaanderen.be/ns/besluit#Signalisatievergunning> .
+<https://data.vlaanderen.be/shacl/verkeersborden#VerankeringShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/mobiliteit#Verankering> ;
+	sh:property [
+		sh:name "type" ;
+		sh:description "Soort verankering." ;
+		sh:path <http://purl.org/dc/terms/type> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "isPermanent" ;
+		sh:description "Duidt aan of de verankering van blijvende duur is." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#isPermanent> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#boolean> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "ondergrondtype" ;
+		sh:description "Type van de ondergrond." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#ondergrondtype> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "afmeting" ;
+		sh:description "Afmeting van de verankering." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#Verankering.afmeting> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "operationeleStatus" ;
+		sh:description "Operationele status van de verankering." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#Verankering.operationeleStatus> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#SteunRetroreflecterendVerkeersbordShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:class schema:QuantitativeValue;
-    shacl:definition "Lengte van de steun boven het verhardingsniveau of maaiveld."@nl;
-    shacl:maxCount 1;
-    shacl:name "lengte bovengronds"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#lengteBovengronds>
-  ], [
-    shacl:class schema:QuantitativeValue;
-    shacl:definition "Breedte van de steun."@nl;
-    shacl:maxCount 1;
-    shacl:name "breedte"@nl;
-    shacl:path dbo:width
-  ], [
-    shacl:class schema:QuantitativeValue;
-    shacl:definition "Dikte van de wand."@nl;
-    shacl:maxCount 1;
-    shacl:name "wanddikte"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#wanddikte>
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "Operationele status van de draagconstructie."@nl;
-    shacl:maxCount 1;
-    shacl:name "operationele status"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#DraagconstructieVerkeersborden.operationeleStatus>
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Verankering>;
-    shacl:definition "Waarmee het infrastructuurelement verankerd is."@nl;
-    shacl:maxCount 1;
-    shacl:name "is verankerd met"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#isVerankerdMet>
-  ], [
-    shacl:class schema:QuantitativeValue;
-    shacl:definition "Diameter van de steun."@nl;
-    shacl:maxCount 1;
-    shacl:name "diameter"@nl;
-    shacl:path dbo:diameter
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "Vorm van de steun."@nl;
-    shacl:maxCount 1;
-    shacl:name "vorm"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#vorm>
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "Genormaliseerde referentie waaraan de steun voldoet."@nl;
-    shacl:maxCount 1;
-    shacl:name "fabricagevoorschrift"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#fabricagevoorschrift>
-  ], [
-    shacl:class schema:QuantitativeValue;
-    shacl:definition "Lengte van de steun onder het verhardingsniveau of maaiveld."@nl;
-    shacl:maxCount 1;
-    shacl:name "lengte ondergronds"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#lengteOndergronds>
-  ], [
-    shacl:class schema:QuantitativeValue;
-    shacl:definition "Lengte van de steun."@nl;
-    shacl:maxCount 1;
-    shacl:name "lengte"@nl;
-    shacl:path dbo:length
-  ];
-  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Steun> .
+<https://data.vlaanderen.be/shacl/verkeersborden#SteunRetroreflecterendVerkeersbordShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/mobiliteit#SteunRetroreflecterendVerkeersbord> ;
+	sh:property [
+		sh:name "isVerankerdMet" ;
+		sh:description "Waarmee het infrastructuurelement verankerd is." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#isVerankerdMet> ;
+		sh:class <https://data.vlaanderen.be/ns/mobiliteit#Verankering> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "breedte" ;
+		sh:description "Breedte van de steun." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#breedte> ;
+		sh:class <http://schema.org/QuantitativeValue> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "lengte" ;
+		sh:description "Lengte van de steun." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#lengte> ;
+		sh:class <http://schema.org/QuantitativeValue> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "wanddikte" ;
+		sh:description "Dikte van de wand." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#wanddikte> ;
+		sh:class <http://schema.org/QuantitativeValue> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "diameter" ;
+		sh:description "Diameter van de steun." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#diameter> ;
+		sh:class <http://schema.org/QuantitativeValue> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "lengteBovengronds" ;
+		sh:description "Lengte van de steun boven het verhardingsniveau of maaiveld." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#lengteBovengronds> ;
+		sh:class <http://schema.org/QuantitativeValue> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "vorm" ;
+		sh:description "Vorm van de steun." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#vorm> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "lengteOndergronds" ;
+		sh:description "Lengte van de steun onder het verhardingsniveau of maaiveld." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#lengteOndergronds> ;
+		sh:class <http://schema.org/QuantitativeValue> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "fabricagevoorschrift" ;
+		sh:description "Genormaliseerde referentie waaraan de steun voldoet." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#fabricagevoorschrift> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "operationeleStatus" ;
+		sh:description "Operationele status van de draagconstructie." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#DraagconstructieVerkeersborden.operationeleStatus> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#VerankeringShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:datatype xsd:boolean;
-    shacl:definition "Duidt aan of de verankering van blijvende duur is."@nl;
-    shacl:maxCount 1;
-    shacl:name "is permanent"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#isPermanent>
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "Type van de ondergrond."@nl;
-    shacl:maxCount 1;
-    shacl:name "ondergrondtype"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#ondergrondtype>
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "Soort verankering."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "type"@nl;
-    shacl:path dc:type
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "Operationele status van de verankering."@nl;
-    shacl:maxCount 1;
-    shacl:name "operationele status"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Verankering.operationeleStatus>
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "Afmeting van de verankering."@nl;
-    shacl:maxCount 1;
-    shacl:name "afmeting"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Verankering.afmeting>
-  ];
-  shacl:targetClass <https://data.vlaanderen.be/ns/mobiliteit#Verankering> .
+<https://data.vlaanderen.be/shacl/verkeersborden#OpstellingShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/mobiliteit#Opstelling> ;
+	sh:property [
+		sh:name "omvatVerkeersbord" ;
+		sh:description "Verkeersbord die op de opstelling staat." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#omvatVerkeersbord> ;
+		sh:class <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Verkeersbord> ;
+		sh:minCount 1 ;
+	] ;
+	sh:property [
+		sh:name "omvatDraagconstructieVerkeersborden" ;
+		sh:description "Fysieke voorziening die voor de ondersteuning zorgt in de opstelling." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#omvatDraagconstructieVerkeersborden> ;
+		sh:class <https://data.vlaanderen.be/ns/mobiliteit#DraagconstructieVerkeersborden> ;
+	] ;
+	sh:property [
+		sh:name "positieTenOpzichtVanRijbaan" ;
+		sh:description "De plaatsing van het verkeersbord ten aanzien van de rijbaan." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#positieTenOpzichtVanRijbaan> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "operationeleStatus" ;
+		sh:description "Een statuscode die de operationele status van de opstelling aanduidt." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#Opstelling.operationeleStatus> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "afbeelding" ;
+		sh:description "Grafische weergave van de opstelling in het openbaar domein." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#grafischeWeergave> ;
+		sh:class <http://xmlns.com/foaf/0.1/Document> ;
+	] ;
+	sh:property [
+		sh:name "hoortBij" ;
+		sh:description "Wegsegment waarbij de opstellling geplaatst is." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#hoortBij> ;
+		sh:class <https://data.vlaanderen.be/ns/weg#Wegsegment> ;
+	] ;
+	sh:property [
+		sh:name "geometrie" ;
+		sh:description "Geolocatie van de opstelling met ook haar geometrie indien geen puntlocatie." ;
+		sh:path <http://www.w3.org/ns/locn#geometry> ;
+		sh:class <http://www.w3.org/ns/locn#Geometry> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#Verkeersbord-VerkeerstekenShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:datatype xsd:boolean;
-    shacl:definition "Duidt aan of het verkeersbord-verkeersteken het begin van een zone aanduidt."@nl;
-    shacl:maxCount 1;
-    shacl:name "is begin zone"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#isBeginZone>
-  ], [
-    shacl:datatype xsd:boolean;
-    shacl:definition "Duidt aan of het verkeerbord-verkeersteken het einde van een zone aanduidt."@nl;
-    shacl:maxCount 1;
-    shacl:name "is einde zone"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#isEindeZone>
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Verkeersbord-Verkeersteken>;
-    shacl:definition "Onderbord die behoort tot dit verkeersteken."@nl;
-    shacl:name "heeft onderbord"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#heeftOnderbord>
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordconcept>;
-    shacl:definition "Algemeen verkeersbordconcept van het verkeersteken."@nl;
-    shacl:maxCount 1;
-    shacl:name "heeft verkeersbordconcept"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#heeftVerkeersbordconcept>
-  ];
-  shacl:targetClass <https://data.vlaanderen.be/ns/mobiliteit#Verkeersbord-Verkeersteken> .
+<https://data.vlaanderen.be/shacl/verkeersborden#RetroreflecterendVerkeersbordShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/mobiliteit#RetroreflecterendVerkeersbord> ;
+	sh:property [
+		sh:name "isOpgehangenAan" ;
+		sh:description "Bevestiging waarmee het verkeersbord is opgehangen." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#Verkeersbord.heeftBevestiging> ;
+		sh:class <https://data.vlaanderen.be/ns/mobiliteit#Bevestiging> ;
+	] ;
+	sh:property [
+		sh:name "bevestigingAanMuur" ;
+		sh:description "Duidt aan hoe het verkeersbord bevestigd is aan een muur" ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#bevestigingAanMuur> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "folietype" ;
+		sh:description "Type van de folie die bevestigd is aan het verkeersbord." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#folietype> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "fabricagevoorschrift" ;
+		sh:description "Genormaliseerde referentie waaraan het verkeersbord voldoet." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#fabricagevoorschrift> ;
+		sh:datatype <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "kleurAchterkant" ;
+		sh:description "Kleur van de achterzijde van het retroreflecterend verkeersbord." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#kleurAchterkant> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "materiaal" ;
+		sh:description "Materiaal waaruit het retroreflecterend verkeersbord is uit opgebouwd." ;
+		sh:path <https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#materiaal> ;
+		sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+	] ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#VerkeersbordcategorieShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:datatype xsd:string;
-    shacl:definition "Benaming van de verkeersbordcategorie."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "voorkeursnaam"@nl;
-    shacl:path skos:prefLabel
-  ];
-  shacl:targetClass skos:Concept .
+<https://data.vlaanderen.be/shacl/verkeersborden#VerkeersbordconceptShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordconcept> ;
+	sh:property [
+		sh:name "classificatie" ;
+		sh:description "Categorie van het verkeersbordconcept." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordconcept.classificatie> ;
+		sh:class <https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordcategorie> ;
+	] ;
+	sh:property [
+		sh:name "verwijstNaar" ;
+		sh:description "Verwijst naar een rechtsgrondonderdeel over dit verkeersbordconcept." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordconcept.verwijstNaar> ;
+		sh:class <http://data.europa.eu/eli/ontology#LegalResourceSubdivision> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "verkeersbordcode" ;
+		sh:description "Code die aan dit soort bord gegeven wordt binnen de wegcode." ;
+		sh:path <http://www.w3.org/2004/02/skos/core#prefLabel> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "betekenis" ;
+		sh:description "Betekenis die gegeven wordt aan dit soort verkeersbord volgens de wegcode." ;
+		sh:path <http://www.w3.org/2004/02/skos/core#scopeNote> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "afbeelding" ;
+		sh:description "Afbeelding van het verkeersbordconcept." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#grafischeWeergave> ;
+		sh:class <http://xmlns.com/foaf/0.1/Document> ;
+	] ;
+	sh:property [
+		sh:name "status" ;
+		sh:description "Status van het verkeersbordconcept." ;
+		sh:path <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> ;
+		sh:class <https://data.vlaanderen.be/ns/mobiliteit#VerkeersbordconceptStatus> ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#VerkeersbordconceptShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#VerkeersbordconceptStatus>;
-    shacl:definition "Status van het verkeersbordconcept."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "status"@nl;
-    shacl:path vs:term_status
-  ], [
-    shacl:class foaf:Document;
-    shacl:definition "Afbeelding van het verkeersbordconcept."@nl;
-    shacl:name "afbeelding"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#grafischeWeergave>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Betekenis die gegeven wordt aan dit soort verkeersbord volgens de wegcode."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "betekenis"@nl;
-    shacl:path skos:scopeNote
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "Categorie van het verkeersbordconcept."@nl;
-    shacl:name "classificatie"@nl;
-    shacl:path org:classification
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Code die aan dit soort bord gegeven wordt binnen de wegcode."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "verkeersbordcode"@nl;
-    shacl:path skos:prefLabel
-  ];
-  shacl:targetClass <https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordconcept> .
+<https://data.vlaanderen.be/shacl/verkeersborden#RechtsgrondonderdeelShape>
+	a sh:NodeShape ;
+	sh:targetClass <http://data.europa.eu/eli/ontology#LegalResourceSubdivision> ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#VerkeersbordconceptStatusShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:class <http://data.europa.eu/eli/ontology#LegalResourceSubdivision>;
-    shacl:definition "Door welk rechtsgrondonderdeel het verkeersbordconcept in deze status bekomen is."@nl;
-    shacl:maxCount 1;
-    shacl:name "veroorzaakt door"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#veroorzaaktDoor>
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "Duidt of het verkeersbordconcept nog gebruikt wordt."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "status"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#VerkeersbordconceptStatus.status>
-  ];
-  shacl:targetClass <https://data.vlaanderen.be/ns/mobiliteit#VerkeersbordconceptStatus> .
+<https://data.vlaanderen.be/shacl/verkeersborden#VerkeerstekenShape>
+	a sh:NodeShape ;
+	sh:targetClass <https://data.vlaanderen.be/ns/mobiliteit#Verkeersteken> ;
+	sh:property [
+		sh:name "heeftGerelateerdVerkeersteken" ;
+		sh:description "Verkeersteken die hieraan gerelateerd is." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#heeftGerelateerdVerkeersteken> ;
+		sh:class <https://data.vlaanderen.be/ns/mobiliteit#Verkeersteken> ;
+	] ;
+	sh:property [
+		sh:name "adresvoorstelling" ;
+		sh:description "Adresvoorstelling van het verkeersteken." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#Verkeersteken.adresvoorstelling> ;
+		sh:class <http://www.w3.org/ns/locn#Address> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "afbeelding" ;
+		sh:description "Foto van het verkeersteken." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#grafischeWeergave> ;
+		sh:class <http://xmlns.com/foaf/0.1/Document> ;
+	] ;
+	sh:property [
+		sh:name "inwerkingstijd" ;
+		sh:description "Wanneer het verkeersteken actief is." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#inwerkingstijd> ;
+		sh:class <http://schema.org/Schedule> ;
+	] ;
+	sh:property [
+		sh:name "plaatsbepaling" ;
+		sh:description "Tekstuele beschrijving waar het verkeersteken zal komen." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#plaatsbepaling> ;
+		sh:datatype <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "variabelOpschrift" ;
+		sh:description "Variabele tekst die op het verkeersbordconcept komt te staan." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#variabelOpschrift> ;
+		sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:property [
+		sh:name "wettelijkeStatus" ;
+		sh:description "Wettelijke status van het verkeersteken." ;
+		sh:path <https://data.vlaanderen.be/ns/mobiliteit#Verkeersteken.wettelijkeStatus> ;
+		sh:class <https://data.vlaanderen.be/ns/mobiliteit#VerkeerstekenWettelijkeStatus> ;
+		sh:maxCount 1 ;
+	] ;
+	sh:closed false .
 
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#VerkeerstekenShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#VerkeerstekenWettelijkeStatus>;
-    shacl:definition "Wettelijke status van het verkeersteken."@nl;
-    shacl:maxCount 1;
-    shacl:name "wettelijke status"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Verkeersteken.wettelijkeStatus>
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Verkeersteken>;
-    shacl:definition "Verkeersbordbasis die hieraan gerelateerd is."@nl;
-    shacl:name "heeft gerelateerd bord"@nl;
-    shacl:path skos:related
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Tekstuele beschrijving waar het verkeersteken zal komen."@nl;
-    shacl:maxCount 1;
-    shacl:name "plaatsbeschrijving"@nl;
-    shacl:path schema:location
-  ], [
-    shacl:class schema:Schedule;
-    shacl:definition "Wanneer het verkeersteken actief is."@nl;
-    shacl:name "inwerkingstijd"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#inwerkingstijd>
-  ], [
-    shacl:class foaf:Document;
-    shacl:definition "Foto van het verkeersteken."@nl;
-    shacl:name "afbeelding"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#grafischeWeergave>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Variabele tekst die op het verkeersbordconcept komt te staan."@nl;
-    shacl:maxCount 1;
-    shacl:name "variabel opschrift"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#variabelOpschrift>
-  ], [
-    shacl:class <http://www.w3.org/ns/locn#Address>;
-    shacl:definition "Adresvoorstelling van het verkeersteken."@nl;
-    shacl:maxCount 1;
-    shacl:name "adresvoorstelling"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#Verkeersteken.adresvoorstelling>
-  ];
-  shacl:targetClass <https://data.vlaanderen.be/ns/mobiliteit#Verkeersteken> .
-
-<https://data.dev-vlaanderen.be/shacl/verkeersborden-SHACL_nl#VerkeerstekenWettelijkeStatusShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:class skos:Concept;
-    shacl:definition "Duidt de wettelijke status aan van het verkeersteken."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "status"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#VerkeerstekenWettelijkeStatus.status>
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitsmaatregel>;
-    shacl:definition "De mobiliteitsmaatregel die ervoor gezorgd heeft dat het verkeersteken een bepaalde wettelijke status bekomen heeft."@nl;
-    shacl:maxCount 1;
-    shacl:name "veroorzaakt door"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/mobiliteit#VerkeerstekenWettelijkeStatus.veroorzaaktDoor>
-  ];
-  shacl:targetClass <https://data.vlaanderen.be/ns/mobiliteit#VerkeerstekenWettelijkeStatus> .

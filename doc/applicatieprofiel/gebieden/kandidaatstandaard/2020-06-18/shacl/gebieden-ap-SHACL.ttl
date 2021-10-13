@@ -1,0 +1,120 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl> <https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nlshapes> <https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#TuinzoneShape>,
+    <https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#VolkstuinShape>,
+    <https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#NatuurShape>,
+    <https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#ParkShape>,
+    <https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#BufferzoneShape>,
+    <https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#RecreatiegebiedShape>,
+    <https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#GroenzoneShape>,
+    <https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#SpoorwegShape>,
+    <https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#GebiedShape>,
+    <https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#RecyclageparkShape>,
+    <https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#WegzoneShape>,
+    <https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#ParkingShape>,
+    <https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#PleinShape>,
+    <https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#BegraafplaatsShape>,
+    <https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#WaterverkeerzoneShape> .
+
+<https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#BegraafplaatsShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:boolean;
+    shacl:definition "Duidt aan of er al dan niet nog aan actieve lijkbezorging gedaan wordt op de begraafplaats."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "actieve lijkbezorging"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/openbaardomein/gebied#actieveLijkbezorging>
+  ], [
+    shacl:datatype xsd:boolean;
+    shacl:definition "Geeft aan of de begraafplaats al dan niet geschikt is voor lichte recreatie."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "lichte recreatie"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/openbaardomein/gebied#lichteRecreatie>
+  ];
+  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/gebied#Begraafplaats> .
+
+<https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#BufferzoneShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/gebied#Bufferzone> .
+
+<https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#GebiedShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://www.opengis.net/ont/sf#Polygon>;
+    shacl:definition "De geometrie overeenkomstig met een bepaald gebied."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "geometrie"@nl;
+    shacl:path <http://www.w3.org/ns/locn#geometry>
+  ], [
+    shacl:datatype xsd:dateTime;
+    shacl:definition "Datum waarop de huidige versie van het beheergebied uit gebruik wordt genomen."@nl;
+    shacl:maxCount 1;
+    shacl:name "einddatum"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/openbaardomein#einddatum>
+  ], [
+    shacl:datatype xsd:dateTime;
+    shacl:definition "Datum waarop de huidige versie van het beheergebied in gebruik wordt genomen."@nl;
+    shacl:maxCount 1;
+    shacl:name "begindatum"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/openbaardomein#begindatum>
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:definition "Een naam voor het gebied."@nl;
+    shacl:name "naam"@nl;
+    shacl:path dc:title
+  ];
+  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein#Gebied> .
+
+<https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#GroenzoneShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/gebied#Groenzone> .
+
+<https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#NatuurShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/gebied#Natuur> .
+
+<https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#ParkShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/gebied#Park> .
+
+<https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#ParkingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/gebied#Parking> .
+
+<https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#PleinShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/gebied#Plein> .
+
+<https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#RecreatiegebiedShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/gebied#Recreatiegebied> .
+
+<https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#RecyclageparkShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/gebied#Recyclagepark> .
+
+<https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#SpoorwegShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/gebied#Spoorweg> .
+
+<https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#TuinzoneShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/gebied#Tuinzone> .
+
+<https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#VolkstuinShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/gebied#Volkstuin> .
+
+<https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#WaterverkeerzoneShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/gebied#Waterverkeerzone> .
+
+<https://data.dev-vlaanderen.be/shacl/gebieden-ap-SHACL_nl#WegzoneShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://data.vlaanderen.be/ns/openbaardomein/gebied#Wegzone> .

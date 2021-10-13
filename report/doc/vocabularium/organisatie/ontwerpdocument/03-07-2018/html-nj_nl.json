@@ -114,38 +114,108 @@
   ],
   "properties": [
     {
-      "uri": "https://data.vlaanderen.be/ns/organisatie#redenStopzetting",
-      "name": "reden stopzetting",
+      "uri": "https://data.vlaanderen.be/ns/organisatie#aantalHouders",
+      "name": "aantal houders",
       "label": {
-        "nl": "reden stopzetting"
+        "nl": "aantal houders"
       },
-      "sort": "reden stopzetting",
+      "sort": "aantal houders",
       "description": {
-        "nl": "Reden waarom de organisatie is stopgezet."
+        "nl": "Maximale aantal agents die tegelijk deze positie kunnen invullen."
       },
-      "usage": {
-        "nl": "Bvb pensionering, faillissement"
-      },
+      "usage": {},
       "domain": [
-        "https://data.vlaanderen.be/ns/organisatie#Stopzetting"
+        "http://www.w3.org/ns/org#Post"
       ],
       "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
+        "http://www.w3.org/2001/XMLSchema#integer"
       ],
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/organisatie#rechtsvorm",
-      "name": "rechtsvorm",
+      "uri": "https://data.vlaanderen.be/ns/organisatie#bestaatUit",
+      "name": "bestaat uit",
       "label": {
-        "nl": "rechtsvorm"
+        "nl": "bestaat uit"
       },
-      "sort": "rechtsvorm",
+      "sort": "bestaat uit",
       "description": {
-        "nl": "Juridisch statuut van de geregistreerde organisatie."
+        "nl": "Adresseerbaar object dat met de vestiging overeenstemt."
       },
       "usage": {
-        "nl": "Stemt in de KBO overeen met rechtsvorm, bvb NV, VZW, Stad/Gemeente, OCMW etc."
+        "nl": " "
+      },
+      "domain": [
+        "http://www.w3.org/ns/org#Site"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/adres#AdresseerbaarObject"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/organisatie#contactinfo",
+      "name": "contactinfo",
+      "label": {
+        "nl": "contactinfo"
+      },
+      "sort": "contactinfo",
+      "description": {
+        "nl": "Informatie zoals email, telefoon die toelaat de hoedanigheid te contacteren."
+      },
+      "usage": {
+        "nl": " "
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/organisatie#Hoedanigheid"
+      ],
+      "range": [
+        "http://schema.org/ContactPoint"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/organisatie#heeftPrimaireVestiging",
+      "name": "",
+      "label": {},
+      "sort": "",
+      "description": {},
+      "usage": {},
+      "domain": [
+        "http://www.w3.org/ns/org#Organization"
+      ],
+      "range": [
+        "http://www.w3.org/ns/org#Site"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/organisatie#heeftVestiging",
+      "name": "",
+      "label": {},
+      "sort": "",
+      "description": {},
+      "usage": {},
+      "domain": [
+        "http://www.w3.org/ns/org#Organization"
+      ],
+      "range": [
+        "http://www.w3.org/ns/org#Site"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/organisatie#rechtspersoonlijkheid",
+      "name": "rechtspersoonlijkheid",
+      "label": {
+        "nl": "rechtspersoonlijkheid"
+      },
+      "sort": "rechtspersoonlijkheid",
+      "description": {
+        "nl": "Geeft aan of de rechtspersoonlijkheid van de geregistreerde organisatie deze is van een natuurlijk persoon of van een rechtspersoon. "
+      },
+      "usage": {
+        "nl": "Een rechtspersoon is een juridische constructie die een organisatie dezelfde rechtspersoonlijkheid geeft als een natuurlijk persoon (kan bv ook schulden hebben, contracten afsluiten, aangeklaagd worden etc). Vb privaatrechterlijke rechtspersonen: vennootschappen, vzw's etc.; vb publiekrechterlijke rechtspersonen: steden, gemeenten etc. Een feitelijke vereniging is in principe geen rechtspersoon maar wordt als ze geregistreerd is id KBO toch als dusdanig geklasseerd."
       },
       "domain": [
         "http://www.w3.org/ns/regorg#RegisteredOrganization"
@@ -181,17 +251,17 @@
       ]
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/organisatie#rechtspersoonlijkheid",
-      "name": "rechtspersoonlijkheid",
+      "uri": "https://data.vlaanderen.be/ns/organisatie#rechtsvorm",
+      "name": "rechtsvorm",
       "label": {
-        "nl": "rechtspersoonlijkheid"
+        "nl": "rechtsvorm"
       },
-      "sort": "rechtspersoonlijkheid",
+      "sort": "rechtsvorm",
       "description": {
-        "nl": "Geeft aan of de rechtspersoonlijkheid van de geregistreerde organisatie deze is van een natuurlijk persoon of van een rechtspersoon. "
+        "nl": "Juridisch statuut van de geregistreerde organisatie."
       },
       "usage": {
-        "nl": "Een rechtspersoon is een juridische constructie die een organisatie dezelfde rechtspersoonlijkheid geeft als een natuurlijk persoon (kan bv ook schulden hebben, contracten afsluiten, aangeklaagd worden etc). Vb privaatrechterlijke rechtspersonen: vennootschappen, vzw's etc.; vb publiekrechterlijke rechtspersonen: steden, gemeenten etc. Een feitelijke vereniging is in principe geen rechtspersoon maar wordt als ze geregistreerd is id KBO toch als dusdanig geklasseerd."
+        "nl": "Stemt in de KBO overeen met rechtsvorm, bvb NV, VZW, Stad/Gemeente, OCMW etc."
       },
       "domain": [
         "http://www.w3.org/ns/regorg#RegisteredOrganization"
@@ -204,93 +274,23 @@
       ]
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/organisatie#heeftVestiging",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
-      "usage": {},
-      "domain": [
-        "http://www.w3.org/ns/org#Organization"
-      ],
-      "range": [
-        "http://www.w3.org/ns/org#Site"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/organisatie#heeftPrimaireVestiging",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
-      "usage": {},
-      "domain": [
-        "http://www.w3.org/ns/org#Organization"
-      ],
-      "range": [
-        "http://www.w3.org/ns/org#Site"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/organisatie#contactinfo",
-      "name": "contactinfo",
+      "uri": "https://data.vlaanderen.be/ns/organisatie#redenStopzetting",
+      "name": "reden stopzetting",
       "label": {
-        "nl": "contactinfo"
+        "nl": "reden stopzetting"
       },
-      "sort": "contactinfo",
+      "sort": "reden stopzetting",
       "description": {
-        "nl": "Informatie zoals email, telefoon die toelaat de hoedanigheid te contacteren."
+        "nl": "Reden waarom de organisatie is stopgezet."
       },
       "usage": {
-        "nl": " "
+        "nl": "Bvb pensionering, faillissement"
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/organisatie#Hoedanigheid"
+        "https://data.vlaanderen.be/ns/organisatie#Stopzetting"
       ],
       "range": [
-        "http://schema.org/ContactPoint"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/organisatie#bestaatUit",
-      "name": "bestaat uit",
-      "label": {
-        "nl": "bestaat uit"
-      },
-      "sort": "bestaat uit",
-      "description": {
-        "nl": "Adresseerbaar object dat met de vestiging overeenstemt."
-      },
-      "usage": {
-        "nl": " "
-      },
-      "domain": [
-        "http://www.w3.org/ns/org#Site"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/adres#AdresseerbaarObject"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/organisatie#aantalHouders",
-      "name": "aantal houders",
-      "label": {
-        "nl": "aantal houders"
-      },
-      "sort": "aantal houders",
-      "description": {
-        "nl": "Maximale aantal agents die tegelijk deze positie kunnen invullen."
-      },
-      "usage": {},
-      "domain": [
-        "http://www.w3.org/ns/org#Post"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#integer"
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "parents": []
     }
@@ -298,133 +298,13 @@
   "contributors": [
     {
       "role": "A",
-      "first_name": "Ziggy",
-      "last_name": "Vanlishout",
+      "first_name": "Dries",
+      "last_name": "Beheydt",
       "affiliation": {
         "name": "Informatie Vlaanderen",
         "website": "https://overheid.vlaanderen.be/informatie-vlaanderen"
       },
-      "email": "siegfried.vanlishout@kb.vlaanderen.be"
-    },
-    {
-      "role": "A",
-      "first_name": "Henk",
-      "last_name": "Vanderstraeten",
-      "affiliation": {
-        "name": "Informatie Vlaanderen",
-        "website": "https://overheid.vlaanderen.be/"
-      },
-      "email": "henk.vanderstraeten@bz.vlaanderen.be"
-    },
-    {
-      "role": "A",
-      "first_name": "Marie-Kristine",
-      "last_name": "Van der Meersch",
-      "affiliation": {
-        "name": "ANB",
-        "website": "https://www.lne.be/"
-      },
-      "email": "mariekristine.vandermeersch@lne.vlaanderen.be"
-    },
-    {
-      "role": "A",
-      "first_name": "Willem",
-      "last_name": "Van Hoecke",
-      "affiliation": {
-        "name": "Cipal Schaubroeck",
-        "website": "http://cipalschaubroeck.be"
-      },
-      "email": "willem.vanhoecke@cipalschaubroeck.be"
-    },
-    {
-      "role": "A",
-      "first_name": "Geert",
-      "last_name": "Van Haute",
-      "affiliation": {
-        "name": "LNE",
-        "website": "https://www.lne.be/"
-      },
-      "email": "geert.vanhaute@lne.vlaanderen.be"
-    },
-    {
-      "role": "A",
-      "first_name": "Geert",
-      "last_name": "Thijs",
-      "affiliation": {
-        "name": "Informatie Vlaanderen",
-        "website": "https://overheid.vlaanderen.be/informatie-vlaanderen"
-      },
-      "email": "geert.thijs@kb.vlaanderen.be"
-    },
-    {
-      "role": "A",
-      "first_name": "Quincy",
-      "last_name": "Oeyen",
-      "affiliation": {
-        "name": "Informatie Vlaanderen",
-        "website": "https://overheid.vlaanderen.be/"
-      },
-      "email": "quincy.oeyen@bz.vlaanderen.be"
-    },
-    {
-      "role": "A",
-      "first_name": "Suzy",
-      "last_name": "Favere",
-      "affiliation": {
-        "name": "ABB",
-        "website": "https://overheid.vlaanderen.be/"
-      },
-      "email": "suzie.favere@bz.vlaanderen.be"
-    },
-    {
-      "role": "A",
-      "first_name": "Björn",
-      "last_name": "De Vidts",
-      "affiliation": {
-        "name": "Informatie Vlaanderen",
-        "website": "https://overheid.vlaanderen.be/informatie-vlaanderen"
-      },
-      "email": "bjorn.devidts@kb.vlaanderen.be"
-    },
-    {
-      "role": "A",
-      "first_name": "Dieter",
-      "last_name": "De Paepe",
-      "affiliation": {
-        "name": "imec - UGent",
-        "website": "http://idlab.ugent.be"
-      },
-      "email": "dieter.depaepe@ugent.be"
-    },
-    {
-      "role": "A",
-      "first_name": "Thomas",
-      "last_name": "D'haenens",
-      "affiliation": {
-        "name": "Informatie Vlaanderen",
-        "website": "https://overheid.vlaanderen.be/"
-      },
-      "email": "thomas.dhaenens@bz.vlaanderen.be"
-    },
-    {
-      "role": "A",
-      "first_name": "Raf",
-      "last_name": "Buyle",
-      "affiliation": {
-        "name": "Informatie Vlaanderen",
-        "website": "https://overheid.vlaanderen.be/informatie-vlaanderen"
-      },
-      "email": "raf.buyle@kb.vlaanderen.be"
-    },
-    {
-      "role": "A",
-      "first_name": "Ward",
-      "last_name": "Beynaerts",
-      "affiliation": {
-        "name": "Cipal Schaubroeck",
-        "website": "http://cipalschaubroeck.be"
-      },
-      "email": "ward.beynaerts@cipalschaubroeck.be"
+      "email": "dries.beheydt@kb.vlaanderen.be"
     },
     {
       "role": "A",
@@ -438,23 +318,133 @@
     },
     {
       "role": "A",
-      "first_name": "Dries",
-      "last_name": "Beheydt",
+      "first_name": "Ward",
+      "last_name": "Beynaerts",
+      "affiliation": {
+        "name": "Cipal Schaubroeck",
+        "website": "http://cipalschaubroeck.be"
+      },
+      "email": "ward.beynaerts@cipalschaubroeck.be"
+    },
+    {
+      "role": "A",
+      "first_name": "Raf",
+      "last_name": "Buyle",
       "affiliation": {
         "name": "Informatie Vlaanderen",
         "website": "https://overheid.vlaanderen.be/informatie-vlaanderen"
       },
-      "email": "dries.beheydt@kb.vlaanderen.be"
+      "email": "raf.buyle@kb.vlaanderen.be"
     },
     {
-      "role": "E",
-      "first_name": "Erik",
-      "last_name": "Mannens",
+      "role": "A",
+      "first_name": "Thomas",
+      "last_name": "D'haenens",
+      "affiliation": {
+        "name": "Informatie Vlaanderen",
+        "website": "https://overheid.vlaanderen.be/"
+      },
+      "email": "thomas.dhaenens@bz.vlaanderen.be"
+    },
+    {
+      "role": "A",
+      "first_name": "Dieter",
+      "last_name": "De Paepe",
       "affiliation": {
         "name": "imec - UGent",
         "website": "http://idlab.ugent.be"
       },
-      "email": "erik.mannens@ugent.be"
+      "email": "dieter.depaepe@ugent.be"
+    },
+    {
+      "role": "A",
+      "first_name": "Björn",
+      "last_name": "De Vidts",
+      "affiliation": {
+        "name": "Informatie Vlaanderen",
+        "website": "https://overheid.vlaanderen.be/informatie-vlaanderen"
+      },
+      "email": "bjorn.devidts@kb.vlaanderen.be"
+    },
+    {
+      "role": "A",
+      "first_name": "Suzy",
+      "last_name": "Favere",
+      "affiliation": {
+        "name": "ABB",
+        "website": "https://overheid.vlaanderen.be/"
+      },
+      "email": "suzie.favere@bz.vlaanderen.be"
+    },
+    {
+      "role": "A",
+      "first_name": "Quincy",
+      "last_name": "Oeyen",
+      "affiliation": {
+        "name": "Informatie Vlaanderen",
+        "website": "https://overheid.vlaanderen.be/"
+      },
+      "email": "quincy.oeyen@bz.vlaanderen.be"
+    },
+    {
+      "role": "A",
+      "first_name": "Geert",
+      "last_name": "Thijs",
+      "affiliation": {
+        "name": "Informatie Vlaanderen",
+        "website": "https://overheid.vlaanderen.be/informatie-vlaanderen"
+      },
+      "email": "geert.thijs@kb.vlaanderen.be"
+    },
+    {
+      "role": "A",
+      "first_name": "Geert",
+      "last_name": "Van Haute",
+      "affiliation": {
+        "name": "LNE",
+        "website": "https://www.lne.be/"
+      },
+      "email": "geert.vanhaute@lne.vlaanderen.be"
+    },
+    {
+      "role": "A",
+      "first_name": "Willem",
+      "last_name": "Van Hoecke",
+      "affiliation": {
+        "name": "Cipal Schaubroeck",
+        "website": "http://cipalschaubroeck.be"
+      },
+      "email": "willem.vanhoecke@cipalschaubroeck.be"
+    },
+    {
+      "role": "A",
+      "first_name": "Marie-Kristine",
+      "last_name": "Van der Meersch",
+      "affiliation": {
+        "name": "ANB",
+        "website": "https://www.lne.be/"
+      },
+      "email": "mariekristine.vandermeersch@lne.vlaanderen.be"
+    },
+    {
+      "role": "A",
+      "first_name": "Henk",
+      "last_name": "Vanderstraeten",
+      "affiliation": {
+        "name": "Informatie Vlaanderen",
+        "website": "https://overheid.vlaanderen.be/"
+      },
+      "email": "henk.vanderstraeten@bz.vlaanderen.be"
+    },
+    {
+      "role": "A",
+      "first_name": "Ziggy",
+      "last_name": "Vanlishout",
+      "affiliation": {
+        "name": "Informatie Vlaanderen",
+        "website": "https://overheid.vlaanderen.be/informatie-vlaanderen"
+      },
+      "email": "siegfried.vanlishout@kb.vlaanderen.be"
     },
     {
       "role": "E",
@@ -467,124 +457,24 @@
       "email": "laurens.devocht@ugent.be"
     },
     {
-      "role": "C",
-      "first_name": "Jerry",
-      "last_name": "Vertriest",
+      "role": "E",
+      "first_name": "Erik",
+      "last_name": "Mannens",
       "affiliation": {
-        "name": "DOV",
-        "website": "http://onderwijs.vlaanderen.be/"
+        "name": "imec - UGent",
+        "website": "http://idlab.ugent.be"
       },
-      "email": "jerry.vertriest@ond.vlaanderen.be"
+      "email": "erik.mannens@ugent.be"
     },
     {
       "role": "C",
-      "first_name": "Luk",
-      "last_name": "Verschooren",
-      "affiliation": {
-        "name": "AgO",
-        "website": "https://overheid.vlaanderen.be/"
-      },
-      "email": "luk.verschooren@bz.vlaanderen.be"
-    },
-    {
-      "role": "C",
-      "first_name": "Maarten",
-      "last_name": "Vermeyen",
-      "affiliation": {
-        "name": "OE",
-        "website": "https://www.rwo.be/"
-      },
-      "email": "maarten.vermeyen@rwo.vlaanderen.be"
-    },
-    {
-      "role": "C",
-      "first_name": "Geert",
-      "last_name": "Vermeiren",
-      "affiliation": {
-        "name": "ANB",
-        "website": "https://www.lne.be/"
-      },
-      "email": "geert.vermeiren@lne.vlaanderen.be"
-    },
-    {
-      "role": "C",
-      "first_name": "Raf",
-      "last_name": "Vandensande",
-      "affiliation": {
-        "name": "ANB",
-        "website": "https://www.lne.be/"
-      },
-      "email": "raf.vandensande@lne.vlaanderen.be"
-    },
-    {
-      "role": "C",
-      "first_name": "Peter",
-      "last_name": "Vandenneucker",
+      "first_name": "Farah",
+      "last_name": "Decamps",
       "affiliation": {
         "name": "DFB",
         "website": "https://www.vlaanderen.be/nl/contact/adressengids/diensten-van-de-vlaamse-overheid/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-financien-en-begroting/departement-financien-en-begroting"
       },
-      "email": "peter.vandenneucker@fb.vlaanderen.be"
-    },
-    {
-      "role": "C",
-      "first_name": "Annita",
-      "last_name": "Stevens",
-      "affiliation": {
-        "name": "VLM",
-        "website": "http://vlm.be"
-      },
-      "email": "Annita.Stevens@vlm.be"
-    },
-    {
-      "role": "C",
-      "first_name": "Yvan",
-      "last_name": "Samson",
-      "affiliation": {
-        "name": "Informatie Vlaanderen",
-        "website": "https://overheid.vlaanderen.be/"
-      },
-      "email": "yvan.samson@bz.vlaanderen.be"
-    },
-    {
-      "role": "C",
-      "first_name": "Sammy",
-      "last_name": "Roos",
-      "affiliation": {
-        "name": "DWVG",
-        "website": "http://vlaanderen.be/welzijnengezondheid"
-      },
-      "email": "sammy.roos@wvg.vlaanderen.be"
-    },
-    {
-      "role": "C",
-      "first_name": "Gijs",
-      "last_name": "Martens",
-      "affiliation": {
-        "name": "AgO",
-        "website": "https://overheid.vlaanderen.be/"
-      },
-      "email": "gijs.martens@bz.vlaanderen.be"
-    },
-    {
-      "role": "C",
-      "first_name": "Hannes",
-      "last_name": "Lombaert",
-      "affiliation": {
-        "name": "ABB",
-        "website": "https://overheid.vlaanderen.be/"
-      },
-      "email": "hannes.lombaert@bz.vlaanderen.be"
-    },
-    {
-      "role": "C",
-      "first_name": "Pascal",
-      "last_name": "Dussart",
-      "affiliation": {
-        "name": "LNE",
-        "website": "https://www.lne.be/"
-      },
-      "email": "pascal.dussart@lne.vlaanderen.be"
+      "email": "farah.decamps@fb.vlaanderen.be"
     },
     {
       "role": "C",
@@ -598,13 +488,123 @@
     },
     {
       "role": "C",
-      "first_name": "Farah",
-      "last_name": "Decamps",
+      "first_name": "Pascal",
+      "last_name": "Dussart",
+      "affiliation": {
+        "name": "LNE",
+        "website": "https://www.lne.be/"
+      },
+      "email": "pascal.dussart@lne.vlaanderen.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Hannes",
+      "last_name": "Lombaert",
+      "affiliation": {
+        "name": "ABB",
+        "website": "https://overheid.vlaanderen.be/"
+      },
+      "email": "hannes.lombaert@bz.vlaanderen.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Gijs",
+      "last_name": "Martens",
+      "affiliation": {
+        "name": "AgO",
+        "website": "https://overheid.vlaanderen.be/"
+      },
+      "email": "gijs.martens@bz.vlaanderen.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Sammy",
+      "last_name": "Roos",
+      "affiliation": {
+        "name": "DWVG",
+        "website": "http://vlaanderen.be/welzijnengezondheid"
+      },
+      "email": "sammy.roos@wvg.vlaanderen.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Yvan",
+      "last_name": "Samson",
+      "affiliation": {
+        "name": "Informatie Vlaanderen",
+        "website": "https://overheid.vlaanderen.be/"
+      },
+      "email": "yvan.samson@bz.vlaanderen.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Annita",
+      "last_name": "Stevens",
+      "affiliation": {
+        "name": "VLM",
+        "website": "http://vlm.be"
+      },
+      "email": "Annita.Stevens@vlm.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Peter",
+      "last_name": "Vandenneucker",
       "affiliation": {
         "name": "DFB",
         "website": "https://www.vlaanderen.be/nl/contact/adressengids/diensten-van-de-vlaamse-overheid/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-financien-en-begroting/departement-financien-en-begroting"
       },
-      "email": "farah.decamps@fb.vlaanderen.be"
+      "email": "peter.vandenneucker@fb.vlaanderen.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Raf",
+      "last_name": "Vandensande",
+      "affiliation": {
+        "name": "ANB",
+        "website": "https://www.lne.be/"
+      },
+      "email": "raf.vandensande@lne.vlaanderen.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Geert",
+      "last_name": "Vermeiren",
+      "affiliation": {
+        "name": "ANB",
+        "website": "https://www.lne.be/"
+      },
+      "email": "geert.vermeiren@lne.vlaanderen.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Maarten",
+      "last_name": "Vermeyen",
+      "affiliation": {
+        "name": "OE",
+        "website": "https://www.rwo.be/"
+      },
+      "email": "maarten.vermeyen@rwo.vlaanderen.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Luk",
+      "last_name": "Verschooren",
+      "affiliation": {
+        "name": "AgO",
+        "website": "https://overheid.vlaanderen.be/"
+      },
+      "email": "luk.verschooren@bz.vlaanderen.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Jerry",
+      "last_name": "Vertriest",
+      "affiliation": {
+        "name": "DOV",
+        "website": "http://onderwijs.vlaanderen.be/"
+      },
+      "email": "jerry.vertriest@ond.vlaanderen.be"
     }
   ],
   "external_terms": [
@@ -777,474 +777,154 @@
       "show": true
     },
     {
-      "uri": "http://xmlns.com/foaf/0.1/homepage",
-      "name": "homepage",
+      "uri": "http://data.europa.eu/m8g/hasFormalFramework",
+      "name": "heeft formeel kader",
       "label": {
-        "nl": "homepage"
+        "nl": "heeft formeel kader"
       },
       "description": {},
       "usage": {},
-      "sort": "homepage",
+      "sort": "heeft formeel kader",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://www.w3.org/ns/regorg#registration",
-      "name": "registratie",
+      "uri": "http://purl.org/dc/terms/date",
+      "name": "datum",
       "label": {
-        "nl": "registratie"
+        "nl": "datum"
       },
       "description": {},
       "usage": {},
-      "sort": "registratie",
+      "sort": "datum",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://www.w3.org/ns/regorg#orgType",
-      "name": "organisatietype",
+      "uri": "http://purl.org/dc/terms/description",
+      "name": "beschrijving",
       "label": {
-        "nl": "organisatietype"
+        "nl": "beschrijving"
       },
       "description": {},
       "usage": {},
-      "sort": "organisatietype",
+      "sort": "beschrijving",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://www.w3.org/ns/regorg#orgStatus",
-      "name": "organisatiestatus",
+      "uri": "http://purl.org/dc/terms/spatial",
+      "name": "ruimtelijk",
       "label": {
-        "nl": "organisatiestatus"
+        "nl": "ruimtelijk"
       },
       "description": {},
       "usage": {},
-      "sort": "organisatiestatus",
+      "sort": "ruimtelijk",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://www.w3.org/ns/regorg#orgActivity",
-      "name": "organisatieactiviteit",
+      "uri": "http://schema.org/contactPoint",
+      "name": "contactpunt",
       "label": {
-        "nl": "organisatieactiviteit"
+        "nl": "contactpunt"
       },
       "description": {},
       "usage": {},
-      "sort": "organisatieactiviteit",
+      "sort": "contactpunt",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://www.w3.org/ns/regorg#legalName",
-      "name": "wettelijke naam",
+      "uri": "http://schema.org/logo",
+      "name": "logo",
       "label": {
-        "nl": "wettelijke naam"
+        "nl": "logo"
       },
       "description": {},
       "usage": {},
-      "sort": "wettelijke naam",
+      "sort": "logo",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://www.w3.org/ns/regorg#hasRegisteredOrganization",
-      "name": "heeft geregistreerde organisatie",
+      "uri": "http://www.w3.org/2004/02/skos/core#altLabel",
+      "name": "alternatieve label",
       "label": {
-        "nl": "heeft geregistreerde organisatie"
-      },
-      "description": {
-        "nl": "Verwijst naar de geregistreerde organisatie waarmee de agent geassocieerd is."
-      },
-      "usage": {
-        "nl": "Bvb een eenmanszaak die door een natuurlijk persoon wordt uitgebaat of een niet-geregistreerde organisatie die meerdere geregistreerde organisaties omvat."
-      },
-      "sort": "heeft geregistreerde organisatie",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/ns/org#unitOf",
-      "name": "eenheid van",
-      "label": {
-        "nl": "eenheid van"
+        "nl": "alternatieve label"
       },
       "description": {},
       "usage": {},
-      "sort": "eenheid van",
+      "sort": "alternatieve label",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://www.w3.org/ns/org#subOrganizationOf",
-      "name": "suborganisatie van",
+      "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "name": "voorkeurslabel",
       "label": {
-        "nl": "suborganisatie van"
+        "nl": "voorkeurslabel"
       },
       "description": {},
       "usage": {},
-      "sort": "suborganisatie van",
+      "sort": "voorkeurslabel",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://www.w3.org/ns/org#siteAddress",
-      "name": "vestigingsadres",
+      "uri": "http://www.w3.org/ns/org#basedAt",
+      "name": "heeft standplaats",
       "label": {
-        "nl": "vestigingsadres"
+        "nl": "heeft standplaats"
       },
       "description": {},
       "usage": {},
-      "sort": "vestigingsadres",
+      "sort": "heeft standplaats",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://www.w3.org/ns/org#role",
-      "name": "rol",
+      "uri": "http://www.w3.org/ns/org#changedBy",
+      "name": "veranderd door",
       "label": {
-        "nl": "rol"
+        "nl": "veranderd door"
       },
       "description": {},
       "usage": {},
-      "sort": "rol",
+      "sort": "veranderd door",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://www.w3.org/ns/org#role",
-      "name": "rol",
+      "uri": "http://www.w3.org/ns/org#classification",
+      "name": "classificatie",
       "label": {
-        "nl": "rol"
+        "nl": "classificatie"
       },
       "description": {},
       "usage": {},
-      "sort": "rol",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/ns/org#resultingOrganization",
-      "name": "resulterende organisatie",
-      "label": {
-        "nl": "resulterende organisatie"
-      },
-      "description": {},
-      "usage": {},
-      "sort": "resulterende organisatie",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/ns/org#resultedFrom",
-      "name": "gevolg van",
-      "label": {
-        "nl": "gevolg van"
-      },
-      "description": {},
-      "usage": {},
-      "sort": "gevolg van",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/ns/org#reportsTo",
-      "name": "rapporteert aan",
-      "label": {
-        "nl": "rapporteert aan"
-      },
-      "description": {},
-      "usage": {},
-      "sort": "rapporteert aan",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/ns/org#reportsTo",
-      "name": "rapporteert aan",
-      "label": {
-        "nl": "rapporteert aan"
-      },
-      "description": {},
-      "usage": {},
-      "sort": "rapporteert aan",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/ns/org#purpose",
-      "name": "doel",
-      "label": {
-        "nl": "doel"
-      },
-      "description": {},
-      "usage": {},
-      "sort": "doel",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/ns/org#postIn",
-      "name": "positie bij",
-      "label": {
-        "nl": "positie bij"
-      },
-      "description": {},
-      "usage": {},
-      "sort": "positie bij",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/ns/org#originalOrganization",
-      "name": "originele organisatie",
-      "label": {
-        "nl": "originele organisatie"
-      },
-      "description": {},
-      "usage": {},
-      "sort": "originele organisatie",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/ns/org#organization",
-      "name": "is lidmaatschap bij",
-      "label": {
-        "nl": "is lidmaatschap bij"
-      },
-      "description": {
-        "nl": "Organisatie waarop het lidmaatschap (van een agent) betrekking heeft."
-      },
-      "usage": {
-        "nl": "Het lidmaatschap wordt meer in detail beschreven met de entiteit lidmaatschap."
-      },
-      "sort": "is lidmaatschap bij",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/ns/org#memberOf",
-      "name": "lid van",
-      "label": {
-        "nl": "lid van"
-      },
-      "description": {},
-      "usage": {},
-      "sort": "lid van",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/ns/org#memberDuring",
-      "name": "lid gedurende",
-      "label": {
-        "nl": "lid gedurende"
-      },
-      "description": {},
-      "usage": {},
-      "sort": "lid gedurende",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/ns/org#member",
-      "name": "lid",
-      "label": {
-        "nl": "lid"
-      },
-      "description": {
-        "nl": "Agent die lid is (van een organisatie)."
-      },
-      "usage": {
-        "nl": "Het lidmaatschap wordt meer in detail beschreven met de entiteit lidmaatschap."
-      },
-      "sort": "lid",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/ns/org#linkedTo",
-      "name": "gelinkt met",
-      "label": {
-        "nl": "gelinkt met"
-      },
-      "description": {},
-      "usage": {},
-      "sort": "gelinkt met",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/ns/org#holds",
-      "name": "houdt",
-      "label": {
-        "nl": "houdt"
-      },
-      "description": {},
-      "usage": {},
-      "sort": "houdt",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/ns/org#heldBy",
-      "name": "ingevuld door",
-      "label": {
-        "nl": "ingevuld door"
-      },
-      "description": {},
-      "usage": {},
-      "sort": "ingevuld door",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/ns/org#headOf",
-      "name": "hoofd van",
-      "label": {
-        "nl": "hoofd van"
-      },
-      "description": {},
-      "usage": {},
-      "sort": "hoofd van",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/ns/org#hasUnit",
-      "name": "heeft eenheid",
-      "label": {
-        "nl": "heeft eenheid"
-      },
-      "description": {},
-      "usage": {},
-      "sort": "heeft eenheid",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/ns/org#hasSubOrganization",
-      "name": "heeft suborganisatie",
-      "label": {
-        "nl": "heeft suborganisatie"
-      },
-      "description": {},
-      "usage": {},
-      "sort": "heeft suborganisatie",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/ns/org#hasSite",
-      "name": "heeft vestiging",
-      "label": {
-        "nl": "heeft vestiging"
-      },
-      "description": {},
-      "usage": {},
-      "sort": "heeft vestiging",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/ns/org#hasRegisteredSite",
-      "name": "heeft geregistreerde vestiging",
-      "label": {
-        "nl": "heeft geregistreerde vestiging"
-      },
-      "description": {},
-      "usage": {},
-      "sort": "heeft geregistreerde vestiging",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/ns/org#hasPrimarySite",
-      "name": "heeft primaire vestiging",
-      "label": {
-        "nl": "heeft primaire vestiging"
-      },
-      "description": {},
-      "usage": {},
-      "sort": "heeft primaire vestiging",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/ns/org#hasPost",
-      "name": "heeft positie",
-      "label": {
-        "nl": "heeft positie"
-      },
-      "description": {},
-      "usage": {},
-      "sort": "heeft positie",
+      "sort": "classificatie",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
@@ -1269,154 +949,474 @@
       "show": true
     },
     {
-      "uri": "http://www.w3.org/ns/org#classification",
-      "name": "classificatie",
+      "uri": "http://www.w3.org/ns/org#hasPost",
+      "name": "heeft positie",
       "label": {
-        "nl": "classificatie"
+        "nl": "heeft positie"
       },
       "description": {},
       "usage": {},
-      "sort": "classificatie",
+      "sort": "heeft positie",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://www.w3.org/ns/org#changedBy",
-      "name": "veranderd door",
+      "uri": "http://www.w3.org/ns/org#hasPrimarySite",
+      "name": "heeft primaire vestiging",
       "label": {
-        "nl": "veranderd door"
+        "nl": "heeft primaire vestiging"
       },
       "description": {},
       "usage": {},
-      "sort": "veranderd door",
+      "sort": "heeft primaire vestiging",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://www.w3.org/ns/org#basedAt",
-      "name": "heeft standplaats",
+      "uri": "http://www.w3.org/ns/org#hasRegisteredSite",
+      "name": "heeft geregistreerde vestiging",
       "label": {
-        "nl": "heeft standplaats"
+        "nl": "heeft geregistreerde vestiging"
       },
       "description": {},
       "usage": {},
-      "sort": "heeft standplaats",
+      "sort": "heeft geregistreerde vestiging",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
-      "name": "voorkeurslabel",
+      "uri": "http://www.w3.org/ns/org#hasSite",
+      "name": "heeft vestiging",
       "label": {
-        "nl": "voorkeurslabel"
+        "nl": "heeft vestiging"
       },
       "description": {},
       "usage": {},
-      "sort": "voorkeurslabel",
+      "sort": "heeft vestiging",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://www.w3.org/2004/02/skos/core#altLabel",
-      "name": "alternatieve label",
+      "uri": "http://www.w3.org/ns/org#hasSubOrganization",
+      "name": "heeft suborganisatie",
       "label": {
-        "nl": "alternatieve label"
+        "nl": "heeft suborganisatie"
       },
       "description": {},
       "usage": {},
-      "sort": "alternatieve label",
+      "sort": "heeft suborganisatie",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://schema.org/logo",
-      "name": "logo",
+      "uri": "http://www.w3.org/ns/org#hasUnit",
+      "name": "heeft eenheid",
       "label": {
-        "nl": "logo"
+        "nl": "heeft eenheid"
       },
       "description": {},
       "usage": {},
-      "sort": "logo",
+      "sort": "heeft eenheid",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://schema.org/contactPoint",
-      "name": "contactpunt",
+      "uri": "http://www.w3.org/ns/org#headOf",
+      "name": "hoofd van",
       "label": {
-        "nl": "contactpunt"
+        "nl": "hoofd van"
       },
       "description": {},
       "usage": {},
-      "sort": "contactpunt",
+      "sort": "hoofd van",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://purl.org/dc/terms/spatial",
-      "name": "ruimtelijk",
+      "uri": "http://www.w3.org/ns/org#heldBy",
+      "name": "ingevuld door",
       "label": {
-        "nl": "ruimtelijk"
+        "nl": "ingevuld door"
       },
       "description": {},
       "usage": {},
-      "sort": "ruimtelijk",
+      "sort": "ingevuld door",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://purl.org/dc/terms/description",
-      "name": "beschrijving",
+      "uri": "http://www.w3.org/ns/org#holds",
+      "name": "houdt",
       "label": {
-        "nl": "beschrijving"
+        "nl": "houdt"
       },
       "description": {},
       "usage": {},
-      "sort": "beschrijving",
+      "sort": "houdt",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://purl.org/dc/terms/date",
-      "name": "datum",
+      "uri": "http://www.w3.org/ns/org#linkedTo",
+      "name": "gelinkt met",
       "label": {
-        "nl": "datum"
+        "nl": "gelinkt met"
       },
       "description": {},
       "usage": {},
-      "sort": "datum",
+      "sort": "gelinkt met",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://data.europa.eu/m8g/hasFormalFramework",
-      "name": "heeft formeel kader",
+      "uri": "http://www.w3.org/ns/org#member",
+      "name": "lid",
       "label": {
-        "nl": "heeft formeel kader"
+        "nl": "lid"
+      },
+      "description": {
+        "nl": "Agent die lid is (van een organisatie)."
+      },
+      "usage": {
+        "nl": "Het lidmaatschap wordt meer in detail beschreven met de entiteit lidmaatschap."
+      },
+      "sort": "lid",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/org#memberDuring",
+      "name": "lid gedurende",
+      "label": {
+        "nl": "lid gedurende"
       },
       "description": {},
       "usage": {},
-      "sort": "heeft formeel kader",
+      "sort": "lid gedurende",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/org#memberOf",
+      "name": "lid van",
+      "label": {
+        "nl": "lid van"
+      },
+      "description": {},
+      "usage": {},
+      "sort": "lid van",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/org#organization",
+      "name": "is lidmaatschap bij",
+      "label": {
+        "nl": "is lidmaatschap bij"
+      },
+      "description": {
+        "nl": "Organisatie waarop het lidmaatschap (van een agent) betrekking heeft."
+      },
+      "usage": {
+        "nl": "Het lidmaatschap wordt meer in detail beschreven met de entiteit lidmaatschap."
+      },
+      "sort": "is lidmaatschap bij",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/org#originalOrganization",
+      "name": "originele organisatie",
+      "label": {
+        "nl": "originele organisatie"
+      },
+      "description": {},
+      "usage": {},
+      "sort": "originele organisatie",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/org#postIn",
+      "name": "positie bij",
+      "label": {
+        "nl": "positie bij"
+      },
+      "description": {},
+      "usage": {},
+      "sort": "positie bij",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/org#purpose",
+      "name": "doel",
+      "label": {
+        "nl": "doel"
+      },
+      "description": {},
+      "usage": {},
+      "sort": "doel",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/org#reportsTo",
+      "name": "rapporteert aan",
+      "label": {
+        "nl": "rapporteert aan"
+      },
+      "description": {},
+      "usage": {},
+      "sort": "rapporteert aan",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/org#reportsTo",
+      "name": "rapporteert aan",
+      "label": {
+        "nl": "rapporteert aan"
+      },
+      "description": {},
+      "usage": {},
+      "sort": "rapporteert aan",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/org#resultedFrom",
+      "name": "gevolg van",
+      "label": {
+        "nl": "gevolg van"
+      },
+      "description": {},
+      "usage": {},
+      "sort": "gevolg van",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/org#resultingOrganization",
+      "name": "resulterende organisatie",
+      "label": {
+        "nl": "resulterende organisatie"
+      },
+      "description": {},
+      "usage": {},
+      "sort": "resulterende organisatie",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/org#role",
+      "name": "rol",
+      "label": {
+        "nl": "rol"
+      },
+      "description": {},
+      "usage": {},
+      "sort": "rol",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/org#role",
+      "name": "rol",
+      "label": {
+        "nl": "rol"
+      },
+      "description": {},
+      "usage": {},
+      "sort": "rol",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/org#siteAddress",
+      "name": "vestigingsadres",
+      "label": {
+        "nl": "vestigingsadres"
+      },
+      "description": {},
+      "usage": {},
+      "sort": "vestigingsadres",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/org#subOrganizationOf",
+      "name": "suborganisatie van",
+      "label": {
+        "nl": "suborganisatie van"
+      },
+      "description": {},
+      "usage": {},
+      "sort": "suborganisatie van",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/org#unitOf",
+      "name": "eenheid van",
+      "label": {
+        "nl": "eenheid van"
+      },
+      "description": {},
+      "usage": {},
+      "sort": "eenheid van",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/regorg#hasRegisteredOrganization",
+      "name": "heeft geregistreerde organisatie",
+      "label": {
+        "nl": "heeft geregistreerde organisatie"
+      },
+      "description": {
+        "nl": "Verwijst naar de geregistreerde organisatie waarmee de agent geassocieerd is."
+      },
+      "usage": {
+        "nl": "Bvb een eenmanszaak die door een natuurlijk persoon wordt uitgebaat of een niet-geregistreerde organisatie die meerdere geregistreerde organisaties omvat."
+      },
+      "sort": "heeft geregistreerde organisatie",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/regorg#legalName",
+      "name": "wettelijke naam",
+      "label": {
+        "nl": "wettelijke naam"
+      },
+      "description": {},
+      "usage": {},
+      "sort": "wettelijke naam",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/regorg#orgActivity",
+      "name": "organisatieactiviteit",
+      "label": {
+        "nl": "organisatieactiviteit"
+      },
+      "description": {},
+      "usage": {},
+      "sort": "organisatieactiviteit",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/regorg#orgStatus",
+      "name": "organisatiestatus",
+      "label": {
+        "nl": "organisatiestatus"
+      },
+      "description": {},
+      "usage": {},
+      "sort": "organisatiestatus",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/regorg#orgType",
+      "name": "organisatietype",
+      "label": {
+        "nl": "organisatietype"
+      },
+      "description": {},
+      "usage": {},
+      "sort": "organisatietype",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/regorg#registration",
+      "name": "registratie",
+      "label": {
+        "nl": "registratie"
+      },
+      "description": {},
+      "usage": {},
+      "sort": "registratie",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://xmlns.com/foaf/0.1/homepage",
+      "name": "homepage",
+      "label": {
+        "nl": "homepage"
+      },
+      "description": {},
+      "usage": {},
+      "sort": "homepage",
       "inscope": true,
       "indvl": false,
       "inpackage": false,

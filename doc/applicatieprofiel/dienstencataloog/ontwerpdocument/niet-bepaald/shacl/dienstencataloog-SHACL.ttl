@@ -1,0 +1,629 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl> <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nlshapes> <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#CriteriumVereisteShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#BewijsShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#AgentShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#PlaatscodeShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#GebeurtenisTypeShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#LevensGebeurtenisShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#CriteriumVereisteTypeShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#ParticipatieShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#NAL_typeShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#NAL_currencyShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#ProcedureShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#KanaalTypeShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#PubliekeDienstverleningShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#GebeurtenisShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#OutputShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#OutputTypeShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#PubliekeOrganisatieShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#OpeningsurenSpecificatieShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#BedrijfsGebeurtenisShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#KanaalShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#KostShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#EurovocShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#ContactInfoShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#ELI_statusShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#ParticipatieRolShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#PlaatsShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#OrganisatieShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#FormeelKaderShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#NUTSShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#COFOGShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#ADMSStatusVocabulariumShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#TaalcodeShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#NACEShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#BewijsTypeShape> .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#ADMSStatusVocabulariumShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#AgentShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass dc:Agent .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#BedrijfsGebeurtenisShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://data.europa.eu/m8g/BusinessEvent> .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#BewijsShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class rdf:langString;
+    shacl:definition "Officiële naam vh bewijs."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "naam"@nl;
+    shacl:path dc:title
+  ], [
+    shacl:datatype xsd:anyURI;
+    shacl:definition "Documentatie gerelateerd ah bewiijs."@nl;
+    shacl:name "documentatie"@nl;
+    shacl:path foaf:page
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "Beschrijving vh bewijs."@nl;
+    shacl:maxCount 1;
+    shacl:name "beschrijving"@nl;
+    shacl:path dc:description
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Taal waarin het aangeboden bewijs moet zijn gesteld."@nl;
+    shacl:name "taal"@nl;
+    shacl:path dc:language
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Aard vh bewijs."@nl;
+    shacl:maxCount 1;
+    shacl:name "type"@nl;
+    shacl:path dc:type
+  ];
+  shacl:targetClass <http://data.europa.eu/m8g/Evidence> .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#BewijsTypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#COFOGShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#ContactInfoShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass schema:ContactPoint .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#CriteriumVereisteShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class rdf:langString;
+    shacl:definition "Officiële naam vd criteriumVereiste."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "naam"@nl;
+    shacl:path dc:title
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Aard vd criteriumvereiste."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "type"@nl;
+    shacl:path dc:type
+  ];
+  shacl:targetClass <http://data.europa.eu/m8g/CriterionRequirement> .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#CriteriumVereisteTypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#ELI_statusShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#EurovocShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#FormeelKaderShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:definition "Het geografisch bereik vh formeel kader."@nl;
+    shacl:name "toepassingsgebied"@nl;
+    shacl:path <http://data.europa.eu/m8g/territorialApplication>
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "Beschrijving van het formeel kader."@nl;
+    shacl:maxCount 1;
+    shacl:name "beschrijving"@nl;
+    shacl:path dc:description
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Onderwerp vh formeel kader."@nl;
+    shacl:name "onderwerp"@nl;
+    shacl:path <http://data.europa.eu/m8g/subject>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Taal waarin het formeel kader beschikbaar is."@nl;
+    shacl:name "taal"@nl;
+    shacl:path <http://data.europa.eu/eli/ontology#language>
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "Naam vh formeel kader."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "naam"@nl;
+    shacl:path dc:title
+  ], [
+    shacl:class <http://purl.org/vocab/cpsv#FormalFramework>;
+    shacl:definition "Ander formeel kader dat met het formeel kader verband houdt."@nl;
+    shacl:name "is gerelateerd aan"@nl;
+    shacl:path dc:relation
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Status vh formeel kader."@nl;
+    shacl:maxCount 1;
+    shacl:name "status"@nl;
+    shacl:path <http://www.w3.org/ns/adms#status>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Aard vh formeel kader."@nl;
+    shacl:name "type"@nl;
+    shacl:path dc:type
+  ];
+  shacl:targetClass <http://purl.org/vocab/cpsv#FormalFramework> .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#GebeurtenisShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://purl.org/vocab/cpsv#PublicService>;
+    shacl:definition "Publieke dienstverlening waarmee de Gebeurtenis kan worden gekoppeld."@nl;
+    shacl:name "is gerelateerd met"@nl;
+    shacl:path dc:relation
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "Naam van de gebeurtenis."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "naam"@nl;
+    shacl:path dc:title
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "Beschrijving van de gebeurtenis."@nl;
+    shacl:maxCount 1;
+    shacl:name "beschrijving"@nl;
+    shacl:path dc:description
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Aard van de gebeurtenis."@nl;
+    shacl:name "type"@nl;
+    shacl:path dc:type
+  ];
+  shacl:targetClass <http://data.europa.eu/m8g/Event> .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#GebeurtenisTypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#KanaalShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://data.europa.eu/m8g/Evidence>;
+    shacl:definition "Bewijsstuk dat moeten voorgelegd worden om de publieke dienstverlening te kunnen gebruiken."@nl;
+    shacl:name "vereist als input"@nl;
+    shacl:path <http://purl.org/vocab/cpsv#hasInput>
+  ], [
+    shacl:class dc:Agent;
+    shacl:definition "Eigenaar vh kanaal waarlangs de dienstverlening wordt aangeboden."@nl;
+    shacl:name "is bezit van"@nl;
+    shacl:path <http://data.europa.eu/m8g/ownedBy>
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "Uren waarbinnen de publieke dienstverlening beschikbaar is via het kanaal."@nl;
+    shacl:maxCount 1;
+    shacl:name "openingsuren"@nl;
+    shacl:path schema:openingHours
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Aard vh kanaal."@nl;
+    shacl:maxCount 1;
+    shacl:name "type"@nl;
+    shacl:path dc:type
+  ], [
+    shacl:class schema:OpeningHoursSpecification;
+    shacl:definition "Periode waarin de publieke dienstverlening beschikbaar is via het kanaal."@nl;
+    shacl:name "beschikbaarheid"@nl;
+    shacl:path schema:hoursAvailable
+  ];
+  shacl:targetClass <http://data.europa.eu/m8g/Channel> .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#KanaalTypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#KostShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:definition "Munteenheid waarin de kost is gedefinieerd."@nl;
+    shacl:maxCount 1;
+    shacl:name "valuta"@nl;
+    shacl:path <http://data.europa.eu/m8g/currency>
+  ], [
+    shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
+    shacl:definition "Publieke organisatie die bevoegd is voor het bepalen van de kost."@nl;
+    shacl:name "is gedefinieerd door"@nl;
+    shacl:path <http://data.europa.eu/m8g/isDefinedBy>
+  ], [
+    shacl:class <http://data.europa.eu/m8g/Channel>;
+    shacl:definition "Associeert de kost met het kanaal waarlangs de publieke dienstverlening wordt geconsumeerd."@nl;
+    shacl:maxCount 1;
+    shacl:name "indien benaderd via"@nl;
+    shacl:path <http://data.europa.eu/m8g/ifAccessedThrough>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "Beschrijving van de kost."@nl;
+    shacl:maxCount 1;
+    shacl:name "beschrijving"@nl;
+    shacl:path dc:description
+  ], [
+    shacl:datatype xsd:double;
+    shacl:definition "Omvang van de kost, uitgedrukt in de opgegeven munteenheid."@nl;
+    shacl:maxCount 1;
+    shacl:name "waarde"@nl;
+    shacl:path <http://data.europa.eu/m8g/value>
+  ];
+  shacl:targetClass <http://data.europa.eu/m8g/Cost> .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#LevensGebeurtenisShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://data.europa.eu/m8g/LifeEvent> .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#NACEShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#NAL_currencyShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#NAL_typeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#NUTSShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#OpeningsurenSpecificatieShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:anyURI;
+    shacl:definition "Dag van de week waarvoor de openingsuren geldig zijn."@nl;
+    shacl:maxCount 1;
+    shacl:name "dag van de week"@nl;
+    shacl:path schema:dayOfWeek
+  ], [
+    shacl:datatype xsd:time;
+    shacl:definition "Sluitingsuur vd plaats of dienst op de opgegeven dag vd week."@nl;
+    shacl:maxCount 1;
+    shacl:name "gesloten"@nl;
+    shacl:path schema:closes
+  ], [
+    shacl:datatype xsd:dateTime;
+    shacl:definition "Datum vanaf wanneer de opgegeven openingsuren gelden."@nl;
+    shacl:maxCount 1;
+    shacl:name "geldig van"@nl;
+    shacl:path schema:validFrom
+  ], [
+    shacl:datatype xsd:dateTime;
+    shacl:definition "Datum tot wanneer de opgegeven openingsuren gelden."@nl;
+    shacl:maxCount 1;
+    shacl:name "geldig tot"@nl;
+    shacl:path schema:validThrough
+  ], [
+    shacl:datatype xsd:time;
+    shacl:definition "Openingsuur vd plaats of dienst op de opgegeven dag vd week."@nl;
+    shacl:maxCount 1;
+    shacl:name "open"@nl;
+    shacl:path schema:opens
+  ];
+  shacl:targetClass schema:OpeningHoursSpecification .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#OrganisatieShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class rdf:langString;
+    shacl:definition "Naam waarmee de organisatie bij voorkeur wordt aangeduid."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "voorkeursnaam"@nl;
+    shacl:path skos:prefLabel
+  ];
+  shacl:targetClass <https://www.w3.org/ns/org#Organization> .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#OutputShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:definition "Aard van de output."@nl;
+    shacl:name "type"@nl;
+    shacl:path dc:type
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "Beschrijving van de output."@nl;
+    shacl:maxCount 1;
+    shacl:name "beschrijving"@nl;
+    shacl:path dc:description
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "Officiële naam van de output."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "naam"@nl;
+    shacl:path dc:title
+  ];
+  shacl:targetClass <http://data.europa.eu/m8g/Output> .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#OutputTypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#ParticipatieRolShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#ParticipatieShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class rdf:langString;
+    shacl:definition "Beschrijving van de participatie."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "beschrijving"@nl;
+    shacl:path dc:description
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "De rol die de participant speelt."@nl;
+    shacl:minCount 1;
+    shacl:name "rol"@nl;
+    shacl:path <http://data.europa.eu/m8g/role>
+  ];
+  shacl:targetClass <http://data.europa.eu/m8g/Participation> .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#PlaatsShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdf:langString;
+    shacl:definition "Naam van de plaats of van het gebied."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "plaatsnaam"@nl;
+    shacl:path rdfs:label
+  ], [
+    shacl:class <https://data.vlaanderen.be/ns/generiek#Geometrie>;
+    shacl:definition "Geometrie van de plaats of het gebied."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "geometrie"@nl;
+    shacl:path <http://www.w3.org/ns/locn#geometry>
+  ];
+  shacl:targetClass dc:Location .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#PlaatscodeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#ProcedureShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:definition "Taal waarin de richtlijn is gesteld."@nl;
+    shacl:name "taal"@nl;
+    shacl:path dc:language
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "Naam vd richtlijn."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "titel"@nl;
+    shacl:path dc:title
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "Beschrijving van de richtlijn."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "beschrijving"@nl;
+    shacl:path dc:description
+  ], [
+    shacl:class <http://purl.org/vocab/cpsv#FormalFramework>;
+    shacl:definition "Relevante wetgeving of beleid waarbinnen de Procedure is gedefinieerd."@nl;
+    shacl:name "implementeert"@nl;
+    shacl:path <http://purl.org/vocab/cpsv#implements>
+  ];
+  shacl:targetClass <http://purl.org/vocab/cpsv#Rule> .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#PubliekeDienstverleningShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:definition "Soort publieke dienstverlening."@nl;
+    shacl:name "type"@nl;
+    shacl:path dc:type
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "Officiële naam van de publieke dienstverlening."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "naam"@nl;
+    shacl:path dc:title
+  ], [
+    shacl:class <http://data.europa.eu/m8g/Output>;
+    shacl:definition "Het werkelijke resultaat van de uitvoering vd publieke dienstverlening."@nl;
+    shacl:name "produceert"@nl;
+    shacl:path <http://purl.org/vocab/cpsv#produces>
+  ], [
+    shacl:class <http://purl.org/vocab/cpsv#FormalFramework>;
+    shacl:definition "Het formeel kader (bv de wetgeving) waar de publieke dienstverlening betrekking op heeft of waarbinnen ze werkt of waaraan ze haar wettelijke basis ontleent."@nl;
+    shacl:name "aangeboden binnen"@nl;
+    shacl:path <http://data.europa.eu/m8g/hasFormalFramework>
+  ], [
+    shacl:class dc:Location;
+    shacl:definition "Gebied waarin de publieke dienstverlening beschikbaar is."@nl;
+    shacl:name "ruimtelijke dekking"@nl;
+    shacl:path dc:spatial
+  ], [
+    shacl:class dc:Agent;
+    shacl:path <https://data.vlaanderen.be/ns/dienst#dienstverlener>
+  ], [
+    shacl:class schema:ContactPoint;
+    shacl:definition "Informatie waarmee de publieke dienstverlening kan worden gecontacteerd."@nl;
+    shacl:maxCount 1;
+    shacl:name "contactinfo"@nl;
+    shacl:path <http://data.europa.eu/m8g/hasContactPoint>
+  ], [
+    shacl:class <http://purl.org/vocab/cpsv#PublicService>;
+    shacl:definition "Andere publieke dienstverlening waarmee de publieke dienstverlening gerelateerd is."@nl;
+    shacl:name "is gerelateerd met"@nl;
+    shacl:path dc:relation
+  ], [
+    shacl:class dc:Agent;
+    shacl:definition "Agent die de publieke dienstverlening verstrekt."@nl;
+    shacl:name "wordt uitgevoerd door"@nl;
+    shacl:path <http://data.europa.eu/m8g/serviceProvider>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Sector of bedrijvigheid waarop de publieke dienstverlening betrekking heeft of waarvoor deze is bedoeld."@nl;
+    shacl:name "sector"@nl;
+    shacl:path <http://data.europa.eu/m8g/sector>
+  ], [
+    shacl:class <http://data.europa.eu/m8g/Channel>;
+    shacl:definition "Kanaal waarlangs een agent interageert met een publieke dienstverlening."@nl;
+    shacl:name "te consumeren via"@nl;
+    shacl:path <http://data.europa.eu/m8g/hasChannel>
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition """Andere naam waaronder de dienstverlening bekend is.
+"""@nl;
+    shacl:name "alternatieve naam"@nl;
+    shacl:path skos:altLabel
+  ], [
+    shacl:class <http://data.europa.eu/m8g/CriterionRequirement>;
+    shacl:definition "Criterium waaraan de gebruiker moet voldoen om recht te hebben op een dienstverlening of om een dienstverlening te mogen gebruiken."@nl;
+    shacl:name "heeft criterium"@nl;
+    shacl:path <http://data.europa.eu/m8g/hasCriterion>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Geeft aan of een publieke dienstverlening actief, inactief, in ontwikkeling etc is."@nl;
+    shacl:maxCount 1;
+    shacl:name "status"@nl;
+    shacl:path <http://www.w3.org/ns/adms#status>
+  ], [
+    shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
+    shacl:definition "Publieke organisatie die verantwoordelijk is voor het aanbieden en beheren van de publieke dienstverlening."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "heeft verantwoordelijke"@nl;
+    shacl:path <http://data.europa.eu/m8g/hasCompetentAuthority>
+  ], [
+    shacl:class <http://data.europa.eu/m8g/Cost>;
+    shacl:definition "Kostprijs verbonden aan het gebruik van de publieke dienstverlening."@nl;
+    shacl:name "kost"@nl;
+    shacl:path <http://data.europa.eu/m8g/hasCost>
+  ], [
+    shacl:class <http://data.europa.eu/m8g/Participation>;
+    shacl:definition "Participatie (van een agent) aan de publieke dienstverlening."@nl;
+    shacl:name "heeft participatie"@nl;
+    shacl:path <http://data.europa.eu/m8g/hasParticipation>
+  ], [
+    shacl:class <http://data.europa.eu/m8g/Evidence>;
+    shacl:definition "Bewijsstuk dat moeten voorgelegd worden om de publieke dienstverlening te kunnen gebruiken."@nl;
+    shacl:name "vereist als input"@nl;
+    shacl:path <http://purl.org/vocab/cpsv#hasInput>
+  ], [
+    shacl:class <http://data.europa.eu/m8g/Event>;
+    shacl:definition "Gebeurtenis waarop de publieke dienstverlening betrekking heeft."@nl;
+    shacl:name "is gegroepeerd volgens"@nl;
+    shacl:path <http://data.europa.eu/m8g/isGroupedBy>
+  ], [
+    shacl:class <http://purl.org/vocab/cpsv#PublicService>;
+    shacl:definition "Publieke dienstverlening die voorafgaandelijk moet worden uitgevoerd om van de publieke dienstverlening gebruik te kunnen maken."@nl;
+    shacl:name "vereist"@nl;
+    shacl:path dc:requires
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "Sleutelwoord, term, begrip dat de publieke dienst beschrijft."@nl;
+    shacl:name "trefwoord"@nl;
+    shacl:path dcat:keyword
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Taal waarin een publieke dienstverlening wordt aangeboden."@nl;
+    shacl:name "taal"@nl;
+    shacl:path dc:language
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "Geschatte tijd nodig om de publieke dienstverlening af te leveren."@nl;
+    shacl:maxCount 1;
+    shacl:name "verwerkingstijd"@nl;
+    shacl:path <http://data.europa.eu/m8g/processingTime>
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "Beschrijving vd publieke dienstverlening."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "beschrijving"@nl;
+    shacl:path dc:description
+  ], [
+    shacl:class <http://purl.org/vocab/cpsv#Rule>;
+    shacl:definition "De richtlijn die de werking van de publieke dienstverlening stuurt."@nl;
+    shacl:name "volgt"@nl;
+    shacl:path <http://purl.org/vocab/cpsv#follows>
+  ];
+  shacl:targetClass <http://purl.org/vocab/cpsv#PublicService> .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#PubliekeOrganisatieShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class dc:Location;
+    shacl:definition "Administratief gebied dat de Publieke Organisatie dekt."@nl;
+    shacl:minCount 1;
+    shacl:name "Werkingsgebied"@nl;
+    shacl:path dc:spatial
+  ];
+  shacl:targetClass <http://data.europa.eu/m8g/PublicOrganisation> .
+
+<https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#TaalcodeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+ [
+    shacl:class <http://www.w3.org/ns/locn#Address>;
+    shacl:definition "Adres vd agent."@nl;
+    shacl:maxCount 1;
+    shacl:name "adres"@nl;
+    shacl:path <http://data.europa.eu/m8g/hasAddress>
+  ] .
+
+ [
+    shacl:class <http://data.europa.eu/m8g/Participation>;
+    shacl:definition "Participatie van de agent (aan een publieke dienstverlening)."@nl;
+    shacl:name "speelt rol"@nl;
+    shacl:path <http://data.europa.eu/m8g/playsRole>
+  ] .
+
+ [
+    shacl:datatype xsd:string;
+    shacl:definition "Naam vd agent."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "naam"@nl;
+    shacl:path dc:title
+  ] .

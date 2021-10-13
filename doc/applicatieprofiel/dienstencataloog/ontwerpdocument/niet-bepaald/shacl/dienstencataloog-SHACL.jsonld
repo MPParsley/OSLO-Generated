@@ -1,0 +1,1102 @@
+{
+  "@context": {
+    "@vocab": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl",
+    "qb": "http://purl.org/linked-data/cube#",
+    "qb:codeList": {
+      "@type": "@id"
+    },
+    "sh": "http://www.w3.org/ns/shacl#",
+    "sh:class": {
+      "@type": "@id"
+    },
+    "sh:datatype": {
+      "@type": "@id"
+    },
+    "sh:definition": {
+      "@container": "@language"
+    },
+    "sh:maxCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:minCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:name": {
+      "@container": "@language"
+    },
+    "sh:path": {
+      "@type": "@id"
+    },
+    "sh:property": {
+      "@type": "@id"
+    },
+    "sh:targetClass": {
+      "@type": "@id"
+    },
+    "shapes": {
+      "@type": "@id"
+    }
+  },
+  "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl",
+  "shapes": [
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#BedrijfsGebeurtenisShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://data.europa.eu/m8g/BusinessEvent"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#KanaalShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://schema.org/OpeningHoursSpecification",
+          "sh:definition": {
+            "nl": "Periode waarin de publieke dienstverlening beschikbaar is via het kanaal."
+          },
+          "sh:name": {
+            "nl": "beschikbaarheid"
+          },
+          "sh:path": "http://schema.org/hoursAvailable"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Agent",
+          "sh:definition": {
+            "nl": "Eigenaar vh kanaal waarlangs de dienstverlening wordt aangeboden."
+          },
+          "sh:name": {
+            "nl": "is bezit van"
+          },
+          "sh:path": "http://data.europa.eu/m8g/ownedBy"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "nl": "Uren waarbinnen de publieke dienstverlening beschikbaar is via het kanaal."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "openingsuren"
+          },
+          "sh:path": "http://schema.org/openingHours"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Aard vh kanaal."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/Evidence",
+          "sh:definition": {
+            "nl": "Bewijsstuk dat moeten voorgelegd worden om de publieke dienstverlening te kunnen gebruiken."
+          },
+          "sh:name": {
+            "nl": "vereist als input"
+          },
+          "sh:path": "http://purl.org/vocab/cpsv#hasInput"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/Channel"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#KostShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "Beschrijving van de kost."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "beschrijving"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/Channel",
+          "sh:definition": {
+            "nl": "Associeert de kost met het kanaal waarlangs de publieke dienstverlening wordt geconsumeerd."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "indien benaderd via"
+          },
+          "sh:path": "http://data.europa.eu/m8g/ifAccessedThrough"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/PublicOrganisation",
+          "sh:definition": {
+            "nl": "Publieke organisatie die bevoegd is voor het bepalen van de kost."
+          },
+          "sh:name": {
+            "nl": "is gedefinieerd door"
+          },
+          "sh:path": "http://data.europa.eu/m8g/isDefinedBy"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Munteenheid waarin de kost is gedefinieerd."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "valuta"
+          },
+          "sh:path": "http://data.europa.eu/m8g/currency"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "sh:definition": {
+            "nl": "Omvang van de kost, uitgedrukt in de opgegeven munteenheid."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "waarde"
+          },
+          "sh:path": "http://data.europa.eu/m8g/value"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/Cost"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#CriteriumVereisteShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Officiële naam vd criteriumVereiste."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "naam"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Aard vd criteriumvereiste."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/CriterionRequirement"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#GebeurtenisShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Beschrijving van de gebeurtenis."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "beschrijving"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://purl.org/vocab/cpsv#PublicService",
+          "sh:definition": {
+            "nl": "Publieke dienstverlening waarmee de Gebeurtenis kan worden gekoppeld."
+          },
+          "sh:name": {
+            "nl": "is gerelateerd met"
+          },
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Naam van de gebeurtenis."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "naam"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Aard van de gebeurtenis."
+          },
+          "sh:name": {
+            "nl": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/Event"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#BewijsShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Beschrijving vh bewijs."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "beschrijving"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "nl": "Documentatie gerelateerd ah bewiijs."
+          },
+          "sh:name": {
+            "nl": "documentatie"
+          },
+          "sh:path": "http://xmlns.com/foaf/0.1/page"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Officiële naam vh bewijs."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "naam"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Taal waarin het aangeboden bewijs moet zijn gesteld."
+          },
+          "sh:name": {
+            "nl": "taal"
+          },
+          "sh:path": "http://purl.org/dc/terms/language"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Aard vh bewijs."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/Evidence"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#LevensGebeurtenisShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://data.europa.eu/m8g/LifeEvent"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#OutputShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Beschrijving van de output."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "beschrijving"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Officiële naam van de output."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "naam"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Aard van de output."
+          },
+          "sh:name": {
+            "nl": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/Output"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#ParticipatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Beschrijving van de participatie."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "beschrijving"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "De rol die de participant speelt."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "rol"
+          },
+          "sh:path": "http://data.europa.eu/m8g/role"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/Participation"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#PubliekeOrganisatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://purl.org/dc/terms/Location",
+          "sh:definition": {
+            "nl": "Administratief gebied dat de Publieke Organisatie dekt."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "Werkingsgebied"
+          },
+          "sh:path": "http://purl.org/dc/terms/spatial"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/PublicOrganisation"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#Agent (Dienstencataloog)Shape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Address",
+          "sh:definition": {
+            "nl": "Adres vd agent."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "adres"
+          },
+          "sh:path": "http://data.europa.eu/m8g/hasAddress"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/Participation",
+          "sh:definition": {
+            "nl": "Participatie van de agent (aan een publieke dienstverlening)."
+          },
+          "sh:name": {
+            "nl": "speelt rol"
+          },
+          "sh:path": "http://data.europa.eu/m8g/playsRole"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "Naam vd agent."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "naam"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        }
+      ],
+      "sh:targetClass": "http://purl.org/dc/terms/Agent"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#AgentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://purl.org/dc/terms/Agent"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#PlaatsShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/generiek#Geometrie",
+          "sh:definition": {
+            "nl": "Geometrie van de plaats of het gebied."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "geometrie"
+          },
+          "sh:path": "http://www.w3.org/ns/locn#geometry"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Naam van de plaats of van het gebied."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "plaatsnaam"
+          },
+          "sh:path": "http://www.w3.org/2000/01/rdf-schema#label"
+        }
+      ],
+      "sh:targetClass": "http://purl.org/dc/terms/Location"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#FormeelKaderShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Beschrijving van het formeel kader."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "beschrijving"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://purl.org/vocab/cpsv#FormalFramework",
+          "sh:definition": {
+            "nl": "Ander formeel kader dat met het formeel kader verband houdt."
+          },
+          "sh:name": {
+            "nl": "is gerelateerd aan"
+          },
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Naam vh formeel kader."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "naam"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Onderwerp vh formeel kader."
+          },
+          "sh:name": {
+            "nl": "onderwerp"
+          },
+          "sh:path": "http://data.europa.eu/m8g/subject"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Status vh formeel kader."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "status"
+          },
+          "sh:path": "http://www.w3.org/ns/adms#status"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Taal waarin het formeel kader beschikbaar is."
+          },
+          "sh:name": {
+            "nl": "taal"
+          },
+          "sh:path": "http://data.europa.eu/eli/ontology#language"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Het geografisch bereik vh formeel kader."
+          },
+          "sh:name": {
+            "nl": "toepassingsgebied"
+          },
+          "sh:path": "http://data.europa.eu/m8g/territorialApplication"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Aard vh formeel kader."
+          },
+          "sh:name": {
+            "nl": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "http://purl.org/vocab/cpsv#FormalFramework"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#PubliekeDienstverleningShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://purl.org/vocab/cpsv#FormalFramework",
+          "sh:definition": {
+            "nl": "Het formeel kader (bv de wetgeving) waar de publieke dienstverlening betrekking op heeft of waarbinnen ze werkt of waaraan ze haar wettelijke basis ontleent."
+          },
+          "sh:name": {
+            "nl": "aangeboden binnen"
+          },
+          "sh:path": "http://data.europa.eu/m8g/hasFormalFramework"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Andere naam waaronder de dienstverlening bekend is.\r\n"
+          },
+          "sh:name": {
+            "nl": "alternatieve naam"
+          },
+          "sh:path": "http://www.w3.org/2004/02/skos/core#altLabel"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Beschrijving vd publieke dienstverlening."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "beschrijving"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://schema.org/ContactPoint",
+          "sh:definition": {
+            "nl": "Informatie waarmee de publieke dienstverlening kan worden gecontacteerd."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "contactinfo"
+          },
+          "sh:path": "http://data.europa.eu/m8g/hasContactPoint"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Agent",
+          "sh:path": "https://data.vlaanderen.be/ns/dienst#dienstverlener"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/CriterionRequirement",
+          "sh:definition": {
+            "nl": "Criterium waaraan de gebruiker moet voldoen om recht te hebben op een dienstverlening of om een dienstverlening te mogen gebruiken."
+          },
+          "sh:name": {
+            "nl": "heeft criterium"
+          },
+          "sh:path": "http://data.europa.eu/m8g/hasCriterion"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/Participation",
+          "sh:definition": {
+            "nl": "Participatie (van een agent) aan de publieke dienstverlening."
+          },
+          "sh:name": {
+            "nl": "heeft participatie"
+          },
+          "sh:path": "http://data.europa.eu/m8g/hasParticipation"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/PublicOrganisation",
+          "sh:definition": {
+            "nl": "Publieke organisatie die verantwoordelijk is voor het aanbieden en beheren van de publieke dienstverlening."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "heeft verantwoordelijke"
+          },
+          "sh:path": "http://data.europa.eu/m8g/hasCompetentAuthority"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/Event",
+          "sh:definition": {
+            "nl": "Gebeurtenis waarop de publieke dienstverlening betrekking heeft."
+          },
+          "sh:name": {
+            "nl": "is gegroepeerd volgens"
+          },
+          "sh:path": "http://data.europa.eu/m8g/isGroupedBy"
+        },
+        {
+          "sh:class": "http://purl.org/vocab/cpsv#PublicService",
+          "sh:definition": {
+            "nl": "Andere publieke dienstverlening waarmee de publieke dienstverlening gerelateerd is."
+          },
+          "sh:name": {
+            "nl": "is gerelateerd met"
+          },
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/Cost",
+          "sh:definition": {
+            "nl": "Kostprijs verbonden aan het gebruik van de publieke dienstverlening."
+          },
+          "sh:name": {
+            "nl": "kost"
+          },
+          "sh:path": "http://data.europa.eu/m8g/hasCost"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Officiële naam van de publieke dienstverlening."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "naam"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/Output",
+          "sh:definition": {
+            "nl": "Het werkelijke resultaat van de uitvoering vd publieke dienstverlening."
+          },
+          "sh:name": {
+            "nl": "produceert"
+          },
+          "sh:path": "http://purl.org/vocab/cpsv#produces"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Location",
+          "sh:definition": {
+            "nl": "Gebied waarin de publieke dienstverlening beschikbaar is."
+          },
+          "sh:name": {
+            "nl": "ruimtelijke dekking"
+          },
+          "sh:path": "http://purl.org/dc/terms/spatial"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Sector of bedrijvigheid waarop de publieke dienstverlening betrekking heeft of waarvoor deze is bedoeld."
+          },
+          "sh:name": {
+            "nl": "sector"
+          },
+          "sh:path": "http://data.europa.eu/m8g/sector"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Geeft aan of een publieke dienstverlening actief, inactief, in ontwikkeling etc is."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "status"
+          },
+          "sh:path": "http://www.w3.org/ns/adms#status"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Taal waarin een publieke dienstverlening wordt aangeboden."
+          },
+          "sh:name": {
+            "nl": "taal"
+          },
+          "sh:path": "http://purl.org/dc/terms/language"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/Channel",
+          "sh:definition": {
+            "nl": "Kanaal waarlangs een agent interageert met een publieke dienstverlening."
+          },
+          "sh:name": {
+            "nl": "te consumeren via"
+          },
+          "sh:path": "http://data.europa.eu/m8g/hasChannel"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Sleutelwoord, term, begrip dat de publieke dienst beschrijft."
+          },
+          "sh:name": {
+            "nl": "trefwoord"
+          },
+          "sh:path": "http://www.w3.org/ns/dcat#keyword"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Soort publieke dienstverlening."
+          },
+          "sh:name": {
+            "nl": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        },
+        {
+          "sh:class": "http://purl.org/vocab/cpsv#PublicService",
+          "sh:definition": {
+            "nl": "Publieke dienstverlening die voorafgaandelijk moet worden uitgevoerd om van de publieke dienstverlening gebruik te kunnen maken."
+          },
+          "sh:name": {
+            "nl": "vereist"
+          },
+          "sh:path": "http://purl.org/dc/terms/requires"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/Evidence",
+          "sh:definition": {
+            "nl": "Bewijsstuk dat moeten voorgelegd worden om de publieke dienstverlening te kunnen gebruiken."
+          },
+          "sh:name": {
+            "nl": "vereist als input"
+          },
+          "sh:path": "http://purl.org/vocab/cpsv#hasInput"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "nl": "Geschatte tijd nodig om de publieke dienstverlening af te leveren."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "verwerkingstijd"
+          },
+          "sh:path": "http://data.europa.eu/m8g/processingTime"
+        },
+        {
+          "sh:class": "http://purl.org/vocab/cpsv#Rule",
+          "sh:definition": {
+            "nl": "De richtlijn die de werking van de publieke dienstverlening stuurt."
+          },
+          "sh:name": {
+            "nl": "volgt"
+          },
+          "sh:path": "http://purl.org/vocab/cpsv#follows"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Agent",
+          "sh:definition": {
+            "nl": "Agent die de publieke dienstverlening verstrekt."
+          },
+          "sh:name": {
+            "nl": "wordt uitgevoerd door"
+          },
+          "sh:path": "http://data.europa.eu/m8g/serviceProvider"
+        }
+      ],
+      "sh:targetClass": "http://purl.org/vocab/cpsv#PublicService"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#ProcedureShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Beschrijving van de richtlijn."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "beschrijving"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://purl.org/vocab/cpsv#FormalFramework",
+          "sh:definition": {
+            "nl": "Relevante wetgeving of beleid waarbinnen de Procedure is gedefinieerd."
+          },
+          "sh:name": {
+            "nl": "implementeert"
+          },
+          "sh:path": "http://purl.org/vocab/cpsv#implements"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Naam vd richtlijn."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "titel"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "nl": "Taal waarin de richtlijn is gesteld."
+          },
+          "sh:name": {
+            "nl": "taal"
+          },
+          "sh:path": "http://purl.org/dc/terms/language"
+        }
+      ],
+      "sh:targetClass": "http://purl.org/vocab/cpsv#Rule"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#ContactInfoShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://schema.org/ContactPoint"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#OpeningsurenSpecificatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "nl": "Dag van de week waarvoor de openingsuren geldig zijn."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "dag van de week"
+          },
+          "sh:path": "http://schema.org/dayOfWeek"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "nl": "Datum tot wanneer de opgegeven openingsuren gelden."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "geldig tot"
+          },
+          "sh:path": "http://schema.org/validThrough"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "nl": "Datum vanaf wanneer de opgegeven openingsuren gelden."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "geldig van"
+          },
+          "sh:path": "http://schema.org/validFrom"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#time",
+          "sh:definition": {
+            "nl": "Sluitingsuur vd plaats of dienst op de opgegeven dag vd week."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "gesloten"
+          },
+          "sh:path": "http://schema.org/closes"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#time",
+          "sh:definition": {
+            "nl": "Openingsuur vd plaats of dienst op de opgegeven dag vd week."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "nl": "open"
+          },
+          "sh:path": "http://schema.org/opens"
+        }
+      ],
+      "sh:targetClass": "http://schema.org/OpeningHoursSpecification"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#EurovocShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#NUTSShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#NAL_typeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#ELI_statusShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#PlaatscodeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#TaalcodeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#NAL_currencyShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#ParticipatieRolShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#KanaalTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#GebeurtenisTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#CriteriumVereisteTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#OutputTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#BewijsTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#ADMSStatusVocabulariumShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#NACEShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#COFOGShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.dev-vlaanderen.be/shacl/dienstencataloog-SHACL_nl#OrganisatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "nl": "Naam waarmee de organisatie bij voorkeur wordt aangeduid."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "nl": "voorkeursnaam"
+          },
+          "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
+        }
+      ],
+      "sh:targetClass": "https://www.w3.org/ns/org#Organization"
+    }
+  ]
+}
