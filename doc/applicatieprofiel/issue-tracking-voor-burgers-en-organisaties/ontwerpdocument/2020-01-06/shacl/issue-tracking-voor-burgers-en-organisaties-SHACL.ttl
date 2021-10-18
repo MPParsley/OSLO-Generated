@@ -8,18 +8,18 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl> <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nlshapes> <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#ApplicatieShape>,
-    <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#OrganisatieEenheidShape>,
+<https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl> <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nlshapes> <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#PubliekeOrganisatieShape>,
+    <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#ApplicatieShape>,
+    <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#GeometrieShape>,
     <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#MeldingstatusShape>,
     <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#PersoonShape>,
-    <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#PubliekeOrganisatieShape>,
-    <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#OrganisatieShape>,
-    <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#AgentShape>,
-    <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#GeregistreerdPersoonShape>,
-    <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#MeldingBodyShape>,
     <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#MeldingShape>,
-    <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#HoedanigheidShape>,
-    <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#GeometrieShape> .
+    <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#AgentShape>,
+    <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#MeldingBodyShape>,
+    <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#GeregistreerdPersoonShape>,
+    <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#OrganisatieShape>,
+    <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#OrganisatieEenheidShape>,
+    <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#HoedanigheidShape> .
 
 <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#AgentShape> a shacl:NodeShape;
   shacl:closed false;
@@ -33,18 +33,18 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype rdfs:Literal;
-    shacl:definition "Geometrie uitgedrukt in wkt-formaat."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "wkt"@nl;
-    shacl:path <http://www.opengis.net/ont/geosparql#asWKT>
-  ], [
-    shacl:datatype rdfs:Literal;
     shacl:definition "Geometrie uitgedrukt in gml-formaat."@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "gml"@nl;
     shacl:path <http://www.opengis.net/ont/geosparql#asGML>
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "Geometrie uitgedrukt in wkt-formaat."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "wkt"@nl;
+    shacl:path <http://www.opengis.net/ont/geosparql#asWKT>
   ];
   shacl:targetClass <http://www.w3.org/ns/locn#Geometry> .
 
@@ -73,35 +73,28 @@
     shacl:name "beschrijving"@nl;
     shacl:path dc:description
   ], [
+    shacl:class <http://www.w3.org/ns/locn#Geometry>;
+    shacl:definition "De relatie tussen de MeldingBody en een geometrie."@nl;
+    shacl:maxCount 1;
+    shacl:name "geometrie"@nl;
+    shacl:path <http://www.w3.org/ns/locn#geometry>
+  ], [
     shacl:datatype xsd:anyURI;
     shacl:definition """Identificeert een resource die aan de MeldingsBody verbonden is en mogelijks speciale verwerking vraagt.
 """@nl;
     shacl:maxCount 1;
     shacl:name "bijlage"@nl;
     shacl:path as:attachment
-  ], [
-    shacl:class <http://www.w3.org/ns/locn#Geometry>;
-    shacl:definition "De relatie tussen de MeldingBody en een geometrie."@nl;
-    shacl:maxCount 1;
-    shacl:name "geometrie"@nl;
-    shacl:path <http://www.w3.org/ns/locn#geometry>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/melding#MeldingBody> .
 
 <https://data.dev-vlaanderen.be/shacl/issue-tracking-voor-burgers-en-organisaties-SHACL_nl#MeldingShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://www.w3.org/ns/org#Organization>;
-    shacl:definition "De organisatie die verantwoordelijk is voor de applicatie die werd gebruikt voor de creatie van de melding."@nl;
-    shacl:maxCount 1;
-    shacl:name "meldingsorganisatie"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/melding#meldingsorganisatie>
-  ], [
-    shacl:datatype xsd:anyURI;
-    shacl:definition "Een doorverwijzing naar een webpagina over deze Melding."@nl;
-    shacl:maxCount 1;
-    shacl:name "webpagina"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/melding#webpagina>
+    shacl:definition "De relatie tussen de Melding en het Meldingstype dat gebruikt worden om de melding te categoriseren."@nl;
+    shacl:minCount 1;
+    shacl:name "meldingstype"@nl;
+    shacl:path oa:motivatedBy
   ], [
     shacl:class dc:Agent;
     shacl:definition "Agent die belang heeft bij de Melding of geïmpacteerd is door de behandeling ervan."@nl;
@@ -109,11 +102,43 @@
     shacl:path <https://data.vlaanderen.be/ns/melding#betrokkene>
   ], [
     shacl:datatype xsd:string;
+    shacl:definition "Een samenvatting van de Melding."@nl;
+    shacl:maxCount 1;
+    shacl:name "samenvatting"@nl;
+    shacl:path as:summary
+  ], [
+    shacl:datatype xsd:anyURI;
+    shacl:definition "Een doorverwijzing naar een webpagina over deze Melding."@nl;
+    shacl:maxCount 1;
+    shacl:name "webpagina"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/melding#webpagina>
+  ], [
+    shacl:class <https://www.w3.org/ns/org#Organization>;
+    shacl:definition "De organisatie die verantwoordelijk is voor de applicatie die werd gebruikt voor de creatie van de melding."@nl;
+    shacl:maxCount 1;
+    shacl:name "meldingsorganisatie"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/melding#meldingsorganisatie>
+  ], [
+    shacl:class dc:Agent;
+    shacl:definition "Agent die de Melding heeft aangemaakt en/of ingediend."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "indiener"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/melding#indiener>
+  ], [
+    shacl:datatype xsd:string;
     shacl:definition "De titel van de Melding."@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "titel"@nl;
     shacl:path dc:title
+  ], [
+    shacl:class dc:Agent;
+    shacl:definition "Agent die werd aangewezen om de melding op te volgen en af te handelen."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "behandelaar"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/melding#behandelaar>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/melding#MeldingBody>;
     shacl:definition "Het object van deze associatie is een resource die de body van de Melding beschrijft (MeldingBody)."@nl;
@@ -124,31 +149,6 @@
     shacl:definition "De Status verbonden aan de Melding."@nl;
     shacl:name "heeft status"@nl;
     shacl:path <https://data.vlaanderen.be/ns/melding#heeftStatus>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Een samenvatting van de Melding."@nl;
-    shacl:maxCount 1;
-    shacl:name "samenvatting"@nl;
-    shacl:path as:summary
-  ], [
-    shacl:class dc:Agent;
-    shacl:definition "Agent die de Melding heeft aangemaakt en/of ingediend."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "indiener"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/melding#indiener>
-  ], [
-    shacl:class dc:Agent;
-    shacl:definition "Agent die werd aangewezen om de melding op te volgen en af te handelen."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "behandelaar"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/melding#behandelaar>
-  ], [
-    shacl:definition "De relatie tussen de Melding en het Meldingstype dat gebruikt worden om de melding te categoriseren."@nl;
-    shacl:minCount 1;
-    shacl:name "meldingstype"@nl;
-    shacl:path oa:motivatedBy
   ], [
     shacl:class <https://data.vlaanderen.be/ns/melding#Applicatie>;
     shacl:definition "De applicatie dat de Melding creëerde."@nl;

@@ -9,24 +9,24 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl> <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nlshapes> <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#DatasetShape>,
-    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#GeregistreerdPersoonShape>,
-    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#AgentShape>,
-    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#MeldingBodyShape>,
-    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#MeldingsobjectAttribuutShape>,
-    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#PersoonShape>,
-    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#TijdToestandShape>,
-    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#OrganisatieShape>,
-    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#ApplicatieShape>,
-    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#OrganisatieEenheidShape>,
-    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#TerugmeldingShape>,
-    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#MeldingstatusShape>,
-    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#PubliekeOrganisatieShape>,
-    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#MeldingsobjectShape>,
-    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#ConceptShape>,
-    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#GeometrieShape>,
+<https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl> <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nlshapes> <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#GeometrieShape>,
     <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#EigenschapShape>,
-    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#HoedanigheidShape> .
+    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#DatasetShape>,
+    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#MeldingsobjectShape>,
+    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#MeldingstatusShape>,
+    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#TijdToestandShape>,
+    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#PubliekeOrganisatieShape>,
+    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#MeldingBodyShape>,
+    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#GeregistreerdPersoonShape>,
+    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#ApplicatieShape>,
+    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#MeldingsobjectAttribuutShape>,
+    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#OrganisatieEenheidShape>,
+    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#ConceptShape>,
+    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#PersoonShape>,
+    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#OrganisatieShape>,
+    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#TerugmeldingShape>,
+    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#HoedanigheidShape>,
+    <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#AgentShape> .
 
 <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#AgentShape> a shacl:NodeShape;
   shacl:closed false;
@@ -63,6 +63,13 @@
     shacl:path <https://data.vlaanderen.be/ns/melding#eigenschap>
   ], [
     shacl:datatype xsd:string;
+    shacl:definition "Een beschrijving van de Dataset."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "beschrijving"@nl;
+    shacl:path dc:description
+  ], [
+    shacl:datatype xsd:string;
     shacl:definition "De titel van een Dataset."@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -74,19 +81,38 @@
     shacl:maxCount 1;
     shacl:name "bronhouder"@nl;
     shacl:path <https://data.vlaanderen.be/ns/melding#bronhouder>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Een beschrijving van de Dataset."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "beschrijving"@nl;
-    shacl:path dc:description
   ];
   shacl:targetClass dcmitype:Dataset .
 
 <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#EigenschapShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:datatype xsd:boolean;
+    shacl:definition "Geeft aan of op de eigenschap kan teruggemeld worden (true) of deze louter ter informatie van de gebruiker wordt getoond (false). "@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "meldbaar"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/melding#meldbaar>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "Een label voor de Eigenschap."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "label"@nl;
+    shacl:path rdfs:label
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "True als de eigenschap verplicht mee te geven is, anders false."@nl;
+    shacl:maxCount 1;
+    shacl:name "verplicht"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/melding#verwachtType>
+  ], [
+    shacl:datatype xsd:boolean;
+    shacl:definition "True als de eigenschap verplicht mee te sturen is ter informatie van de behandelaar en bronhouder, anders false."@nl;
+    shacl:maxCount 1;
+    shacl:name "verplicht"@nl;
+    shacl:path <https://www.w3.org/ns/hydra/core#required>
+  ], [
     shacl:class skos:Concept;
     shacl:definition "Associeert de Eigenschap met een exhaustieve lijst aan mogelijk waarden (bv. een codelijst)."@nl;
     shacl:name "mogelijke waarden"@nl;
@@ -97,32 +123,6 @@
     shacl:maxCount 1;
     shacl:name "bronhouder"@nl;
     shacl:path <https://data.vlaanderen.be/ns/melding#bronhouder>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Een label voor de Eigenschap."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "label"@nl;
-    shacl:path rdfs:label
-  ], [
-    shacl:datatype xsd:boolean;
-    shacl:definition "Geeft aan of op de eigenschap kan teruggemeld worden (true) of deze louter ter informatie van de gebruiker wordt getoond (false). "@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "meldbaar"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/melding#meldbaar>
-  ], [
-    shacl:datatype xsd:boolean;
-    shacl:definition "True als de eigenschap verplicht mee te sturen is ter informatie van de behandelaar en bronhouder, anders false."@nl;
-    shacl:maxCount 1;
-    shacl:name "verplicht"@nl;
-    shacl:path <https://www.w3.org/ns/hydra/core#required>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "True als de eigenschap verplicht mee te geven is, anders false."@nl;
-    shacl:maxCount 1;
-    shacl:name "verplicht"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/melding#verwachtType>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/melding#Eigenschap> .
 
@@ -188,17 +188,17 @@
 <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#MeldingsobjectAttribuutShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <https://data.vlaanderen.be/ns/melding#Eigenschap>;
+    shacl:definition "Verwijst naar de Eigenschap die deel uitmaakt van een bepaalde Dataset."@nl;
+    shacl:name "eigenschap"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/melding#eigenschap>
+  ], [
     shacl:datatype xsd:string;
     shacl:definition "De huidige waarde van een Eigenschap."@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "huidige waarde"@nl;
     shacl:path <https://data.vlaanderen.be/ns/melding#huidigeWaarde>
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/melding#Eigenschap>;
-    shacl:definition "Verwijst naar de Eigenschap die deel uitmaakt van een bepaalde Dataset."@nl;
-    shacl:name "eigenschap"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/melding#eigenschap>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "De voorgestelde waarde van een Eigenschap."@nl;
@@ -211,16 +211,28 @@
 <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#MeldingsobjectShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <https://data.vlaanderen.be/ns/melding#MeldingBody>;
+    shacl:definition "De body van de Melding die betrekking heeft op het Meldingsobject."@nl;
+    shacl:maxCount 1;
+    shacl:name "gerelateerde body"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/melding#gerelateerdeBody>
+  ], [
+    shacl:class <https://data.vlaanderen.be/ns/melding#Meldingstatus>;
+    shacl:definition "De Status verbonden aan het Meldingsobject."@nl;
+    shacl:name "heeft status"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/melding#heeftStatus>
+  ], [
     shacl:class <https://www.w3.org/ns/org#Organization>;
     shacl:definition "Agent die werd aangewezen om het meldingsobject op te volgen en af te handelen."@nl;
     shacl:minCount 1;
     shacl:name "behandelaar"@nl;
     shacl:path <https://data.vlaanderen.be/ns/melding#behandelaar>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/melding#Meldingstatus>;
-    shacl:definition "De Status verbonden aan het Meldingsobject."@nl;
-    shacl:name "heeft status"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/melding#heeftStatus>
+    shacl:class oa:TimeState;
+    shacl:definition "De relatie tussen het Meldingsobject en een TijdToestand."@nl;
+    shacl:maxCount 1;
+    shacl:name "heeft toestand"@nl;
+    shacl:path oa:hasState
   ], [
     shacl:class dcmitype:Dataset;
     shacl:definition "De bron (Dataset) waar het Meldingsobject in voor komt."@nl;
@@ -229,22 +241,10 @@
     shacl:name "heeftBron"@nl;
     shacl:path oa:hasSource
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/melding#MeldingBody>;
-    shacl:definition "De body van de Melding die betrekking heeft op het Meldingsobject."@nl;
-    shacl:maxCount 1;
-    shacl:name "gerelateerde body"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/melding#gerelateerdeBody>
-  ], [
     shacl:class <https://data.vlaanderen.be/ns/melding#MeldingsobjectAttribuut>;
     shacl:definition "Refereert naar een Eigenschap die deel uitmaakt van het Meldingsobject."@nl;
     shacl:name "heeft eigenschap"@nl;
     shacl:path <https://data.vlaanderen.be/ns/melding#heeftEigenschap>
-  ], [
-    shacl:class oa:TimeState;
-    shacl:definition "De relatie tussen het Meldingsobject en een TijdToestand."@nl;
-    shacl:maxCount 1;
-    shacl:name "heeft toestand"@nl;
-    shacl:path oa:hasState
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/melding#Meldingsobject> .
 
@@ -257,13 +257,6 @@
     shacl:minCount 1;
     shacl:name "beschrijving"@nl;
     shacl:path dc:description
-  ], [
-    shacl:datatype xsd:dateTime;
-    shacl:definition "De datum van een Status."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "statusdatum"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/melding#statusdatum>
   ], [
     <http://purl.org/linked-data/cube#codeList> <https://data.vlaanderen.be/id/conceptscheme/MeldingStatuswaarde>;
     shacl:class skos:Concept;
@@ -279,6 +272,13 @@
     shacl:minCount 1;
     shacl:name "statuswijziging door"@nl;
     shacl:path <https://data.vlaanderen.be/ns/melding#statuswijzigingDoor>
+  ], [
+    shacl:datatype xsd:dateTime;
+    shacl:definition "De datum van een Status."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "statusdatum"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/melding#statusdatum>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/melding#Meldingstatus> .
 
@@ -315,29 +315,17 @@
 <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#TerugmeldingShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:definition "De relatie tussen de Melding en het Meldingstype dat gebruikt worden om de melding te categoriseren."@nl;
+    shacl:minCount 1;
+    shacl:name "meldingstype"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/melding#meldingstype>
+  ], [
     shacl:class dc:Agent;
     shacl:definition "Agent die werd aangewezen om de melding op te volgen en af te handelen."@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "behandelaar"@nl;
     shacl:path <https://data.vlaanderen.be/ns/melding#behandelaar>
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/melding#Meldingstatus>;
-    shacl:definition "De Status verbonden aan de Melding."@nl;
-    shacl:name "heeft status"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/melding#heeftStatus>
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/melding#Applicatie>;
-    shacl:definition "De applicatie dat de Melding creëerde."@nl;
-    shacl:maxCount 1;
-    shacl:name "meldingsapplicatie"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/melding#meldingsapplicatie>
-  ], [
-    shacl:datatype xsd:anyURI;
-    shacl:definition "Een doorverwijzing naar een webpagina over deze Melding."@nl;
-    shacl:maxCount 1;
-    shacl:name "webpagina"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/melding#webpagina>
   ], [
     shacl:class dc:Agent;
     shacl:definition "Agent die de Melding heeft aangemaakt en/of ingediend."@nl;
@@ -347,21 +335,25 @@
     shacl:path <https://data.vlaanderen.be/ns/melding#indiener>
   ], [
     shacl:class dc:Agent;
-    shacl:definition "De Agent die het probleem waarover gemeld wordt opmerkte."@nl;
-    shacl:maxCount 1;
-    shacl:name "melder"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/melding#melder>
+    shacl:definition "Agent die als derde belang heeft bij de Melding of geïmpacteerd is door de behandeling ervan."@nl;
+    shacl:name "betrokkene"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/melding#betrokkene>
   ], [
-    shacl:definition "De relatie tussen de Melding en het Meldingstype dat gebruikt worden om de melding te categoriseren."@nl;
-    shacl:minCount 1;
-    shacl:name "meldingstype"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/melding#meldingstype>
+    shacl:class <https://data.vlaanderen.be/ns/melding#Meldingstatus>;
+    shacl:definition "De Status verbonden aan de Melding."@nl;
+    shacl:name "heeft status"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/melding#heeftStatus>
   ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Een samenvatting van de Melding."@nl;
+    shacl:class <https://data.vlaanderen.be/ns/melding#MeldingBody>;
+    shacl:definition "Het object van deze associatie is een resource die de body van de Melding beschrijft (MeldingBody)."@nl;
+    shacl:name "heeft body"@nl;
+    shacl:path oa:hasBody
+  ], [
+    shacl:class <https://data.vlaanderen.be/ns/melding#Applicatie>;
+    shacl:definition "De applicatie dat de Melding creëerde."@nl;
     shacl:maxCount 1;
-    shacl:name "samenvatting"@nl;
-    shacl:path as:summary
+    shacl:name "meldingsapplicatie"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/melding#meldingsapplicatie>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "De titel van de Melding."@nl;
@@ -370,15 +362,17 @@
     shacl:name "titel"@nl;
     shacl:path dc:title
   ], [
-    shacl:class dc:Agent;
-    shacl:definition "Agent die als derde belang heeft bij de Melding of geïmpacteerd is door de behandeling ervan."@nl;
-    shacl:name "betrokkene"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/melding#betrokkene>
+    shacl:datatype xsd:string;
+    shacl:definition "Een samenvatting van de Melding."@nl;
+    shacl:maxCount 1;
+    shacl:name "samenvatting"@nl;
+    shacl:path as:summary
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/melding#MeldingBody>;
-    shacl:definition "Het object van deze associatie is een resource die de body van de Melding beschrijft (MeldingBody)."@nl;
-    shacl:name "heeft body"@nl;
-    shacl:path oa:hasBody
+    shacl:datatype xsd:anyURI;
+    shacl:definition "Een doorverwijzing naar een webpagina over deze Melding."@nl;
+    shacl:maxCount 1;
+    shacl:name "webpagina"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/melding#webpagina>
   ], [
     shacl:class <https://www.w3.org/ns/org#Organization>;
     shacl:definition "De organisatie die verantwoordelijk is voor de applicatie die werd gebruikt voor de creatie van de melding."@nl;
@@ -390,23 +384,29 @@
     shacl:definition "De relatie tussen de Melding en het doelwit, het Meldingsobject waarop de melding slaat."@nl;
     shacl:name "heeft doelwit"@nl;
     shacl:path oa:hasTarget
+  ], [
+    shacl:class dc:Agent;
+    shacl:definition "De Agent die het probleem waarover gemeld wordt opmerkte."@nl;
+    shacl:maxCount 1;
+    shacl:name "melder"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/melding#melder>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/melding#Terugmelding> .
 
 <https://data.dev-vlaanderen.be/shacl/generieke-terugmeldfaciliteit-SHACL_nl#TijdToestandShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:anyURI;
-    shacl:definition "Een cached momentopname van de bron op het moment van de vaststelling van de fout of onvolledigheid."@nl;
-    shacl:maxCount 1;
-    shacl:name "cached bron"@nl;
-    shacl:path oa:cachedSource
-  ], [
     shacl:datatype xsd:dateTime;
     shacl:definition "De datum en het tijdstip waarop het Meldingsobject moet geïnterpreteerd worden als zijnde van toepassing op de Melding."@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "datum vaststelling"@nl;
     shacl:path oa:sourceDate
+  ], [
+    shacl:datatype xsd:anyURI;
+    shacl:definition "Een cached momentopname van de bron op het moment van de vaststelling van de fout of onvolledigheid."@nl;
+    shacl:maxCount 1;
+    shacl:name "cached bron"@nl;
+    shacl:path oa:cachedSource
   ];
   shacl:targetClass oa:TimeState .

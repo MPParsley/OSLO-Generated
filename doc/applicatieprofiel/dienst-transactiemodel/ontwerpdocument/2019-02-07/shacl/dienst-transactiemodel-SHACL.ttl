@@ -8,22 +8,22 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl> <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nlshapes> <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#CriteriumVereisteShape>,
-    <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#KostShape>,
-    <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#IdentificatorShape>,
+<https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl> <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nlshapes> <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#KostShape>,
     <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#ParticipatieShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#IdentificatorShape>,
     <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#PersoonShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#TaalcodeShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#CriteriumAntwoordShape>,
     <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#OrganisatieShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#DossierShape>,
     <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#StatusShape>,
-    <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#BewijsShape>,
-    <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#AgentShape>,
     <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#HoedanigheidShape>,
     <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#TijdsintervalShape>,
-    <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#TaalcodeShape>,
-    <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#DossierShape>,
-    <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#PubliekeOrganisatieShape>,
     <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#OutputShape>,
-    <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#CriteriumAntwoordShape> .
+    <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#BewijsShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#CriteriumVereisteShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#PubliekeOrganisatieShape>,
+    <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#AgentShape> .
 
 <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#AgentShape> a shacl:NodeShape;
   shacl:closed false;
@@ -43,19 +43,45 @@
 <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#BewijsShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:anyURI;
-    shacl:definition "Documentatie gerelateerd ah Bewiijs."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "pagina"@nl;
-    shacl:path foaf:page
-  ], [
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
     shacl:definition "Identificator van het object."@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "referentie"@nl;
     shacl:path <http://www.w3.org/ns/adms#identifier>
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:definition "Beschrijving vh Bewijs."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "beschrijving"@nl;
+    shacl:path dc:description
+  ], [
+    shacl:definition "Geeft aan hoe betrouwbaar het bewijs is."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "betrouwbaarheidsniveau"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/transactie#betrouwbaarheidsniveau>
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:definition "Officiële naam vh Bewijs."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "titel"@nl;
+    shacl:path dc:title
+  ], [
+    shacl:class org:Organization;
+    shacl:definition "Verwijst naar de organisatie die het bewijs heeft uitgegeven."@nl;
+    shacl:maxCount 1;
+    shacl:name "uitgegeven door organisatie"@nl;
+    shacl:path <http://data.europa.eu/m8g/issuedByOrganisation>
+  ], [
+    shacl:datatype xsd:anyURI;
+    shacl:definition "Documentatie gerelateerd ah Bewiijs."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "pagina"@nl;
+    shacl:path foaf:page
   ], [
     <http://purl.org/linked-data/cube#codeList> <http://publications.europa.eu/mdr/authority/language/>;
     shacl:class skos:Concept;
@@ -65,20 +91,6 @@
     shacl:name "taal"@nl;
     shacl:path dc:language
   ], [
-    <http://purl.org/linked-data/cube#codeList> <https://data.vlaanderen.be/doc/conceptscheme/BewijsType>;
-    shacl:class skos:Concept;
-    shacl:definition "Aard van het Bewijs."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "type"@nl;
-    shacl:path dc:type
-  ], [
-    shacl:class org:Organization;
-    shacl:definition "Verwijst naar de organisatie die het bewijs heeft uitgegeven."@nl;
-    shacl:maxCount 1;
-    shacl:name "uitgegeven door organisatie"@nl;
-    shacl:path <http://data.europa.eu/m8g/issuedByOrganisation>
-  ], [
     shacl:class dc:Agent;
     shacl:definition "Een Bewijs zal behoren tot een Agent. Een criterium kan invloed hebben op verschillende Agents; voor een Bewijs moet daarom gespecifieerd worden tot welke Agent het behoort."@nl;
     shacl:maxCount 1;
@@ -86,43 +98,19 @@
     shacl:name "behoort tot agent"@nl;
     shacl:path <http://data.europa.eu/m8g/belongsToAgent>
   ], [
-    shacl:datatype rdf:langString;
-    shacl:definition "Officiële naam vh Bewijs."@nl;
+    <http://purl.org/linked-data/cube#codeList> <https://data.vlaanderen.be/doc/conceptscheme/BewijsType>;
+    shacl:class skos:Concept;
+    shacl:definition "Aard van het Bewijs."@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "titel"@nl;
-    shacl:path dc:title
-  ], [
-    shacl:definition "Geeft aan hoe betrouwbaar het bewijs is."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "betrouwbaarheidsniveau"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/transactie#betrouwbaarheidsniveau>
-  ], [
-    shacl:datatype rdf:langString;
-    shacl:definition "Beschrijving vh Bewijs."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "beschrijving"@nl;
-    shacl:path dc:description
+    shacl:name "type"@nl;
+    shacl:path dc:type
   ];
   shacl:targetClass <http://data.europa.eu/m8g/Evidence> .
 
 <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#CriteriumAntwoordShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://data.europa.eu/m8g/PeriodOfTime>;
-    shacl:definition "Wanneer de het antwoord op het criterium van toepassing is binnen een specifieke periode kan deze eigenschap gebruikt worden om het tijdsinterval te beschrijven."@nl;
-    shacl:maxCount 1;
-    shacl:name "van toepassing op tijdsinterval"@nl;
-    shacl:path <http://data.europa.eu/m8g/appliesToPeriodOfTime>
-  ], [
-    shacl:class <http://data.europa.eu/m8g/Evidence>;
-    shacl:definition "Het criterium antwoord kan gelinkt zijn aan het bewijs om het antwoord te staven."@nl;
-    shacl:maxCount 1;
-    shacl:name "bewezen door"@nl;
-    shacl:path <http://data.europa.eu/m8g/provenByEvidence>
-  ], [
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
     shacl:definition "Identificator van het object."@nl;
     shacl:maxCount 1;
@@ -130,11 +118,23 @@
     shacl:name "referentie"@nl;
     shacl:path <http://www.w3.org/ns/adms#identifier>
   ], [
+    shacl:class <http://data.europa.eu/m8g/PeriodOfTime>;
+    shacl:definition "Wanneer de het antwoord op het criterium van toepassing is binnen een specifieke periode kan deze eigenschap gebruikt worden om het tijdsinterval te beschrijven."@nl;
+    shacl:maxCount 1;
+    shacl:name "van toepassing op tijdsinterval"@nl;
+    shacl:path <http://data.europa.eu/m8g/appliesToPeriodOfTime>
+  ], [
     shacl:datatype xsd:string;
     shacl:definition "Een beschrijving van het antwoord op de vereiste."@nl;
     shacl:maxCount 1;
     shacl:name "beschrijving"@nl;
     shacl:path dc:description
+  ], [
+    shacl:class <http://data.europa.eu/m8g/Evidence>;
+    shacl:definition "Het criterium antwoord kan gelinkt zijn aan het bewijs om het antwoord te staven."@nl;
+    shacl:maxCount 1;
+    shacl:name "bewezen door"@nl;
+    shacl:path <http://data.europa.eu/m8g/provenByEvidence>
   ], [
     shacl:class <http://data.europa.eu/m8g/CriterionRequirement>;
     shacl:definition "Relatie naar de criterium vereiste waaraan het antwoord voldoet."@nl;
@@ -163,29 +163,23 @@
 <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#HoedanigheidShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class org:Organization;
+    shacl:definition "Associeert de hoedanigheid met een bepaalde organisatie. Bv. een persoon in de hoedanigheid van zaakvoerder bij een organisatie."@nl;
+    shacl:name "is lid van"@nl;
+    shacl:path org:memberOf
+  ], [
     shacl:class schema:ContactPoint;
     shacl:definition "Informatie zoals email, telefoon die toelaat de hoedanigheid te contacteren."@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "contactinfo"@nl;
     shacl:path <https://data.vlaanderen.be/ns/organisatie#contactinfo>
-  ], [
-    shacl:class org:Organization;
-    shacl:definition "Associeert de hoedanigheid met een bepaalde organisatie. Bv. een persoon in de hoedanigheid van zaakvoerder bij een organisatie."@nl;
-    shacl:name "is lid van"@nl;
-    shacl:path org:memberOf
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/organisatie#Hoedanigheid> .
 
 <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#IdentificatorShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class dc:Agent;
-    shacl:definition "Link naar de agent die de identificator heeft uitgegeven."@nl;
-    shacl:maxCount 1;
-    shacl:name "toegekend door"@nl;
-    shacl:path dc:creator
-  ], [
     shacl:datatype xsd:string;
     shacl:definition "Naam vd agent die de identificator heeft toegekend."@nl;
     shacl:maxCount 1;
@@ -203,6 +197,12 @@
     shacl:maxCount 1;
     shacl:name "identificator"@nl;
     shacl:path skos:notation
+  ], [
+    shacl:class dc:Agent;
+    shacl:definition "Link naar de agent die de identificator heeft uitgegeven."@nl;
+    shacl:maxCount 1;
+    shacl:name "toegekend door"@nl;
+    shacl:path dc:creator
   ], [
     shacl:datatype xsd:dateTime;
     shacl:definition "Tijdstip waarop de identificator werd uitgegeven."@nl;
@@ -246,19 +246,19 @@
 <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#OutputShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://www.w3.org/ns/adms#Identifier>;
-    shacl:definition "Identificator van het object."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "referentie"@nl;
-    shacl:path <http://www.w3.org/ns/adms#identifier>
-  ], [
     shacl:datatype rdf:langString;
     shacl:definition "Officiële naam van de Output."@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "titel"@nl;
     shacl:path dc:title
+  ], [
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:definition "Identificator van het object."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "referentie"@nl;
+    shacl:path <http://www.w3.org/ns/adms#identifier>
   ], [
     shacl:class skos:Concept;
     shacl:definition "Aard van de Output."@nl;
@@ -313,13 +313,23 @@
 <https://data.dev-vlaanderen.be/shacl/dienst-transactiemodel-SHACL_nl#StatusShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    <http://purl.org/linked-data/cube#codeList> <https://data.vlaanderen.be/id/conceptscheme/StatusVlaamseFase>;
-    shacl:class skos:Concept;
-    shacl:definition """Is het eerste veld van 2 verplichte velden (Fase+Status) die samen de 'Generieke Vlaamse status' specifiëren. De StatusVlaamsFase vormt de eerste en hogere indeling van het dossierverloop (in aanvraag, in behandeling, in beroep, in uitvoering enz). Verdere precisering binnen de Fase gebeurt dan in het veld StatusVlaamsCode.
-"""@nl;
+    shacl:datatype xsd:boolean;
+    shacl:definition "Indien Actie Nodig 'Ja', dan laat dit veld toe te specifiëren welke Actie van de klant (Agent) wordt verwacht."@nl;
     shacl:maxCount 1;
-    shacl:name "status Vlaamse fase"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/transactie#statusVlaamsFase>
+    shacl:name "actie nodig"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/transactie#actieNodig>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "Deze parameter laat toe om aan te geven dat - qua procesverloop van de transactie - de bal expliciet in het kamp van de klant (= de Agent) ligt en dat er dus een actie verwacht wordt van zijn kant."@nl;
+    shacl:maxCount 1;
+    shacl:name "actie"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/transactie#actie>
+  ], [
+    shacl:datatype xsd:date;
+    shacl:definition "Is de verplichte vermelding van de datum + tijdstip waarop de betrokken status werd geregistreerd."@nl;
+    shacl:maxCount 1;
+    shacl:name "statusdatum"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/transactie#statusWijzigingsdatum>
   ], [
     <http://purl.org/linked-data/cube#codeList> <https://data.vlaanderen.be/id/conceptscheme/StatusVlaamseCode>;
     shacl:class skos:Concept;
@@ -328,11 +338,13 @@
     shacl:name "status Vlaamse code"@nl;
     shacl:path <https://data.vlaanderen.be/ns/transactie#statusVlaamsCode>
   ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Deze parameter laat toe om aan te geven dat - qua procesverloop van de transactie - de bal expliciet in het kamp van de klant (= de Agent) ligt en dat er dus een actie verwacht wordt van zijn kant."@nl;
+    <http://purl.org/linked-data/cube#codeList> <https://data.vlaanderen.be/id/conceptscheme/StatusVlaamseFase>;
+    shacl:class skos:Concept;
+    shacl:definition """Is het eerste veld van 2 verplichte velden (Fase+Status) die samen de 'Generieke Vlaamse status' specifiëren. De StatusVlaamsFase vormt de eerste en hogere indeling van het dossierverloop (in aanvraag, in behandeling, in beroep, in uitvoering enz). Verdere precisering binnen de Fase gebeurt dan in het veld StatusVlaamsCode.
+"""@nl;
     shacl:maxCount 1;
-    shacl:name "actie"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/transactie#actie>
+    shacl:name "status Vlaamse fase"@nl;
+    shacl:path <https://data.vlaanderen.be/ns/transactie#statusVlaamsFase>
   ], [
     <http://purl.org/linked-data/cube#codeList> <https://data.vlaanderen.be/id/conceptscheme/StatusEDRL>;
     shacl:class skos:Concept;
@@ -342,22 +354,10 @@
     shacl:path <https://data.vlaanderen.be/ns/transactie#statusEDRL>
   ], [
     shacl:datatype xsd:date;
-    shacl:definition "Is de verplichte vermelding van de datum + tijdstip waarop de betrokken status werd geregistreerd."@nl;
-    shacl:maxCount 1;
-    shacl:name "statusdatum"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/transactie#statusWijzigingsdatum>
-  ], [
-    shacl:datatype xsd:date;
     shacl:definition "Is de datum waarop verwacht wordt dat de volgende stap (status-wijziging) in de transactie zal of zou moeten plaatsvinden. Dit kan in bepaalde gevallen bepaald worden door een wettelijke termijn (van een fase of status)."@nl;
     shacl:maxCount 1;
     shacl:name "streefdatum"@nl;
     shacl:path <https://data.vlaanderen.be/ns/transactie#streefdatum>
-  ], [
-    shacl:datatype xsd:boolean;
-    shacl:definition "Indien Actie Nodig 'Ja', dan laat dit veld toe te specifiëren welke Actie van de klant (Agent) wordt verwacht."@nl;
-    shacl:maxCount 1;
-    shacl:name "actie nodig"@nl;
-    shacl:path <https://data.vlaanderen.be/ns/transactie#actieNodig>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/transactie#Status> .
 

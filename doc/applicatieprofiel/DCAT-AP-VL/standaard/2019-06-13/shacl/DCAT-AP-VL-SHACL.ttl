@@ -8,9 +8,9 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://data.dev-vlaanderen.be/shacl/DCAT-AP-VL-SHACL_nl> <https://data.dev-vlaanderen.be/shacl/DCAT-AP-VL-SHACL_nlshapes> <https://data.dev-vlaanderen.be/shacl/DCAT-AP-VL-SHACL_nl#DatasetShape>,
+    <https://data.dev-vlaanderen.be/shacl/DCAT-AP-VL-SHACL_nl#DatasetCatalogusShape>,
     <https://data.dev-vlaanderen.be/shacl/DCAT-AP-VL-SHACL_nl#AgentShape>,
     <https://data.dev-vlaanderen.be/shacl/DCAT-AP-VL-SHACL_nl#LicentieDocumentShape>,
-    <https://data.dev-vlaanderen.be/shacl/DCAT-AP-VL-SHACL_nl#DatasetCatalogusShape>,
     <https://data.dev-vlaanderen.be/shacl/DCAT-AP-VL-SHACL_nl#DistributieShape> .
 
 <https://data.dev-vlaanderen.be/shacl/DCAT-AP-VL-SHACL_nl#AgentShape> a shacl:NodeShape;
@@ -28,13 +28,6 @@
 <https://data.dev-vlaanderen.be/shacl/DCAT-AP-VL-SHACL_nl#DatasetCatalogusShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype rdf:langString;
-    shacl:definition "Een bondige omschrijving van de datasetcatalogus. "@nl;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:minCount 1;
-    shacl:name "beschrijving"@nl;
-    shacl:path dc:description
-  ], [
     shacl:class dcat:Dataset;
     shacl:definition "Een dataset die behoort tot de datasetcatalogus"@nl;
     shacl:maxCount "n"^^xsd:integer;
@@ -49,6 +42,13 @@
     shacl:name "heeft uitgever"@nl;
     shacl:path dc:publisher
   ], [
+    shacl:datatype rdf:langString;
+    shacl:definition "De naam van de datasetcatalogus."@nl;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:minCount 1;
+    shacl:name "titel"@nl;
+    shacl:path dc:title
+  ], [
     shacl:class dc:LicenseDocument;
     shacl:definition "De licentie van de datasetcatalogus."@nl;
     shacl:maxCount 1;
@@ -57,31 +57,17 @@
     shacl:path dc:license
   ], [
     shacl:datatype rdf:langString;
-    shacl:definition "De naam van de datasetcatalogus."@nl;
+    shacl:definition "Een bondige omschrijving van de datasetcatalogus. "@nl;
     shacl:maxCount "n"^^xsd:integer;
     shacl:minCount 1;
-    shacl:name "titel"@nl;
-    shacl:path dc:title
+    shacl:name "beschrijving"@nl;
+    shacl:path dc:description
   ];
   shacl:targetClass dcat:Catalog .
 
 <https://data.dev-vlaanderen.be/shacl/DCAT-AP-VL-SHACL_nl#DatasetShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class vcard:Kind;
-    shacl:definition "De contactinformatie via men in contact kan treden met de verantwoordelijken van de dataset. "@nl;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:minCount 1;
-    shacl:name "contactinfo"@nl;
-    shacl:path dcat:contactPoint
-  ], [
-    shacl:datatype rdf:langString;
-    shacl:definition "Een bondige omschrijving van de dataset."@nl;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:minCount 1;
-    shacl:name "beschrijving"@nl;
-    shacl:path dc:description
-  ], [
     <http://purl.org/linked-data/cube#codeList> <https://vocab.belgif.be/auth/datatheme>;
     shacl:class skos:Concept;
     shacl:definition "Het thema waartoe de dataset behoort."@nl;
@@ -89,12 +75,20 @@
     shacl:name "thema"@nl;
     shacl:path dcat:theme
   ], [
-    shacl:class foaf:Agent;
-    shacl:definition "De uitgever van de dataset. "@nl;
+    shacl:class vcard:Kind;
+    shacl:definition "De contactinformatie via men in contact kan treden met de verantwoordelijken van de dataset. "@nl;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:minCount 1;
+    shacl:name "contactinfo"@nl;
+    shacl:path dcat:contactPoint
+  ], [
+    <http://purl.org/linked-data/cube#codeList> <https://publications.europa.eu/en/web/eu-vocabularies/at-dataset/-/resource/dataset/access-right>;
+    shacl:class skos:Concept;
+    shacl:definition "De toegankelijkheidscategorie van de dataset."@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "heeft uitgever"@nl;
-    shacl:path dc:publisher
+    shacl:name "toegankelijkheid"@nl;
+    shacl:path dc:accessRights
   ], [
     shacl:class dcat:Distribution;
     shacl:definition "De distributie van een dataset."@nl;
@@ -104,19 +98,25 @@
     shacl:path dcat:distribution
   ], [
     shacl:datatype rdf:langString;
+    shacl:definition "Een bondige omschrijving van de dataset."@nl;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:minCount 1;
+    shacl:name "beschrijving"@nl;
+    shacl:path dc:description
+  ], [
+    shacl:class foaf:Agent;
+    shacl:definition "De uitgever van de dataset. "@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "heeft uitgever"@nl;
+    shacl:path dc:publisher
+  ], [
+    shacl:datatype rdf:langString;
     shacl:definition "De naam van de dataset"@nl;
     shacl:maxCount "n"^^xsd:integer;
     shacl:minCount 1;
     shacl:name "titel"@nl;
     shacl:path dc:title
-  ], [
-    <http://purl.org/linked-data/cube#codeList> <https://publications.europa.eu/en/web/eu-vocabularies/at-dataset/-/resource/dataset/access-right>;
-    shacl:class skos:Concept;
-    shacl:definition "De toegankelijkheidscategorie van de dataset."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "toegankelijkheid"@nl;
-    shacl:path dc:accessRights
   ];
   shacl:targetClass dcat:Dataset .
 

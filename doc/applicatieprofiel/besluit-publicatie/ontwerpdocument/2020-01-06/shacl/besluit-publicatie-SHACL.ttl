@@ -8,31 +8,30 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl> <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nlshapes> <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#BesluitShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#AgentShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#LegaleVerschijningsvormShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#StemmingShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#ZittingShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#AgendapuntShape>,
+<https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl> <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nlshapes> <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#MandatarisShape>,
     <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#BestuurseenheidShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#ArtikelShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#MandatarisShape>,
     <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#VergaderactiviteitShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#BehandelingVanAgendapuntShape>,
     <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#DocumentOnderdeelShape>,
+    <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#ArtikelShape>,
+    <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#BehandelingVanAgendapuntShape>,
+    <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#AgendapuntShape>,
     <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#DocumentShape>,
     <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#RechtsgrondonderdeelShape>,
+    <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#BesluitShape>,
+    <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#AgentShape>,
+    <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#StemmingShape>,
     <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#RechtsgrondShape>,
-    <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#BestuursorgaanShape> .
+    <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#BestuursorgaanShape>,
+    <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#LegaleVerschijningsvormShape>,
+    <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#ZittingShape> .
 
 <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#AgendapuntShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class skos:Concept;
-    shacl:definition "Type van het agendapunt."@nl;
-    shacl:minCount 1;
-    shacl:name "type"@nl;
-    shacl:path <http://data.vlaanderen.be/ns/besluit#Agendapunt.type>
+    shacl:class <http://data.vlaanderen.be/ns/besluit#Agendapunt>;
+    shacl:definition "Een ander agendapunt waarnaar verwezen wordt vanuit dit agendapunt."@nl;
+    shacl:name "refereert aan"@nl;
+    shacl:path dc:references
   ], [
     shacl:datatype xsd:boolean;
     shacl:definition "Geeft aan of het agendapunt al dan niet bedoeld is om openbaar te bespreken."@nl;
@@ -46,17 +45,6 @@
     shacl:name "heeft ontwerpbesluit"@nl;
     shacl:path <http://data.vlaanderen.be/ns/besluit#heeftOntwerpbesluit>
   ], [
-    shacl:class <http://data.vlaanderen.be/ns/besluit#Agendapunt>;
-    shacl:definition "Het agendapunt dat op de agenda direct dit agendapunt voorafging."@nl;
-    shacl:maxCount 1;
-    shacl:name "aangebracht na"@nl;
-    shacl:path <http://data.vlaanderen.be/ns/besluit#aangebrachtNa>
-  ], [
-    shacl:class <http://data.vlaanderen.be/ns/besluit#Agendapunt>;
-    shacl:definition "Een ander agendapunt waarnaar verwezen wordt vanuit dit agendapunt."@nl;
-    shacl:name "refereert aan"@nl;
-    shacl:path dc:references
-  ], [
     shacl:datatype xsd:string;
     shacl:definition "De naam van het agendapunt."@nl;
     shacl:maxCount 1;
@@ -64,11 +52,23 @@
     shacl:name "titel"@nl;
     shacl:path dc:title
   ], [
+    shacl:class <http://data.vlaanderen.be/ns/besluit#Agendapunt>;
+    shacl:definition "Het agendapunt dat op de agenda direct dit agendapunt voorafging."@nl;
+    shacl:maxCount 1;
+    shacl:name "aangebracht na"@nl;
+    shacl:path <http://data.vlaanderen.be/ns/besluit#aangebrachtNa>
+  ], [
     shacl:datatype xsd:string;
     shacl:definition "Korte beschrijving van het agendapunt."@nl;
     shacl:maxCount 1;
     shacl:name "beschrijving"@nl;
     shacl:path dc:description
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Type van het agendapunt."@nl;
+    shacl:minCount 1;
+    shacl:name "type"@nl;
+    shacl:path <http://data.vlaanderen.be/ns/besluit#Agendapunt.type>
   ];
   shacl:targetClass <http://data.vlaanderen.be/ns/besluit#Agendapunt> .
 
@@ -79,34 +79,41 @@
 <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#ArtikelShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:string;
-    shacl:definition "Het nummer van het artikel."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "nummer"@nl;
-    shacl:path <http://data.europa.eu/eli/ontology#number>
-  ], [
     shacl:class <http://data.europa.eu/eli/ontology#LegalResourceSubdivision>;
     shacl:definition "De rechtsgrond beschreven door dit artikel."@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "realiseert"@nl;
     shacl:path <http://data.europa.eu/eli/ontology#realizes>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "Het nummer van het artikel."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "nummer"@nl;
+    shacl:path <http://data.europa.eu/eli/ontology#number>
   ];
   shacl:targetClass <http://data.vlaanderen.be/ns/besluit#Artikel> .
 
 <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#BehandelingVanAgendapuntShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
+    shacl:definition "Een mandataris (van het orgaan dat de zitting houdt) die aanwezig was tijdens (een deel van) de behandeling."@nl;
+    shacl:minCount 1;
+    shacl:name "heeft aanwezige"@nl;
+    shacl:path <http://data.vlaanderen.be/ns/besluit#heeftAanwezige>
+  ], [
     shacl:class <http://data.vlaanderen.be/ns/besluit#Besluit>;
     shacl:definition "Een besluit dat is opgemaakt naar aanleiding van de behandeling van het agendapunt."@nl;
     shacl:name "geeft aanleiding tot"@nl;
     shacl:path prov:generated
   ], [
-    shacl:class <http://data.vlaanderen.be/ns/besluit#Stemming>;
-    shacl:definition "Een stemming die plaatsvond tijdens de behandeling van het agendapunt."@nl;
-    shacl:name "heeft stemming"@nl;
-    shacl:path <http://data.vlaanderen.be/ns/besluit#heeftStemming>
+    shacl:class <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
+    shacl:definition "De mandataris die de rol van secretaris heeft gedurende de behandeling van het agendapunt."@nl;
+    shacl:maxCount 1;
+    shacl:name "heeft secretaris"@nl;
+    shacl:path <http://data.vlaanderen.be/ns/besluit#heeftSecretaris>
   ], [
     shacl:datatype xsd:boolean;
     shacl:definition "Geeft aan of de bespreking effectief openbaar verlopen is."@nl;
@@ -115,29 +122,17 @@
     shacl:name "openbaar"@nl;
     shacl:path <http://data.vlaanderen.be/ns/besluit#openbaar>
   ], [
-    shacl:class <http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt>;
-    shacl:definition "Verwijzing naar het voorgaand behandeld agendapunt binnen dezelfde zitting. Laat toe om de volgorde van de behandelingen op te bouwen."@nl;
-    shacl:maxCount 1;
-    shacl:name "gebeurt na"@nl;
-    shacl:path <http://data.vlaanderen.be/ns/besluit#gebeurtNa>
-  ], [
-    shacl:class <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
-    shacl:definition "De mandataris die de rol van secretaris heeft gedurende de behandeling van het agendapunt."@nl;
-    shacl:maxCount 1;
-    shacl:name "heeft secretaris"@nl;
-    shacl:path <http://data.vlaanderen.be/ns/besluit#heeftSecretaris>
-  ], [
     shacl:class <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
     shacl:definition "De mandataris die de rol als voorzitter heeft gedurende de behandeling van het agendapunt."@nl;
     shacl:maxCount 1;
     shacl:name "heeft voorzitter"@nl;
     shacl:path <http://data.vlaanderen.be/ns/besluit#heeftVoorzitter>
   ], [
-    shacl:class <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
-    shacl:definition "Een mandataris (van het orgaan dat de zitting houdt) die aanwezig was tijdens (een deel van) de behandeling."@nl;
-    shacl:minCount 1;
-    shacl:name "heeft aanwezige"@nl;
-    shacl:path <http://data.vlaanderen.be/ns/besluit#heeftAanwezige>
+    shacl:class <http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt>;
+    shacl:definition "Verwijzing naar het voorgaand behandeld agendapunt binnen dezelfde zitting. Laat toe om de volgorde van de behandelingen op te bouwen."@nl;
+    shacl:maxCount 1;
+    shacl:name "gebeurt na"@nl;
+    shacl:path <http://data.vlaanderen.be/ns/besluit#gebeurtNa>
   ], [
     shacl:class <http://data.vlaanderen.be/ns/besluit#Agendapunt>;
     shacl:definition "Het onderwerp van de activiteit."@nl;
@@ -145,36 +140,34 @@
     shacl:minCount 1;
     shacl:name "heeft onderwerp"@nl;
     shacl:path dc:subject
+  ], [
+    shacl:class <http://data.vlaanderen.be/ns/besluit#Stemming>;
+    shacl:definition "Een stemming die plaatsvond tijdens de behandeling van het agendapunt."@nl;
+    shacl:name "heeft stemming"@nl;
+    shacl:path <http://data.vlaanderen.be/ns/besluit#heeftStemming>
   ];
   shacl:targetClass <http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt> .
 
 <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#BesluitShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:datatype xsd:string;
+    shacl:definition "De beknopte titel of officiële korte naam van een decreet, wet, besluit... Deze wordt officieel vastgelegd. Deze benaming wordt in de praktijk gebruikt om naar de rechtsgrond te verwijzen."@nl;
+    shacl:maxCount 1;
+    shacl:name "citeeropschrift"@nl;
+    shacl:path <http://data.europa.eu/eli/ontology#title_short>
+  ], [
     shacl:datatype xsd:date;
     shacl:definition "De officiële publicatiedatum van het besluit."@nl;
     shacl:maxCount 1;
     shacl:name "publicatiedatum"@nl;
     shacl:path <http://data.europa.eu/eli/ontology#date_publication>
   ], [
-    shacl:class <http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt>;
-    shacl:definition "De behandeling van het agendapunt die tot dit besluit heeft geleid."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "volgt uit"@nl;
-    shacl:path prov:wasGeneratedBy
-  ], [
     shacl:datatype xsd:string;
     shacl:definition "Een beknopte beschrijving van het besluit."@nl;
     shacl:maxCount 1;
     shacl:name "beschrijving"@nl;
     shacl:path <http://data.europa.eu/eli/ontology#description>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "De beknopte titel of officiële korte naam van een decreet, wet, besluit... Deze wordt officieel vastgelegd. Deze benaming wordt in de praktijk gebruikt om naar de rechtsgrond te verwijzen."@nl;
-    shacl:maxCount 1;
-    shacl:name "citeeropschrift"@nl;
-    shacl:path <http://data.europa.eu/eli/ontology#title_short>
   ], [
     shacl:datatype rdf:langString;
     shacl:definition "Beschrijving van de juridische en feitelijke motivering achter de beslissing die wordt uitgedrukt in het besluit."@nl;
@@ -189,12 +182,26 @@
     shacl:minCount 1;
     shacl:name "realiseert"@nl;
     shacl:path <http://data.europa.eu/eli/ontology#realizes>
+  ], [
+    shacl:class <http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt>;
+    shacl:definition "De behandeling van het agendapunt die tot dit besluit heeft geleid."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "volgt uit"@nl;
+    shacl:path prov:wasGeneratedBy
   ];
   shacl:targetClass <http://data.vlaanderen.be/ns/besluit#Besluit> .
 
 <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#BestuurseenheidShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class prov:Location;
+    shacl:definition "Geografische gebied waarbinnen de bestuurseenheid bepaalde verantwoordelijkheden heeft waarbinnen het bestuurshandelingen kan stellen."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "werkingsgebied"@nl;
+    shacl:path <http://data.vlaanderen.be/ns/besluit#werkingsgebied>
+  ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "Naam van de bestuurseenheid."@nl;
     shacl:maxCount 1;
@@ -208,19 +215,19 @@
     shacl:minCount 1;
     shacl:name "classificatie"@nl;
     shacl:path org:classification
-  ], [
-    shacl:class prov:Location;
-    shacl:definition "Geografische gebied waarbinnen de bestuurseenheid bepaalde verantwoordelijkheden heeft waarbinnen het bestuurshandelingen kan stellen."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "werkingsgebied"@nl;
-    shacl:path <http://data.vlaanderen.be/ns/besluit#werkingsgebied>
   ];
   shacl:targetClass <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid> .
 
 <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#BestuursorgaanShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>;
+    shacl:definition "De bestuurseenheid die door het orgaan bestuurd wordt."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "bestuurt"@nl;
+    shacl:path <http://data.vlaanderen.be/ns/besluit#bestuurt>
+  ], [
     shacl:class skos:Concept;
     shacl:definition "Het type bestuursorgaan."@nl;
     shacl:maxCount 1;
@@ -234,19 +241,17 @@
     shacl:minCount 1;
     shacl:name "naam"@nl;
     shacl:path skos:prefLabel
-  ], [
-    shacl:class <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>;
-    shacl:definition "De bestuurseenheid die door het orgaan bestuurd wordt."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "bestuurt"@nl;
-    shacl:path <http://data.vlaanderen.be/ns/besluit#bestuurt>
   ];
   shacl:targetClass <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> .
 
 <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#DocumentOnderdeelShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class foaf:Document;
+    shacl:definition "Een verwante bron waarin de beschreven bron fysiek of logisch is opgenomen."@nl;
+    shacl:name "is onderdeel van"@nl;
+    shacl:path dc:isPartOf
+  ], [
     shacl:datatype xsd:integer;
     shacl:definition "Nummer vh documentonderdeel."@nl;
     shacl:maxCount 1;
@@ -260,11 +265,6 @@
     shacl:minCount 1;
     shacl:name "type"@nl;
     shacl:path dc:type
-  ], [
-    shacl:class foaf:Document;
-    shacl:definition "Een verwante bron waarin de beschreven bron fysiek of logisch is opgenomen."@nl;
-    shacl:name "is onderdeel van"@nl;
-    shacl:path dc:isPartOf
   ], [
     shacl:class <https://data.vlaanderen.be/ns/generiek#DocumentOnderdeel>;
     shacl:definition "Een verwante bron waarin de beschreven bron fysiek of logisch is opgenomen."@nl;
@@ -280,10 +280,18 @@
 <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#LegaleVerschijningsvormShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://data.europa.eu/eli/ontology#LegalExpression>;
-    shacl:definition "Duidt aan dat deze legale verschijningsvorm een verandering met legale gevolgen doorvoert op een andere legale verschijningsvorm. Dit omvat amendementen, vervangingen, herroepingen en andere types verandering."@nl;
-    shacl:name "verandert"@nl;
-    shacl:path <http://data.europa.eu/eli/ontology#changes>
+    shacl:datatype xsd:string;
+    shacl:definition "Titel van de legale verschijningsvorm."@nl;
+    shacl:minCount 1;
+    shacl:name "titel"@nl;
+    shacl:path <http://data.europa.eu/eli/ontology#title>
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "De beschrijving van de beoogde rechtsgevolgen, het zogenaamde beschikkend gedeelte."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "inhoud"@nl;
+    shacl:path prov:value
   ], [
     shacl:class <http://data.europa.eu/eli/ontology#LegalExpression>;
     shacl:definition "Duidt aan dat deze legale verschijningsvorm tekstuele veranderingen zonder legale impact aanbrengt in een andere legale verschijningsvorm."@nl;
@@ -295,6 +303,21 @@
     shacl:name "gecorrigeerd door"@nl;
     shacl:path <http://data.europa.eu/eli/ontology#corrected_by>
   ], [
+    shacl:class <http://data.europa.eu/eli/ontology#LegalExpression>;
+    shacl:definition "Een citatie in de wettelijke tekst. Dit omvat zowel woordelijke citaten als citaten in verwijzingen."@nl;
+    shacl:name "citeert"@nl;
+    shacl:path <http://data.europa.eu/eli/ontology#cites>
+  ], [
+    shacl:class <http://data.europa.eu/eli/ontology#LegalExpression>;
+    shacl:definition "Duidt aan dat deze legale verschijningsvorm een verandering met legale gevolgen doorvoert op een andere legale verschijningsvorm. Dit omvat amendementen, vervangingen, herroepingen en andere types verandering."@nl;
+    shacl:name "verandert"@nl;
+    shacl:path <http://data.europa.eu/eli/ontology#changes>
+  ], [
+    shacl:class <http://data.europa.eu/eli/ontology#LegalExpression>;
+    shacl:definition "Duidt aan dat deze legale verschijningsvorm een verandering met legale gevolgen heeft ondergaan door een andere legale verschijningsvorm. Dit omvat amendementen, vervangingen, herroepingen en andere types verandering."@nl;
+    shacl:name "veranderd door"@nl;
+    shacl:path <http://data.europa.eu/eli/ontology#changed_by>
+  ], [
     <http://purl.org/linked-data/cube#codeList> <http://publications.europa.eu/mdr/authority/language/index.html>;
     shacl:class skos:Concept;
     shacl:definition "De taal van de verschijningsvorm."@nl;
@@ -302,29 +325,6 @@
     shacl:minCount 1;
     shacl:name "taal"@nl;
     shacl:path <http://data.europa.eu/eli/ontology#language>
-  ], [
-    shacl:class <http://data.europa.eu/eli/ontology#LegalExpression>;
-    shacl:definition "Duidt aan dat deze legale verschijningsvorm een verandering met legale gevolgen heeft ondergaan door een andere legale verschijningsvorm. Dit omvat amendementen, vervangingen, herroepingen en andere types verandering."@nl;
-    shacl:name "veranderd door"@nl;
-    shacl:path <http://data.europa.eu/eli/ontology#changed_by>
-  ], [
-    shacl:class <http://data.europa.eu/eli/ontology#LegalExpression>;
-    shacl:definition "Een citatie in de wettelijke tekst. Dit omvat zowel woordelijke citaten als citaten in verwijzingen."@nl;
-    shacl:name "citeert"@nl;
-    shacl:path <http://data.europa.eu/eli/ontology#cites>
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "De beschrijving van de beoogde rechtsgevolgen, het zogenaamde beschikkend gedeelte."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "inhoud"@nl;
-    shacl:path prov:value
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Titel van de legale verschijningsvorm."@nl;
-    shacl:minCount 1;
-    shacl:name "titel"@nl;
-    shacl:path <http://data.europa.eu/eli/ontology#title>
   ];
   shacl:targetClass <http://data.europa.eu/eli/ontology#LegalExpression> .
 
@@ -335,27 +335,26 @@
 <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#RechtsgrondShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://data.europa.eu/eli/ontology#LegalResource>;
-    shacl:definition "Duidt aan dat deze rechtsgrond tekstuele veranderingen zonder legale impact aanbrengt in een andere rechtsgrond."@nl;
-    shacl:name "corrigeert"@nl;
-    shacl:path <http://data.europa.eu/eli/ontology#corrects>
-  ], [
-    shacl:class <http://data.europa.eu/eli/ontology#LegalResource>;
-    shacl:definition "Een citatie in de wettelijke tekst. Dit omvat zowel woordelijke citaten als citaten in verwijzingen."@nl;
-    shacl:name "citeert"@nl;
-    shacl:path <http://data.europa.eu/eli/ontology#cites>
+    shacl:class <http://data.europa.eu/eli/ontology#ResourceType>;
+    shacl:definition "Het type van de rechtsgrond."@nl;
+    shacl:minCount 1;
+    shacl:name "type document"@nl;
+    shacl:path <http://data.europa.eu/eli/ontology#type_document>
   ], [
     shacl:class <http://data.europa.eu/eli/ontology#LegalResource>;
     shacl:definition "Duidt aan dat deze rechtsgrond een verandering met legale gevolgen doorvoert op een andere rechtsgrond. Dit omvat amendementen, vervangingen, herroepingen en andere types verandering."@nl;
     shacl:name "verandert"@nl;
     shacl:path <http://data.europa.eu/eli/ontology#changes>
   ], [
-    shacl:datatype xsd:date;
-    shacl:definition "De datum waarop de regelgeving van kracht wordt."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "inwerkingtreding"@nl;
-    shacl:path <http://data.europa.eu/eli/ontology#first_date_entry_in_force>
+    shacl:class <http://data.europa.eu/eli/ontology#LegalResource>;
+    shacl:definition "Duidt aan dat deze rechtsgrond tekstuele veranderingen zonder legale impact aanbrengt in een andere rechtsgrond."@nl;
+    shacl:name "corrigeert"@nl;
+    shacl:path <http://data.europa.eu/eli/ontology#corrects>
+  ], [
+    shacl:class foaf:Document;
+    shacl:definition "Een bijlage waarnaar verwezen wordt."@nl;
+    shacl:name "heeft bijlage"@nl;
+    shacl:path <http://data.europa.eu/eli/ontology#cites>
   ], [
     shacl:datatype xsd:date;
     shacl:definition "De laatste dag waarop de regelgeving nog van kracht is."@nl;
@@ -363,9 +362,14 @@
     shacl:name "buitenwerkingtreding"@nl;
     shacl:path <http://data.europa.eu/eli/ontology#date_no_longer_in_force>
   ], [
-    shacl:class foaf:Document;
-    shacl:definition "Een bijlage waarnaar verwezen wordt."@nl;
-    shacl:name "heeft bijlage"@nl;
+    shacl:class <http://data.europa.eu/eli/ontology#LegalResource>;
+    shacl:definition "Duidt aan dat deze rechtsgrond een verandering met legale gevolgen heeft ondergaan door een andere rechtsgrond. Dit omvat amendementen, vervangingen, herroepingen en andere types verandering."@nl;
+    shacl:name "veranderd door"@nl;
+    shacl:path <http://data.europa.eu/eli/ontology#changed_by>
+  ], [
+    shacl:class <http://data.europa.eu/eli/ontology#LegalResource>;
+    shacl:definition "Een citatie in de wettelijke tekst. Dit omvat zowel woordelijke citaten als citaten in verwijzingen."@nl;
+    shacl:name "citeert"@nl;
     shacl:path <http://data.europa.eu/eli/ontology#cites>
   ], [
     shacl:class <http://data.europa.eu/eli/ontology#LegalResource>;
@@ -373,16 +377,12 @@
     shacl:name "gecorrigeerd door"@nl;
     shacl:path <http://data.europa.eu/eli/ontology#corrected_by>
   ], [
-    shacl:class <http://data.europa.eu/eli/ontology#LegalResource>;
-    shacl:definition "Duidt aan dat deze rechtsgrond een verandering met legale gevolgen heeft ondergaan door een andere rechtsgrond. Dit omvat amendementen, vervangingen, herroepingen en andere types verandering."@nl;
-    shacl:name "veranderd door"@nl;
-    shacl:path <http://data.europa.eu/eli/ontology#changed_by>
-  ], [
-    shacl:class <http://data.europa.eu/eli/ontology#ResourceType>;
-    shacl:definition "Het type van de rechtsgrond."@nl;
+    shacl:datatype xsd:date;
+    shacl:definition "De datum waarop de regelgeving van kracht wordt."@nl;
+    shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "type document"@nl;
-    shacl:path <http://data.europa.eu/eli/ontology#type_document>
+    shacl:name "inwerkingtreding"@nl;
+    shacl:path <http://data.europa.eu/eli/ontology#first_date_entry_in_force>
   ];
   shacl:targetClass <http://data.europa.eu/eli/ontology#LegalResource> .
 
@@ -393,6 +393,25 @@
 <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#StemmingShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
+    shacl:definition "Een mandataris die als onthouder heeft gestemd op het onderwerp van de stemming."@nl;
+    shacl:name "heeft onthouder"@nl;
+    shacl:path <http://data.vlaanderen.be/ns/besluit#heeftOnthouder>
+  ], [
+    shacl:datatype xsd:boolean;
+    shacl:definition "Geeft aan of de stemming geheim was. Bij een geheime stemming wordt niet individueel bekend gemaakt wie op wat heeft gestemd."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "geheim"@nl;
+    shacl:path <http://data.vlaanderen.be/ns/besluit#geheim>
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:definition "Het gevolg van de stemming."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "gevolg"@nl;
+    shacl:path <http://data.vlaanderen.be/ns/besluit#gevolg>
+  ], [
     shacl:datatype xsd:integer;
     shacl:definition "Het aantal stemmers dat als tegenstander heeft gestemd."@nl;
     shacl:maxCount 1;
@@ -400,17 +419,23 @@
     shacl:name "aantal tegenstanders"@nl;
     shacl:path <http://data.vlaanderen.be/ns/besluit#aantalTegenstanders>
   ], [
+    shacl:class <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
+    shacl:definition "Een mandataris (van het orgaan dat de zitting houdt) die aanwezig was tijdens de stemming."@nl;
+    shacl:minCount 1;
+    shacl:name "heeft aanwezige"@nl;
+    shacl:path <http://data.vlaanderen.be/ns/besluit#heeftAanwezige>
+  ], [
+    shacl:class <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
+    shacl:definition "Een mandataris die als voorstander heeft gestemd op het onderwerp van de stemming."@nl;
+    shacl:name "heeft voorstander"@nl;
+    shacl:path <http://data.vlaanderen.be/ns/besluit#heeftVoorstander>
+  ], [
     shacl:datatype xsd:integer;
     shacl:definition "Het aantal stemmers dat als voorstander heeft gestemd."@nl;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "aantal voorstanders"@nl;
     shacl:path <http://data.vlaanderen.be/ns/besluit#aantalVoorstanders>
-  ], [
-    shacl:class <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
-    shacl:definition "Een mandataris die als onthouder heeft gestemd op het onderwerp van de stemming."@nl;
-    shacl:name "heeft onthouder"@nl;
-    shacl:path <http://data.vlaanderen.be/ns/besluit#heeftOnthouder>
   ], [
     shacl:datatype xsd:integer;
     shacl:definition "Het aantal stemmers dat als onthouding heeft gestemd."@nl;
@@ -425,31 +450,6 @@
     shacl:minCount 1;
     shacl:name "onderwerp"@nl;
     shacl:path <http://data.vlaanderen.be/ns/besluit#onderwerp>
-  ], [
-    shacl:class <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
-    shacl:definition "Een mandataris die als voorstander heeft gestemd op het onderwerp van de stemming."@nl;
-    shacl:name "heeft voorstander"@nl;
-    shacl:path <http://data.vlaanderen.be/ns/besluit#heeftVoorstander>
-  ], [
-    shacl:class <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
-    shacl:definition "Een mandataris (van het orgaan dat de zitting houdt) die aanwezig was tijdens de stemming."@nl;
-    shacl:minCount 1;
-    shacl:name "heeft aanwezige"@nl;
-    shacl:path <http://data.vlaanderen.be/ns/besluit#heeftAanwezige>
-  ], [
-    shacl:datatype rdf:langString;
-    shacl:definition "Het gevolg van de stemming."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "gevolg"@nl;
-    shacl:path <http://data.vlaanderen.be/ns/besluit#gevolg>
-  ], [
-    shacl:datatype xsd:boolean;
-    shacl:definition "Geeft aan of de stemming geheim was. Bij een geheime stemming wordt niet individueel bekend gemaakt wie op wat heeft gestemd."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "geheim"@nl;
-    shacl:path <http://data.vlaanderen.be/ns/besluit#geheim>
   ], [
     shacl:class <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
     shacl:definition "Een mandataris die deelneemt aan de stemming."@nl;
@@ -477,16 +477,35 @@
 <https://data.dev-vlaanderen.be/shacl/besluit-publicatie-SHACL_nl#ZittingShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class prov:Location;
+    shacl:definition "Locatie waar de zitting plaatsvindt. Doorgaans is dit een zaal in een gebouw."@nl;
+    shacl:maxCount 1;
+    shacl:name "op locatie"@nl;
+    shacl:path prov:atLocation
+  ], [
     shacl:class foaf:Document;
     shacl:definition "De formele notulen van de zitting."@nl;
     shacl:maxCount 1;
     shacl:name "heeft notulen"@nl;
     shacl:path <http://data.vlaanderen.be/ns/besluit#heeftNotulen>
   ], [
+    shacl:class <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
+    shacl:definition "De mandataris die de rol als voorzitter heeft gedurende de zitting."@nl;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "heeft voorzitter"@nl;
+    shacl:path <http://data.vlaanderen.be/ns/besluit#heeftVoorzitter>
+  ], [
     shacl:class foaf:Document;
     shacl:definition "Een verslag van de zitting."@nl;
     shacl:name "heeft zittingsverslag"@nl;
     shacl:path <http://data.vlaanderen.be/ns/besluit#heeftZittingsverslag>
+  ], [
+    shacl:class <http://data.vlaanderen.be/ns/besluit#Agendapunt>;
+    shacl:definition "Een formeel vastgelegd agendapunt van de zitting."@nl;
+    shacl:minCount 1;
+    shacl:name "behandelt"@nl;
+    shacl:path <http://data.vlaanderen.be/ns/besluit#behandelt>
   ], [
     shacl:datatype xsd:dateTime;
     shacl:definition "Het tijdstip waarop de zitting gepland is om te beginnen."@nl;
@@ -503,24 +522,10 @@
     shacl:path prov:endedAtTime
   ], [
     shacl:class <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
-    shacl:definition "De mandataris die de rol als voorzitter heeft gedurende de zitting."@nl;
-    shacl:maxCount 1;
+    shacl:definition "Een mandataris (van het bestuursorsgaan die de zitting hield) die aanwezig was bij de start van de zitting."@nl;
     shacl:minCount 1;
-    shacl:name "heeft voorzitter"@nl;
-    shacl:path <http://data.vlaanderen.be/ns/besluit#heeftVoorzitter>
-  ], [
-    shacl:class <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
-    shacl:definition "De mandataris die de rol van secretaris heeft gedurende de zitting."@nl;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "heeft secretaris"@nl;
-    shacl:path <http://data.vlaanderen.be/ns/besluit#heeftSecretaris>
-  ], [
-    shacl:class prov:Location;
-    shacl:definition "Locatie waar de zitting plaatsvindt. Doorgaans is dit een zaal in een gebouw."@nl;
-    shacl:maxCount 1;
-    shacl:name "op locatie"@nl;
-    shacl:path prov:atLocation
+    shacl:name "heeft aanwezige bij start"@nl;
+    shacl:path <http://data.vlaanderen.be/ns/besluit#heeftAanwezigeBijStart>
   ], [
     shacl:datatype xsd:dateTime;
     shacl:definition "Tijdstip waarop de zitting begint."@nl;
@@ -529,12 +534,6 @@
     shacl:name "gestart op tijdstip"@nl;
     shacl:path prov:startedAtTime
   ], [
-    shacl:class <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
-    shacl:definition "Een mandataris (van het bestuursorsgaan die de zitting hield) die aanwezig was bij de start van de zitting."@nl;
-    shacl:minCount 1;
-    shacl:name "heeft aanwezige bij start"@nl;
-    shacl:path <http://data.vlaanderen.be/ns/besluit#heeftAanwezigeBijStart>
-  ], [
     shacl:class <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
     shacl:definition "Duidt aan door welk orgaan de zitting is gehouden."@nl;
     shacl:maxCount 1;
@@ -542,11 +541,12 @@
     shacl:name "is gehouden door"@nl;
     shacl:path <http://data.vlaanderen.be/ns/besluit#isGehoudenDoor>
   ], [
-    shacl:class <http://data.vlaanderen.be/ns/besluit#Agendapunt>;
-    shacl:definition "Een formeel vastgelegd agendapunt van de zitting."@nl;
+    shacl:class <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
+    shacl:definition "De mandataris die de rol van secretaris heeft gedurende de zitting."@nl;
+    shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "behandelt"@nl;
-    shacl:path <http://data.vlaanderen.be/ns/besluit#behandelt>
+    shacl:name "heeft secretaris"@nl;
+    shacl:path <http://data.vlaanderen.be/ns/besluit#heeftSecretaris>
   ];
   shacl:targetClass <http://data.vlaanderen.be/ns/besluit#Zitting> .
 
