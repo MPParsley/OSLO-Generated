@@ -1,8 +1,8 @@
 {
-  "@id": "https://purl.eu/ns/observations",
+  "@id": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core",
   "@type": "http://www.w3.org/2002/07/owl#Ontology",
   "authors": [],
-  "baseURI": "https://purl.eu/ns/observations#",
+  "baseURI": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#",
   "baseURIabbrev": null,
   "contributors": [],
   "editors": [],
@@ -23,27 +23,10 @@
     "foaf:mbox": "mailto:oslo@kb.vlaanderen.be",
     "foaf:name": "Data Vlaanderen"
   },
-  "classes": [
-    {
-      "@id": "https://purl.eu/ns/observations#ObservationProcedureType",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "description": {},
-      "name": {},
-      "parents": [],
-      "usage": {}
-    },
-    {
-      "@id": "https://purl.eu/ns/observations#SamplingProcedureType",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "description": {},
-      "name": {},
-      "parents": [],
-      "usage": {}
-    }
-  ],
+  "classes": [],
   "properties": [
     {
-      "@id": "https://purl.eu/ns/observations#metadata",
+      "@id": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationCollection.metadata",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
         "nl": "Link to the metadata of the observationCollection."
@@ -61,7 +44,7 @@
       "usage": {}
     },
     {
-      "@id": "https://purl.eu/ns/observations#parameter",
+      "@id": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationCollection.parameter",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
         "nl": "The parameter describes an arbitrary event-specific parameter. This might be an environmental parameter, an instrument setting or input, or an event-specific sampling parameter that is not tightly bound to either the feature of interest or to the observation procedure."
@@ -79,13 +62,13 @@
       "usage": {}
     },
     {
-      "@id": "https://purl.eu/ns/observations#specification",
+      "@id": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationProcedure.specification",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "description": {
         "nl": "Reference to the specification that describes the Procedure that was followed to make the Observation."
       },
       "domain": [
-        "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure"
+        "http://www.w3.org/ns/sosa/om#ObservationProcedure"
       ],
       "generalization": [],
       "name": {
@@ -97,25 +80,72 @@
       "usage": {}
     },
     {
-      "@id": "https://purl.eu/ns/observations#type",
+      "@id": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#ObservationProcedure.type",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
         "nl": "General type of the Procedure that was followed to make the Observation."
       },
       "domain": [
-        "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure"
+        "http://www.w3.org/ns/sosa/om#ObservationProcedure"
       ],
       "generalization": [],
       "name": {
         "nl": "type"
       },
       "range": [
-        "https://purl.eu/ns/observations#ObservationProcedureType"
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#SamplingProcedure.specification",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "description": {
+        "nl": "Reference to the specification that describes the Procedure that was followed the create the Sample."
+      },
+      "domain": [
+        "http://www.w3.org/ns/sosa/om#SamplingProcedure"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "specification"
+      },
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#anyURI"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://purl.eu/ns/https://purl.eu/ns/air-and-water/core#SamplingProcedure.type",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "General type of the Procedure that was followed to create the Sample."
+      },
+      "domain": [
+        "http://www.w3.org/ns/sosa/om#SamplingProcedure"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "type"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "usage": {}
     }
   ],
-  "externals": [],
+  "externals": [
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {}
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {}
+    }
+  ],
   "externalproperties": [],
   "@context": {
     "vlaanderen": "http://data.vlaanderen.be/ns/",
