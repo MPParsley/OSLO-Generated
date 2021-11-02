@@ -1,0 +1,1872 @@
+{
+  "metadata": {
+    "title": {
+      "nl": "OSLO Waterkwaliteit"
+    },
+    "uri": "http://fixme.com",
+    "issued": "2021-11-02",
+    "filename": "waterkwaliteit-ap",
+    "navigation": {
+      "self": "https://test.data.vlaanderen.be/doc/applicatieprofiel/waterkwaliteit/ontwerpstandaard/2021-11-02"
+    },
+    "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
+    "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
+    "statuslabel": "Ontwerp Standaard",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/tree/3bf8c35bb549a379b5c190b341e4ae5200d9f2d6",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/blob/3bf8c35bb549a379b5c190b341e4ae5200d9f2d6/CHANGELOG",
+    "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/issues",
+    "standaardregisterurl": "https://data.vlaanderen.be/standaarden/standaard-in-ontwikkeling/vocabularium-en-applicatieprofiel-oslo-waterkwaliteit.html",
+    "usesVocs": [],
+    "usesAPs": []
+  },
+  "classes": [
+    {
+      "uri": "http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Any",
+      "name": {
+        "nl": "GeneriekDatatype"
+      },
+      "sort_nl": "GeneriekDatatype",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {
+        "nl": "TODO"
+      },
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure",
+      "name": {
+        "nl": "Maat"
+      },
+      "sort_nl": "Maat",
+      "description": {
+        "nl": "Een afgemeten hoeveelheid ve bepaalde grootheid, uitgedrukt in een bepaalde eenheid."
+      },
+      "usage": {
+        "nl": "TODO"
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure.value",
+          "name": {
+            "nl": "maat"
+          },
+          "sort_nl": "maat",
+          "description": {
+            "nl": "De hoeveelheid."
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure",
+              "EA-Name": "Maat"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "KwantitatieveWaarde",
+              "range_uri": "https://schema.org/QuantitativeValue"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#KwantitatieveWaarde",
+              "range_puri": "https://schema.org/QuantitativeValue",
+              "range_label": {
+                "nl": "KwantitatieveWaarde"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://def.isotc211.org/iso19109/2005/GeneralFeatureModel#GF_PropertyType",
+      "name": {
+        "nl": "Kenmerktype"
+      },
+      "sort_nl": "Kenmerktype",
+      "description": {
+        "nl": "Klasse die kenmerken van instanties van om het even welk type vertegenwoordigt."
+      },
+      "usage": {
+        "nl": "In de context van Observaties en Metingen is dit een kenmerk van het geobseveerdObject en in het bijzonder van alle instanties van het type geobserveerdObject."
+      },
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_Element",
+      "name": {
+        "nl": "DQ_Element"
+      },
+      "sort_nl": "DQ_Element",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {
+        "nl": "TODO"
+      },
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "http://def.isotc211.org/iso19115/2006/MetadataEntitySetInformation#MD_Metadata",
+      "name": {
+        "nl": "Metadata"
+      },
+      "sort_nl": "Metadata",
+      "description": {
+        "nl": "Gegevens die informatie over gegevens bevatten."
+      },
+      "usage": {
+        "nl": "Observaties kunnen beschouwd worden als gegevens en dus zijn data over Observaties wel degelijk metadata. Omdat al heel wat metagegevens elders in het model kunnen worden meegegeven beperkt deze klasse zich tot beschrijvende metadata, ttz informatie zoals titel, samenvatting, auteur en sleutelwoorden. Dergelijke metadata is in hoofdzaak bedoeld voor identificatie en datacatalogen. OPMERKING: Een meer uitgebreide beschrijving is te vinden in het AP OSLO-SensorenEnBemonstering."
+      },
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
+      "name": {
+        "nl": "Object"
+      },
+      "sort_nl": "Object",
+      "description": {
+        "nl": "Klasse die instanties van om het even welk type vertegenwoordigt."
+      },
+      "usage": {
+        "nl": "In de context van Observaties en Metingen is dit het geobserveerdObject waarvan een kenmerk wordt geobserveerd. Het geobserveerdObject kan ook een Object zijn dat de werkelijkheid bemonstert (subklasse Bemonsteringsobject). OPGELET: deze klasse is abstract, ze moet gespecialiseerd worden in functie van het applicatiedomein."
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#waardeverschaffer",
+          "name": {
+            "nl": "waardeverschaffer"
+          },
+          "sort_nl": "waardeverschaffer",
+          "description": {
+            "nl": "Observaties die een waarde geven aan Kenmerken van het Object;"
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
+              "EA-Name": "Object"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Observatie",
+              "range_uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Observatie",
+              "range_puri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "range_label": {
+                "nl": "Observatie"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://def.isotc211.org/iso19156/2011/Measurement#OM_Measurement",
+      "name": {
+        "nl": "Meting"
+      },
+      "sort_nl": "Meting",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {
+        "nl": "TODO"
+      },
+      "parents": [
+        {
+          "name": "Observatie",
+          "label": "Observatie",
+          "package": "Hulppakket",
+          "uri": "http://fixme.com#Observatie",
+          "scoped_uri": "#Observatie"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+      "name": {
+        "nl": "Observatie"
+      },
+      "sort_nl": "Observatie",
+      "description": {
+        "nl": "Het vaststellen van de waarde van een bepaald kenmerk van een Object op een bepaald tijdstip of tussen twee tijdstippen."
+      },
+      "usage": {
+        "nl": "Het gaat om schattingen van de waarde, maw op de waarde zit een zekere foutmarge.Voorbeelden zijn temperatuur, klasse, kleur. Dit is verschillend van waarden die zijn toegekend en dus geen schattingen zijn zoals naam of prijs."
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.featureOfInterest",
+          "name": {
+            "nl": "geobserveerdObject"
+          },
+          "sort_nl": "geobserveerdObject",
+          "description": {
+            "nl": "Object dat men observeert."
+          },
+          "usage": {
+            "nl": "Dat kan het Object zelf zijn of een proxy ervan, ttz een Bemonsteringsobject. OPMERKING: In dat laatste geval weet men soms pas na het observeren welke real-world Objecten men juist geobserveerd heeft."
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "EA-Name": "Observatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Object",
+              "range_uri": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Object",
+              "range_puri": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
+              "range_label": {
+                "nl": "Object"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.metadata",
+          "name": {
+            "nl": "metadata"
+          },
+          "sort_nl": "metadata",
+          "description": {
+            "nl": "Verwijzing naar Metadata over de Observatie."
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "EA-Name": "Observatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Metadata",
+              "range_uri": "http://def.isotc211.org/iso19115/2006/MetadataEntitySetInformation#MD_Metadata"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Metadata",
+              "range_puri": "http://def.isotc211.org/iso19115/2006/MetadataEntitySetInformation#MD_Metadata",
+              "range_label": {
+                "nl": "Metadata"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.observedProperty",
+          "name": {
+            "nl": "geobserveerdKenmerk"
+          },
+          "sort_nl": "geobserveerdKenmerk",
+          "description": {
+            "nl": "Kenmerk dat men observeert vh geobserveerdObject."
+          },
+          "usage": {
+            "nl": "Soms is de procedure waarmee de waarden vh kenmerk worden bekomen indirect, ttz men meet om praktische reden een ander kenmerk dat een proxy is voor het kenmerk dat men werkelijk wil observeren. Is die proxy geen kenmerk van het geobserveerdObject dan gebeurt de Observatie op een proxy van het geobserveerdObject. Bv om de vegetatie in een gebied te achterhalen meten we de kleurreflectie op het aardoppervlak. CONSTRAINT: Het geobserveerdKenmerk moet werkelijk een kenmerk zijn van het geobserveerdObject."
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "EA-Name": "Observatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Kenmerktype",
+              "range_uri": "http://def.isotc211.org/iso19109/2005/GeneralFeatureModel#GF_PropertyType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Kenmerktype",
+              "range_puri": "http://def.isotc211.org/iso19109/2005/GeneralFeatureModel#GF_PropertyType",
+              "range_label": {
+                "nl": "Kenmerktype"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.parameter",
+          "name": {
+            "nl": "parameter"
+          },
+          "sort_nl": "parameter",
+          "description": {
+            "nl": "Willekeurig gegeven gassocieerd met het gebeuren van de Observatie."
+          },
+          "usage": {
+            "nl": "Het gaat hier niet om kenmerken van het geobserveerdObject (die worden al beschreven door het geobserveerdKenmerk) of om parameters geassocieerd met het observatieproces (zoals een instelling van een instrument). Het gaat hier bv om omgevingsparameters die het resultaat kunnen beïnvloeden en van belang zijn om het resultaat correct te interpreteren.  Een voorbeeld is de diepte in een waterput waarop de waterkwaliteit is gemeten of de omgevingstemperatuur bij het meten van de vochtigheidsgraad."
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "EA-Name": "Observatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "BenoemdeWaarde",
+              "range_uri": "http://def.isotc211.org/iso19156/2011/Observation#NamedValue"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#BenoemdeWaarde",
+              "range_puri": "http://def.isotc211.org/iso19156/2011/Observation#NamedValue",
+              "range_label": {
+                "nl": "BenoemdeWaarde"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.phenomenonTime",
+          "name": {
+            "nl": "fenomeentijd"
+          },
+          "sort_nl": "fenomeentijd",
+          "description": {
+            "nl": "Het moment waarop het resultaat van de Observatie van toepassing was."
+          },
+          "usage": {
+            "nl": "Typisch het moment waarop geobserveerd of bemonsterd werd. Als de Observatie temporeel is en het moment waarop iets plaatsvindt wordt geregistreerd dan is dit meteen ook de fenomeentijd."
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "EA-Name": "Observatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TM_Object",
+              "range_uri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TM_Object",
+              "range_puri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
+              "range_label": {
+                "nl": "TM_Object"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.result",
+          "name": {
+            "nl": "resultaat"
+          },
+          "sort_nl": "resultaat",
+          "description": {
+            "nl": "De waarde van het geobserveerdeKenmerk als resultaat van de Observatie."
+          },
+          "usage": {
+            "nl": "Het resultaat kan van om het even welk type zijn aangezien om het even welk Kenmerk van om het even welk type Object kan worden geobserveerd. CONSTRAINT: Het type van het resultaat van de Observatie moet kloppen met het geobserveerdKenmerk en de verkregen waarde moet binnen het bereik vallen van het geobserveerdKenmerk."
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "EA-Name": "Observatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Any",
+              "range_uri": "http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Any"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#GeneriekDatatype",
+              "range_puri": "http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Any",
+              "range_label": {
+                "nl": "GeneriekDatatype"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.resultQuality",
+          "name": {
+            "nl": "resultaatkwaliteit"
+          },
+          "sort_nl": "resultaatkwaliteit",
+          "description": {
+            "nl": "Mate waarin het resultaat van de Observatie voldoet aan de vereisten of verwachtingen."
+          },
+          "usage": {
+            "nl": "Het gaat hier om gegevens die eigen zijn aan de Observatie en complementair aan de beschrijving van de procedure die bij de Observatie is gevolgd (analysemethode edm, zie klasse Proces) wat op zich iets zegt over de kwaliteit van het resultaat."
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "EA-Name": "Observatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DQ_Element",
+              "range_uri": "http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_Element"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#DQ_Element",
+              "range_puri": "http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_Element",
+              "range_label": {
+                "nl": "DQ_Element"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.resultTime",
+          "name": {
+            "nl": "resultaattijd"
+          },
+          "sort_nl": "resultaattijd",
+          "description": {
+            "nl": "Tijdstip waarop het resultaat van de Observatie werd bekomen."
+          },
+          "usage": {
+            "nl": "Is voor sommige Observaties gelijk aan de fenomeentijd maar kan ook verschillen, bv bij het uitvoeren van een analyse op een Monster dat eerder (en doorgaans dan ook eders) werd genomen of bij sensormetingen die pas later worden verwerkt. Ook bruikbaar om herhaalde Observaties bv op eenzelfde Monster uiteen te houden. Is het resultaat een voorspelling dan is de fenomeentijd het moment waarop deze van toepassing zou moeten zijn."
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "EA-Name": "Observatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TM_Instant",
+              "range_uri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Instant"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TM_Instant",
+              "range_puri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Instant",
+              "range_label": {
+                "nl": "TM_Instant"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.validTime",
+          "name": {
+            "nl": "geldigeTijd"
+          },
+          "sort_nl": "geldigeTijd",
+          "description": {
+            "nl": "Periode waarvoor het resultaat van de Observatie geldt."
+          },
+          "usage": {
+            "nl": "Bv nuttig voor weersvoorspellingen."
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "EA-Name": "Observatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TM_Period",
+              "range_uri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Period"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TM_Period",
+              "range_puri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Period",
+              "range_label": {
+                "nl": "TM_Period"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#ObservationContext.relatedObservation",
+          "name": {
+            "nl": "geassocieerdeObservatie"
+          },
+          "sort_nl": "geassocieerdeObservatie",
+          "description": {
+            "nl": "Observaties waarvan de resultaten op een of andere manier samenhangen."
+          },
+          "usage": {
+            "nl": "Het gaat om samenhang die van belang is om het resultaat van individuele Observaties te begrijpen, bv biotische relaties (dier A is roofdier en is aanwezig omdat dier B prooi voorkomt). Dergelijke relaties vereisen expliciet te worden beschreven (in tegenstelling tot relaties zoals het samenvallen van resultaten van Observaties in ruimte of tijd die impliciet mogen blijven). Ook nuttig voor relaties waarbij de output van Observatie A de input vormt voor Observatie B."
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "EA-Name": "Observatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Observatie",
+              "range_uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Observatie",
+              "range_puri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "range_label": {
+                "nl": "Observatie"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com",
+          "name": {
+            "nl": "gebruikteProcedure"
+          },
+          "sort_nl": "gebruikteProcedure",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "EA-Name": "Observatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Observatieprocedure",
+              "range_uri": "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Observatieprocedure",
+              "range_puri": "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure",
+              "range_label": {
+                "nl": "Observatieprocedure"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com",
+          "name": {
+            "nl": "uitgevoerdMetSensor"
+          },
+          "sort_nl": "uitgevoerdMetSensor",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "EA-Name": "Observatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Sensor",
+              "range_uri": "https://www.w3.org/TR/vocab-ssn/#SOSASensor"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Sensor",
+              "range_puri": "https://www.w3.org/TR/vocab-ssn/#SOSASensor",
+              "range_label": {
+                "nl": "Sensor"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#identificator",
+          "name": {
+            "nl": "identificator"
+          },
+          "sort_nl": "identificator",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "EA-Name": "Observatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Identificator",
+              "range_uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Identificator",
+              "range_puri": "http://www.w3.org/ns/adms#Identifier",
+              "range_label": {
+                "nl": "Identificator"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#type",
+          "name": {
+            "nl": "type"
+          },
+          "sort_nl": "type",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "EA-Name": "Observatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Observatietype",
+              "range_uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatietype"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Observatietype",
+              "range_puri": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatietype",
+              "range_label": {
+                "nl": "Observatietype"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#uitgevoerdDoor",
+          "name": {
+            "nl": "uitgevoerdDoor"
+          },
+          "sort_nl": "uitgevoerdDoor",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "EA-Name": "Observatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://purl.org/dc/terms/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Agent",
+              "range_puri": "http://purl.org/dc/terms/Agent",
+              "range_label": {
+                "nl": "Agent"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.OM_Process",
+      "name": {
+        "nl": "Proces"
+      },
+      "sort_nl": "Proces",
+      "description": {
+        "nl": "Manier waarop het resultaat van de Observatie is verkregen."
+      },
+      "usage": {
+        "nl": "Dat kan dmv een instrument of een sensor zijn; maar het kan ook een menselijke observator zijn of een simulatie of een verwerking of algoritme toegepast op meer primitieve resultaten. Het Proces vormt samen met het Bemonsteringsobject dat is gebruikt het zgn observatieprotocol. OPGELET: deze klasse is abstract, ze moet gespecialiseerd worden in functie van het applicatiedomein."
+      },
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
+      "name": {
+        "nl": "Bemonsteringsobject"
+      },
+      "sort_nl": "Bemonsteringsobject",
+      "description": {
+        "nl": "Deel van het Object dat men wil observeren en dat representatief is voor dat Object."
+      },
+      "usage": {
+        "nl": "Het deel waarvan sprake kan fysiek zijn (een Monster) of ruimtelijk (een Ruimtelijk Bemonsteringsobject). Men observeert een Bemonsteringsobject ipv het werkelijk Object als dat laatste niet in zijn geheel geobserveerd kan worden (bv omdat exhaustieve observatie onpraktisch zou zijn). Het Bemonsteringsobject vormt samen met het Proces dat voor observatie is gebruikt het zgn observatieprotocol. OPGELET: deze klasse is abstract, ze moet gespecialiseerd worden in functie van het applicatiedomein."
+      },
+      "parents": [
+        {
+          "name": "Object",
+          "label": "Object",
+          "package": "OSLO-ObservatiesEnMetingen",
+          "uri": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
+          "scoped_uri": "#Object"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SamplingFeatureComplex.relatedSamplingFeature",
+          "name": {
+            "nl": "geassocieerdBemonsteringsobject"
+          },
+          "sort_nl": "geassocieerdBemonsteringsobject",
+          "description": {
+            "nl": "Ander Bemonsteringsobject waarmee het Bemonsteringsobject geassocieerd is."
+          },
+          "usage": {
+            "nl": "Bv Bemonsteringspunten langs een Bemonsteringscurve of Monsters genomen op een Bemonsteringspunt of deelmonsters (Monster van een Monster)..."
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
+              "EA-Name": "Bemonsteringsobject"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Bemonsteringsobject",
+              "range_uri": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Bemonsteringsobject",
+              "range_puri": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
+              "range_label": {
+                "nl": "Bemonsteringsobject"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://fixme.com#BioIndicatorObservation",
+      "name": {
+        "nl": "BioIndicatorObservation"
+      },
+      "sort_nl": "BioIndicatorObservation",
+      "description": {
+        "nl": "Observation that assesses the biological Quality of Water based on the overall condition of indicator species."
+      },
+      "usage": {
+        "nl": "These species,also called BioIndicators,are living organisms such as plants,planktons,animals,microbes More specifically,biochemical,physiological,behavioural or population changes are monitored."
+      },
+      "parents": [
+        {
+          "name": "Observatie",
+          "label": "Observatie",
+          "package": "OSLO-ObservatiesEnMetingen",
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+          "scoped_uri": "#Observatie"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "http://fixme.com#bioIndicator",
+          "name": {
+            "nl": "bioIndicator"
+          },
+          "sort_nl": "bioIndicator",
+          "description": {
+            "nl": "Result of the BioIndicatorObservation."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://fixme.com#BioIndicatorObservation",
+              "EA-Name": "BioIndicatorObservation"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Any",
+              "range_uri": "http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Any"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#GeneriekDatatype",
+              "range_puri": "http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Any",
+              "range_label": {
+                "nl": "GeneriekDatatype"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com#observedProperty",
+          "name": {
+            "nl": "observedProperty"
+          },
+          "sort_nl": "observedProperty",
+          "description": {
+            "nl": "Type of the observedProperty."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://fixme.com#BioIndicatorObservation",
+              "EA-Name": "BioIndicatorObservation"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "BioIndicatorType",
+              "range_uri": "http://fixme.com#BioIndicatorType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#BioIndicatorType",
+              "range_puri": "http://fixme.com#BioIndicatorType",
+              "range_label": {
+                "nl": "BioIndicatorType"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://fixme.com#BioticIndexObservation",
+      "name": {
+        "nl": "BioticIndexObservation"
+      },
+      "sort_nl": "BioticIndexObservation",
+      "description": {
+        "nl": "Observation that assesses the biological Quality of Water on a certain scale based on what organisms are present in the Water and in what quantities."
+      },
+      "usage": {
+        "nl": "In practice this comes down to counting specimens of certain species of macro-invertebrates like worms, snails, flies, clams etc present in the Water, weighted by the extent to which they tolerate Water pollution and combined into a single WaterqQuality score."
+      },
+      "parents": [
+        {
+          "name": "Observatie",
+          "label": "Observatie",
+          "package": "OSLO-ObservatiesEnMetingen",
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+          "scoped_uri": "#Observatie"
+        },
+        {
+          "name": "Meting",
+          "label": "Meting",
+          "package": "OSLO-ObservatiesEnMetingen",
+          "uri": "http://def.isotc211.org/iso19156/2011/Measurement#OM_Measurement",
+          "scoped_uri": "#Meting"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "http://fixme.com#bioticIndex",
+          "name": {
+            "nl": "bioticIndex"
+          },
+          "sort_nl": "bioticIndex",
+          "description": {
+            "nl": "Result of the BioticIndexObservation."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://fixme.com#BioticIndexObservation",
+              "EA-Name": "BioticIndexObservation"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Maat",
+              "range_uri": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Maat",
+              "range_puri": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure",
+              "range_label": {
+                "nl": "Maat"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com#observedProperty",
+          "name": {
+            "nl": "observedProperty"
+          },
+          "sort_nl": "observedProperty",
+          "description": {
+            "nl": "Type of the observedProperty."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://fixme.com#BioticIndexObservation",
+              "EA-Name": "BioticIndexObservation"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "BioticIndexType",
+              "range_uri": "http://fixme.com#BioticIndexType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#BioticIndexType",
+              "range_puri": "http://fixme.com#BioticIndexType",
+              "range_label": {
+                "nl": "BioticIndexType"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://fixme.com#ChemicalAgentConcentrationObservation",
+      "name": {
+        "nl": "ChemicalAgentConcentrationObservation"
+      },
+      "sort_nl": "ChemicalAgentConcentrationObservation",
+      "description": {
+        "nl": "Observation to assess  the chemical Quality of Water by estimating the concentration of a harmful or unsuitable substance."
+      },
+      "usage": {
+        "nl": "Actually the Measurement of the amount of the substance in the Water,usually over some averaging period. Result is how much of the substance is found eg in milligrams-per-liter."
+      },
+      "parents": [
+        {
+          "name": "Observatie",
+          "label": "Observatie",
+          "package": "OSLO-ObservatiesEnMetingen",
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+          "scoped_uri": "#Observatie"
+        },
+        {
+          "name": "Meting",
+          "label": "Meting",
+          "package": "OSLO-ObservatiesEnMetingen",
+          "uri": "http://def.isotc211.org/iso19156/2011/Measurement#OM_Measurement",
+          "scoped_uri": "#Meting"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "http://fixme.com#chemicalAgentConcentration",
+          "name": {
+            "nl": "chemicalAgentConcentration"
+          },
+          "sort_nl": "chemicalAgentConcentration",
+          "description": {
+            "nl": "Result of the ChemicalAgentConcentrationObservation."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://fixme.com#ChemicalAgentConcentrationObservation",
+              "EA-Name": "ChemicalAgentConcentrationObservation"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Maat",
+              "range_uri": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Maat",
+              "range_puri": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure",
+              "range_label": {
+                "nl": "Maat"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com#observedProperty",
+          "name": {
+            "nl": "observedProperty"
+          },
+          "sort_nl": "observedProperty",
+          "description": {
+            "nl": "Type of substance."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://fixme.com#ChemicalAgentConcentrationObservation",
+              "EA-Name": "ChemicalAgentConcentrationObservation"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ChemicalAgentType",
+              "range_uri": "http://fixme.com#ChemicalAgentType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#ChemicalAgentType",
+              "range_puri": "http://fixme.com#ChemicalAgentType",
+              "range_label": {
+                "nl": "ChemicalAgentType"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://fixme.com#Procedure",
+      "name": {
+        "nl": "Procedure"
+      },
+      "sort_nl": "Procedure",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {
+        "nl": "TODO"
+      },
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "http://fixme.com#WaterFeature",
+      "name": {
+        "nl": "WaterFeature"
+      },
+      "sort_nl": "WaterFeature",
+      "description": {
+        "nl": "Real-world Object related to Water."
+      },
+      "usage": {
+        "nl": "It is the featureOfInterest, the Object of which some property is observed to assess WaterQuality. This can be for example a waterbody like the Canal Brussels-Charleroi. The Waterfeature can be typed via the \"type\" attribute (value would be \"waterbody-canal\" for example), but substitution by a typed instance (eg an instance of type \"Canal\", subclass of a class \"Waterbody\") is also allowed. In either case, the observedProperty must be a phenomenon related to the WaterFeature type. If the WaterFeature is not observed directly, but rather indirectly by sampling it, the WaterFeature is the sampledObject and the sample assumes the role of featureOfInterest."
+      },
+      "parents": [
+        {
+          "name": "Object",
+          "label": "Object",
+          "package": "OSLO-ObservatiesEnMetingen",
+          "uri": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
+          "scoped_uri": "#Object"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "http://fixme.com#type",
+          "name": {
+            "nl": "type"
+          },
+          "sort_nl": "type",
+          "description": {
+            "nl": "Type of WaterFeature."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://fixme.com#WaterFeature",
+              "EA-Name": "WaterFeature"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "WaterFeatureType",
+              "range_uri": "http://fixme.com#WaterFeatureType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#WaterFeaturetype",
+              "range_puri": "http://fixme.com#WaterFeatureType",
+              "range_label": {
+                "nl": "WaterFeaturetype"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://fixme.com#WaterQualityObservationCollection",
+      "name": {
+        "nl": "WaterQualityObservationCollection"
+      },
+      "sort_nl": "WaterQualityObservationCollection",
+      "description": {
+        "nl": "A Collection of one or more WaterQualityObservations,whose members share a common value for one or more properties."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "name": "Observatieverzameling",
+          "label": "Observatieverzameling",
+          "package": "SSN/SOSA-extensies",
+          "uri": "https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection",
+          "scoped_uri": "#Observatieverzameling"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "http://fixme.com#^hasFeatureOfInterest",
+          "name": {
+            "nl": "^hasFeatureOfInterest"
+          },
+          "sort_nl": "^hasFeatureOfInterest",
+          "description": {
+            "nl": "A reference to the Object that is observed bij the Observations in the Collection."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://fixme.com#WaterQualityObservationCollection",
+              "EA-Name": "WaterQualityObservationCollection"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Object",
+              "range_uri": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Object",
+              "range_puri": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
+              "range_label": {
+                "nl": "Object"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com#^phenomenonTime",
+          "name": {
+            "nl": "^phenomenonTime"
+          },
+          "sort_nl": "^phenomenonTime",
+          "description": {
+            "nl": "The moment when the result of the Observation in the Collection was applicable."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://fixme.com#WaterQualityObservationCollection",
+              "EA-Name": "WaterQualityObservationCollection"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TM_Object",
+              "range_uri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TM_Object",
+              "range_puri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
+              "range_label": {
+                "nl": "TM_Object"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://fixme.com#WaterQualityParameterObservation",
+      "name": {
+        "nl": "WaterQualityParameterObservation"
+      },
+      "sort_nl": "WaterQualityParameterObservation",
+      "description": {
+        "nl": "Observation to assess physical Quality of Water by measuring certain physical quantities."
+      },
+      "usage": {
+        "nl": "These quantities are parameters like temperature,salinity,turbidity,suspended/disolved solids etc."
+      },
+      "parents": [
+        {
+          "name": "Observatie",
+          "label": "Observatie",
+          "package": "OSLO-ObservatiesEnMetingen",
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+          "scoped_uri": "#Observatie"
+        },
+        {
+          "name": "Meting",
+          "label": "Meting",
+          "package": "OSLO-ObservatiesEnMetingen",
+          "uri": "http://def.isotc211.org/iso19156/2011/Measurement#OM_Measurement",
+          "scoped_uri": "#Meting"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "http://fixme.com#observedProperty",
+          "name": {
+            "nl": "observedProperty"
+          },
+          "sort_nl": "observedProperty",
+          "description": {
+            "nl": "Tyoe of the obserdedProperty."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://fixme.com#WaterQualityParameterObservation",
+              "EA-Name": "WaterQualityParameterObservation"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "WaterQualityParameterType",
+              "range_uri": "http://fixme.com#WaterQualityParameterType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#WaterQualityParameterType",
+              "range_puri": "http://fixme.com#WaterQualityParameterType",
+              "range_label": {
+                "nl": "WaterQualityParameterType"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com#waterQualityParameterResult",
+          "name": {
+            "nl": "waterQualityParameterResult"
+          },
+          "sort_nl": "waterQualityParameterResult",
+          "description": {
+            "nl": "Result of the WaterQualityParameterObservation."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://fixme.com#WaterQualityParameterObservation",
+              "EA-Name": "WaterQualityParameterObservation"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Maat",
+              "range_uri": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Maat",
+              "range_puri": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure",
+              "range_label": {
+                "nl": "Maat"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://purl.org/dc/terms/Agent",
+      "name": {
+        "nl": "Agent"
+      },
+      "sort_nl": "Agent",
+      "description": {
+        "nl": "Iemand die of iets dat kan handelen of een effect kan teweeg brengen."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection",
+      "name": {
+        "nl": "Observatieverzameling"
+      },
+      "sort_nl": "Observatieverzameling",
+      "description": {
+        "nl": "A collection of one or more observations,whose members share a common value for one or more properties."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure",
+      "name": {
+        "nl": "Observatieprocedure"
+      },
+      "sort_nl": "Observatieprocedure",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {},
+      "parents": [
+        {
+          "name": "Proces",
+          "label": "Proces",
+          "package": "OSLO-ObservatiesEnMetingen",
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.OM_Process",
+          "scoped_uri": "#Proces"
+        },
+        {
+          "name": "Procedure",
+          "label": "Procedure",
+          "package": "SSN/SOSA",
+          "uri": "http://fixme.com#Procedure",
+          "scoped_uri": "#Procedure"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "uri": "https://www.w3.org/TR/vocab-ssn/#SOSASensor",
+      "name": {
+        "nl": "Sensor"
+      },
+      "sort_nl": "Sensor",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {},
+      "parents": [
+        {
+          "name": "Systeem",
+          "label": "Systeem",
+          "package": "SSN/SOSA",
+          "uri": "https://www.w3.org/TR/vocab-ssn/#ssn-system",
+          "scoped_uri": "#Systeem"
+        },
+        {
+          "name": "Proces",
+          "label": "Proces",
+          "package": "OSLO-ObservatiesEnMetingen",
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.OM_Process",
+          "scoped_uri": "#Proces"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "http://fixme.com",
+          "name": {
+            "nl": "uitgevoerdeObservatie"
+          },
+          "sort_nl": "uitgevoerdeObservatie",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://www.w3.org/TR/vocab-ssn/#SOSASensor",
+              "EA-Name": "Sensor"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Observatie",
+              "range_uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Observatie",
+              "range_puri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "range_label": {
+                "nl": "Observatie"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://www.w3.org/TR/vocab-ssn/#ssn-system",
+      "name": {
+        "nl": "Systeem"
+      },
+      "sort_nl": "Systeem",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    }
+  ],
+  "properties": [],
+  "contributors": [
+    {
+      "role": "A",
+      "first_name": "AuteurVoornaam",
+      "last_name": "AuteurNaam",
+      "affiliation": {
+        "name": "AuteurAffiliatie",
+        "website": "https://auteurwebsiteurl"
+      },
+      "email": "auteurvoornaam.auteurnaam@auteurdomein"
+    },
+    {
+      "role": "E",
+      "first_name": "EditorVoornaam",
+      "last_name": "EditorNaam",
+      "affiliation": {
+        "name": "EditorAffiliatie",
+        "website": "https://editorwebsiteurl"
+      },
+      "email": "editorvoornaam.editornaam@editordomein"
+    },
+    {
+      "role": "C",
+      "first_name": "MedewerkerVoornaam",
+      "last_name": "MedewerkerNaam",
+      "affiliation": {
+        "name": "MedewerkerAffiliatie",
+        "website": "https://medewerkerwebsiteurl"
+      },
+      "email": "medewerkervoornaam.medewerkernaam@medewerkerdomein"
+    }
+  ],
+  "datatypes": [
+    {
+      "uri": "http://def.isotc211.org/iso19103/2005/Names#GenericName",
+      "name": {
+        "nl": "GeneriekeNaam"
+      },
+      "sort_nl": "GeneriekeNaam",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {
+        "nl": "TODO"
+      },
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Instant",
+      "name": {
+        "nl": "TM_Instant"
+      },
+      "sort_nl": "TM_Instant",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {
+        "nl": "TODO"
+      },
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
+      "name": {
+        "nl": "TM_Object"
+      },
+      "sort_nl": "TM_Object",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {
+        "nl": "TODO"
+      },
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Period",
+      "name": {
+        "nl": "TM_Period"
+      },
+      "sort_nl": "TM_Period",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {
+        "nl": "TODO"
+      },
+      "parents": [
+        {
+          "name": "Dekking",
+          "label": "Dekking",
+          "package": "DublinCore",
+          "uri": "http://fixme.com#Dekking",
+          "scoped_uri": "http://fixme.com#Dekking"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "uri": "http://def.isotc211.org/iso19156/2011/Observation#NamedValue",
+      "name": {
+        "nl": "BenoemdeWaarde"
+      },
+      "sort_nl": "BenoemdeWaarde",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {
+        "nl": "TODO"
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#NamedValue.name",
+          "name": {
+            "nl": "naam"
+          },
+          "sort_nl": "naam",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#NamedValue",
+              "EA-Name": "BenoemdeWaarde"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "GeneriekeNaam",
+              "range_uri": "http://def.isotc211.org/iso19103/2005/Names#GenericName"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#GeneriekeNaam",
+              "range_puri": "http://def.isotc211.org/iso19103/2005/Names#GenericName",
+              "range_label": {
+                "nl": "GeneriekeNaam"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/Observation#NamedValue.value",
+          "name": {
+            "nl": "waarde"
+          },
+          "sort_nl": "waarde",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/Observation#NamedValue",
+              "EA-Name": "BenoemdeWaarde"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Any",
+              "range_uri": "http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Any"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#GeneriekDatatype",
+              "range_puri": "http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Any",
+              "range_label": {
+                "nl": "GeneriekDatatype"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://www.w3.org/ns/adms#Identifier",
+      "name": {
+        "nl": "Identificator"
+      },
+      "sort_nl": "Identificator",
+      "description": {
+        "nl": "Informatie gebruikt om een object uniek te identificeren."
+      },
+      "usage": {
+        "nl": "Uitgangspunt hier is dat deze string door een organisatie wordt toegekend en dat dit gebeurt volgens een welbepaald systeem. Meer uitgebreide beschrijving in het AP OSLO-Generiek."
+      },
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid",
+      "name": {
+        "nl": "StandaardEenheid"
+      },
+      "sort_nl": "StandaardEenheid",
+      "description": {
+        "nl": "Eenheid vastgelegd door een standaardiserende organisatie."
+      },
+      "usage": {
+        "nl": "Datatype kan een URI zijn of een GetypeerdeString. In het eerste geval wordt verwezen naar op het web gepubliceerde eenheden, bij voorkeur deze van qudt, bv http://qudt.org/vocab/unit/M voor meter. In het geval van een  GetypeerdeString gaat de voorkeur naar de UCUM-codes, bv \"km/h\"^^http://w3id.org/lindt/custom_datatypes#ucumunit."
+      },
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "https://schema.org/Number",
+      "name": {
+        "nl": "Getal"
+      },
+      "sort_nl": "Getal",
+      "description": {
+        "nl": "Aanduiding van een hoeveelheid."
+      },
+      "usage": {
+        "nl": "In praktijk de primitieve datatypes waarmee een hoeveelheid kan worden aangeduid,zie xsd datatypes float,double,decimal,integer etc."
+      },
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "https://schema.org/QuantitativeValue",
+      "name": {
+        "nl": "KwantitatieveWaarde"
+      },
+      "sort_nl": "KwantitatieveWaarde",
+      "description": {
+        "nl": "Aanduiding van de kwantiteit van een bepaald kenmerk van een object."
+      },
+      "usage": {
+        "nl": "Bv de hoogte van een object,het gewicht,de temperatuur etc. Het gaat om een kenmerk dat numeriek uitgedrukt kan worden en in een bepaalde eenheid. Kwalitatieve aanduidingen zoals hoog,laag ed vallen hier dus niet onder."
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://schema.org/unitCode",
+          "name": {
+            "nl": "standaard eenheid"
+          },
+          "sort_nl": "standaard eenheid",
+          "description": {
+            "nl": "De gestandaardiseerde eenheid waarin de waarde is uitgedrukt."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://schema.org/QuantitativeValue",
+              "EA-Name": "KwantitatieveWaarde"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "StandaardEenheid",
+              "range_uri": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#StandaardEenheid",
+              "range_puri": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid",
+              "range_label": {
+                "nl": "StandaardEenheid"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://schema.org/unitText",
+          "name": {
+            "nl": "eenheid"
+          },
+          "sort_nl": "eenheid",
+          "description": {
+            "nl": "De eenheid waarin de waarde is uitgedrukt."
+          },
+          "usage": {
+            "nl": "Te gebruiken als geen standaard eenheid gekend is."
+          },
+          "domain": [
+            {
+              "uri": "https://schema.org/QuantitativeValue",
+              "EA-Name": "KwantitatieveWaarde"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://schema.org/value",
+          "name": {
+            "nl": "waarde"
+          },
+          "sort_nl": "waarde",
+          "description": {
+            "nl": "Getal waarmee de kwantiteit van het kenmerk kan worden uitgedrukt."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://schema.org/QuantitativeValue",
+              "EA-Name": "KwantitatieveWaarde"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Getal",
+              "range_uri": "https://schema.org/Number"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Getal",
+              "range_puri": "https://schema.org/Number",
+              "range_label": {
+                "nl": "Getal"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    }
+  ],
+  "parents": [],
+  "documentroot": "/doc/applicatieprofiel/waterkwaliteit/ontwerpstandaard/2021-11-02"
+}

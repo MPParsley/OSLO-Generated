@@ -1,0 +1,610 @@
+{
+  "@context": {
+    "@vocab": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap",
+    "qb": "http://purl.org/linked-data/cube#",
+    "qb:codeList": {
+      "@type": "@id"
+    },
+    "sh": "http://www.w3.org/ns/shacl#",
+    "sh:class": {
+      "@type": "@id"
+    },
+    "sh:datatype": {
+      "@type": "@id"
+    },
+    "sh:maxCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:minCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:path": {
+      "@type": "@id"
+    },
+    "sh:property": {
+      "@type": "@id"
+    },
+    "sh:targetClass": {
+      "@type": "@id"
+    },
+    "shapes": {
+      "@type": "@id"
+    }
+  },
+  "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap",
+  "shapes": [
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#GeneriekeNaamShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://def.isotc211.org/iso19103/2005/Names#GenericName"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#AnyShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Any"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#MaatShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:description": "De hoeveelheid.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "maat",
+          "sh:path": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure.value"
+        }
+      ],
+      "sh:targetClass": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#TM_InstantShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Instant"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#TM_ObjectShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#TM_PeriodShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Period"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#KenmerktypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://def.isotc211.org/iso19109/2005/GeneralFeatureModel#GF_PropertyType"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#DQ_ElementShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_Element"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#MetadataShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://def.isotc211.org/iso19115/2006/MetadataEntitySetInformation#MD_Metadata"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#ObjectShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+          "sh:description": "Observaties die een waarde geven aan Kenmerken van het Object;",
+          "sh:name": "waardeverschaffer",
+          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#waardeverschaffer"
+        }
+      ],
+      "sh:targetClass": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#MetingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://def.isotc211.org/iso19156/2011/Measurement#OM_Measurement"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#BenoemdeWaardeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://def.isotc211.org/iso19103/2005/Names#GenericName",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "naam",
+          "sh:path": "http://def.isotc211.org/iso19156/2011/Observation#NamedValue.name"
+        },
+        {
+          "sh:class": "http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Any",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "waarde",
+          "sh:path": "http://def.isotc211.org/iso19156/2011/Observation#NamedValue.value"
+        }
+      ],
+      "sh:targetClass": "http://def.isotc211.org/iso19156/2011/Observation#NamedValue"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#ObservatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
+          "sh:description": "Het moment waarop het resultaat van de Observatie van toepassing was.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "fenomeentijd",
+          "sh:path": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.phenomenonTime"
+        },
+        {
+          "sh:class": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+          "sh:description": "Observaties waarvan de resultaten op een of andere manier samenhangen.",
+          "sh:name": "geassocieerdeObservatie",
+          "sh:path": "http://def.isotc211.org/iso19156/2011/Observation#ObservationContext.relatedObservation"
+        },
+        {
+          "sh:class": "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure",
+          "sh:description": "TODO",
+          "sh:name": "gebruikteProcedure",
+          "sh:path": "http://fixme.com"
+        },
+        {
+          "sh:class": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Period",
+          "sh:description": "Periode waarvoor het resultaat van de Observatie geldt.",
+          "sh:maxCount": "1",
+          "sh:name": "geldigeTijd",
+          "sh:path": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.validTime"
+        },
+        {
+          "sh:class": "http://def.isotc211.org/iso19109/2005/GeneralFeatureModel#GF_PropertyType",
+          "sh:description": "Kenmerk dat men observeert vh geobserveerdObject.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "geobserveerdKenmerk",
+          "sh:path": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.observedProperty"
+        },
+        {
+          "sh:class": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
+          "sh:description": "Object dat men observeert.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "geobserveerdObject",
+          "sh:path": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.featureOfInterest"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "TODO",
+          "sh:name": "identificator",
+          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#identificator"
+        },
+        {
+          "sh:class": "http://def.isotc211.org/iso19115/2006/MetadataEntitySetInformation#MD_Metadata",
+          "sh:description": "Verwijzing naar Metadata over de Observatie.",
+          "sh:maxCount": "1",
+          "sh:name": "metadata",
+          "sh:path": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.metadata"
+        },
+        {
+          "sh:class": "http://def.isotc211.org/iso19156/2011/Observation#NamedValue",
+          "sh:description": "Willekeurig gegeven gassocieerd met het gebeuren van de Observatie.",
+          "sh:name": "parameter",
+          "sh:path": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.parameter"
+        },
+        {
+          "sh:class": "http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Any",
+          "sh:description": "De waarde van het geobserveerdeKenmerk als resultaat van de Observatie.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "resultaat",
+          "sh:path": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.result"
+        },
+        {
+          "sh:class": "http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_Element",
+          "sh:description": "Mate waarin het resultaat van de Observatie voldoet aan de vereisten of verwachtingen.",
+          "sh:name": "resultaatkwaliteit",
+          "sh:path": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.resultQuality"
+        },
+        {
+          "sh:class": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Instant",
+          "sh:description": "Tijdstip waarop het resultaat van de Observatie werd bekomen.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "resultaattijd",
+          "sh:path": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.resultTime"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatietype",
+          "sh:description": "TODO",
+          "sh:name": "type",
+          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#type"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Agent",
+          "sh:description": "TODO",
+          "sh:name": "uitgevoerdDoor",
+          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#uitgevoerdDoor"
+        },
+        {
+          "sh:class": "https://www.w3.org/TR/vocab-ssn/#SOSASensor",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "uitgevoerdMetSensor",
+          "sh:path": "http://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatiecontext.observatie.target"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#ProcesShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.OM_Process"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#BemonsteringsobjectShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
+          "sh:description": "Ander Bemonsteringsobject waarmee het Bemonsteringsobject geassocieerd is.",
+          "sh:name": "geassocieerdBemonsteringsobject",
+          "sh:path": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SamplingFeatureComplex.relatedSamplingFeature"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/observaties-en-metingen#BemonsteringsobjectComplex.bemonsteringsobject.target"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#BioIndicatorObservationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Any",
+          "sh:description": "Result of the BioIndicatorObservation.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "bioIndicator",
+          "sh:path": "http://fixme.com#bioIndicator"
+        },
+        {
+          "sh:class": "http://fixme.com#BioIndicatorType",
+          "sh:description": "Type of the observedProperty.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "observedProperty",
+          "sh:path": "http://fixme.com#observedProperty"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#BioIndicatorObservation"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#BioIndicatorTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#BioIndicatorType"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#BioticIndexObservationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure",
+          "sh:description": "Result of the BioticIndexObservation.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "bioticIndex",
+          "sh:path": "http://fixme.com#bioticIndex"
+        },
+        {
+          "sh:class": "http://fixme.com#BioticIndexType",
+          "sh:description": "Type of the observedProperty.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "observedProperty",
+          "sh:path": "http://fixme.com#observedProperty"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#BioticIndexObservation"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#BioticIndexTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#BioticIndexType"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#ChemicalAgentConcentrationObservationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure",
+          "sh:description": "Result of the ChemicalAgentConcentrationObservation.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "chemicalAgentConcentration",
+          "sh:path": "http://fixme.com#chemicalAgentConcentration"
+        },
+        {
+          "sh:class": "http://fixme.com#ChemicalAgentType",
+          "sh:description": "Type of substance.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "observedProperty",
+          "sh:path": "http://fixme.com#observedProperty"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#ChemicalAgentConcentrationObservation"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#ChemicalAgentTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#ChemicalAgentType"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#ProcedureShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Procedure"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#WaterFeatureShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#WaterFeatureType",
+          "sh:description": "Type of WaterFeature.",
+          "sh:maxCount": "1",
+          "sh:name": "type",
+          "sh:path": "http://fixme.com#type"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#WaterFeature"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#WaterFeatureTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#WaterFeatureType"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#WaterQualityObservationCollectionShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
+          "sh:description": "A reference to the Object that is observed bij the Observations in the Collection.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "^hasFeatureOfInterest",
+          "sh:path": "http://fixme.com#^hasFeatureOfInterest"
+        },
+        {
+          "sh:class": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
+          "sh:description": "The moment when the result of the Observation in the Collection was applicable.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "^phenomenonTime",
+          "sh:path": "http://fixme.com#^phenomenonTime"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#WaterQualityObservationCollection"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#WaterQualityParameterObservationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#WaterQualityParameterType",
+          "sh:description": "Tyoe of the obserdedProperty.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "observedProperty",
+          "sh:path": "http://fixme.com#observedProperty"
+        },
+        {
+          "sh:class": "http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure",
+          "sh:description": "Result of the WaterQualityParameterObservation.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "waterQualityParameterResult",
+          "sh:path": "http://fixme.com#waterQualityParameterResult"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#WaterQualityParameterObservation"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#WaterQualityParameterTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#WaterQualityParameterType"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#AgentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://purl.org/dc/terms/Agent"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#IdentificatorShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/ns/adms#Identifier"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#StandaardEenheidShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#ObservatietypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatietype"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#GetalShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://schema.org/Number"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#KwantitatieveWaardeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "De eenheid waarin de waarde is uitgedrukt.",
+          "sh:maxCount": "1",
+          "sh:name": "eenheid",
+          "sh:path": "https://schema.org/unitText"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid",
+          "sh:description": "De gestandaardiseerde eenheid waarin de waarde is uitgedrukt.",
+          "sh:maxCount": "1",
+          "sh:name": "standaardEenheid",
+          "sh:path": "https://schema.org/unitCode"
+        },
+        {
+          "sh:class": "https://schema.org/Number",
+          "sh:description": "Getal waarmee de kwantiteit van het kenmerk kan worden uitgedrukt.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "waarde",
+          "sh:path": "https://schema.org/value"
+        }
+      ],
+      "sh:targetClass": "https://schema.org/QuantitativeValue"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#ObservatieverzamelingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#ObservatieprocedureShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#SensorShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+          "sh:description": "TODO",
+          "sh:name": "uitgevoerdeObservatie",
+          "sh:path": "http://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://www.w3.org/TR/vocab-ssn/#SOSASensor"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#SysteemShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://www.w3.org/TR/vocab-ssn/#ssn-system"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#BemonsteringsobjectComplexShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
+          "sh:description": "Referentie naar verbonden klasse.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "Bemonsteringsobject",
+          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#BemonsteringsobjectComplex.bemonsteringsobject.source"
+        },
+        {
+          "sh:class": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
+          "sh:description": "Referentie naar verbonden klasse.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "Bemonsteringsobject",
+          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#BemonsteringsobjectComplex.bemonsteringsobject.target"
+        }
+      ]
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#ObservatiecontextShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+          "sh:description": "Referentie naar verbonden klasse.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "Observatie",
+          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatiecontext.observatie.source"
+        },
+        {
+          "sh:class": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+          "sh:description": "Referentie naar verbonden klasse.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "Observatie",
+          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatiecontext.observatie.target"
+        }
+      ]
+    }
+  ]
+}
