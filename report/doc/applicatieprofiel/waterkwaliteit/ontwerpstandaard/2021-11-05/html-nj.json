@@ -12,8 +12,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/tree/dea9ed69e0e4c6ab23bf459cc67c39aca19b38d3",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/blob/dea9ed69e0e4c6ab23bf459cc67c39aca19b38d3/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/tree/260c4d88b0647e8e090dd3384e23b7c58c0877d2",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/blob/260c4d88b0647e8e090dd3384e23b7c58c0877d2/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/standaard-in-ontwikkeling/vocabularium-en-applicatieprofiel-oslo-waterkwaliteit.html",
     "usesVocs": [],
@@ -741,10 +741,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Agens",
+              "range_uri": "#Agent",
               "range_puri": "http://purl.org/dc/terms/Agent",
               "range_label": {
-                "nl": "Agens"
+                "nl": "Agent"
               }
             }
           ],
@@ -790,6 +790,42 @@
         }
       ],
       "properties": [
+        {
+          "uri": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature.sampledFeature",
+          "name": {
+            "nl": "bemonsterdObject"
+          },
+          "sort_nl": "bemonsterdObject",
+          "description": {
+            "nl": "Verwijzing naar het Object dat men wil bemonsteren."
+          },
+          "usage": {
+            "nl": "Bv een profiel bemonstert een water- of atmosferische kolom, een peilput bemonstert het water in een watervoerende laag, een weefselstaalbemonstert een deel van een organisme."
+          },
+          "domain": [
+            {
+              "uri": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
+              "EA-Name": "Bemonsteringsobject"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "WaterObject",
+              "range_uri": "http://fixme.com#WaterObject"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#WaterObject",
+              "range_puri": "http://fixme.com#WaterObject",
+              "range_label": {
+                "nl": "WaterObject"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
         {
           "uri": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SamplingFeatureComplex.relatedSamplingFeature",
           "name": {
@@ -923,9 +959,9 @@
     {
       "uri": "http://fixme.com#BiotischeIndexObservatie",
       "name": {
-        "nl": "BioticIndexObservation"
+        "nl": "BiotischeIndexObservation"
       },
-      "sort_nl": "BioticIndexObservation",
+      "sort_nl": "BiotischeIndexObservation",
       "description": {
         "nl": "Observatie die de biologische kwaliteit van water beoordeeld op een bepaalde schaal gebaseerd op welke organismen aanwezig zijn in het water en in welke kwantiteit deze aanwezig zijn."
       },
@@ -1212,6 +1248,40 @@
       ],
       "properties": [
         {
+          "uri": "http://fixme.com",
+          "name": {
+            "nl": "lid"
+          },
+          "sort_nl": "lid",
+          "description": {
+            "nl": "Een referentie naar het object dat geobserveerd werd tijdens de observaties in de collectie. "
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://fixme.com#WaterkwaliteitObservatieVerzameling",
+              "EA-Name": "WaterkwaliteitObservatieVerzameling"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Observatie",
+              "range_uri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Observatie",
+              "range_puri": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+              "range_label": {
+                "nl": "Observatie"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://fixme.com#^fenomeentijd",
           "name": {
             "nl": "^fenomeentijd"
@@ -1383,9 +1453,9 @@
     {
       "uri": "http://purl.org/dc/terms/Agent",
       "name": {
-        "nl": "Agens"
+        "nl": "Agent"
       },
-      "sort_nl": "Agens",
+      "sort_nl": "Agent",
       "description": {
         "nl": "Iemand die of iets dat kan handelen of een effect kan teweeg brengen."
       },
