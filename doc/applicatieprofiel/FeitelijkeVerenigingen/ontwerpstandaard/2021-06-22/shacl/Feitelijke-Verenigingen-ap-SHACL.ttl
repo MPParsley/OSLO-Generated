@@ -8,26 +8,26 @@
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap> <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-apshapes> <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#RoltypeShape>,
-    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#BewijstypeShape>,
-    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ActiviteitTypeShape>,
+<https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap> <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-apshapes> <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#BewijsShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ErkenningShape>,
-    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#IdentificatorShape>,
-    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#AgentShape>,
-    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ContactinfoShape>,
-    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PeriodeShape>,
-    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#FeitelijkeVerenigingShape>,
-    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ErkenningstypeShape>,
-    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#heeftVerantwoordelijkeShape>,
-    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#BewijsShape>,
-    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#KostShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PubliekeOrganisatieShape>,
-    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#CriteriumVereisteShape>,
-    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PubliekeDienstverleningShape>,
-    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#AdresvoorstellingShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PeriodeShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#TaalStringShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#RoltypeShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#IdentificatorShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#KostShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#FeitelijkeVerenigingShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#AdresvoorstellingShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#CriteriumVereisteShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ActiviteitTypeShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PubliekeDienstverleningShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#AgentShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ErkenningstypeShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#BewijstypeShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ErkenningsaanvraagShape>,
-    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#GeregistreerdeOrganisatieShape> .
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#GeregistreerdeOrganisatieShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ContactinfoShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#heeftVerantwoordelijkeShape> .
 
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ActiviteitTypeShape> a shacl:NodeShape;
   shacl:closed false;
@@ -36,17 +36,11 @@
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#AdresvoorstellingShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:string;
-    shacl:description "Code waarmee het geografisch gebied dat adressen voor postale doeleinden groepeert wordt aangeduid.";
+    shacl:class rdf:langString;
+    shacl:description "Straatnaam vh adres.";
     shacl:maxCount 1;
-    shacl:name "postcode";
-    shacl:path <http://www.w3.org/ns/locn#postCode>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:description "Officieel toegekende alfanumerieke code die wordt toegevoegd aan het huisnummer om meerdere gebouweenheden, standplaatsen, ligplaatsen of percelen te onderscheiden die eenzelfde huisnummer hebben.";
-    shacl:maxCount 1;
-    shacl:name "busnummer";
-    shacl:path <https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer>
+    shacl:name "straatnaam";
+    shacl:path <http://www.w3.org/ns/locn#thoroughfare>
   ], [
     shacl:datatype xsd:string;
     shacl:description "Alfanumerieke code officieel toegekend aan gebouweenheden, ligplaatsen, standplaatsen of percelen.";
@@ -55,22 +49,28 @@
     shacl:path <https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer>
   ], [
     shacl:class rdf:langString;
-    shacl:description "Land waarin het adres gelegen is.";
-    shacl:maxCount 1;
-    shacl:name "land";
-    shacl:path <https://data.vlaanderen.be/ns/adres#land>
-  ], [
-    shacl:class rdf:langString;
     shacl:description "Gemeentenaam vh adres.";
     shacl:maxCount 1;
     shacl:name "gemeentenaam";
     shacl:path <https://data.vlaanderen.be/ns/adres#gemeentenaam>
   ], [
-    shacl:class rdf:langString;
-    shacl:description "Straatnaam vh adres.";
+    shacl:datatype xsd:string;
+    shacl:description "Officieel toegekende alfanumerieke code die wordt toegevoegd aan het huisnummer om meerdere gebouweenheden, standplaatsen, ligplaatsen of percelen te onderscheiden die eenzelfde huisnummer hebben.";
     shacl:maxCount 1;
-    shacl:name "straatnaam";
-    shacl:path <http://www.w3.org/ns/locn#thoroughfare>
+    shacl:name "busnummer";
+    shacl:path <https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Code waarmee het geografisch gebied dat adressen voor postale doeleinden groepeert wordt aangeduid.";
+    shacl:maxCount 1;
+    shacl:name "postcode";
+    shacl:path <http://www.w3.org/ns/locn#postCode>
+  ], [
+    shacl:class rdf:langString;
+    shacl:description "Land waarin het adres gelegen is.";
+    shacl:maxCount 1;
+    shacl:name "land";
+    shacl:path <https://data.vlaanderen.be/ns/adres#land>
   ];
   shacl:targetClass <http://www.w3.org/ns/locn#Address> .
 
@@ -102,17 +102,6 @@
     shacl:name "beschrijving";
     shacl:path dc:description
   ], [
-    shacl:description "Taal waarin het aangeboden bewijs moet zijn opgesteld.";
-    shacl:name "taal";
-    shacl:path dc:language
-  ], [
-    shacl:class rdf:langString;
-    shacl:description "Officiële naam van het bewijs.";
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "naam";
-    shacl:path dc:title
-  ], [
     shacl:datatype xsd:anyURI;
     shacl:description "Documentatie gerelateerd aan het bewijs.";
     shacl:name "documentatie";
@@ -123,6 +112,17 @@
     shacl:maxCount 1;
     shacl:name "type";
     shacl:path dc:type
+  ], [
+    shacl:description "Taal waarin het aangeboden bewijs moet zijn opgesteld.";
+    shacl:name "taal";
+    shacl:path dc:language
+  ], [
+    shacl:class rdf:langString;
+    shacl:description "Officiële naam van het bewijs.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "naam";
+    shacl:path dc:title
   ];
   shacl:targetClass <http://data.europa.eu/m8g/Evidence> .
 
@@ -133,29 +133,35 @@
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ContactinfoShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:string;
-    shacl:description "Telefoonnummer waarop men kan bellen.";
+    shacl:class rdf:langString;
+    shacl:description "Titel waarmee iemand wordt aangescrheven of aangesproken of waarmee naar iemand wordt verwezen.";
     shacl:maxCount 1;
-    shacl:name "telefoon";
-    shacl:path schema:telephone
+    shacl:name "aanschrijfvorm";
+    shacl:path vcard:honorific-prefix
   ], [
     shacl:datatype xsd:string;
-    shacl:description "Faxnummer waarnaar men kan faxen.";
+    shacl:description "Naam van de persoon die men kan contacteren.";
     shacl:maxCount 1;
-    shacl:name "fax";
-    shacl:path schema:faxNumber
-  ], [
-    shacl:datatype xsd:anyURI;
-    shacl:description "Website waarnaar men kan surfen.";
-    shacl:maxCount 1;
-    shacl:name "website";
-    shacl:path foaf:page
+    shacl:name "contactnaam";
+    shacl:path foaf:name
   ], [
     shacl:datatype xsd:string;
     shacl:description "Emailadres waarnaar men kan mailen.";
     shacl:maxCount 1;
     shacl:name "email";
     shacl:path schema:email
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Telefoonnummer waarop men kan bellen.";
+    shacl:maxCount 1;
+    shacl:name "telefoon";
+    shacl:path schema:telephone
+  ], [
+    shacl:datatype xsd:anyURI;
+    shacl:description "Website waarnaar men kan surfen.";
+    shacl:maxCount 1;
+    shacl:name "website";
+    shacl:path foaf:page
   ], [
     shacl:class <http://www.w3.org/ns/locn#Address>;
     shacl:description "Adres dat men kan aanschrijven of bezoeken.";
@@ -164,39 +170,39 @@
     shacl:path <http://www.w3.org/ns/locn#address>
   ], [
     shacl:datatype xsd:string;
-    shacl:description "Naam van de persoon die men kan contacteren.";
+    shacl:description "Faxnummer waarnaar men kan faxen.";
     shacl:maxCount 1;
-    shacl:name "contactnaam";
-    shacl:path foaf:name
-  ], [
-    shacl:class rdf:langString;
-    shacl:description "Titel waarmee iemand wordt aangescrheven of aangesproken of waarmee naar iemand wordt verwezen.";
-    shacl:maxCount 1;
-    shacl:name "aanschrijfvorm";
-    shacl:path vcard:honorific-prefix
+    shacl:name "fax";
+    shacl:path schema:faxNumber
   ];
   shacl:targetClass schema:ContactPoint .
 
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#CriteriumVereisteShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class rdf:langString;
-    shacl:description "Officiële naam van de criteriumvereiste.";
-    shacl:maxCount 1;
-    shacl:name "naam";
-    shacl:path dc:title
-  ], [
     shacl:datatype xsd:string;
     shacl:description "Een beknopte omschrijving van de criteriumvereiste.";
     shacl:maxCount 1;
     shacl:name "beschrijving";
     shacl:path dc:description
+  ], [
+    shacl:class rdf:langString;
+    shacl:description "Officiële naam van de criteriumvereiste.";
+    shacl:maxCount 1;
+    shacl:name "naam";
+    shacl:path dc:title
   ];
   shacl:targetClass <http://data.europa.eu/m8g/CriterionRequirement> .
 
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ErkenningShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <http://fixme.com#Periode>;
+    shacl:description "Tijdsinterval waarbinnen de erkenning van toepassing is.";
+    shacl:maxCount 1;
+    shacl:name "geldigheidsperiode";
+    shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geldigheidsperiode>
+  ], [
     shacl:datatype xsd:string;
     shacl:description "Een beknopte omschrijving van de erkenning.";
     shacl:maxCount 1;
@@ -214,23 +220,12 @@
     shacl:minCount 1;
     shacl:name "type";
     shacl:path dc:type
-  ], [
-    shacl:class <http://fixme.com#Periode>;
-    shacl:description "Tijdsinterval waarbinnen de erkenning van toepassing is.";
-    shacl:maxCount 1;
-    shacl:name "geldigheidsperiode";
-    shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geldigheidsperiode>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning> .
 
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ErkenningsaanvraagShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://data.europa.eu/m8g/CriterionRequirement>;
-    shacl:description "Verwijzing naar de criteriumvereiste dit van toepassing is op de erkenningsaanvraag.";
-    shacl:name "criteriumvereiste";
-    shacl:path <http://data.europa.eu/m8g/hasCriterion>
-  ], [
     shacl:datatype xsd:string;
     shacl:description "Het resultaat van de erkenningsaanvraag.";
     shacl:maxCount 1;
@@ -254,6 +249,11 @@
     shacl:description "Bewijsstuk(ken) dat moet(en) voorgelegd worden om de erkenning te kunnen verkrijgen.";
     shacl:name "input";
     shacl:path <http://purl.org/vocab/cpsv#hasInput>
+  ], [
+    shacl:class <http://data.europa.eu/m8g/CriterionRequirement>;
+    shacl:description "Verwijzing naar de criteriumvereiste dit van toepassing is op de erkenningsaanvraag.";
+    shacl:name "criteriumvereiste";
+    shacl:path <http://data.europa.eu/m8g/hasCriterion>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag> .
 
@@ -264,24 +264,15 @@
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#FeitelijkeVerenigingShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:string;
-    shacl:description "Officiële naam van de feitelijke vereniging.";
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "naam";
-    shacl:path dc:title
+    shacl:class <http://purl.org/vocab/cpsv#PublicService>;
+    shacl:description "Verwijzing naar de publieke dienstverlening die de feitelijke vereniging aanvraagt.";
+    shacl:name "vraagtAan";
+    shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#vraagtAan>
   ], [
-    shacl:class <http://www.w3.org/ns/adms#Identifier>;
-    shacl:description "Identificator van het object.";
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "identificator";
-    shacl:path <http://www.w3.org/ns/adms#Identifier>
-  ], [
-    shacl:class skos:Concept;
-    shacl:description "Het werk van personen, een groep of een organisatie om een bepaald doel te bereiken.";
-    shacl:name "activiteit";
-    shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Activiteit>
+    shacl:class <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning>;
+    shacl:description "Verwijzing naar de erkenning(en) die de feitelijke vereniging heeft.";
+    shacl:name "heeftErkenning";
+    shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftErkenning>
   ], [
     shacl:class <http://www.w3.org/ns/locn#Address>;
     shacl:description "Geeft aan wat het adres is van de feitelijke vereniging.";
@@ -290,31 +281,40 @@
     shacl:name "adres";
     shacl:path <https://data.vlaanderen.be/ns/adres#Adres>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning>;
-    shacl:description "Verwijzing naar de erkenning(en) die de feitelijke vereniging heeft.";
-    shacl:name "heeftErkenning";
-    shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftErkenning>
+    shacl:class <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag>;
+    shacl:description "De erkenningsaanvraag die ingediend wordt door de feitelijke vereninging.";
+    shacl:name "dientIn";
+    shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#dientIn>
   ], [
     shacl:class <http://www.w3.org/ns/regorg#RegisteredOrganization>;
     shacl:description "Verwijzing naar de organisatie waar de feitelijke vereniging deel van uitmaakt.";
     shacl:name "IsDeelVan";
     shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#isDeelVan>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag>;
-    shacl:description "De erkenningsaanvraag die ingediend wordt door de feitelijke vereninging.";
-    shacl:name "dientIn";
-    shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#dientIn>
+    shacl:class skos:Concept;
+    shacl:description "Het werk van personen, een groep of een organisatie om een bepaald doel te bereiken.";
+    shacl:name "activiteit";
+    shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Activiteit>
+  ], [
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:description "Identificator van het object.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "identificator";
+    shacl:path <http://www.w3.org/ns/adms#Identifier>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Officiële naam van de feitelijke vereniging.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "naam";
+    shacl:path dc:title
   ], [
     shacl:class dc:Agent;
     shacl:description "Verwijzing naar de leden die deel uitmaken van de feitelijke vereniging.";
     shacl:minCount 1;
     shacl:name "heeftLid";
     shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftLid>
-  ], [
-    shacl:class <http://purl.org/vocab/cpsv#PublicService>;
-    shacl:description "Verwijzing naar de publieke dienstverlening die de feitelijke vereniging aanvraagt.";
-    shacl:name "vraagtAan";
-    shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#vraagtAan>
   ];
   shacl:targetClass <https://test.data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke.feitelijkeVereniging> .
 
@@ -334,19 +334,19 @@
     shacl:name "^vestiging";
     shacl:path org:hasSite
   ], [
-    shacl:class <http://www.w3.org/ns/adms#Identifier>;
-    shacl:description "Identificator dat de organisatie verkreeg bij registratie.";
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "registratie";
-    shacl:path <http://www.w3.org/ns/regorg#registration>
-  ], [
     shacl:class <http://fixme.com#Oprichting>;
     shacl:description "Verwijst naar het verandersinsmoment dat tot de huidige organisatie heeft geleid.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "^isHetresultaatVan";
     shacl:path org:resultedFrom
+  ], [
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:description "Identificator dat de organisatie verkreeg bij registratie.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "registratie";
+    shacl:path <http://www.w3.org/ns/regorg#registration>
   ], [
     shacl:class <http://fixme.com#Rechtsvorm>;
     shacl:description "Juridisch statuut van de geregistreerde organisatie.";
@@ -363,17 +363,17 @@
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#KostShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:string;
-    shacl:description "Beschrijving van de kost.";
-    shacl:maxCount 1;
-    shacl:name "beschrijving";
-    shacl:path dc:description
-  ], [
     shacl:datatype xsd:double;
     shacl:description "Omvang van de kost, uitgedrukt in de opgegeven munteenheid.";
     shacl:maxCount 1;
     shacl:name "waarde";
     shacl:path <http://data.europa.eu/m8g/value>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Beschrijving van de kost.";
+    shacl:maxCount 1;
+    shacl:name "beschrijving";
+    shacl:path dc:description
   ];
   shacl:targetClass <http://data.europa.eu/m8g/Cost> .
 
@@ -398,16 +398,16 @@
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PubliekeDienstverleningShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://purl.org/vocab/cpsv#PublicService>;
-    shacl:description "Publieke dienstverlening die voorafgaandelijk moet worden uitgevoerd om van de publieke dienstverlening gebruik te kunnen maken.";
-    shacl:name "vereist";
-    shacl:path dc:requires
-  ], [
     shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
     shacl:description "Publieke organisatie die verantwoordelijk is voor het aanbieden en beheren van de publieke dienstverlening.";
     shacl:minCount 1;
     shacl:name "verantwoordelijke";
     shacl:path <http://data.europa.eu/m8g/hasCompetentAuthority>
+  ], [
+    shacl:class <http://purl.org/vocab/cpsv#PublicService>;
+    shacl:description "Publieke dienstverlening die voorafgaandelijk moet worden uitgevoerd om van de publieke dienstverlening gebruik te kunnen maken.";
+    shacl:name "vereist";
+    shacl:path dc:requires
   ], [
     shacl:class <http://data.europa.eu/m8g/Cost>;
     shacl:description "Kostprijs verbonden aan het gebruik van de publieke dienstverlening.";
@@ -421,15 +421,15 @@
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PubliekeOrganisatieShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag>;
-    shacl:description "Verwijzing naar de controle die de publieke organisatie doet in het kader van de erkenningsaavraag van de feitelijke vereniging.";
-    shacl:name "controleert";
-    shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#controleert>
-  ], [
     shacl:class <https://test.data.vlaanderen.be/ns/FeitelijkeVerenigingen#Plaats>;
     shacl:description "Administratief gebied dat de Publieke Organisatie dekt.";
     shacl:name "werkingsgebied";
     shacl:path dc:spatial
+  ], [
+    shacl:class <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag>;
+    shacl:description "Verwijzing naar de controle die de publieke organisatie doet in het kader van de erkenningsaavraag van de feitelijke vereniging.";
+    shacl:name "controleert";
+    shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#controleert>
   ];
   shacl:targetClass <http://data.europa.eu/m8g/PublicOrganisation> .
 
@@ -444,19 +444,18 @@
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#heeftVerantwoordelijkeShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging>;
-    shacl:description "Referentie naar verbonden klasse.";
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "FeitelijkeVereniging";
-    shacl:path <https://test.data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke.feitelijkeVereniging>
-  ], [
     shacl:class skos:Concept;
     shacl:description "De rol die de verantwoordelijke heeft binnen de feitelijke vereniging.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "rol";
     shacl:path <http://data.europa.eu/m8g/role>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Een beknopte omschrijving van de verantwoordelijke.";
+    shacl:maxCount 1;
+    shacl:name "beschrijving";
+    shacl:path dc:description
   ], [
     shacl:class dc:Agent;
     shacl:description "Referentie naar verbonden klasse.";
@@ -465,10 +464,11 @@
     shacl:name "Agent";
     shacl:path <https://test.data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke.agent>
   ], [
-    shacl:datatype xsd:string;
-    shacl:description "Een beknopte omschrijving van de verantwoordelijke.";
+    shacl:class <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging>;
+    shacl:description "Referentie naar verbonden klasse.";
     shacl:maxCount 1;
-    shacl:name "beschrijving";
-    shacl:path dc:description
+    shacl:minCount 1;
+    shacl:name "FeitelijkeVereniging";
+    shacl:path <https://test.data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke.feitelijkeVereniging>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke> .

@@ -70,7 +70,7 @@
           "sh:path": "https://data.vlaanderen.be/ns/grondboringen#dikte"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#MateriaalBekistingType",
+          "sh:class": "https://data.vlaanderen.be/ns/grondboringen#MateriaalBekistingType",
           "sh:description": "Materiaal waaruit de Bekisting bestaat.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -223,7 +223,7 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Boringinclinatietype",
+          "sh:class": "https://data.vlaanderen.be/ns/grondboringen#Boringinclinatietype",
           "sh:description": "Algemene aanduiding van de richting waaronder werd geboord.",
           "sh:maxCount": "1",
           "sh:name": "inclinatietype",
@@ -237,7 +237,7 @@
           "sh:path": "https://data.vlaanderen.be/ns/grondboringen#methode"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Boringstartpunttype",
+          "sh:class": "https://data.vlaanderen.be/ns/grondboringen#Boringstartpunttype",
           "sh:description": "Aard van het oppervlak waarop de boorkraag is geplaatst.",
           "sh:maxCount": "1",
           "sh:name": "startpunt",
@@ -306,6 +306,20 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "https://data.vlaanderen.be/ns/grondboringen#Boringdoeltype"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#BoringinclinatietypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/grondboringen#Boringinclinatietype"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#BoringstartpunttypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/grondboringen#Boringstartpunttype"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#GrondboringShape",
@@ -385,20 +399,20 @@
           "sh:path": "https://data.vlaanderen.be/ns/grondboringen#^huidigeLocatie"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Materiaalklasse",
-          "sh:description": "Basisclassificatie vh materiaal waaruit het Grondmonster bestaat.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "^materiaalklasse",
-          "sh:path": "https://data.vlaanderen.be/ns/grondboringen#^materiaalklasse"
-        },
-        {
           "sh:class": "https://data.vlaanderen.be/ns/grondboringen#Boorgat",
           "sh:description": "Verwijzing naar de Grondboring waarmee het grondmonster is bekomen.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "grondboring",
           "sh:path": "https://data.vlaanderen.be/ns/grondboringen#grondboring"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Materiaalklasse",
+          "sh:description": "Basisclassificatie vh materiaal waaruit het Grondmonster bestaat.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "materiaalklasse",
+          "sh:path": "https://data.vlaanderen.be/ns/grondboringen#materiaalklasse"
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/grondboringen#Grondmonstertype",
@@ -438,6 +452,13 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "https://data.vlaanderen.be/ns/grondboringen#Grondobjecttype"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#MateriaalBekistingTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/grondboringen#MateriaalBekistingType"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#WettelijkKaderBoringShape",
@@ -649,7 +670,7 @@
           "sh:path": "http://fixme.com#implementeert"
         },
         {
-          "sh:class": "http://fixme.com#Bemonsteraartype",
+          "sh:class": "https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonsteraartype",
           "sh:description": "TODO",
           "sh:name": "type",
           "sh:path": "http://fixme.com#type"
@@ -662,13 +683,6 @@
         }
       ],
       "sh:targetClass": "http://fixme.com#Bemonsteraar"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#BemonsteraartypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#Bemonsteraartype"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#BemonsteringShape",
@@ -698,7 +712,7 @@
           "sh:path": "http://fixme.com#conditie"
         },
         {
-          "sh:class": "http://fixme.com#Bemonsteringsdoel",
+          "sh:class": "https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonsteringsdoel",
           "sh:description": "TODO",
           "sh:name": "doel",
           "sh:path": "http://fixme.com#doel"
@@ -723,7 +737,7 @@
           "sh:path": "http://fixme.com"
         },
         {
-          "sh:class": "http://fixme.com#Bemonsteringstype",
+          "sh:class": "https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonsteringstype",
           "sh:description": "TODO",
           "sh:name": "type",
           "sh:path": "http://fixme.com#type"
@@ -753,13 +767,6 @@
       "sh:targetClass": "http://fixme.com#Bemonstering"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#BemonsteringsdoelShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#Bemonsteringsdoel"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#BemonsteringsprocedureShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -783,27 +790,13 @@
           "sh:path": "http://fixme.com#specificatie"
         },
         {
-          "sh:class": "http://fixme.com#Bemonsteringsproceduretype",
+          "sh:class": "https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonsteringsproceduretype",
           "sh:description": "TODO",
           "sh:name": "type",
           "sh:path": "http://fixme.com#type"
         }
       ],
       "sh:targetClass": "http://fixme.com#Bemonsteringsprocedure"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#BemonsteringsproceduretypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#Bemonsteringsproceduretype"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#BemonsteringstypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#Bemonsteringstype"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#CurveWaardepaarShape",
@@ -934,20 +927,6 @@
       "sh:targetClass": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Bemonsteringsobjecttype"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#BoringinclinatietypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Boringinclinatietype"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#BoringstartpunttypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Boringstartpunttype"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#DiepteShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -1013,13 +992,6 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Maaiveldtype"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#MateriaalBekistingTypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#MateriaalBekistingType"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#MateriaalklasseShape",
@@ -1106,6 +1078,34 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#DiscreetCurveBereik"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#BemonsteraartypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonsteraartype"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#BemonsteringsdoelShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonsteringsdoel"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#BemonsteringsproceduretypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonsteringsproceduretype"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#BemonsteringstypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Bemonsteringstype"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-grondboringen#GetalShape",
