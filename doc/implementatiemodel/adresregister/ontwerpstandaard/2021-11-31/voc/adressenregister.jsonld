@@ -230,7 +230,7 @@
     "next": "/doc/applicatieprofiel/adressenregister/ontwerpdocument/2020-01-06"
   },
   "publication-date": "2021-11-31",
-  "publication-state": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
+  "publication-state": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
   "title": "Adressenregister",
   "dcterms:license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
   "dcterms:mediator": {
@@ -296,37 +296,6 @@
       }
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/adres#Gemeentenaam",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "description": {
-        "nl": "Adrescomponent die verwijst naar de naam ve gemeente, ttz het kleinste administratieve deel van het Belgisch grondgebied waarvan de grenzen enkel door de wetgever kunnen worden gewijzigd."
-      },
-      "name": {
-        "nl": "Gemeentenaam"
-      },
-      "parents": [
-        "http://data.europa.eu/m8g/Output"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/adres#Ligplaats",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "description": {
-        "nl": "Een door het bevoegde gemeentelijke orgaan als zodanig aangewezen plaats in het water al dan niet aangevuld met een op de oever aanwezig terrein of een gedeelte daarvan, die bestemd is voor het permanent afmeren van een voor woon-, bedrijfsmatige of recreatieve doeleinden geschikt vaartuig."
-      },
-      "name": {
-        "nl": "Ligplaats"
-      },
-      "parents": [
-        "http://data.europa.eu/m8g/Output",
-        "https://data.vlaanderen.be/ns/adres#AdresseerbaarObject"
-      ],
-      "usage": {
-        "nl": "Bv plaats voor woonboot."
-      }
-    },
-    {
       "@id": "https://data.vlaanderen.be/ns/adres#Locatieaanduiding",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
@@ -337,20 +306,6 @@
       },
       "parents": [],
       "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/adres#Locatienaam",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "description": {
-        "nl": "Naam of omschrijving vh het geografisch object dat een adreslocator aanduidt."
-      },
-      "name": {
-        "nl": "Locatienaam"
-      },
-      "parents": [],
-      "usage": {
-        "nl": "Bvb de naam ve gebouw of deel ve gebouw of de naam ve kamer in een gebouw."
-      }
     },
     {
       "@id": "https://data.vlaanderen.be/ns/adres#Postinfo",
@@ -365,23 +320,6 @@
         "http://data.europa.eu/m8g/Output"
       ],
       "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/adres#Standplaats",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "description": {
-        "nl": "Een door het bevoegde gemeentelijke orgaan als zodanig aangewezen terrein of gedeelte daarvan dat bestemd is voor het permanent plaatsen van een niet direct en niet duurzaam met de aarde verbonden en voor woon -, bedrijfsmatige, of recreatieve doeleinden "
-      },
-      "name": {
-        "nl": "Standplaats"
-      },
-      "parents": [
-        "http://data.europa.eu/m8g/Output",
-        "https://data.vlaanderen.be/ns/adres#AdresseerbaarObject"
-      ],
-      "usage": {
-        "nl": "Bv plaats voor stacaravan."
-      }
     },
     {
       "@id": "https://data.vlaanderen.be/ns/adres#Straatnaam",
@@ -400,6 +338,78 @@
   ],
   "properties": [
     {
+      "@id": "https://data.vlaanderen.be/ns/adres#Adres.heeftGemeentenaam",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Gemeentenaamcomponent van het adres."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/adres#Adres"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "heeft gemeentenaam"
+      },
+      "range": [
+        "https://basisregisters.vlaanderen.be/ns/adres#Gemeente"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/adres#Adres.heeftStraatnaam",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Straatnaamcomponent van het adres."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/adres#Adres"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "heeft straatnaam"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/adres#Straatnaam"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/adres#Adres.isToegekendAan",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Adresseerbaar object waaraan het adres is toegekend."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/adres#Adres"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "is toegekend aan"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/adres#AdresseerbaarObject"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/adres#Adres.isVerrijktMet",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Verwijzing naar een adresuitbreiding. "
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/adres#Adres"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "is verrijkt met"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/adres#Adresuitbreiding"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://data.vlaanderen.be/ns/adres#Adres.status",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
@@ -414,6 +424,62 @@
       },
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/adres#Adres.verwijstNaar",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Adres waarvan de adresvoorstelling is afgeleid."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/adres#Adres"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "verwijst naar"
+      },
+      "range": [
+        "http://www.w3.org/ns/locn#Address"
+      ],
+      "usage": {
+        "nl": "Dit kan enkel voor Belgische adressen aangezien onder adres een Belgisch adres wordt verstaan."
+      }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/adres#AdresseerbaarObject.isToegekendAan",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Adresseerbaar object waaraan het adres is toegekend."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/adres#AdresseerbaarObject"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "is toegekend aan"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/adres#Adres"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/adres#Adresuitbreiding.isVerrijktMet",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Verwijzing naar een adresuitbreiding. "
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/adres#Adresuitbreiding"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "is verrijkt met"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/adres#Adres"
       ],
       "usage": {}
     },
@@ -462,6 +528,44 @@
       }
     },
     {
+      "@id": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.verwijstNaar",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Adres waarvan de adresvoorstelling is afgeleid."
+      },
+      "domain": [
+        "http://www.w3.org/ns/locn#Address"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "verwijst naar"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/adres#Adres"
+      ],
+      "usage": {
+        "nl": "Dit kan enkel voor Belgische adressen aangezien onder adres een Belgisch adres wordt verstaan."
+      }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/adres#Gemeente.heeftGemeentenaam",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Gemeentenaamcomponent van het adres."
+      },
+      "domain": [
+        "https://basisregisters.vlaanderen.be/ns/adres#Gemeente"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "heeft gemeentenaam"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/adres#Adres"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://data.vlaanderen.be/ns/adres#Locatieaanduiding.aanduiding",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "description": {
@@ -498,20 +602,20 @@
       "usage": {}
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/adres#Locatienaam.type",
+      "@id": "https://data.vlaanderen.be/ns/adres#Straatnaam.heeftStraatnaam",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
-        "nl": "Aard vh geografisch object."
+        "nl": "Straatnaamcomponent van het adres."
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/adres#Locatienaam"
+        "https://data.vlaanderen.be/ns/adres#Straatnaam"
       ],
       "generalization": [],
       "name": {
-        "nl": "type"
+        "nl": "heeft straatnaam"
       },
       "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
+        "https://data.vlaanderen.be/ns/adres#Adres"
       ],
       "usage": {}
     },
@@ -548,24 +652,6 @@
       },
       "range": [
         "https://data.vlaanderen.be/ns/adres#Locatieaanduiding"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/adres#adresIsGelegenIn",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Plaats of gebied waarbinnen het Adres gelegen is."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/adres#Adresuitbreiding"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "is gelegen in"
-      },
-      "range": [
-        "http://purl.org/dc/terms/Location"
       ],
       "usage": {}
     },
@@ -644,24 +730,6 @@
       "usage": {}
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/adres#heeftStraatnaam",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Straatnaamcomponent van het adres."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/adres#Adres"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "heeft straatnaam"
-      },
-      "range": [
-        "https://data.vlaanderen.be/ns/adres#Straatnaam"
-      ],
-      "usage": {}
-    },
-    {
       "@id": "https://data.vlaanderen.be/ns/adres#homoniemToevoeging",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "description": {
@@ -694,60 +762,6 @@
       },
       "range": [
         "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/adres#isAfgeleidVan",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Gemeente waarvan de gemeentenaam is afgeleid."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/adres#Gemeentenaam"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "is afgeleid van"
-      },
-      "range": [
-        "https://data.vlaanderen.be/ns/generiek#Gemeente"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/adres#isToegekendAan",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Adresseerbaar object waaraan het adres is toegekend."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/adres#Adres"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "is toegekend aan"
-      },
-      "range": [
-        "https://data.vlaanderen.be/ns/adres#AdresseerbaarObject"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/adres#isVerrijktMet",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Verwijzing naar een adresuitbreiding. "
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/adres#Adres"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "is verrijkt met"
-      },
-      "range": [
-        "https://data.vlaanderen.be/ns/adres#Adresuitbreiding"
       ],
       "usage": {}
     },
@@ -890,26 +904,6 @@
       }
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/adres#verwijstNaar",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Adres waarvan de adresvoorstelling is afgeleid."
-      },
-      "domain": [
-        "http://www.w3.org/ns/locn#Address"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "verwijst naar"
-      },
-      "range": [
-        "https://data.vlaanderen.be/ns/adres#Adres"
-      ],
-      "usage": {
-        "nl": "Dit kan enkel voor Belgische adressen aangezien onder adres een Belgisch adres wordt verstaan."
-      }
-    },
-    {
       "@id": "https://data.vlaanderen.be/ns/adres#volledigAdres",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
@@ -935,14 +929,7 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "Locatorniveauwaarde"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Locatienaamtype"
+        "nl": "Statuswaarde"
       }
     },
     {
@@ -956,7 +943,14 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "Statuswaarde"
+        "nl": "Locatienaamtype"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Locatorniveauwaarde"
       }
     },
     {
@@ -965,6 +959,11 @@
       "name": {
         "nl": "Adresvoorstelling"
       }
+    },
+    {
+      "@id": "https://basisregisters.vlaanderen.be/ns/adres#Gemeente",
+      "@type": "rdfs:Class",
+      "name": {}
     }
   ],
   "externalproperties": [
@@ -972,7 +971,7 @@
       "@id": "http://www.w3.org/2000/01/rdf-schema#label",
       "@type": "rdf:Property",
       "name": {
-        "nl": "naam"
+        "nl": "straatnaam"
       }
     },
     {
@@ -980,13 +979,6 @@
       "@type": "rdf:Property",
       "name": {
         "nl": "gemeentenaam"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2000/01/rdf-schema#label",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "straatnaam"
       }
     },
     {
@@ -1057,6 +1049,34 @@
       "@type": "rdf:Property",
       "name": {
         "nl": "straatnaam"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/prov#wasAttributedTo",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "is toegekend door"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/prov#wasAttributedTo",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "is toegekend door"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/prov#wasAttributedTo",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "is toegekend door"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/prov#wasAttributedTo",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "is toegekend door"
       }
     }
   ],
