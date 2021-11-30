@@ -1,5 +1,5 @@
 {
-  "@id": "https://test.data.vlaanderen.be/ns/FeitelijkeVerenigingen",
+  "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen",
   "@type": "http://www.w3.org/2002/07/owl#Ontology",
   "authors": [
     {
@@ -168,10 +168,97 @@
     "foaf:mbox": "mailto:oslo@kb.vlaanderen.be",
     "foaf:name": "Data Vlaanderen"
   },
-  "classes": [],
+  "classes": [
+    {
+      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "De aanduiding door een bevoegde instelling waarbij wordt vastgesteld dat een persoon of instelling aan bepaalde eisen voldoet, al dan niet tijdelijk."
+      },
+      "name": {
+        "nl": "Erkenning"
+      },
+      "parents": [],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Het verzoek tot aanduiding door een bevoegde instelling waarbij wordt vastgesteld dat een persoon of instelling aan bepaalde eisen voldoet, al dan niet tijdelijk."
+      },
+      "name": {
+        "nl": "Erkenningsaanvraag"
+      },
+      "parents": [],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Een Feitelijke Vereniging bestaat uit twee of meerdere personen en/of organisaties, heeft geen rechtspersoonlijkheid en streeft een belangeloos doel na."
+      },
+      "name": {
+        "nl": "FeitelijkeVereniging"
+      },
+      "parents": [
+        "To Do"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Verwijzing naar de verantwoordelijke persoon van de feitelijke vereniging."
+      },
+      "name": {
+        "nl": "heeftVerantwoordelijke"
+      },
+      "parents": [],
+      "usage": {}
+    }
+  ],
   "properties": [
     {
-      "@id": "https://test.data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke.agent",
+      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Activiteit",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Het werk van personen, een groep of een organisatie om een bepaald doel te bereiken."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "activiteit"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geldigheidsperiode",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Tijdsinterval waarbinnen de erkenning van toepassing is."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "geldigheidsperiode"
+      },
+      "range": [
+        "http://fixme.com#Periode"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke.agent",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
         "nl": "Referentie naar verbonden klasse."
@@ -189,7 +276,7 @@
       "usage": {}
     },
     {
-      "@id": "https://test.data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke.feitelijkeVereniging",
+      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke.feitelijkeVereniging",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
         "nl": "Referentie naar verbonden klasse."
@@ -262,34 +349,6 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "ActiviteitType"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Erkenning"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Erkenningsaanvraag"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "FeitelijkeVereniging"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "heeftVerantwoordelijke"
       }
     }
   ],
@@ -477,13 +536,6 @@
       }
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Activiteit",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "activiteit"
-      }
-    },
-    {
       "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#dientIn",
       "@type": "rdf:Property",
       "name": {
@@ -495,13 +547,6 @@
       "@type": "rdf:Property",
       "name": {
         "nl": "geeftRechtOp"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geldigheidsperiode",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "geldigheidsperiode"
       }
     },
     {
