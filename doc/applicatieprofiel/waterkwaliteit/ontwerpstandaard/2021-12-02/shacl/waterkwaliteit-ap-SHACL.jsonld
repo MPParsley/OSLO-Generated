@@ -78,7 +78,7 @@
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/generiek#WettelijkKader",
-          "sh:description": "TODO",
+          "sh:description": "Het wettelijk kader gerelateerd aan de emmissie.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "wettelijkKader",
@@ -102,10 +102,19 @@
         },
         {
           "sh:class": "http://www.w3.org/ns/prov#Location",
+          "sh:description": "De locatie van de emissiebron.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "locatie",
           "sh:path": "http://fixme.com#locatie"
+        },
+        {
+          "sh:class": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
+          "sh:description": "Het object waarin de emissiebron de emissie uitstoot.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "ontvanger",
+          "sh:path": "http://fixme.com#ontvanger"
         }
       ],
       "sh:targetClass": "http://fixme.com#Emissiebron"
@@ -442,7 +451,7 @@
           "sh:path": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SamplingFeatureComplex.relatedSamplingFeature"
         }
       ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/observaties-en-metingen#BemonsteringsobjectComplex.bemonsteringsobject.target"
+      "sh:targetClass": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#ActiviteitShape",
@@ -755,29 +764,6 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "https://www.w3.org/TR/vocab-ssn/#ssn-system"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#BemonsteringsobjectComplexShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
-          "sh:description": "Referentie naar verbonden klasse.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "Bemonsteringsobject",
-          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#BemonsteringsobjectComplex.bemonsteringsobject.source"
-        },
-        {
-          "sh:class": "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature",
-          "sh:description": "Referentie naar verbonden klasse.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "Bemonsteringsobject",
-          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#BemonsteringsobjectComplex.bemonsteringsobject.target"
-        }
-      ]
     }
   ]
 }
