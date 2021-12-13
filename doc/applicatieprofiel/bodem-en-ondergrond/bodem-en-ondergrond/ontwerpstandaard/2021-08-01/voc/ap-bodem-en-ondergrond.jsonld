@@ -99,13 +99,29 @@
       "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Diepte",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
-        "nl": "TODO"
+        "nl": "Verticale maat naar beneden vanaf het grondoppervlak."
       },
       "name": {
         "nl": "Diepte"
       },
       "parents": [],
       "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Erkenning",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Officiële toelating toegekend aan een Persoon of Organisatie om een bepaald soort activiteiten uit te oefenen."
+      },
+      "name": {
+        "nl": "Erkenning"
+      },
+      "parents": [
+        "https://data.vlaanderen.be/ns/besluit#Besluit"
+      ],
+      "usage": {
+        "nl": "Bv de toelating aan een boormaatschappij om Boringen uit te voeren."
+      }
     },
     {
       "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemeting",
@@ -149,6 +165,20 @@
       "usage": {}
     },
     {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Grondwaterstand",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Bij het boren waargenomen peil van het grondwater op verschillende dieptes."
+      },
+      "name": {
+        "nl": "Grondwaterstand"
+      },
+      "parents": [],
+      "usage": {
+        "nl": "Het verloop van de Grondwaterstand wordt voorgesteld als een DiscreetPuntbereik, dwz dat ze verandert in discrete stappen (weergegeven door punten langs de Curve van de Boring) in functie van de diepte."
+      }
+    },
+    {
       "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Laag",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
@@ -168,7 +198,7 @@
       "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Maaiveld",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
-        "nl": "TODO"
+        "nl": "Het grondoppervlak, waarvan de hoogte vaak opgegeven wordt ten opzichte van een nationaal nul-niveau."
       },
       "name": {
         "nl": "Maaiveld"
@@ -182,6 +212,18 @@
       "description": {},
       "name": {
         "nl": "Maaiveldtype"
+      },
+      "parents": [],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Materiaalklasse",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "TODO"
+      },
+      "name": {
+        "nl": "Materiaalklasse"
       },
       "parents": [],
       "usage": {}
@@ -223,6 +265,20 @@
       },
       "parents": [],
       "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Opdracht",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Een te verrichten werk."
+      },
+      "name": {
+        "nl": "Opdracht"
+      },
+      "parents": [],
+      "usage": {
+        "nl": "TODO"
+      }
     },
     {
       "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Profielelement",
@@ -353,7 +409,7 @@
       "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#hoogte",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
-        "nl": "TODO"
+        "nl": "Verticale maat naar boven vanaf het grondoppervlak van het maaiveld."
       },
       "domain": [
         "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Maaiveld"
@@ -623,7 +679,7 @@
       "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#type",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
-        "nl": "TODO"
+        "nl": "Het type van maaiveld."
       },
       "domain": [
         "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Maaiveld"
@@ -636,6 +692,26 @@
         "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Maaiveldtype"
       ],
       "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#type",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Het soort activiteit dat mag worden uitgevoerd;"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Erkenning"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "type"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Erkenningtype"
+      ],
+      "usage": {
+        "nl": "Bv Boring voor Bemaling, voor Geotechniek etc."
+      }
     }
   ],
   "externals": [],
