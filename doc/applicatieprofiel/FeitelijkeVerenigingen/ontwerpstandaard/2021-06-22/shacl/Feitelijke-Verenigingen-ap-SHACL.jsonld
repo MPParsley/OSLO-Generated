@@ -34,6 +34,192 @@
   "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap",
   "shapes": [
     {
+      "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ErkenningShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Een beknopte omschrijving van de erkenning.",
+          "sh:maxCount": "1",
+          "sh:name": "beschrijving",
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://fixme.com#Periode",
+          "sh:description": "Tijdsinterval waarbinnen de erkenning van toepassing is.",
+          "sh:maxCount": "1",
+          "sh:name": "geldigheidsperiode",
+          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geldigheidsperiode"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/PublicOrganisation",
+          "sh:description": "Verijwzing naar de organisatie die de erkenning heeft toegekend aan de feitelijke vereniging.",
+          "sh:name": "toegekendDoor",
+          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#toegekenddoor"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningstype",
+          "sh:description": "De aard van de erkenning.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "type",
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ErkenningsaanvraagShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Een beknopte omschrijving van de erkenningsaanvraag.",
+          "sh:maxCount": "1",
+          "sh:name": "beschrijving",
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/CriterionRequirement",
+          "sh:description": "Verwijzing naar de criteriumvereiste dit van toepassing is op de erkenningsaanvraag.",
+          "sh:name": "criteriumvereiste",
+          "sh:path": "http://data.europa.eu/m8g/hasCriterion"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Het resultaat van de erkenningsaanvraag.",
+          "sh:maxCount": "1",
+          "sh:name": "erkenningsbeslissing",
+          "sh:path": "http://data.vlaanderen.be/ns/besluit#erkenningsbeslissing"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
+          "sh:description": "De erkenning die toegekend wordt op basis van de ingediende erkenningsaanvraag.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "geeftRechtOp",
+          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geeftrechtOp"
+        },
+        {
+          "sh:class": "http://fixme.com#Bewijs",
+          "sh:description": "Bewijsstuk(ken) dat moet(en) voorgelegd worden om de erkenning te kunnen verkrijgen.",
+          "sh:name": "input",
+          "sh:path": "http://purl.org/vocab/cpsv#hasInput"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#FeitelijkeVerenigingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/regorg#RegisteredOrganization",
+          "sh:description": "Verwijzing naar de organisatie waar de feitelijke vereniging deel van uitmaakt.",
+          "sh:name": "IsDeelVan",
+          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#isDeelVan"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Het werk van personen, een groep of een organisatie om een bepaald doel te bereiken.",
+          "sh:name": "activiteit",
+          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Activiteit"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Address",
+          "sh:description": "Geeft aan wat het adres is van de feitelijke vereniging.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "adres",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#Adres"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
+          "sh:description": "De erkenningsaanvraag die ingediend wordt door de feitelijke vereninging.",
+          "sh:name": "dientIn",
+          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#dientIn"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
+          "sh:description": "Verwijzing naar de erkenning(en) die de feitelijke vereniging heeft.",
+          "sh:name": "heeftErkenning",
+          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftErkenning"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Agent",
+          "sh:description": "Verwijzing naar de leden die deel uitmaken van de feitelijke vereniging.",
+          "sh:minCount": "1",
+          "sh:name": "heeftLid",
+          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftLid"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "Identificator van het object.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "identificator",
+          "sh:path": "http://www.w3.org/ns/adms#Identifier"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Officiële naam van de feitelijke vereniging.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "naam",
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://purl.org/vocab/cpsv#PublicService",
+          "sh:description": "Verwijzing naar de publieke dienstverlening die de feitelijke vereniging aanvraagt.",
+          "sh:name": "vraagtAan",
+          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#vraagtAan"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke.feitelijkeVereniging"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#heeftVerantwoordelijkeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://purl.org/dc/terms/Agent",
+          "sh:description": "Referentie naar verbonden klasse.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "Agent",
+          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke.agent"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+          "sh:description": "Referentie naar verbonden klasse.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "FeitelijkeVereniging",
+          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke.feitelijkeVereniging"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Een beknopte omschrijving van de verantwoordelijke.",
+          "sh:maxCount": "1",
+          "sh:name": "beschrijving",
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "De rol die de verantwoordelijke heeft binnen de feitelijke vereniging.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "rol",
+          "sh:path": "http://data.europa.eu/m8g/role"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#KostShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -153,7 +339,7 @@
           "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#controleert"
         },
         {
-          "sh:class": "http://fixme.com#Plaats",
+          "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Plaats",
           "sh:description": "Administratief gebied dat de Publieke Organisatie dekt.",
           "sh:name": "werkingsgebied",
           "sh:path": "http://purl.org/dc/terms/spatial"
@@ -167,7 +353,7 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "http://fixme.com#Contactinfo",
+          "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Contactinfo",
           "sh:description": "Informatie waarmee de verantwoordelijke kan gecontacteerd worden.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -183,7 +369,7 @@
           "sh:path": "http://www.w3.org/ns/adms#Identifier"
         }
       ],
-      "sh:targetClass": "http://fixme.com#heeftVerantwoordelijke.agent"
+      "sh:targetClass": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke.agent"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PubliekeDienstverleningShape",
@@ -408,192 +594,6 @@
         }
       ],
       "sh:targetClass": "http://www.w3.org/ns/regorg#RegisteredOrganization"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ErkenningShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "Een beknopte omschrijving van de erkenning.",
-          "sh:maxCount": "1",
-          "sh:name": "beschrijving",
-          "sh:path": "http://purl.org/dc/terms/description"
-        },
-        {
-          "sh:class": "http://fixme.com#Periode",
-          "sh:description": "Tijdsinterval waarbinnen de erkenning van toepassing is.",
-          "sh:maxCount": "1",
-          "sh:name": "geldigheidsperiode",
-          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geldigheidsperiode"
-        },
-        {
-          "sh:class": "http://data.europa.eu/m8g/PublicOrganisation",
-          "sh:description": "Verijwzing naar de organisatie die de erkenning heeft toegekend aan de feitelijke vereniging.",
-          "sh:name": "toegekendDoor",
-          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#toegekenddoor"
-        },
-        {
-          "sh:class": "http://fixme.com#Erkenningstype",
-          "sh:description": "De aard van de erkenning.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "type",
-          "sh:path": "http://purl.org/dc/terms/type"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ErkenningsaanvraagShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "Een beknopte omschrijving van de erkenningsaanvraag.",
-          "sh:maxCount": "1",
-          "sh:name": "beschrijving",
-          "sh:path": "http://purl.org/dc/terms/description"
-        },
-        {
-          "sh:class": "http://data.europa.eu/m8g/CriterionRequirement",
-          "sh:description": "Verwijzing naar de criteriumvereiste dit van toepassing is op de erkenningsaanvraag.",
-          "sh:name": "criteriumvereiste",
-          "sh:path": "http://data.europa.eu/m8g/hasCriterion"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "Het resultaat van de erkenningsaanvraag.",
-          "sh:maxCount": "1",
-          "sh:name": "erkenningsbeslissing",
-          "sh:path": "http://data.vlaanderen.be/ns/besluit#erkenningsbeslissing"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
-          "sh:description": "De erkenning die toegekend wordt op basis van de ingediende erkenningsaanvraag.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "geeftRechtOp",
-          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geeftrechtOp"
-        },
-        {
-          "sh:class": "http://fixme.com#Bewijs",
-          "sh:description": "Bewijsstuk(ken) dat moet(en) voorgelegd worden om de erkenning te kunnen verkrijgen.",
-          "sh:name": "input",
-          "sh:path": "http://purl.org/vocab/cpsv#hasInput"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#FeitelijkeVerenigingShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/ns/regorg#RegisteredOrganization",
-          "sh:description": "Verwijzing naar de organisatie waar de feitelijke vereniging deel van uitmaakt.",
-          "sh:name": "IsDeelVan",
-          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#isDeelVan"
-        },
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Het werk van personen, een groep of een organisatie om een bepaald doel te bereiken.",
-          "sh:name": "activiteit",
-          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Activiteit"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/locn#Address",
-          "sh:description": "Geeft aan wat het adres is van de feitelijke vereniging.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "adres",
-          "sh:path": "https://data.vlaanderen.be/ns/adres#Adres"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
-          "sh:description": "De erkenningsaanvraag die ingediend wordt door de feitelijke vereninging.",
-          "sh:name": "dientIn",
-          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#dientIn"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
-          "sh:description": "Verwijzing naar de erkenning(en) die de feitelijke vereniging heeft.",
-          "sh:name": "heeftErkenning",
-          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftErkenning"
-        },
-        {
-          "sh:class": "http://purl.org/dc/terms/Agent",
-          "sh:description": "Verwijzing naar de leden die deel uitmaken van de feitelijke vereniging.",
-          "sh:minCount": "1",
-          "sh:name": "heeftLid",
-          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftLid"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/adms#Identifier",
-          "sh:description": "Identificator van het object.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "identificator",
-          "sh:path": "http://www.w3.org/ns/adms#Identifier"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "Officiële naam van de feitelijke vereniging.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "naam",
-          "sh:path": "http://purl.org/dc/terms/title"
-        },
-        {
-          "sh:class": "http://purl.org/vocab/cpsv#PublicService",
-          "sh:description": "Verwijzing naar de publieke dienstverlening die de feitelijke vereniging aanvraagt.",
-          "sh:name": "vraagtAan",
-          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#vraagtAan"
-        }
-      ],
-      "sh:targetClass": "http://fixme.com#heeftVerantwoordelijke.feitelijkeVereniging"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#heeftVerantwoordelijkeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://purl.org/dc/terms/Agent",
-          "sh:description": "Referentie naar verbonden klasse.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "Agent",
-          "sh:path": "http://fixme.com#heeftVerantwoordelijke.agent"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
-          "sh:description": "Referentie naar verbonden klasse.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "FeitelijkeVereniging",
-          "sh:path": "http://fixme.com#heeftVerantwoordelijke.feitelijkeVereniging"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "Een beknopte omschrijving van de verantwoordelijke.",
-          "sh:maxCount": "1",
-          "sh:name": "beschrijving",
-          "sh:path": "http://purl.org/dc/terms/description"
-        },
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "De rol die de verantwoordelijke heeft binnen de feitelijke vereniging.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "rol",
-          "sh:path": "http://data.europa.eu/m8g/role"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke"
     }
   ]
 }

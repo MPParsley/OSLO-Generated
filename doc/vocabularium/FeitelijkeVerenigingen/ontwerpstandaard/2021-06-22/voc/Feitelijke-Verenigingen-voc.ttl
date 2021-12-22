@@ -21,35 +21,42 @@ schema:ContactPoint a rdfs:Class;
   rdfs:label "Contactinfo"@nl .
 
 skos:Concept a rdfs:Class;
-  rdfs:label "ActiviteitType"@nl,
-    "Erkenningstype"@nl,
-    "Bewijstype"@nl,
-    "Roltype"@nl .
+  rdfs:label "Erkenningstype"@nl,
+    "ActiviteitType"@nl,
+    "Roltype"@nl,
+    "Bewijstype"@nl .
 
-<https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning> a rdfs:Class;
-  rdfs:label "Erkenning"@nl .
+<https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Activiteit> a owl:ObjectProperty;
+  rdfs:label "activiteit"@nl;
+  rdfs:comment "Het werk van personen, een groep of een organisatie om een bepaald doel te bereiken."@nl;
+  rdfs:domain <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen>;
+  rdfs:range skos:Concept .
 
-<https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag> a rdfs:Class;
-  rdfs:label "Erkenningsaanvraag"@nl .
+<https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag> a owl:Class;
+  rdfs:label "Erkenningsaanvraag"@nl;
+  rdfs:comment "Het verzoek tot aanduiding door een bevoegde instelling waarbij wordt vastgesteld dat een persoon of instelling aan bepaalde eisen voldoet, al dan niet tijdelijk."@nl;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen> .
 
-<https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging> a rdfs:Class;
-  rdfs:label "FeitelijkeVereniging"@nl .
+<https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geldigheidsperiode> a owl:ObjectProperty;
+  rdfs:label "geldigheidsperiode"@nl;
+  rdfs:comment "Tijdsinterval waarbinnen de erkenning van toepassing is."@nl;
+  rdfs:domain <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen>;
+  rdfs:range <http://fixme.com#Periode> .
 
-<https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke> a rdfs:Class;
-  rdfs:label "heeftVerantwoordelijke"@nl .
-
-<https://test.data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke.agent> a owl:ObjectProperty;
+<https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke.agent> a owl:ObjectProperty;
   rdfs:label "agent"@nl;
   rdfs:comment "Referentie naar verbonden klasse."@nl;
   rdfs:domain <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke>;
-  rdfs:isDefinedBy <https://test.data.vlaanderen.be/ns/FeitelijkeVerenigingen>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen>;
   rdfs:range dc:Agent .
 
-<https://test.data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke.feitelijkeVereniging> a owl:ObjectProperty;
+<https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke.feitelijkeVereniging> a owl:ObjectProperty;
   rdfs:label "feitelijkeVereniging"@nl;
   rdfs:comment "Referentie naar verbonden klasse."@nl;
   rdfs:domain <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke>;
-  rdfs:isDefinedBy <https://test.data.vlaanderen.be/ns/FeitelijkeVerenigingen>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen>;
   rdfs:range <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging> .
 
 <http://data.europa.eu/m8g/endTime> a rdf:Property;
@@ -107,8 +114,10 @@ foaf:page a rdf:Property;
   rdfs:label "website"@nl,
     "documentatie"@nl .
 
-<https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Activiteit> a rdf:Property;
-  rdfs:label "activiteit"@nl .
+<https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning> a owl:Class;
+  rdfs:label "Erkenning"@nl;
+  rdfs:comment "De aanduiding door een bevoegde instelling waarbij wordt vastgesteld dat een persoon of instelling aan bepaalde eisen voldoet, al dan niet tijdelijk."@nl;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen> .
 
 <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#dientIn> a rdf:Property;
   rdfs:label "dientIn"@nl .
@@ -116,27 +125,115 @@ foaf:page a rdf:Property;
 <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geeftrechtOp> a rdf:Property;
   rdfs:label "geeftRechtOp"@nl .
 
-<https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geldigheidsperiode> a rdf:Property;
-  rdfs:label "geldigheidsperiode"@nl .
-
 <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftErkenning> a rdf:Property;
   rdfs:label "heeftErkenning"@nl .
 
 <https://data.vlaanderen.be/ns/adres#Adres> a rdf:Property;
   rdfs:label "adres"@nl .
 
-<https://test.data.vlaanderen.be/ns/FeitelijkeVerenigingen> a owl:Ontology;
+<https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging> a owl:Class;
+  rdfs:label "FeitelijkeVereniging"@nl;
+  rdfs:comment "Een Feitelijke Vereniging bestaat uit twee of meerdere personen en/of organisaties, heeft geen rechtspersoonlijkheid en streeft een belangeloos doel na."@nl;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen> .
+
+<https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke> a owl:Class;
+  rdfs:label "heeftVerantwoordelijke"@nl;
+  rdfs:comment "Verwijzing naar de verantwoordelijke persoon van de feitelijke vereniging."@nl;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen> .
+
+<https://data.vlaanderen.be/ns/FeitelijkeVerenigingen> a owl:Ontology;
   rdfs:label "Feitelijke-Verenigingen-voc"@nl,
     "Feitelijke-Verenigingen-voc"@en;
   dc:contributor [
     a foaf:Person;
     schema:affiliation [
-      foaf:homepage <https://medewerkerwebsiteurl>;
-      foaf:name "MedewerkerAffiliatie"
+      foaf:homepage <https://www.vgc.be/>;
+      foaf:name "VGC"
     ];
-    foaf:firstName "MedewerkerVoornaam";
-    foaf:lastName "MedewerkerNaam";
-    foaf:mbox <mailto:medewerkervoornaam.medewerkernaam@medewerkerdomein>
+    foaf:firstName "Kevin";
+    foaf:lastName "Friant";
+    foaf:mbox <mailto:kevin.friant@vgc.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.scoutsengidsenvlaanderen.be/>;
+      foaf:name "Scouts en Gidsen Vlaanderen"
+    ];
+    foaf:firstName "Tinus";
+    foaf:lastName "Van Langendonck";
+    foaf:mbox <mailto:tvl@scoutsengidsenvlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://stad.gent/nl>;
+      foaf:name "Stad Gent"
+    ];
+    foaf:firstName "Gudrun";
+    foaf:lastName "De Fauw";
+    foaf:mbox <mailto:Gudrun.DeFauw@district09.gent>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.sport.vlaanderen/>;
+      foaf:name "Sport Vlaanderen"
+    ];
+    foaf:firstName "Hans";
+    foaf:lastName "Ponnet";
+    foaf:mbox <mailto:Hans.Ponnet@sport.vlaanderen>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.defederatie.org/>;
+      foaf:name "De Federatie"
+    ];
+    foaf:firstName "Hannes";
+    foaf:lastName "Rengle";
+    foaf:mbox <mailto:hannesrengle@defederatie.org>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.formaat.be/>;
+      foaf:name "Formaat"
+    ];
+    foaf:firstName "Jakob";
+    foaf:lastName "Janssen";
+    foaf:mbox <mailto:jakob.janssen@formaat.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vvsg.be/>;
+      foaf:name "VVSG"
+    ];
+    foaf:firstName "Ward";
+    foaf:lastName "Vanhal";
+    foaf:mbox <mailto:ward.vanhal@vvsg.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.klj.be/>;
+      foaf:name "KLJ"
+    ];
+    foaf:firstName "Sander";
+    foaf:lastName "Malfliet";
+    foaf:mbox <mailto:sander.malfliet@klj.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://stad.gent/nl>;
+      foaf:name "Stad Gent"
+    ];
+    foaf:firstName "Danny";
+    foaf:lastName "Naert";
+    foaf:mbox <mailto:Danny.Naert@stad.gent>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.middelkerke.be/nl>;
+      foaf:name "Gemeente Middelkerke"
+    ];
+    foaf:firstName "Jacques";
+    foaf:lastName "Provoost";
+    foaf:mbox <mailto:jacques.provoost@middelkerke.be>
   ];
   dc:issued "TODO";
   dc:license "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
@@ -146,56 +243,68 @@ foaf:page a rdf:Property;
     foaf:mbox <mailto:oslo@kb.vlaanderen.be>;
     foaf:name "Data Vlaanderen"
   ];
-  rdfs:seeAlso <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Activiteit>,
-    <http://data.europa.eu/m8g/role>,
-    <http://data.europa.eu/m8g/PeriodOfTime>,
-    <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke>,
+  rdfs:seeAlso <http://data.europa.eu/m8g/PeriodOfTime>,
     <http://data.europa.eu/m8g/endTime>,
-    schema:telephone,
-    <http://data.vlaanderen.be/ns/besluit#erkenningsbeslissing>,
-    <http://data.europa.eu/m8g/hasCriterion>,
-    <http://purl.org/vocab/cpsv#hasInput>,
-    dc:title,
-    <http://data.europa.eu/m8g/CriterionRequirement>,
-    foaf:name,
-    <http://data.europa.eu/m8g/Evidence>,
-    <https://data.vlaanderen.be/ns/adres#Adres>,
-    schema:faxNumber,
-    schema:ContactPoint,
-    dc:description,
-    schema:email,
-    skos:Concept,
-    <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning>,
-    <http://www.w3.org/ns/adms#Identifier>,
-    vcard:honorific-prefix,
-    dc:language,
-    <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#dientIn>,
     dc:type,
-    <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geeftrechtOp>,
-    <http://data.europa.eu/m8g/startTime>,
-    <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geldigheidsperiode>,
+    dc:language,
     foaf:page,
-    <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftErkenning>,
+    dc:description,
+    foaf:name,
+    dc:title,
+    <http://data.europa.eu/m8g/role>,
+    schema:email,
+    schema:ContactPoint,
+    <http://data.europa.eu/m8g/Evidence>,
+    <http://data.europa.eu/m8g/CriterionRequirement>,
+    vcard:honorific-prefix,
+    skos:Concept,
+    <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#dientIn>,
+    <http://data.europa.eu/m8g/startTime>,
+    <http://purl.org/vocab/cpsv#hasInput>,
+    <https://data.vlaanderen.be/ns/adres#Adres>,
     <http://www.w3.org/ns/locn#address>,
-    <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag>,
-    <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging>;
+    schema:telephone,
+    <http://www.w3.org/ns/adms#Identifier>,
+    <http://data.europa.eu/m8g/hasCriterion>,
+    schema:faxNumber,
+    <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geeftrechtOp>,
+    <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftErkenning>,
+    <http://data.vlaanderen.be/ns/besluit#erkenningsbeslissing>;
   <http://www.w3.org/2001/02pd/rec54#editor> [
     a foaf:Person;
     schema:affiliation [
-      foaf:homepage <https://editorwebsiteurl>;
-      foaf:name "EditorAffiliatie"
+      foaf:homepage <https://www.pwc.be>;
+      foaf:name "PwC"
     ];
-    foaf:firstName "EditorVoornaam";
-    foaf:lastName "EditorNaam";
-    foaf:mbox <mailto:editorvoornaam.editornaam@editordomein>
+    foaf:firstName "Yves";
+    foaf:lastName "Meersmans";
+    foaf:mbox <mailto:yves.meersmans@pwc.com>
   ];
   foaf:maker [
     a foaf:Person;
     schema:affiliation [
-      foaf:homepage <https://auteurwebsiteurl>;
-      foaf:name "AuteurAffiliatie"
+      foaf:homepage <https://overheid.vlaanderen.be/>;
+      foaf:name "Departement Cultuur, Jeugd en Media"
     ];
-    foaf:firstName "AuteurVoornaam";
-    foaf:lastName "AuteurNaam";
-    foaf:mbox <mailto:auteurvoornaam.auteurnaam@auteurdomein>
+    foaf:firstName "Hamrouni";
+    foaf:lastName "Michel";
+    foaf:mbox <mailto:michel.hamrouni@vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/>;
+      foaf:name "Departement Cultuur, Jeugd en Media"
+    ];
+    foaf:firstName "Jeroen";
+    foaf:lastName "Devlieghere";
+    foaf:mbox <mailto:jeroen.devlieghere@vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://overheid.vlaanderen.be/>;
+      foaf:name "Departement Cultuur, Jeugd en Media"
+    ];
+    foaf:firstName "Nele";
+    foaf:lastName "Haegemans";
+    foaf:mbox <mailto:nele.haegemans@vlaanderen.be>
   ] .
