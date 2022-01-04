@@ -1,20 +1,20 @@
 {
   "metadata": {
     "title": {
-      "nl": "IP-Netwerk"
+      "nl": "Fietstelinstallatie"
     },
     "uri": "http://fixme.com",
     "issued": "2021-10-13",
-    "filename": "ipnetwerk",
+    "filename": "fietstelinstallatie",
     "navigation": {
-      "prev": "",
+      "prev": "/doc/implementatiemodel/fietstelinstallatie/ontwerpdocument/2.0.0",
       "self": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/ontwerpdocument/2.1.0"
     },
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
-    "status": "https://data.vlaanderen.be/doc/concept/StandaardStatus/KandidaatStandaard",
+    "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/ErkendeStandaard",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-wegenenverkeer/tree/e49a77878427f13bbf4cf2388f71399c9ee79b16",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-wegenenverkeer/blob/e49a77878427f13bbf4cf2388f71399c9ee79b16/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-wegenenverkeer/tree/4dca8a105deb86cba330797078d6d8b2a8e6ad41",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-wegenenverkeer/blob/4dca8a105deb86cba330797078d6d8b2a8e6ad41/CHANGELOG",
     "feedbackurl": "https://docs.google.com/forms/d/e/1FAIpQLSeaxOnrCkcarNHWI21YfPJ7sZChHVzOB2-P9ptzxkD9YX69-g/viewform",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
     "dependencies": [],
@@ -23,13 +23,26 @@
   },
   "classes": [
     {
-      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing",
+      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BevestigingGC",
       "name": {
-        "nl": "Behuizing"
+        "nl": "Bevestiging geluidswerende constructie"
       },
-      "sort_nl": "Behuizing",
+      "sort_nl": "Bevestiging geluidswerende constructie",
       "description": {
-        "nl": "Abstracte voor alle types van behuizing voor het beschermen van technieken."
+        "nl": "Abstracte om de bevestigingsrelatie naar de profielen en schermelementen van geluidswerende constructies te faciliteren."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Detectie",
+      "name": {
+        "nl": "Detectie"
+      },
+      "sort_nl": "Detectie",
+      "description": {
+        "nl": "Abstracte voor de overige detecties, zijnde die die niet onder de groepen \"niet weggebonden detecties\", \" weggebonden detecties\" of \"detectielussen\" vallen."
       },
       "usage": {},
       "parents": [
@@ -43,101 +56,89 @@
       ],
       "properties": [
         {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Bevestiging",
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Detectie.soortBewaking",
           "name": {
-            "nl": "bevestiging (target)"
+            "nl": "soort bewaking"
           },
-          "sort_nl": "bevestiging (target)",
+          "sort_nl": "soort bewaking",
           "description": {
-            "nl": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting."
+            "nl": "Type bewaking van de detectie."
           },
           "usage": {},
           "domain": [
             {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing",
-              "EA-Name": "Behuizing"
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Detectie",
+              "EA-Name": "Detectie"
             }
           ],
           "range": [
             {
-              "range_label": "Behuizing",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing"
+              "range_label": "KlVriBewaking",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Behuizing",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing",
+              "range_uri": "#VRI bewaking",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "nl": "Behuizing"
+                "nl": "VRI bewaking"
               }
             }
           ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
+          "cardinality": "1",
+          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVriBewaking"
+        }
+      ]
+    },
+    {
+      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Detectielus",
+      "name": {
+        "nl": "Detectielussen"
+      },
+      "sort_nl": "Detectielussen",
+      "description": {
+        "nl": "Abstracte voor een detectielus. Een detectielus is een kabel onder het wegdek die in staat is om voertuigen te detecteren teneinde de verkeersregelaar aan te sturen. Selectieve lussen zijn in staat om gecodeerde informatie door te geven van prioritaire voertuigen, niet-selectieve lussen geven informatie door van alle voertuigen die het detectie gebied passeren."
+      },
+      "usage": {},
+      "parents": [
         {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Bevestiging",
+          "name": "Detectie",
+          "label": "Detectie",
+          "package": "OSLO-Abstracten",
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Detectie",
+          "scoped_uri": "#Detectie"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Detectielus.afmetingenBL",
           "name": {
-            "nl": "bevestiging (source)"
+            "nl": "afmetingen b l"
           },
-          "sort_nl": "bevestiging (source)",
+          "sort_nl": "afmetingen b l",
           "description": {
-            "nl": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting."
+            "nl": "Afmetingen breedte x lengte van de lus."
           },
           "usage": {},
           "domain": [
             {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing",
-              "EA-Name": "Behuizing"
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Detectielus",
+              "EA-Name": "Detectielus"
             }
           ],
           "range": [
             {
-              "range_label": "Behuizing",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing"
+              "range_label": "DtcAfmetingBxlInM",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlInM"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Behuizing",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing",
+              "range_uri": "#Afmeting bxl in meter",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlInM",
               "range_label": {
-                "nl": "Behuizing"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing.adres",
-          "name": {
-            "nl": "adres"
-          },
-          "sort_nl": "adres",
-          "description": {
-            "nl": "Adres (aanduiding van de locatie) van de behuizing. Indien deze geen adres heeft, wordt net zoals door Fluvius voor cabines, het adres van een nabijgelegen straat genomen."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing",
-              "EA-Name": "Behuizing"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DtcAdres",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Adres",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres",
-              "range_label": {
-                "nl": "Adres"
+                "nl": "Afmeting bxl in meter"
               }
             }
           ],
@@ -145,71 +146,33 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing.risicoanalyse",
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Detectielus.bewakingstijd",
           "name": {
-            "nl": "risicoanalyse"
+            "nl": "bewakingstijd"
           },
-          "sort_nl": "risicoanalyse",
+          "sort_nl": "bewakingstijd",
           "description": {
-            "nl": "Een bestandsbijlage met de risicoanalyse voor werken in en rond een behuizing."
+            "nl": "Wachttijd (in uren) waarna een alarm pas mag optreden."
           },
-          "usage": {
-            "nl": "De risicoanalyse heeft in eerste instantie betrekking op werken in en rond een behuziing met elektrische installaties. Voor behuizingen met installaties van de distributienetbeheerder wordt de risicoanalyse bestemd voor die beheerder, bewaard in het gelijknamig attribuut van het onderdeel van die beheerder, bv. EnergiemeterDNB."
-          },
+          "usage": {},
           "domain": [
             {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing",
-              "EA-Name": "Behuizing"
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Detectielus",
+              "EA-Name": "Detectielus"
             }
           ],
           "range": [
             {
-              "range_label": "DtcDocument",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument"
+              "range_label": "DtcTijdsduur",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Bestandsbijlage",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument",
+              "range_uri": "#Tijdsduur",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur",
               "range_label": {
-                "nl": "Bestandsbijlage"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing.tabelUitwendigeInvloeden",
-          "name": {
-            "nl": "tabel uitwendige invloeden"
-          },
-          "sort_nl": "tabel uitwendige invloeden",
-          "description": {
-            "nl": "Een bestandsbijlage met de ingevulde en actuele tabel uitwendige invloeden zoals vereist door het AREI voor bepaalde elektrische installaties."
-          },
-          "usage": {
-            "nl": "De tabel is in eerste instantie enkel vereist voor behuizingen die elektrische installaties bevatten die onder het AREI vallen. "
-          },
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing",
-              "EA-Name": "Behuizing"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DtcDocument",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Bestandsbijlage",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument",
-              "range_label": {
-                "nl": "Bestandsbijlage"
+                "nl": "Tijdsduur"
               }
             }
           ],
@@ -219,401 +182,39 @@
       ]
     },
     {
-      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing",
+      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SelNietSelLus",
       "name": {
-        "nl": "Inloopbehuizing"
+        "nl": "Sel niet sel lussen"
       },
-      "sort_nl": "Inloopbehuizing",
+      "sort_nl": "Sel niet sel lussen",
       "description": {
-        "nl": "Een behuizing voor het beschermen van technieken en materialen waarin het omwille van de grootte en toegankelijkheid mogelijk is om rond te lopen."
+        "nl": "Abstracte klasse die de eigenschappen van selectieve en niet-selectieve lussen combineert."
       },
       "usage": {},
       "parents": [
         {
-          "name": "Behuizing",
-          "label": "Behuizing",
+          "name": "Detectielus",
+          "label": "Detectielussen",
           "package": "OSLO-Abstracten",
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing",
-          "scoped_uri": "#Behuizing"
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Detectielus",
+          "scoped_uri": "#Detectielussen"
         }
       ],
       "properties": [
         {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Bevestiging",
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SelNietSelLus.heeftMofInTrekput",
           "name": {
-            "nl": "bevestiging"
+            "nl": "heeft mof in trekput"
           },
-          "sort_nl": "bevestiging",
+          "sort_nl": "heeft mof in trekput",
           "description": {
-            "nl": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting."
+            "nl": "Aanduiding of de mof bereikbaar is via een trekput."
           },
           "usage": {},
           "domain": [
             {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing",
-              "EA-Name": "Inloopbehuizing"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Rack",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Rack",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack",
-              "range_label": {
-                "nl": "Rack"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.afmeting",
-          "name": {
-            "nl": "afmeting"
-          },
-          "sort_nl": "afmeting",
-          "description": {
-            "nl": "Buitenafmetingen van het bovengronds gedeelte van een behuizing waarin het in principe mogelijk is om rond te lopen omwille van de grootte en toegankelijkheid."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing",
-              "EA-Name": "Inloopbehuizing"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DtcAfmetingBxlxhInM",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInM"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Afmeting bxlxh in meter",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInM",
-              "range_label": {
-                "nl": "Afmeting bxlxh in meter"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.beschrijvingBereikbaarheid",
-          "name": {
-            "nl": "beschrijving bereikbaarheid"
-          },
-          "sort_nl": "beschrijving bereikbaarheid",
-          "description": {
-            "nl": "Een beschrijving van de omgeving van de behuizing in functie van de bereikbaarheid en toegankelijkheid voor werken en toezicht."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing",
-              "EA-Name": "Inloopbehuizing"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#String",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.grondplan",
-          "name": {
-            "nl": "grondplan"
-          },
-          "sort_nl": "grondplan",
-          "description": {
-            "nl": "Plattegrond van de behuizing met aanduidingen van de verschillende aanwezige elementen zoals kelder, kasten met kastnummers, toegangscontrole en meer."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing",
-              "EA-Name": "Inloopbehuizing"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DtcDocument",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Bestandsbijlage",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument",
-              "range_label": {
-                "nl": "Bestandsbijlage"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.inloopbehuizingMateriaal",
-          "name": {
-            "nl": "Cabine materiaal"
-          },
-          "sort_nl": "Cabine materiaal",
-          "description": {
-            "nl": "Materiaal waaruit de cabine vervaardigd is zonder buitenafwerking van dak of wanden."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing",
-              "EA-Name": "Inloopbehuizing"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KlAlgMateriaal",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Materiaal soorten",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "Materiaal soorten"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAlgMateriaal"
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.merk",
-          "name": {
-            "nl": "merk"
-          },
-          "sort_nl": "merk",
-          "description": {
-            "nl": "De merknaam volgens de fabrikant van een behuizing waarin het in principe mogelijk is om rond te lopen omwille van de grootte en toegankelijkheid."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing",
-              "EA-Name": "Inloopbehuizing"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KlCabineMerk",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Cabine merk",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "Cabine merk"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCabineMerk"
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing.modelnaam",
-          "name": {
-            "nl": "modelnaam"
-          },
-          "sort_nl": "modelnaam",
-          "description": {
-            "nl": "Naam waarmee de fabrikant het model identificeert van een behuizing waarin het in principe mogelijk is om rond te lopen omwille van de grootte en toegankelijkheid."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing",
-              "EA-Name": "Inloopbehuizing"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KlCabineModelnaam",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Cabine modelnaam",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "Cabine modelnaam"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlCabineModelnaam"
-        }
-      ]
-    },
-    {
-      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast",
-      "name": {
-        "nl": "Kast"
-      },
-      "sort_nl": "Kast",
-      "description": {
-        "nl": "Abstracte voor allerlei types kasten."
-      },
-      "usage": {},
-      "parents": [
-        {
-          "name": "Behuizing",
-          "label": "Behuizing",
-          "package": "OSLO-Abstracten",
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing",
-          "scoped_uri": "#Behuizing"
-        }
-      ],
-      "properties": [
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Bevestiging",
-          "name": {
-            "nl": "bevestiging"
-          },
-          "sort_nl": "bevestiging",
-          "description": {
-            "nl": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast",
-              "EA-Name": "Kast"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Rack",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Rack",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack",
-              "range_label": {
-                "nl": "Rack"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Bevestiging",
-          "name": {
-            "nl": "bevestiging"
-          },
-          "sort_nl": "bevestiging",
-          "description": {
-            "nl": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast",
-              "EA-Name": "Kast"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Netwerkelement",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Netwerkelement",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "range_label": {
-                "nl": "Netwerkelement"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast.afmeting",
-          "name": {
-            "nl": "afmeting"
-          },
-          "sort_nl": "afmeting",
-          "description": {
-            "nl": "Buitenafmeting van de kast als maximale breedte, lengte en hoogte in millimeter."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast",
-              "EA-Name": "Kast"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DtcAfmetingBxlxhInMm",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInMm"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Afmeting bxlxh in millimeter",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInMm",
-              "range_label": {
-                "nl": "Afmeting bxlxh in millimeter"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast.heeftVerlichting",
-          "name": {
-            "nl": "heeft verlichting"
-          },
-          "sort_nl": "heeft verlichting",
-          "description": {
-            "nl": "Geeft aan of er verlichting aanwezig is binnen de kast."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast",
-              "EA-Name": "Kast"
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SelNietSelLus",
+              "EA-Name": "SelNietSelLus"
             }
           ],
           "range": [
@@ -635,72 +236,94 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast.indelingsplan",
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SelNietSelLus.isPrioritair",
           "name": {
-            "nl": "indelingsplan"
+            "nl": "is prioritair"
           },
-          "sort_nl": "indelingsplan",
+          "sort_nl": "is prioritair",
           "description": {
-            "nl": "Schematisch overzicht van de indeling van de kast volgens de aanwezige technieken in vooraanzicht."
+            "nl": "Geeft aan of de lus prioritair hersteld moet worden bij defect."
           },
           "usage": {},
           "domain": [
             {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast",
-              "EA-Name": "Kast"
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SelNietSelLus",
+              "EA-Name": "SelNietSelLus"
             }
           ],
           "range": [
             {
-              "range_label": "DtcDocument",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument"
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Bestandsbijlage",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument",
+              "range_uri": "#Boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
               "range_label": {
-                "nl": "Bestandsbijlage"
+                "nl": "Boolean"
               }
             }
           ],
           "cardinality": "1",
           "codelist_uri": ""
-        },
+        }
+      ]
+    },
+    {
+      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SoftwareToegang",
+      "name": {
+        "nl": "Software toegang"
+      },
+      "sort_nl": "Software toegang",
+      "description": {
+        "nl": "Een abstracte waarmee een object kan connecteren naar software, al dan niet door gebruik te maken van de logische poort."
+      },
+      "usage": {},
+      "parents": [
         {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast.kastmateriaal",
+          "name": "AIMNaamObject",
+          "label": "AIM naam object",
+          "package": "OSLO-Implementatieelement",
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject",
+          "scoped_uri": "#AIM naam object"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Sturing",
           "name": {
-            "nl": "kastmateriaal"
+            "nl": "sturing"
           },
-          "sort_nl": "kastmateriaal",
+          "sort_nl": "sturing",
           "description": {
-            "nl": "Materiaal waaruit de kast is opgebouwd."
+            "nl": "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting."
           },
           "usage": {},
           "domain": [
             {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast",
-              "EA-Name": "Kast"
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SoftwareToegang",
+              "EA-Name": "SoftwareToegang"
             }
           ],
           "range": [
             {
-              "range_label": "KlAlgMateriaal",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+              "range_label": "Fietstelsysteem",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Materiaal soorten",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_uri": "#Fietstelsysteem",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem",
               "range_label": {
-                "nl": "Materiaal soorten"
+                "nl": "Fietstelsysteem"
               }
             }
           ],
-          "cardinality": "1",
-          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAlgMateriaal"
+          "cardinality": "",
+          "codelist_uri": ""
         }
       ]
     },
@@ -1201,13 +824,13 @@
       ]
     },
     {
-      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#IPBackbone",
+      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Fietstelinstallatie",
       "name": {
-        "nl": "IP backbone"
+        "nl": "Fietstelinstallatie"
       },
-      "sort_nl": "IP backbone",
+      "sort_nl": "Fietstelinstallatie",
       "description": {
-        "nl": "Netwerk dat bestaat uit meerdere L3 switches. Zij verbinden de verschillende L2 access structuren met de datacentres"
+        "nl": "Groepering van onderdelen die samen een installatie vormen voor het verzamelen van telgegevens over passerende fietsers en in sommige installaties het tonenvan de gegevens."
       },
       "usage": {},
       "parents": [
@@ -1222,203 +845,194 @@
       "properties": []
     },
     {
-      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#L2AccessStructuur",
+      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Batterij",
       "name": {
-        "nl": "L2 access structuur"
+        "nl": "Batterij"
       },
-      "sort_nl": "L2 access structuur",
+      "sort_nl": "Batterij",
       "description": {
-        "nl": "Opstelling die het mogelijk maakt om een techniek direct te koppelen met het IP telematica netwerk. Een L2 access structuur bestaat uit meerdere L2 Switches die met elkaar verbonden zijn."
+        "nl": "Element bestaande uit meerdere elektrochemische cellen voor het leveren van elektriciteit,die ontstaat door de omzetting van opgeslagen chemische energie in elektrische energie."
       },
       "usage": {},
       "parents": [
         {
-          "name": "NaampadObject",
-          "label": "Naampad object",
-          "package": "OSLO-Implementatieelement",
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject",
-          "scoped_uri": "#Naampad object"
-        }
-      ],
-      "properties": []
-    },
-    {
-      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link",
-      "name": {
-        "nl": "Link"
-      },
-      "sort_nl": "Link",
-      "description": {
-        "nl": "Het (glasvezel) traject tussen twee toestellen (NetwerkElementen) die rechtstreeks met mekaar communiceren."
-      },
-      "usage": {},
-      "parents": [
-        {
-          "name": "NaampadObject",
-          "label": "Naampad object",
-          "package": "OSLO-Implementatieelement",
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject",
-          "scoped_uri": "#Naampad object"
+          "name": "Voedingspunt",
+          "label": "Voedingspunt",
+          "package": "OSLO-Abstracten",
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Voedingspunt",
+          "scoped_uri": "#Voedingspunt"
         }
       ],
       "properties": [
         {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link.geleidingsgroepTnummer",
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Bevestiging",
           "name": {
-            "nl": "geleidingsgroep T-nummer"
+            "nl": "bevestiging"
           },
-          "sort_nl": "geleidingsgroep T-nummer",
+          "sort_nl": "bevestiging",
           "description": {
-            "nl": "T-nummer van de geleidingsgroep in de kabelnet toepassing."
+            "nl": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting."
           },
           "usage": {},
           "domain": [
             {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link",
-              "EA-Name": "Link"
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Batterij",
+              "EA-Name": "Batterij"
             }
           ],
           "range": [
             {
-              "range_label": "Integer",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
+              "range_label": "FietstelDisplay",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Geheel getal",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_uri": "#Fietstel display",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay",
               "range_label": {
-                "nl": "Geheel getal"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link.mediumtype",
-          "name": {
-            "nl": "mediumtype"
-          },
-          "sort_nl": "mediumtype",
-          "description": {
-            "nl": "Geeft aan hoe de verbinding tussen Netwerkelementen fysiek gerealiseerd wordt"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link",
-              "EA-Name": "Link"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KlNetwerklinkMediumtype",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Netwerklink mediumtype",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "Netwerklink mediumtype"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNetwerklinkMediumtype"
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link.ring",
-          "name": {
-            "nl": "ring"
-          },
-          "sort_nl": "ring",
-          "description": {
-            "nl": "Naam van de ringstructuur in het transport netwerk."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link",
-              "EA-Name": "Link"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#String",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VLAN",
-      "name": {
-        "nl": "VLAN"
-      },
-      "sort_nl": "VLAN",
-      "description": {
-        "nl": "Binnen de L2 access structuur vormt de VLAN een specifieke virtuele LAN. De toepassingen zijn verbonden met een specifieke VLAN.   Rechtstreekse communicatie tussen toepassingen is enkel mogelijk indien deze zijn verbonden met dezelfde VLAN."
-      },
-      "usage": {},
-      "parents": [
-        {
-          "name": "NaampadObject",
-          "label": "Naampad object",
-          "package": "OSLO-Implementatieelement",
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject",
-          "scoped_uri": "#Naampad object"
-        }
-      ],
-      "properties": [
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Hoort bij",
-          "name": {
-            "nl": "hoort bij"
-          },
-          "sort_nl": "hoort bij",
-          "description": {
-            "nl": "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VLAN",
-              "EA-Name": "VLAN"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "L2AccessStructuur",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#L2AccessStructuur"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#L2 access structuur",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#L2AccessStructuur",
-              "range_label": {
-                "nl": "L2 access structuur"
+                "nl": "Fietstel display"
               }
             }
           ],
           "cardinality": "",
           "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Voedt",
+          "name": {
+            "nl": "voedt"
+          },
+          "sort_nl": "voedt",
+          "description": {
+            "nl": "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Batterij",
+              "EA-Name": "Batterij"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Fietstelsysteem",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Fietstelsysteem",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem",
+              "range_label": {
+                "nl": "Fietstelsysteem"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Voedt",
+          "name": {
+            "nl": "voedt"
+          },
+          "sort_nl": "voedt",
+          "description": {
+            "nl": "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Batterij",
+              "EA-Name": "Batterij"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "FietstelDisplay",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Fietstel display",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay",
+              "range_label": {
+                "nl": "Fietstel display"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Batterij.merk",
+          "name": {
+            "nl": "merk"
+          },
+          "sort_nl": "merk",
+          "description": {
+            "nl": "Merk van de batterij."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Batterij",
+              "EA-Name": "Batterij"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "KlBatterijMerk",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Batterij merk",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Batterij merk"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBatterijMerk"
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Batterij.modelnaam",
+          "name": {
+            "nl": "modelnaam"
+          },
+          "sort_nl": "modelnaam",
+          "description": {
+            "nl": "Modelnaam van de batterij."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Batterij",
+              "EA-Name": "Batterij"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "KlBatterijModelnaam",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Batterij modelnaam",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Batterij modelnaam"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlBatterijModelnaam"
         }
       ]
     },
@@ -1444,6 +1058,560 @@
       "properties": []
     },
     {
+      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay",
+      "name": {
+        "nl": "Fietstel display"
+      },
+      "sort_nl": "Fietstel display",
+      "description": {
+        "nl": "Verankerd toestel dat een selectie van telgegevens van het fietstelsysteem toont voor passerende fietsers."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "name": "AIMNaamObject",
+          "label": "AIM naam object",
+          "package": "OSLO-Implementatieelement",
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject",
+          "scoped_uri": "#AIM naam object"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Bevestiging",
+          "name": {
+            "nl": "bevestiging"
+          },
+          "sort_nl": "bevestiging",
+          "description": {
+            "nl": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay",
+              "EA-Name": "FietstelDisplay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Zonnepaneel",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Zonnepaneel",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel",
+              "range_label": {
+                "nl": "Zonnepaneel"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Bevestiging",
+          "name": {
+            "nl": "bevestiging"
+          },
+          "sort_nl": "bevestiging",
+          "description": {
+            "nl": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay",
+              "EA-Name": "FietstelDisplay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Stroomkring",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Stroomkring",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring",
+              "range_label": {
+                "nl": "Stroomkring"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Bevestiging",
+          "name": {
+            "nl": "bevestiging"
+          },
+          "sort_nl": "bevestiging",
+          "description": {
+            "nl": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay",
+              "EA-Name": "FietstelDisplay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Batterij",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Batterij"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Batterij",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Batterij",
+              "range_label": {
+                "nl": "Batterij"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Hoort bij",
+          "name": {
+            "nl": "hoort bij"
+          },
+          "sort_nl": "hoort bij",
+          "description": {
+            "nl": "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay",
+              "EA-Name": "FietstelDisplay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Fietstelinstallatie",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Fietstelinstallatie"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Fietstelinstallatie",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Fietstelinstallatie",
+              "range_label": {
+                "nl": "Fietstelinstallatie"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Sturing",
+          "name": {
+            "nl": "sturing"
+          },
+          "sort_nl": "sturing",
+          "description": {
+            "nl": "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay",
+              "EA-Name": "FietstelDisplay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Fietstelsysteem",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Fietstelsysteem",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem",
+              "range_label": {
+                "nl": "Fietstelsysteem"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay.isDubbelzijdig",
+          "name": {
+            "nl": "is dubbelzijdig"
+          },
+          "sort_nl": "is dubbelzijdig",
+          "description": {
+            "nl": "Geeft aan of het display telgegevens toont langs zijn beide zijden of niet."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay",
+              "EA-Name": "FietstelDisplay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay.technischeFiche",
+          "name": {
+            "nl": "technische fiche"
+          },
+          "sort_nl": "technische fiche",
+          "description": {
+            "nl": "Document met de technische specificaties van het display."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay",
+              "EA-Name": "FietstelDisplay"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DtcDocument",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Bestandsbijlage",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument",
+              "range_label": {
+                "nl": "Bestandsbijlage"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem",
+      "name": {
+        "nl": "Fietstelsysteem"
+      },
+      "sort_nl": "Fietstelsysteem",
+      "description": {
+        "nl": "Toestel bij de fietstelinstallatie dat gegevens van detectielussen over passerende fietsers verzamelt en verwerkt."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "name": "AIMNaamObject",
+          "label": "AIM naam object",
+          "package": "OSLO-Implementatieelement",
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject",
+          "scoped_uri": "#AIM naam object"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Hoort bij",
+          "name": {
+            "nl": "hoort bij"
+          },
+          "sort_nl": "hoort bij",
+          "description": {
+            "nl": "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem",
+              "EA-Name": "Fietstelsysteem"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Fietstelinstallatie",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Fietstelinstallatie"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Fietstelinstallatie",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Fietstelinstallatie",
+              "range_label": {
+                "nl": "Fietstelinstallatie"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Sturing",
+          "name": {
+            "nl": "sturing"
+          },
+          "sort_nl": "sturing",
+          "description": {
+            "nl": "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem",
+              "EA-Name": "Fietstelsysteem"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "NietSelectieveDetectielus",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietSelectieveDetectielus"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Niet-selectieve detectielus",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietSelectieveDetectielus",
+              "range_label": {
+                "nl": "Niet-selectieve detectielus"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Sturing",
+          "name": {
+            "nl": "sturing"
+          },
+          "sort_nl": "sturing",
+          "description": {
+            "nl": "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem",
+              "EA-Name": "Fietstelsysteem"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "FietstelDisplay",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Fietstel display",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay",
+              "range_label": {
+                "nl": "Fietstel display"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Sturing",
+          "name": {
+            "nl": "sturing"
+          },
+          "sort_nl": "sturing",
+          "description": {
+            "nl": "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem",
+              "EA-Name": "Fietstelsysteem"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "SoftwareToegang",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SoftwareToegang"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Software toegang",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SoftwareToegang",
+              "range_label": {
+                "nl": "Software toegang"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem.afmetingen",
+          "name": {
+            "nl": "afmetingen"
+          },
+          "sort_nl": "afmetingen",
+          "description": {
+            "nl": "De afmetingen van het fietstelsysteem."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem",
+              "EA-Name": "Fietstelsysteem"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DtcAfmetingBxlxhInMm",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInMm"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Afmeting bxlxh in millimeter",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInMm",
+              "range_label": {
+                "nl": "Afmeting bxlxh in millimeter"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem.merk",
+          "name": {
+            "nl": "merk"
+          },
+          "sort_nl": "merk",
+          "description": {
+            "nl": "Merknaam van het fietstelsysteem."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem",
+              "EA-Name": "Fietstelsysteem"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "KlFietstelsysteemMerk",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Merknaam fietstelsysteem",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Merknaam fietstelsysteem"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlFietstelsysteemMerk"
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem.modelnaam",
+          "name": {
+            "nl": "modelnaam"
+          },
+          "sort_nl": "modelnaam",
+          "description": {
+            "nl": "Naam van het model van het fietstelsysteem volgens de fabrikant."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem",
+              "EA-Name": "Fietstelsysteem"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "KlFietstelsysteemModelnaam",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Modelnaam fietstelsysteem",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Modelnaam fietstelsysteem"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlFietstelsysteemModelnaam"
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem.technischeFiche",
+          "name": {
+            "nl": "technische fiche"
+          },
+          "sort_nl": "technische fiche",
+          "description": {
+            "nl": "Document met de technische specificaties van het fietstelsysteem."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem",
+              "EA-Name": "Fietstelsysteem"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DtcDocument",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Bestandsbijlage",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument",
+              "range_label": {
+                "nl": "Bestandsbijlage"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
       "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij",
       "name": {
         "nl": "Hoort bij"
@@ -1465,150 +1633,27 @@
       "properties": []
     },
     {
-      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IsNetwerkECC",
+      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietSelectieveDetectielus",
       "name": {
-        "nl": "Is netwerk ECC"
+        "nl": "Niet-selectieve detectielus"
       },
-      "sort_nl": "Is netwerk ECC",
+      "sort_nl": "Niet-selectieve detectielus",
       "description": {
-        "nl": "Deze relatie geeft aan hoe afgeschermde netwerkelementen bereikt kunnen worden vanuit het gewone netwerk. De relatie vertrekt steeds in het controlerende netwerkelement."
+        "nl": "Een niet-selectieve detectielus werkt onder invloed van een wijziging in de zelfinductie van een lus in het wegdek wanneer het metaal van een voertuig binnen het gevoeligheidsgebied van de lus komt. "
       },
       "usage": {},
       "parents": [
         {
-          "name": "DirectioneleRelatie",
-          "label": "Directionele relatie",
-          "package": "OSLO-Implementatieelement",
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DirectioneleRelatie",
-          "scoped_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DirectioneleRelatie"
-        }
-      ],
-      "properties": []
-    },
-    {
-      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-      "name": {
-        "nl": "Netwerkelement"
-      },
-      "sort_nl": "Netwerkelement",
-      "description": {
-        "nl": "Toestel,onderdeel van het netwerk,waarop netwerkverbindingen kunnen aangelegd worden."
-      },
-      "usage": {},
-      "parents": [
-        {
-          "name": "AIMNaamObject",
-          "label": "AIM naam object",
-          "package": "OSLO-Implementatieelement",
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject",
-          "scoped_uri": "#AIM naam object"
+          "name": "SelNietSelLus",
+          "label": "Sel niet sel lussen",
+          "package": "OSLO-Abstracten",
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#SelNietSelLus",
+          "scoped_uri": "#Sel niet sel lussen"
         }
       ],
       "properties": [
         {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Bevestiging",
-          "name": {
-            "nl": "bevestiging"
-          },
-          "sort_nl": "bevestiging",
-          "description": {
-            "nl": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "EA-Name": "Netwerkelement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Netwerkpoort",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Netwerkpoort",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
-              "range_label": {
-                "nl": "Netwerkpoort"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Bevestiging",
-          "name": {
-            "nl": "bevestiging"
-          },
-          "sort_nl": "bevestiging",
-          "description": {
-            "nl": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "EA-Name": "Netwerkelement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Rack",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Rack",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack",
-              "range_label": {
-                "nl": "Rack"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Bevestiging",
-          "name": {
-            "nl": "bevestiging"
-          },
-          "sort_nl": "bevestiging",
-          "description": {
-            "nl": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "EA-Name": "Netwerkelement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Kast",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Kast",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast",
-              "range_label": {
-                "nl": "Kast"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Hoort bij",
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Hoort bij",
           "name": {
             "nl": "hoort bij"
           },
@@ -1619,22 +1664,22 @@
           "usage": {},
           "domain": [
             {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "EA-Name": "Netwerkelement"
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietSelectieveDetectielus",
+              "EA-Name": "NietSelectieveDetectielus"
             }
           ],
           "range": [
             {
-              "range_label": "IPBackbone",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#IPBackbone"
+              "range_label": "Fietstelinstallatie",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Fietstelinstallatie"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#IP backbone",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#IPBackbone",
+              "range_uri": "#Fietstelinstallatie",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Fietstelinstallatie",
               "range_label": {
-                "nl": "IP backbone"
+                "nl": "Fietstelinstallatie"
               }
             }
           ],
@@ -1642,607 +1687,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Hoort bij",
-          "name": {
-            "nl": "hoort bij"
-          },
-          "sort_nl": "hoort bij",
-          "description": {
-            "nl": "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "EA-Name": "Netwerkelement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "L2AccessStructuur",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#L2AccessStructuur"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#L2 access structuur",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#L2AccessStructuur",
-              "range_label": {
-                "nl": "L2 access structuur"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Sturing",
-          "name": {
-            "nl": "sturing (target)"
-          },
-          "sort_nl": "sturing (target)",
-          "description": {
-            "nl": "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "EA-Name": "Netwerkelement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Netwerkelement",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Netwerkelement",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "range_label": {
-                "nl": "Netwerkelement"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Sturing",
-          "name": {
-            "nl": "sturing (source)"
-          },
-          "sort_nl": "sturing (source)",
-          "description": {
-            "nl": "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "EA-Name": "Netwerkelement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Netwerkelement",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Netwerkelement",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "range_label": {
-                "nl": "Netwerkelement"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Voedt",
-          "name": {
-            "nl": "voedt"
-          },
-          "sort_nl": "voedt",
-          "description": {
-            "nl": "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "EA-Name": "Netwerkelement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Netwerkpoort",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Netwerkpoort",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
-              "range_label": {
-                "nl": "Netwerkpoort"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.beschrijvingFabrikant",
-          "name": {
-            "nl": "beschrijving fabrikant"
-          },
-          "sort_nl": "beschrijving fabrikant",
-          "description": {
-            "nl": "Bijkomende specificaties over het apparaat of onderdeel type van de fabrikant."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "EA-Name": "Netwerkelement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#String",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.gebruik",
-          "name": {
-            "nl": "gebruik"
-          },
-          "sort_nl": "gebruik",
-          "description": {
-            "nl": "Toestel, onderdeel van het netwerk, waarop netwerkverbindingen kunnen aangelegd worden."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "EA-Name": "Netwerkelement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KlNetwerkelemGebruik",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Netwerkelement gebruik",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "Netwerkelement gebruik"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNetwerkelemGebruik"
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.ipAddressBeheer",
-          "name": {
-            "nl": "IP address beheer"
-          },
-          "sort_nl": "IP address beheer",
-          "description": {
-            "nl": "IP adres van het toestel."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "EA-Name": "Netwerkelement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DteIPv4Adres",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteIPv4Adres"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#IPv4-adres",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteIPv4Adres",
-              "range_label": {
-                "nl": "IPv4-adres"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.ipAddressMask",
-          "name": {
-            "nl": "IP address mask"
-          },
-          "sort_nl": "IP address mask",
-          "description": {
-            "nl": "IP adres mask van het toestel."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "EA-Name": "Netwerkelement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DteIPv4Adres",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteIPv4Adres"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#IPv4-adres",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteIPv4Adres",
-              "range_label": {
-                "nl": "IPv4-adres"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.ipGateway",
-          "name": {
-            "nl": "IP gateway"
-          },
-          "sort_nl": "IP gateway",
-          "description": {
-            "nl": "IP adres van gateway."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "EA-Name": "Netwerkelement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DteIPv4Adres",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteIPv4Adres"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#IPv4-adres",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteIPv4Adres",
-              "range_label": {
-                "nl": "IPv4-adres"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.merk",
-          "name": {
-            "nl": "merk"
-          },
-          "sort_nl": "merk",
-          "description": {
-            "nl": "Merk waarmee de fabrikant het netwerkelement identificeert."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "EA-Name": "Netwerkelement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KlNetwerkMerk",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Netwerkelement merk",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "Netwerkelement merk"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNetwerkMerk"
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.modelnaam",
-          "name": {
-            "nl": "modelnaam"
-          },
-          "sort_nl": "modelnaam",
-          "description": {
-            "nl": "Modelnaam waarmee de fabrikant dit type toestel identificeert."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "EA-Name": "Netwerkelement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KlNetwerkelemModelnaam",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Netwerkelement modelnaam",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "Netwerkelement modelnaam"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNetwerkelemModelnaam"
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.nSAPAddress",
-          "name": {
-            "nl": "NSAP-address"
-          },
-          "sort_nl": "NSAP-address",
-          "description": {
-            "nl": "Netwerkadres van deze component."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "EA-Name": "Netwerkelement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#String",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.serienummer",
-          "name": {
-            "nl": "serienummer"
-          },
-          "sort_nl": "serienummer",
-          "description": {
-            "nl": "Unieke identificatiecode van het toestel, toegekend door de fabrikant."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "EA-Name": "Netwerkelement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#String",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement.softwareVersie",
-          "name": {
-            "nl": "software versie"
-          },
-          "sort_nl": "software versie",
-          "description": {
-            "nl": "Identificatie van de softwareversie die op dit apparaat of onderdeel geladen is. Dit kan ook de firmwareversie zijn."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "EA-Name": "Netwerkelement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#String",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
-      "name": {
-        "nl": "Netwerkpoort"
-      },
-      "sort_nl": "Netwerkpoort",
-      "description": {
-        "nl": "De ingang van het toestel samen met component die erop zit,bv. SFP of XFP."
-      },
-      "usage": {},
-      "parents": [
-        {
-          "name": "AIMNaamObject",
-          "label": "AIM naam object",
-          "package": "OSLO-Implementatieelement",
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject",
-          "scoped_uri": "#AIM naam object"
-        }
-      ],
-      "properties": [
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Bevestiging",
-          "name": {
-            "nl": "bevestiging"
-          },
-          "sort_nl": "bevestiging",
-          "description": {
-            "nl": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
-              "EA-Name": "Netwerkpoort"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Netwerkelement",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Netwerkelement",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "range_label": {
-                "nl": "Netwerkelement"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Hoort bij",
-          "name": {
-            "nl": "hoort bij"
-          },
-          "sort_nl": "hoort bij",
-          "description": {
-            "nl": "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
-              "EA-Name": "Netwerkpoort"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "VLAN",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VLAN"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#VLAN",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#VLAN",
-              "range_label": {
-                "nl": "VLAN"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Hoort bij",
-          "name": {
-            "nl": "hoort bij"
-          },
-          "sort_nl": "hoort bij",
-          "description": {
-            "nl": "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
-              "EA-Name": "Netwerkpoort"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Link",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Link",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Link",
-              "range_label": {
-                "nl": "Link"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Sturing",
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Sturing",
           "name": {
             "nl": "sturing"
           },
@@ -2253,22 +1698,22 @@
           "usage": {},
           "domain": [
             {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
-              "EA-Name": "Netwerkpoort"
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietSelectieveDetectielus",
+              "EA-Name": "NietSelectieveDetectielus"
             }
           ],
           "range": [
             {
-              "range_label": "UPS",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS"
+              "range_label": "Fietstelsysteem",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#UPS",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS",
+              "range_uri": "#Fietstelsysteem",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem",
               "range_label": {
-                "nl": "UPS"
+                "nl": "Fietstelsysteem"
               }
             }
           ],
@@ -2276,774 +1721,140 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Sturing",
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietSelectieveDetectielus.functie",
           "name": {
-            "nl": "sturing (target)"
+            "nl": "functie"
           },
-          "sort_nl": "sturing (target)",
+          "sort_nl": "functie",
           "description": {
-            "nl": "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting."
+            "nl": "Type niet-selectieve detectielus bv. file, afstand, hiaat,...\n\n"
           },
           "usage": {},
           "domain": [
             {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
-              "EA-Name": "Netwerkpoort"
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietSelectieveDetectielus",
+              "EA-Name": "NietSelectieveDetectielus"
             }
           ],
           "range": [
             {
-              "range_label": "Netwerkpoort",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Netwerkpoort",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
-              "range_label": {
-                "nl": "Netwerkpoort"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Sturing",
-          "name": {
-            "nl": "sturing (source)"
-          },
-          "sort_nl": "sturing (source)",
-          "description": {
-            "nl": "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
-              "EA-Name": "Netwerkpoort"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Netwerkpoort",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Netwerkpoort",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
-              "range_label": {
-                "nl": "Netwerkpoort"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort.beschrijvingFabrikant",
-          "name": {
-            "nl": "beschrijving fabrikant"
-          },
-          "sort_nl": "beschrijving fabrikant",
-          "description": {
-            "nl": "Bijkomende specificaties over het apparaat of onderdeel type van de fabrikant."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
-              "EA-Name": "Netwerkpoort"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#String",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort.code",
-          "name": {
-            "nl": "code"
-          },
-          "sort_nl": "code",
-          "description": {
-            "nl": "Bestelcode van dit toestel of onderdeel bij de fabrikant."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
-              "EA-Name": "Netwerkpoort"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#String",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort.config",
-          "name": {
-            "nl": "config"
-          },
-          "sort_nl": "config",
-          "description": {
-            "nl": "Soort verbinding aangeboden aan de klant."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
-              "EA-Name": "Netwerkpoort"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KlNetwerkpoortConfig",
+              "range_label": "KlVriLusFunctie",
               "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Netwerkpoort configuratie",
+              "range_uri": "#VRI-lus functie",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "nl": "Netwerkpoort configuratie"
+                "nl": "VRI-lus functie"
               }
             }
           ],
           "cardinality": "1",
-          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNetwerkpoortConfig"
+          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVriLusFunctie"
         },
         {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort.golflengte",
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietSelectieveDetectielus.isMotorgevoelig",
           "name": {
-            "nl": "golflengte"
+            "nl": "is motorgevoelig"
           },
-          "sort_nl": "golflengte",
+          "sort_nl": "is motorgevoelig",
           "description": {
-            "nl": "De golflengte waarop deze poort communiceert."
+            "nl": "Geeft aan of de lus motorgevoelig is of niet."
           },
           "usage": {},
           "domain": [
             {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
-              "EA-Name": "Netwerkpoort"
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietSelectieveDetectielus",
+              "EA-Name": "NietSelectieveDetectielus"
             }
           ],
           "range": [
             {
-              "range_label": "KlNetwerkpoortGolflengte",
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietSelectieveDetectielus.isRichtingsgevoelig",
+          "name": {
+            "nl": "is richtingsgevoelig"
+          },
+          "sort_nl": "is richtingsgevoelig",
+          "description": {
+            "nl": "Is de detectielus gevoelig voor de richting waarin het voertuig het gevoeligheidsgebied van de lus binnenkomt?"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietSelectieveDetectielus",
+              "EA-Name": "NietSelectieveDetectielus"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietSelectieveDetectielus.soortVoertuig",
+          "name": {
+            "nl": "soort voertuig"
+          },
+          "sort_nl": "soort voertuig",
+          "description": {
+            "nl": "Type voertuig dat de detectielus volgens zijn instellingen kan detecteren."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#NietSelectieveDetectielus",
+              "EA-Name": "NietSelectieveDetectielus"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "KlVriLusSoortvoertuig",
               "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Netwerkpoort golflengte",
+              "range_uri": "#VRI-lus soort voertuig",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "nl": "Netwerkpoort golflengte"
+                "nl": "VRI-lus soort voertuig"
               }
             }
           ],
-          "cardinality": "1",
-          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNetwerkpoortGolflengte"
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort.merk",
-          "name": {
-            "nl": "merk"
-          },
-          "sort_nl": "merk",
-          "description": {
-            "nl": "Merk waarmee de fabrikant de netwerkpoort identificeert."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
-              "EA-Name": "Netwerkpoort"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KlNetwerkMerk",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Netwerkelement merk",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "Netwerkelement merk"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNetwerkMerk"
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort.nNILANCapaciteit",
-          "name": {
-            "nl": "NNI LAN-capaciteit"
-          },
-          "sort_nl": "NNI LAN-capaciteit",
-          "description": {
-            "nl": "Bandbreedte via deze poort, uitgedrukt in Mb/s, enkel van toepassing indien NNI poort."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
-              "EA-Name": "Netwerkpoort"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Integer",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Geheel getal",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
-              "range_label": {
-                "nl": "Geheel getal"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort.serienummer",
-          "name": {
-            "nl": "serienummer"
-          },
-          "sort_nl": "serienummer",
-          "description": {
-            "nl": "Unieke identificatiecode van het toestel, toegekend door de fabrikant."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
-              "EA-Name": "Netwerkpoort"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#String",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort.technologie",
-          "name": {
-            "nl": "technologie"
-          },
-          "sort_nl": "technologie",
-          "description": {
-            "nl": "Intern gebruikt netwerk protocol."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
-              "EA-Name": "Netwerkpoort"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KlNetwerkTechnologie",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Netwerk technologie",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "Netwerk technologie"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNetwerkTechnologie"
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort.type",
-          "name": {
-            "nl": "model"
-          },
-          "sort_nl": "model",
-          "description": {
-            "nl": "Geeft het soort netwerk interface weer."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
-              "EA-Name": "Netwerkpoort"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KlNetwerkpoortType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Netwerkpoort type",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "Netwerkpoort type"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlNetwerkpoortType"
-        }
-      ]
-    },
-    {
-      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack",
-      "name": {
-        "nl": "Rack"
-      },
-      "sort_nl": "Rack",
-      "description": {
-        "nl": "Interne draagstructuur binnen een behuizing voor (elektromechanische) toestellen."
-      },
-      "usage": {},
-      "parents": [
-        {
-          "name": "AIMNaamObject",
-          "label": "AIM naam object",
-          "package": "OSLO-Implementatieelement",
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject",
-          "scoped_uri": "#AIM naam object"
-        }
-      ],
-      "properties": [
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Bevestiging",
-          "name": {
-            "nl": "bevestiging"
-          },
-          "sort_nl": "bevestiging",
-          "description": {
-            "nl": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack",
-              "EA-Name": "Rack"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Inloopbehuizing",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Inloopbehuizing",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Inloopbehuizing",
-              "range_label": {
-                "nl": "Inloopbehuizing"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Bevestiging",
-          "name": {
-            "nl": "bevestiging"
-          },
-          "sort_nl": "bevestiging",
-          "description": {
-            "nl": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack",
-              "EA-Name": "Rack"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Netwerkelement",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Netwerkelement",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "range_label": {
-                "nl": "Netwerkelement"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Bevestiging",
-          "name": {
-            "nl": "bevestiging"
-          },
-          "sort_nl": "bevestiging",
-          "description": {
-            "nl": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack",
-              "EA-Name": "Rack"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Kast",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Kast",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Kast",
-              "range_label": {
-                "nl": "Kast"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Voedt",
-          "name": {
-            "nl": "voedt"
-          },
-          "sort_nl": "voedt",
-          "description": {
-            "nl": "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack",
-              "EA-Name": "Rack"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Netwerkelement",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Netwerkelement",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "range_label": {
-                "nl": "Netwerkelement"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Voedt",
-          "name": {
-            "nl": "voedt"
-          },
-          "sort_nl": "voedt",
-          "description": {
-            "nl": "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack",
-              "EA-Name": "Rack"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "UPS",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#UPS",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS",
-              "range_label": {
-                "nl": "UPS"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.diepte",
-          "name": {
-            "nl": "diepte"
-          },
-          "sort_nl": "diepte",
-          "description": {
-            "nl": "De diepte van het rack tussen de voorste en achterste rails."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack",
-              "EA-Name": "Rack"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KwantWrdInCentimeter",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Kwantitatieve waarde in centimeter",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter",
-              "range_label": {
-                "nl": "Kwantitatieve waarde in centimeter"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.hoogteInRU",
-          "name": {
-            "nl": "hoogte in RU"
-          },
-          "sort_nl": "hoogte in RU",
-          "description": {
-            "nl": "Bruikbare ruimte om toestellen te monteren, uitgedrukt in RU (rack units)."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack",
-              "EA-Name": "Rack"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Integer",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Geheel getal",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
-              "range_label": {
-                "nl": "Geheel getal"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.huidigBeeld",
-          "name": {
-            "nl": "huidig beeld"
-          },
-          "sort_nl": "huidig beeld",
-          "description": {
-            "nl": "Foto of schematische voorstelling van de huidige samenstelling van de samenstelling in het rack."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack",
-              "EA-Name": "Rack"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DtcDocument",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Bestandsbijlage",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument",
-              "range_label": {
-                "nl": "Bestandsbijlage"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.merk",
-          "name": {
-            "nl": "merk"
-          },
-          "sort_nl": "merk",
-          "description": {
-            "nl": "Merk waarmee de fabrikant dit type rack identificeert."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack",
-              "EA-Name": "Rack"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KlRackMerk",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Rack merk",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "Rack merk"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlRackMerk"
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.modelnaam",
-          "name": {
-            "nl": "modelnaam"
-          },
-          "sort_nl": "modelnaam",
-          "description": {
-            "nl": "Modelnaam waarmee de fabrikant dit type toestel identificeert."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack",
-              "EA-Name": "Rack"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KlRackModelnaam",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Rack modelnaam",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "Rack modelnaam"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlRackModelnaam"
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack.rackType",
-          "name": {
-            "nl": "Rack type"
-          },
-          "sort_nl": "Rack type",
-          "description": {
-            "nl": "Geeft het type aan voor een rack volgens een keuzelijst van beschikbare types."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack",
-              "EA-Name": "Rack"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KlRackType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#rack type",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "rack type"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlRackType"
+          "cardinality": "1..*",
+          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlVriLusSoortvoertuig"
         }
       ]
     },
@@ -3068,13 +1879,13 @@
       ],
       "properties": [
         {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Voedt",
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Bevestiging",
           "name": {
-            "nl": "voedt"
+            "nl": "bevestiging"
           },
-          "sort_nl": "voedt",
+          "sort_nl": "bevestiging",
           "description": {
-            "nl": "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger."
+            "nl": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting."
           },
           "usage": {},
           "domain": [
@@ -3085,16 +1896,16 @@
           ],
           "range": [
             {
-              "range_label": "Rack",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack"
+              "range_label": "FietstelDisplay",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Rack",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack",
+              "range_uri": "#Fietstel display",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay",
               "range_label": {
-                "nl": "Rack"
+                "nl": "Fietstel display"
               }
             }
           ],
@@ -3102,7 +1913,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Voedt",
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Voedt",
           "name": {
             "nl": "voedt"
           },
@@ -3119,16 +1930,16 @@
           ],
           "range": [
             {
-              "range_label": "Netwerkelement",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement"
+              "range_label": "Batterij",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Batterij"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Netwerkelement",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
+              "range_uri": "#Batterij",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Batterij",
               "range_label": {
-                "nl": "Netwerkelement"
+                "nl": "Batterij"
               }
             }
           ],
@@ -3191,334 +2002,6 @@
         }
       ],
       "properties": []
-    },
-    {
-      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS",
-      "name": {
-        "nl": "UPS"
-      },
-      "sort_nl": "UPS",
-      "description": {
-        "nl": "Toestel (Uninterruptible Power Supply = niet onderbreekbare voeding) voor het leveren van  elektrische energie van een vastgelegde kwaliteit, onafhankelijk van de beschikbaarheid van een betrouwbare netspanning. Indien het openbare net niet langer bruikbaar is om als energiebron te fungeren, wordt de energievoorziening overgenomen door de accubatterij. Deze zal gedurende een bepaalde tijd, afhankelijk van de capaciteit, de stroomvoorziening verzorgen. De UPS dient om de (minimale) voeding ononderbroken te verzekeren"
-      },
-      "usage": {},
-      "parents": [
-        {
-          "name": "Voedingspunt",
-          "label": "Voedingspunt",
-          "package": "OSLO-Abstracten",
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Voedingspunt",
-          "scoped_uri": "#Voedingspunt"
-        }
-      ],
-      "properties": [
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Sturing",
-          "name": {
-            "nl": "sturing"
-          },
-          "sort_nl": "sturing",
-          "description": {
-            "nl": "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS",
-              "EA-Name": "UPS"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Netwerkpoort",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Netwerkpoort",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
-              "range_label": {
-                "nl": "Netwerkpoort"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Voedt",
-          "name": {
-            "nl": "voedt"
-          },
-          "sort_nl": "voedt",
-          "description": {
-            "nl": "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS",
-              "EA-Name": "UPS"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Rack",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Rack",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Rack",
-              "range_label": {
-                "nl": "Rack"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/ip-netwerk/#Voedt",
-          "name": {
-            "nl": "voedt"
-          },
-          "sort_nl": "voedt",
-          "description": {
-            "nl": "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS",
-              "EA-Name": "UPS"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Netwerkelement",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Netwerkelement",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
-              "range_label": {
-                "nl": "Netwerkelement"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS.autonomie",
-          "name": {
-            "nl": "autonomie"
-          },
-          "sort_nl": "autonomie",
-          "description": {
-            "nl": "De tijd die de UPS een installatie van voeding kan voorzien."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS",
-              "EA-Name": "UPS"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KwantWrdInkWh",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInkWh"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Kwantitatieve waarde in kWh",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInkWh",
-              "range_label": {
-                "nl": "Kwantitatieve waarde in kWh"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS.maxContinuVermogen",
-          "name": {
-            "nl": "maximaal continu vermogen"
-          },
-          "sort_nl": "maximaal continu vermogen",
-          "description": {
-            "nl": "Maximale continu vermogen van de UPS."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS",
-              "EA-Name": "UPS"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KwantWrdInWatt",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Kwantitatieve waarde in watt",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt",
-              "range_label": {
-                "nl": "Kwantitatieve waarde in watt"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS.maxPiekVermogen",
-          "name": {
-            "nl": "max piekvermogen"
-          },
-          "sort_nl": "max piekvermogen",
-          "description": {
-            "nl": "Het maximale piekvermogen van de UPS."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS",
-              "EA-Name": "UPS"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KwantWrdInWatt",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Kwantitatieve waarde in watt",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt",
-              "range_label": {
-                "nl": "Kwantitatieve waarde in watt"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS.merk",
-          "name": {
-            "nl": "merk"
-          },
-          "sort_nl": "merk",
-          "description": {
-            "nl": "Merk waarmee de fabrikant de UPS identificeert."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS",
-              "EA-Name": "UPS"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KlUPSMerk",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#UPS merk",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "UPS merk"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlUPSMerk"
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS.modelnaam",
-          "name": {
-            "nl": "modelnaam"
-          },
-          "sort_nl": "modelnaam",
-          "description": {
-            "nl": "Modelnaam van de UPS volgens de fabrikant."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS",
-              "EA-Name": "UPS"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KlUPSModelnaam",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#UPS modelnaam",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "UPS modelnaam"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlUPSModelnaam"
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS.serienummer",
-          "name": {
-            "nl": "serienummer"
-          },
-          "sort_nl": "serienummer",
-          "description": {
-            "nl": "Unieke identificatiecode van het toestel, toegekend door de fabrikant."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#UPS",
-              "EA-Name": "UPS"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#String",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
     },
     {
       "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt",
@@ -3611,6 +2094,205 @@
           "codelist_uri": ""
         }
       ]
+    },
+    {
+      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel",
+      "name": {
+        "nl": "Zonnepaneel"
+      },
+      "sort_nl": "Zonnepaneel",
+      "description": {
+        "nl": "Toestel om elektrische energie op te wekken uit zonlicht met als doel het voeden van een installatie. Ook wel fotovoltaïsche cellen of zonnecellen genoemd."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "name": "Voedingspunt",
+          "label": "Voedingspunt",
+          "package": "OSLO-Abstracten",
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Voedingspunt",
+          "scoped_uri": "#Voedingspunt"
+        },
+        {
+          "name": "BevestigingGC",
+          "label": "Bevestiging geluidswerende constructie",
+          "package": "OSLO-Abstracten",
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#BevestigingGC",
+          "scoped_uri": "#Bevestiging geluidswerende constructie"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Bevestiging",
+          "name": {
+            "nl": "bevestiging"
+          },
+          "sort_nl": "bevestiging",
+          "description": {
+            "nl": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel",
+              "EA-Name": "Zonnepaneel"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "FietstelDisplay",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Fietstel display",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#FietstelDisplay",
+              "range_label": {
+                "nl": "Fietstel display"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Voedt",
+          "name": {
+            "nl": "voedt"
+          },
+          "sort_nl": "voedt",
+          "description": {
+            "nl": "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel",
+              "EA-Name": "Zonnepaneel"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Stroomkring",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Stroomkring",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring",
+              "range_label": {
+                "nl": "Stroomkring"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel.merk",
+          "name": {
+            "nl": "merk"
+          },
+          "sort_nl": "merk",
+          "description": {
+            "nl": "Het merk van het zonnepaneel."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel",
+              "EA-Name": "Zonnepaneel"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "KlZonnepaneelMerk",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Zonnepaneel merk",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Zonnepaneel merk"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlZonnepaneelMerk"
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel.modelnaam",
+          "name": {
+            "nl": "modelnaam"
+          },
+          "sort_nl": "modelnaam",
+          "description": {
+            "nl": "De modelnaam van het zonnepaneel."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel",
+              "EA-Name": "Zonnepaneel"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "KlZonnepaneelModelnaam",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Zonnepaneel modelnaam",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Zonnepaneel modelnaam"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlZonnepaneelModelnaam"
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel.vermogen",
+          "name": {
+            "nl": "vermogen"
+          },
+          "sort_nl": "vermogen",
+          "description": {
+            "nl": "Het vermogen van het zonnepaneel."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Zonnepaneel",
+              "EA-Name": "Zonnepaneel"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "KwantWrdInWatt",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Kwantitatieve waarde in watt",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt",
+              "range_label": {
+                "nl": "Kwantitatieve waarde in watt"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
     }
   ],
   "properties": [],
@@ -3692,21 +2374,6 @@
       "properties": []
     },
     {
-      "uri": "http://www.w3.org/2001/XMLSchema#integer",
-      "name": {
-        "nl": "Geheel getal"
-      },
-      "sort_nl": "Geheel getal",
-      "description": {
-        "nl": "Beschrijft een geheel getal volgens http://www.w3.org/2001/XMLSchema#integer."
-      },
-      "usage": {
-        "nl": "https://www.w3.org/TR/xmlschema-2/#integer"
-      },
-      "parents": [],
-      "properties": []
-    },
-    {
       "uri": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
       "name": {
         "nl": "Natuurlijk getal"
@@ -3737,237 +2404,19 @@
       "properties": []
     },
     {
-      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres",
+      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlInM",
       "name": {
-        "nl": "Adres"
+        "nl": "Afmeting bxl in meter"
       },
-      "sort_nl": "Adres",
+      "sort_nl": "Afmeting bxl in meter",
       "description": {
-        "nl": "Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, gebouw of faciliteit, op de aarde."
+        "nl": "Complex datatype voor de afmeting van de breedte en de lengte in meter."
       },
       "usage": {},
       "parents": [],
       "properties": [
         {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.bus",
-          "name": {
-            "nl": "bus"
-          },
-          "sort_nl": "bus",
-          "description": {
-            "nl": "Een nummer dat de postbus aanduidt."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres",
-              "EA-Name": "DtcAdres"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#String",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.gemeente",
-          "name": {
-            "nl": "gemeente"
-          },
-          "sort_nl": "gemeente",
-          "description": {
-            "nl": "De bestuurlijke eenheid waarin het adres gelegen is."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres",
-              "EA-Name": "DtcAdres"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KlAlgGemeente",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Gemeente",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "Gemeente"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAlgGemeente"
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.huisnummer",
-          "name": {
-            "nl": "huisnummer"
-          },
-          "sort_nl": "huisnummer",
-          "description": {
-            "nl": "Een nummer dat door de gemeente aan bv. een huis wordt toegekend."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres",
-              "EA-Name": "DtcAdres"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#String",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.postcode",
-          "name": {
-            "nl": "postcode"
-          },
-          "sort_nl": "postcode",
-          "description": {
-            "nl": "Een korte reeks tekens die in het postadres wordt opgenomen."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres",
-              "EA-Name": "DtcAdres"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#String",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.provincie",
-          "name": {
-            "nl": "provincie"
-          },
-          "sort_nl": "provincie",
-          "description": {
-            "nl": "Het deelgebied waarin het adres gelegen is."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres",
-              "EA-Name": "DtcAdres"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KlAlgProvincie",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Provincie",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "Provincie"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": "https://wegenenverkeer.data.vlaanderen.be/id/conceptscheme/KlAlgProvincie"
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.straatnaam",
-          "name": {
-            "nl": "straatnaam"
-          },
-          "sort_nl": "straatnaam",
-          "description": {
-            "nl": "De naam van de straat."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres",
-              "EA-Name": "DtcAdres"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#String",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInM",
-      "name": {
-        "nl": "Afmeting bxlxh in meter"
-      },
-      "sort_nl": "Afmeting bxlxh in meter",
-      "description": {
-        "nl": "Complex datatype voor de afmeting van de breedte, de lengte en hoogte in meter."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInM.breedte",
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlInM.breedte",
           "name": {
             "nl": "breedte"
           },
@@ -3978,8 +2427,8 @@
           "usage": {},
           "domain": [
             {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInM",
-              "EA-Name": "DtcAfmetingBxlxhInM"
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlInM",
+              "EA-Name": "DtcAfmetingBxlInM"
             }
           ],
           "range": [
@@ -4001,41 +2450,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInM.hoogte",
-          "name": {
-            "nl": "hoogte"
-          },
-          "sort_nl": "hoogte",
-          "description": {
-            "nl": "De hoogte in meter."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInM",
-              "EA-Name": "DtcAfmetingBxlxhInM"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KwantWrdInMeter",
-              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Kwantitatieve waarde in meter",
-              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter",
-              "range_label": {
-                "nl": "Kwantitatieve waarde in meter"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInM.lengte",
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlInM.lengte",
           "name": {
             "nl": "lengte"
           },
@@ -4046,8 +2461,8 @@
           "usage": {},
           "domain": [
             {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInM",
-              "EA-Name": "DtcAfmetingBxlxhInM"
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlInM",
+              "EA-Name": "DtcAfmetingBxlInM"
             }
           ],
           "range": [
@@ -4419,47 +2834,113 @@
       ]
     },
     {
-      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteIPv4Adres",
+      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur",
       "name": {
-        "nl": "IPv4-adres"
+        "nl": "Tijdsduur"
       },
-      "sort_nl": "IPv4-adres",
+      "sort_nl": "Tijdsduur",
       "description": {
-        "nl": "Beschrijft een ip-adres volgens de ipv4 specificatie."
+        "nl": "Complex datatype voor de instelling van een tijdsbepaling."
       },
       "usage": {},
       "parents": [],
       "properties": [
         {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteIPv4Adres.waarde",
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur.minuten",
           "name": {
-            "nl": "waarde"
+            "nl": "minuten"
           },
-          "sort_nl": "waarde",
+          "sort_nl": "minuten",
           "description": {
-            "nl": "De string die het IPv4 adres representeert."
+            "nl": "Het aantal minuten."
           },
-          "usage": {
-            "nl": "Het formaat is een decimale notatie bv. 91.198.174.232"
-          },
+          "usage": {},
           "domain": [
             {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteIPv4Adres",
-              "EA-Name": "DteIPv4Adres"
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur",
+              "EA-Name": "DtcTijdsduur"
             }
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "KwantWrdInMinuut",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMinuut"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#String",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "#Kwantitatieve waarde in minuten",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMinuut",
               "range_label": {
-                "nl": "String"
+                "nl": "Kwantitatieve waarde in minuten"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur.seconden",
+          "name": {
+            "nl": "seconden"
+          },
+          "sort_nl": "seconden",
+          "description": {
+            "nl": "Het aantal seconden."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur",
+              "EA-Name": "DtcTijdsduur"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "KwantWrdInSeconde",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInSeconde"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Kwantitatieve waarde in seconde",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInSeconde",
+              "range_label": {
+                "nl": "Kwantitatieve waarde in seconde"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur.uren",
+          "name": {
+            "nl": "uren"
+          },
+          "sort_nl": "uren",
+          "description": {
+            "nl": "Het aantal uren."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur",
+              "EA-Name": "DtcTijdsduur"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "KwantWrdInUur",
+              "range_uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInUur"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Kwantitatieve waarde in uur",
+              "range_puri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInUur",
+              "range_label": {
+                "nl": "Kwantitatieve waarde in uur"
               }
             }
           ],
@@ -4508,90 +2989,6 @@
               "range_puri": "http://www.w3.org/2001/XMLSchema#string",
               "range_label": {
                 "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter",
-      "name": {
-        "nl": "Kwantitatieve waarde in centimeter"
-      },
-      "sort_nl": "Kwantitatieve waarde in centimeter",
-      "description": {
-        "nl": "Een kwantitatieve waarde die een getal in centimeter uitdrukt."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter.standaardEenheid",
-          "name": {
-            "nl": "standaard eenheid"
-          },
-          "sort_nl": "standaard eenheid",
-          "description": {
-            "nl": "De standaard eenheid bij dit datatype is uitgedrukt in centimeter."
-          },
-          "usage": {
-            "nl": "\"cm\"^^cdt:ucumunit"
-          },
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter",
-              "EA-Name": "KwantWrdInCentimeter"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_label": {
-                "nl": "Literal"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter.waarde",
-          "name": {
-            "nl": "waarde"
-          },
-          "sort_nl": "waarde",
-          "description": {
-            "nl": "Bevat een getal die bij het datatype hoort."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter",
-              "EA-Name": "KwantWrdInCentimeter"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Decimal",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#decimal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Decimaal getal",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#decimal",
-              "range_label": {
-                "nl": "Decimaal getal"
               }
             }
           ],
@@ -4853,6 +3250,258 @@
       ]
     },
     {
+      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMinuut",
+      "name": {
+        "nl": "Kwantitatieve waarde in minuten"
+      },
+      "sort_nl": "Kwantitatieve waarde in minuten",
+      "description": {
+        "nl": "Een kwantitatieve waarde die een getal in minuten uitdrukt."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMinuut.standaardEenheid",
+          "name": {
+            "nl": "standaard eenheid"
+          },
+          "sort_nl": "standaard eenheid",
+          "description": {
+            "nl": "De standaard eenheid bij dit datatype is uitgedrukt in minuten."
+          },
+          "usage": {
+            "nl": "\"min\"^^cdt:ucumunit"
+          },
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMinuut",
+              "EA-Name": "KwantWrdInMinuut"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "nl": "Literal"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMinuut.waarde",
+          "name": {
+            "nl": "waarde"
+          },
+          "sort_nl": "waarde",
+          "description": {
+            "nl": "Bevat een getal die bij het datatype hoort."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMinuut",
+              "EA-Name": "KwantWrdInMinuut"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "NonNegativeInteger",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Natuurlijk getal",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+              "range_label": {
+                "nl": "Natuurlijk getal"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInSeconde",
+      "name": {
+        "nl": "Kwantitatieve waarde in seconde"
+      },
+      "sort_nl": "Kwantitatieve waarde in seconde",
+      "description": {
+        "nl": "Een kwantitatieve waarde die een getal in seconde uitdrukt."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInSeconde.standaardEenheid",
+          "name": {
+            "nl": "standaard eenheid"
+          },
+          "sort_nl": "standaard eenheid",
+          "description": {
+            "nl": "De standaard eenheid bij dit datatype is uitgedrukt in seconde."
+          },
+          "usage": {
+            "nl": "\"s\"^^cdt:ucumunit"
+          },
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInSeconde",
+              "EA-Name": "KwantWrdInSeconde"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "nl": "Literal"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInSeconde.waarde",
+          "name": {
+            "nl": "waarde"
+          },
+          "sort_nl": "waarde",
+          "description": {
+            "nl": "Bevat een getal die bij het datatype hoort."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInSeconde",
+              "EA-Name": "KwantWrdInSeconde"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "NonNegativeInteger",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Natuurlijk getal",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+              "range_label": {
+                "nl": "Natuurlijk getal"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInUur",
+      "name": {
+        "nl": "Kwantitatieve waarde in uur"
+      },
+      "sort_nl": "Kwantitatieve waarde in uur",
+      "description": {
+        "nl": "Een kwantitatieve waarde die een getal in uur uitdrukt."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInUur.standaardEenheid",
+          "name": {
+            "nl": "standaard eenheid"
+          },
+          "sort_nl": "standaard eenheid",
+          "description": {
+            "nl": "De standaard eenheid bij dit datatype is uitgedrukt in uur."
+          },
+          "usage": {
+            "nl": "\"h\"^^cdt:ucumunit"
+          },
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInUur",
+              "EA-Name": "KwantWrdInUur"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "nl": "Literal"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInUur.waarde",
+          "name": {
+            "nl": "waarde"
+          },
+          "sort_nl": "waarde",
+          "description": {
+            "nl": "Bevat een getal die bij het datatype hoort."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInUur",
+              "EA-Name": "KwantWrdInUur"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "NonNegativeInteger",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Natuurlijk getal",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+              "range_label": {
+                "nl": "Natuurlijk getal"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
       "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt",
       "name": {
         "nl": "Kwantitatieve waarde in volt"
@@ -4998,90 +3647,6 @@
             {
               "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt",
               "EA-Name": "KwantWrdInWatt"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Decimal",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#decimal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Decimaal getal",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#decimal",
-              "range_label": {
-                "nl": "Decimaal getal"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInkWh",
-      "name": {
-        "nl": "Kwantitatieve waarde in kWh"
-      },
-      "sort_nl": "Kwantitatieve waarde in kWh",
-      "description": {
-        "nl": "Een kwantitatieve waarde die een getal in kiloWattUur uitdrukt."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInkWh.standaardEenheid",
-          "name": {
-            "nl": "standaard eenheid"
-          },
-          "sort_nl": "standaard eenheid",
-          "description": {
-            "nl": "De standaard eenheid bij dit datatype is uitgedrukt in kiloWattUur."
-          },
-          "usage": {
-            "nl": "\"kWh\"^^cdt:ucumunit"
-          },
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInkWh",
-              "EA-Name": "KwantWrdInkWh"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_label": {
-                "nl": "Literal"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInkWh.waarde",
-          "name": {
-            "nl": "waarde"
-          },
-          "sort_nl": "waarde",
-          "description": {
-            "nl": "Bevat een getal die bij het datatype hoort."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInkWh",
-              "EA-Name": "KwantWrdInkWh"
             }
           ],
           "range": [
