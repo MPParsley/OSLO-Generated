@@ -29,6 +29,7 @@
     <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#ThematypeShape>,
     <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#TickettypeShape>,
     <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#TransactietypeShape>,
+    <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#UitvoerderRolTypeShape>,
     <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#OrganisatieShape>,
     <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#ParticipantShape>,
     <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#ActiviteitShape>,
@@ -63,11 +64,9 @@
     <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#BerichtgevingShape>,
     <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#DingShape>,
     <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#ConsentShape>,
-    <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#GivenConsentShape>,
     <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#SamenwerkingShape>,
     <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#KwaliteitShape>,
     <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#UitvoerderShape>,
-    <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#DeelnemerShape>,
     <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#GeregistreerdPersoonShape>,
     <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#AgentShape>,
     <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#PersoonShape>,
@@ -159,8 +158,12 @@
     shacl:description "TODO";
     shacl:name "typeActiviteit";
     shacl:path <http://fixme.com>
+  ], [
+    shacl:class <http://fixme.com>;
+    shacl:name "werktSamenMet";
+    shacl:path <https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#werktSamenMet>
   ];
-  shacl:targetClass <http://fixme.com> .
+  shacl:targetClass <http://fixme.com#Samenwerking.aanbieder.target> .
 
 <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#AanbiederTypeShape> a shacl:NodeShape;
   shacl:closed false;
@@ -210,21 +213,15 @@
     shacl:name "discipline";
     shacl:path <http://fixme.com>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#DoelgroepType>;
-    shacl:description "TODO";
+    shacl:class <http://fixme.com>;
     shacl:name "doelgroep";
-    shacl:path <http://fixme.com>
+    shacl:path <https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#doelgroep>
   ], [
     shacl:datatype xsd:duration;
     shacl:description "TODO";
     shacl:maxCount 0;
     shacl:minCount 1;
     shacl:name "duur";
-    shacl:path <http://fixme.com>
-  ], [
-    shacl:class <http://fixme.com>;
-    shacl:description "TODO";
-    shacl:name "gebruikObject";
     shacl:path <http://fixme.com>
   ], [
     shacl:class <http://fixme.com>;
@@ -239,7 +236,7 @@
     shacl:description "TODO";
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "identifier";
+    shacl:name "identificator";
     shacl:path <http://fixme.com>
   ], [
     shacl:class <http://fixme.com>;
@@ -316,13 +313,6 @@
     shacl:class <https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#Activiteittype>;
     shacl:description "TODO";
     shacl:name "type";
-    shacl:path <http://fixme.com>
-  ], [
-    shacl:class dc:Agent;
-    shacl:description "TODO";
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "uitgevoerdDoor";
     shacl:path <http://fixme.com>
   ], [
     shacl:class <http://fixme.com>;
@@ -507,8 +497,8 @@
     shacl:description "Referentie naar verbonden klasse.";
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "Deelnemer";
-    shacl:path <http://fixme.com#Deelname.deelnemer>
+    shacl:name "Participant";
+    shacl:path <http://fixme.com#Deelname.participant>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#DeelnameType>;
     shacl:description "TODO";
@@ -539,16 +529,6 @@
 <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#DeelnameTypeShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass <https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#DeelnameType> .
-
-<https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#DeelnemerShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:class <http://fixme.com>;
-    shacl:description "TODO";
-    shacl:name "neemtDeelAan";
-    shacl:path <http://fixme.com>
-  ];
-  shacl:targetClass <http://fixme.com#Deelname.deelnemer> .
 
 <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#DingShape> a shacl:NodeShape;
   shacl:closed false;
@@ -651,10 +631,6 @@
     shacl:path <http://www.w3.org/ns/regorg#legalName>
   ];
   shacl:targetClass <http://www.w3.org/ns/regorg#RegisteredOrganization> .
-
-<https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#GivenConsentShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <http://fixme.com> .
 
 <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#InfrastructuurShape> a shacl:NodeShape;
   shacl:closed false;
@@ -871,6 +847,11 @@
     shacl:name "leeftijdsklasse";
     shacl:path <http://fixme.com>
   ], [
+    shacl:class <http://fixme.com>;
+    shacl:description "TODO";
+    shacl:name "neemtDeelAan";
+    shacl:path <http://fixme.com>
+  ], [
     shacl:class <https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#Onderwijsniveau>;
     shacl:description "TODO";
     shacl:maxCount 1;
@@ -882,7 +863,7 @@
     shacl:name "woonplaats";
     shacl:path dc:Location
   ];
-  shacl:targetClass <http://fixme.com> .
+  shacl:targetClass <http://fixme.com#Deelname.participant> .
 
 <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#ParticipanttypeShape> a shacl:NodeShape;
   shacl:closed false;
@@ -972,37 +953,32 @@
 <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#SamenwerkingShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:dateTime;
-    shacl:description "TODO";
+    shacl:class <http://fixme.com>;
+    shacl:description "Referentie naar verbonden klasse.";
     shacl:maxCount 1;
-    shacl:name "samenwerkingEinde";
-    shacl:path <http://fixme.com>
+    shacl:minCount 1;
+    shacl:name "Aanbieder";
+    shacl:path <http://fixme.com#Samenwerking.aanbieder.source>
   ], [
-    shacl:datatype xsd:dateTime;
-    shacl:description "TODO";
+    shacl:class <http://fixme.com>;
+    shacl:description "Referentie naar verbonden klasse.";
     shacl:maxCount 1;
-    shacl:name "samenwerkingEinde";
-    shacl:path <http://fixme.com>
+    shacl:minCount 1;
+    shacl:name "Aanbieder";
+    shacl:path <http://fixme.com#Samenwerking.aanbieder.target>
   ], [
     shacl:description "TODO";
     shacl:maxCount 1;
-    shacl:name "samenwerkingStart";
-    shacl:path <http://fixme.com>
-  ], [
-    shacl:datatype xsd:dateTime;
-    shacl:description "TODO";
-    shacl:maxCount 1;
-    shacl:name "samenwerkingStart";
+    shacl:name "TM_Period";
     shacl:path xsd:dateTime
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#SamenwerkingType>;
-    shacl:description "TODO";
-    shacl:name "samenwerkingType";
-    shacl:path <http://fixme.com>
+    shacl:class <http://fixme.com>;
+    shacl:name "activiteit";
+    shacl:path <https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#activiteit>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#SamenwerkingType>;
     shacl:description "TODO";
-    shacl:name "samenwerkingType";
+    shacl:name "type";
     shacl:path <http://fixme.com>
   ];
   shacl:targetClass <http://fixme.com> .
@@ -1129,8 +1105,17 @@
   shacl:closed false;
   shacl:targetClass <https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#Transactietype> .
 
+<https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#UitvoerderRolTypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#UitvoerderRolType> .
+
 <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#UitvoerderShape> a shacl:NodeShape;
   shacl:closed false;
+  shacl:property [
+    shacl:class <https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#UitvoerderRolType>;
+    shacl:name "rol";
+    shacl:path <https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#rol>
+  ];
   shacl:targetClass <http://fixme.com> .
 
 <https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#VerenigingShape> a shacl:NodeShape;

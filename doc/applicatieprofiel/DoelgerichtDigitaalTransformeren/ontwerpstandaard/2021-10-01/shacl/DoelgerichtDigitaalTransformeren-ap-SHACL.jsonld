@@ -174,6 +174,13 @@
       "sh:targetClass": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#Transactietype"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#UitvoerderRolTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#UitvoerderRolType"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#OrganisatieShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -239,6 +246,12 @@
           "sh:path": "http://fixme.com"
         },
         {
+          "sh:class": "http://fixme.com",
+          "sh:description": "TODO",
+          "sh:name": "neemtDeelAan",
+          "sh:path": "http://fixme.com"
+        },
+        {
           "sh:class": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#Onderwijsniveau",
           "sh:description": "TODO",
           "sh:maxCount": "1",
@@ -252,7 +265,7 @@
           "sh:path": "http://purl.org/dc/terms/Location"
         }
       ],
-      "sh:targetClass": "http://fixme.com"
+      "sh:targetClass": "http://fixme.com#Deelname.participant"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#ActiviteitShape",
@@ -309,10 +322,9 @@
           "sh:path": "http://fixme.com"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#DoelgroepType",
-          "sh:description": "TODO",
+          "sh:class": "http://fixme.com",
           "sh:name": "doelgroep",
-          "sh:path": "http://fixme.com"
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#doelgroep"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
@@ -320,12 +332,6 @@
           "sh:maxCount": "0",
           "sh:minCount": "1",
           "sh:name": "duur",
-          "sh:path": "http://fixme.com"
-        },
-        {
-          "sh:class": "http://fixme.com",
-          "sh:description": "TODO",
-          "sh:name": "gebruikObject",
           "sh:path": "http://fixme.com"
         },
         {
@@ -343,7 +349,7 @@
           "sh:description": "TODO",
           "sh:maxCount": "1",
           "sh:minCount": "1",
-          "sh:name": "identifier",
+          "sh:name": "identificator",
           "sh:path": "http://fixme.com"
         },
         {
@@ -438,14 +444,6 @@
           "sh:path": "http://fixme.com"
         },
         {
-          "sh:class": "http://purl.org/dc/terms/Agent",
-          "sh:description": "TODO",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "uitgevoerdDoor",
-          "sh:path": "http://fixme.com"
-        },
-        {
           "sh:class": "http://fixme.com",
           "sh:description": "TODO",
           "sh:name": "voertUit",
@@ -529,9 +527,14 @@
           "sh:description": "TODO",
           "sh:name": "typeActiviteit",
           "sh:path": "http://fixme.com"
+        },
+        {
+          "sh:class": "http://fixme.com",
+          "sh:name": "werktSamenMet",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#werktSamenMet"
         }
       ],
-      "sh:targetClass": "http://fixme.com"
+      "sh:targetClass": "http://fixme.com#Samenwerking.aanbieder.target"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#ParticipantProfielShape",
@@ -748,8 +751,8 @@
           "sh:description": "Referentie naar verbonden klasse.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
-          "sh:name": "Deelnemer",
-          "sh:path": "http://fixme.com#Deelname.deelnemer"
+          "sh:name": "Participant",
+          "sh:path": "http://fixme.com#Deelname.participant"
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#DeelnameType",
@@ -1236,54 +1239,41 @@
       "sh:targetClass": "http://fixme.com"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#GivenConsentShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#SamenwerkingShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "TODO",
+          "sh:class": "http://fixme.com",
+          "sh:description": "Referentie naar verbonden klasse.",
           "sh:maxCount": "1",
-          "sh:name": "samenwerkingEinde",
-          "sh:path": "http://fixme.com"
+          "sh:minCount": "1",
+          "sh:name": "Aanbieder",
+          "sh:path": "http://fixme.com#Samenwerking.aanbieder.source"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "TODO",
+          "sh:class": "http://fixme.com",
+          "sh:description": "Referentie naar verbonden klasse.",
           "sh:maxCount": "1",
-          "sh:name": "samenwerkingEinde",
-          "sh:path": "http://fixme.com"
+          "sh:minCount": "1",
+          "sh:name": "Aanbieder",
+          "sh:path": "http://fixme.com#Samenwerking.aanbieder.target"
         },
         {
           "sh:description": "TODO",
           "sh:maxCount": "1",
-          "sh:name": "samenwerkingStart",
-          "sh:path": "http://fixme.com"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:description": "TODO",
-          "sh:maxCount": "1",
-          "sh:name": "samenwerkingStart",
+          "sh:name": "TM_Period",
           "sh:path": "http://www.w3.org/2001/XMLSchema#dateTime"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#SamenwerkingType",
-          "sh:description": "TODO",
-          "sh:name": "samenwerkingType",
-          "sh:path": "http://fixme.com"
+          "sh:class": "http://fixme.com",
+          "sh:name": "activiteit",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#activiteit"
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#SamenwerkingType",
           "sh:description": "TODO",
-          "sh:name": "samenwerkingType",
+          "sh:name": "type",
           "sh:path": "http://fixme.com"
         }
       ],
@@ -1300,22 +1290,14 @@
       "@id": "https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#UitvoerderShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#DeelnemerShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "http://fixme.com",
-          "sh:description": "TODO",
-          "sh:name": "neemtDeelAan",
-          "sh:path": "http://fixme.com"
+          "sh:class": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#UitvoerderRolType",
+          "sh:name": "rol",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#rol"
         }
       ],
-      "sh:targetClass": "http://fixme.com#Deelname.deelnemer"
+      "sh:targetClass": "http://fixme.com"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#GeregistreerdPersoonShape",
