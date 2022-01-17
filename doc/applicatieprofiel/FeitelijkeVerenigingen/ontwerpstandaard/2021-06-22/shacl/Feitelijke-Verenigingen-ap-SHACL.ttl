@@ -20,7 +20,6 @@
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#GeregistreerdPersoonShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#HoedanigheidShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PeriodeShape>,
-    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#VestigingShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#AgentShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PubliekeDienstverleningShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ContactInfoShape>,
@@ -34,6 +33,7 @@
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#AdresvoorstellingShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#FormeleOrganisatieShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#RolShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#VestigingShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PersoonShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#GeregistreerdeOrganisatieShape> .
 
@@ -345,11 +345,6 @@
     shacl:name "beschrijving";
     shacl:path dc:description
   ], [
-    shacl:description "Munteenheid waarin de kost is gedefinieerd.";
-    shacl:maxCount 1;
-    shacl:name "valuta";
-    shacl:path <http://data.europa.eu/m8g/currency>
-  ], [
     shacl:datatype xsd:double;
     shacl:description "Omvang van de kost, uitgedrukt in de opgegeven munteenheid.";
     shacl:maxCount 1;
@@ -387,7 +382,7 @@
     shacl:name "contactinfo";
     shacl:path schema:contactPoint
   ], [
-    shacl:class <http://fixme.com#Vestiging>;
+    shacl:class org:Site;
     shacl:description "Verwijst naar een plek waar de organisatie op een of andere manier, desnoods indirect, aanwezig is.";
     shacl:maxCount 1;
     shacl:name "heeftPrimaireVestiging";
@@ -551,4 +546,4 @@
     shacl:name "vestigingsAdres";
     shacl:path org:siteAddress
   ];
-  shacl:targetClass <http://fixme.com#Vestiging> .
+  shacl:targetClass org:Site .

@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
     "statuslabel": "Kandidaat Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/tree/262b89df92f3aea68c8cc461f79821977a91b19a",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/blob/262b89df92f3aea68c8cc461f79821977a91b19a/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/tree/43c9c0725a699f99ce60730b15d2634c96596f9c",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/blob/43c9c0725a699f99ce60730b15d2634c96596f9c/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/kandidaat-standaard/applicatieprofiel-feitelijke-verenigingen.html",
     "usesVocs": [],
@@ -1175,13 +1175,13 @@
           "range": [
             {
               "range_label": "Vestiging",
-              "range_uri": "http://fixme.com#Vestiging"
+              "range_uri": "http://www.w3.org/ns/org#Site"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Vestiging",
-              "range_puri": "http://fixme.com#Vestiging",
+              "range_puri": "http://www.w3.org/ns/org#Site",
               "range_label": {
                 "nl": "Vestiging"
               }
@@ -1666,51 +1666,6 @@
       "properties": []
     },
     {
-      "uri": "http://fixme.com#Vestiging",
-      "name": {},
-      "description": {},
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://www.w3.org/ns/org#siteAddress",
-          "name": {
-            "nl": "vestigingsadres"
-          },
-          "sort_nl": "vestigingsadres",
-          "description": {
-            "nl": "Adres vd vestiging."
-          },
-          "usage": {
-            "nl": "Kan email, telefoon en ook adres zijn (in welk geval ook niet-fysieke adressen mogelijk zijn)."
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com#Vestiging",
-              "EA-Name": "Vestiging"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "ContactInfo",
-              "range_uri": "http://schema.org/ContactPoint"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Contactinfo",
-              "range_puri": "http://schema.org/ContactPoint",
-              "range_label": {
-                "nl": "Contactinfo"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
       "uri": "http://purl.org/dc/terms/Agent",
       "name": {
         "nl": "Agent"
@@ -1887,6 +1842,58 @@
         }
       ],
       "properties": []
+    },
+    {
+      "uri": "http://www.w3.org/ns/org#Site",
+      "name": {
+        "nl": "Vestiging"
+      },
+      "sort_nl": "Vestiging",
+      "description": {
+        "nl": "Een kantoor of ander pand waar een organisatie gevestigd is. Organisaties kunnen over meerdere vestigingen verspreid zijn en vestigingen kunnen op meerdere locaties slaan."
+      },
+      "usage": {
+        "nl": "Meestal zal de vestiging een fysieke locatie zijn. Niet-fysieke locaties worden echter niet uitgesloten,bv een virtueel kantoor met bijbehorend postnummer en telefonische receptie."
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://www.w3.org/ns/org#siteAddress",
+          "name": {
+            "nl": "vestigingsadres"
+          },
+          "sort_nl": "vestigingsadres",
+          "description": {
+            "nl": "Adres vd vestiging."
+          },
+          "usage": {
+            "nl": "Kan email, telefoon en ook adres zijn (in welk geval ook niet-fysieke adressen mogelijk zijn)."
+          },
+          "domain": [
+            {
+              "uri": "http://www.w3.org/ns/org#Site",
+              "EA-Name": "Vestiging"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ContactInfo",
+              "range_uri": "http://schema.org/ContactPoint"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Contactinfo",
+              "range_puri": "http://schema.org/ContactPoint",
+              "range_label": {
+                "nl": "Contactinfo"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
     },
     {
       "uri": "http://www.w3.org/ns/person#Person",
@@ -2450,29 +2457,6 @@
       "usage": {},
       "parents": [],
       "properties": [
-        {
-          "uri": "http://data.europa.eu/m8g/currency",
-          "name": {
-            "nl": "valuta"
-          },
-          "sort_nl": "valuta",
-          "description": {
-            "nl": "Munteenheid waarin de kost is gedefinieerd."
-          },
-          "usage": {
-            "nl": " "
-          },
-          "domain": [
-            {
-              "uri": "http://data.europa.eu/m8g/Cost",
-              "EA-Name": "Kost"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
         {
           "uri": "http://data.europa.eu/m8g/value",
           "name": {
