@@ -29,9 +29,11 @@
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#RoltypeShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ActiviteitTypeShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ErkenningstypeShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#OrganisatieActiviteitShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#IdentificatorShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#AdresvoorstellingShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#FormeleOrganisatieShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#RolShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PersoonShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#GeregistreerdeOrganisatieShape> .
 
@@ -110,6 +112,7 @@
     shacl:name "taal";
     shacl:path dc:language
   ], [
+    shacl:class skos:Concept;
     shacl:description "Aard vh bewijs.";
     shacl:maxCount 1;
     shacl:name "type";
@@ -131,6 +134,7 @@
     shacl:name "naam";
     shacl:path dc:title
   ], [
+    shacl:class skos:Concept;
     shacl:description "Aard vd criteriumvereiste.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -142,6 +146,7 @@
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ErkenningShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class skos:Concept;
     shacl:maxCount 1;
     shacl:name "activiteit";
     shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#activiteit>
@@ -176,6 +181,7 @@
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ErkenningsaanvraagShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class skos:Concept;
     shacl:maxCount 1;
     shacl:name "activiteit";
     shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#activiteit>
@@ -230,6 +236,7 @@
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#FeitelijkeVerenigingShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class skos:Concept;
     shacl:description "Type activiteit die door de organisatie wordt uitgeoefend.";
     shacl:maxCount 1;
     shacl:name "^activiteit";
@@ -351,9 +358,14 @@
   ];
   shacl:targetClass <http://data.europa.eu/m8g/Cost> .
 
+<https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#OrganisatieActiviteitShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#OrganisatieShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class skos:Concept;
     shacl:description "Type activiteit die door de organisatie wordt uitgeoefend.";
     shacl:maxCount 1;
     shacl:name "activiteit";
@@ -483,6 +495,10 @@
     shacl:path dc:spatial
   ];
   shacl:targetClass <http://data.europa.eu/m8g/PublicOrganisation> .
+
+<https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#RolShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass org:Role .
 
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#RoltypeShape> a shacl:NodeShape;
   shacl:closed false;
