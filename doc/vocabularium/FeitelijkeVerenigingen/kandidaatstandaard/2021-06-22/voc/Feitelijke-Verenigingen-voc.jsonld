@@ -33,7 +33,7 @@
       "foaf:mbox": "mailto:michel.hamrouni@vlaanderen.be"
     }
   ],
-  "baseURI": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#",
+  "baseURI": null,
   "baseURIabbrev": null,
   "contributors": [
     {
@@ -151,15 +151,15 @@
   ],
   "issued": "TODO",
   "label": {
-    "en": "Feitelijke-Verenigingen-ap",
-    "nl": "Feitelijke-Verenigingen-ap"
+    "en": "Feitelijke-Verenigingen-voc",
+    "nl": "Feitelijke-Verenigingen-voc"
   },
   "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
   "namespace": null,
   "navigation": {},
   "publication-date": "2021-06-22",
   "publication-state": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
-  "title": "Feitelijke Verenigingen - Applicatieprofiel",
+  "title": "Feitelijke Verenigingen - Vocabularium",
   "dcterms:license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
   "dcterms:mediator": {
     "foaf:homepage": "https://data.vlaanderen.be",
@@ -195,73 +195,38 @@
       "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
-        "nl": "Een Vereniging zonder rechtspersoonlijkheid, gebaseerd op een afspraak tussen twee of meerdere personen en/of organisaties om een belangeloos doel na te streven."
+        "nl": "Een Feitelijke Vereniging bestaat uit twee of meerdere personen en/of organisaties, heeft geen rechtspersoonlijkheid en streeft een belangeloos doel na."
       },
       "name": {
         "nl": "FeitelijkeVereniging"
       },
       "parents": [
-        "to do"
+        "To Do"
       ],
-      "usage": {
-        "nl": "Een Vereniging wordt gedefinieerd als een Organisatie die een belangeloos doel nastreeft. Dat geldt ook voor een FeitelijkeVereniging, alleen heeft deze geen rechtspersoonlijkheid. Daardoor zijn de individuele leden van de FeitelijkeVereniging zelf aansprakelijk voor de activiteiten die ze organiseren. OPMERKING: Van zodra de FeitelijkeVereniging erkend is kan ze bijkomend getypeerd worden als FormeleOrganisatie (zie elders in deze specificatie voor een definitie van deze term)."
-      }
+      "usage": {}
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Verantwoordelijke",
+      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
         "nl": "Verwijzing naar de verantwoordelijke persoon van de feitelijke vereniging."
       },
       "name": {
-        "nl": "Verantwoordelijke"
+        "nl": "heeftVerantwoordelijke"
       },
-      "parents": [
-        "http://fixme.com#Hoedanigheid",
-        "http://purl.org/dc/terms/Agent"
-      ],
+      "parents": [],
       "usage": {}
     }
   ],
   "properties": [
     {
-      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#^isPositieIn",
+      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Activiteit",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {},
-      "domain": [
-        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Verantwoordelijke"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "isPositieIn"
+      "description": {
+        "nl": "Het werk van personen, een groep of een organisatie om een bepaald doel te bereiken."
       },
-      "range": [
+      "domain": [
         "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#activiteit",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {},
-      "domain": [
-        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "activiteit"
-      },
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#activiteit",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {},
-      "domain": [
-        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag"
       ],
       "generalization": [],
       "name": {
@@ -286,46 +251,90 @@
         "nl": "geldigheidsperiode"
       },
       "range": [
-        "http://data.europa.eu/m8g/PeriodOfTime"
+        "http://fixme.com#Periode"
       ],
       "usage": {}
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geldigheidsperiode",
+      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke.agent",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
-        "nl": "Tijdsinterval waarbinnen de erkenning van toepassing is."
+        "nl": "Referentie naar verbonden klasse."
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag"
+        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke"
       ],
       "generalization": [],
       "name": {
-        "nl": "geldigheidsperiode"
+        "nl": "agent"
       },
       "range": [
-        "http://data.europa.eu/m8g/PeriodOfTime"
+        "http://purl.org/dc/terms/Agent"
       ],
       "usage": {}
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#verantwoordelijke",
+      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke.feitelijkeVereniging",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {},
+      "description": {
+        "nl": "Referentie naar verbonden klasse."
+      },
       "domain": [
-        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging"
+        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke"
       ],
       "generalization": [],
       "name": {
-        "nl": "verantwoordelijke"
+        "nl": "feitelijkeVereniging"
       },
       "range": [
-        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Verantwoordelijke"
+        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging"
       ],
       "usage": {}
     }
   ],
   "externals": [
+    {
+      "@id": "http://data.europa.eu/m8g/CriterionRequirement",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "CriteriumVereiste"
+      }
+    },
+    {
+      "@id": "http://data.europa.eu/m8g/Evidence",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Bewijs"
+      }
+    },
+    {
+      "@id": "http://data.europa.eu/m8g/PeriodOfTime",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Periode"
+      }
+    },
+    {
+      "@id": "http://schema.org/ContactPoint",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Contactinfo"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Bewijstype"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Erkenningstype"
+      }
+    },
     {
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
@@ -339,28 +348,35 @@
       "name": {
         "nl": "ActiviteitType"
       }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Erkenningstype"
-      }
-    },
-    {
-      "@id": "to do",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Vereniging"
-      }
     }
   ],
   "externalproperties": [
+    {
+      "@id": "http://data.europa.eu/m8g/endTime",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "einde"
+      }
+    },
     {
       "@id": "http://data.europa.eu/m8g/hasCriterion",
       "@type": "rdf:Property",
       "name": {
         "nl": "criteriumvereiste"
+      }
+    },
+    {
+      "@id": "http://data.europa.eu/m8g/role",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "rol"
+      }
+    },
+    {
+      "@id": "http://data.europa.eu/m8g/startTime",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "begin"
       }
     },
     {
@@ -392,6 +408,48 @@
       }
     },
     {
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "beschrijving"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "beschrijving"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/language",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "taal"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "naam"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "naam"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "naam"
+      }
+    },
+    {
       "@id": "http://purl.org/dc/terms/type",
       "@type": "rdf:Property",
       "name": {
@@ -413,24 +471,31 @@
       }
     },
     {
-      "@id": "http://schema.org/contactPoint",
+      "@id": "http://schema.org/email",
       "@type": "rdf:Property",
       "name": {
-        "nl": "contactinfo"
+        "nl": "email"
       }
     },
     {
-      "@id": "http://schema.org/contactPoint",
+      "@id": "http://schema.org/faxNumber",
       "@type": "rdf:Property",
       "name": {
-        "nl": "contactinfo"
+        "nl": "fax"
       }
     },
     {
-      "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "@id": "http://schema.org/telephone",
       "@type": "rdf:Property",
       "name": {
-        "nl": "voorkeursnaam"
+        "nl": "telefoon"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2006/vcard/ns#honorific-prefix",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "aanschrijfvorm"
       }
     },
     {
@@ -441,17 +506,31 @@
       }
     },
     {
-      "@id": "http://www.w3.org/ns/org#role",
+      "@id": "http://www.w3.org/ns/locn#address",
       "@type": "rdf:Property",
       "name": {
-        "nl": "rol"
+        "nl": "adres"
       }
     },
     {
-      "@id": "http://www.w3.org/ns/regorg#orgActivity",
+      "@id": "http://xmlns.com/foaf/0.1/name",
       "@type": "rdf:Property",
       "name": {
-        "nl": "activiteit"
+        "nl": "contactnaam"
+      }
+    },
+    {
+      "@id": "http://xmlns.com/foaf/0.1/page",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "documentatie"
+      }
+    },
+    {
+      "@id": "http://xmlns.com/foaf/0.1/page",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "website"
       }
     },
     {
@@ -473,6 +552,13 @@
       "@type": "rdf:Property",
       "name": {
         "nl": "heeftErkenning"
+      }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/adres#Adres",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "adres"
       }
     }
   ],

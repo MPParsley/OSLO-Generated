@@ -3,23 +3,1545 @@
     "title": {
       "nl": "Feitelijke Verenigingen - Applicatieprofiel"
     },
-    "uri": "http://fixme.com",
+    "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen",
     "issued": "2021-06-22",
+    "baseURI": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#",
     "filename": "Feitelijke-Verenigingen-ap",
     "navigation": {
       "self": "https://test.data.vlaanderen.be/doc/applicatieprofiel/FeitelijkeVerenigingen/kandidaatstandaard/2021-06-22"
     },
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
-    "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
-    "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/tree/3e0bac1df066ba0dc3c2cbba594796a115d9e8a0",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/blob/3e0bac1df066ba0dc3c2cbba594796a115d9e8a0/CHANGELOG",
+    "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
+    "statuslabel": "Kandidaat Standaard",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/tree/5e8af7c3cfb3f7f71320c36a1532457bdb5762e5",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/blob/5e8af7c3cfb3f7f71320c36a1532457bdb5762e5/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/issues",
-    "standaardregisterurl": "https://data.vlaanderen.be/standaarden/standaard-in-ontwikkeling/vocabularium-en-applicatieprofielen-feitelijke-verenigingen.html",
+    "standaardregisterurl": "https://data.vlaanderen.be/standaarden/kandidaat-standaard/applicatieprofiel-feitelijke-verenigingen.html",
     "usesVocs": [],
     "usesAPs": []
   },
   "classes": [
+    {
+      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
+      "name": {
+        "nl": "Erkenning"
+      },
+      "sort_nl": "Erkenning",
+      "description": {
+        "nl": "De aanduiding door een bevoegde instelling waarbij wordt vastgesteld dat een persoon of instelling aan bepaalde eisen voldoet, al dan niet tijdelijk."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#activiteit",
+          "name": {
+            "nl": "activiteit"
+          },
+          "sort_nl": "activiteit",
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
+              "EA-Name": "Erkenning"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "OrganisatieActiviteit",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#OrganisatieActiviteit",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "OrganisatieActiviteit"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geldigheidsperiode",
+          "name": {
+            "nl": "geldigheidsperiode"
+          },
+          "sort_nl": "geldigheidsperiode",
+          "description": {
+            "nl": "Tijdsinterval waarbinnen de erkenning van toepassing is."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
+              "EA-Name": "Erkenning"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Periode",
+              "range_uri": "http://data.europa.eu/m8g/PeriodOfTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Periode",
+              "range_puri": "http://data.europa.eu/m8g/PeriodOfTime",
+              "range_label": {
+                "nl": "Periode"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": {
+            "nl": "beschrijving"
+          },
+          "sort_nl": "beschrijving",
+          "description": {
+            "nl": "Een beknopte omschrijving van de erkenning."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
+              "EA-Name": "Erkenning"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/type",
+          "name": {
+            "nl": "type"
+          },
+          "sort_nl": "type",
+          "description": {
+            "nl": "De aard van de erkenning."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
+              "EA-Name": "Erkenning"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Erkenningstype",
+              "range_uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningstype"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Erkenningstype",
+              "range_puri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningstype",
+              "range_label": {
+                "nl": "Erkenningstype"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#toegekenddoor",
+          "name": {
+            "nl": "toegekendDoor"
+          },
+          "sort_nl": "toegekendDoor",
+          "description": {
+            "nl": "Verijwzing naar de organisatie die de erkenning heeft toegekend aan de feitelijke vereniging."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
+              "EA-Name": "Erkenning"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PubliekeOrganisatie",
+              "range_uri": "http://data.europa.eu/m8g/PublicOrganisation"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#PubliekeOrganisatie",
+              "range_puri": "http://data.europa.eu/m8g/PublicOrganisation",
+              "range_label": {
+                "nl": "PubliekeOrganisatie"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
+      "name": {
+        "nl": "Erkenningsaanvraag"
+      },
+      "sort_nl": "Erkenningsaanvraag",
+      "description": {
+        "nl": "Het verzoek tot aanduiding door een bevoegde instelling waarbij wordt vastgesteld dat een persoon of instelling aan bepaalde eisen voldoet, al dan niet tijdelijk."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#activiteit",
+          "name": {
+            "nl": "activiteit"
+          },
+          "sort_nl": "activiteit",
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
+              "EA-Name": "Erkenningsaanvraag"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "OrganisatieActiviteit",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#OrganisatieActiviteit",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "OrganisatieActiviteit"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geldigheidsperiode",
+          "name": {
+            "nl": "geldigheidsperiode"
+          },
+          "sort_nl": "geldigheidsperiode",
+          "description": {
+            "nl": "Tijdsinterval waarbinnen de erkenning van toepassing is."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
+              "EA-Name": "Erkenningsaanvraag"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Periode",
+              "range_uri": "http://data.europa.eu/m8g/PeriodOfTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Periode",
+              "range_puri": "http://data.europa.eu/m8g/PeriodOfTime",
+              "range_label": {
+                "nl": "Periode"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/hasCriterion",
+          "name": {
+            "nl": "criteriumvereiste"
+          },
+          "sort_nl": "criteriumvereiste",
+          "description": {
+            "nl": "Verwijzing naar de criteriumvereiste dit van toepassing is op de erkenningsaanvraag."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
+              "EA-Name": "Erkenningsaanvraag"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "CriteriumVereiste",
+              "range_uri": "http://data.europa.eu/m8g/CriterionRequirement"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Criteriumvereiste",
+              "range_puri": "http://data.europa.eu/m8g/CriterionRequirement",
+              "range_label": {
+                "nl": "Criteriumvereiste"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.vlaanderen.be/ns/besluit#erkenningsbeslissing",
+          "name": {
+            "nl": "erkenningsbeslissing"
+          },
+          "sort_nl": "erkenningsbeslissing",
+          "description": {
+            "nl": "Het resultaat van de erkenningsaanvraag."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
+              "EA-Name": "Erkenningsaanvraag"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": {
+            "nl": "beschrijving"
+          },
+          "sort_nl": "beschrijving",
+          "description": {
+            "nl": "Een beknopte omschrijving van de erkenningsaanvraag."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
+              "EA-Name": "Erkenningsaanvraag"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/type",
+          "name": {
+            "nl": "type"
+          },
+          "sort_nl": "type",
+          "description": {
+            "nl": "De aard van de erkenning."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
+              "EA-Name": "Erkenningsaanvraag"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Erkenningstype",
+              "range_uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningstype"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Erkenningstype",
+              "range_puri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningstype",
+              "range_label": {
+                "nl": "Erkenningstype"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/vocab/cpsv#hasInput",
+          "name": {
+            "nl": "input"
+          },
+          "sort_nl": "input",
+          "description": {
+            "nl": "Bewijsstuk(ken) dat moet(en) voorgelegd worden om de erkenning te kunnen verkrijgen."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
+              "EA-Name": "Erkenningsaanvraag"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Bewijs",
+              "range_uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Bewijs",
+              "range_puri": "http://data.europa.eu/m8g/Evidence",
+              "range_label": {
+                "nl": "Bewijs"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geeftrechtOp",
+          "name": {
+            "nl": "geeftRechtOp"
+          },
+          "sort_nl": "geeftRechtOp",
+          "description": {
+            "nl": "De erkenning die toegekend wordt op basis van de ingediende erkenningsaanvraag."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
+              "EA-Name": "Erkenningsaanvraag"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Erkenning",
+              "range_uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Erkenning",
+              "range_puri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
+              "range_label": {
+                "nl": "Erkenning"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+      "name": {
+        "nl": "FeitelijkeVereniging"
+      },
+      "sort_nl": "FeitelijkeVereniging",
+      "description": {
+        "nl": "Een Vereniging zonder rechtspersoonlijkheid, gebaseerd op een afspraak tussen twee of meerdere personen en/of organisaties om een belangeloos doel na te streven."
+      },
+      "usage": {
+        "nl": "Een Vereniging wordt gedefinieerd als een Organisatie die een belangeloos doel nastreeft. Dat geldt ook voor een FeitelijkeVereniging, alleen heeft deze geen rechtspersoonlijkheid. Daardoor zijn de individuele leden van de FeitelijkeVereniging zelf aansprakelijk voor de activiteiten die ze organiseren. OPMERKING: Van zodra de FeitelijkeVereniging erkend is kan ze bijkomend getypeerd worden als FormeleOrganisatie (zie elders in deze specificatie voor een definitie van deze term)."
+      },
+      "parents": [
+        {
+          "name": "Vereniging",
+          "label": "Vereniging",
+          "package": "OSLO-FeitelijkeVerenigingen",
+          "uri": "to do",
+          "scoped_uri": "#Vereniging"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#verantwoordelijke",
+          "name": {
+            "nl": "verantwoordelijke"
+          },
+          "sort_nl": "verantwoordelijke",
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+              "EA-Name": "FeitelijkeVereniging"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Verantwoordelijke",
+              "range_uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Verantwoordelijke"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Verantwoordelijke",
+              "range_puri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Verantwoordelijke",
+              "range_label": {
+                "nl": "Verantwoordelijke"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://schema.org/contactPoint",
+          "name": {
+            "nl": "contactinfo"
+          },
+          "sort_nl": "contactinfo",
+          "description": {
+            "nl": "Informatie zoals email, telefoon... die toelaat de Organisatie te contacteren."
+          },
+          "usage": {
+            "nl": " "
+          },
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+              "EA-Name": "FeitelijkeVereniging"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ContactInfo",
+              "range_uri": "http://schema.org/ContactPoint"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Contactinfo",
+              "range_puri": "http://schema.org/ContactPoint",
+              "range_label": {
+                "nl": "Contactinfo"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
+          "name": {
+            "nl": "voorkeursnaam"
+          },
+          "sort_nl": "voorkeursnaam",
+          "description": {
+            "nl": "Naam waarmee de organisatie bij voorkeur wordt aangeduid."
+          },
+          "usage": {
+            "nl": " "
+          },
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+              "EA-Name": "FeitelijkeVereniging"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TaalString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/adms#Identifier",
+          "name": {
+            "nl": "identificator"
+          },
+          "sort_nl": "identificator",
+          "description": {
+            "nl": "Identificator van het object."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+              "EA-Name": "FeitelijkeVereniging"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Identificator",
+              "range_uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Identificator",
+              "range_puri": "http://www.w3.org/ns/adms#Identifier",
+              "range_label": {
+                "nl": "Identificator"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/regorg#orgActivity",
+          "name": {
+            "nl": "activiteit"
+          },
+          "sort_nl": "activiteit",
+          "description": {
+            "nl": "Type activiteit die door de organisatie wordt uitgeoefend."
+          },
+          "usage": {
+            "nl": "Specialisatie van het attribuut classificatie (naast type & status)."
+          },
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+              "EA-Name": "FeitelijkeVereniging"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "OrganisatieActiviteit",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#OrganisatieActiviteit",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "OrganisatieActiviteit"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#dientIn",
+          "name": {
+            "nl": "dientIn"
+          },
+          "sort_nl": "dientIn",
+          "description": {
+            "nl": "De erkenningsaanvraag die ingediend wordt door de feitelijke vereninging."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+              "EA-Name": "FeitelijkeVereniging"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Erkenningsaanvraag",
+              "range_uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Erkenningsaanvraag",
+              "range_puri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
+              "range_label": {
+                "nl": "Erkenningsaanvraag"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftErkenning",
+          "name": {
+            "nl": "heeftErkenning"
+          },
+          "sort_nl": "heeftErkenning",
+          "description": {
+            "nl": "Verwijzing naar de erkenning(en) die de feitelijke vereniging heeft."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+              "EA-Name": "FeitelijkeVereniging"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Erkenning",
+              "range_uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Erkenning",
+              "range_puri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
+              "range_label": {
+                "nl": "Erkenning"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftLid",
+          "name": {
+            "nl": "heeftLid"
+          },
+          "sort_nl": "heeftLid",
+          "description": {
+            "nl": "Verwijzing naar de leden die deel uitmaken van de feitelijke vereniging."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+              "EA-Name": "FeitelijkeVereniging"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://purl.org/dc/terms/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Agent",
+              "range_puri": "http://purl.org/dc/terms/Agent",
+              "range_label": {
+                "nl": "Agent"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#vraagtAan",
+          "name": {
+            "nl": "vraagtAan"
+          },
+          "sort_nl": "vraagtAan",
+          "description": {
+            "nl": "Verwijzing naar de publieke dienstverlening die de feitelijke vereniging aanvraagt."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+              "EA-Name": "FeitelijkeVereniging"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PubliekeDienstverlening",
+              "range_uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#PubliekeDienstverlening",
+              "range_puri": "http://purl.org/vocab/cpsv#PublicService",
+              "range_label": {
+                "nl": "PubliekeDienstverlening"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Verantwoordelijke",
+      "name": {
+        "nl": "Verantwoordelijke"
+      },
+      "sort_nl": "Verantwoordelijke",
+      "description": {
+        "nl": "Verwijzing naar de verantwoordelijke persoon van de feitelijke vereniging."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "name": "Hoedanigheid",
+          "label": "Hoedanigheid",
+          "package": "OSLO-Organisatie",
+          "uri": "http://fixme.com#Hoedanigheid",
+          "scoped_uri": "#Hoedanigheid"
+        },
+        {
+          "name": "Agent",
+          "label": "Agent",
+          "package": "OSLO-Generiek",
+          "uri": "http://purl.org/dc/terms/Agent",
+          "scoped_uri": "#Agent"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#^isPositieIn",
+          "name": {
+            "nl": "isPositieIn"
+          },
+          "sort_nl": "isPositieIn",
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Verantwoordelijke",
+              "EA-Name": "Verantwoordelijke"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "FeitelijkeVereniging",
+              "range_uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#FeitelijkeVereniging",
+              "range_puri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+              "range_label": {
+                "nl": "FeitelijkeVereniging"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": {
+            "nl": "beschrijving"
+          },
+          "sort_nl": "beschrijving",
+          "description": {
+            "nl": "Een beknopte omschrijving van de verantwoordelijke."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Verantwoordelijke",
+              "EA-Name": "Verantwoordelijke"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://schema.org/contactPoint",
+          "name": {
+            "nl": "contactinfo"
+          },
+          "sort_nl": "contactinfo",
+          "description": {
+            "nl": "Informatie zoals email, telefoon... die toelaat de Organisatie te contacteren."
+          },
+          "usage": {
+            "nl": " "
+          },
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Verantwoordelijke",
+              "EA-Name": "Verantwoordelijke"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ContactInfo",
+              "range_uri": "http://schema.org/ContactPoint"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Contactinfo",
+              "range_puri": "http://schema.org/ContactPoint",
+              "range_label": {
+                "nl": "Contactinfo"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/org#role",
+          "name": {
+            "nl": "rol"
+          },
+          "sort_nl": "rol",
+          "description": {
+            "nl": "Geeft de aard weer vd functie."
+          },
+          "usage": {
+            "nl": " "
+          },
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Verantwoordelijke",
+              "EA-Name": "Verantwoordelijke"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rol",
+              "range_uri": "http://www.w3.org/ns/org#Role"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rol",
+              "range_puri": "http://www.w3.org/ns/org#Role",
+              "range_label": {
+                "nl": "Rol"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "To Do",
+      "name": {
+        "nl": "Organisatie"
+      },
+      "sort_nl": "Organisatie",
+      "description": {
+        "nl": "To Do"
+      },
+      "usage": {},
+      "parents": [
+        {
+          "name": "Agent",
+          "label": "Agent",
+          "package": "OSLO-Generiek",
+          "uri": "http://purl.org/dc/terms/Agent",
+          "scoped_uri": "#Agent"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": {
+            "nl": "beschrijving"
+          },
+          "sort_nl": "beschrijving",
+          "description": {
+            "nl": "Beschrijving van de organisatie."
+          },
+          "usage": {
+            "nl": " "
+          },
+          "domain": [
+            {
+              "uri": "To Do",
+              "EA-Name": "Organisatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TaalString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://schema.org/contactPoint",
+          "name": {
+            "nl": "contactinfo"
+          },
+          "sort_nl": "contactinfo",
+          "description": {
+            "nl": "Informatie zoals email, telefoon... die toelaat de Organisatie te contacteren."
+          },
+          "usage": {
+            "nl": " "
+          },
+          "domain": [
+            {
+              "uri": "To Do",
+              "EA-Name": "Organisatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ContactInfo",
+              "range_uri": "http://schema.org/ContactPoint"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Contactinfo",
+              "range_puri": "http://schema.org/ContactPoint",
+              "range_label": {
+                "nl": "Contactinfo"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/2004/02/skos/core#altLabel",
+          "name": {
+            "nl": "alternatieve naam"
+          },
+          "sort_nl": "alternatieve naam",
+          "description": {
+            "nl": "Andere naam waaronder de organisatie bekend is."
+          },
+          "usage": {
+            "nl": "Bv commerciële naam, informele naam"
+          },
+          "domain": [
+            {
+              "uri": "To Do",
+              "EA-Name": "Organisatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TaalString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
+          "name": {
+            "nl": "voorkeursnaam"
+          },
+          "sort_nl": "voorkeursnaam",
+          "description": {
+            "nl": "Naam waarmee de organisatie bij voorkeur wordt aangeduid."
+          },
+          "usage": {
+            "nl": " "
+          },
+          "domain": [
+            {
+              "uri": "To Do",
+              "EA-Name": "Organisatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TaalString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/org#hasSite",
+          "name": {
+            "nl": "^vestiging"
+          },
+          "sort_nl": "^vestiging",
+          "description": {
+            "nl": "Verwijst naar een plek waar de organisatie op een of andere manier, desnoods indirect, aanwezig is."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "To Do",
+              "EA-Name": "Organisatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Vestiging",
+              "range_uri": "http://www.w3.org/ns/org#Site"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Vestiging",
+              "range_puri": "http://www.w3.org/ns/org#Site",
+              "range_label": {
+                "nl": "Vestiging"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/org#resultedFrom",
+          "name": {
+            "nl": "^isHetresultaatVan"
+          },
+          "sort_nl": "^isHetresultaatVan",
+          "description": {
+            "nl": "Verwijst naar het verandersinsmoment dat tot de huidige organisatie heeft geleid."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "To Do",
+              "EA-Name": "Organisatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Oprichting",
+              "range_uri": "http://fixme.com#Oprichting"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://fixme.com#Oprichting",
+              "range_puri": "http://fixme.com#Oprichting",
+              "range_label": {
+                "nl": "Oprichting"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/regorg#orgActivity",
+          "name": {
+            "nl": "activiteit"
+          },
+          "sort_nl": "activiteit",
+          "description": {
+            "nl": "Type activiteit die door de organisatie wordt uitgeoefend."
+          },
+          "usage": {
+            "nl": "Specialisatie van het attribuut classificatie (naast type & status)."
+          },
+          "domain": [
+            {
+              "uri": "To Do",
+              "EA-Name": "Organisatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "OrganisatieActiviteit",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#OrganisatieActiviteit",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "OrganisatieActiviteit"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/CriterionRequirement",
+      "name": {
+        "nl": "Criteriumvereiste"
+      },
+      "sort_nl": "Criteriumvereiste",
+      "description": {
+        "nl": "Criterium dat toelaat te bepalen of een gebruiker recht heeft op een dienstverlening of deze mag gebruiken."
+      },
+      "usage": {
+        "nl": "Niet elke publieke dienstverlening is voor iedereen noodzakelijk of nuttig. Bv werkloosheidsuitkeringen zijn enkel noodzakelijk voor werklozen."
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://purl.org/dc/terms/title",
+          "name": {
+            "nl": "naam"
+          },
+          "sort_nl": "naam",
+          "description": {
+            "nl": "Officiële naam vd criteriumVereiste."
+          },
+          "usage": {
+            "nl": " "
+          },
+          "domain": [
+            {
+              "uri": "http://data.europa.eu/m8g/CriterionRequirement",
+              "EA-Name": "CriteriumVereiste"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TaalString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/type",
+          "name": {
+            "nl": "type"
+          },
+          "sort_nl": "type",
+          "description": {
+            "nl": "Aard vd criteriumvereiste."
+          },
+          "usage": {
+            "nl": " "
+          },
+          "domain": [
+            {
+              "uri": "http://data.europa.eu/m8g/CriterionRequirement",
+              "EA-Name": "CriteriumVereiste"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "CriteriumVereisteType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "CriteriumVereisteType"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/Evidence",
+      "name": {
+        "nl": "Bewijs"
+      },
+      "sort_nl": "Bewijs",
+      "description": {
+        "nl": "Elk stuk waarmee kan worden aangetoond dat men aan een CriteriumVereiste voldoet."
+      },
+      "usage": {
+        "nl": "In het kader van publieke dienstverlening gaat het meestal om administratieve documenten of ingevulde aanvraagformulieren. Zonder het nodige Bewijs kan de dienstverlening niet worden afgeleverd. Soms levert de Output van een Publieke Dienstverlening het Bewijs nodig voor een andere Publieke Dienstverlening."
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": {
+            "nl": "beschrijving"
+          },
+          "sort_nl": "beschrijving",
+          "description": {
+            "nl": "Beschrijving vh bewijs."
+          },
+          "usage": {
+            "nl": " "
+          },
+          "domain": [
+            {
+              "uri": "http://data.europa.eu/m8g/Evidence",
+              "EA-Name": "Bewijs"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TaalString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/language",
+          "name": {
+            "nl": "taal"
+          },
+          "sort_nl": "taal",
+          "description": {
+            "nl": "Taal waarin het aangeboden bewijs moet zijn gesteld."
+          },
+          "usage": {
+            "nl": " "
+          },
+          "domain": [
+            {
+              "uri": "http://data.europa.eu/m8g/Evidence",
+              "EA-Name": "Bewijs"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Taalcode",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Taalcode",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Taalcode"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": "http://publications.europa.eu/mdr/authority/language/"
+        },
+        {
+          "uri": "http://purl.org/dc/terms/title",
+          "name": {
+            "nl": "naam"
+          },
+          "sort_nl": "naam",
+          "description": {
+            "nl": "Officiële naam vh bewijs."
+          },
+          "usage": {
+            "nl": " "
+          },
+          "domain": [
+            {
+              "uri": "http://data.europa.eu/m8g/Evidence",
+              "EA-Name": "Bewijs"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#TaalString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/type",
+          "name": {
+            "nl": "type"
+          },
+          "sort_nl": "type",
+          "description": {
+            "nl": "Aard vh bewijs."
+          },
+          "usage": {
+            "nl": " "
+          },
+          "domain": [
+            {
+              "uri": "http://data.europa.eu/m8g/Evidence",
+              "EA-Name": "Bewijs"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "BewijsType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "BewijsType"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://xmlns.com/foaf/0.1/page",
+          "name": {
+            "nl": "documentatie"
+          },
+          "sort_nl": "documentatie",
+          "description": {
+            "nl": "Documentatie gerelateerd ah bewiijs."
+          },
+          "usage": {
+            "nl": "Bvb template van een administratief document of aanvraagformulier of aanwijzingen voor het invullen ervan."
+          },
+          "domain": [
+            {
+              "uri": "http://data.europa.eu/m8g/Evidence",
+              "EA-Name": "Bewijs"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_label": {
+                "nl": "URI"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
     {
       "uri": "http://data.europa.eu/m8g/PublicOrganisation",
       "name": {
@@ -29,14 +1551,16 @@
       "description": {
         "nl": "Een organisatie die volgens een wettelijk kader behoort tot de publieke sector, ongeacht het bestuursniveau waarop dat kader van kracht is."
       },
-      "usage": {},
+      "usage": {
+        "nl": "OPMERKING: Als de PubliekeOrganisatie een officieel geregistreerde Organisatie is kan ze bijkomend gedefineerd worden als GeregistreerdeOrganisatie (zie elders in deze specificatie voor een definitie van deze term)."
+      },
       "parents": [
         {
           "name": "Organisatie",
           "label": "Organisatie",
           "package": "OSLO-Organisatie",
           "uri": "To Do",
-          "scoped_uri": "To Do"
+          "scoped_uri": "#Organisatie"
         }
       ],
       "properties": [
@@ -59,13 +1583,13 @@
           "range": [
             {
               "range_label": "Plaats",
-              "range_uri": "http://fixme.com#Plaats"
+              "range_uri": "http://purl.org/dc/terms/Location"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://fixme.com#Plaats",
-              "range_puri": "http://fixme.com#Plaats",
+              "range_uri": "http://purl.org/dc/terms/Location",
+              "range_puri": "http://purl.org/dc/terms/Location",
               "range_label": {
                 "nl": "Plaats"
               }
@@ -73,42 +1597,79 @@
           ],
           "cardinality": "0..*",
           "codelist_uri": ""
-        },
+        }
+      ]
+    },
+    {
+      "uri": "http://fixme.com#GeregistreerdPersoon",
+      "name": {
+        "nl": "Geregistreerd Persoon"
+      },
+      "sort_nl": "Geregistreerd Persoon",
+      "description": {},
+      "usage": {
+        "nl": "Doorgaans is dit register een bevolkingsregister maar het kan bv ook een kiesregister zijn. De ingeschreven gegevens hebben betrekking op de identeit (vb Naam en Voornaam) en de Verblijfplaats vd Persoon en op belangrijke levensgebeurtenissen zoals Geboorte, Huwelijk, Overlijden etc. Deze gegevens worden typisch geregistreerd door de overheid, ze bieden de ingeschreven Persoon wettelijke bescherming en laten de overheid toe om basisstatistieken op te stellen over zijn bevolking."
+      },
+      "parents": [
         {
-          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#controleert",
+          "name": "Persoon",
+          "label": "Persoon",
+          "package": "OSLO-Persoon",
+          "uri": "http://www.w3.org/ns/person#Person",
+          "scoped_uri": "#Persoon"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "http://fixme.com#registratie",
           "name": {
-            "nl": "controleert"
+            "nl": "registratie"
           },
-          "sort_nl": "controleert",
+          "sort_nl": "registratie",
           "description": {
-            "nl": "Verwijzing naar de controle die de publieke organisatie doet in het kader van de erkenningsaavraag van de feitelijke vereniging."
+            "nl": "Identificatiecode vd persoon ih register."
           },
           "usage": {},
           "domain": [
             {
-              "uri": "http://data.europa.eu/m8g/PublicOrganisation",
-              "EA-Name": "PubliekeOrganisatie"
+              "uri": "http://fixme.com#GeregistreerdPersoon",
+              "EA-Name": "GeregistreerdPersoon"
             }
           ],
           "range": [
             {
-              "range_label": "Erkenningsaanvraag",
-              "range_uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag"
+              "range_label": "Identificator",
+              "range_uri": "http://www.w3.org/ns/adms#Identifier"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Erkenningsaanvraag",
-              "range_puri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
+              "range_uri": "#Identificator",
+              "range_puri": "http://www.w3.org/ns/adms#Identifier",
               "range_label": {
-                "nl": "Erkenningsaanvraag"
+                "nl": "Identificator"
               }
             }
           ],
-          "cardinality": "0..*",
+          "cardinality": "1",
           "codelist_uri": ""
         }
       ]
+    },
+    {
+      "uri": "http://fixme.com#Hoedanigheid",
+      "name": {
+        "nl": "Hoedanigheid"
+      },
+      "sort_nl": "Hoedanigheid",
+      "description": {
+        "nl": "Agent met een positie."
+      },
+      "usage": {
+        "nl": "Laat een functie toe om te handelen,bv ihkv een dienstverlening (bv diversiteitsplan wordt opgemaakt door diversiteitsambtenaar)."
+      },
+      "parents": [],
+      "properties": []
     },
     {
       "uri": "http://purl.org/dc/terms/Agent",
@@ -123,14 +1684,9 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://data.europa.eu/m8g/hasContactPoint",
-          "name": {
-            "nl": "contactinfo"
-          },
-          "sort_nl": "contactinfo",
-          "description": {
-            "nl": "Informatie waarmee de verantwoordelijke kan gecontacteerd worden."
-          },
+          "uri": "http://fixme.com#contactInfo",
+          "name": {},
+          "description": {},
           "usage": {},
           "domain": [
             {
@@ -140,14 +1696,14 @@
           ],
           "range": [
             {
-              "range_label": "Contactinfo",
-              "range_uri": "http://fixme.com#Contactinfo"
+              "range_label": "ContactInfo",
+              "range_uri": "http://schema.org/ContactPoint"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Contactinfo",
-              "range_puri": "http://fixme.com#Contactinfo",
+              "range_puri": "http://schema.org/ContactPoint",
               "range_label": {
                 "nl": "Contactinfo"
               }
@@ -157,14 +1713,9 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/adms#Identifier",
-          "name": {
-            "nl": "identificator"
-          },
-          "sort_nl": "identificator",
-          "description": {
-            "nl": "Identificator van het object."
-          },
+          "uri": "http://fixme.com#identificator",
+          "name": {},
+          "description": {},
           "usage": {},
           "domain": [
             {
@@ -271,79 +1822,18 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
-          "uri": "http://purl.org/dc/terms/requires",
-          "name": {
-            "nl": "vereist"
-          },
-          "sort_nl": "vereist",
-          "description": {
-            "nl": "Publieke dienstverlening die voorafgaandelijk moet worden uitgevoerd om van de publieke dienstverlening gebruik te kunnen maken."
-          },
+          "uri": "http://fixme.com#beschrijving",
+          "name": {},
+          "description": {},
           "usage": {},
           "domain": [
             {
               "uri": "http://purl.org/vocab/cpsv#PublicService",
               "EA-Name": "PubliekeDienstverlening"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "PubliekeDienstverlening",
-              "range_uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#PubliekeDienstverlening",
-              "range_puri": "http://purl.org/vocab/cpsv#PublicService",
-              "range_label": {
-                "nl": "PubliekeDienstverlening"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "http://www.w3.org/ns/regorg#RegisteredOrganization",
-      "name": {
-        "nl": "GeregistreerdeOrganisatie"
-      },
-      "sort_nl": "GeregistreerdeOrganisatie",
-      "description": {
-        "nl": "Organisatie met een juridisch statuut vastgelegd door registratie."
-      },
-      "usage": {},
-      "parents": [
-        {
-          "name": "Organisatie",
-          "label": "Organisatie",
-          "package": "OSLO-Organisatie",
-          "uri": "To Do",
-          "scoped_uri": "To Do"
-        }
-      ],
-      "properties": [
-        {
-          "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
-          "name": {
-            "nl": "voorkeursnaam"
-          },
-          "sort_nl": "voorkeursnaam",
-          "description": {
-            "nl": "Naam waarmee de organisatie bij voorkeur wordt aangeduid."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://www.w3.org/ns/regorg#RegisteredOrganization",
-              "EA-Name": "GeregistreerdeOrganisatie"
             }
           ],
           "range": [
@@ -365,33 +1855,156 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/org#hasSite",
-          "name": {
-            "nl": "^vestiging"
-          },
-          "sort_nl": "^vestiging",
-          "description": {
-            "nl": "Verwijst naar een plek waar de organisatie op een of andere manier, desnoods indirect, aanwezig is."
-          },
+          "uri": "http://fixme.com#naam",
+          "name": {},
+          "description": {},
           "usage": {},
           "domain": [
             {
-              "uri": "http://www.w3.org/ns/regorg#RegisteredOrganization",
-              "EA-Name": "GeregistreerdeOrganisatie"
+              "uri": "http://purl.org/vocab/cpsv#PublicService",
+              "EA-Name": "PubliekeDienstverlening"
             }
           ],
           "range": [
             {
-              "range_label": "MaatschappelijkeZetel",
-              "range_uri": "http://fixme.com#MaatschappelijkeZetel"
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://fixme.com#MaatschappelijkeZetel",
-              "range_puri": "http://fixme.com#MaatschappelijkeZetel",
+              "range_uri": "#TaalString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "MaatschappelijkeZetel"
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://www.w3.org/ns/org#FormalOrganization",
+      "name": {
+        "nl": "Formele Organisatie"
+      },
+      "sort_nl": "Formele Organisatie",
+      "description": {
+        "nl": "Een erkende organisatie,erkend in brede zin of  meer specifiek in juridische zin met bijbehorende rechten en plichten."
+      },
+      "usage": {
+        "nl": "Bvb een bedrijf,een vzw,een overheidsorgaan,een kerkgemeenschap."
+      },
+      "parents": [
+        {
+          "name": "Organisatie",
+          "label": "Organisatie",
+          "package": "OSLO-Organisatie",
+          "uri": "To Do",
+          "scoped_uri": "#Organisatie"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "uri": "http://www.w3.org/ns/org#Site",
+      "name": {
+        "nl": "Vestiging"
+      },
+      "sort_nl": "Vestiging",
+      "description": {
+        "nl": "Een kantoor of ander pand waar een organisatie gevestigd is. Organisaties kunnen over meerdere vestigingen verspreid zijn en vestigingen kunnen op meerdere locaties slaan."
+      },
+      "usage": {
+        "nl": "Meestal zal de vestiging een fysieke locatie zijn. Niet-fysieke locaties worden echter niet uitgesloten,bv een virtueel kantoor met bijbehorend postnummer en telefonische receptie."
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://www.w3.org/ns/org#siteAddress",
+          "name": {
+            "nl": "vestigingsadres"
+          },
+          "sort_nl": "vestigingsadres",
+          "description": {
+            "nl": "Adres vd vestiging."
+          },
+          "usage": {
+            "nl": "Kan email, telefoon en ook adres zijn (in welk geval ook niet-fysieke adressen mogelijk zijn)."
+          },
+          "domain": [
+            {
+              "uri": "http://www.w3.org/ns/org#Site",
+              "EA-Name": "Vestiging"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ContactInfo",
+              "range_uri": "http://schema.org/ContactPoint"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Contactinfo",
+              "range_puri": "http://schema.org/ContactPoint",
+              "range_label": {
+                "nl": "Contactinfo"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://www.w3.org/ns/person#Person",
+      "name": {
+        "nl": "Persoon"
+      },
+      "sort_nl": "Persoon",
+      "description": {
+        "nl": "Natuurlijk persoon."
+      },
+      "usage": {
+        "nl": "In de rechtspraak betreft het een persoon (in de wettelijke betekenis, ttz met eigen rechtspersoonlijkheid) van de menselijke soort, ttz een fysiek persoon. Tegenhanger is de rechtspersoon, een juridische constructie die een private of publieke organisatie dezelfde rechtspersoonlijkheid geeft als een natuurlijk persoon (kan bv ook schulden hebben, contracten afsluiten, aangeklaagd worden etc)."
+      },
+      "parents": [
+        {
+          "name": "Agent",
+          "label": "Agent",
+          "package": "OSLO-Generiek",
+          "uri": "http://purl.org/dc/terms/Agent",
+          "scoped_uri": "#Agent"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "http://fixme.com#/geboortedatum",
+          "name": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://www.w3.org/ns/person#Person",
+              "EA-Name": "Persoon"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "nl": "DateTime"
               }
             }
           ],
@@ -399,15 +2012,176 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/org#resultedFrom",
-          "name": {
-            "nl": "^isHetresultaatVan"
-          },
-          "sort_nl": "^isHetresultaatVan",
-          "description": {
-            "nl": "Verwijst naar het verandersinsmoment dat tot de huidige organisatie heeft geleid."
-          },
+          "uri": "http://fixme.com#/woonplaats",
+          "name": {},
+          "description": {},
           "usage": {},
+          "domain": [
+            {
+              "uri": "http://www.w3.org/ns/person#Person",
+              "EA-Name": "Persoon"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Plaats",
+              "range_uri": "http://purl.org/dc/terms/Location"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://purl.org/dc/terms/Location",
+              "range_puri": "http://purl.org/dc/terms/Location",
+              "range_label": {
+                "nl": "Plaats"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://schema.org/contactPoint",
+          "name": {
+            "nl": "contactinfo"
+          },
+          "sort_nl": "contactinfo",
+          "description": {
+            "nl": "Informatie zoals email, telefoon... die toelaat de Persoon te contacteren."
+          },
+          "usage": {
+            "nl": " "
+          },
+          "domain": [
+            {
+              "uri": "http://www.w3.org/ns/person#Person",
+              "EA-Name": "Persoon"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ContactInfo",
+              "range_uri": "http://schema.org/ContactPoint"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Contactinfo",
+              "range_puri": "http://schema.org/ContactPoint",
+              "range_label": {
+                "nl": "Contactinfo"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://xmlns.com/foaf/0.1/familyName",
+          "name": {
+            "nl": "achternaam"
+          },
+          "sort_nl": "achternaam",
+          "description": {
+            "nl": "Gedeelte van de volledige naam vd persoon ontvangen van de vorige generatie."
+          },
+          "usage": {
+            "nl": "Ook wel familienaam genoemd omdat de achternaam een familiale verwantschap aanduidt."
+          },
+          "domain": [
+            {
+              "uri": "http://www.w3.org/ns/person#Person",
+              "EA-Name": "Persoon"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://xmlns.com/foaf/0.1/givenName",
+          "name": {
+            "nl": "voornaam"
+          },
+          "sort_nl": "voornaam",
+          "description": {
+            "nl": "Naam die een kind bij geboorte wordt gegeven. Onderscheidt het kind van de andere kinderen in de familie."
+          },
+          "usage": {
+            "nl": " "
+          },
+          "domain": [
+            {
+              "uri": "http://www.w3.org/ns/person#Person",
+              "EA-Name": "Persoon"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://www.w3.org/ns/regorg#RegisteredOrganization",
+      "name": {
+        "nl": "GeregistreerdeOrganisatie"
+      },
+      "sort_nl": "GeregistreerdeOrganisatie",
+      "description": {
+        "nl": "Organisatie met een juridisch statuut vastgelegd door registratie."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "name": "FormeleOrganisatie",
+          "label": "Formele Organisatie",
+          "package": "OSLO-Organisatie",
+          "uri": "http://www.w3.org/ns/org#FormalOrganization",
+          "scoped_uri": "#Formele Organisatie"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "http://www.w3.org/ns/regorg#legalName",
+          "name": {
+            "nl": "wettelijke naam"
+          },
+          "sort_nl": "wettelijke naam",
+          "description": {
+            "nl": "Wettelijk geregistreerde naam vd organisatie."
+          },
+          "usage": {
+            "nl": "Evt in verschillende talen."
+          },
           "domain": [
             {
               "uri": "http://www.w3.org/ns/regorg#RegisteredOrganization",
@@ -416,16 +2190,16 @@
           ],
           "range": [
             {
-              "range_label": "Oprichting",
-              "range_uri": "http://fixme.com#Oprichting"
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://fixme.com#Oprichting",
-              "range_puri": "http://fixme.com#Oprichting",
+              "range_uri": "#TaalString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "nl": "Oprichting"
+                "nl": "TaalString"
               }
             }
           ],
@@ -505,347 +2279,13 @@
       ]
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
+      "uri": "to do",
       "name": {
-        "nl": "Erkenning"
+        "nl": "Vereniging"
       },
-      "sort_nl": "Erkenning",
+      "sort_nl": "Vereniging",
       "description": {
-        "nl": "De aanduiding door een bevoegde instelling waarbij wordt vastgesteld dat een persoon of instelling aan bepaalde eisen voldoet, al dan niet tijdelijk."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://purl.org/dc/terms/description",
-          "name": {
-            "nl": "beschrijving"
-          },
-          "sort_nl": "beschrijving",
-          "description": {
-            "nl": "Een beknopte omschrijving van de erkenning."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
-              "EA-Name": "Erkenning"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/type",
-          "name": {
-            "nl": "type"
-          },
-          "sort_nl": "type",
-          "description": {
-            "nl": "De aard van de erkenning."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
-              "EA-Name": "Erkenning"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Erkenningstype",
-              "range_uri": "http://fixme.com#Erkenningstype"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Erkenningstype",
-              "range_puri": "http://fixme.com#Erkenningstype",
-              "range_label": {
-                "nl": "Erkenningstype"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geldigheidsperiode",
-          "name": {
-            "nl": "geldigheidsperiode"
-          },
-          "sort_nl": "geldigheidsperiode",
-          "description": {
-            "nl": "Tijdsinterval waarbinnen de erkenning van toepassing is."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
-              "EA-Name": "Erkenning"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Periode",
-              "range_uri": "http://fixme.com#Periode"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Periode",
-              "range_puri": "http://fixme.com#Periode",
-              "range_label": {
-                "nl": "Periode"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#toegekenddoor",
-          "name": {
-            "nl": "toegekendDoor"
-          },
-          "sort_nl": "toegekendDoor",
-          "description": {
-            "nl": "Verijwzing naar de organisatie die de erkenning heeft toegekend aan de feitelijke vereniging."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
-              "EA-Name": "Erkenning"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "PubliekeOrganisatie",
-              "range_uri": "http://data.europa.eu/m8g/PublicOrganisation"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#PubliekeOrganisatie",
-              "range_puri": "http://data.europa.eu/m8g/PublicOrganisation",
-              "range_label": {
-                "nl": "PubliekeOrganisatie"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
-      "name": {
-        "nl": "Erkenningsaanvraag"
-      },
-      "sort_nl": "Erkenningsaanvraag",
-      "description": {
-        "nl": "Het verzoek tot aanduiding door een bevoegde instelling waarbij wordt vastgesteld dat een persoon of instelling aan bepaalde eisen voldoet, al dan niet tijdelijk."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://data.europa.eu/m8g/hasCriterion",
-          "name": {
-            "nl": "criteriumvereiste"
-          },
-          "sort_nl": "criteriumvereiste",
-          "description": {
-            "nl": "Verwijzing naar de criteriumvereiste dit van toepassing is op de erkenningsaanvraag."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
-              "EA-Name": "Erkenningsaanvraag"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "CriteriumVereiste",
-              "range_uri": "http://data.europa.eu/m8g/CriterionRequirement"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#CriteriumVereiste",
-              "range_puri": "http://data.europa.eu/m8g/CriterionRequirement",
-              "range_label": {
-                "nl": "CriteriumVereiste"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://data.vlaanderen.be/ns/besluit#erkenningsbeslissing",
-          "name": {
-            "nl": "erkenningsbeslissing"
-          },
-          "sort_nl": "erkenningsbeslissing",
-          "description": {
-            "nl": "Het resultaat van de erkenningsaanvraag."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
-              "EA-Name": "Erkenningsaanvraag"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/description",
-          "name": {
-            "nl": "beschrijving"
-          },
-          "sort_nl": "beschrijving",
-          "description": {
-            "nl": "Een beknopte omschrijving van de erkenningsaanvraag."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
-              "EA-Name": "Erkenningsaanvraag"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/vocab/cpsv#hasInput",
-          "name": {
-            "nl": "input"
-          },
-          "sort_nl": "input",
-          "description": {
-            "nl": "Bewijsstuk(ken) dat moet(en) voorgelegd worden om de erkenning te kunnen verkrijgen."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
-              "EA-Name": "Erkenningsaanvraag"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Bewijs",
-              "range_uri": "http://fixme.com#Bewijs"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Bewijs",
-              "range_puri": "http://fixme.com#Bewijs",
-              "range_label": {
-                "nl": "Bewijs"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geeftrechtOp",
-          "name": {
-            "nl": "geeftRechtOp"
-          },
-          "sort_nl": "geeftRechtOp",
-          "description": {
-            "nl": "De erkenning die toegekend wordt op basis van de ingediende erkenningsaanvraag."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
-              "EA-Name": "Erkenningsaanvraag"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Erkenning",
-              "range_uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Erkenning",
-              "range_puri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
-              "range_label": {
-                "nl": "Erkenning"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
-      "name": {
-        "nl": "FeitelijkeVereniging"
-      },
-      "sort_nl": "FeitelijkeVereniging",
-      "description": {
-        "nl": "Een Feitelijke Vereniging bestaat uit twee of meerdere personen en/of organisaties, heeft geen rechtspersoonlijkheid en streeft een belangeloos doel na."
+        "nl": "TODO"
       },
       "usage": {},
       "parents": [
@@ -854,500 +2294,65 @@
           "label": "Organisatie",
           "package": "OSLO-Organisatie",
           "uri": "To Do",
-          "scoped_uri": "To Do"
+          "scoped_uri": "#Organisatie"
         }
       ],
-      "properties": [
-        {
-          "uri": "http://purl.org/dc/terms/title",
-          "name": {
-            "nl": "naam"
-          },
-          "sort_nl": "naam",
-          "description": {
-            "nl": "Officiële naam van de feitelijke vereniging."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
-              "EA-Name": "FeitelijkeVereniging"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/adms#Identifier",
-          "name": {
-            "nl": "identificator"
-          },
-          "sort_nl": "identificator",
-          "description": {
-            "nl": "Identificator van het object."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
-              "EA-Name": "FeitelijkeVereniging"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Identificator",
-              "range_uri": "http://www.w3.org/ns/adms#Identifier"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Identificator",
-              "range_puri": "http://www.w3.org/ns/adms#Identifier",
-              "range_label": {
-                "nl": "Identificator"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Activiteit",
-          "name": {
-            "nl": "activiteit"
-          },
-          "sort_nl": "activiteit",
-          "description": {
-            "nl": "Het werk van personen, een groep of een organisatie om een bepaald doel te bereiken."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
-              "EA-Name": "FeitelijkeVereniging"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "ActiviteitType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#ActiviteitType",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "ActiviteitType"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#dientIn",
-          "name": {
-            "nl": "dientIn"
-          },
-          "sort_nl": "dientIn",
-          "description": {
-            "nl": "De erkenningsaanvraag die ingediend wordt door de feitelijke vereninging."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
-              "EA-Name": "FeitelijkeVereniging"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Erkenningsaanvraag",
-              "range_uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Erkenningsaanvraag",
-              "range_puri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag",
-              "range_label": {
-                "nl": "Erkenningsaanvraag"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftErkenning",
-          "name": {
-            "nl": "heeftErkenning"
-          },
-          "sort_nl": "heeftErkenning",
-          "description": {
-            "nl": "Verwijzing naar de erkenning(en) die de feitelijke vereniging heeft."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
-              "EA-Name": "FeitelijkeVereniging"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Erkenning",
-              "range_uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Erkenning",
-              "range_puri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
-              "range_label": {
-                "nl": "Erkenning"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftLid",
-          "name": {
-            "nl": "heeftLid"
-          },
-          "sort_nl": "heeftLid",
-          "description": {
-            "nl": "Verwijzing naar de leden die deel uitmaken van de feitelijke vereniging."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
-              "EA-Name": "FeitelijkeVereniging"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Agent",
-              "range_uri": "http://purl.org/dc/terms/Agent"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Agent",
-              "range_puri": "http://purl.org/dc/terms/Agent",
-              "range_label": {
-                "nl": "Agent"
-              }
-            }
-          ],
-          "cardinality": "1..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#isDeelVan",
-          "name": {
-            "nl": "isDeelVan"
-          },
-          "sort_nl": "isDeelVan",
-          "description": {
-            "nl": "Verwijzing naar de organisatie waar de feitelijke vereniging deel van uitmaakt."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
-              "EA-Name": "FeitelijkeVereniging"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "GeregistreerdeOrganisatie",
-              "range_uri": "http://www.w3.org/ns/regorg#RegisteredOrganization"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#GeregistreerdeOrganisatie",
-              "range_puri": "http://www.w3.org/ns/regorg#RegisteredOrganization",
-              "range_label": {
-                "nl": "GeregistreerdeOrganisatie"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#vraagtAan",
-          "name": {
-            "nl": "vraagtAan"
-          },
-          "sort_nl": "vraagtAan",
-          "description": {
-            "nl": "Verwijzing naar de publieke dienstverlening die de feitelijke vereniging aanvraagt."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
-              "EA-Name": "FeitelijkeVereniging"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "PubliekeDienstverlening",
-              "range_uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#PubliekeDienstverlening",
-              "range_puri": "http://purl.org/vocab/cpsv#PublicService",
-              "range_label": {
-                "nl": "PubliekeDienstverlening"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/adres#Adres",
-          "name": {
-            "nl": "adres"
-          },
-          "sort_nl": "adres",
-          "description": {
-            "nl": "Geeft aan wat het adres is van de feitelijke vereniging."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
-              "EA-Name": "FeitelijkeVereniging"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Adresvoorstelling",
-              "range_uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Adresvoorstelling",
-              "range_puri": "http://www.w3.org/ns/locn#Address",
-              "range_label": {
-                "nl": "Adresvoorstelling"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke",
-      "name": {
-        "nl": "heeftVerantwoordelijke"
-      },
-      "sort_nl": "heeftVerantwoordelijke",
-      "description": {
-        "nl": "Verwijzing naar de verantwoordelijke persoon van de feitelijke vereniging."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://fixme.com#heeftVerantwoordelijke.agent",
-          "name": {
-            "nl": "agent"
-          },
-          "sort_nl": "agent",
-          "description": {
-            "nl": "Referentie naar verbonden klasse."
-          },
-          "usage": {
-            "nl": ""
-          },
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke",
-              "EA-Name": "heeftVerantwoordelijke"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Agent",
-              "range_uri": "http://purl.org/dc/terms/Agent"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Agent",
-              "range_puri": "http://purl.org/dc/terms/Agent",
-              "range_label": {
-                "nl": "Agent"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com#heeftVerantwoordelijke.feitelijkeVereniging",
-          "name": {
-            "nl": "feitelijkeVereniging"
-          },
-          "sort_nl": "feitelijkeVereniging",
-          "description": {
-            "nl": "Referentie naar verbonden klasse."
-          },
-          "usage": {
-            "nl": ""
-          },
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke",
-              "EA-Name": "heeftVerantwoordelijke"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "FeitelijkeVereniging",
-              "range_uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#FeitelijkeVereniging",
-              "range_puri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
-              "range_label": {
-                "nl": "FeitelijkeVereniging"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://data.europa.eu/m8g/role",
-          "name": {
-            "nl": "rol"
-          },
-          "sort_nl": "rol",
-          "description": {
-            "nl": "De rol die de verantwoordelijke heeft binnen de feitelijke vereniging."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke",
-              "EA-Name": "heeftVerantwoordelijke"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Roltype",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Roltype",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "Roltype"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/description",
-          "name": {
-            "nl": "beschrijving"
-          },
-          "sort_nl": "beschrijving",
-          "description": {
-            "nl": "Een beknopte omschrijving van de verantwoordelijke."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke",
-              "EA-Name": "heeftVerantwoordelijke"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        }
-      ]
+      "properties": []
     }
   ],
   "properties": [
     {
-      "uri": "http://fixme.com#heeftVerantwoordelijke.agent",
+      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#^isPositieIn",
       "name": {
-        "nl": "agent"
+        "nl": "isPositieIn"
       },
-      "description": {
-        "nl": "Referentie naar verbonden klasse."
-      },
+      "description": {},
       "domain": [
         null
       ],
       "range": [
         null
       ],
-      "usage": {
-        "nl": ""
-      },
+      "usage": {},
       "parents": []
     },
     {
-      "uri": "http://fixme.com#heeftVerantwoordelijke.feitelijkeVereniging",
+      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#activiteit",
       "name": {
-        "nl": "feitelijkeVereniging"
+        "nl": "activiteit"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#activiteit",
+      "name": {
+        "nl": "activiteit"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geldigheidsperiode",
+      "name": {
+        "nl": "geldigheidsperiode"
       },
       "description": {
-        "nl": "Referentie naar verbonden klasse."
+        "nl": "Tijdsinterval waarbinnen de erkenning van toepassing is."
       },
       "domain": [
         null
@@ -1355,42 +2360,182 @@
       "range": [
         null
       ],
-      "usage": {
-        "nl": ""
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geldigheidsperiode",
+      "name": {
+        "nl": "geldigheidsperiode"
       },
+      "description": {
+        "nl": "Tijdsinterval waarbinnen de erkenning van toepassing is."
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#verantwoordelijke",
+      "name": {
+        "nl": "verantwoordelijke"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
       "parents": []
     }
   ],
   "contributors": [
     {
       "role": "A",
-      "first_name": "AuteurVoornaam",
-      "last_name": "AuteurNaam",
+      "first_name": "Jeroen",
+      "last_name": "Devlieghere",
       "affiliation": {
-        "name": "AuteurAffiliatie",
-        "website": "https://auteurwebsiteurl"
+        "name": "Departement Cultuur, Jeugd en Media",
+        "website": "https://overheid.vlaanderen.be/"
       },
-      "email": "auteurvoornaam.auteurnaam@auteurdomein"
+      "email": "jeroen.devlieghere@vlaanderen.be"
+    },
+    {
+      "role": "A",
+      "first_name": "Nele",
+      "last_name": "Haegemans",
+      "affiliation": {
+        "name": "Departement Cultuur, Jeugd en Media",
+        "website": "https://overheid.vlaanderen.be/"
+      },
+      "email": "nele.haegemans@vlaanderen.be"
+    },
+    {
+      "role": "A",
+      "first_name": "Hamrouni",
+      "last_name": "Michel",
+      "affiliation": {
+        "name": "Departement Cultuur, Jeugd en Media",
+        "website": "https://overheid.vlaanderen.be/"
+      },
+      "email": "michel.hamrouni@vlaanderen.be"
     },
     {
       "role": "E",
-      "first_name": "EditorVoornaam",
-      "last_name": "EditorNaam",
+      "first_name": "Yves",
+      "last_name": "Meersmans",
       "affiliation": {
-        "name": "EditorAffiliatie",
-        "website": "https://editorwebsiteurl"
+        "name": "PwC",
+        "website": "https://www.pwc.be"
       },
-      "email": "editorvoornaam.editornaam@editordomein"
+      "email": "yves.meersmans@pwc.com"
     },
     {
       "role": "C",
-      "first_name": "MedewerkerVoornaam",
-      "last_name": "MedewerkerNaam",
+      "first_name": "Gudrun",
+      "last_name": "De Fauw",
       "affiliation": {
-        "name": "MedewerkerAffiliatie",
-        "website": "https://medewerkerwebsiteurl"
+        "name": "Stad Gent",
+        "website": "https://stad.gent/nl"
       },
-      "email": "medewerkervoornaam.medewerkernaam@medewerkerdomein"
+      "email": "Gudrun.DeFauw@district09.gent"
+    },
+    {
+      "role": "C",
+      "first_name": "Kevin",
+      "last_name": "Friant",
+      "affiliation": {
+        "name": "VGC",
+        "website": "https://www.vgc.be/"
+      },
+      "email": "kevin.friant@vgc.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Jakob",
+      "last_name": "Janssen",
+      "affiliation": {
+        "name": "Formaat",
+        "website": "https://www.formaat.be/"
+      },
+      "email": "jakob.janssen@formaat.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Sander",
+      "last_name": "Malfliet",
+      "affiliation": {
+        "name": "KLJ",
+        "website": "https://www.klj.be/"
+      },
+      "email": "sander.malfliet@klj.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Danny",
+      "last_name": "Naert",
+      "affiliation": {
+        "name": "Stad Gent",
+        "website": "https://stad.gent/nl"
+      },
+      "email": "Danny.Naert@stad.gent"
+    },
+    {
+      "role": "C",
+      "first_name": "Hans",
+      "last_name": "Ponnet",
+      "affiliation": {
+        "name": "Sport Vlaanderen",
+        "website": "https://www.sport.vlaanderen/"
+      },
+      "email": "Hans.Ponnet@sport.vlaanderen"
+    },
+    {
+      "role": "C",
+      "first_name": "Jacques",
+      "last_name": "Provoost",
+      "affiliation": {
+        "name": "Gemeente Middelkerke",
+        "website": "https://www.middelkerke.be/nl"
+      },
+      "email": "jacques.provoost@middelkerke.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Hannes",
+      "last_name": "Rengle",
+      "affiliation": {
+        "name": "De Federatie",
+        "website": "https://www.defederatie.org/"
+      },
+      "email": "hannesrengle@defederatie.org"
+    },
+    {
+      "role": "C",
+      "first_name": "Tinus",
+      "last_name": "Van Langendonck",
+      "affiliation": {
+        "name": "Scouts en Gidsen Vlaanderen",
+        "website": "https://www.scoutsengidsenvlaanderen.be/"
+      },
+      "email": "tvl@scoutsengidsenvlaanderen.be"
+    },
+    {
+      "role": "C",
+      "first_name": "Ward",
+      "last_name": "Vanhal",
+      "affiliation": {
+        "name": "VVSG",
+        "website": "https://www.vvsg.be/"
+      },
+      "email": "ward.vanhal@vvsg.be"
     }
   ],
   "datatypes": [
@@ -1401,7 +2546,7 @@
       },
       "sort_nl": "Kost",
       "description": {
-        "nl": "Deel vd kost verbonden aan de uitvoering van de dienstverlening te betalen door de gebruiker.\r\n"
+        "nl": "Deel vd kost verbonden aan de uitvoering van de dienstverlening te betalen door de gebruiker."
       },
       "usage": {},
       "parents": [],
@@ -1415,7 +2560,9 @@
           "description": {
             "nl": "Omvang van de kost, uitgedrukt in de opgegeven munteenheid."
           },
-          "usage": {},
+          "usage": {
+            "nl": " "
+          },
           "domain": [
             {
               "uri": "http://data.europa.eu/m8g/Cost",
@@ -1449,7 +2596,9 @@
           "description": {
             "nl": "Beschrijving van de kost."
           },
-          "usage": {},
+          "usage": {
+            "nl": " "
+          },
           "domain": [
             {
               "uri": "http://data.europa.eu/m8g/Cost",
@@ -1477,272 +2626,17 @@
       ]
     },
     {
-      "uri": "http://data.europa.eu/m8g/CriterionRequirement",
-      "name": {
-        "nl": "CriteriumVereiste"
-      },
-      "sort_nl": "CriteriumVereiste",
-      "description": {
-        "nl": "Criterium dat toelaat te bepalen of een gebruiker recht heeft op een dienstverlening of deze mag gebruiken."
-      },
-      "usage": {
-        "nl": "Niet elke dienstverlening is voor iedereen noodzakelijk of nuttig. Bijvoorbeeld werkloosheidsuitkeringen zijn enkel noodzakelijk voor werklozen."
-      },
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://purl.org/dc/terms/description",
-          "name": {
-            "nl": "beschrijving"
-          },
-          "sort_nl": "beschrijving",
-          "description": {
-            "nl": "Een beknopte omschrijving van de criteriumvereiste."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://data.europa.eu/m8g/CriterionRequirement",
-              "EA-Name": "CriteriumVereiste"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/title",
-          "name": {
-            "nl": "naam"
-          },
-          "sort_nl": "naam",
-          "description": {
-            "nl": "Officiële naam van de criteriumvereiste."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://data.europa.eu/m8g/CriterionRequirement",
-              "EA-Name": "CriteriumVereiste"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "TaalString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#TaalString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "nl": "TaalString"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/Evidence",
-      "name": {
-        "nl": "Bewijs"
-      },
-      "sort_nl": "Bewijs",
-      "description": {
-        "nl": "Elk stuk waarmee kan worden aangetoond dat men aan een CriteriumVereiste voldoet."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://purl.org/dc/terms/description",
-          "name": {
-            "nl": "beschrijving"
-          },
-          "sort_nl": "beschrijving",
-          "description": {
-            "nl": "Beschrijving van het bewijs."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://data.europa.eu/m8g/Evidence",
-              "EA-Name": "Bewijs"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "TaalString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#TaalString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "nl": "TaalString"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/language",
-          "name": {
-            "nl": "taal"
-          },
-          "sort_nl": "taal",
-          "description": {
-            "nl": "Taal waarin het aangeboden bewijs moet zijn opgesteld."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://data.europa.eu/m8g/Evidence",
-              "EA-Name": "Bewijs"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/title",
-          "name": {
-            "nl": "naam"
-          },
-          "sort_nl": "naam",
-          "description": {
-            "nl": "Officiële naam van het bewijs."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://data.europa.eu/m8g/Evidence",
-              "EA-Name": "Bewijs"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "TaalString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#TaalString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "nl": "TaalString"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/type",
-          "name": {
-            "nl": "type"
-          },
-          "sort_nl": "type",
-          "description": {
-            "nl": "De aard van het bewijs."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://data.europa.eu/m8g/Evidence",
-              "EA-Name": "Bewijs"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Bewijstype",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Bewijstype",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "Bewijstype"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://xmlns.com/foaf/0.1/page",
-          "name": {
-            "nl": "documentatie"
-          },
-          "sort_nl": "documentatie",
-          "description": {
-            "nl": "Documentatie gerelateerd aan het bewijs."
-          },
-          "usage": {
-            "nl": "Bijvoorbeeld een template van een administratief document of aanvraagformulier of aanwijzingen voor het invullen ervan."
-          },
-          "domain": [
-            {
-              "uri": "http://data.europa.eu/m8g/Evidence",
-              "EA-Name": "Bewijs"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_label": {
-                "nl": "URI"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
       "uri": "http://data.europa.eu/m8g/PeriodOfTime",
       "name": {
         "nl": "Periode"
       },
       "sort_nl": "Periode",
       "description": {
-        "nl": "Typisch volgt de duur uit het opgeven van een begin- en eindtijdstip."
+        "nl": "Min of meer afgebakende tijdsduur."
       },
-      "usage": {},
+      "usage": {
+        "nl": "Typisch volgt de duur uit het opgeven ve begin- en eindtijdstip."
+      },
       "parents": [],
       "properties": [
         {
@@ -1752,9 +2646,11 @@
           },
           "sort_nl": "einde",
           "description": {
-            "nl": "Einde van de tijdsduur."
+            "nl": "Einde vd tijdsduur."
           },
-          "usage": {},
+          "usage": {
+            "nl": " "
+          },
           "domain": [
             {
               "uri": "http://data.europa.eu/m8g/PeriodOfTime",
@@ -1788,7 +2684,9 @@
           "description": {
             "nl": "Aanvang van de tijdsduur."
           },
-          "usage": {},
+          "usage": {
+            "nl": " "
+          },
           "domain": [
             {
               "uri": "http://data.europa.eu/m8g/PeriodOfTime",
@@ -1822,254 +2720,13 @@
       },
       "sort_nl": "Contactinfo",
       "description": {
-        "nl": "Informatie zoals email, telefoon, adres die toelaat om iemand of iets te contacteren."
+        "nl": "Informatie zoals email,telefoon,adres die toelaat om iemand of iets te contacteren."
       },
       "usage": {
-        "nl": "Bijvoorbeeld een persoon of organisatie of dienstverlening. Mogelijke vormen van contact: bellen, mailen etc"
+        "nl": "Bvb een persoon of organisatie of dienstverlening... Mogelijke vormen van contact: bellen,mailen etc."
       },
       "parents": [],
-      "properties": [
-        {
-          "uri": "http://schema.org/email",
-          "name": {
-            "nl": "email"
-          },
-          "sort_nl": "email",
-          "description": {
-            "nl": "Emailadres waarnaar men kan mailen."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://schema.org/ContactPoint",
-              "EA-Name": "Contactinfo"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://schema.org/faxNumber",
-          "name": {
-            "nl": "fax"
-          },
-          "sort_nl": "fax",
-          "description": {
-            "nl": "Faxnummer waarnaar men kan faxen."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://schema.org/ContactPoint",
-              "EA-Name": "Contactinfo"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://schema.org/telephone",
-          "name": {
-            "nl": "telefoon"
-          },
-          "sort_nl": "telefoon",
-          "description": {
-            "nl": "Telefoonnummer waarop men kan bellen."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://schema.org/ContactPoint",
-              "EA-Name": "Contactinfo"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/2006/vcard/ns#honorific-prefix",
-          "name": {
-            "nl": "aanschrijfvorm"
-          },
-          "sort_nl": "aanschrijfvorm",
-          "description": {
-            "nl": "Titel waarmee iemand wordt aangescrheven of aangesproken of waarmee naar iemand wordt verwezen."
-          },
-          "usage": {
-            "nl": "Bijvoorbeeld De heer, Mevrouw, Excellentie, Dokter"
-          },
-          "domain": [
-            {
-              "uri": "http://schema.org/ContactPoint",
-              "EA-Name": "Contactinfo"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "TaalString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#TaalString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "nl": "TaalString"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#address",
-          "name": {
-            "nl": "adres"
-          },
-          "sort_nl": "adres",
-          "description": {
-            "nl": "Adres dat men kan aanschrijven of bezoeken."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://schema.org/ContactPoint",
-              "EA-Name": "Contactinfo"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Adresvoorstelling",
-              "range_uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Adresvoorstelling",
-              "range_puri": "http://www.w3.org/ns/locn#Address",
-              "range_label": {
-                "nl": "Adresvoorstelling"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://xmlns.com/foaf/0.1/name",
-          "name": {
-            "nl": "contactnaam"
-          },
-          "sort_nl": "contactnaam",
-          "description": {
-            "nl": "Naam van de persoon die men kan contacteren."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://schema.org/ContactPoint",
-              "EA-Name": "Contactinfo"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "nl": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://xmlns.com/foaf/0.1/page",
-          "name": {
-            "nl": "website"
-          },
-          "sort_nl": "website",
-          "description": {
-            "nl": "Website waarnaar men kan surfen."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://schema.org/ContactPoint",
-              "EA-Name": "Contactinfo"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_label": {
-                "nl": "URI"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        }
-      ]
+      "properties": []
     },
     {
       "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
