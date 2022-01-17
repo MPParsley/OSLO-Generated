@@ -16,10 +16,10 @@
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#KostShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#CriteriumVereisteShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#BewijsShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PeriodeShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PubliekeOrganisatieShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#GeregistreerdPersoonShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#HoedanigheidShape>,
-    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PeriodeShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#AgentShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PubliekeDienstverleningShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ContactInfoShape>,
@@ -157,7 +157,7 @@
     shacl:name "beschrijving";
     shacl:path dc:description
   ], [
-    shacl:class <http://fixme.com#Periode>;
+    shacl:class <http://data.europa.eu/m8g/PeriodOfTime>;
     shacl:description "Tijdsinterval waarbinnen de erkenning van toepassing is.";
     shacl:maxCount 1;
     shacl:name "geldigheidsperiode";
@@ -203,7 +203,7 @@
     shacl:name "erkenningsbeslissing";
     shacl:path <http://data.vlaanderen.be/ns/besluit#erkenningsbeslissing>
   ], [
-    shacl:class <http://fixme.com#Periode>;
+    shacl:class <http://data.europa.eu/m8g/PeriodOfTime>;
     shacl:description "Tijdsinterval waarbinnen de erkenning van toepassing is.";
     shacl:maxCount 1;
     shacl:name "geldigheidsperiode";
@@ -296,6 +296,7 @@
   shacl:closed false;
   shacl:property [
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:description "Identificatiecode vd persoon ih register.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "registratie";
@@ -406,18 +407,19 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype xsd:dateTime;
+    shacl:description "Aanvang van de tijdsduur.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "begin";
-    shacl:path <http://fixme.com#begin>
+    shacl:path <http://data.europa.eu/m8g/startTime>
   ], [
     shacl:datatype xsd:dateTime;
+    shacl:description "Einde vd tijdsduur.";
     shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "einde";
-    shacl:path <http://fixme.com#einde>
+    shacl:path <http://data.europa.eu/m8g/endTime>
   ];
-  shacl:targetClass <http://fixme.com#Periode> .
+  shacl:targetClass <http://data.europa.eu/m8g/PeriodOfTime> .
 
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PersoonShape> a shacl:NodeShape;
   shacl:closed false;

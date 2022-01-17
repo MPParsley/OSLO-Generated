@@ -52,7 +52,7 @@
           "sh:path": "http://purl.org/dc/terms/description"
         },
         {
-          "sh:class": "http://fixme.com#Periode",
+          "sh:class": "http://data.europa.eu/m8g/PeriodOfTime",
           "sh:description": "Tijdsinterval waarbinnen de erkenning van toepassing is.",
           "sh:maxCount": "1",
           "sh:name": "geldigheidsperiode",
@@ -108,7 +108,7 @@
           "sh:path": "http://data.vlaanderen.be/ns/besluit#erkenningsbeslissing"
         },
         {
-          "sh:class": "http://fixme.com#Periode",
+          "sh:class": "http://data.europa.eu/m8g/PeriodOfTime",
           "sh:description": "Tijdsinterval waarbinnen de erkenning van toepassing is.",
           "sh:maxCount": "1",
           "sh:name": "geldigheidsperiode",
@@ -391,6 +391,29 @@
       "sh:targetClass": "http://data.europa.eu/m8g/Evidence"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PeriodeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Aanvang van de tijdsduur.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "begin",
+          "sh:path": "http://data.europa.eu/m8g/startTime"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Einde vd tijdsduur.",
+          "sh:maxCount": "1",
+          "sh:name": "einde",
+          "sh:path": "http://data.europa.eu/m8g/endTime"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/PeriodOfTime"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PubliekeOrganisatieShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -411,6 +434,7 @@
       "sh:property": [
         {
           "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "Identificatiecode vd persoon ih register.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "registratie",
@@ -425,28 +449,6 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://fixme.com#Hoedanigheid"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PeriodeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "begin",
-          "sh:path": "http://fixme.com#begin"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "einde",
-          "sh:path": "http://fixme.com#einde"
-        }
-      ],
-      "sh:targetClass": "http://fixme.com#Periode"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#AgentShape",
