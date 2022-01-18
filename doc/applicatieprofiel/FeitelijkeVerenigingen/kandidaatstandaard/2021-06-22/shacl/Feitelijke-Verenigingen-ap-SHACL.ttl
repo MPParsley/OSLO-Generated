@@ -11,13 +11,11 @@
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ErkenningsaanvraagShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#FeitelijkeVerenigingShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#VerantwoordelijkeShape>,
-    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#OrganisatieShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#KostShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#CriteriumVereisteShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#BewijsShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PeriodeShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PubliekeOrganisatieShape>,
-    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#GeregistreerdPersoonShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#HoedanigheidShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#AgentShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PubliekeDienstverleningShape>,
@@ -32,10 +30,12 @@
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#IdentificatorShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#AdresvoorstellingShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#FormeleOrganisatieShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#OrganisatieShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#RolShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#VestigingShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PersoonShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#GeregistreerdeOrganisatieShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#GeregistreerdPersoonShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#VerenigingShape> .
 
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ActiviteitTypeShape> a shacl:NodeShape;
@@ -228,7 +228,7 @@
     shacl:name "toegekendDoor";
     shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#toegekenddoor>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningstype>;
+    shacl:class skos:Concept;
     shacl:description "De aard van de erkenning.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -279,7 +279,7 @@
     shacl:name "resultaat";
     shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geeftrechtOp>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningstype>;
+    shacl:class skos:Concept;
     shacl:description "De aard van de erkenning.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -361,7 +361,7 @@
     shacl:name "registratie";
     shacl:path <http://fixme.com#registratie>
   ];
-  shacl:targetClass <http://fixme.com#GeregistreerdPersoon> .
+  shacl:targetClass <https://data.vlaanderen.be/ns/persoon#GeregistreerdPersoon> .
 
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#GeregistreerdeOrganisatieShape> a shacl:NodeShape;
   shacl:closed false;
@@ -471,7 +471,8 @@
     shacl:minCount 1;
     shacl:name "voorkeursnaam";
     shacl:path skos:prefLabel
-  ] .
+  ];
+  shacl:targetClass org:Organization .
 
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PeriodeShape> a shacl:NodeShape;
   shacl:closed false;

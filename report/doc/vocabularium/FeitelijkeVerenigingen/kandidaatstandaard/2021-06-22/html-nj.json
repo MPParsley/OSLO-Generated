@@ -12,8 +12,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
     "statuslabel": "Kandidaat Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/tree/d778bf3d09ffed08cd8127fddd6286b18f563e93",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/blob/d778bf3d09ffed08cd8127fddd6286b18f563e93/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/tree/caa358066635c5f562b16e7b3b346bf1e05ce7ed",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/blob/caa358066635c5f562b16e7b3b346bf1e05ce7ed/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/kandidaat-standaard/vocabularium-feitelijke-verenigingen.html",
     "usesVocs": [],
@@ -53,41 +53,76 @@
       },
       "sort_nl": "FeitelijkeVereniging",
       "description": {
-        "nl": "Een Feitelijke Vereniging bestaat uit twee of meerdere personen en/of organisaties, heeft geen rechtspersoonlijkheid en streeft een belangeloos doel na."
+        "nl": "Een Vereniging zonder rechtspersoonlijkheid, gebaseerd op een afspraak tussen twee of meerdere personen en/of organisaties om een belangeloos doel na te streven."
       },
-      "usage": {},
+      "usage": {
+        "nl": "Een Vereniging wordt gedefinieerd als een Organisatie die een belangeloos doel nastreeft. Dat geldt ook voor een FeitelijkeVereniging, alleen heeft deze geen rechtspersoonlijkheid. Daardoor zijn de individuele leden van de FeitelijkeVereniging zelf aansprakelijk voor de activiteiten die ze organiseren. OPMERKING: Van zodra de FeitelijkeVereniging erkend is kan ze bijkomend getypeerd worden als FormeleOrganisatie (zie elders in deze specificatie voor een definitie van deze term)."
+      },
       "equivalent": [],
       "parents": [
-        "To Do"
+        "to do"
       ]
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke",
+      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Verantwoordelijke",
       "name": {
-        "nl": "heeftVerantwoordelijke"
+        "nl": "Verantwoordelijke"
       },
-      "sort_nl": "heeftVerantwoordelijke",
+      "sort_nl": "Verantwoordelijke",
       "description": {
         "nl": "Verwijzing naar de verantwoordelijke persoon van de feitelijke vereniging."
       },
       "usage": {},
       "equivalent": [],
-      "parents": []
+      "parents": [
+        "http://fixme.com#Hoedanigheid",
+        "http://purl.org/dc/terms/Agent"
+      ]
     }
   ],
   "properties": [
     {
-      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Activiteit",
+      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#^isPositieIn",
+      "name": {
+        "nl": "isPositieIn"
+      },
+      "sort_nl": "isPositieIn",
+      "description": {},
+      "usage": {},
+      "domain": [
+        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Verantwoordelijke"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#activiteit",
       "name": {
         "nl": "activiteit"
       },
       "sort_nl": "activiteit",
-      "description": {
-        "nl": "Het werk van personen, een groep of een organisatie om een bepaald doel te bereiken."
-      },
+      "description": {},
       "usage": {},
       "domain": [
-        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging"
+        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#activiteit",
+      "name": {
+        "nl": "activiteit"
+      },
+      "sort_nl": "activiteit",
+      "description": {},
+      "usage": {},
+      "domain": [
+        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag"
       ],
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
@@ -108,47 +143,41 @@
         "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning"
       ],
       "range": [
-        "http://fixme.com#Periode"
+        "http://data.europa.eu/m8g/PeriodOfTime"
       ],
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke.agent",
+      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geldigheidsperiode",
       "name": {
-        "nl": "agent"
+        "nl": "geldigheidsperiode"
       },
-      "sort_nl": "agent",
+      "sort_nl": "geldigheidsperiode",
       "description": {
-        "nl": "Referentie naar verbonden klasse."
+        "nl": "Tijdsinterval waarbinnen de erkenning van toepassing is."
       },
-      "usage": {
-        "nl": ""
-      },
+      "usage": {},
       "domain": [
-        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke"
+        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenningsaanvraag"
       ],
       "range": [
-        "http://purl.org/dc/terms/Agent"
+        "http://data.europa.eu/m8g/PeriodOfTime"
       ],
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke.feitelijkeVereniging",
+      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#verantwoordelijke",
       "name": {
-        "nl": "feitelijkeVereniging"
+        "nl": "verantwoordelijke"
       },
-      "sort_nl": "feitelijkeVereniging",
-      "description": {
-        "nl": "Referentie naar verbonden klasse."
-      },
-      "usage": {
-        "nl": ""
-      },
+      "sort_nl": "verantwoordelijke",
+      "description": {},
+      "usage": {},
       "domain": [
-        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVerantwoordelijke"
-      ],
-      "range": [
         "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Verantwoordelijke"
       ],
       "parents": []
     }
@@ -297,96 +326,6 @@
   ],
   "external_terms": [
     {
-      "uri": "http://data.europa.eu/m8g/CriterionRequirement",
-      "name": {
-        "nl": "CriteriumVereiste"
-      },
-      "description": {
-        "nl": "Criterium dat toelaat te bepalen of een gebruiker recht heeft op een dienstverlening of deze mag gebruiken."
-      },
-      "usage": {},
-      "sort_nl": "CriteriumVereiste",
-      "indvl": false,
-      "inpackage": false,
-      "inscope": true,
-      "show": true
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/Evidence",
-      "name": {
-        "nl": "Bewijs"
-      },
-      "description": {
-        "nl": "Elk stuk waarmee kan worden aangetoond dat men aan een CriteriumVereiste voldoet."
-      },
-      "usage": {},
-      "sort_nl": "Bewijs",
-      "indvl": false,
-      "inpackage": false,
-      "inscope": true,
-      "show": true
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/PeriodOfTime",
-      "name": {
-        "nl": "Periode"
-      },
-      "description": {
-        "nl": "Min of meer afgebakende tijdsduur."
-      },
-      "usage": {},
-      "sort_nl": "Periode",
-      "indvl": false,
-      "inpackage": false,
-      "inscope": true,
-      "show": true
-    },
-    {
-      "uri": "http://schema.org/ContactPoint",
-      "name": {
-        "nl": "Contactinfo"
-      },
-      "description": {
-        "nl": "Informatie zoals email, telefoon, adres die toelaat om iemand of iets te contacteren."
-      },
-      "usage": {},
-      "sort_nl": "Contactinfo",
-      "indvl": false,
-      "inpackage": false,
-      "inscope": true,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/2004/02/skos/core#Concept",
-      "name": {
-        "nl": "Bewijstype"
-      },
-      "description": {
-        "nl": "De aard van het bewijs."
-      },
-      "usage": {},
-      "sort_nl": "Bewijstype",
-      "indvl": false,
-      "inpackage": false,
-      "inscope": true,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/2004/02/skos/core#Concept",
-      "name": {
-        "nl": "Erkenningstype"
-      },
-      "description": {
-        "nl": "De aard van de erkenning."
-      },
-      "usage": {},
-      "sort_nl": "Erkenningstype",
-      "indvl": false,
-      "inpackage": false,
-      "inscope": true,
-      "show": true
-    },
-    {
       "uri": "http://www.w3.org/2004/02/skos/core#Concept",
       "name": {
         "nl": "Roltype"
@@ -417,18 +356,33 @@
       "show": true
     },
     {
-      "uri": "http://data.europa.eu/m8g/endTime",
+      "uri": "http://www.w3.org/2004/02/skos/core#Concept",
       "name": {
-        "nl": "einde"
+        "nl": "Erkenningstype"
       },
       "description": {
-        "nl": "Einde van de tijdsduur."
+        "nl": "De aard van de erkenning."
       },
       "usage": {},
-      "sort_nl": "einde",
-      "inscope": true,
+      "sort_nl": "Erkenningstype",
       "indvl": false,
       "inpackage": false,
+      "inscope": true,
+      "show": true
+    },
+    {
+      "uri": "to do",
+      "name": {
+        "nl": "Vereniging"
+      },
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {},
+      "sort_nl": "Vereniging",
+      "indvl": false,
+      "inpackage": false,
+      "inscope": true,
       "show": true
     },
     {
@@ -441,36 +395,6 @@
       },
       "usage": {},
       "sort_nl": "criteriumvereiste",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/role",
-      "name": {
-        "nl": "rol"
-      },
-      "description": {
-        "nl": "De rol die de verantwoordelijke heeft binnen de feitelijke vereniging."
-      },
-      "usage": {},
-      "sort_nl": "rol",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/startTime",
-      "name": {
-        "nl": "begin"
-      },
-      "description": {
-        "nl": "Aanvang van de tijdsduur."
-      },
-      "usage": {},
-      "sort_nl": "begin",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
@@ -512,51 +436,6 @@
         "nl": "beschrijving"
       },
       "description": {
-        "nl": "Een beknopte omschrijving van de verantwoordelijke."
-      },
-      "usage": {},
-      "sort_nl": "beschrijving",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://purl.org/dc/terms/description",
-      "name": {
-        "nl": "beschrijving"
-      },
-      "description": {
-        "nl": "Een beknopte omschrijving van de criteriumvereiste."
-      },
-      "usage": {},
-      "sort_nl": "beschrijving",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://purl.org/dc/terms/description",
-      "name": {
-        "nl": "beschrijving"
-      },
-      "description": {
-        "nl": "Beschrijving van het bewijs."
-      },
-      "usage": {},
-      "sort_nl": "beschrijving",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://purl.org/dc/terms/description",
-      "name": {
-        "nl": "beschrijving"
-      },
-      "description": {
         "nl": "Een beknopte omschrijving van de erkenningsaanvraag."
       },
       "usage": {},
@@ -567,60 +446,15 @@
       "show": true
     },
     {
-      "uri": "http://purl.org/dc/terms/language",
+      "uri": "http://purl.org/dc/terms/description",
       "name": {
-        "nl": "taal"
+        "nl": "beschrijving"
       },
       "description": {
-        "nl": "Taal waarin het aangeboden bewijs moet zijn opgesteld."
+        "nl": "Een beknopte omschrijving van de verantwoordelijke."
       },
       "usage": {},
-      "sort_nl": "taal",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://purl.org/dc/terms/title",
-      "name": {
-        "nl": "naam"
-      },
-      "description": {
-        "nl": "Officiële naam van de feitelijke vereniging."
-      },
-      "usage": {},
-      "sort_nl": "naam",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://purl.org/dc/terms/title",
-      "name": {
-        "nl": "naam"
-      },
-      "description": {
-        "nl": "Officiële naam van de criteriumvereiste."
-      },
-      "usage": {},
-      "sort_nl": "naam",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://purl.org/dc/terms/title",
-      "name": {
-        "nl": "naam"
-      },
-      "description": {
-        "nl": "Officiële naam van het bewijs."
-      },
-      "usage": {},
-      "sort_nl": "naam",
+      "sort_nl": "beschrijving",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
@@ -647,7 +481,7 @@
         "nl": "type"
       },
       "description": {
-        "nl": "De aard van het bewijs."
+        "nl": "De aard van de erkenning."
       },
       "usage": {},
       "sort_nl": "type",
@@ -672,60 +506,39 @@
       "show": true
     },
     {
-      "uri": "http://schema.org/email",
+      "uri": "http://schema.org/contactPoint",
       "name": {
-        "nl": "email"
+        "nl": "contactpunt"
       },
-      "description": {
-        "nl": "Emailadres waarnaar men kan mailen."
-      },
+      "description": {},
       "usage": {},
-      "sort_nl": "email",
+      "sort_nl": "contactpunt",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://schema.org/faxNumber",
+      "uri": "http://schema.org/contactPoint",
       "name": {
-        "nl": "fax"
+        "nl": "contactpunt"
       },
-      "description": {
-        "nl": "Faxnummer waarnaar men kan faxen."
-      },
+      "description": {},
       "usage": {},
-      "sort_nl": "fax",
+      "sort_nl": "contactpunt",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://schema.org/telephone",
+      "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
       "name": {
-        "nl": "telefoon"
+        "nl": "voorkeurslabel"
       },
-      "description": {
-        "nl": "Telefoonnummer waarop men kan bellen."
-      },
+      "description": {},
       "usage": {},
-      "sort_nl": "telefoon",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/2006/vcard/ns#honorific-prefix",
-      "name": {
-        "nl": "aanschrijfvorm"
-      },
-      "description": {
-        "nl": "Titel waarmee iemand wordt aangescrheven of aangesproken of waarmee naar iemand wordt verwezen."
-      },
-      "usage": {},
-      "sort_nl": "aanschrijfvorm",
+      "sort_nl": "voorkeurslabel",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
@@ -747,60 +560,26 @@
       "show": true
     },
     {
-      "uri": "http://www.w3.org/ns/locn#address",
+      "uri": "http://www.w3.org/ns/org#role",
       "name": {
-        "nl": "adres"
+        "nl": "rol"
       },
-      "description": {
-        "nl": "Adres dat men kan aanschrijven of bezoeken."
-      },
+      "description": {},
       "usage": {},
-      "sort_nl": "adres",
+      "sort_nl": "rol",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://xmlns.com/foaf/0.1/name",
+      "uri": "http://www.w3.org/ns/regorg#orgActivity",
       "name": {
-        "nl": "contactnaam"
+        "nl": "organisatieactiviteit"
       },
-      "description": {
-        "nl": "Naam van de persoon die men kan contacteren."
-      },
+      "description": {},
       "usage": {},
-      "sort_nl": "contactnaam",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://xmlns.com/foaf/0.1/page",
-      "name": {
-        "nl": "documentatie"
-      },
-      "description": {
-        "nl": "Documentatie gerelateerd aan het bewijs."
-      },
-      "usage": {},
-      "sort_nl": "documentatie",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://xmlns.com/foaf/0.1/page",
-      "name": {
-        "nl": "website"
-      },
-      "description": {
-        "nl": "Website waarnaar men kan surfen."
-      },
-      "usage": {},
-      "sort_nl": "website",
+      "sort_nl": "organisatieactiviteit",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
