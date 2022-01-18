@@ -28,6 +28,7 @@
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ActiviteitTypeShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ErkenningstypeShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#OrganisatieActiviteitShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#NAL_currencyShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#IdentificatorShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#AdresvoorstellingShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#FormeleOrganisatieShape>,
@@ -86,16 +87,18 @@
   shacl:closed false;
   shacl:property [
     shacl:class schema:ContactPoint;
+    shacl:description "Informatie waarmee de verantwoordelijke kan gecontacteerd worden.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "contactInfo";
-    shacl:path <http://fixme.com#contactInfo>
+    shacl:path <http://data.europa.eu/m8g/hasContactPoint>
   ], [
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:description "Identificator van het object.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "identificator";
-    shacl:path <http://fixme.com#identificator>
+    shacl:path <http://www.w3.org/ns/adms#Identifier>
   ];
   shacl:targetClass dc:Agent .
 
@@ -135,6 +138,49 @@
 
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ContactInfoShape> a shacl:NodeShape;
   shacl:closed false;
+  shacl:property [
+    shacl:class rdf:langString;
+    shacl:description "Titel waarmee iemand wordt aangeschreven of aangesproken of waarmee naar iemand wordt verwezen.";
+    shacl:maxCount 1;
+    shacl:name "aanschrijfvorm";
+    shacl:path <http://ww.w3.org/2006/vcard/ns#honorific-prefix>
+  ], [
+    shacl:class <http://www.w3.org/ns/locn#Address>;
+    shacl:description "Adres dat men kan aanschrijven of bezoeken.";
+    shacl:maxCount 1;
+    shacl:name "adres";
+    shacl:path <http://www.w3.org/ns/locn#address>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Naam van bvb de persoon die men kan contacteren.";
+    shacl:maxCount 1;
+    shacl:name "contactnaam";
+    shacl:path foaf:name
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Email-adres waarnaar men kan mailen.";
+    shacl:maxCount 1;
+    shacl:name "email";
+    shacl:path schema:email
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Faxnummer waarnaar men kan faxen.";
+    shacl:maxCount 1;
+    shacl:name "fax";
+    shacl:path schema:faxNumber
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Telefoonnummer waarop men kan bellen.";
+    shacl:maxCount 1;
+    shacl:name "telefoon";
+    shacl:path schema:telephone
+  ], [
+    shacl:datatype xsd:anyURI;
+    shacl:description "Website waarnaar men kan surfen.";
+    shacl:maxCount 1;
+    shacl:name "website";
+    shacl:path foaf:page
+  ];
   shacl:targetClass schema:ContactPoint .
 
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#CriteriumVereisteShape> a shacl:NodeShape;
@@ -359,6 +405,13 @@
     shacl:name "beschrijving";
     shacl:path dc:description
   ], [
+    shacl:class skos:Concept;
+    shacl:description "Munteenheid waarin de kost is gedefinieerd.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "valuta";
+    shacl:path <http://data.europa.eu/m8g/currency>
+  ], [
     shacl:datatype xsd:double;
     shacl:description "Omvang van de kost, uitgedrukt in de opgegeven munteenheid.";
     shacl:maxCount 1;
@@ -366,6 +419,10 @@
     shacl:path <http://data.europa.eu/m8g/value>
   ];
   shacl:targetClass <http://data.europa.eu/m8g/Cost> .
+
+<https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#NAL_currencyShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
 
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#OrganisatieActiviteitShape> a shacl:NodeShape;
   shacl:closed false;
@@ -472,10 +529,11 @@
   shacl:closed false;
   shacl:property [
     shacl:class rdf:langString;
+    shacl:description "Beschrijving vd publieke dienstverlening.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "beschrijving";
-    shacl:path <http://fixme.com#beschrijving>
+    shacl:path dc:description
   ], [
     shacl:class <http://data.europa.eu/m8g/Cost>;
     shacl:description "Kostprijs verbonden aan het gebruik van de publieke dienstverlening.";
@@ -483,10 +541,11 @@
     shacl:path <http://data.europa.eu/m8g/hasCost>
   ], [
     shacl:class rdf:langString;
+    shacl:description "Officiële naam van de publieke dienstverlening.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "naam";
-    shacl:path <http://fixme.com#naam>
+    shacl:path dc:title
   ], [
     shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
     shacl:description "Publieke organisatie die verantwoordelijk is voor het aanbieden en beheren van de publieke dienstverlening.";

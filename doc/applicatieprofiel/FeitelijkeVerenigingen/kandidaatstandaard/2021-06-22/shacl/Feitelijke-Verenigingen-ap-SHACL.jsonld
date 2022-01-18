@@ -308,6 +308,14 @@
           "sh:path": "http://purl.org/dc/terms/description"
         },
         {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Munteenheid waarin de kost is gedefinieerd.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "valuta",
+          "sh:path": "http://data.europa.eu/m8g/currency"
+        },
+        {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#double",
           "sh:description": "Omvang van de kost, uitgedrukt in de opgegeven munteenheid.",
           "sh:maxCount": "1",
@@ -450,17 +458,19 @@
       "sh:property": [
         {
           "sh:class": "http://schema.org/ContactPoint",
+          "sh:description": "Informatie waarmee de verantwoordelijke kan gecontacteerd worden.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "contactInfo",
-          "sh:path": "http://fixme.com#contactInfo"
+          "sh:path": "http://data.europa.eu/m8g/hasContactPoint"
         },
         {
           "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "Identificator van het object.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "identificator",
-          "sh:path": "http://fixme.com#identificator"
+          "sh:path": "http://www.w3.org/ns/adms#Identifier"
         }
       ],
       "sh:targetClass": "http://purl.org/dc/terms/Agent"
@@ -472,10 +482,11 @@
       "sh:property": [
         {
           "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Beschrijving vd publieke dienstverlening.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "beschrijving",
-          "sh:path": "http://fixme.com#beschrijving"
+          "sh:path": "http://purl.org/dc/terms/description"
         },
         {
           "sh:class": "http://data.europa.eu/m8g/Cost",
@@ -485,10 +496,11 @@
         },
         {
           "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Officiële naam van de publieke dienstverlening.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "naam",
-          "sh:path": "http://fixme.com#naam"
+          "sh:path": "http://purl.org/dc/terms/title"
         },
         {
           "sh:class": "http://data.europa.eu/m8g/PublicOrganisation",
@@ -504,7 +516,57 @@
       "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ContactInfoShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Titel waarmee iemand wordt aangeschreven of aangesproken of waarmee naar iemand wordt verwezen.",
+          "sh:maxCount": "1",
+          "sh:name": "aanschrijfvorm",
+          "sh:path": "http://ww.w3.org/2006/vcard/ns#honorific-prefix"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Address",
+          "sh:description": "Adres dat men kan aanschrijven of bezoeken.",
+          "sh:maxCount": "1",
+          "sh:name": "adres",
+          "sh:path": "http://www.w3.org/ns/locn#address"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Naam van bvb de persoon die men kan contacteren.",
+          "sh:maxCount": "1",
+          "sh:name": "contactnaam",
+          "sh:path": "http://xmlns.com/foaf/0.1/name"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Email-adres waarnaar men kan mailen.",
+          "sh:maxCount": "1",
+          "sh:name": "email",
+          "sh:path": "http://schema.org/email"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Faxnummer waarnaar men kan faxen.",
+          "sh:maxCount": "1",
+          "sh:name": "fax",
+          "sh:path": "http://schema.org/faxNumber"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Telefoonnummer waarop men kan bellen.",
+          "sh:maxCount": "1",
+          "sh:name": "telefoon",
+          "sh:path": "http://schema.org/telephone"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:description": "Website waarnaar men kan surfen.",
+          "sh:maxCount": "1",
+          "sh:name": "website",
+          "sh:path": "http://xmlns.com/foaf/0.1/page"
+        }
+      ],
       "sh:targetClass": "http://schema.org/ContactPoint"
     },
     {
@@ -544,6 +606,13 @@
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#OrganisatieActiviteitShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#NAL_currencyShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
