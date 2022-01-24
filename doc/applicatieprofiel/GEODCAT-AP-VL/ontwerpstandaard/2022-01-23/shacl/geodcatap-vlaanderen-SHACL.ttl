@@ -14,6 +14,7 @@
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#AgentShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#LicentieDocumentShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#PlaatsShape>,
+    <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#LineageUitdrukkingShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#JuridischeBepalingShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#StandaardShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#CatalogusShape>,
@@ -49,6 +50,12 @@
     shacl:maxCount "n"^^xsd:integer;
     shacl:name "alternatieve identificator";
     shacl:path <http://www.w3.org/ns/adms#identifier>
+  ], [
+    shacl:description "De record in een andere catalogus waarvan deze record en de beschrijvingen van het bijhorende hoofdonderwerp van afgeleid zijn.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "bronRecord";
+    shacl:path dc:source
   ], [
     shacl:class dc:Standard;
     shacl:description """De (metadata) standaard volgens welke
@@ -365,10 +372,7 @@ GEMET thesaurus.""";
     shacl:name "GEMETconcept";
     shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#GEMETconcept>
   ], [
-    <http://purl.org/linked-data/cube#codeList> <https://inspire.ec.eu
-ropa.eu/metadata-
-codelist/TopicCatego
-ry>;
+    <http://purl.org/linked-data/cube#codeList> <https://inspire.ec.europa.eu/themery>;
     shacl:class skos:Concept;
     shacl:description """De rubriek waartoe de
 dataset behoort volgens de
@@ -377,10 +381,7 @@ INSPIRE thema's""";
     shacl:name "INSPIREthema";
     shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#INSPIREthema>
   ], [
-    <http://purl.org/linked-data/cube#codeList> <https://inspire.ec.eu
-ropa.eu/metadata-
-codelist/TopicCatego
-ry>;
+    <http://purl.org/linked-data/cube#codeList> <https://inspire.ec.europa.eu/metadata-codelist/TopicCategory>;
     shacl:class skos:Concept;
     shacl:description """De rubriek waartoe de
 dataset behoort volgens de
@@ -452,15 +453,22 @@ geografische metadata""";
     shacl:name "landingspagina";
     shacl:path dcat:landingPage
   ], [
+    shacl:description "De ontstaansgeschiedenis van een dataset.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "lineage";
+    shacl:path dc:provenance
+  ], [
     shacl:datatype xsd:dateTime;
     shacl:maxCount 1;
     shacl:name "publicatiedatum";
     shacl:path dc:issued
   ], [
     shacl:class <http://data.vlaanderen.be/ns/metadata-dcat#Resolutie>;
+    shacl:description "Het detailniveau van de dataset";
     shacl:maxCount 1;
     shacl:name "ruimtelijkeResolutie";
-    shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#ruimtelijkeResolutie>
+    shacl:path <http://www.w3.org/ns/dqv#hasQualityMeasurement>
   ], [
     <http://purl.org/linked-data/cube#codeList> <https://vocab.belgif.be/auth/datatheme>;
     shacl:class skos:Concept;
@@ -579,6 +587,10 @@ waaraan de distributie voldoet.""";
   shacl:closed false;
   shacl:targetClass dc:LicenseDocument .
 
+<https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#LineageUitdrukkingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass dc:ProvenanceStatement .
+
 <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#PlaatsShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
@@ -614,12 +626,13 @@ waaraan de distributie voldoet.""";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "resolutiemethode";
-    shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#resolutiemethode>
+    shacl:path <http://www.w3.org/ns/dqv#isMeasurementOf>
   ], [
+    shacl:description "De waarde van resolutie gemeten volgens de bijhorende methode.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "waarde";
-    shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#waarde>
+    shacl:path <http://www.w3.org/ns/dqv#value>
   ];
   shacl:targetClass <http://data.vlaanderen.be/ns/metadata-dcat#Resolutie> .
 
@@ -627,35 +640,46 @@ waaraan de distributie voldoet.""";
   shacl:closed false;
   shacl:property [
     shacl:datatype rdf:langString;
+    shacl:description """Een bondige tekstuele omschrijving van de
+standaard""";
     shacl:maxCount 1;
     shacl:name "beschrijving";
     shacl:path dc:description
   ], [
     shacl:datatype xsd:dateTime;
+    shacl:description """De datum waarop de standaard werd
+gepubliceerd""";
     shacl:maxCount 1;
     shacl:name "publicatiedatum";
     shacl:path dc:issued
   ], [
+    shacl:description """Een URL waarop men de specificatie kan
+vinden""";
     shacl:maxCount 1;
     shacl:name "specificatieURL";
-    shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#specificatieURL>
+    shacl:path rdfs:seeAlso
   ], [
     shacl:datatype rdf:langString;
+    shacl:description "naam van de standaard";
     shacl:maxCount 1;
     shacl:name "titel";
     shacl:path dc:title
   ], [
     shacl:class skos:Concept;
+    shacl:description "Een categorisatie van de standaard";
     shacl:maxCount "n"^^xsd:integer;
     shacl:name "type";
-    shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#type>
+    shacl:path dc:type
   ], [
     shacl:datatype xsd:string;
+    shacl:description "De versie van de standaard";
     shacl:maxCount 1;
     shacl:name "versie";
-    shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#versie>
+    shacl:path owl:versionInfo
   ], [
     shacl:datatype xsd:string;
+    shacl:description """Een afkorting, of notatie waaronder de
+standaard bekend is.""";
     shacl:maxCount 1;
     shacl:name "voorkeurslabel";
     shacl:path skos:prefLabel
@@ -664,16 +688,16 @@ waaraan de distributie voldoet.""";
 
  [
     shacl:datatype xsd:anyURI;
-    shacl:description "Een webpagina die ofwel toelaat om contact op te nemen (via b.v. een webformulier) of die informatie bevat hoe men contact kan opnemen.";
-    shacl:maxCount 1;
-    shacl:name "contactpagina";
-    shacl:path foaf:page
-  ] .
-
- [
-    shacl:datatype xsd:anyURI;
     shacl:description "Het e-mailadres waarmee een gebruiker contact kan opnemen voor informatie.";
     shacl:maxCount 1;
     shacl:name "e-mail";
     shacl:path vcard:hasEmail
+  ] .
+
+ [
+    shacl:datatype xsd:anyURI;
+    shacl:description "Een webpagina die ofwel toelaat om contact op te nemen (via b.v. een webformulier) of die informatie bevat hoe men contact kan opnemen.";
+    shacl:maxCount 1;
+    shacl:name "contactpagina";
+    shacl:path foaf:page
   ] .

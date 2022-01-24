@@ -42,13 +42,14 @@
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "resolutiemethode",
-          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#resolutiemethode"
+          "sh:path": "http://www.w3.org/ns/dqv#isMeasurementOf"
         },
         {
+          "sh:description": "De waarde van resolutie gemeten volgens de bijhorende methode.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "waarde",
-          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#waarde"
+          "sh:path": "http://www.w3.org/ns/dqv#value"
         }
       ],
       "sh:targetClass": "http://data.vlaanderen.be/ns/metadata-dcat#Resolutie"
@@ -113,6 +114,13 @@
       "sh:targetClass": "http://purl.org/dc/terms/Location"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#LineageUitdrukkingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://purl.org/dc/terms/ProvenanceStatement"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#JuridischeBepalingShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -126,41 +134,48 @@
       "sh:property": [
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Een bondige tekstuele omschrijving van de\nstandaard",
           "sh:maxCount": "1",
           "sh:name": "beschrijving",
           "sh:path": "http://purl.org/dc/terms/description"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "De datum waarop de standaard werd\ngepubliceerd",
           "sh:maxCount": "1",
           "sh:name": "publicatiedatum",
           "sh:path": "http://purl.org/dc/terms/issued"
         },
         {
+          "sh:description": "Een URL waarop men de specificatie kan\nvinden",
           "sh:maxCount": "1",
           "sh:name": "specificatieURL",
-          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#specificatieURL"
+          "sh:path": "http://www.w3.org/2000/01/rdf-schema#seeAlso"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "naam van de standaard",
           "sh:maxCount": "1",
           "sh:name": "titel",
           "sh:path": "http://purl.org/dc/terms/title"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Een categorisatie van de standaard",
           "sh:maxCount": "n",
           "sh:name": "type",
-          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#type"
+          "sh:path": "http://purl.org/dc/terms/type"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "De versie van de standaard",
           "sh:maxCount": "1",
           "sh:name": "versie",
-          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#versie"
+          "sh:path": "http://www.w3.org/2002/07/owl#versionInfo"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Een afkorting, of notatie waaronder de\nstandaard bekend is.",
           "sh:maxCount": "1",
           "sh:name": "voorkeurslabel",
           "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
@@ -288,6 +303,13 @@
           "sh:maxCount": "n",
           "sh:name": "alternatieve identificator",
           "sh:path": "http://www.w3.org/ns/adms#identifier"
+        },
+        {
+          "sh:description": "De record in een andere catalogus waarvan deze record en de beschrijvingen van het bijhorende hoofdonderwerp van afgeleid zijn.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "bronRecord",
+          "sh:path": "http://purl.org/dc/terms/source"
         },
         {
           "sh:class": "http://purl.org/dc/terms/Standard",
@@ -549,7 +571,7 @@
           "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#GEMETconcept"
         },
         {
-          "qb:codeList": "https://inspire.ec.eu\nropa.eu/metadata-\ncodelist/TopicCatego\nry",
+          "qb:codeList": "https://inspire.ec.europa.eu/themery",
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "De rubriek waartoe de\ndataset behoort volgens de\nINSPIRE thema's",
           "sh:maxCount": "n",
@@ -557,7 +579,7 @@
           "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#INSPIREthema"
         },
         {
-          "qb:codeList": "https://inspire.ec.eu\nropa.eu/metadata-\ncodelist/TopicCatego\nry",
+          "qb:codeList": "https://inspire.ec.europa.eu/metadata-codelist/TopicCategory",
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "De rubriek waartoe de\ndataset behoort volgens de\nafspraken in de ISO-\nstandaard voor\ngeografische metadata",
           "sh:maxCount": "n",
@@ -636,6 +658,13 @@
           "sh:path": "http://www.w3.org/ns/dcat#landingPage"
         },
         {
+          "sh:description": "De ontstaansgeschiedenis van een dataset.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "lineage",
+          "sh:path": "http://purl.org/dc/terms/provenance"
+        },
+        {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
           "sh:maxCount": "1",
           "sh:name": "publicatiedatum",
@@ -643,9 +672,10 @@
         },
         {
           "sh:class": "http://data.vlaanderen.be/ns/metadata-dcat#Resolutie",
+          "sh:description": "Het detailniveau van de dataset",
           "sh:maxCount": "1",
           "sh:name": "ruimtelijkeResolutie",
-          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#ruimtelijkeResolutie"
+          "sh:path": "http://www.w3.org/ns/dqv#hasQualityMeasurement"
         },
         {
           "qb:codeList": "https://vocab.belgif.be/auth/datatheme",
