@@ -563,7 +563,7 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "qb:codeList": "http://www.eionet.e\nuropa.eu/gemet",
+          "qb:codeList": "http://www.eionet.europa.eu/gemet",
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "De rubriek waartoe de\ndataset behoort volgens de\nGEMET thesaurus.",
           "sh:maxCount": "n",
@@ -658,6 +658,7 @@
           "sh:path": "http://www.w3.org/ns/dcat#landingPage"
         },
         {
+          "sh:class": "http://purl.org/dc/terms/ProvenanceStatement",
           "sh:description": "De ontstaansgeschiedenis van een dataset.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -671,11 +672,28 @@
           "sh:path": "http://purl.org/dc/terms/issued"
         },
         {
+          "qb:codeList": "https://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationType",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Het primaire ruimtelijke voorstellingstype waarin de data in de dataset wordt beheerd.",
+          "sh:maxCount": "1",
+          "sh:name": "ruimtelijkVoorstellingsType",
+          "sh:path": "http://www.w3.org/ns/adms#representionTechnique"
+        },
+        {
           "sh:class": "http://data.vlaanderen.be/ns/metadata-dcat#Resolutie",
           "sh:description": "Het detailniveau van de dataset",
           "sh:maxCount": "1",
           "sh:name": "ruimtelijkeResolutie",
           "sh:path": "http://www.w3.org/ns/dqv#hasQualityMeasurement"
+        },
+        {
+          "qb:codeList": "https://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "De progressie in het samenstellen van de dataset",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "status",
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#status"
         },
         {
           "qb:codeList": "https://vocab.belgif.be/auth/datatheme",
@@ -708,6 +726,14 @@
           "sh:maxCount": "n",
           "sh:name": "trefwoord",
           "sh:path": "http://www.w3.org/ns/dcat#keyword"
+        },
+        {
+          "qb:codeList": "http://www.w3.org/ns/adms#sample",
+          "sh:class": "http://www.w3.org/ns/dcat#Distribution",
+          "sh:description": "Een verkleinde weergave van een afbeeldingsbestand.",
+          "sh:maxCount": "n",
+          "sh:name": "tumbnail",
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#tumbnail"
         },
         {
           "sh:class": "http://purl.org/dc/terms/Agent",
@@ -800,6 +826,47 @@
           "sh:description": "Een dataservice die deze distributie aanbiedt.",
           "sh:name": "wordtAangebodenDoor",
           "sh:path": "http://www.w3.org/ns/dcat#accessService"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/dcat#Distribution"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#VoorbeeldWeergaveShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Een bondige tekstuele omschrijving van de afbeelding",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "beschrijving",
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:description": "De URL waar de afbeelding gedownload kan worden.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "downloadURL",
+          "sh:path": "http://www.w3.org/ns/dcat#downloadURL"
+        },
+        {
+          "qb:codeList": "https://www.iana.org/assignments/media-types/media-types.xhtml",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Het voorstellingsvorm van de afbeelding",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "mediatype",
+          "sh:path": "http://www.w3.org/ns/dcat#mediatype"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "naam van de afbeelding",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "titel",
+          "sh:path": "http://purl.org/dc/terms/title"
         }
       ],
       "sh:targetClass": "http://www.w3.org/ns/dcat#Distribution"

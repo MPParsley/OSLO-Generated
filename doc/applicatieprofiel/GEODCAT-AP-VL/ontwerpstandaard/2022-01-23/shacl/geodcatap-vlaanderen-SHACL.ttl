@@ -22,6 +22,7 @@
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#DataServiceShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#DatasetShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#DistributieShape>,
+    <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#VoorbeeldWeergaveShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#CatalogusResourceShape> .
 
 <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#AgentShape> a shacl:NodeShape;
@@ -362,8 +363,7 @@ dataservice behoort""";
 <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#DatasetShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    <http://purl.org/linked-data/cube#codeList> <http://www.eionet.e
-uropa.eu/gemet>;
+    <http://purl.org/linked-data/cube#codeList> <http://www.eionet.europa.eu/gemet>;
     shacl:class skos:Concept;
     shacl:description """De rubriek waartoe de
 dataset behoort volgens de
@@ -453,6 +453,7 @@ geografische metadata""";
     shacl:name "landingspagina";
     shacl:path dcat:landingPage
   ], [
+    shacl:class dc:ProvenanceStatement;
     shacl:description "De ontstaansgeschiedenis van een dataset.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -464,11 +465,26 @@ geografische metadata""";
     shacl:name "publicatiedatum";
     shacl:path dc:issued
   ], [
+    <http://purl.org/linked-data/cube#codeList> <https://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationType>;
+    shacl:class skos:Concept;
+    shacl:description "Het primaire ruimtelijke voorstellingstype waarin de data in de dataset wordt beheerd.";
+    shacl:maxCount 1;
+    shacl:name "ruimtelijkVoorstellingsType";
+    shacl:path <http://www.w3.org/ns/adms#representionTechnique>
+  ], [
     shacl:class <http://data.vlaanderen.be/ns/metadata-dcat#Resolutie>;
     shacl:description "Het detailniveau van de dataset";
     shacl:maxCount 1;
     shacl:name "ruimtelijkeResolutie";
     shacl:path <http://www.w3.org/ns/dqv#hasQualityMeasurement>
+  ], [
+    <http://purl.org/linked-data/cube#codeList> <https://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode>;
+    shacl:class skos:Concept;
+    shacl:description "De progressie in het samenstellen van de dataset";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "status";
+    shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#status>
   ], [
     <http://purl.org/linked-data/cube#codeList> <https://vocab.belgif.be/auth/datatheme>;
     shacl:class skos:Concept;
@@ -497,6 +513,13 @@ geografische metadata""";
     shacl:maxCount "n"^^xsd:integer;
     shacl:name "trefwoord";
     shacl:path dcat:keyword
+  ], [
+    <http://purl.org/linked-data/cube#codeList> <http://www.w3.org/ns/adms#sample>;
+    shacl:class dcat:Distribution;
+    shacl:description "Een verkleinde weergave van een afbeeldingsbestand.";
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:name "tumbnail";
+    shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#tumbnail>
   ], [
     shacl:class dc:Agent;
     shacl:description "de agent die instaat voor de verdeling";
@@ -686,13 +709,39 @@ standaard bekend is.""";
   ];
   shacl:targetClass dc:Standard .
 
- [
-    shacl:datatype xsd:anyURI;
-    shacl:description "Het e-mailadres waarmee een gebruiker contact kan opnemen voor informatie.";
+<https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#VoorbeeldWeergaveShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdf:langString;
+    shacl:description "Een bondige tekstuele omschrijving van de afbeelding";
     shacl:maxCount 1;
-    shacl:name "e-mail";
-    shacl:path vcard:hasEmail
-  ] .
+    shacl:minCount 1;
+    shacl:name "beschrijving";
+    shacl:path dc:description
+  ], [
+    shacl:datatype xsd:anyURI;
+    shacl:description "De URL waar de afbeelding gedownload kan worden.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "downloadURL";
+    shacl:path dcat:downloadURL
+  ], [
+    <http://purl.org/linked-data/cube#codeList> <https://www.iana.org/assignments/media-types/media-types.xhtml>;
+    shacl:class skos:Concept;
+    shacl:description "Het voorstellingsvorm van de afbeelding";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "mediatype";
+    shacl:path dcat:mediatype
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:description "naam van de afbeelding";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "titel";
+    shacl:path dc:title
+  ];
+  shacl:targetClass dcat:Distribution .
 
  [
     shacl:datatype xsd:anyURI;
@@ -700,4 +749,12 @@ standaard bekend is.""";
     shacl:maxCount 1;
     shacl:name "contactpagina";
     shacl:path foaf:page
+  ] .
+
+ [
+    shacl:datatype xsd:anyURI;
+    shacl:description "Het e-mailadres waarmee een gebruiker contact kan opnemen voor informatie.";
+    shacl:maxCount 1;
+    shacl:name "e-mail";
+    shacl:path vcard:hasEmail
   ] .

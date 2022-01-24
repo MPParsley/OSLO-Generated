@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": " https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/tree/21f2e819cedfb688586ad6ac857556b3cb7b04f1",
-    "changelogurl": " https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/blob/21f2e819cedfb688586ad6ac857556b3cb7b04f1/CHANGELOG",
+    "repositoryurl": " https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/tree/2c4da9d87bb84dda109af4e395ec7225f296fc53",
+    "changelogurl": " https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/blob/2c4da9d87bb84dda109af4e395ec7225f296fc53/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
     "usesVocs": [],
@@ -2212,7 +2212,7 @@
             }
           ],
           "cardinality": "0..n",
-          "codelist_uri": "http://www.eionet.e\nuropa.eu/gemet"
+          "codelist_uri": "http://www.eionet.europa.eu/gemet"
         },
         {
           "uri": "http://data.vlaanderen.be/ns/metadata-dcat#INSPIREthema",
@@ -2281,6 +2281,76 @@
           ],
           "cardinality": "0..n",
           "codelist_uri": "https://inspire.ec.europa.eu/metadata-codelist/TopicCategory"
+        },
+        {
+          "uri": "http://data.vlaanderen.be/ns/metadata-dcat#status",
+          "name": {
+            "nl": "status"
+          },
+          "sort_nl": "status",
+          "description": {
+            "nl": "De progressie in het samenstellen van de dataset"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://www.w3.org/ns/dcat#Dataset",
+              "EA-Name": "Dataset"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Code"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": "https://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode"
+        },
+        {
+          "uri": "http://data.vlaanderen.be/ns/metadata-dcat#tumbnail",
+          "name": {
+            "nl": "thumbnail"
+          },
+          "sort_nl": "thumbnail",
+          "description": {
+            "nl": "Een verkleinde weergave van een afbeeldingsbestand."
+          },
+          "usage": {
+            "nl": "Een thumbnail heeft als doel de vindbaarheid van de dataset te verhogen. Het is geen accurate weergave van de data die de dataset bevat."
+          },
+          "domain": [
+            {
+              "uri": "http://www.w3.org/ns/dcat#Dataset",
+              "EA-Name": "Dataset"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "VoorbeeldWeergave",
+              "range_uri": "http://www.w3.org/ns/dcat#Distribution"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Voorbeeldweergave",
+              "range_puri": "http://www.w3.org/ns/dcat#Distribution",
+              "range_label": {
+                "nl": "Voorbeeldweergave"
+              }
+            }
+          ],
+          "cardinality": "0..n",
+          "codelist_uri": "http://www.w3.org/ns/adms#sample"
         },
         {
           "uri": "http://data.europa.eu/930/distributor",
@@ -2574,8 +2644,21 @@
               "EA-Name": "Dataset"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "LineageUitdrukking",
+              "range_uri": "http://purl.org/dc/terms/ProvenanceStatement"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Lineage Uitdrukking",
+              "range_puri": "http://purl.org/dc/terms/ProvenanceStatement",
+              "range_label": {
+                "nl": "Lineage Uitdrukking"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         },
@@ -2754,6 +2837,42 @@
           ],
           "cardinality": "0..n",
           "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/adms#representionTechnique",
+          "name": {
+            "nl": "ruimtelijke voorstellingswijze"
+          },
+          "sort_nl": "ruimtelijke voorstellingswijze",
+          "description": {
+            "nl": "Het primaire ruimtelijke voorstellingstype waarin de data in de dataset wordt beheerd."
+          },
+          "usage": {
+            "nl": "[Zie <a href=\"https://semiceu.github.io/GeoDCAT-AP/releases/2.0.0/#spatial-representation-type-spatial-representation-type\">GeoDCAT-AP</a>]"
+          },
+          "domain": [
+            {
+              "uri": "http://www.w3.org/ns/dcat#Dataset",
+              "EA-Name": "Dataset"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": "https://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationType"
         },
         {
           "uri": "http://www.w3.org/ns/dcat#contactPoint",
@@ -3310,6 +3429,162 @@
       ]
     },
     {
+      "uri": "http://www.w3.org/ns/dcat#Distribution",
+      "name": {
+        "nl": "Voorbeeldweergave"
+      },
+      "sort_nl": "Voorbeeldweergave",
+      "description": {
+        "nl": "Een afbeelding ter illustratie van de geassocieerde data."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": {
+            "nl": "beschrijving"
+          },
+          "sort_nl": "beschrijving",
+          "description": {
+            "nl": "Een bondige tekstuele omschrijving van de afbeelding"
+          },
+          "usage": {
+            "nl": "Ter ondersteuning van WCAG"
+          },
+          "domain": [
+            {
+              "uri": "http://www.w3.org/ns/dcat#Distribution",
+              "EA-Name": "VoorbeeldWeergave"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/title",
+          "name": {
+            "nl": "titel"
+          },
+          "sort_nl": "titel",
+          "description": {
+            "nl": "naam van de afbeelding"
+          },
+          "usage": {
+            "nl": "Ter ondersteuning van WCAG"
+          },
+          "domain": [
+            {
+              "uri": "http://www.w3.org/ns/dcat#Distribution",
+              "EA-Name": "VoorbeeldWeergave"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/dcat#downloadURL",
+          "name": {
+            "nl": "downloadURL"
+          },
+          "sort_nl": "downloadURL",
+          "description": {
+            "nl": "De URL waar de afbeelding gedownload kan worden."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://www.w3.org/ns/dcat#Distribution",
+              "EA-Name": "VoorbeeldWeergave"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_label": {
+                "nl": "URI"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/dcat#mediatype",
+          "name": {
+            "nl": "mediatype"
+          },
+          "sort_nl": "mediatype",
+          "description": {
+            "nl": "Het voorstellingsvorm van de afbeelding"
+          },
+          "usage": {
+            "nl": "Ter ondersteuning van een portaal ontwikkelaar. Een waarde uit de IANA media types lijst."
+          },
+          "domain": [
+            {
+              "uri": "http://www.w3.org/ns/dcat#Distribution",
+              "EA-Name": "VoorbeeldWeergave"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Code"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": "https://www.iana.org/assignments/media-types/media-types.xhtml"
+        }
+      ]
+    },
+    {
       "uri": "http://www.w3.org/ns/dcat#Resource",
       "name": {
         "nl": "Catalogus Resource"
@@ -3492,6 +3767,25 @@
       "parents": []
     },
     {
+      "uri": "http://data.vlaanderen.be/ns/metadata-dcat#status",
+      "name": {
+        "nl": "status"
+      },
+      "description": {
+        "nl": "De progressie in het samenstellen van de dataset"
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": [
+        "http://www.w3.org/ns/adms#status"
+      ]
+    },
+    {
       "uri": "http://data.vlaanderen.be/ns/metadata-dcat#statuut",
       "name": {},
       "description": {
@@ -3505,6 +3799,25 @@
       ],
       "usage": {
         "nl": "TODO"
+      },
+      "parents": []
+    },
+    {
+      "uri": "http://data.vlaanderen.be/ns/metadata-dcat#tumbnail",
+      "name": {
+        "nl": "thumbnail"
+      },
+      "description": {
+        "nl": "Een verkleinde weergave van een afbeeldingsbestand."
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {
+        "nl": "Een thumbnail heeft als doel de vindbaarheid van de dataset te verhogen. Het is geen accurate weergave van de data die de dataset bevat."
       },
       "parents": []
     }
