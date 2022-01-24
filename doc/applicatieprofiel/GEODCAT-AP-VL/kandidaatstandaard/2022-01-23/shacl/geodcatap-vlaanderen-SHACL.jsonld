@@ -39,6 +39,7 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:description": "De schaal of eenheid waaronder de waarde moet worden geïntepreteerd.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "resolutiemethode",
@@ -147,6 +148,7 @@
           "sh:path": "http://purl.org/dc/terms/issued"
         },
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
           "sh:description": "Een URL waarop men de specificatie kan\nvinden",
           "sh:maxCount": "1",
           "sh:name": "specificatieURL",
@@ -394,6 +396,7 @@
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Het tijdsmoment waarop de dataservice voor het eerst werd geactiveerd.",
           "sh:maxCount": "1",
           "sh:name": "creatiedatum",
           "sh:path": "http://purl.org/dc/terms/created"
@@ -416,8 +419,7 @@
         {
           "sh:class": "http://purl.org/dc/terms/Location",
           "sh:description": "Het geografische gebied waarvoor deze dataservice van toepassing is.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
+          "sh:maxCount": "n",
           "sh:name": "geografischeDekking",
           "sh:path": "http://purl.org/dc/terms/spatial"
         },
@@ -482,6 +484,7 @@
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Het tijdsmoment waarop de service werd gepubliceerd door de uitgever.",
           "sh:maxCount": "1",
           "sh:name": "publicatiedatum",
           "sh:path": "http://purl.org/dc/terms/issued"
@@ -550,6 +553,7 @@
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Het tijdsmoment waarop de dataservice werd gewijzigd",
           "sh:maxCount": "1",
           "sh:name": "wijzigingsdatum",
           "sh:path": "http://purl.org/dc/terms/modified"
@@ -618,6 +622,7 @@
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Het tijdsmoment waarop de dataset ontstaan is.",
           "sh:maxCount": "1",
           "sh:name": "creatiedatum",
           "sh:path": "http://purl.org/dc/terms/created"
@@ -637,8 +642,7 @@
         {
           "sh:class": "http://purl.org/dc/terms/Location",
           "sh:description": "Het geografische gebied waarover de dataset informatie heeft.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
+          "sh:maxCount": "n",
           "sh:name": "geografischeDekking",
           "sh:path": "http://purl.org/dc/terms/spatial"
         },
@@ -661,12 +665,12 @@
           "sh:class": "http://purl.org/dc/terms/ProvenanceStatement",
           "sh:description": "De ontstaansgeschiedenis van een dataset.",
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": "lineage",
           "sh:path": "http://purl.org/dc/terms/provenance"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Het tijdsmoment waarop de dataset werd gepubliceerd door de uitgever.",
           "sh:maxCount": "1",
           "sh:name": "publicatiedatum",
           "sh:path": "http://purl.org/dc/terms/issued"
@@ -691,7 +695,6 @@
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "De progressie in het samenstellen van de dataset",
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": "status",
           "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#status"
         },
@@ -702,6 +705,14 @@
           "sh:maxCount": "n",
           "sh:name": "thema",
           "sh:path": "http://www.w3.org/ns/dcat#theme"
+        },
+        {
+          "qb:codeList": "http://www.w3.org/ns/adms#sample",
+          "sh:class": "http://www.w3.org/ns/dcat#Distribution",
+          "sh:description": "Een verkleinde weergave van een afbeeldingsbestand.",
+          "sh:maxCount": "n",
+          "sh:name": "thumbnail",
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#thumbnail"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -728,14 +739,6 @@
           "sh:path": "http://www.w3.org/ns/dcat#keyword"
         },
         {
-          "qb:codeList": "http://www.w3.org/ns/adms#sample",
-          "sh:class": "http://www.w3.org/ns/dcat#Distribution",
-          "sh:description": "Een verkleinde weergave van een afbeeldingsbestand.",
-          "sh:maxCount": "n",
-          "sh:name": "tumbnail",
-          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#tumbnail"
-        },
-        {
           "sh:class": "http://purl.org/dc/terms/Agent",
           "sh:description": "de agent die instaat voor de verdeling",
           "sh:maxCount": "1",
@@ -751,6 +754,7 @@
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Het tijdsmoment waarop de dataset werd geactualiseerd",
           "sh:maxCount": "1",
           "sh:name": "wijzigingdatum",
           "sh:path": "http://purl.org/dc/terms/modified"

@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": " https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/tree/2c4da9d87bb84dda109af4e395ec7225f296fc53",
-    "changelogurl": " https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/blob/2c4da9d87bb84dda109af4e395ec7225f296fc53/CHANGELOG",
+    "repositoryurl": " https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/tree/b76c0d54dcacab4933c3ad312bccd9ec5e309d3b",
+    "changelogurl": " https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/blob/b76c0d54dcacab4933c3ad312bccd9ec5e309d3b/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
     "usesVocs": [],
@@ -434,8 +434,21 @@
               "EA-Name": "Standaard"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_label": {
+                "nl": "URI"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
@@ -1458,7 +1471,9 @@
             "nl": "creatiedatum"
           },
           "sort_nl": "creatiedatum",
-          "description": {},
+          "description": {
+            "nl": "Het tijdsmoment waarop de dataservice voor het eerst werd geactiveerd."
+          },
           "usage": {},
           "domain": [
             {
@@ -1562,7 +1577,9 @@
             "nl": "publicatiedatum"
           },
           "sort_nl": "publicatiedatum",
-          "description": {},
+          "description": {
+            "nl": "Het tijdsmoment waarop de service werd gepubliceerd door de uitgever."
+          },
           "usage": {},
           "domain": [
             {
@@ -1630,7 +1647,9 @@
             "nl": "wijzigingsdatum"
           },
           "sort_nl": "wijzigingsdatum",
-          "description": {},
+          "description": {
+            "nl": "Het tijdsmoment waarop de dataservice werd gewijzigd"
+          },
           "usage": {},
           "domain": [
             {
@@ -1725,7 +1744,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..n",
           "codelist_uri": ""
         },
         {
@@ -2313,11 +2332,11 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": "https://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode"
         },
         {
-          "uri": "http://data.vlaanderen.be/ns/metadata-dcat#tumbnail",
+          "uri": "http://data.vlaanderen.be/ns/metadata-dcat#thumbnail",
           "name": {
             "nl": "thumbnail"
           },
@@ -2464,7 +2483,9 @@
             "nl": "creatiedatum"
           },
           "sort_nl": "creatiedatum",
-          "description": {},
+          "description": {
+            "nl": "Het tijdsmoment waarop de dataset ontstaan is."
+          },
           "usage": {},
           "domain": [
             {
@@ -2568,7 +2589,9 @@
             "nl": "publicatiedatum"
           },
           "sort_nl": "publicatiedatum",
-          "description": {},
+          "description": {
+            "nl": "Het tijdsmoment waarop de dataset werd gepubliceerd door de uitgever."
+          },
           "usage": {},
           "domain": [
             {
@@ -2600,7 +2623,9 @@
             "nl": "wijzigingsdatum"
           },
           "sort_nl": "wijzigingsdatum",
-          "description": {},
+          "description": {
+            "nl": "Het tijdsmoment waarop de dataset werd geactualiseerd"
+          },
           "usage": {},
           "domain": [
             {
@@ -2659,7 +2684,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -2727,7 +2752,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..n",
           "codelist_uri": ""
         },
         {
@@ -3600,7 +3625,10 @@
       "properties": [
         {
           "uri": "http://data.vlaanderen.be/ns/metadata-dcat#statuut",
-          "name": {},
+          "name": {
+            "nl": "statuut"
+          },
+          "sort_nl": "statuut",
           "description": {
             "nl": "Een aanduiding van op welke basis de catalogusresource beschikbaar is."
           },
@@ -3787,7 +3815,9 @@
     },
     {
       "uri": "http://data.vlaanderen.be/ns/metadata-dcat#statuut",
-      "name": {},
+      "name": {
+        "nl": "statuut"
+      },
       "description": {
         "nl": "Een aanduiding van op welke basis de catalogusresource beschikbaar is."
       },
@@ -3800,10 +3830,12 @@
       "usage": {
         "nl": "TODO"
       },
-      "parents": []
+      "parents": [
+        "http://purl.org/dc/terms/subject"
+      ]
     },
     {
-      "uri": "http://data.vlaanderen.be/ns/metadata-dcat#tumbnail",
+      "uri": "http://data.vlaanderen.be/ns/metadata-dcat#thumbnail",
       "name": {
         "nl": "thumbnail"
       },
@@ -3862,7 +3894,7 @@
       },
       "sort_nl": "Resolutie",
       "description": {
-        "nl": "TODO"
+        "nl": "De maat van detail waaronder data is bewaard."
       },
       "usage": {},
       "parents": [],
@@ -3873,9 +3905,11 @@
             "nl": "resolutie methode"
           },
           "sort_nl": "resolutie methode",
-          "description": {},
+          "description": {
+            "nl": "De schaal of eenheid waaronder de waarde moet worden geïntepreteerd."
+          },
           "usage": {
-            "nl": "De waarden worden gemapt op 1 van de waarden in de GeoDCAT-AP lijst. https://semiceu.github.io/GeoDCAT-AP/releases/2.0.0/#instances-of-metric"
+            "nl": "De waarden worden gemapt op één van de waarden gedefinieerd in <a href=\"https://semiceu.github.io/GeoDCAT-AP/releases/2.0.0/#instances-of-metric\">GeoDCAT-AP</a>."
           },
           "domain": [
             {
