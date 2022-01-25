@@ -39,6 +39,7 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "De schaal of eenheid waaronder de waarde moet worden geïntepreteerd.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -115,7 +116,7 @@
       "sh:targetClass": "http://purl.org/dc/terms/Location"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#LineageUitdrukkingShape",
+      "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#HerkomstVerklaringShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
@@ -238,12 +239,14 @@
         {
           "sh:class": "http://www.w3.org/ns/dcat#DataService",
           "sh:description": "Een dataservice die deel uitmaakt van de catalogus.",
+          "sh:maxCount": "n",
           "sh:name": "heeftDataService",
           "sh:path": "http://www.w3.org/ns/dcat#service"
         },
         {
           "sh:class": "http://www.w3.org/ns/dcat#Dataset",
           "sh:description": "Een dataset die deel uitmaakt van de catalogus.",
+          "sh:maxCount": "n",
           "sh:name": "heeftDataset",
           "sh:path": "http://www.w3.org/ns/dcat#dataset"
         },
@@ -266,6 +269,7 @@
         {
           "sh:class": "http://www.w3.org/ns/dcat#CatalogRecord",
           "sh:description": "Een record beschrijft de registratie van één enkele dataset of dataservice die onderdeel is van de catalogus.",
+          "sh:maxCount": "n",
           "sh:name": "record",
           "sh:path": "http://www.w3.org/ns/dcat#record"
         },
@@ -377,6 +381,7 @@
         {
           "sh:class": "http://www.w3.org/ns/dcat#Dataset",
           "sh:description": "De data die via deze dataservice worden aangeboden.",
+          "sh:maxCount": "n",
           "sh:name": "biedtInformatieAanOver",
           "sh:path": "http://www.w3.org/ns/dcat#servesdataset"
         },
@@ -608,7 +613,7 @@
         },
         {
           "sh:class": "http://purl.org/dc/terms/Standard",
-          "sh:description": "Een standaard, schema, applicatieprofiel, vocabularium waaraan de dataset voldoet.",
+          "sh:description": "Een standaard, schema, applicatieprofiel, vocabularium, CRS, ... waaraan de dataset voldoet.",
           "sh:maxCount": "n",
           "sh:name": "conform",
           "sh:path": "http://purl.org/dc/terms/conformsTo"
@@ -631,6 +636,7 @@
         {
           "sh:class": "http://www.w3.org/ns/dcat#Distribution",
           "sh:description": "Een beschikbare distributie van de dataset.",
+          "sh:maxCount": "n",
           "sh:name": "distributie",
           "sh:path": "http://www.w3.org/ns/dcat#distribution"
         },
@@ -649,6 +655,21 @@
           "sh:path": "http://purl.org/dc/terms/spatial"
         },
         {
+          "qb:codeList": "http://www.w3.org/ns/adms#sample",
+          "sh:class": "http://www.w3.org/ns/dcat#Distribution",
+          "sh:description": "Een verkleinde weergave van een afbeeldingsbestand.",
+          "sh:maxCount": "n",
+          "sh:name": "heeftVoorbeeldweergave",
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#heeftVoorbeeldweergave"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/ProvenanceStatement",
+          "sh:description": "De ontstaansgeschiedenis van een dataset.",
+          "sh:maxCount": "n",
+          "sh:name": "herkomst",
+          "sh:path": "http://purl.org/dc/terms/provenance"
+        },
+        {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:description": "De unieke identificator van de dataset.",
           "sh:maxCount": "1",
@@ -662,13 +683,6 @@
           "sh:maxCount": "n",
           "sh:name": "landingspagina",
           "sh:path": "http://www.w3.org/ns/dcat#landingPage"
-        },
-        {
-          "sh:class": "http://purl.org/dc/terms/ProvenanceStatement",
-          "sh:description": "De ontstaansgeschiedenis van een dataset.",
-          "sh:maxCount": "n",
-          "sh:name": "lineage",
-          "sh:path": "http://purl.org/dc/terms/provenance"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
@@ -707,14 +721,6 @@
           "sh:maxCount": "n",
           "sh:name": "thema",
           "sh:path": "http://www.w3.org/ns/dcat#theme"
-        },
-        {
-          "qb:codeList": "http://www.w3.org/ns/adms#sample",
-          "sh:class": "http://www.w3.org/ns/dcat#Distribution",
-          "sh:description": "Een verkleinde weergave van een afbeeldingsbestand.",
-          "sh:maxCount": "n",
-          "sh:name": "thumbnail",
-          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#thumbnail"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -830,6 +836,7 @@
         {
           "sh:class": "http://www.w3.org/ns/dcat#DataService",
           "sh:description": "Een dataservice die deze distributie aanbiedt.",
+          "sh:maxCount": "n",
           "sh:name": "wordtAangebodenDoor",
           "sh:path": "http://www.w3.org/ns/dcat#accessService"
         }
@@ -845,7 +852,6 @@
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:description": "Een bondige tekstuele omschrijving van de afbeelding",
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": "beschrijving",
           "sh:path": "http://purl.org/dc/terms/description"
         },
@@ -862,7 +868,6 @@
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "Het voorstellingsvorm van de afbeelding",
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": "mediatype",
           "sh:path": "http://www.w3.org/ns/dcat#mediatype"
         },
@@ -870,7 +875,6 @@
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:description": "naam van de afbeelding",
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": "titel",
           "sh:path": "http://purl.org/dc/terms/title"
         }

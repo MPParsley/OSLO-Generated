@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": " https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/tree/2d04c24b9e7e7b64c23899780c96bad401b068c2",
-    "changelogurl": " https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/blob/2d04c24b9e7e7b64c23899780c96bad401b068c2/CHANGELOG",
+    "repositoryurl": " https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/tree/713707e53186d5c6faf7d814b6b61031d10fd63f",
+    "changelogurl": " https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/blob/713707e53186d5c6faf7d814b6b61031d10fd63f/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
     "usesVocs": [],
@@ -823,7 +823,7 @@
               }
             }
           ],
-          "cardinality": "0..*",
+          "cardinality": "0..n",
           "codelist_uri": ""
         },
         {
@@ -859,7 +859,7 @@
               }
             }
           ],
-          "cardinality": "0..*",
+          "cardinality": "0..n",
           "codelist_uri": ""
         },
         {
@@ -895,7 +895,7 @@
               }
             }
           ],
-          "cardinality": "0..*",
+          "cardinality": "0..n",
           "codelist_uri": ""
         }
       ]
@@ -924,7 +924,7 @@
             "nl": "De (metadata) standaard volgens welke\nregels het hoofdonderwerp waarnaar de\nCatalogus Record verwijst, beschreven\nwordt."
           },
           "usage": {
-            "nl": "Eén van de URIs voor erkende metadata standaarden: metadata DCAT, DCAT-AP Vlaanderen of GeoDCAT-AP Vlaanderen."
+            "nl": "Eén van de URIs voor erkende metadata standaarden: <a href=\"https://data.vlaanderen.be/doc/applicatieprofiel/metadata-dcat\">metadata DCAT</a>, <a href=\"https://data.vlaanderen.be/doc/applicatieprofiel/DCAT-AP-VL\">DCAT-AP Vlaanderen</a> of <a href=\"https://data.vlaanderen.be/doc/applicatieprofiel/GEODCAT-AP-VL\">GeoDCAT-AP Vlaanderen</a>."
           },
           "domain": [
             {
@@ -1032,7 +1032,7 @@
             "nl": "De meest recente datum waarop de record in de catalogus is gewijzigd, bijgewerkt of aangepast."
           },
           "usage": {
-            "nl": "Hiermee vindt men de ISO metadata terug waarvan de GeoDCAT-AP Vlaanderen beschrijving is afgeleid."
+            "nl": "[Zie <a href=\"https://www.w3.org/TR/vocab-dcat-2/#Property:record_update_date\">DCAT</a>]"
           },
           "domain": [
             {
@@ -2081,7 +2081,7 @@
               }
             }
           ],
-          "cardinality": "0..*",
+          "cardinality": "0..n",
           "codelist_uri": ""
         },
         {
@@ -2315,6 +2315,42 @@
           "codelist_uri": "https://inspire.ec.europa.eu/metadata-codelist/TopicCategory"
         },
         {
+          "uri": "http://data.vlaanderen.be/ns/metadata-dcat#heeftVoorbeeldweergave",
+          "name": {
+            "nl": "heeft voorbeeldweergave"
+          },
+          "sort_nl": "heeft voorbeeldweergave",
+          "description": {
+            "nl": "Een verkleinde weergave van een afbeeldingsbestand."
+          },
+          "usage": {
+            "nl": "Een voorbeeldweergave of thumbnail heeft als doel de vindbaarheid van de dataset te verhogen. Het is geen accurate weergave van de data die de dataset bevat."
+          },
+          "domain": [
+            {
+              "uri": "http://www.w3.org/ns/dcat#Dataset",
+              "EA-Name": "Dataset"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "VoorbeeldWeergave",
+              "range_uri": "http://www.w3.org/ns/dcat#Distribution"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Voorbeeldweergave",
+              "range_puri": "http://www.w3.org/ns/dcat#Distribution",
+              "range_label": {
+                "nl": "Voorbeeldweergave"
+              }
+            }
+          ],
+          "cardinality": "0..n",
+          "codelist_uri": "http://www.w3.org/ns/adms#sample"
+        },
+        {
           "uri": "http://data.vlaanderen.be/ns/metadata-dcat#status",
           "name": {
             "nl": "status"
@@ -2347,42 +2383,6 @@
           ],
           "cardinality": "0..1",
           "codelist_uri": "https://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode"
-        },
-        {
-          "uri": "http://data.vlaanderen.be/ns/metadata-dcat#thumbnail",
-          "name": {
-            "nl": "thumbnail"
-          },
-          "sort_nl": "thumbnail",
-          "description": {
-            "nl": "Een verkleinde weergave van een afbeeldingsbestand."
-          },
-          "usage": {
-            "nl": "Een thumbnail heeft als doel de vindbaarheid van de dataset te verhogen. Het is geen accurate weergave van de data die de dataset bevat."
-          },
-          "domain": [
-            {
-              "uri": "http://www.w3.org/ns/dcat#Dataset",
-              "EA-Name": "Dataset"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "VoorbeeldWeergave",
-              "range_uri": "http://www.w3.org/ns/dcat#Distribution"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Voorbeeldweergave",
-              "range_puri": "http://www.w3.org/ns/dcat#Distribution",
-              "range_label": {
-                "nl": "Voorbeeldweergave"
-              }
-            }
-          ],
-          "cardinality": "0..n",
-          "codelist_uri": "http://www.w3.org/ns/adms#sample"
         },
         {
           "uri": "http://data.europa.eu/930/distributor",
@@ -2461,7 +2461,7 @@
           },
           "sort_nl": "conform",
           "description": {
-            "nl": "Een standaard, schema, applicatieprofiel, vocabularium waaraan de dataset voldoet."
+            "nl": "Een standaard, schema, applicatieprofiel, vocabularium, CRS, ... waaraan de dataset voldoet."
           },
           "usage": {
             "nl": "[Zie <a href=\"https://www.w3.org/TR/2020/REC-vocab-dcat-2-20200204/#Property:resource_conforms_to\">DCAT</a>]"
@@ -2499,7 +2499,9 @@
           "description": {
             "nl": "Het tijdsmoment waarop de dataset ontstaan is."
           },
-          "usage": {},
+          "usage": {
+            "nl": "[Zie <a href=\"https://semiceu.github.io/GeoDCAT-AP/releases/2.0.0/#dataset-creation-date\">GeoDCAT-AP</a>]"
+          },
           "domain": [
             {
               "uri": "http://www.w3.org/ns/dcat#Dataset",
@@ -2605,7 +2607,9 @@
           "description": {
             "nl": "Het tijdsmoment waarop de dataset werd gepubliceerd door de uitgever."
           },
-          "usage": {},
+          "usage": {
+            "nl": "[Zie <a href=\"https://www.w3.org/TR/vocab-dcat-2/#Property:resource_release_date\">DCAT</a>]"
+          },
           "domain": [
             {
               "uri": "http://www.w3.org/ns/dcat#Dataset",
@@ -2639,7 +2643,9 @@
           "description": {
             "nl": "Het tijdsmoment waarop de dataset werd geactualiseerd"
           },
-          "usage": {},
+          "usage": {
+            "nl": "[zie <a href=\"https://www.w3.org/TR/vocab-dcat-2/#Property:resource_update_date\">DCAT</a>"
+          },
           "domain": [
             {
               "uri": "http://www.w3.org/ns/dcat#Dataset",
@@ -2684,7 +2690,7 @@
           ],
           "range": [
             {
-              "range_label": "LineageUitdrukking",
+              "range_label": "HerkomstVerklaring",
               "range_uri": "http://purl.org/dc/terms/ProvenanceStatement"
             }
           ],
@@ -2981,7 +2987,7 @@
               }
             }
           ],
-          "cardinality": "0..*",
+          "cardinality": "0..n",
           "codelist_uri": ""
         },
         {
@@ -3389,7 +3395,7 @@
               }
             }
           ],
-          "cardinality": "0..*",
+          "cardinality": "0..n",
           "codelist_uri": ""
         },
         {
@@ -3511,7 +3517,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -3547,7 +3553,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -3617,7 +3623,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": "https://www.iana.org/assignments/media-types/media-types.xhtml"
         }
       ]
@@ -3770,6 +3776,25 @@
       ]
     },
     {
+      "uri": "http://data.vlaanderen.be/ns/metadata-dcat#heeftVoorbeeldweergave",
+      "name": {
+        "nl": "heeft voorbeeldweergave"
+      },
+      "description": {
+        "nl": "Een verkleinde weergave van een afbeeldingsbestand."
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {
+        "nl": "Een voorbeeldweergave of thumbnail heeft als doel de vindbaarheid van de dataset te verhogen. Het is geen accurate weergave van de data die de dataset bevat."
+      },
+      "parents": []
+    },
+    {
       "uri": "http://data.vlaanderen.be/ns/metadata-dcat#levensfase",
       "name": {
         "nl": "levensfase"
@@ -3846,25 +3871,6 @@
       "parents": [
         "http://purl.org/dc/terms/subject"
       ]
-    },
-    {
-      "uri": "http://data.vlaanderen.be/ns/metadata-dcat#thumbnail",
-      "name": {
-        "nl": "thumbnail"
-      },
-      "description": {
-        "nl": "Een verkleinde weergave van een afbeeldingsbestand."
-      },
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "usage": {
-        "nl": "Een thumbnail heeft als doel de vindbaarheid van de dataset te verhogen. Het is geen accurate weergave van de data die de dataset bevat."
-      },
-      "parents": []
     }
   ],
   "contributors": [
@@ -3930,8 +3936,21 @@
               "EA-Name": "Resolutie"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Code"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         },

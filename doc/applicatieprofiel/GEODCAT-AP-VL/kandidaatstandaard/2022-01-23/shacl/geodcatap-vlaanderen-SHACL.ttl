@@ -14,7 +14,7 @@
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#AgentShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#LicentieDocumentShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#PlaatsShape>,
-    <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#LineageUitdrukkingShape>,
+    <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#HerkomstVerklaringShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#JuridischeBepalingShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#StandaardShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#CatalogusShape>,
@@ -141,11 +141,13 @@ wordt.""";
   ], [
     shacl:class dcat:DataService;
     shacl:description "Een dataservice die deel uitmaakt van de catalogus.";
+    shacl:maxCount "n"^^xsd:integer;
     shacl:name "heeftDataService";
     shacl:path dcat:service
   ], [
     shacl:class dcat:Dataset;
     shacl:description "Een dataset die deel uitmaakt van de catalogus.";
+    shacl:maxCount "n"^^xsd:integer;
     shacl:name "heeftDataset";
     shacl:path dcat:dataset
   ], [
@@ -165,6 +167,7 @@ wordt.""";
   ], [
     shacl:class dcat:CatalogRecord;
     shacl:description "Een record beschrijft de registratie van één enkele dataset of dataservice die onderdeel is van de catalogus.";
+    shacl:maxCount "n"^^xsd:integer;
     shacl:name "record";
     shacl:path dcat:record
   ], [
@@ -201,6 +204,7 @@ wordt.""";
   ], [
     shacl:class dcat:Dataset;
     shacl:description "De data die via deze dataservice worden aangeboden.";
+    shacl:maxCount "n"^^xsd:integer;
     shacl:name "biedtInformatieAanOver";
     shacl:path dcat:servesdataset
   ], [
@@ -409,7 +413,7 @@ geografische metadata""";
     shacl:path dc:description
   ], [
     shacl:class dc:Standard;
-    shacl:description "Een standaard, schema, applicatieprofiel, vocabularium waaraan de dataset voldoet.";
+    shacl:description "Een standaard, schema, applicatieprofiel, vocabularium, CRS, ... waaraan de dataset voldoet.";
     shacl:maxCount "n"^^xsd:integer;
     shacl:name "conform";
     shacl:path dc:conformsTo
@@ -429,6 +433,7 @@ geografische metadata""";
   ], [
     shacl:class dcat:Distribution;
     shacl:description "Een beschikbare distributie van de dataset.";
+    shacl:maxCount "n"^^xsd:integer;
     shacl:name "distributie";
     shacl:path dcat:distribution
   ], [
@@ -444,6 +449,19 @@ geografische metadata""";
     shacl:name "geografischeDekking";
     shacl:path dc:spatial
   ], [
+    <http://purl.org/linked-data/cube#codeList> <http://www.w3.org/ns/adms#sample>;
+    shacl:class dcat:Distribution;
+    shacl:description "Een verkleinde weergave van een afbeeldingsbestand.";
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:name "heeftVoorbeeldweergave";
+    shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#heeftVoorbeeldweergave>
+  ], [
+    shacl:class dc:ProvenanceStatement;
+    shacl:description "De ontstaansgeschiedenis van een dataset.";
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:name "herkomst";
+    shacl:path dc:provenance
+  ], [
     shacl:datatype rdfs:Literal;
     shacl:description "De unieke identificator van de dataset.";
     shacl:maxCount 1;
@@ -456,12 +474,6 @@ geografische metadata""";
     shacl:maxCount "n"^^xsd:integer;
     shacl:name "landingspagina";
     shacl:path dcat:landingPage
-  ], [
-    shacl:class dc:ProvenanceStatement;
-    shacl:description "De ontstaansgeschiedenis van een dataset.";
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:name "lineage";
-    shacl:path dc:provenance
   ], [
     shacl:datatype xsd:dateTime;
     shacl:description "Het tijdsmoment waarop de dataset werd gepubliceerd door de uitgever.";
@@ -495,13 +507,6 @@ geografische metadata""";
     shacl:maxCount "n"^^xsd:integer;
     shacl:name "thema";
     shacl:path dcat:theme
-  ], [
-    <http://purl.org/linked-data/cube#codeList> <http://www.w3.org/ns/adms#sample>;
-    shacl:class dcat:Distribution;
-    shacl:description "Een verkleinde weergave van een afbeeldingsbestand.";
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:name "thumbnail";
-    shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#thumbnail>
   ], [
     shacl:datatype rdf:langString;
     shacl:description "De naam van de dataset.";
@@ -601,10 +606,15 @@ waaraan de distributie voldoet.""";
   ], [
     shacl:class dcat:DataService;
     shacl:description "Een dataservice die deze distributie aanbiedt.";
+    shacl:maxCount "n"^^xsd:integer;
     shacl:name "wordtAangebodenDoor";
     shacl:path dcat:accessService
   ];
   shacl:targetClass dcat:Distribution .
+
+<https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#HerkomstVerklaringShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass dc:ProvenanceStatement .
 
 <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#JuridischeBepalingShape> a shacl:NodeShape;
   shacl:closed false;
@@ -613,10 +623,6 @@ waaraan de distributie voldoet.""";
 <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#LicentieDocumentShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass dc:LicenseDocument .
-
-<https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#LineageUitdrukkingShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass dc:ProvenanceStatement .
 
 <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#PlaatsShape> a shacl:NodeShape;
   shacl:closed false;
@@ -650,6 +656,7 @@ waaraan de distributie voldoet.""";
 <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ResolutieShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class skos:Concept;
     shacl:description "De schaal of eenheid waaronder de waarde moet worden geïntepreteerd.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -721,7 +728,6 @@ standaard bekend is.""";
     shacl:datatype rdf:langString;
     shacl:description "Een bondige tekstuele omschrijving van de afbeelding";
     shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "beschrijving";
     shacl:path dc:description
   ], [
@@ -736,14 +742,12 @@ standaard bekend is.""";
     shacl:class skos:Concept;
     shacl:description "Het voorstellingsvorm van de afbeelding";
     shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "mediatype";
     shacl:path dcat:mediatype
   ], [
     shacl:datatype rdf:langString;
     shacl:description "naam van de afbeelding";
     shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "titel";
     shacl:path dc:title
   ];
@@ -751,16 +755,16 @@ standaard bekend is.""";
 
  [
     shacl:datatype xsd:anyURI;
-    shacl:description "Het e-mailadres waarmee een gebruiker contact kan opnemen voor informatie.";
-    shacl:maxCount 1;
-    shacl:name "e-mail";
-    shacl:path vcard:hasEmail
-  ] .
-
- [
-    shacl:datatype xsd:anyURI;
     shacl:description "Een webpagina die ofwel toelaat om contact op te nemen (via b.v. een webformulier) of die informatie bevat hoe men contact kan opnemen.";
     shacl:maxCount 1;
     shacl:name "contactpagina";
     shacl:path foaf:page
+  ] .
+
+ [
+    shacl:datatype xsd:anyURI;
+    shacl:description "Het e-mailadres waarmee een gebruiker contact kan opnemen voor informatie.";
+    shacl:maxCount 1;
+    shacl:name "e-mail";
+    shacl:path vcard:hasEmail
   ] .
