@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": " https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/tree/5ddd7a4205b4fbdefcdcfe54a4a1f9a9197c7c7a",
-    "changelogurl": " https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/blob/5ddd7a4205b4fbdefcdcfe54a4a1f9a9197c7c7a/CHANGELOG",
+    "repositoryurl": " https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/tree/2d04c24b9e7e7b64c23899780c96bad401b068c2",
+    "changelogurl": " https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/blob/2d04c24b9e7e7b64c23899780c96bad401b068c2/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
     "usesVocs": [],
@@ -643,7 +643,7 @@
               }
             }
           ],
-          "cardinality": "0..1",
+          "cardinality": "1",
           "codelist_uri": ""
         },
         {
@@ -692,7 +692,7 @@
             "nl": "De naam van de catalogus."
           },
           "usage": {
-            "nl": "[Zie <a href=\"https://www.w3.org/TR/2020/REC-vocab-dcat-2-20200204/#Property:resource_title\">DCAT</a>]"
+            "nl": "[ Zie <a href=\"https://www.w3.org/TR/2020/REC-vocab-dcat-2-20200204/#Property:resource_license\">DCAT</a> ] \r\n\r\nDe licentie voor het Vlaams Open Data Portaal is vastgelegd op https://data.vlaanderen.be/id/licentie/creative-commons-zero-verklaring/v1.0 . \r\n<br/>\r\nMeer informatie zie <a href=\"#wettelijkeinformatie\">hieronder</a>.\r\n"
           },
           "domain": [
             {
@@ -1032,7 +1032,7 @@
             "nl": "De meest recente datum waarop de record in de catalogus is gewijzigd, bijgewerkt of aangepast."
           },
           "usage": {
-            "nl": "[Zie <a href=\"https://www.w3.org/TR/2020/REC-vocab-dcat-2-20200204/#Property:record_update_date\">DCAT</a>]"
+            "nl": "Hiermee vindt men de ISO metadata terug waarvan de GeoDCAT-AP Vlaanderen beschrijving is afgeleid."
           },
           "domain": [
             {
@@ -1061,9 +1061,9 @@
         {
           "uri": "http://purl.org/dc/terms/source",
           "name": {
-            "nl": "bron record"
+            "nl": "bron metadatarecord"
           },
-          "sort_nl": "bron record",
+          "sort_nl": "bron metadatarecord",
           "description": {
             "nl": "De record in een andere catalogus waarvan deze record en de beschrijvingen van het bijhorende hoofdonderwerp van afgeleid zijn."
           },
@@ -1076,9 +1076,22 @@
               "EA-Name": "CatalogusRecord"
             }
           ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
+          "range": [
+            {
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_label": {
+                "nl": "URI"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -2567,16 +2580,16 @@
           ],
           "range": [
             {
-              "range_label": "Identificator",
-              "range_uri": "http://www.w3.org/ns/adms#Identifier"
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/ns/adms#Identifier",
-              "range_puri": "http://www.w3.org/ns/adms#Identifier",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
               "range_label": {
-                "nl": "Identificator"
+                "nl": "Literal"
               }
             }
           ],
@@ -2684,7 +2697,7 @@
               }
             }
           ],
-          "cardinality": "0..1",
+          "cardinality": "0..n",
           "codelist_uri": ""
         },
         {
@@ -2752,7 +2765,7 @@
               }
             }
           ],
-          "cardinality": "0..n",
+          "cardinality": "1..n",
           "codelist_uri": ""
         },
         {
@@ -3017,7 +3030,7 @@
             "nl": "Een algemene webpagina waarnaar kan worden genavigeerd in een webbrowser, met algemene informatie over de dataset, zijn distributies en/of aanvullende informatie."
           },
           "usage": {
-            "nl": "[Zie <a href=\"https://www.w3.org/TR/2020/REC-vocab-dcat-2-20200204/#Property:resource_landing_page\">DCAT</a>]"
+            "nl": "[Zie <a href=\"https://www.w3.org/TR/2020/REC-vocab-dcat-2-20200204/#Property:resource_landing_page\">DCAT</a>]\r\n\r\nDe mapping zal de landingspagina invullen met de URL naar de metadata voorstelling waarvan de dataset is afgeleid."
           },
           "domain": [
             {

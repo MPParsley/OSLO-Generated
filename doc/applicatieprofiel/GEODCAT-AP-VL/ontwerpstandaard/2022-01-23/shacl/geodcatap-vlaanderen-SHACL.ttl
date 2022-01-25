@@ -52,10 +52,10 @@
     shacl:name "alternatieve identificator";
     shacl:path <http://www.w3.org/ns/adms#identifier>
   ], [
+    shacl:datatype xsd:anyURI;
     shacl:description "De record in een andere catalogus waarvan deze record en de beschrijvingen van het bijhorende hoofdonderwerp van afgeleid zijn.";
     shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "bronRecord";
+    shacl:name "bron metadata record";
     shacl:path dc:source
   ], [
     shacl:class dc:Standard;
@@ -159,6 +159,7 @@ wordt.""";
     shacl:class dc:LicenseDocument;
     shacl:description "De licentie van de catalogus.";
     shacl:maxCount 1;
+    shacl:minCount 1;
     shacl:name "licentie";
     shacl:path dc:license
   ], [
@@ -439,10 +440,11 @@ geografische metadata""";
     shacl:class dc:Location;
     shacl:description "Het geografische gebied waarover de dataset informatie heeft.";
     shacl:maxCount "n"^^xsd:integer;
+    shacl:minCount 1;
     shacl:name "geografischeDekking";
     shacl:path dc:spatial
   ], [
-    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:datatype rdfs:Literal;
     shacl:description "De unieke identificator van de dataset.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -457,7 +459,7 @@ geografische metadata""";
   ], [
     shacl:class dc:ProvenanceStatement;
     shacl:description "De ontstaansgeschiedenis van een dataset.";
-    shacl:maxCount 1;
+    shacl:maxCount "n"^^xsd:integer;
     shacl:name "lineage";
     shacl:path dc:provenance
   ], [
