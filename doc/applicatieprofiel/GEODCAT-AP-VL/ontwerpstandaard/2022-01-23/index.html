@@ -129,8 +129,8 @@
 
               <div class="head" role="metainfo" id="metainfo">
               <dl>
-              <dt>Brondata</dt><dd><a href=" https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/tree/713707e53186d5c6faf7d814b6b61031d10fd63f"> https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/tree/713707e53186d5c6faf7d814b6b61031d10fd63f</a></dd>
-              <dt>Changelog</dt><dd><a href=" https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/blob/713707e53186d5c6faf7d814b6b61031d10fd63f/CHANGELOG"> https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/blob/713707e53186d5c6faf7d814b6b61031d10fd63f/CHANGELOG</a></dd>
+              <dt>Brondata</dt><dd><a href=" https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/tree/1392e71547a0f75dd71c01074aaab5c483ef47e3"> https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/tree/1392e71547a0f75dd71c01074aaab5c483ef47e3</a></dd>
+              <dt>Changelog</dt><dd><a href=" https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/blob/1392e71547a0f75dd71c01074aaab5c483ef47e3/CHANGELOG"> https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/blob/1392e71547a0f75dd71c01074aaab5c483ef47e3/CHANGELOG</a></dd>
               <dt>Opmerkingen en feedback</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/issues">https://github.com/Informatievlaanderen/OSLOthema-GEODCATAPVlaanderen/issues</a></dd>
               <dt>Standaardenregister</dt><dd><a href="https://data.vlaanderen.be/standaarden/">https://data.vlaanderen.be/standaarden/</a></dd>
 
@@ -167,8 +167,23 @@
             <div class="region region--no-space-top typography" id="summary">
                 <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Samenvatting</h2>
                 
-<p>Het applicatieprofiel “GeoDCAT-AP Vlaanderen”. Dit is een applicatieprofiel gebaseerd op <a href="https://www.w3.org/TR/vocab-dcat-2/">DCAT</a> en richt zich op het verzamelen van informatie over generieke datasets, distributies en services die door een overheid beschikbaar gesteld worden. De datasets en services 
-omvatten zowel publiek toegankelijke als afgeschermde data en diensten (ontwikkeld in en voor eender welk technisch perspectief). Het samenbrengen van al deze informatie in een catalogus laat toe om de vindbaarheid van deze datasets en services te verhogen.
+<p>Het applicatieprofiel GEODCAT-AP Vlaanderen is gebaseerd op <a href="https://www.w3.org/TR/vocab-dcat-2/">DCAT</a>, en is meerbepaald een profiel voor het beschrijven van geografische data.
+Het is een specialisatie van het generieke <a href="">metadata DCAT</a>, met in achtname waar relevant van Europese afspraken in <a href="">GeoDCAT-AP</a>.
+
+
+GEODCAT-AP Vlaanderen heeft niet als doel de bestaande GDI Vlaanderen afspraken te vervangen. Het beschrijven van de geografische data
+en data services blijft gebeuren op basis van de ISO metadata standaarden volgens de GDI Vlaanderen best practices. 
+Dit applicatieprofiel bevat de semantische invulling van informatie die uit de ISO metadata kan bekomen worden met behulp van een automatisch extractieprocess. Om de informatie te bepalen is rekening gehouden met verschillende aspecten:
+<ul>
+<li>met de beschikbare informatie die vandaag wordt gepubliceerd,</li>
+<li>met de automatische convertie mogelijkheden, en </li>
+<li>met de relevantie van de informatie voor een breder publiek (minder relevante geografisch domein specifieke informatie wordt behouden in ISO). </li>
+</ul>
+Het resultaat van de convertie van ISO metadata volgens de bestaande GDI afspraken is beschreven in dit applicatieprofiel.
+
+De implementatie van dit applicatieprofiel gebeurt dus door een transformatie programma dat de ISO metadata omzet naar een RDF grafe die voldoet aan de afspraken beschreven in dit document.
+Daarom worden ook de algemene regels van de mapping in dit document opgenomen om zo de afgesproken verwachtingen te kaderen. Niet altijd kan men op basis van dit document de mapping regels afleiden. 
+
 </p>
 
 
@@ -2115,6 +2130,7 @@ De waarde NON_PUBLIC geeft aan dat er (wettelijke) beperkingen zijn die verhinde
                       <a href="#Distributie%3Aalternatieve%20identificator">alternatieve identificator</a>, 
                       <a href="#Distributie%3Aconform">conform</a>, 
                       <a href="#Distributie%3AdownloadURL">downloadURL</a>, 
+                      <a href="#Distributie%3Aformaat">formaat</a>, 
                       <a href="#Distributie%3Aidentificator">identificator</a>, 
                       <a href="#Distributie%3Alicentie">licentie</a>, 
                       <a href="#Distributie%3Arechten">rechten</a>, 
@@ -2204,6 +2220,26 @@ waaraan de distributie voldoet.</td>
 
 De URL start het downloaden van de distributie.</td>
                         <td></td>
+                      </tr>
+                    
+                      <tr id="Distributie%3Aformaat" typeof="rdfs:Property" resource="http://data.vlaanderen.be/ns/metadata-dcat#formaat">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://data.vlaanderen.be/ns/metadata-dcat#formaat" data-toggle="tooltip" data-content="http://data.vlaanderen.be/ns/metadata-dcat#formaat" data-placement="right">
+                            formaat</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Code</a>
+                            
+                          
+                        </td>
+                        <td>0..1</td>
+                        <td property="rdfs:comment"></td>
+                        <td property="vann:usageNote"></td>
+                        <td><a href="http://publications.europa.eu/resource/authority/file-type">Link</a></td>
                       </tr>
                     
                       <tr id="Distributie%3Aidentificator" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
@@ -2976,6 +3012,7 @@ standaard bekend is.</td>
                 <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Mapping GDI Vlaanderen ISO metadata naar GeoDCAT-AP Vlaanderen</h2>
                 
 
+De beschreven mapping regels vormen de basis van automatische transformatie die toelaat om een ISO metadata beschrijving om te zetten naar een GeoDCAT-AP Vlaanderen beschrijving. De mapping regels zijn vrij algemeen geformuleerd, en zijn indicatief. Dit laat toe om de implementatie te laten evolueren in lijn met de dan geldende toestand.
 
   <div class="region region--no-space-top">
       <h3 class="h3" >Datasets, distributies en data services</h3> 

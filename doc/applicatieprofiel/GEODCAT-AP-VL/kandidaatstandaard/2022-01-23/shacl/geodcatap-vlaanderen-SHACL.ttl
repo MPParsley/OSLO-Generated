@@ -572,6 +572,12 @@ waaraan de distributie voldoet.""";
     shacl:name "downloadURL";
     shacl:path dcat:downloadURL
   ], [
+    <http://purl.org/linked-data/cube#codeList> <http://publications.europa.eu/resource/authority/file-type>;
+    shacl:class skos:Concept;
+    shacl:maxCount 1;
+    shacl:name "formaat";
+    shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#formaat>
+  ], [
     shacl:datatype rdfs:Literal;
     shacl:description "De unieke identificator van de distributie.";
     shacl:maxCount 1;
@@ -755,16 +761,16 @@ standaard bekend is.""";
 
  [
     shacl:datatype xsd:anyURI;
-    shacl:description "Een webpagina die ofwel toelaat om contact op te nemen (via b.v. een webformulier) of die informatie bevat hoe men contact kan opnemen.";
-    shacl:maxCount 1;
-    shacl:name "contactpagina";
-    shacl:path foaf:page
-  ] .
-
- [
-    shacl:datatype xsd:anyURI;
     shacl:description "Het e-mailadres waarmee een gebruiker contact kan opnemen voor informatie.";
     shacl:maxCount 1;
     shacl:name "e-mail";
     shacl:path vcard:hasEmail
+  ] .
+
+ [
+    shacl:datatype xsd:anyURI;
+    shacl:description "Een webpagina die ofwel toelaat om contact op te nemen (via b.v. een webformulier) of die informatie bevat hoe men contact kan opnemen.";
+    shacl:maxCount 1;
+    shacl:name "contactpagina";
+    shacl:path foaf:page
   ] .
