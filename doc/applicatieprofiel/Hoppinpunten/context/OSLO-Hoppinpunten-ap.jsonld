@@ -1,0 +1,722 @@
+{
+  "@context": {
+    "Aanbieder": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Aanbieder",
+    "Aanbieder.contactinfo": {
+      "@container": "@set",
+      "@id": "http://schema.org/contactPoint",
+      "@type": "@id"
+    },
+    "Aanbieder.registratie": {
+      "@id": "http://www.w3.org/ns/regorg#registration",
+      "@type": "@id"
+    },
+    "Aanbieder.voorkeursnaam": {
+      "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "AccessModes": "http://fixme.com#AccessModes",
+    "AutomatischeParkeergarage": "http://fixme.com#AutomatischeParkeergarage",
+    "Capaciteit": "http://fixme.com#Capaciteit",
+    "Capaciteit.maximum": {
+      "@id": "http://fixme.com#maximum",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "Capaciteit.totaal": {
+      "@id": "http://fixme.com#totaal",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "Datauitwisselingsinfrastructuur": "https://data.vlaanderen.be/ns/hoppinpunten#Datauitwisselingsinfrastructuur",
+    "Dienstverleningtype": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Fietsparking": "https://fixme.com",
+    "Fietsstalling": "https://fixme.com",
+    "Fietsstalling.afsluitbaar": {
+      "@id": "https://fixme.com",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "Fietsstalling.capaciteit": {
+      "@id": "https://fixme.com",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "Fietsstalling.fietsdelen": {
+      "@id": "https://fixme.com",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "Fietsstalling.overdekt": {
+      "@id": "https://fixme.com",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "Fietsstalling.verplaatsbaar": {
+      "@id": "https://fixme.com",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "GeografischeNaam": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+    "Geometrie": "http://www.w3.org/ns/locn#Geometry",
+    "Geometrie.gml": {
+      "@id": "http://www.opengis.net/ont/geosparql#asGML",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "Geometrie.wkt": {
+      "@id": "http://www.opengis.net/ont/geosparql#asWKT",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "GeregistreerdVervoersknooppunt": "https://data.vlaanderen.be/ns/hoppinpunten#GeregistreerdVervoersknooppunt",
+    "GeregistreerdVervoersknooppunt.registratie": {
+      "@id": "https://data.vlaanderen.be/ns/hoppinpunten#registratie",
+      "@type": "@id"
+    },
+    "GeregistreerdVervoersknooppunt.specificatie": {
+      "@id": "https://data.vlaanderen.be/ns/hoppinpunten#specificatie",
+      "@type": "@id"
+    },
+    "Hoppinpunt": "https://data.vlaanderen.be/ns/hoppinpunten#Hoppinpunt",
+    "Hoppinpunt.classificatie": {
+      "@id": "https://data.vlaanderen.be/ns/hoppinpunten#classificatie",
+      "@type": "@id"
+    },
+    "Hoppinpunt.status": {
+      "@id": "https://data.vlaanderen.be/ns/hoppinpunten#status",
+      "@type": "@id"
+    },
+    "Hoppinpuntstatus": "https://data.vlaanderen.be/ns/hoppinpunten#Hoppinpuntstatus",
+    "Hoppinzuil": "https://data.vlaanderen.be/ns/hoppinpunten#Hoppinzuil",
+    "Identificator": "http://www.w3.org/ns/adms#Identifier",
+    "Informatiedrager": "https://data.vlaanderen.be/ns/hoppinpunten#Informatiedrager",
+    "Informatiezuil": "http://fixme.com#Informatiezuil",
+    "Informatiezuil.type": {
+      "@id": "http://fixme.com#type",
+      "@type": "@id"
+    },
+    "Informatiezuiltype": "https://data.vlaanderen.be/ns/hoppinpunten#Informatiezuiltype",
+    "Infrastructuurelement": "https://fixme.com",
+    "Infrastructuurelement.^geldigheidsperiode": {
+      "@id": "https://fixme.com",
+      "@type": "@id"
+    },
+    "Infrastructuurelement.^geometrie": {
+      "@id": "https://fixme.com",
+      "@type": "@id"
+    },
+    "Infrastructuurelement.identificator": {
+      "@id": "http://fixme.com#identificator",
+      "@type": "@id"
+    },
+    "Lader": "http://fixme.com#Lader",
+    "Lader.etc": {
+      "@id": "http://fixme.com#etc",
+      "@type": ""
+    },
+    "Lader.plug": {
+      "@id": "http://fixme.com#plug",
+      "@type": "@id"
+    },
+    "Lader.type": {
+      "@id": "http://fixme.com#type",
+      "@type": "@id"
+    },
+    "Lader.vervoermiddel": {
+      "@id": "http://fixme.com#vervoermiddel",
+      "@type": "@id"
+    },
+    "Ladertype": "https://data.vlaanderen.be/ns/hoppinpunten#Ladertype",
+    "Licentie": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Licentie",
+    "Licentie.periode": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Licentie.periode",
+      "@type": "@id"
+    },
+    "Licentie.toepassingsgebied": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Licentie.toepassingsgebied",
+      "@type": "@id"
+    },
+    "Licentie.vervoersautoriteit": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#vervoersautoriteit",
+      "@type": ""
+    },
+    "Locatie": "http://www.w3.org/ns/prov#Location",
+    "Merktype": "https://data.vlaanderen.be/ns/hoppinpunten#Merktype",
+    "Mobiliteitsdienst": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst",
+    "Mobiliteitsdienst.aanbieder": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#aanbieder",
+      "@type": "@id"
+    },
+    "Mobiliteitsdienst.aandrijving": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#aandrijving",
+      "@type": "@id"
+    },
+    "Mobiliteitsdienst.aangebodenBinnen": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#aangebodenBinnen",
+      "@type": "@id"
+    },
+    "Mobiliteitsdienst.beschikbaarheid": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst.beschikbaarheid",
+      "@type": "@id"
+    },
+    "Mobiliteitsdienst.licentie": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#licentie",
+      "@type": "@id"
+    },
+    "Mobiliteitsdienst.naam": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst.naam",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Mobiliteitsdienst.omvat": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#omvat",
+      "@type": "@id"
+    },
+    "Mobiliteitsdienst.prijsplan": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#prijsplan",
+      "@type": "@id"
+    },
+    "Mobiliteitsdienst.resource": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#resource",
+      "@type": "@id"
+    },
+    "Mobiliteitsdienst.ruimtelijkeDekking": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#ruimtelijkeDekking",
+      "@type": "@id"
+    },
+    "Mobiliteitsdienst.toegankelijkheid": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst.toegankelijkheid",
+      "@type": "@id"
+    },
+    "Mobiliteitsdienst.type": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst.type",
+      "@type": "@id"
+    },
+    "Mobiliteitsdienst.uitgevoerdDoor": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#uitgevoerdDoor",
+      "@type": "@id"
+    },
+    "Mobiliteitsdienst.vervoermiddel": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst.vervoermiddel",
+      "@type": "@id"
+    },
+    "OndergrondseParkeergarage": "http://fixme.com#OndergrondseParkeergarage",
+    "Overstap": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Overstap",
+    "Overstap.aandrijving": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#aandrijving",
+      "@type": "@id"
+    },
+    "Overstap.gerealiseerdOp": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#gerealiseerdOp",
+      "@type": "@id"
+    },
+    "Overstap.overstaptijd": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#overstaptijd",
+      "@type": "http://www.w3.org/2001/XMLSchema#duration"
+    },
+    "Overstap.routeknoop(source)": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Overstap.routeknoop.source",
+      "@type": "@id"
+    },
+    "Overstap.routeknoop(target)": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Overstap.routeknoop.target",
+      "@type": "@id"
+    },
+    "Overstap.vervoermiddel": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Overstap.vervoermiddel",
+      "@type": "@id"
+    },
+    "Parkeerfaciliteit": "http://fixme.com#Parkeerfaciliteit",
+    "Parkeerfaciliteit.entrance": {
+      "@id": "http://fixme.com#entrance",
+      "@type": "@id"
+    },
+    "Parkeerfaciliteit.etc": {
+      "@id": "http://fixme.com#etc",
+      "@type": ""
+    },
+    "Parkeerfaciliteit.exit": {
+      "@id": "http://fixme.com#exit",
+      "@type": "@id"
+    },
+    "Parkeerfaciliteit.heeftCapaciteit": {
+      "@id": "http://fixme.com#heeftCapaciteit",
+      "@type": "@id"
+    },
+    "Parkeerfaciliteit.parkeerplaats": {
+      "@container": "@set",
+      "@id": "http://fixme.com#parkeerplaats",
+      "@type": "@id"
+    },
+    "Parkeergarage": "http://fixme.com#Parkeergarage",
+    "Parkeerplaats": "http://fixme.com#Parkeerplaats",
+    "Parkeerplaats.etc": {
+      "@id": "http://fixme.com#etc",
+      "@type": ""
+    },
+    "Parkeerterrein": "http://fixme.com#Parkeerterrein",
+    "Periode": "http://data.europa.eu/m8g/PeriodOfTime",
+    "Periode.begin": {
+      "@id": "http://data.europa.eu/m8g/startTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Periode.einde": {
+      "@id": "http://data.europa.eu/m8g/endTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Perron": "http://fixme.com#Perron",
+    "Perron.^alternatieveNaam": {
+      "@container": "@set",
+      "@id": "http://fixme.com#^alternatieveNaam",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Perron.^kruispunt": {
+      "@id": "http://fixme.com#^kruispunt",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Perron.^label": {
+      "@id": "http://fixme.com#^label",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Perron.^level": {
+      "@id": "http://fixme.com#^level",
+      "@type": ""
+    },
+    "Perron.^omheind": {
+      "@id": "http://fixme.com#^omheind",
+      "@type": ""
+    },
+    "Perron.^oriëntatiepunt": {
+      "@id": "http://fixme.com#^oriëntatiepunt",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Perron.^overdekt": {
+      "@id": "http://fixme.com#^overdekt",
+      "@type": ""
+    },
+    "Perron.^toegangsModus": {
+      "@container": "@set",
+      "@id": "http://fixme.com#^toegangsModus",
+      "@type": "@id"
+    },
+    "Perron.^toegankelijkheidsbeoordeling": {
+      "@id": "http://fixme.com#^toegankelijkheidsbeoordeling",
+      "@type": ""
+    },
+    "Perron.^verlichting": {
+      "@id": "http://fixme.com#^verlichting",
+      "@type": ""
+    },
+    "Perron.helling": {
+      "@id": "http://fixme.com#helling",
+      "@type": "@id"
+    },
+    "Perron.perronType": {
+      "@id": "http://fixme.com#perronType",
+      "@type": ""
+    },
+    "Perron.plaatsCode": {
+      "@id": "http://fixme.com#plaatsCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Perron.publiekeCode": {
+      "@id": "http://fixme.com#publiekeCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Perron.quay": {
+      "@id": "http://fixme.com#quay",
+      "@type": "@id"
+    },
+    "Plaats": "http://purl.org/dc/terms/Location",
+    "Plaats.geometrie": {
+      "@id": "http://www.w3.org/ns/locn#geometry",
+      "@type": "@id"
+    },
+    "Plaats.plaatsnaam": {
+      "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "PlaceType": "http://fixme.com#PlaceType",
+    "Polygoon": "http://www.opengis.net/ont/sf#Polygon",
+    "Prijsplan": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Prijsplan",
+    "Prijsplan.beschrijving": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#beschrijving",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Prijsplan.naam": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#naam",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Punt": "http://www.opengis.net/ont/sf#Point",
+    "Reis": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Reis",
+    "Reis.aankomsttijdstip": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Reis.aankomsttijdstip",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Reis.gekozenRoute": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#gekozenRoute",
+      "@type": "@id"
+    },
+    "Reis.isDeelVan": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#isdeelVan",
+      "@type": "@id"
+    },
+    "Reis.mogelijkeRoute": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#mogelijkeRoute",
+      "@type": "@id"
+    },
+    "Reis.reisweg": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Reis.reisweg",
+      "@type": "@id"
+    },
+    "Reis.uitgevoerdeRoute": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#uitgevoerdeRoute",
+      "@type": "@id"
+    },
+    "Reis.vertrektijdstip": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Reis.vertrektijdstip",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Reiziger": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Reiziger",
+    "Reiziger.isMedereizigerVan": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#isMedereizigerVan",
+      "@type": "@id"
+    },
+    "Reiziger.onderneemt": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#onderneemt",
+      "@type": "@id"
+    },
+    "Reiziger.pseudoniem": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#pseudoniem",
+      "@type": "@id"
+    },
+    "Resource": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource",
+    "Resource.aandrijving": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#aandrijving",
+      "@type": "@id"
+    },
+    "Resource.identificator": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#identificator",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "Resource.locatie": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#locatie",
+      "@type": "@id"
+    },
+    "Resource.status": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#status",
+      "@type": "@id"
+    },
+    "Resource.type": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource.type",
+      "@type": "@id"
+    },
+    "Resource.vervoermiddel": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst.vervoermiddel",
+      "@type": "@id"
+    },
+    "Route": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route",
+    "Route.aankomstijdstip": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route.aankomsttijdstip",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Route.aankomstpunt": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#aankomstpunt",
+      "@type": "@id"
+    },
+    "Route.bestaatUit": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route.bestaatUit",
+      "@type": "@id"
+    },
+    "Route.kostprijs": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#kostprijs",
+      "@type": ""
+    },
+    "Route.reisduur": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#reisduur",
+      "@type": "http://www.w3.org/2001/XMLSchema#duration"
+    },
+    "Route.routebeschrijving": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#routebeschrijving",
+      "@type": "@id"
+    },
+    "Route.type": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route.type",
+      "@type": "@id"
+    },
+    "Route.vertrekpunt": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#vertrekpunt",
+      "@type": "@id"
+    },
+    "Route.vertrektijdstip": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route.vertrektijdstip",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Routeknoop": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routeknoop",
+    "Routeknoop.geometrie": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routeknoop.geometrie",
+      "@type": "@id"
+    },
+    "Routeknoop.gerealiseerdDoor": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#gerealiseerdDoor",
+      "@type": "@id"
+    },
+    "Routeknoop.gerealiseerdMet": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#gerealiseerdMet",
+      "@type": "@id"
+    },
+    "Routeknoop.overstap": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#overstap",
+      "@type": "@id"
+    },
+    "Routeknoop.type": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routeknoop.type",
+      "@type": "@id"
+    },
+    "Routesegment": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routesegment",
+    "Routesegment.aandrijving": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#aandrijving",
+      "@type": "@id"
+    },
+    "Routesegment.aankomstknoop": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#aankomstknoop",
+      "@type": "@id"
+    },
+    "Routesegment.gerealiseerdDoor": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#gerealiseerdDoor",
+      "@type": "@id"
+    },
+    "Routesegment.gerealiseerdMet": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routesegment.gerealiseerdMet",
+      "@type": "@id"
+    },
+    "Routesegment.link": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routesegment.link",
+      "@type": "@id"
+    },
+    "Routesegment.vertrekknoop": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#vertrekknoop",
+      "@type": "@id"
+    },
+    "Routesegment.vervoermiddel": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routesegment.vervoermiddel",
+      "@type": "@id"
+    },
+    "StopPlaceType": "http://fixme.com#StopPlaceType",
+    "Stopplaats": "http://fixme.com#Stopplaats",
+    "Stopplaats.^afbeelding": {
+      "@id": "http://fixme.com#^afbeelding",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "Stopplaats.^alternatieveNaam": {
+      "@container": "@set",
+      "@id": "http://fixme.com#^alternatieveNaam",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Stopplaats.^kruispunt": {
+      "@id": "http://fixme.com#^kruispunt",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Stopplaats.^level": {
+      "@container": "@set",
+      "@id": "http://fixme.com#^level",
+      "@type": ""
+    },
+    "Stopplaats.^locale": {
+      "@id": "http://fixme.com#^locale",
+      "@type": ""
+    },
+    "Stopplaats.^omheind": {
+      "@id": "http://fixme.com#^omheind",
+      "@type": ""
+    },
+    "Stopplaats.^organisatie": {
+      "@id": "http://fixme.com#^organisatie",
+      "@type": ""
+    },
+    "Stopplaats.^oriëntatiepunt": {
+      "@id": "http://fixme.com#^oriëntatiepunt",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Stopplaats.^overdekt": {
+      "@id": "http://fixme.com#^overdekt",
+      "@type": ""
+    },
+    "Stopplaats.^parentSite": {
+      "@id": "http://fixme.com#^parentSite",
+      "@type": "@id"
+    },
+    "Stopplaats.^postadres": {
+      "@id": "http://fixme.com#^postadres",
+      "@type": "@id"
+    },
+    "Stopplaats.^url": {
+      "@id": "http://fixme.com#^url",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "Stopplaats.^verlichting": {
+      "@id": "http://fixme.com#^verlichting",
+      "@type": ""
+    },
+    "Stopplaats.andereTransportmodus": {
+      "@id": "http://fixme.com#andereTransportmodus",
+      "@type": "@id"
+    },
+    "Stopplaats.gewicht": {
+      "@id": "http://fixme.com#gewicht",
+      "@type": ""
+    },
+    "Stopplaats.grensovergang": {
+      "@id": "http://fixme.com#grensovergang",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "Stopplaats.stopplaatsgewicht": {
+      "@id": "http://fixme.com#stopplaatsgewicht",
+      "@type": ""
+    },
+    "Stopplaats.submodus": {
+      "@id": "http://fixme.com#submodus",
+      "@type": "@id"
+    },
+    "Stopplaats.tariefzone": {
+      "@container": "@set",
+      "@id": "http://fixme.com#tariefzone",
+      "@type": ""
+    },
+    "Stopplaats.todo": {
+      "@id": "http://fixme.com#transportmodus",
+      "@type": "@id"
+    },
+    "Taalstring": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+    "Toegankelijkheid": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Toegankelijkheid",
+    "Toegankelijkheid.niveau": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#niveau",
+      "@type": "@id"
+    },
+    "Toegankelijkheid.onderdeel": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#onderdeel",
+      "@type": "@id"
+    },
+    "Toegankelijkheid.toegankelijkheid": {
+      "@id": "http://fixme.com#Toegankelijkheid.toegankelijkheid",
+      "@type": "@id"
+    },
+    "Toegankelijkheid.type": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Toegankelijkheid.type",
+      "@type": "@id"
+    },
+    "Transportconnectie": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transportconnectie",
+    "Transportconnectie.identificator": {
+      "@id": "https://INSPIRE-Netwerk.TODO.fixme.com#Netwerkelement.identificator",
+      "@type": "@id"
+    },
+    "Transportconnectie.type": {
+      "@id": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transportconnectie.type",
+      "@type": "@id"
+    },
+    "Transportknoop": "http://fixme.com#Transportknoop",
+    "Transportknoop.geometrie": {
+      "@id": "https://INSPIRE-Netwerk.TODO.fixme.com#Netwerkgebied.geometrie",
+      "@type": "@id"
+    },
+    "Transportknoop.identificator": {
+      "@id": "https://INSPIRE-Netwerk.TODO.fixme.com#Netwerkelement.identificator",
+      "@type": "@id"
+    },
+    "Transportknoop.type": {
+      "@id": "http://fixme.com#Transportknoop.type",
+      "@type": "@id"
+    },
+    "Transportknooptype": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Transportmode": "http://fixme.com#Transportmode",
+    "Transportnetwerk": "https://fixme.com",
+    "Transportnetwerk.geografischeNaam": {
+      "@id": "https://fixme.com",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Transportnetwerk.transporttype": {
+      "@id": "https://fixme.com",
+      "@type": "@id"
+    },
+    "Transportobject": "http://fixme.com#Transportobject",
+    "Transportobject.beschikbaarheid": {
+      "@id": "http://fixme.com#beschikbaarheid",
+      "@type": "@id"
+    },
+    "Transportobject.geografischeNaam": {
+      "@id": "http://fixme.com#Transportobject.geografischeNaam",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Transportobject.toegankelijkheid": {
+      "@container": "@set",
+      "@id": "http://fixme.com#Transportobject.toegankelijkheid",
+      "@type": "@id"
+    },
+    "Transportobject.transportNetwerk": {
+      "@container": "@set",
+      "@id": "http://fixme.com#transportNetwerk",
+      "@type": "@id"
+    },
+    "Vervoermiddel": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Vervoerregio": "https://data.vlaanderen.be/ns/hoppinpunten#Vervoerregio",
+    "Vervoerregio.geometrie": {
+      "@id": "http://www.w3.org/ns/locn#geometry",
+      "@type": "@id"
+    },
+    "Vervoerregio.plaatsnaam": {
+      "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Vervoersknooppunt": "https://data.vlaanderen.be/ns/hoppinpunten#Vervoersknooppunt",
+    "Vervoersknooppunt.classificatie": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/hoppinpunten#classificatie",
+      "@type": "@id"
+    },
+    "Vervoersknooppunt.locatie": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/hoppinpunten#locatie",
+      "@type": "@id"
+    },
+    "Vervoersknooppunt.merk": {
+      "@id": "https://data.vlaanderen.be/ns/hoppinpunten#merk",
+      "@type": "@id"
+    },
+    "Vervoersknooppunt.naam": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/hoppinpunten#naam",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Vervoersknooppunt.status": {
+      "@id": "https://data.vlaanderen.be/ns/hoppinpunten#status",
+      "@type": "@id"
+    },
+    "Vervoersknooppunt.toegankelijkheid": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/hoppinpunten#toegankelijkheid",
+      "@type": ""
+    },
+    "Vervoersknooppunt.wegbeheerder": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/hoppinpunten#wegbeheerder",
+      "@type": "@id"
+    },
+    "Vervoersknooppuntstatus": "https://data.vlaanderen.be/ns/hoppinpunten#Vervoersknooppuntstatus",
+    "Vervoersknooppunttype": "https://data.vlaanderen.be/ns/hoppinpunten#Vervoersknooppunttype",
+    "VirtueleKnoop": "https://data.vlaanderen.be/ns/hoppinpunten#VirtueleKnoop"
+  }
+}
