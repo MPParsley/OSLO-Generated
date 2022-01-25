@@ -5,10 +5,12 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://data.vlaanderen.be/ns/waterkwaliteit#EmissiebronType> a owl:Class;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/waterkwaliteit> .
+skos:Concept a rdfs:Class;
+  rdfs:label "EmissiebronType"@nl,
+    "MatrixType"@nl .
 
 <https://data.vlaanderen.be/ns/waterkwaliteit#Meetnet> a owl:Class;
   rdfs:label "Meetnet"@nl;
@@ -23,9 +25,11 @@
   rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/SpatialSamplingFeature#SF_SpatialSamplingFeature> .
 
 <https://data.vlaanderen.be/ns/waterkwaliteit#Soort> a owl:Class;
+  rdfs:label "Soort"@nl;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/waterkwaliteit> .
 
 <https://data.vlaanderen.be/ns/waterkwaliteit#agens> a owl:ObjectProperty;
+  rdfs:label "agens"@nl;
   rdfs:domain <https://data.vlaanderen.be/ns/waterkwaliteit#ChemischAgensVrachtObservatie>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/waterkwaliteit>;
   rdfs:range <https://data.vlaanderen.be/ns/waterkwaliteit#Agens> .
@@ -70,9 +74,10 @@
   rdfs:range prov:Location .
 
 <https://data.vlaanderen.be/ns/waterkwaliteit#matrix> a owl:ObjectProperty;
+  rdfs:label "matrix"@nl;
   rdfs:domain <https://data.vlaanderen.be/ns/waterkwaliteit#Emissie>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/waterkwaliteit>;
-  rdfs:range <https://data.vlaanderen.be/ns/waterkwaliteit#MatrixType> .
+  rdfs:range skos:Concept .
 
 <https://data.vlaanderen.be/ns/waterkwaliteit#ontvanger> a owl:ObjectProperty;
   rdfs:label "ontvanger"@nl;
@@ -108,12 +113,10 @@ dc:type a rdf:Property;
   rdfs:label "type"@nl .
 
 <https://data.vlaanderen.be/ns/waterkwaliteit#Agens> a owl:Class;
+  rdfs:label "Agens"@nl;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/waterkwaliteit> .
 
 <https://data.vlaanderen.be/ns/waterkwaliteit#HydromorfologischIndexType> a owl:Class;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/waterkwaliteit> .
-
-<https://data.vlaanderen.be/ns/waterkwaliteit#MatrixType> a owl:Class;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/waterkwaliteit> .
 
 <https://fixme.com> a rdf:Property;
@@ -167,7 +170,8 @@ dc:type a rdf:Property;
     foaf:mbox <mailto:oslo@kb.vlaanderen.be>;
     foaf:name "Data Vlaanderen"
   ];
-  rdfs:seeAlso dc:type,
+  rdfs:seeAlso skos:Concept,
+    dc:type,
     <https://fixme.com>;
   <http://www.w3.org/2001/02pd/rec54#editor> [
     a foaf:Person;
