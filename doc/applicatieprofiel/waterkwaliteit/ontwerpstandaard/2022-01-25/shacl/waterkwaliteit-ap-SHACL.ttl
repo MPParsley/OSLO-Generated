@@ -3,16 +3,15 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schemas: <https://schema.org/> .
 @prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://data.vlaanderen.be/shacl/waterkwaliteit-ap> <https://data.vlaanderen.be/shacl/waterkwaliteit-apshapes> <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#AgensShape>,
     <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#ChemischAgensVrachtObservatieShape>,
     <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#EmissieShape>,
     <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#EmissiebronShape>,
-    <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#EmissiebronTypeShape>,
     <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#HydromorfologischIndexTypeShape>,
     <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#HydromorfologischeIndexObservatieShape>,
-    <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#MatrixTypeShape>,
     <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#MeetnetShape>,
     <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#MeetpuntShape>,
     <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#SoortShape>,
@@ -43,6 +42,8 @@
     <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#WaterkwaliteitParameterTypeShape>,
     <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#GeobserveerdWeerShape>,
     <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#AgentShape>,
+    <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#EmissiebronTypeShape>,
+    <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#MatrixTypeShape>,
     <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#IdentificatorShape>,
     <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#LocatieShape>,
     <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#ProcedureShape>,
@@ -232,7 +233,7 @@
 <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#EmissieShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://data.vlaanderen.be/ns/waterkwaliteit#MatrixType>;
+    shacl:class skos:Concept;
     shacl:name "matrix";
     shacl:path <https://data.vlaanderen.be/ns/waterkwaliteit#matrix>
   ], [
@@ -266,7 +267,7 @@
     shacl:name "ontvanger";
     shacl:path <https://data.vlaanderen.be/ns/waterkwaliteit#ontvanger>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/waterkwaliteit#EmissiebronType>;
+    shacl:class skos:Concept;
     shacl:description "Aard van de Emissiebron.";
     shacl:minCount 1;
     shacl:name "type";
@@ -286,7 +287,7 @@
 
 <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#EmissiebronTypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/waterkwaliteit#EmissiebronType> .
+  shacl:targetClass skos:Concept .
 
 <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#GeneriekeNaamShape> a shacl:NodeShape;
   shacl:closed false;
@@ -373,7 +374,7 @@
 
 <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#MatrixTypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/waterkwaliteit#MatrixType> .
+  shacl:targetClass skos:Concept .
 
 <https://data.vlaanderen.be/shacl/waterkwaliteit-ap#MeetnetShape> a shacl:NodeShape;
   shacl:closed false;
