@@ -1,0 +1,1561 @@
+{
+  "@context": {
+    "@vocab": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap",
+    "qb": "http://purl.org/linked-data/cube#",
+    "qb:codeList": {
+      "@type": "@id"
+    },
+    "sh": "http://www.w3.org/ns/shacl#",
+    "sh:class": {
+      "@type": "@id"
+    },
+    "sh:datatype": {
+      "@type": "@id"
+    },
+    "sh:maxCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:minCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:path": {
+      "@type": "@id"
+    },
+    "sh:property": {
+      "@type": "@id"
+    },
+    "sh:targetClass": {
+      "@type": "@id"
+    },
+    "shapes": {
+      "@type": "@id"
+    }
+  },
+  "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap",
+  "shapes": [
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#DatauitwisselingsinfrastructuurShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/hoppinpunten#Datauitwisselingsinfrastructuur"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#GeregistreerdVervoersknooppuntShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "registratie",
+          "sh:path": "https://data.vlaanderen.be/ns/hoppinpunten#registratie"
+        },
+        {
+          "sh:class": "http://xmlns.com/foaf/0.1/Document",
+          "sh:maxCount": "1",
+          "sh:name": "specificatie",
+          "sh:path": "https://data.vlaanderen.be/ns/hoppinpunten#specificatie"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/hoppinpunten#GeregistreerdVervoersknooppunt"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#HoppinpuntShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/hoppinpunten#Hoppinpunttype",
+          "sh:maxCount": "1",
+          "sh:name": "classificatie",
+          "sh:path": "https://data.vlaanderen.be/ns/hoppinpunten#classificatie"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/hoppinpunten#Hoppinpuntstatus",
+          "sh:maxCount": "1",
+          "sh:name": "status",
+          "sh:path": "https://data.vlaanderen.be/ns/hoppinpunten#status"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/hoppinpunten#Hoppinpunt"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#HoppinpuntstatusShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/hoppinpunten#Hoppinpuntstatus"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#HoppinzuilShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/hoppinpunten#Hoppinzuil"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#InformatiedragerShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/hoppinpunten#Informatiedrager"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#InformatiezuiltypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/hoppinpunten#Informatiezuiltype"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#LadertypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/hoppinpunten#Ladertype"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#MerktypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/hoppinpunten#Merktype"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#VervoerregioShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Geometry",
+          "sh:description": "Geometrie van de plaats of het gebied.",
+          "sh:maxCount": "1",
+          "sh:name": "^geometrie",
+          "sh:path": "http://www.w3.org/ns/locn#geometry"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Naam van de plaats of van het gebied.",
+          "sh:maxCount": "1",
+          "sh:name": "^plaatsnaam",
+          "sh:path": "http://www.w3.org/2000/01/rdf-schema#label"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/hoppinpunten#Vervoerregio"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#VervoersknooppuntShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/hoppinpunten#Vervoersknooppunttype",
+          "sh:name": "classificatie",
+          "sh:path": "https://data.vlaanderen.be/ns/hoppinpunten#classificatie"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/prov#Location",
+          "sh:name": "locatie",
+          "sh:path": "https://data.vlaanderen.be/ns/hoppinpunten#locatie"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/hoppinpunten#Merktype",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "merk",
+          "sh:path": "https://data.vlaanderen.be/ns/hoppinpunten#merk"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:name": "naam",
+          "sh:path": "https://data.vlaanderen.be/ns/hoppinpunten#naam"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/hoppinpunten#Vervoersknooppuntstatus",
+          "sh:maxCount": "1",
+          "sh:name": "status",
+          "sh:path": "https://data.vlaanderen.be/ns/hoppinpunten#status"
+        },
+        {
+          "sh:name": "toegankelijkheid",
+          "sh:path": "https://data.vlaanderen.be/ns/hoppinpunten#toegankelijkheid"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Agent",
+          "sh:name": "wegbeheerder",
+          "sh:path": "https://data.vlaanderen.be/ns/hoppinpunten#wegbeheerder"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/hoppinpunten#Vervoersknooppunt"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#VervoersknooppuntstatusShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/hoppinpunten#Vervoersknooppuntstatus"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#VervoersknooppunttypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/hoppinpunten#Vervoersknooppunttype"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#VirtueleKnoopShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/hoppinpunten#VirtueleKnoop"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#PeriodeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Aanvang van de tijdsduur.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "begin",
+          "sh:path": "http://data.europa.eu/m8g/startTime"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Einde vd tijdsduur.",
+          "sh:maxCount": "1",
+          "sh:name": "einde",
+          "sh:path": "http://data.europa.eu/m8g/endTime"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/PeriodOfTime"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#AccessModesShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#AccessModes"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#AutomatischeParkeergarageShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#AutomatischeParkeergarage"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#CapaciteitShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "maximum",
+          "sh:path": "http://fixme.com#maximum"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "totaal",
+          "sh:path": "http://fixme.com#totaal"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#Capaciteit"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#InformatiezuilShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/hoppinpunten#Informatiezuiltype",
+          "sh:maxCount": "1",
+          "sh:name": "type",
+          "sh:path": "http://fixme.com#type"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#Informatiezuil"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#LaderShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "etc",
+          "sh:path": "http://fixme.com#etc"
+        },
+        {
+          "sh:class": "http://fixme.com#Plug",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "plug",
+          "sh:path": "http://fixme.com#plug"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/hoppinpunten#Ladertype",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "type",
+          "sh:path": "http://fixme.com#type"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "vervoermiddel",
+          "sh:path": "http://fixme.com#vervoermiddel"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#Lader"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#OndergrondseParkeergarageShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#OndergrondseParkeergarage"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ParkeerfaciliteitShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#Entrance",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "entrance",
+          "sh:path": "http://fixme.com#entrance"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "etc",
+          "sh:path": "http://fixme.com#etc"
+        },
+        {
+          "sh:class": "http://fixme.com#Exit",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "exit",
+          "sh:path": "http://fixme.com#exit"
+        },
+        {
+          "sh:class": "http://fixme.com#Capaciteit",
+          "sh:maxCount": "1",
+          "sh:name": "heeftCapaciteit",
+          "sh:path": "http://fixme.com#heeftCapaciteit"
+        },
+        {
+          "sh:class": "http://fixme.com#Parkeerplaats",
+          "sh:name": "parkeerplaats",
+          "sh:path": "http://fixme.com#parkeerplaats"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#Parkeerfaciliteit"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ParkeergarageShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Parkeergarage"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ParkeerplaatsShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "etc",
+          "sh:path": "http://fixme.com#etc"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#Parkeerplaats"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ParkeerterreinShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Parkeerterrein"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#PerronShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:name": "^alternatieveNaam",
+          "sh:path": "http://fixme.com#^alternatieveNaam"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:maxCount": "1",
+          "sh:name": "^kruispunt",
+          "sh:path": "http://fixme.com#^kruispunt"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:maxCount": "1",
+          "sh:name": "^label",
+          "sh:path": "http://fixme.com#^label"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:name": "^level",
+          "sh:path": "http://fixme.com#^level"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:name": "^omheind",
+          "sh:path": "http://fixme.com#^omheind"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:maxCount": "1",
+          "sh:name": "^oriëntatiepunt",
+          "sh:path": "http://fixme.com#^oriëntatiepunt"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:name": "^overdekt",
+          "sh:path": "http://fixme.com#^overdekt"
+        },
+        {
+          "sh:class": "http://fixme.com#AccessModes",
+          "sh:name": "^toegangsModus",
+          "sh:path": "http://fixme.com#^toegangsModus"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:name": "^toegankelijkheidsbeoordeling",
+          "sh:path": "http://fixme.com#^toegankelijkheidsbeoordeling"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:name": "^verlichting",
+          "sh:path": "http://fixme.com#^verlichting"
+        },
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:maxCount": "1",
+          "sh:name": "helling",
+          "sh:path": "http://fixme.com#helling"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:name": "perronType",
+          "sh:path": "http://fixme.com#perronType"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:maxCount": "1",
+          "sh:name": "plaatsCode",
+          "sh:path": "http://fixme.com#plaatsCode"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:maxCount": "1",
+          "sh:name": "publiekeCode",
+          "sh:path": "http://fixme.com#publiekeCode"
+        },
+        {
+          "sh:class": "http://fixme.com#Perron",
+          "sh:maxCount": "1",
+          "sh:name": "quay",
+          "sh:path": "http://fixme.com#quay"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#Perron"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#PlaceTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#PlaceType"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#StopPlaceTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#StopPlaceType"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#StopplaatsShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:maxCount": "1",
+          "sh:name": "^afbeelding",
+          "sh:path": "http://fixme.com#^afbeelding"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:name": "^alternatieveNaam",
+          "sh:path": "http://fixme.com#^alternatieveNaam"
+        },
+        {
+          "sh:class": "http://www.opengis.net/ont/sf#Point",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:name": "^centroïde",
+          "sh:path": "http://fixme.com#centroid"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:maxCount": "1",
+          "sh:name": "^kruispunt",
+          "sh:path": "http://fixme.com#^kruispunt"
+        },
+        {
+          "sh:name": "^level",
+          "sh:path": "http://fixme.com#^level"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:name": "^locale",
+          "sh:path": "http://fixme.com#^locale"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:name": "^omheind",
+          "sh:path": "http://fixme.com#^omheind"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:name": "^organisatie",
+          "sh:path": "http://fixme.com#^organisatie"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:maxCount": "1",
+          "sh:name": "^oriëntatiepunt",
+          "sh:path": "http://fixme.com#^oriëntatiepunt"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:name": "^overdekt",
+          "sh:path": "http://fixme.com#^overdekt"
+        },
+        {
+          "sh:class": "http://fixme.com#Site",
+          "sh:maxCount": "1",
+          "sh:name": "^parentSite",
+          "sh:path": "http://fixme.com#^parentSite"
+        },
+        {
+          "sh:class": "http://fixme.com#PlaceType",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:name": "^plaatsType",
+          "sh:path": "http://fixme.com#placeType"
+        },
+        {
+          "sh:class": "http://www.opengis.net/ont/sf#Polygon",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:name": "^polygoon",
+          "sh:path": "http://fixme.com#polygon"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Address",
+          "sh:maxCount": "1",
+          "sh:name": "^postadres",
+          "sh:path": "http://fixme.com#^postadres"
+        },
+        {
+          "sh:description": "TODO",
+          "sh:name": "^toegangsmodi",
+          "sh:path": "http://fixme.com#accessModes"
+        },
+        {
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:name": "^toegankelijkheidsbeoordeling",
+          "sh:path": "http://fixme.com#accessabilityAssessment"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:maxCount": "1",
+          "sh:name": "^url",
+          "sh:path": "http://fixme.com#^url"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:name": "^verlichting",
+          "sh:path": "http://fixme.com#^verlichting"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Address",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:name": "^wegadres",
+          "sh:path": "http://fixme.com#roadAddress"
+        },
+        {
+          "sh:class": "http://fixme.com#Transportmode",
+          "sh:maxCount": "1",
+          "sh:name": "andereTransportmodus",
+          "sh:path": "http://fixme.com#andereTransportmodus"
+        },
+        {
+          "sh:class": "http://fixme.com#Perron",
+          "sh:description": "TODO",
+          "sh:name": "containing",
+          "sh:path": "http://fixme.com#containing"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:name": "gewicht",
+          "sh:path": "http://fixme.com#gewicht"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:maxCount": "1",
+          "sh:name": "grensovergang",
+          "sh:path": "http://fixme.com#grensovergang"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:name": "publiekeCode",
+          "sh:path": "http://fixme.com#publiekeCode"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:name": "stopplaatsgewicht",
+          "sh:path": "http://fixme.com#stopplaatsgewicht"
+        },
+        {
+          "sh:class": "http://fixme.com#StopPlaceType",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "stopplaatstype",
+          "sh:path": "http://fixme.com#stopplaatstype"
+        },
+        {
+          "sh:class": "http://fixme.com#Transportmode",
+          "sh:maxCount": "1",
+          "sh:name": "submodus",
+          "sh:path": "http://fixme.com#submodus"
+        },
+        {
+          "sh:name": "tariefzone",
+          "sh:path": "http://fixme.com#tariefzone"
+        },
+        {
+          "sh:class": "http://fixme.com#Transportmode",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:name": "transportmodus",
+          "sh:path": "http://fixme.com#transportmodus"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#Stopplaats"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ToegankelijkheidShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Niveau van toegankelijkheid.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "niveau",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#niveau"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Deel van de dienst of infrastructuur waarop de Toegankelijkheid betrekking heeft..",
+          "sh:maxCount": "1",
+          "sh:name": "onderdeel",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#onderdeel"
+        },
+        {
+          "sh:class": "http://fixme.com#Toegankelijkheidstype",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "toegankelijkheid",
+          "sh:path": "http://fixme.com#Toegankelijkheid.toegankelijkheid"
+        },
+        {
+          "sh:class": "http://fixme.com#Toegankelijkheidstype",
+          "sh:description": "Aard van de Toegankelijkheid.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "type",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Toegankelijkheid.type"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Toegankelijkheid"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#TransportknoopShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.opengis.net/ont/sf#Point",
+          "sh:description": "Locatie van de Transportknoop.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "^geometrie",
+          "sh:path": "https://INSPIRE-Netwerk.TODO.fixme.com#Netwerkgebied.geometrie"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "Identificator van de Transportknoop.",
+          "sh:maxCount": "1",
+          "sh:name": "^identificator",
+          "sh:path": "https://INSPIRE-Netwerk.TODO.fixme.com#Netwerkelement.identificator"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Aard van de Transportknoop.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "type",
+          "sh:path": "http://fixme.com#Transportknoop.type"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#Transportknoop"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#TransportmodeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Transportmode"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#TransportobjectShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/hoppinpunten#Beschikbaarheid",
+          "sh:description": "Beschikbaarheid van het Transportobject.",
+          "sh:maxCount": "1",
+          "sh:name": "beschikbaarheid",
+          "sh:path": "http://fixme.com#beschikbaarheid"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Naam van het Transportobject.",
+          "sh:maxCount": "1",
+          "sh:name": "geografischeNaam",
+          "sh:path": "http://fixme.com#Transportobject.geografischeNaam"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/hoppinpunten#Toegankelijkheid",
+          "sh:description": "Toegankelijkheid van het Transportobject.",
+          "sh:name": "toegankelijkheid",
+          "sh:path": "http://fixme.com#Transportobject.toegankelijkheid"
+        },
+        {
+          "sh:class": "https://fixme.com",
+          "sh:name": "transportNetwerk",
+          "sh:path": "http://fixme.com#transportNetwerk"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#Transportobject"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#PlaatsShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Geometry",
+          "sh:description": "Geometrie van de plaats of het gebied.",
+          "sh:maxCount": "1",
+          "sh:name": "geometrie",
+          "sh:path": "http://www.w3.org/ns/locn#geometry"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Naam van de plaats of van het gebied.",
+          "sh:maxCount": "1",
+          "sh:name": "plaatsnaam",
+          "sh:path": "http://www.w3.org/2000/01/rdf-schema#label"
+        }
+      ],
+      "sh:targetClass": "http://purl.org/dc/terms/Location"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#PuntShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.opengis.net/ont/sf#Point"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#PolygoonShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.opengis.net/ont/sf#Polygon"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#GeografischeNaamShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#TaalStringShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#VervoermiddelShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#TransportknooptypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#DiensttypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#IdentificatorShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/ns/adms#Identifier"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#GeometrieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:description": "Geometrie uitgedrukt in gml-formaat.",
+          "sh:maxCount": "1",
+          "sh:name": "gml",
+          "sh:path": "http://www.opengis.net/ont/geosparql#asGML"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:description": "Geometrie uitgedrukt in wkt-formaat.",
+          "sh:maxCount": "1",
+          "sh:name": "wkt",
+          "sh:path": "http://www.opengis.net/ont/geosparql#asWKT"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/locn#Geometry"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#LocatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/ns/prov#Location"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#AanbiederShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://schema.org/ContactPoint",
+          "sh:description": "Informatie zoals email, telefoon... die toelaat de Organisatie te contacteren.",
+          "sh:name": "^contactInfo",
+          "sh:path": "http://schema.org/contactPoint"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "Identificator die de organisatie verkreeg bij registratie.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "^registratie",
+          "sh:path": "http://www.w3.org/ns/regorg#registration"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Naam waarmee de Organisatie bij voorkeur wordt aangeduid.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "^voorkeursnaam",
+          "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Aanbieder"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#LicentieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://data.europa.eu/m8g/PeriodOfTime",
+          "sh:description": "Periode waarvoor de Licentie geldt.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "periode",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Licentie.periode"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Location",
+          "sh:description": "Gebied of Plaats waarbinnen de Licentie geldt.",
+          "sh:minCount": "1",
+          "sh:name": "toepassingsgebied",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Licentie.toepassingsgebied"
+        },
+        {
+          "sh:description": "Publieke Organisatie verantwoordelijk voor het verkeersmanagement of de planning, controle of het beheer van een bepaald vervoersnetwerk of vervoerswijze, of beide, die onder haar territoriale bevoegdheid vallen.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "vervoersautoriteit",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#vervoersautoriteit"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Licentie"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#MobiliteitsdienstShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Aanbieder",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "aanbieder",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#aanbieder"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Aandrijving van het vervoermiddel waarmee of waarvoor de Mobiliteitsdienst doorgaans wordt georganiseerd.",
+          "sh:name": "aandrijving",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#aandrijving"
+        },
+        {
+          "sh:class": "http://purl.org/vocab/cpsv#FormalFramework",
+          "sh:name": "aangebodenBinnen",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#aangebodenBinnen"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/hoppinpunten#Beschikbaarheid",
+          "sh:description": "Beschikbaarheid van de Mobiliteitsdienst.",
+          "sh:name": "beschikbaarheid",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst.beschikbaarheid"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Licentie",
+          "sh:name": "licentie",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#licentie"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Naam van de Mobiliteitsdienst.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "naam",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst.naam"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst",
+          "sh:name": "omvat",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#omvat"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Prijsplan",
+          "sh:name": "prijsplan",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#prijsplan"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource",
+          "sh:description": "Resource waarover de Mobiliteitsdienst beschikt.",
+          "sh:name": "resource",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#resource"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Location",
+          "sh:description": "Gebied of Plaats waarbinnen de Mobiliteitsdienst wordt aangeboden.",
+          "sh:name": "ruimtelijkeDekking",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#ruimtelijkeDekking"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/hoppinpunten#Toegankelijkheid",
+          "sh:description": "Toegankelijkheid van de Mobiliteitsdienst.",
+          "sh:name": "toegankelijkheid",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst.toegankelijkheid"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/hoppinpunten#Diensttype",
+          "sh:description": "Aard van de Mobiliteitsdienst.",
+          "sh:minCount": "1",
+          "sh:name": "type",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst.type"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/hoppinpunten#Uitvoerder",
+          "sh:minCount": "1",
+          "sh:name": "uitgevoerdDoor",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#uitgevoerdDoor"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Vervoermiddel waarmee of waarvoor de Mobiliteitsdienst doorgaans wordt georganiseerd.",
+          "sh:name": "vervoermiddel",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst.vervoermiddel"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#OverstapShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routeknoop",
+          "sh:description": "Referentie naar verbonden klasse.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "Routeknoop",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Overstap.routeknoop.source"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routeknoop",
+          "sh:description": "Referentie naar verbonden klasse.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "Routeknoop",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Overstap.routeknoop.target"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Aandrijving van het voertuig vervoermiddel waarmee de Overstap gebeurt.",
+          "sh:maxCount": "1",
+          "sh:name": "aandrijving",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#aandrijving"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transportconnectie",
+          "sh:maxCount": "1",
+          "sh:name": "gerealiseerdOp",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#gerealiseerdOp"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
+          "sh:description": "Tijd waarin de overstap gebeurt.",
+          "sh:maxCount": "1",
+          "sh:name": "overstaptijd",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#overstaptijd"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Vervoermiddel waarmee de Overstap gebeurt.",
+          "sh:maxCount": "1",
+          "sh:name": "vervoermiddel",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Overstap.vervoermiddel"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Overstap"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#PrijsplanShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Beschrijving van het Prijsplan.",
+          "sh:maxCount": "1",
+          "sh:name": "beschrijving",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#beschrijving"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Naam van het Prijsplan.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "naam",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#naam"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Prijsplan"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ReisShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Tijdstip waarop de Reis afgelopen is of waarop de Reiziger zou willen dat ze is afgelopen.",
+          "sh:maxCount": "1",
+          "sh:name": "aankomsttijdstip",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Reis.aankomsttijdstip"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route",
+          "sh:description": "Route die de Reiziger kiest uit de mogelijke Routes.",
+          "sh:name": "gekozenRoute",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#gekozenRoute"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Reis",
+          "sh:description": "Deel van een volledige Reis dat op zichzelf ook beschouwd kan worden als een Reis.",
+          "sh:name": "isdeelVan",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#isdeelVan"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route",
+          "sh:description": "Routes die gevolgd kunnen worden om de Reis uit te voeren.",
+          "sh:name": "mogelijkeRoute",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#mogelijkeRoute"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/prov#Location",
+          "sh:description": "Opeenvolging van Locaties die men tijdens de Reis wil aandoen.",
+          "sh:minCount": "2",
+          "sh:name": "reisweg",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Reis.reisweg"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route",
+          "sh:description": "Route die uiteindelijk uitgevoerd is om de Reis te realiseren.",
+          "sh:maxCount": "1",
+          "sh:name": "uitgevoerdeRoute",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#uitgevoerdeRoute"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Tijdstip waarop de Reis aanvangt of waarop de Reiziger zou willen dat ze aanvangt.",
+          "sh:maxCount": "1",
+          "sh:name": "vertrektijdstip",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Reis.vertrektijdstip"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Reis"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ReizigerShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Reiziger",
+          "sh:description": "Reiziger die de Reiziger vergezelt tijdens de Reis.",
+          "sh:name": "isMedereizigerVan",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#isMedereizigerVan"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Reis",
+          "sh:description": "Reis die een Reiziger onderneemt of wil ondernemen.",
+          "sh:name": "onderneemt",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#onderneemt"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Pseudoniem",
+          "sh:description": "Naam van de Reiziger die afwijkt van zijn werkelijke naam.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "pseudoniem",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#pseudoniem"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Reiziger"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ResourceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Aandrijving van het vervoermiddel waarmee of waarvoor de Mobiliteitsdienst doorgaans wordt georganiseerd.",
+          "sh:name": "aandrijving",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#aandrijving"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:description": "Identificator van de Resource.",
+          "sh:maxCount": "1",
+          "sh:name": "identificator",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#identificator"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/prov#Location",
+          "sh:description": "Plaats waar de Resource zicht bevindt.",
+          "sh:maxCount": "1",
+          "sh:name": "locatie",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#locatie"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Toestand waarin een Resource zicht bevindt.",
+          "sh:maxCount": "1",
+          "sh:name": "status",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#status"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Aard van de Resource.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "type",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource.type"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Vervoermiddel waarmee of waarvoor de Mobiliteitsdienst doorgaans wordt georganiseerd.",
+          "sh:name": "vervoermiddel",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst.vervoermiddel"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#RouteShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/prov#Location",
+          "sh:description": "Locatie waar de Route eindigt.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "aankomstpunt",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#aankomstpunt"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Tijdstip waarop de Route eindigt.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "aankomsttijdstip",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route.aankomsttijdstip"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routesegment",
+          "sh:description": "Opeenvolging van Routesegmenten waaruit de Route bestaat.",
+          "sh:minCount": "1",
+          "sh:name": "bestaatUit",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route.bestaatUit"
+        },
+        {
+          "sh:description": "Prijs van de Route.",
+          "sh:maxCount": "1",
+          "sh:name": "kostprijs",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#kostprijs"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
+          "sh:description": "Tijd waarin de Route wordt afgelegd.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "reisduur",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#reisduur"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routebeschrijving",
+          "sh:description": "Beschrijving van de Route.",
+          "sh:maxCount": "1",
+          "sh:name": "routebeschrijving",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#routebeschrijving"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Aard van de Route.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "type",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route.type"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/prov#Location",
+          "sh:description": "Locatie waar de Route begint.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "vertrekpunt",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#vertrekpunt"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Tijdstip waarop de Route begint..",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "vertrektijdstip",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route.vertrektijdstip"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Route"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#RouteknoopShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.opengis.net/ont/sf#Point",
+          "sh:description": "Locatie van de Routeknoop.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "geometrie",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routeknoop.geometrie"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst",
+          "sh:name": "gerealiseerdDoor",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#gerealiseerdDoor"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource",
+          "sh:maxCount": "1",
+          "sh:name": "gerealiseerdMet",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#gerealiseerdMet"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routeknoop",
+          "sh:description": "Routeknoop waarnaar wordt overgestapt.",
+          "sh:maxCount": "1",
+          "sh:name": "overstap",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#overstap"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Aard van de Routeknoop.",
+          "sh:maxCount": "1",
+          "sh:name": "type",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routeknoop.type"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Overstap.routeknoop.target"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#RoutesegmentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Aandrijving van het voertuig vervoermiddel waarmee het Routesegment is afgelegd.",
+          "sh:maxCount": "1",
+          "sh:name": "aandrijving",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#aandrijving"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routeknoop",
+          "sh:description": "Knoop waar het Routesegment eindigt.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "aankomstknoop",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#aankomstknoop"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst",
+          "sh:maxCount": "1",
+          "sh:name": "gerealiseerdDoor",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#gerealiseerdDoor"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource",
+          "sh:description": "Resource van de Mobiliteitsdienst die de reiziger heeft gebruikt bij het afleggen van het Routesegment.",
+          "sh:maxCount": "1",
+          "sh:name": "gerealiseerdMet",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routesegment.gerealiseerdMet"
+        },
+        {
+          "sh:class": "http://fixme.com#GerichteLink",
+          "sh:description": "Opeenvolging van Gerichte Links waaruit het Routesegment bestaat.",
+          "sh:minCount": "1",
+          "sh:name": "link",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routesegment.link"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routeknoop",
+          "sh:description": "Knoop waar het Routesegment begint.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "vertrekknoop",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#vertrekknoop"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Type voertuig waarmee het Routesegment is afgelegd.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "vervoermiddel",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routesegment.vervoermiddel"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routesegment"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#TransportconnectieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "Identificator van de Transportconnectie.",
+          "sh:maxCount": "1",
+          "sh:name": "^identificator",
+          "sh:path": "https://INSPIRE-Netwerk.TODO.fixme.com#Netwerkelement.identificator"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Aard van de Transportconnectie.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "type",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transportconnectie.type"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transportconnectie"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#FietsstallingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "afsluitbaar",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "capaciteit",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "fietsdelen",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "overdekt",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "verplaatsbaar",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#FietsparkingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#InfrastructuurelementShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://data.europa.eu/m8g/PeriodOfTime",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "^geldigheidsperiode",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Geometry",
+          "sh:description": "To Do",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "^geometrie",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "identificator",
+          "sh:path": "http://fixme.com#identificator"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#TransportnetwerkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Naam van het Netwerk.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "^geografischeNaam",
+          "sh:path": "https://fixme.com"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Aard van het Transportnetwerk volgens het type infrastructuur.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "transporttype",
+          "sh:path": "https://fixme.com"
+        }
+      ],
+      "sh:targetClass": "https://fixme.com"
+    }
+  ]
+}
