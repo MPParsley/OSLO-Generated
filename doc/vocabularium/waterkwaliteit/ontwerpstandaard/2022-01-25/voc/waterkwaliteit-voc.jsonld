@@ -104,7 +104,7 @@
       "@id": "https://data.vlaanderen.be/ns/waterkwaliteit#Emissiebron",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
-        "nl": "Oorsprong van een Emissie."
+        "nl": "Oorsprong van een emissie."
       },
       "name": {
         "nl": "Emissiebron"
@@ -112,14 +112,6 @@
       "parents": [
         "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature"
       ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/waterkwaliteit#HydromorfologischIndexType",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "description": {},
-      "name": {},
-      "parents": [],
       "usage": {}
     },
     {
@@ -226,7 +218,7 @@
         "nl": "geobserveerdKenmerk"
       },
       "range": [
-        "http://fixme.com#ChemischAgensKenmerkType"
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "usage": {}
     },
@@ -242,7 +234,7 @@
         "nl": "GeobserveerdKenmerk"
       },
       "range": [
-        "https://data.vlaanderen.be/ns/waterkwaliteit#HydromorfologischIndexType"
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "usage": {}
     },
@@ -305,7 +297,9 @@
     {
       "@id": "https://data.vlaanderen.be/ns/waterkwaliteit#matrix",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {},
+      "description": {
+        "nl": "De matrix (omgeving) waarin de emissie zich voordoet."
+      },
       "domain": [
         "https://data.vlaanderen.be/ns/waterkwaliteit#Emissie"
       ],
@@ -316,13 +310,15 @@
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
       ],
-      "usage": {}
+      "usage": {
+        "nl": "Bv. Een schoorsteen die emissie uitstoot in de lucht, waarbij de lucht de matrix is."
+      }
     },
     {
       "@id": "https://data.vlaanderen.be/ns/waterkwaliteit#ontvanger",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
-        "nl": "Het object waarin de uitstoot van de Emissiebron terecht komt."
+        "nl": "Het object waarin de emissie van de Emissiebron terecht komt."
       },
       "domain": [
         "https://data.vlaanderen.be/ns/waterkwaliteit#Emissiebron"
@@ -335,7 +331,7 @@
         "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature"
       ],
       "usage": {
-        "nl": "Bv in het geval van water, het kanaal waarin de uitstoot terecht komt. Of in het geval van lucht de Plaats waar de uitstoot plaatsvindt. Laat bv toe om naast Observaties mbt de uitstoot van een Emissiebron ook Observaties te doen over de impact van de Bro"
+        "nl": "Bv in het geval van water, het kanaal waarin de Emissie terecht komt. Of in het geval van lucht de Plaats waar de Emissie plaatsvindt. Laat bv toe om naast Observaties mbt de uitstoot van een Emissiebron ook Observaties te doen over de impact van de EmissieBron."
       }
     },
     {
@@ -354,18 +350,6 @@
       "range": [
         "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Period"
       ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/waterkwaliteit#type",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "description": {},
-      "domain": [
-        "https://data.vlaanderen.be/ns/waterkwaliteit#Emissie"
-      ],
-      "generalization": [],
-      "name": {},
-      "range": [],
       "usage": {}
     },
     {
@@ -405,9 +389,34 @@
       "usage": {
         "nl": "Bv diegene die verantwoordelijk is voor het naleven van de Vergunning die van toepassing is op de Emissiebron."
       }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/waterkwaliteit#wettelijkkader",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "De wetgeving die van toepassing is op de Emissiebron."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/waterkwaliteit#Emissiebron"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "wettelijkKader"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/generiek#WettelijkKader"
+      ],
+      "usage": {}
     }
   ],
   "externals": [
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "HydromorfologischIndexType"
+      }
+    },
     {
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
@@ -421,6 +430,13 @@
       "name": {
         "nl": "MatrixType"
       }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "EmissieType"
+      }
     }
   ],
   "externalproperties": [
@@ -432,10 +448,10 @@
       }
     },
     {
-      "@id": "https://fixme.com",
+      "@id": "http://purl.org/dc/terms/type",
       "@type": "rdf:Property",
       "name": {
-        "nl": "wettelijkKader"
+        "nl": "type"
       }
     }
   ],

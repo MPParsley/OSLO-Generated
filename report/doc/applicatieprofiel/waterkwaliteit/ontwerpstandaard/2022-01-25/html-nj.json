@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/tree/23e6aa438f6a34065eddedf516f84156cc90908a",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/blob/23e6aa438f6a34065eddedf516f84156cc90908a/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/tree/93eae640722fd08897708d05945ec9873964d29c",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/blob/93eae640722fd08897708d05945ec9873964d29c/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/standaard-in-ontwikkeling/vocabularium-en-applicatieprofiel-oslo-waterkwaliteit.html",
     "usesVocs": [],
@@ -27,7 +27,9 @@
         "nl": "Agens"
       },
       "sort_nl": "Agens",
-      "description": {},
+      "description": {
+        "nl": "TODO"
+      },
       "usage": {},
       "parents": [],
       "properties": []
@@ -144,13 +146,13 @@
           "range": [
             {
               "range_label": "ChemischAgensKenmerkType",
-              "range_uri": "http://fixme.com#ChemischAgensKenmerkType"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#ChemischAgensType",
-              "range_puri": "http://fixme.com#ChemischAgensKenmerkType",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
                 "nl": "ChemischAgensType"
               }
@@ -189,8 +191,12 @@
             "nl": "matrix"
           },
           "sort_nl": "matrix",
-          "description": {},
-          "usage": {},
+          "description": {
+            "nl": "De matrix (omgeving) waarin de emissie zich voordoet."
+          },
+          "usage": {
+            "nl": "Bv. Een schoorsteen die emissie uitstoot in de lucht, waarbij de lucht de matrix is."
+          },
           "domain": [
             {
               "uri": "https://data.vlaanderen.be/ns/waterkwaliteit#Emissie",
@@ -259,7 +265,7 @@
             "nl": "Relateert de emissie aan de emissiebron waarvan deze afkomstig is. "
           },
           "usage": {
-            "nl": "Bijvoorbeeld de emissie afvalwater die is uitgestoten door het emissiespunt (een buis) in een kanaal. "
+            "nl": "Bijvoorbeeld de emissie afvalwater die is uitgestoten door het emissiepunt (een buis) in een kanaal. "
           },
           "domain": [
             {
@@ -284,6 +290,42 @@
           ],
           "cardinality": "0..*",
           "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/type",
+          "name": {
+            "nl": "type"
+          },
+          "sort_nl": "type",
+          "description": {
+            "nl": "De aard van de emissie."
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/waterkwaliteit#Emissie",
+              "EA-Name": "Emissie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "EmissieType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#EmissieType",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "EmissieType"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
         }
       ]
     },
@@ -294,10 +336,10 @@
       },
       "sort_nl": "Emissiebron",
       "description": {
-        "nl": "Oorsprong van een Emissie."
+        "nl": "Oorsprong van een emissie."
       },
       "usage": {
-        "nl": "Kan een inrichting zijn zoals een fabriek, installatie of schoorsteen maar ook een activiteit zoals bemesting. Typisch onderworpen aan milieuwetgeving en opgelijst als potentieel hinderlijk, zie bv IIOA's van VLAREM."
+        "nl": "Het kan een inrichting zijn zoals een fabriek, installatie of schoorsteen maar ook een activiteit zoals bemesting. Typisch onderworpen aan milieuwetgeving en opgelijst als potentieel hinderlijk, zie bv IIOA's van VLAREM."
       },
       "parents": [
         {
@@ -386,10 +428,10 @@
           },
           "sort_nl": "ontvanger",
           "description": {
-            "nl": "Het object waarin de uitstoot van de Emissiebron terecht komt."
+            "nl": "Het object waarin de emissie van de Emissiebron terecht komt."
           },
           "usage": {
-            "nl": "Bv in het geval van water, het kanaal waarin de uitstoot terecht komt. Of in het geval van lucht de Plaats waar de uitstoot plaatsvindt. Laat bv toe om naast Observaties mbt de uitstoot van een Emissiebron ook Observaties te doen over de impact van de Bro"
+            "nl": "Bv in het geval van water, het kanaal waarin de Emissie terecht komt. Of in het geval van lucht de Plaats waar de Emissie plaatsvindt. Laat bv toe om naast Observaties mbt de uitstoot van een Emissiebron ook Observaties te doen over de impact van de EmissieBron."
           },
           "domain": [
             {
@@ -452,43 +494,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://purl.org/dc/terms/type",
-          "name": {
-            "nl": "type"
-          },
-          "sort_nl": "type",
-          "description": {
-            "nl": "Aard van de Emissiebron."
-          },
-          "usage": {
-            "nl": "Geeft het soort Emissiebron aan, dus het soort activiteit of inrichting. Dit kan bv in industriële context een pijp, schoorsteen, installatie of volledige fabriek zijn. Daarnaast kan het ook een type activiteit zijn, bv het strooien van meststoffen. "
-          },
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/waterkwaliteit#Emissiebron",
-              "EA-Name": "Emissiebron"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "EmissiebronType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#EmissiebronType",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "nl": "EmissiebronType"
-              }
-            }
-          ],
-          "cardinality": "1..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://fixme.com",
+          "uri": "https://data.vlaanderen.be/ns/waterkwaliteit#wettelijkkader",
           "name": {
             "nl": "wettelijkKader"
           },
@@ -522,6 +528,42 @@
           ],
           "cardinality": "0..*",
           "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/type",
+          "name": {
+            "nl": "type"
+          },
+          "sort_nl": "type",
+          "description": {
+            "nl": "Aard van de Emissiebron."
+          },
+          "usage": {
+            "nl": "BV volgens de indeling van VLAREM (IIOA, IOA) of GPBV (Site, Faciliteit, Installatie, InstallatieOnderdeel). OPMERKING: Op te geven op het niveau waarop de Observatie plaatsvindt, bv voor de gehele Site terwijl de werkelijke uitstoot plaatsvindt op het niveau van een InstallatieOnderdeel, bv een bepaalde schoorsteen."
+          },
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/waterkwaliteit#Emissiebron",
+              "EA-Name": "Emissiebron"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "EmissiebronType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#EmissiebronType",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "EmissiebronType"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
         }
       ]
     },
@@ -553,7 +595,7 @@
           "label": "StatistischeObservatie",
           "package": "OSLO-Statistiek",
           "uri": "http://fixme.com#StatistischeObservatie",
-          "scoped_uri": "http://fixme.com#StatistischeObservatie"
+          "scoped_uri": "#StatistischeObservatie"
         }
       ],
       "properties": [
@@ -578,13 +620,13 @@
           "range": [
             {
               "range_label": "HydromorfologischIndexType",
-              "range_uri": "https://data.vlaanderen.be/ns/waterkwaliteit#HydromorfologischIndexType"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#HydromorfologischIndexType",
-              "range_puri": "https://data.vlaanderen.be/ns/waterkwaliteit#HydromorfologischIndexType",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
                 "nl": "HydromorfologischIndexType"
               }
@@ -681,7 +723,9 @@
         "nl": "Soort"
       },
       "sort_nl": "Soort",
-      "description": {},
+      "description": {
+        "nl": "TODO"
+      },
       "usage": {},
       "parents": [],
       "properties": []
@@ -1370,13 +1414,13 @@
           "range": [
             {
               "range_label": "Observatietype",
-              "range_uri": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatietype"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Observatietype",
-              "range_puri": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatietype",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
                 "nl": "Observatietype"
               }
@@ -2066,6 +2110,19 @@
       "properties": []
     },
     {
+      "uri": "https://fixme.com",
+      "name": {
+        "nl": "StatistischeObservatie"
+      },
+      "sort_nl": "StatistischeObservatie",
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
       "uri": "https://purl.eu/ns/air-and-water/water-quality#BioIndicatorObservation",
       "name": {
         "nl": "BioIndicatorObservatie"
@@ -2172,13 +2229,13 @@
           "range": [
             {
               "range_label": "BioIndicatorType",
-              "range_uri": "http://fixme.com#BioIndicatorType"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#BioIndicatorType",
-              "range_puri": "http://fixme.com#BioIndicatorType",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
                 "nl": "BioIndicatorType"
               }
@@ -2221,7 +2278,7 @@
           "label": "StatistischeObservatie",
           "package": "OSLO-Statistiek",
           "uri": "http://fixme.com#StatistischeObservatie",
-          "scoped_uri": "http://fixme.com#StatistischeObservatie"
+          "scoped_uri": "#StatistischeObservatie"
         }
       ],
       "properties": [
@@ -2278,13 +2335,13 @@
           "range": [
             {
               "range_label": "BiotischeIndexType",
-              "range_uri": "http://fixme.com#BiotischeIndexType"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#BiotischIndexType",
-              "range_puri": "http://fixme.com#BiotischeIndexType",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
                 "nl": "BiotischIndexType"
               }
@@ -2454,13 +2511,13 @@
           "range": [
             {
               "range_label": "WaterObjectType",
-              "range_uri": "http://fixme.com#WaterObjectType"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#WaterObjectType",
-              "range_puri": "http://fixme.com#WaterObjectType",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
                 "nl": "WaterObjectType"
               }
@@ -2519,13 +2576,13 @@
           "range": [
             {
               "range_label": "WaterkwaliteitParameterType",
-              "range_uri": "http://fixme.com#WaterkwaliteitParameterType"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#WaterkwaliteitParameterType",
-              "range_puri": "http://fixme.com#WaterkwaliteitParameterType",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
                 "nl": "WaterkwaliteitParameterType"
               }
@@ -2815,23 +2872,8 @@
       "name": {
         "nl": "matrix"
       },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "usage": {},
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/waterkwaliteit#ontvanger",
-      "name": {
-        "nl": "ontvanger"
-      },
       "description": {
-        "nl": "Het object waarin de uitstoot van de Emissiebron terecht komt."
+        "nl": "De matrix (omgeving) waarin de emissie zich voordoet."
       },
       "domain": [
         null
@@ -2840,7 +2882,26 @@
         null
       ],
       "usage": {
-        "nl": "Bv in het geval van water, het kanaal waarin de uitstoot terecht komt. Of in het geval van lucht de Plaats waar de uitstoot plaatsvindt. Laat bv toe om naast Observaties mbt de uitstoot van een Emissiebron ook Observaties te doen over de impact van de Bro"
+        "nl": "Bv. Een schoorsteen die emissie uitstoot in de lucht, waarbij de lucht de matrix is."
+      },
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/waterkwaliteit#ontvanger",
+      "name": {
+        "nl": "ontvanger"
+      },
+      "description": {
+        "nl": "Het object waarin de emissie van de Emissiebron terecht komt."
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {
+        "nl": "Bv in het geval van water, het kanaal waarin de Emissie terecht komt. Of in het geval van lucht de Plaats waar de Emissie plaatsvindt. Laat bv toe om naast Observaties mbt de uitstoot van een Emissiebron ook Observaties te doen over de impact van de EmissieBron."
       },
       "parents": []
     },
@@ -2876,7 +2937,7 @@
         null
       ],
       "usage": {
-        "nl": "Bijvoorbeeld de emissie afvalwater die is uitgestoten door het emissiespunt (een buis) in een kanaal. "
+        "nl": "Bijvoorbeeld de emissie afvalwater die is uitgestoten door het emissiepunt (een buis) in een kanaal. "
       },
       "parents": []
     },
@@ -2896,6 +2957,25 @@
       ],
       "usage": {
         "nl": "Bv diegene die verantwoordelijk is voor het naleven van de Vergunning die van toepassing is op de Emissiebron."
+      },
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/waterkwaliteit#wettelijkkader",
+      "name": {
+        "nl": "wettelijkKader"
+      },
+      "description": {
+        "nl": "De wetgeving die van toepassing is op de Emissiebron."
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {
+        "nl": "Bv een bedrijf dat koelwater loost, valt onder rubriek 3.5 van BIJLAGE 1 van VLAREM II. "
       },
       "parents": []
     }

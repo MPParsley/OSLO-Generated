@@ -129,8 +129,8 @@
 
               <div class="head" role="metainfo" id="metainfo">
               <dl>
-              <dt>Brondata</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/tree/23e6aa438f6a34065eddedf516f84156cc90908a">https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/tree/23e6aa438f6a34065eddedf516f84156cc90908a</a></dd>
-              <dt>Changelog</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/blob/23e6aa438f6a34065eddedf516f84156cc90908a/CHANGELOG">https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/blob/23e6aa438f6a34065eddedf516f84156cc90908a/CHANGELOG</a></dd>
+              <dt>Brondata</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/tree/93eae640722fd08897708d05945ec9873964d29c">https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/tree/93eae640722fd08897708d05945ec9873964d29c</a></dd>
+              <dt>Changelog</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/blob/93eae640722fd08897708d05945ec9873964d29c/CHANGELOG">https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/blob/93eae640722fd08897708d05945ec9873964d29c/CHANGELOG</a></dd>
               <dt>Opmerkingen en feedback</dt><dd><a href="https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/issues">https://github.com/Informatievlaanderen/OSLOthema-Waterkwaliteit/issues</a></dd>
               <dt>Standaardenregister</dt><dd><a href="https://data.vlaanderen.be/standaarden/standaard-in-ontwikkeling/vocabularium-en-applicatieprofiel-oslo-waterkwaliteit.html">https://data.vlaanderen.be/standaarden/standaard-in-ontwikkeling/vocabularium-en-applicatieprofiel-oslo-waterkwaliteit.html</a></dd>
 
@@ -232,6 +232,7 @@
                       <a href="#RuimtelijkBemonsteringsobject">RuimtelijkBemonsteringsobject</a> |
                       <a href="#Sensor">Sensor</a> |
                       <a href="#Soort">Soort</a> |
+                      <a href="#StatistischeObservatie">StatistischeObservatie</a> |
                       <a href="#Systeem">Systeem</a> |
                       <a href="#WaterkwaliteitObservatieVerzameling">WaterkwaliteitObservatieVerzameling</a> |
                       <a href="#WaterkwaliteitParameterObservatie">WaterkwaliteitParameterObservatie</a> |
@@ -291,7 +292,7 @@
               <h3 class="h3" id="Agens"><a href="https://data.vlaanderen.be/ns/waterkwaliteit#Agens" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/waterkwaliteit#Agens" data-placement="right">Agens</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Beschrijving</dt><dd></dd>
+                    <dt>Beschrijving</dt><dd>TODO</dd>
                     
 		    
                     <dt>Eigenschappen</dt>
@@ -576,7 +577,7 @@
 		    <dt>Subklasse van <dt><dd>
                         <a href="#Observatie">Observatie</a>, 
                         <a href="#Meting">Meting</a>, 
-                        <a href="http://fixme.com#StatistischeObservatie">StatistischeObservatie</a>
+                        <a href="#StatistischeObservatie">StatistischeObservatie</a>
 		   </dd>
                     
                     <dt>Eigenschappen</dt>
@@ -889,6 +890,7 @@
                     <dd>Voor deze entiteit zijn de volgende eigenschappen gedefinieerd:
                       <a href="#Emissie%3Amatrix">matrix</a>, 
                       <a href="#Emissie%3Aperiode">periode</a>, 
+                      <a href="#Emissie%3Atype">type</a>, 
                       <a href="#Emissie%3AuitgestotenDoor">uitgestotenDoor</a>.</dd>
                     
                   </dl>
@@ -924,8 +926,8 @@
                           
                         </td>
                         <td>0..*</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="vann:usageNote"></td>
+                        <td property="rdfs:comment">De matrix (omgeving) waarin de emissie zich voordoet.</td>
+                        <td property="vann:usageNote">Bv. Een schoorsteen die emissie uitstoot in de lucht, waarbij de lucht de matrix is.</td>
                         <td></td>
                       </tr>
                     
@@ -949,6 +951,26 @@
                         <td></td>
                       </tr>
                     
+                      <tr id="Emissie%3Atype" typeof="rdfs:Property" resource="http://purl.org/dc/terms/type">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/type" data-toggle="tooltip" data-content="http://purl.org/dc/terms/type" data-placement="right">
+                            type</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#EmissieType" data-placement="right">EmissieType</a>
+			    
+                          
+                        </td>
+                        <td>0..*</td>
+                        <td property="rdfs:comment">De aard van de emissie.</td>
+                        <td property="vann:usageNote">TODO</td>
+                        <td></td>
+                      </tr>
+                    
                       <tr id="Emissie%3AuitgestotenDoor" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/waterkwaliteit#uitgestotenDoor">
                         <td>
                           <code property="rdfs:label">
@@ -965,7 +987,7 @@
                         </td>
                         <td>0..*</td>
                         <td property="rdfs:comment">Relateert de emissie aan de emissiebron waarvan deze afkomstig is. </td>
-                        <td property="vann:usageNote">Bijvoorbeeld de emissie afvalwater die is uitgestoten door het emissiespunt (een buis) in een kanaal. </td>
+                        <td property="vann:usageNote">Bijvoorbeeld de emissie afvalwater die is uitgestoten door het emissiepunt (een buis) in een kanaal. </td>
                         <td></td>
                       </tr>
                     
@@ -979,9 +1001,9 @@
               <h3 class="h3" id="Emissiebron"><a href="https://data.vlaanderen.be/ns/waterkwaliteit#Emissiebron" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/waterkwaliteit#Emissiebron" data-placement="right">Emissiebron</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Beschrijving</dt><dd>Oorsprong van een Emissie.</dd>
+                    <dt>Beschrijving</dt><dd>Oorsprong van een emissie.</dd>
                     
-                    <dt>Gebruik</dt><dd>Kan een inrichting zijn zoals een fabriek, installatie of schoorsteen maar ook een activiteit zoals bemesting. Typisch onderworpen aan milieuwetgeving en opgelijst als potentieel hinderlijk, zie bv IIOA&#39;s van VLAREM.</dd>
+                    <dt>Gebruik</dt><dd>Het kan een inrichting zijn zoals een fabriek, installatie of schoorsteen maar ook een activiteit zoals bemesting. Typisch onderworpen aan milieuwetgeving en opgelijst als potentieel hinderlijk, zie bv IIOA&#39;s van VLAREM.</dd>
                     
 		     
 		    <dt>Subklasse van <dt><dd>
@@ -1071,8 +1093,8 @@
                           
                         </td>
                         <td>0..*</td>
-                        <td property="rdfs:comment">Het object waarin de uitstoot van de Emissiebron terecht komt.</td>
-                        <td property="vann:usageNote">Bv in het geval van water, het kanaal waarin de uitstoot terecht komt. Of in het geval van lucht de Plaats waar de uitstoot plaatsvindt. Laat bv toe om naast Observaties mbt de uitstoot van een Emissiebron ook Observaties te doen over de impact van de Bro</td>
+                        <td property="rdfs:comment">Het object waarin de emissie van de Emissiebron terecht komt.</td>
+                        <td property="vann:usageNote">Bv in het geval van water, het kanaal waarin de Emissie terecht komt. Of in het geval van lucht de Plaats waar de Emissie plaatsvindt. Laat bv toe om naast Observaties mbt de uitstoot van een Emissiebron ook Observaties te doen over de impact van de EmissieBron.</td>
                         <td></td>
                       </tr>
                     
@@ -1092,7 +1114,7 @@
                         </td>
                         <td>1..*</td>
                         <td property="rdfs:comment">Aard van de Emissiebron.</td>
-                        <td property="vann:usageNote">Geeft het soort Emissiebron aan, dus het soort activiteit of inrichting. Dit kan bv in industriële context een pijp, schoorsteen, installatie of volledige fabriek zijn. Daarnaast kan het ook een type activiteit zijn, bv het strooien van meststoffen. </td>
+                        <td property="vann:usageNote">BV volgens de indeling van VLAREM (IIOA, IOA) of GPBV (Site, Faciliteit, Installatie, InstallatieOnderdeel). OPMERKING: Op te geven op het niveau waarop de Observatie plaatsvindt, bv voor de gehele Site terwijl de werkelijke uitstoot plaatsvindt op het niveau van een InstallatieOnderdeel, bv een bepaalde schoorsteen.</td>
                         <td></td>
                       </tr>
                     
@@ -1116,10 +1138,10 @@
                         <td></td>
                       </tr>
                     
-                      <tr id="Emissiebron%3AwettelijkKader" typeof="rdfs:Property" resource="https://fixme.com">
+                      <tr id="Emissiebron%3AwettelijkKader" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/waterkwaliteit#wettelijkkader">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://fixme.com" data-toggle="tooltip" data-content="https://fixme.com" data-placement="right">
+                            <a href="https://data.vlaanderen.be/ns/waterkwaliteit#wettelijkkader" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/waterkwaliteit#wettelijkkader" data-placement="right">
                             wettelijkKader</a>
                           </code>
                         </td>
@@ -1186,7 +1208,7 @@
 		    <dt>Subklasse van <dt><dd>
                         <a href="#Observatie">Observatie</a>, 
                         <a href="#Meting">Meting</a>, 
-                        <a href="http://fixme.com#StatistischeObservatie">StatistischeObservatie</a>
+                        <a href="#StatistischeObservatie">StatistischeObservatie</a>
 		   </dd>
                     
                     <dt>Eigenschappen</dt>
@@ -2171,7 +2193,23 @@
               <h3 class="h3" id="Soort"><a href="https://data.vlaanderen.be/ns/waterkwaliteit#Soort" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/waterkwaliteit#Soort" data-placement="right">Soort</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Beschrijving</dt><dd></dd>
+                    <dt>Beschrijving</dt><dd>TODO</dd>
+                    
+		    
+                    <dt>Eigenschappen</dt>
+		    
+                    <dd>Voor deze entiteit zijn geen eigenschappen gedefinieerd.</dd>
+                    
+                  </dl>
+                </div>
+		
+            </div>
+            
+              <div class="region region--no-space-top">
+              <h3 class="h3" id="StatistischeObservatie"><a href="https://fixme.com" data-toggle="tooltip" data-content="https://fixme.com" data-placement="right">StatistischeObservatie</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Beschrijving</dt><dd>TODO</dd>
                     
 		    
                     <dt>Eigenschappen</dt>

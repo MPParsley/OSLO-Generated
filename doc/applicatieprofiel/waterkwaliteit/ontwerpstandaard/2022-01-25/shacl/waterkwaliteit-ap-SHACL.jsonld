@@ -60,7 +60,7 @@
           "sh:path": "https://data.vlaanderen.be/ns/waterkwaliteit#chemischAgensVracht"
         },
         {
-          "sh:class": "http://fixme.com#ChemischAgensKenmerkType",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "Type van het geobserveerdKenmerk.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -77,6 +77,7 @@
       "sh:property": [
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "De matrix (omgeving) waarin de emissie zich voordoet.",
           "sh:name": "matrix",
           "sh:path": "https://data.vlaanderen.be/ns/waterkwaliteit#matrix"
         },
@@ -85,6 +86,12 @@
           "sh:description": "Periode waarin de Emissie plaatsvond.",
           "sh:name": "periode",
           "sh:path": "https://data.vlaanderen.be/ns/waterkwaliteit#periode"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "De aard van de emissie.",
+          "sh:name": "type",
+          "sh:path": "http://purl.org/dc/terms/type"
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/waterkwaliteit#Emissiebron",
@@ -114,7 +121,7 @@
         },
         {
           "sh:class": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
-          "sh:description": "Het object waarin de uitstoot van de Emissiebron terecht komt.",
+          "sh:description": "Het object waarin de emissie van de Emissiebron terecht komt.",
           "sh:name": "ontvanger",
           "sh:path": "https://data.vlaanderen.be/ns/waterkwaliteit#ontvanger"
         },
@@ -135,17 +142,10 @@
           "sh:class": "https://data.vlaanderen.be/ns/generiek#WettelijkKader",
           "sh:description": "De wetgeving die van toepassing is op de Emissiebron.",
           "sh:name": "wettelijkkader",
-          "sh:path": "https://fixme.com"
+          "sh:path": "https://data.vlaanderen.be/ns/waterkwaliteit#wettelijkkader"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/waterkwaliteit#Emissiebron"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#HydromorfologischIndexTypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/waterkwaliteit#HydromorfologischIndexType"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#HydromorfologischeIndexObservatieShape",
@@ -153,7 +153,7 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://data.vlaanderen.be/ns/waterkwaliteit#HydromorfologischIndexType",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "De observatie van de vormen in het landschap ontstaan door water.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -399,7 +399,7 @@
           "sh:path": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.resultTime"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatietype",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "TODO",
           "sh:name": "type",
           "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#type"
@@ -533,34 +533,6 @@
       "sh:targetClass": "http://fixme.com#Activiteit"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#BioIndicatorTypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#BioIndicatorType"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#BiotischeIndexTypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#BiotischeIndexType"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#ChemischAgensKenmerkTypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#ChemischAgensKenmerkType"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#WaterObjectTypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#WaterObjectType"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#WaterkwaliteitObservatieVerzamelingShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -599,13 +571,6 @@
       "sh:targetClass": "http://fixme.com#WaterkwaliteitObservatieVerzameling"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#WaterkwaliteitParameterTypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#WaterkwaliteitParameterType"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#GeobserveerdWeerShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -620,6 +585,55 @@
       "sh:targetClass": "http://purl.org/dc/terms/Agent"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#WaterkwaliteitParameterTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#ChemischAgensKenmerkTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#WaterObjectTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#BioIndicatorTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#BiotischeIndexTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#ObservatietypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#HydromorfologischIndexTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#EmissiebronTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -628,6 +642,13 @@
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#MatrixTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#EmissieTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
@@ -669,11 +690,11 @@
       "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#WettelijkKader"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#ObservatietypeShape",
+      "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#StatistischeObservatieShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatietype"
+      "sh:targetClass": "https://fixme.com"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/waterkwaliteit-ap#BioIndicatorObservatieShape",
@@ -689,7 +710,7 @@
           "sh:path": "https://purl.eu/ns/air-and-water/water-quality#BioIndicatorObservation.bioIndicator"
         },
         {
-          "sh:class": "http://fixme.com#BioIndicatorType",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "Type van het geobserveerdKenmerk.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -719,7 +740,7 @@
           "sh:path": "https://purl.eu/ns/air-and-water/water-quality#BioticIndexObservation.bioticIndex"
         },
         {
-          "sh:class": "http://fixme.com#BiotischeIndexType",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "Type van het geobserveerdKenmerk.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -764,7 +785,7 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "http://fixme.com#WaterObjectType",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "Type van waterObject.",
           "sh:maxCount": "1",
           "sh:name": "type",
@@ -779,7 +800,7 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "http://fixme.com#WaterkwaliteitParameterType",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "Type van het geobserveerdKenmerk.",
           "sh:maxCount": "1",
           "sh:minCount": "1",

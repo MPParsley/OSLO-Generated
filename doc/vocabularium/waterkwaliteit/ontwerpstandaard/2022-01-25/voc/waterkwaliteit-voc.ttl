@@ -9,8 +9,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 skos:Concept a rdfs:Class;
-  rdfs:label "EmissiebronType"@nl,
-    "MatrixType"@nl .
+  rdfs:label "HydromorfologischIndexType"@nl,
+    "EmissiebronType"@nl,
+    "MatrixType"@nl,
+    "EmissieType"@nl .
 
 <https://data.vlaanderen.be/ns/waterkwaliteit#Meetnet> a owl:Class;
   rdfs:label "Meetnet"@nl;
@@ -49,8 +51,7 @@ skos:Concept a rdfs:Class;
   rdfs:domain <https://data.vlaanderen.be/ns/waterkwaliteit#ChemischAgensVrachtObservatie>,
     <https://data.vlaanderen.be/ns/waterkwaliteit#HydromorfologischeIndexObservatie>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/waterkwaliteit>;
-  rdfs:range <http://fixme.com#ChemischAgensKenmerkType>,
-    <https://data.vlaanderen.be/ns/waterkwaliteit#HydromorfologischIndexType> .
+  rdfs:range skos:Concept .
 
 <https://data.vlaanderen.be/ns/waterkwaliteit#hydromorfologischeIndex> a owl:ObjectProperty;
   rdfs:label "hydromorfologischeIndex"@nl;
@@ -76,14 +77,16 @@ skos:Concept a rdfs:Class;
 
 <https://data.vlaanderen.be/ns/waterkwaliteit#matrix> a owl:ObjectProperty;
   rdfs:label "matrix"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Bv. Een schoorsteen die emissie uitstoot in de lucht, waarbij de lucht de matrix is."@nl;
+  rdfs:comment "De matrix (omgeving) waarin de emissie zich voordoet."@nl;
   rdfs:domain <https://data.vlaanderen.be/ns/waterkwaliteit#Emissie>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/waterkwaliteit>;
   rdfs:range skos:Concept .
 
 <https://data.vlaanderen.be/ns/waterkwaliteit#ontvanger> a owl:ObjectProperty;
   rdfs:label "ontvanger"@nl;
-  <http://purl.org/vocab/vann/usageNote> "Bv in het geval van water, het kanaal waarin de uitstoot terecht komt. Of in het geval van lucht de Plaats waar de uitstoot plaatsvindt. Laat bv toe om naast Observaties mbt de uitstoot van een Emissiebron ook Observaties te doen over de impact van de Bro"@nl;
-  rdfs:comment "Het object waarin de uitstoot van de Emissiebron terecht komt."@nl;
+  <http://purl.org/vocab/vann/usageNote> "Bv in het geval van water, het kanaal waarin de Emissie terecht komt. Of in het geval van lucht de Plaats waar de Emissie plaatsvindt. Laat bv toe om naast Observaties mbt de uitstoot van een Emissiebron ook Observaties te doen over de impact van de EmissieBron."@nl;
+  rdfs:comment "Het object waarin de emissie van de Emissiebron terecht komt."@nl;
   rdfs:domain <https://data.vlaanderen.be/ns/waterkwaliteit#Emissiebron>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/waterkwaliteit>;
   rdfs:range <http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature> .
@@ -94,10 +97,6 @@ skos:Concept a rdfs:Class;
   rdfs:domain <https://data.vlaanderen.be/ns/waterkwaliteit#Emissie>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/waterkwaliteit>;
   rdfs:range <http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Period> .
-
-<https://data.vlaanderen.be/ns/waterkwaliteit#type> a rdf:Property;
-  rdfs:domain <https://data.vlaanderen.be/ns/waterkwaliteit#Emissie>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/waterkwaliteit> .
 
 <https://data.vlaanderen.be/ns/waterkwaliteit#uitgestotenDoor> a owl:ObjectProperty;
   rdfs:label "uitgestotenDoor"@nl;
@@ -114,6 +113,13 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/waterkwaliteit>;
   rdfs:range dc:Agent .
 
+<https://data.vlaanderen.be/ns/waterkwaliteit#wettelijkkader> a owl:ObjectProperty;
+  rdfs:label "wettelijkKader"@nl;
+  rdfs:comment "De wetgeving die van toepassing is op de Emissiebron."@nl;
+  rdfs:domain <https://data.vlaanderen.be/ns/waterkwaliteit#Emissiebron>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/waterkwaliteit>;
+  rdfs:range <https://data.vlaanderen.be/ns/generiek#WettelijkKader> .
+
 dc:type a rdf:Property;
   rdfs:label "type"@nl .
 
@@ -121,12 +127,6 @@ dc:type a rdf:Property;
   rdfs:label "Agens"@nl;
   rdfs:comment "TODO"@nl;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/waterkwaliteit> .
-
-<https://data.vlaanderen.be/ns/waterkwaliteit#HydromorfologischIndexType> a owl:Class;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/waterkwaliteit> .
-
-<https://fixme.com> a rdf:Property;
-  rdfs:label "wettelijkKader"@nl .
 
 <https://data.vlaanderen.be/ns/waterkwaliteit#HydromorfologischeIndexObservatie> a owl:Class;
   rdfs:label "HydromorfologischeIndexObservatie"@nl;
@@ -151,7 +151,7 @@ dc:type a rdf:Property;
 
 <https://data.vlaanderen.be/ns/waterkwaliteit#Emissiebron> a owl:Class;
   rdfs:label "Emissiebron"@nl;
-  rdfs:comment "Oorsprong van een Emissie."@nl;
+  rdfs:comment "Oorsprong van een emissie."@nl;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/waterkwaliteit>;
   rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature> .
 
@@ -177,8 +177,7 @@ dc:type a rdf:Property;
     foaf:name "Data Vlaanderen"
   ];
   rdfs:seeAlso skos:Concept,
-    dc:type,
-    <https://fixme.com>;
+    dc:type;
   <http://www.w3.org/2001/02pd/rec54#editor> [
     a foaf:Person;
     schema:affiliation [
