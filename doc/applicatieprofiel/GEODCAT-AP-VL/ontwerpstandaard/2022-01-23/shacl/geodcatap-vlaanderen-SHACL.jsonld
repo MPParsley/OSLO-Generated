@@ -747,13 +747,6 @@
           "sh:path": "http://www.w3.org/ns/dcat#keyword"
         },
         {
-          "sh:class": "http://purl.org/dc/terms/Agent",
-          "sh:description": "de agent die instaat voor de verdeling",
-          "sh:maxCount": "1",
-          "sh:name": "verdeler",
-          "sh:path": "http://data.europa.eu/930/distributor"
-        },
-        {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:description": "Een unieke aanduiding van een variant van de dataset door middel van een versienummer of -naam van de dataset.",
           "sh:maxCount": "1",
@@ -841,6 +834,13 @@
           "sh:path": "http://www.w3.org/ns/dcat#accessURL"
         },
         {
+          "sh:class": "http://purl.org/dc/terms/Agent",
+          "sh:description": "de agent die instaat voor de verdeling",
+          "sh:maxCount": "1",
+          "sh:name": "verdeler",
+          "sh:path": "http://data.europa.eu/930/distributor"
+        },
+        {
           "sh:class": "http://www.w3.org/ns/dcat#DataService",
           "sh:description": "Een dataservice die deze distributie aanbiedt.",
           "sh:maxCount": "n",
@@ -889,10 +889,47 @@
       "sh:targetClass": "http://www.w3.org/ns/dcat#Distribution"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#RelatieQualificatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/dcat#Resource",
+          "sh:description": "Referentie naar verbonden klasse.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "CatalogusResource",
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#RelatieQualificatie.catalogusResource.source"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/dcat#Resource",
+          "sh:description": "Referentie naar verbonden klasse.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "CatalogusResource",
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#RelatieQualificatie.catalogusResource.target"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "rol",
+          "sh:path": "http://www.w3.org/ns/dcat#hadRole"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/dcat#Relationship"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#CatalogusResourceShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/dcat#Resource",
+          "sh:maxCount": "n",
+          "sh:name": "relatie",
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
         {
           "qb:codeList": "https://metadata.vlaanderen.be/id/GDI-Vlaanderen-Trefwoorden/",
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -911,7 +948,7 @@
           "sh:path": "http://purl.org/dc/terms/publisher"
         }
       ],
-      "sh:targetClass": "http://www.w3.org/ns/dcat#Resource"
+      "sh:targetClass": "http://data.vlaanderen.be/ns/metadata-dcat#RelatieQualificatie.catalogusResource.target"
     }
   ]
 }
