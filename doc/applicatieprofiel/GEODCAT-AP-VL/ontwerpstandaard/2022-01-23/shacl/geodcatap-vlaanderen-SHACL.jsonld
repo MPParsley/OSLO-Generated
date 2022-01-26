@@ -34,20 +34,6 @@
   "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen",
   "shapes": [
     {
-      "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ContactinfoOSLOShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://data.vlaanderen.be/ns/metadata-dcat#ContactinfoOSLO"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ContactinfoVCardShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://data.vlaanderen.be/ns/metadata-dcat#ContactinfoVCard"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ResolutieShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -201,6 +187,75 @@
       "sh:targetClass": "http://purl.org/dc/terms/Standard"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ContactInfoShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "aanschrijfvorm",
+          "sh:path": "http://ww.w3.org/2006/vcard/ns#honorific-prefix"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Address",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "adres",
+          "sh:path": "http://www.w3.org/ns/locn#address"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "beschikbaarheid",
+          "sh:path": "http://schema.org/hoursAvailable"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "contactnaam",
+          "sh:path": "http://xmlns.com/foaf/0.1/name"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "email",
+          "sh:path": "http://schema.org/email"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "fax",
+          "sh:path": "http://schema.org/faxNumber"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "openingsuren",
+          "sh:path": "http://schema.org/openingHours"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "telefoon",
+          "sh:path": "http://schema.org/telephone"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "website",
+          "sh:path": "http://xmlns.com/foaf/0.1/page"
+        }
+      ],
+      "sh:targetClass": "http://schema.org/ContactPoint"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#Contactinfo Shape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -221,6 +276,50 @@
         }
       ],
       "sh:targetClass": "http://www.w3.org/2006/vcard/ns#Kind"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#IdentificatorShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/generiek#GestructureerdeIdentificator",
+          "sh:description": "Identificator vh object opgesplitst in zijn onderdelen.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "gestructureerdeIdentificator",
+          "sh:path": "http://data.vlaanderen.be/ns/generiek#gestructureerdeIdentificator"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "identificator",
+          "sh:path": "http://www.w3.org/2004/02/skos/core#notation"
+        },
+        {
+          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "toegekendDoor",
+          "sh:path": "http://purl.org/dc/terms/creator"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "toegekendDoorString",
+          "sh:path": "http://www.w3.org/ns/adms#schemaAgency"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "toegekendOp",
+          "sh:path": "http://purl.org/dc/terms/issued"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/adms#Identifier"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#CatalogusShape",
@@ -400,6 +499,7 @@
           "sh:path": "http://www.w3.org/ns/dcat#servesdataset"
         },
         {
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/dataserviceprotocol",
           "sh:class": "http://purl.org/dc/terms/Standard",
           "sh:description": "Een protocol waaraan de dataservice voldoet.",
           "sh:maxCount": "n",
@@ -531,6 +631,14 @@
           "sh:maxCount": "n",
           "sh:name": "servicetype",
           "sh:path": "https://data.vlaanderen.be/ns/metadata-dcat#servicecategorie"
+        },
+        {
+          "qb:codeList": "https://metadata.vlaanderen.be/id/GDI-Vlaanderen-Trefwoorden",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Een aanduiding van op welke basis de catalogusresource beschikbaar is.",
+          "sh:maxCount": "n",
+          "sh:name": "statuut",
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#statuut"
         },
         {
           "qb:codeList": "https://vocab.belgif.be/auth/datatheme",
@@ -730,6 +838,14 @@
           "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#status"
         },
         {
+          "qb:codeList": "https://metadata.vlaanderen.be/id/GDI-Vlaanderen-Trefwoorden",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Een aanduiding van op welke basis de catalogusresource beschikbaar is.",
+          "sh:maxCount": "n",
+          "sh:name": "statuut",
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#statuut"
+        },
+        {
           "qb:codeList": "https://vocab.belgif.be/auth/datatheme",
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "De hoofdcategorie waartoe de dataset behoort.",
@@ -807,6 +923,7 @@
         {
           "qb:codeList": "http://publications.europa.eu/resource/authority/file-type",
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Het bestandsformaat waarin de data wordt gedeeld.",
           "sh:maxCount": "1",
           "sh:name": "formaat",
           "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#formaat"
@@ -941,18 +1058,10 @@
       "sh:property": [
         {
           "sh:class": "http://www.w3.org/ns/dcat#Resource",
+          "sh:description": "TODO",
           "sh:maxCount": "n",
           "sh:name": "relatie",
           "sh:path": "http://purl.org/dc/terms/relation"
-        },
-        {
-          "qb:codeList": "https://metadata.vlaanderen.be/id/GDI-Vlaanderen-Trefwoorden",
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Een aanduiding van op welke basis de catalogusresource beschikbaar is.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "statuut",
-          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#statuut"
         },
         {
           "sh:class": "http://purl.org/dc/terms/Agent",
