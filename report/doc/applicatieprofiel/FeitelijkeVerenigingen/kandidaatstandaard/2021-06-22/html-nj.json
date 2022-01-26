@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
     "statuslabel": "Kandidaat Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/tree/f0e3d4f7d894e5cc1135f95ddc19041a0092f91a",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/blob/f0e3d4f7d894e5cc1135f95ddc19041a0092f91a/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/tree/02cc4ea0e96b19c8ee8b9a2a2db903a12c667c22",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/blob/02cc4ea0e96b19c8ee8b9a2a2db903a12c667c22/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/kandidaat-standaard/applicatieprofiel-feitelijke-verenigingen.html",
     "usesVocs": [],
@@ -504,11 +504,27 @@
           "name": "Vereniging",
           "label": "Vereniging",
           "package": "OSLO-FeitelijkeVerenigingen",
-          "uri": "to do",
+          "uri": " https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Vereniging",
           "scoped_uri": "#Vereniging"
         }
       ],
       "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#bankrekeningnummer",
+          "name": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+              "EA-Name": "FeitelijkeVereniging"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
         {
           "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftDeelVereniging",
           "name": {
@@ -535,6 +551,35 @@
               "range_puri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
               "range_label": {
                 "nl": "FeitelijkeVereniging"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVestiging",
+          "name": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+              "EA-Name": "FeitelijkeVereniging"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Vestiging",
+              "range_uri": "http://www.w3.org/ns/org#Site"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Vestiging",
+              "range_puri": "http://www.w3.org/ns/org#Site",
+              "range_label": {
+                "nl": "Vestiging"
               }
             }
           ],
@@ -1034,16 +1079,16 @@
           ],
           "range": [
             {
-              "range_label": "Rol",
-              "range_uri": "http://www.w3.org/ns/org#Role"
+              "range_label": "Roltype",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Rol",
-              "range_puri": "http://www.w3.org/ns/org#Role",
+              "range_uri": "#Roltype",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "nl": "Rol"
+                "nl": "Roltype"
               }
             }
           ],
@@ -1051,6 +1096,27 @@
           "codelist_uri": ""
         }
       ]
+    },
+    {
+      "uri": " https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Vereniging",
+      "name": {
+        "nl": "Vereniging"
+      },
+      "sort_nl": "Vereniging",
+      "description": {
+        "nl": "Een Organisatie die een belangeloos doel nastreeft."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "name": "Organisatie",
+          "label": "Organisatie",
+          "package": "OSLO-Organisatie",
+          "uri": "http://www.w3.org/ns/org#Organization",
+          "scoped_uri": "#Organisatie"
+        }
+      ],
+      "properties": []
     },
     {
       "uri": "http://data.europa.eu/m8g/CriterionRequirement",
@@ -2367,27 +2433,6 @@
           "codelist_uri": ""
         }
       ]
-    },
-    {
-      "uri": "to do",
-      "name": {
-        "nl": "Vereniging"
-      },
-      "sort_nl": "Vereniging",
-      "description": {
-        "nl": "TODO"
-      },
-      "usage": {},
-      "parents": [
-        {
-          "name": "Organisatie",
-          "label": "Organisatie",
-          "package": "OSLO-Organisatie",
-          "uri": "http://www.w3.org/ns/org#Organization",
-          "scoped_uri": "#Organisatie"
-        }
-      ],
-      "properties": []
     }
   ],
   "properties": [
@@ -2475,6 +2520,19 @@
       "name": {
         "nl": "heeftDeelVereniging"
       },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVestiging",
+      "name": {},
       "description": {},
       "domain": [
         null
