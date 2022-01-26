@@ -103,7 +103,7 @@ wordt.""";
   shacl:closed false;
   shacl:property [
     shacl:class dcat:Resource;
-    shacl:description "TODO";
+    shacl:description "een verband tussen twee resources.";
     shacl:maxCount "n"^^xsd:integer;
     shacl:name "relatie";
     shacl:path dc:relation
@@ -190,59 +190,6 @@ wordt.""";
 
 <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ContactInfoShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:property [
-    shacl:datatype rdf:langString;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "aanschrijfvorm";
-    shacl:path <http://ww.w3.org/2006/vcard/ns#honorific-prefix>
-  ], [
-    shacl:class <http://www.w3.org/ns/locn#Address>;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "adres";
-    shacl:path <http://www.w3.org/ns/locn#address>
-  ], [
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "beschikbaarheid";
-    shacl:path schema:hoursAvailable
-  ], [
-    shacl:datatype xsd:string;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "contactnaam";
-    shacl:path foaf:name
-  ], [
-    shacl:datatype xsd:string;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "email";
-    shacl:path schema:email
-  ], [
-    shacl:datatype xsd:string;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "fax";
-    shacl:path schema:faxNumber
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "openingsuren";
-    shacl:path schema:openingHours
-  ], [
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "telefoon";
-    shacl:path schema:telephone
-  ], [
-    shacl:datatype xsd:anyURI;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "website";
-    shacl:path foaf:page
-  ];
   shacl:targetClass schema:ContactPoint .
 
 <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#DataServiceShape> a shacl:NodeShape;
@@ -703,31 +650,26 @@ waaraan de distributie voldoet.""";
     shacl:class <http://data.vlaanderen.be/ns/generiek#GestructureerdeIdentificator>;
     shacl:description "Identificator vh object opgesplitst in zijn onderdelen.";
     shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "gestructureerdeIdentificator";
     shacl:path <http://data.vlaanderen.be/ns/generiek#gestructureerdeIdentificator>
   ], [
     shacl:datatype rdfs:Literal;
     shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "identificator";
     shacl:path skos:notation
   ], [
     shacl:class foaf:Agent;
     shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "toegekendDoor";
     shacl:path dc:creator
   ], [
     shacl:datatype xsd:string;
     shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "toegekendDoorString";
     shacl:path <http://www.w3.org/ns/adms#schemaAgency>
   ], [
     shacl:datatype xsd:dateTime;
     shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "toegekendOp";
     shacl:path dc:issued
   ];
@@ -897,16 +839,16 @@ standaard bekend is.""";
 
  [
     shacl:datatype xsd:anyURI;
-    shacl:description "Het e-mailadres waarmee een gebruiker contact kan opnemen voor informatie.";
-    shacl:maxCount 1;
-    shacl:name "e-mail";
-    shacl:path vcard:hasEmail
-  ] .
-
- [
-    shacl:datatype xsd:anyURI;
     shacl:description "Een webpagina die ofwel toelaat om contact op te nemen (via b.v. een webformulier) of die informatie bevat hoe men contact kan opnemen.";
     shacl:maxCount 1;
     shacl:name "contactpagina";
     shacl:path foaf:page
+  ] .
+
+ [
+    shacl:datatype xsd:anyURI;
+    shacl:description "Het e-mailadres waarmee een gebruiker contact kan opnemen voor informatie.";
+    shacl:maxCount 1;
+    shacl:name "e-mail";
+    shacl:path vcard:hasEmail
   ] .
