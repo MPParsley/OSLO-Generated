@@ -47,8 +47,8 @@
   "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
   "namespace": null,
   "navigation": {},
-  "publication-date": "2021-09-17",
-  "publication-state": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
+  "publication-date": "2022-01-23",
+  "publication-state": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
   "title": "GEODCAT-AP Vlaanderen",
   "dcterms:license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
   "dcterms:mediator": {
@@ -56,8 +56,177 @@
     "foaf:mbox": "mailto:oslo@kb.vlaanderen.be",
     "foaf:name": "Data Vlaanderen"
   },
-  "classes": [],
+  "classes": [
+    {
+      "@id": "http://data.vlaanderen.be/ns/metadata-dcat#ContactinfoOSLO",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {},
+      "name": {
+        "nl": "Contactinfo volgens OSLO"
+      },
+      "parents": [
+        "http://www.w3.org/2006/vcard/ns#Kind"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "http://data.vlaanderen.be/ns/metadata-dcat#ContactinfoVCard",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {},
+      "name": {
+        "nl": "Contactinfo volgens VCard"
+      },
+      "parents": [
+        "http://www.w3.org/2006/vcard/ns#Kind"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "http://data.vlaanderen.be/ns/metadata-dcat#Resolutie",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "De maat van detail waaronder data is bewaard."
+      },
+      "name": {
+        "nl": "Resolutie"
+      },
+      "parents": [],
+      "usage": {}
+    }
+  ],
   "properties": [
+    {
+      "@id": "http://data.vlaanderen.be/ns/metadata-dcat#GEMETconcept",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "De rubriek waartoe de\ndataset behoort volgens de\nGEMET thesaurus."
+      },
+      "domain": [
+        "http://www.w3.org/ns/dcat#Dataset"
+      ],
+      "generalization": [
+        "http://purl.org/dc/terms/subject"
+      ],
+      "name": {
+        "nl": "GEMET concept"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "http://data.vlaanderen.be/ns/metadata-dcat#INSPIREthema",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "De rubriek waartoe de\ndataset behoort volgens de\nINSPIRE thema's"
+      },
+      "domain": [
+        "http://www.w3.org/ns/dcat#Dataset"
+      ],
+      "generalization": [
+        "http://purl.org/dc/terms/subject"
+      ],
+      "name": {
+        "nl": "INSPIRE thema"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "http://data.vlaanderen.be/ns/metadata-dcat#ISOcategorie",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "De rubriek waartoe de\ndataset behoort volgens de\nafspraken in de ISO-\nstandaard voor\ngeografische metadata"
+      },
+      "domain": [
+        "http://www.w3.org/ns/dcat#Dataset"
+      ],
+      "generalization": [
+        "http://purl.org/dc/terms/subject"
+      ],
+      "name": {
+        "nl": "ISO categorie"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "http://data.vlaanderen.be/ns/metadata-dcat#RelatieQualificatie.catalogusResource.source",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Referentie naar verbonden klasse."
+      },
+      "domain": [
+        "http://www.w3.org/ns/dcat#Relationship"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "catalogus Resource (source)"
+      },
+      "range": [
+        "http://www.w3.org/ns/dcat#Resource"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "http://data.vlaanderen.be/ns/metadata-dcat#RelatieQualificatie.catalogusResource.target",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Referentie naar verbonden klasse."
+      },
+      "domain": [
+        "http://www.w3.org/ns/dcat#Relationship"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "catalogus Resource (target)"
+      },
+      "range": [
+        "http://www.w3.org/ns/dcat#Resource"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "http://data.vlaanderen.be/ns/metadata-dcat#formaat",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {},
+      "domain": [
+        "http://www.w3.org/ns/dcat#Distribution"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "formaat"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "http://data.vlaanderen.be/ns/metadata-dcat#heeftVoorbeeldweergave",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Een verkleinde weergave van een afbeeldingsbestand."
+      },
+      "domain": [
+        "http://www.w3.org/ns/dcat#Dataset"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "heeft voorbeeldweergave"
+      },
+      "range": [
+        "http://www.w3.org/ns/dcat#Distribution"
+      ],
+      "usage": {
+        "nl": "Een voorbeeldweergave of thumbnail heeft als doel de vindbaarheid van de dataset te verhogen. Het is geen accurate weergave van de data die de dataset bevat."
+      }
+    },
     {
       "@id": "http://data.vlaanderen.be/ns/metadata-dcat#landingspaginaVoorAuthenticatie",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
@@ -163,6 +332,48 @@
       "usage": {
         "nl": "Op verschillende momenten tijdens de ontwikkeling van een data service wordt de data service geëvalueerd."
       }
+    },
+    {
+      "@id": "http://data.vlaanderen.be/ns/metadata-dcat#status",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "De progressie in het samenstellen van de dataset"
+      },
+      "domain": [
+        "http://www.w3.org/ns/dcat#Dataset"
+      ],
+      "generalization": [
+        "http://www.w3.org/ns/adms#status"
+      ],
+      "name": {
+        "nl": "status"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "http://data.vlaanderen.be/ns/metadata-dcat#statuut",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Een aanduiding van op welke basis de catalogusresource beschikbaar is."
+      },
+      "domain": [
+        "http://www.w3.org/ns/dcat#Resource"
+      ],
+      "generalization": [
+        "http://purl.org/dc/terms/subject"
+      ],
+      "name": {
+        "nl": "statuut"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {
+        "nl": "TODO"
+      }
     }
   ],
   "externals": [
@@ -171,6 +382,20 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "Licentie Document"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/Location",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Plaats"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/ProvenanceStatement",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Lineage Uitdrukking"
       }
     },
     {
@@ -230,6 +455,20 @@
       }
     },
     {
+      "@id": "http://www.w3.org/ns/dcat#Distribution",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Voorbeeldweergave"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/dcat#Relationship",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Relatie Qualificatie"
+      }
+    },
+    {
       "@id": "http://www.w3.org/ns/dcat#Resource",
       "@type": "rdfs:Class",
       "name": {
@@ -256,6 +495,13 @@
       "@id": "http://purl.org/dc/terms/conformsTo",
       "@type": "rdf:Property",
       "name": {
+        "nl": "conform"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/conformsTo",
+      "@type": "rdf:Property",
+      "name": {
         "nl": "conform aan protocol"
       }
     },
@@ -264,6 +510,41 @@
       "@type": "rdf:Property",
       "name": {
         "nl": "conform"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/conformsTo",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "conform"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/created",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "creatiedatum"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/created",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "creatiedatum"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "beschrijving"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "beschrijving"
       }
     },
     {
@@ -330,6 +611,27 @@
       }
     },
     {
+      "@id": "http://purl.org/dc/terms/issued",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "publicatiedatum"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/issued",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "publicatiedatum"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/issued",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "publicatiedatum"
+      }
+    },
+    {
       "@id": "http://purl.org/dc/terms/license",
       "@type": "rdf:Property",
       "name": {
@@ -358,10 +660,31 @@
       }
     },
     {
-      "@id": "http://purl.org/dc/terms/rights",
+      "@id": "http://purl.org/dc/terms/modified",
       "@type": "rdf:Property",
       "name": {
-        "nl": "rechten"
+        "nl": "wijzigingsdatum"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/modified",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "wijzigingsdatum"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/provenance",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "ontstaansgeschiedenis"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/relation",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "relatie"
       }
     },
     {
@@ -372,10 +695,31 @@
       }
     },
     {
-      "@id": "http://purl.org/dc/terms/title",
+      "@id": "http://purl.org/dc/terms/rights",
       "@type": "rdf:Property",
       "name": {
-        "nl": "titel"
+        "nl": "rechten"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/source",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "bron metadatarecord"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/spatial",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "geografische dekking"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/spatial",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "geografische dekking"
       }
     },
     {
@@ -404,6 +748,48 @@
       "@type": "rdf:Property",
       "name": {
         "nl": "titel"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "titel"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "titel"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "titel"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/type",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "type"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "plaatsnaam"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "specificatie URL"
       }
     },
     {
@@ -418,6 +804,20 @@
       "@type": "rdf:Property",
       "name": {
         "nl": "versie"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2002/07/owl#versionInfo",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "versie"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "voorkeurslabel"
       }
     },
     {
@@ -463,6 +863,13 @@
       }
     },
     {
+      "@id": "http://www.w3.org/ns/adms#representionTechnique",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "ruimtelijke voorstellingswijze"
+      }
+    },
+    {
       "@id": "http://www.w3.org/ns/dcat#accessService",
       "@type": "rdf:Property",
       "name": {
@@ -474,6 +881,20 @@
       "@type": "rdf:Property",
       "name": {
         "nl": "toegangsURL"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/dcat#bbox",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "bounding box"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/dcat#centroid",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "centroïde"
       }
     },
     {
@@ -519,6 +940,13 @@
       }
     },
     {
+      "@id": "http://www.w3.org/ns/dcat#downloadURL",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "downloadURL"
+      }
+    },
+    {
       "@id": "http://www.w3.org/ns/dcat#endpointDescription",
       "@type": "rdf:Property",
       "name": {
@@ -533,6 +961,13 @@
       }
     },
     {
+      "@id": "http://www.w3.org/ns/dcat#hadRole",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "rol"
+      }
+    },
+    {
       "@id": "http://www.w3.org/ns/dcat#keyword",
       "@type": "rdf:Property",
       "name": {
@@ -558,6 +993,13 @@
       "@type": "rdf:Property",
       "name": {
         "nl": "landingspagina"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/dcat#mediatype",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "mediatype"
       }
     },
     {
@@ -596,6 +1038,34 @@
       }
     },
     {
+      "@id": "http://www.w3.org/ns/dqv#hasQualityMeasurement",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "ruimtelijke resolutie"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/dqv#isMeasurementOf",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "resolutie methode"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/dqv#value",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "waarde"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/locn#geometry",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "geometrie"
+      }
+    },
+    {
       "@id": "http://xmlns.com/foaf/0.1/page",
       "@type": "rdf:Property",
       "name": {
@@ -607,6 +1077,20 @@
       "@type": "rdf:Property",
       "name": {
         "nl": "hoofdonderwerp"
+      }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/metadata-dcat#servicecategorie",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "service type"
+      }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/metadata-dcat#servicetype",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "service categorie"
       }
     }
   ],

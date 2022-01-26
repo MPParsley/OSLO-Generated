@@ -34,6 +34,43 @@
   "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen",
   "shapes": [
     {
+      "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ContactinfoOSLOShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://data.vlaanderen.be/ns/metadata-dcat#ContactinfoOSLO"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ContactinfoVCardShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://data.vlaanderen.be/ns/metadata-dcat#ContactinfoVCard"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ResolutieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "De schaal of eenheid waaronder de waarde moet worden geïntepreteerd.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "resolutiemethode",
+          "sh:path": "http://www.w3.org/ns/dqv#isMeasurementOf"
+        },
+        {
+          "sh:description": "De waarde van resolutie gemeten volgens de bijhorende methode.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "waarde",
+          "sh:path": "http://www.w3.org/ns/dqv#value"
+        }
+      ],
+      "sh:targetClass": "http://data.vlaanderen.be/ns/metadata-dcat#Resolutie"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#AgentShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -57,6 +94,49 @@
       "sh:targetClass": "http://purl.org/dc/terms/LicenseDocument"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#PlaatsShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:description": "het geografische middelpunt van een plaats",
+          "sh:maxCount": "n",
+          "sh:name": "Centroid",
+          "sh:path": "http://www.w3.org/ns/dcat#centroid"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:description": "de afgrenzing van een plaats als een geografische rechthoek",
+          "sh:maxCount": "n",
+          "sh:name": "boundingBox",
+          "sh:path": "http://www.w3.org/ns/dcat#bbox"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:description": "de geografische beschrijving van een plaats",
+          "sh:maxCount": "n",
+          "sh:name": "geometrie",
+          "sh:path": "http://www.w3.org/ns/locn#geometry"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "een eenduidige, beknopte beschrijving die de plaats benoemt.",
+          "sh:maxCount": "n",
+          "sh:name": "plaatsnaam",
+          "sh:path": "http://www.w3.org/2000/01/rdf-schema#label"
+        }
+      ],
+      "sh:targetClass": "http://purl.org/dc/terms/Location"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#HerkomstVerklaringShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://purl.org/dc/terms/ProvenanceStatement"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#JuridischeBepalingShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -67,7 +147,57 @@
       "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#StandaardShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Een bondige tekstuele omschrijving van de\nstandaard",
+          "sh:maxCount": "1",
+          "sh:name": "beschrijving",
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "De datum waarop de standaard werd\ngepubliceerd",
+          "sh:maxCount": "1",
+          "sh:name": "publicatiedatum",
+          "sh:path": "http://purl.org/dc/terms/issued"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:description": "Een URL waarop men de specificatie kan\nvinden",
+          "sh:maxCount": "1",
+          "sh:name": "specificatieURL",
+          "sh:path": "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "naam van de standaard",
+          "sh:maxCount": "1",
+          "sh:name": "titel",
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Een categorisatie van de standaard",
+          "sh:maxCount": "n",
+          "sh:name": "type",
+          "sh:path": "http://purl.org/dc/terms/type"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "De versie van de standaard",
+          "sh:maxCount": "1",
+          "sh:name": "versie",
+          "sh:path": "http://www.w3.org/2002/07/owl#versionInfo"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Een afkorting, of notatie waaronder de\nstandaard bekend is.",
+          "sh:maxCount": "1",
+          "sh:name": "voorkeurslabel",
+          "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
+        }
+      ],
       "sh:targetClass": "http://purl.org/dc/terms/Standard"
     },
     {
@@ -123,12 +253,14 @@
         {
           "sh:class": "http://www.w3.org/ns/dcat#DataService",
           "sh:description": "Een dataservice die deel uitmaakt van de catalogus.",
+          "sh:maxCount": "n",
           "sh:name": "heeftDataService",
           "sh:path": "http://www.w3.org/ns/dcat#service"
         },
         {
           "sh:class": "http://www.w3.org/ns/dcat#Dataset",
           "sh:description": "Een dataset die deel uitmaakt van de catalogus.",
+          "sh:maxCount": "n",
           "sh:name": "heeftDataset",
           "sh:path": "http://www.w3.org/ns/dcat#dataset"
         },
@@ -144,12 +276,14 @@
           "sh:class": "http://purl.org/dc/terms/LicenseDocument",
           "sh:description": "De licentie van de catalogus.",
           "sh:maxCount": "1",
+          "sh:minCount": "1",
           "sh:name": "licentie",
           "sh:path": "http://purl.org/dc/terms/license"
         },
         {
           "sh:class": "http://www.w3.org/ns/dcat#CatalogRecord",
           "sh:description": "Een record beschrijft de registratie van één enkele dataset of dataservice die onderdeel is van de catalogus.",
+          "sh:maxCount": "n",
           "sh:name": "record",
           "sh:path": "http://www.w3.org/ns/dcat#record"
         },
@@ -190,6 +324,20 @@
           "sh:maxCount": "n",
           "sh:name": "alternatieve identificator",
           "sh:path": "http://www.w3.org/ns/adms#identifier"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:description": "De record in een andere catalogus waarvan deze record en de beschrijvingen van het bijhorende hoofdonderwerp van afgeleid zijn.",
+          "sh:maxCount": "1",
+          "sh:name": "bron metadata record",
+          "sh:path": "http://purl.org/dc/terms/source"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Standard",
+          "sh:description": "De (metadata) standaard volgens welke\nregels het hoofdonderwerp waarnaar de\nCatalogus Record verwijst, beschreven\nwordt.",
+          "sh:maxCount": "n",
+          "sh:name": "conform",
+          "sh:path": "http://purl.org/dc/terms/conformsTo"
         },
         {
           "sh:class": "http://www.w3.org/ns/dcat#Resource",
@@ -247,6 +395,7 @@
         {
           "sh:class": "http://www.w3.org/ns/dcat#Dataset",
           "sh:description": "De data die via deze dataservice worden aangeboden.",
+          "sh:maxCount": "n",
           "sh:name": "biedtInformatieAanOver",
           "sh:path": "http://www.w3.org/ns/dcat#servesdataset"
         },
@@ -266,6 +415,13 @@
           "sh:path": "http://www.w3.org/ns/dcat#contactPoint"
         },
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Het tijdsmoment waarop de dataservice voor het eerst werd geactiveerd.",
+          "sh:maxCount": "1",
+          "sh:name": "creatiedatum",
+          "sh:path": "http://purl.org/dc/terms/created"
+        },
+        {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
           "sh:description": "De rootlocatie of het primaire endpoint van de dienst (een web-resolvable URI).",
           "sh:maxCount": "1",
@@ -279,6 +435,13 @@
           "sh:minCount": "1",
           "sh:name": "endpointbeschrijving",
           "sh:path": "http://www.w3.org/ns/dcat#endpointDescription"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Location",
+          "sh:description": "Het geografische gebied waarvoor deze dataservice van toepassing is.",
+          "sh:maxCount": "n",
+          "sh:name": "geografischeDekking",
+          "sh:path": "http://purl.org/dc/terms/spatial"
         },
         {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
@@ -317,7 +480,7 @@
           "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#landingspaginaVoorStatusinformatie"
         },
         {
-          "qb:codeList": "https://github.com/Informatievlaanderen/OSLOthema-metadataVoorServices/raw/master/codelijsten/levensfase.ttl",
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/ontwikkelingstoestand",
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "De levensfase waarin de dataservice zich bevindt.",
           "sh:maxCount": "1",
@@ -332,7 +495,7 @@
           "sh:path": "http://purl.org/dc/terms/license"
         },
         {
-          "qb:codeList": "https://github.com/Informatievlaanderen/OSLOthema-metadataVoorServices/raw/master/codelijsten/ontwikkelingstoestand.ttl",
+          "qb:codeList": "https://data.vlaanderen.be/id/conceptscheme/ontwikkelingstoestand",
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "De ontwikkelingstoestand waarin de dataservice is gedeployed.",
           "sh:maxCount": "1",
@@ -340,11 +503,34 @@
           "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#ontwikkelingstoestand"
         },
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Het tijdsmoment waarop de service werd gepubliceerd door de uitgever.",
+          "sh:maxCount": "1",
+          "sh:name": "publicatiedatum",
+          "sh:path": "http://purl.org/dc/terms/issued"
+        },
+        {
           "sh:class": "http://purl.org/dc/terms/RightsStatement",
           "sh:description": "Bepalingen van juridische aard die gelden op de dataservice.",
           "sh:maxCount": "n",
           "sh:name": "rechten",
           "sh:path": "http://purl.org/dc/terms/rights"
+        },
+        {
+          "qb:codeList": "https://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceCategory",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "De categorie waartoe de\ndataservice behoort",
+          "sh:maxCount": "n",
+          "sh:name": "servicecategorie",
+          "sh:path": "https://data.vlaanderen.be/ns/metadata-dcat#servicetype"
+        },
+        {
+          "qb:codeList": "https://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Het type waartoe de\ndataservice behoort",
+          "sh:maxCount": "n",
+          "sh:name": "servicetype",
+          "sh:path": "https://data.vlaanderen.be/ns/metadata-dcat#servicecategorie"
         },
         {
           "qb:codeList": "https://vocab.belgif.be/auth/datatheme",
@@ -384,6 +570,13 @@
           "sh:maxCount": "1",
           "sh:name": "versie",
           "sh:path": "http://www.w3.org/2002/07/owl#versionInfo"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Het tijdsmoment waarop de dataservice werd gewijzigd",
+          "sh:maxCount": "1",
+          "sh:name": "wijzigingsdatum",
+          "sh:path": "http://purl.org/dc/terms/modified"
         }
       ],
       "sh:targetClass": "http://www.w3.org/ns/dcat#DataService"
@@ -393,6 +586,30 @@
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
+        {
+          "qb:codeList": "http://www.eionet.europa.eu/gemet",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "De rubriek waartoe de\ndataset behoort volgens de\nGEMET thesaurus.",
+          "sh:maxCount": "n",
+          "sh:name": "GEMETconcept",
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#GEMETconcept"
+        },
+        {
+          "qb:codeList": "https://inspire.ec.europa.eu/themery",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "De rubriek waartoe de\ndataset behoort volgens de\nINSPIRE thema's",
+          "sh:maxCount": "n",
+          "sh:name": "INSPIREthema",
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#INSPIREthema"
+        },
+        {
+          "qb:codeList": "https://inspire.ec.europa.eu/metadata-codelist/TopicCategory",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "De rubriek waartoe de\ndataset behoort volgens de\nafspraken in de ISO-\nstandaard voor\ngeografische metadata",
+          "sh:maxCount": "n",
+          "sh:name": "ISOcategorie",
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#ISOcategorie"
+        },
         {
           "sh:class": "http://www.w3.org/ns/adms#Identifier",
           "sh:description": "Een alternatieve identificator (dan de unieke identificator) voor een dataset kan hier beschreven worden.",
@@ -410,7 +627,7 @@
         },
         {
           "sh:class": "http://purl.org/dc/terms/Standard",
-          "sh:description": "Een standaard, schema, applicatieprofiel, vocabularium waaraan de dataset voldoet.",
+          "sh:description": "Een standaard, schema, applicatieprofiel, vocabularium, CRS, ... waaraan de dataset voldoet.",
           "sh:maxCount": "n",
           "sh:name": "conform",
           "sh:path": "http://purl.org/dc/terms/conformsTo"
@@ -424,13 +641,51 @@
           "sh:path": "http://www.w3.org/ns/dcat#contactPoint"
         },
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Het tijdsmoment waarop de dataset ontstaan is.",
+          "sh:maxCount": "1",
+          "sh:name": "creatiedatum",
+          "sh:path": "http://purl.org/dc/terms/created"
+        },
+        {
           "sh:class": "http://www.w3.org/ns/dcat#Distribution",
           "sh:description": "Een beschikbare distributie van de dataset.",
+          "sh:maxCount": "n",
           "sh:name": "distributie",
           "sh:path": "http://www.w3.org/ns/dcat#distribution"
         },
         {
-          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:class": "http://purl.org/dc/terms/Agent",
+          "sh:description": "de agent die de eigendomsrechten heeft",
+          "sh:maxCount": "n",
+          "sh:name": "eigenaar",
+          "sh:path": "http://purl.org/dc/terms/rightsHolder"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Location",
+          "sh:description": "Het geografische gebied waarover de dataset informatie heeft.",
+          "sh:maxCount": "n",
+          "sh:minCount": "1",
+          "sh:name": "geografischeDekking",
+          "sh:path": "http://purl.org/dc/terms/spatial"
+        },
+        {
+          "qb:codeList": "http://www.w3.org/ns/adms#sample",
+          "sh:class": "http://www.w3.org/ns/dcat#Distribution",
+          "sh:description": "Een verkleinde weergave van een afbeeldingsbestand.",
+          "sh:maxCount": "n",
+          "sh:name": "heeftVoorbeeldweergave",
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#heeftVoorbeeldweergave"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/ProvenanceStatement",
+          "sh:description": "De ontstaansgeschiedenis van een dataset.",
+          "sh:maxCount": "n",
+          "sh:name": "herkomst",
+          "sh:path": "http://purl.org/dc/terms/provenance"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:description": "De unieke identificator van de dataset.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -443,6 +698,36 @@
           "sh:maxCount": "n",
           "sh:name": "landingspagina",
           "sh:path": "http://www.w3.org/ns/dcat#landingPage"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Het tijdsmoment waarop de dataset werd gepubliceerd door de uitgever.",
+          "sh:maxCount": "1",
+          "sh:name": "publicatiedatum",
+          "sh:path": "http://purl.org/dc/terms/issued"
+        },
+        {
+          "qb:codeList": "https://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationType",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Het primaire ruimtelijke voorstellingstype waarin de data in de dataset wordt beheerd.",
+          "sh:maxCount": "1",
+          "sh:name": "ruimtelijkVoorstellingsType",
+          "sh:path": "http://www.w3.org/ns/adms#representionTechnique"
+        },
+        {
+          "sh:class": "http://data.vlaanderen.be/ns/metadata-dcat#Resolutie",
+          "sh:description": "Het detailniveau van de dataset",
+          "sh:maxCount": "1",
+          "sh:name": "ruimtelijkeResolutie",
+          "sh:path": "http://www.w3.org/ns/dqv#hasQualityMeasurement"
+        },
+        {
+          "qb:codeList": "https://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "De progressie in het samenstellen van de dataset",
+          "sh:maxCount": "1",
+          "sh:name": "status",
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#status"
         },
         {
           "qb:codeList": "https://vocab.belgif.be/auth/datatheme",
@@ -461,7 +746,7 @@
           "sh:path": "http://purl.org/dc/terms/title"
         },
         {
-          "qb:codeList": "https://publications.europa.eu/en/web/eu-vocabularies/at-dataset/-/resource/dataset/access-right",
+          "qb:codeList": "http://publications.europa.eu/resource/authority/access-right",
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "De toegankelijkheid voor de dataset.",
           "sh:maxCount": "1",
@@ -482,6 +767,13 @@
           "sh:maxCount": "1",
           "sh:name": "versie",
           "sh:path": "http://www.w3.org/2002/07/owl#versionInfo"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Het tijdsmoment waarop de dataset werd geactualiseerd",
+          "sh:maxCount": "1",
+          "sh:name": "wijzigingdatum",
+          "sh:path": "http://purl.org/dc/terms/modified"
         }
       ],
       "sh:targetClass": "http://www.w3.org/ns/dcat#Dataset"
@@ -499,11 +791,25 @@
           "sh:path": "http://www.w3.org/ns/adms#identifier"
         },
         {
+          "sh:class": "http://purl.org/dc/terms/Standard",
+          "sh:description": "Een standaard, schema, implementatie-\nmodel, applicatieprofiel, vocabularium\nwaaraan de distributie voldoet.",
+          "sh:maxCount": "n",
+          "sh:name": "conform",
+          "sh:path": "http://purl.org/dc/terms/conformsTo"
+        },
+        {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
           "sh:description": "De URL waar de data gedownload kan worden.",
           "sh:maxCount": "1",
           "sh:name": "downloadURL",
           "sh:path": "http://www.w3.org/ns/dcat#downloadURL"
+        },
+        {
+          "qb:codeList": "http://publications.europa.eu/resource/authority/file-type",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:maxCount": "1",
+          "sh:name": "formaat",
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#formaat"
         },
         {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
@@ -543,8 +849,16 @@
           "sh:path": "http://www.w3.org/ns/dcat#accessURL"
         },
         {
+          "sh:class": "http://purl.org/dc/terms/Agent",
+          "sh:description": "de agent die instaat voor de verdeling",
+          "sh:maxCount": "1",
+          "sh:name": "verdeler",
+          "sh:path": "http://data.europa.eu/930/distributor"
+        },
+        {
           "sh:class": "http://www.w3.org/ns/dcat#DataService",
           "sh:description": "Een dataservice die deze distributie aanbiedt.",
+          "sh:maxCount": "n",
           "sh:name": "wordtAangebodenDoor",
           "sh:path": "http://www.w3.org/ns/dcat#accessService"
         }
@@ -552,10 +866,94 @@
       "sh:targetClass": "http://www.w3.org/ns/dcat#Distribution"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#VoorbeeldWeergaveShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Een bondige tekstuele omschrijving van de afbeelding",
+          "sh:maxCount": "1",
+          "sh:name": "beschrijving",
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:description": "De URL waar de afbeelding gedownload kan worden.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "downloadURL",
+          "sh:path": "http://www.w3.org/ns/dcat#downloadURL"
+        },
+        {
+          "qb:codeList": "https://www.iana.org/assignments/media-types/media-types.xhtml",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Het voorstellingsvorm van de afbeelding",
+          "sh:maxCount": "1",
+          "sh:name": "mediatype",
+          "sh:path": "http://www.w3.org/ns/dcat#mediatype"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "naam van de afbeelding",
+          "sh:maxCount": "1",
+          "sh:name": "titel",
+          "sh:path": "http://purl.org/dc/terms/title"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/dcat#Distribution"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#RelatieQualificatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/dcat#Resource",
+          "sh:description": "Referentie naar verbonden klasse.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "CatalogusResource",
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#RelatieQualificatie.catalogusResource.source"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/dcat#Resource",
+          "sh:description": "Referentie naar verbonden klasse.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "CatalogusResource",
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#RelatieQualificatie.catalogusResource.target"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "rol",
+          "sh:path": "http://www.w3.org/ns/dcat#hadRole"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/dcat#Relationship"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#CatalogusResourceShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/dcat#Resource",
+          "sh:maxCount": "n",
+          "sh:name": "relatie",
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "qb:codeList": "https://metadata.vlaanderen.be/id/GDI-Vlaanderen-Trefwoorden",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Een aanduiding van op welke basis de catalogusresource beschikbaar is.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "statuut",
+          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#statuut"
+        },
         {
           "sh:class": "http://purl.org/dc/terms/Agent",
           "sh:description": "De uitgever, de entiteit die verantwoordelijk is voor het beschikbaar stellen, van de resource in de catalogus.",
@@ -565,7 +963,7 @@
           "sh:path": "http://purl.org/dc/terms/publisher"
         }
       ],
-      "sh:targetClass": "http://www.w3.org/ns/dcat#Resource"
+      "sh:targetClass": "http://data.vlaanderen.be/ns/metadata-dcat#RelatieQualificatie.catalogusResource.target"
     }
   ]
 }
