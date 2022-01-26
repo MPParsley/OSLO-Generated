@@ -10,7 +10,9 @@
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://data.vlaanderen.be/shacl/geodcatap-vlaanderen> <https://data.vlaanderen.be/shacl/geodcatap-vlaanderenshapes> <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ResolutieShape>,
+<https://data.vlaanderen.be/shacl/geodcatap-vlaanderen> <https://data.vlaanderen.be/shacl/geodcatap-vlaanderenshapes> <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ContactinfoOSLOShape>,
+    <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ContactinfoVCardShape>,
+    <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ResolutieShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#AgentShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#LicentieDocumentShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#PlaatsShape>,
@@ -105,7 +107,7 @@ wordt.""";
     shacl:name "relatie";
     shacl:path dc:relation
   ], [
-    <http://purl.org/linked-data/cube#codeList> <https://metadata.vlaanderen.be/id/GDI-Vlaanderen-Trefwoorden/>;
+    <http://purl.org/linked-data/cube#codeList> <https://metadata.vlaanderen.be/id/GDI-Vlaanderen-Trefwoorden>;
     shacl:class skos:Concept;
     shacl:description "Een aanduiding van op welke basis de catalogusresource beschikbaar is.";
     shacl:maxCount 1;
@@ -192,6 +194,14 @@ wordt.""";
     shacl:path dc:publisher
   ];
   shacl:targetClass dcat:Catalog .
+
+<https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ContactinfoOSLOShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://data.vlaanderen.be/ns/metadata-dcat#ContactinfoOSLO> .
+
+<https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ContactinfoVCardShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://data.vlaanderen.be/ns/metadata-dcat#ContactinfoVCard> .
 
 <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#DataServiceShape> a shacl:NodeShape;
   shacl:closed false;
@@ -283,7 +293,7 @@ wordt.""";
     shacl:name "landingspaginaVoorStatusinformatie";
     shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#landingspaginaVoorStatusinformatie>
   ], [
-    <http://purl.org/linked-data/cube#codeList> <https://github.com/Informatievlaanderen/OSLOthema-metadataVoorServices/raw/master/codelijsten/levensfase.ttl>;
+    <http://purl.org/linked-data/cube#codeList> <https://data.vlaanderen.be/id/conceptscheme/ontwikkelingstoestand>;
     shacl:class skos:Concept;
     shacl:description "De levensfase waarin de dataservice zich bevindt.";
     shacl:maxCount 1;
@@ -296,7 +306,7 @@ wordt.""";
     shacl:name "licentie";
     shacl:path dc:license
   ], [
-    <http://purl.org/linked-data/cube#codeList> <https://github.com/Informatievlaanderen/OSLOthema-metadataVoorServices/raw/master/codelijsten/ontwikkelingstoestand.ttl>;
+    <http://purl.org/linked-data/cube#codeList> <https://data.vlaanderen.be/id/conceptscheme/ontwikkelingstoestand>;
     shacl:class skos:Concept;
     shacl:description "De ontwikkelingstoestand waarin de dataservice is gedeployed.";
     shacl:maxCount 1;
@@ -445,6 +455,7 @@ geografische metadata""";
   ], [
     shacl:class dc:Agent;
     shacl:description "de agent die de eigendomsrechten heeft";
+    shacl:maxCount "n"^^xsd:integer;
     shacl:name "eigenaar";
     shacl:path dc:rightsHolder
   ], [
@@ -521,7 +532,7 @@ geografische metadata""";
     shacl:name "titel";
     shacl:path dc:title
   ], [
-    <http://purl.org/linked-data/cube#codeList> <https://publications.europa.eu/en/web/eu-vocabularies/at-dataset/-/resource/dataset/access-right>;
+    <http://purl.org/linked-data/cube#codeList> <http://publications.europa.eu/resource/authority/access-right>;
     shacl:class skos:Concept;
     shacl:description "De toegankelijkheid voor de dataset.";
     shacl:maxCount 1;
