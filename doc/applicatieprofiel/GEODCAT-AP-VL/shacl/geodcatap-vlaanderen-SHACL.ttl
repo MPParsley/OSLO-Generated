@@ -10,15 +10,15 @@
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://data.vlaanderen.be/shacl/geodcatap-vlaanderen> <https://data.vlaanderen.be/shacl/geodcatap-vlaanderenshapes> <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ContactinfoOSLOShape>,
-    <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ContactinfoVCardShape>,
-    <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ResolutieShape>,
+<https://data.vlaanderen.be/shacl/geodcatap-vlaanderen> <https://data.vlaanderen.be/shacl/geodcatap-vlaanderenshapes> <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ResolutieShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#AgentShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#LicentieDocumentShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#PlaatsShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#HerkomstVerklaringShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#JuridischeBepalingShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#StandaardShape>,
+    <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ContactInfoShape>,
+    <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#IdentificatorShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#CatalogusShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#CatalogusRecordShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#DataServiceShape>,
@@ -103,17 +103,10 @@ wordt.""";
   shacl:closed false;
   shacl:property [
     shacl:class dcat:Resource;
+    shacl:description "een verband tussen twee resources.";
     shacl:maxCount "n"^^xsd:integer;
     shacl:name "relatie";
     shacl:path dc:relation
-  ], [
-    <http://purl.org/linked-data/cube#codeList> <https://metadata.vlaanderen.be/id/GDI-Vlaanderen-Trefwoorden>;
-    shacl:class skos:Concept;
-    shacl:description "Een aanduiding van op welke basis de catalogusresource beschikbaar is.";
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "statuut";
-    shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#statuut>
   ], [
     shacl:class dc:Agent;
     shacl:description "De uitgever, de entiteit die verantwoordelijk is voor het beschikbaar stellen, van de resource in de catalogus.";
@@ -195,13 +188,9 @@ wordt.""";
   ];
   shacl:targetClass dcat:Catalog .
 
-<https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ContactinfoOSLOShape> a shacl:NodeShape;
+<https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ContactInfoShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://data.vlaanderen.be/ns/metadata-dcat#ContactinfoOSLO> .
-
-<https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ContactinfoVCardShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <http://data.vlaanderen.be/ns/metadata-dcat#ContactinfoVCard> .
+  shacl:targetClass schema:ContactPoint .
 
 <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#DataServiceShape> a shacl:NodeShape;
   shacl:closed false;
@@ -224,6 +213,7 @@ wordt.""";
     shacl:name "biedtInformatieAanOver";
     shacl:path dcat:servesdataset
   ], [
+    <http://purl.org/linked-data/cube#codeList> <https://data.vlaanderen.be/id/conceptscheme/dataserviceprotocol>;
     shacl:class dc:Standard;
     shacl:description "Een protocol waaraan de dataservice voldoet.";
     shacl:maxCount "n"^^xsd:integer;
@@ -340,6 +330,13 @@ dataservice behoort""";
     shacl:maxCount "n"^^xsd:integer;
     shacl:name "servicetype";
     shacl:path <https://data.vlaanderen.be/ns/metadata-dcat#servicecategorie>
+  ], [
+    <http://purl.org/linked-data/cube#codeList> <https://metadata.vlaanderen.be/id/GDI-Vlaanderen-Trefwoorden>;
+    shacl:class skos:Concept;
+    shacl:description "Een aanduiding van op welke basis de catalogusresource beschikbaar is.";
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:name "statuut";
+    shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#statuut>
   ], [
     <http://purl.org/linked-data/cube#codeList> <https://vocab.belgif.be/auth/datatheme>;
     shacl:class skos:Concept;
@@ -466,13 +463,6 @@ geografische metadata""";
     shacl:name "geografischeDekking";
     shacl:path dc:spatial
   ], [
-    <http://purl.org/linked-data/cube#codeList> <http://www.w3.org/ns/adms#sample>;
-    shacl:class dcat:Distribution;
-    shacl:description "Een verkleinde weergave van een afbeeldingsbestand.";
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:name "heeftVoorbeeldweergave";
-    shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#heeftVoorbeeldweergave>
-  ], [
     shacl:class dc:ProvenanceStatement;
     shacl:description "De ontstaansgeschiedenis van een dataset.";
     shacl:maxCount "n"^^xsd:integer;
@@ -518,6 +508,13 @@ geografische metadata""";
     shacl:name "status";
     shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#status>
   ], [
+    <http://purl.org/linked-data/cube#codeList> <https://metadata.vlaanderen.be/id/GDI-Vlaanderen-Trefwoorden>;
+    shacl:class skos:Concept;
+    shacl:description "Een aanduiding van op welke basis de catalogusresource beschikbaar is.";
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:name "statuut";
+    shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#statuut>
+  ], [
     <http://purl.org/linked-data/cube#codeList> <https://vocab.belgif.be/auth/datatheme>;
     shacl:class skos:Concept;
     shacl:description "De hoofdcategorie waartoe de dataset behoort.";
@@ -552,6 +549,13 @@ geografische metadata""";
     shacl:name "versie";
     shacl:path owl:versionInfo
   ], [
+    <http://purl.org/linked-data/cube#codeList> <http://www.w3.org/ns/adms#sample>;
+    shacl:class dcat:Distribution;
+    shacl:description "Een verkleinde weergave van een afbeelding die de dataset illustreert.?";
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:name "voorbeeldweergave";
+    shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#voorbeeldweergave>
+  ], [
     shacl:datatype xsd:dateTime;
     shacl:description "Het tijdsmoment waarop de dataset werd geactualiseerd";
     shacl:maxCount 1;
@@ -585,6 +589,7 @@ waaraan de distributie voldoet.""";
   ], [
     <http://purl.org/linked-data/cube#codeList> <http://publications.europa.eu/resource/authority/file-type>;
     shacl:class skos:Concept;
+    shacl:description "Het bestandsformaat waarin de data wordt gedeeld.";
     shacl:maxCount 1;
     shacl:name "formaat";
     shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#formaat>
@@ -638,6 +643,37 @@ waaraan de distributie voldoet.""";
 <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#HerkomstVerklaringShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass dc:ProvenanceStatement .
+
+<https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#IdentificatorShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://data.vlaanderen.be/ns/generiek#GestructureerdeIdentificator>;
+    shacl:description "Identificator vh object opgesplitst in zijn onderdelen.";
+    shacl:maxCount 1;
+    shacl:name "gestructureerdeIdentificator";
+    shacl:path <http://data.vlaanderen.be/ns/generiek#gestructureerdeIdentificator>
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:maxCount 1;
+    shacl:name "identificator";
+    shacl:path skos:notation
+  ], [
+    shacl:class foaf:Agent;
+    shacl:maxCount 1;
+    shacl:name "toegekendDoor";
+    shacl:path dc:creator
+  ], [
+    shacl:datatype xsd:string;
+    shacl:maxCount 1;
+    shacl:name "toegekendDoorString";
+    shacl:path <http://www.w3.org/ns/adms#schemaAgency>
+  ], [
+    shacl:datatype xsd:dateTime;
+    shacl:maxCount 1;
+    shacl:name "toegekendOp";
+    shacl:path dc:issued
+  ];
+  shacl:targetClass <http://www.w3.org/ns/adms#Identifier> .
 
 <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#JuridischeBepalingShape> a shacl:NodeShape;
   shacl:closed false;
@@ -803,16 +839,16 @@ standaard bekend is.""";
 
  [
     shacl:datatype xsd:anyURI;
-    shacl:description "Een webpagina die ofwel toelaat om contact op te nemen (via b.v. een webformulier) of die informatie bevat hoe men contact kan opnemen.";
-    shacl:maxCount 1;
-    shacl:name "contactpagina";
-    shacl:path foaf:page
-  ] .
-
- [
-    shacl:datatype xsd:anyURI;
     shacl:description "Het e-mailadres waarmee een gebruiker contact kan opnemen voor informatie.";
     shacl:maxCount 1;
     shacl:name "e-mail";
     shacl:path vcard:hasEmail
+  ] .
+
+ [
+    shacl:datatype xsd:anyURI;
+    shacl:description "Een webpagina die ofwel toelaat om contact op te nemen (via b.v. een webformulier) of die informatie bevat hoe men contact kan opnemen.";
+    shacl:maxCount 1;
+    shacl:name "contactpagina";
+    shacl:path foaf:page
   ] .
