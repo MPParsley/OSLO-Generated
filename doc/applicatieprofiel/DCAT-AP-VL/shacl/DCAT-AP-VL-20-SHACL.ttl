@@ -14,6 +14,7 @@
     <https://data.vlaanderen.be/shacl/DCAT-AP-VL-20#LicentieDocumentShape>,
     <https://data.vlaanderen.be/shacl/DCAT-AP-VL-20#JuridischeBepalingShape>,
     <https://data.vlaanderen.be/shacl/DCAT-AP-VL-20#StandaardShape>,
+    <https://data.vlaanderen.be/shacl/DCAT-AP-VL-20#ContactinfoShape>,
     <https://data.vlaanderen.be/shacl/DCAT-AP-VL-20#CatalogusShape>,
     <https://data.vlaanderen.be/shacl/DCAT-AP-VL-20#CatalogusRecordShape>,
     <https://data.vlaanderen.be/shacl/DCAT-AP-VL-20#DataServiceShape>,
@@ -163,6 +164,23 @@
     shacl:path dc:publisher
   ];
   shacl:targetClass dcat:Catalog .
+
+<https://data.vlaanderen.be/shacl/DCAT-AP-VL-20#ContactinfoShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:anyURI;
+    shacl:description "Een webpagina die ofwel toelaat om contact op te nemen (via b.v. een webformulier) of die informatie bevat hoe men contact kan opnemen.";
+    shacl:maxCount 1;
+    shacl:name "contactpagina";
+    shacl:path foaf:page
+  ], [
+    shacl:datatype xsd:anyURI;
+    shacl:description "Het e-mailadres waarmee een gebruiker contact kan opnemen voor informatie.";
+    shacl:maxCount 1;
+    shacl:name "e-mail";
+    shacl:path vcard:hasEmail
+  ];
+  shacl:targetClass vcard:Kind .
 
 <https://data.vlaanderen.be/shacl/DCAT-AP-VL-20#DataServiceShape> a shacl:NodeShape;
   shacl:closed false;
@@ -339,7 +357,7 @@
     shacl:name "distributie";
     shacl:path dcat:distribution
   ], [
-    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:datatype rdfs:Literal;
     shacl:description "De unieke identificator van de dataset.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -453,19 +471,3 @@
 <https://data.vlaanderen.be/shacl/DCAT-AP-VL-20#StandaardShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass dc:Standard .
-
- [
-    shacl:datatype xsd:anyURI;
-    shacl:description "Een webpagina die ofwel toelaat om contact op te nemen (via b.v. een webformulier) of die informatie bevat hoe men contact kan opnemen.";
-    shacl:maxCount 1;
-    shacl:name "contactpagina";
-    shacl:path foaf:page
-  ] .
-
- [
-    shacl:datatype xsd:anyURI;
-    shacl:description "Het e-mailadres waarmee een gebruiker contact kan opnemen voor informatie.";
-    shacl:maxCount 1;
-    shacl:name "e-mail";
-    shacl:path vcard:hasEmail
-  ] .
