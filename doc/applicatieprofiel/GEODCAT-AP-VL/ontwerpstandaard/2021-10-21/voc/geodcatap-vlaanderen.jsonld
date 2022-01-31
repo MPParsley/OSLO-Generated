@@ -58,30 +58,6 @@
   },
   "classes": [
     {
-      "@id": "http://data.vlaanderen.be/ns/metadata-dcat#ContactinfoOSLO",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "description": {},
-      "name": {
-        "nl": "Contactinfo volgens OSLO"
-      },
-      "parents": [
-        "http://www.w3.org/2006/vcard/ns#Kind"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "http://data.vlaanderen.be/ns/metadata-dcat#ContactinfoVCard",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "description": {},
-      "name": {
-        "nl": "Contactinfo volgens VCard"
-      },
-      "parents": [
-        "http://www.w3.org/2006/vcard/ns#Kind"
-      ],
-      "usage": {}
-    },
-    {
       "@id": "http://data.vlaanderen.be/ns/metadata-dcat#Resolutie",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
@@ -194,7 +170,9 @@
     {
       "@id": "http://data.vlaanderen.be/ns/metadata-dcat#formaat",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {},
+      "description": {
+        "nl": "Het bestandsformaat waarin de data wordt gedeeld."
+      },
       "domain": [
         "http://www.w3.org/ns/dcat#Distribution"
       ],
@@ -206,26 +184,6 @@
         "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "usage": {}
-    },
-    {
-      "@id": "http://data.vlaanderen.be/ns/metadata-dcat#heeftVoorbeeldweergave",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Een verkleinde weergave van een afbeeldingsbestand."
-      },
-      "domain": [
-        "http://www.w3.org/ns/dcat#Dataset"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "heeft voorbeeldweergave"
-      },
-      "range": [
-        "http://www.w3.org/ns/dcat#Distribution"
-      ],
-      "usage": {
-        "nl": "Een voorbeeldweergave of thumbnail heeft als doel de vindbaarheid van de dataset te verhogen. Het is geen accurate weergave van de data die de dataset bevat."
-      }
     },
     {
       "@id": "http://data.vlaanderen.be/ns/metadata-dcat#landingspaginaVoorAuthenticatie",
@@ -360,7 +318,7 @@
         "nl": "Een aanduiding van op welke basis de catalogusresource beschikbaar is."
       },
       "domain": [
-        "http://www.w3.org/ns/dcat#Resource"
+        "http://www.w3.org/ns/dcat#DataService"
       ],
       "generalization": [
         "http://purl.org/dc/terms/subject"
@@ -371,8 +329,46 @@
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
       ],
+      "usage": {}
+    },
+    {
+      "@id": "http://data.vlaanderen.be/ns/metadata-dcat#statuut",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Een aanduiding van op welke basis de catalogusresource beschikbaar is."
+      },
+      "domain": [
+        "http://www.w3.org/ns/dcat#Dataset"
+      ],
+      "generalization": [
+        "http://purl.org/dc/terms/subject"
+      ],
+      "name": {
+        "nl": "statuut"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "http://data.vlaanderen.be/ns/metadata-dcat#voorbeeldweergave",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Een verkleinde weergave van een afbeelding die de dataset illustreert.?"
+      },
+      "domain": [
+        "http://www.w3.org/ns/dcat#Dataset"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "voorbeeldweergave"
+      },
+      "range": [
+        "http://www.w3.org/ns/dcat#Distribution"
+      ],
       "usage": {
-        "nl": "TODO"
+        "nl": "Een voorbeeldweergave of thumbnail heeft als doel de vindbaarheid van de dataset te verhogen. Het is geen accurate weergave van de data die de dataset bevat."
       }
     }
   ],
@@ -395,7 +391,7 @@
       "@id": "http://purl.org/dc/terms/ProvenanceStatement",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "Lineage Uitdrukking"
+        "nl": "Herkomst Verklaring"
       }
     },
     {
@@ -677,7 +673,7 @@
       "@id": "http://purl.org/dc/terms/provenance",
       "@type": "rdf:Property",
       "name": {
-        "nl": "ontstaansgeschiedenis"
+        "nl": "herkomst"
       }
     },
     {
@@ -866,7 +862,7 @@
       "@id": "http://www.w3.org/ns/adms#representionTechnique",
       "@type": "rdf:Property",
       "name": {
-        "nl": "ruimtelijke voorstellingswijze"
+        "nl": "ruimtelijk voorstellingstype"
       }
     },
     {
