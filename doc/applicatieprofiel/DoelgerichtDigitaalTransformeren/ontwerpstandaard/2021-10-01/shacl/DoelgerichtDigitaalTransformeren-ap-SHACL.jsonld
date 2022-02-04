@@ -69,6 +69,18 @@
       "sh:targetClass": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#DisciplineType"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#DocumentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:name": "type",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#type"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#Document"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#DoelgroepTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -208,7 +220,6 @@
           "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:description": "Naam waarmee de organisatie bij voorkeur wordt aangeduid.",
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": "voorkeursnaam",
           "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
         }
@@ -246,6 +257,12 @@
           "sh:path": "http://fixme.com"
         },
         {
+          "sh:class": "http://www.w3.org/ns/prov#Location",
+          "sh:maxCount": "1",
+          "sh:name": "locatie",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#locatie"
+        },
+        {
           "sh:class": "http://fixme.com",
           "sh:description": "TODO",
           "sh:name": "neemtDeelAan",
@@ -257,6 +274,12 @@
           "sh:maxCount": "1",
           "sh:name": "onderwijsniveau",
           "sh:path": "http://fixme.com"
+        },
+        {
+          "sh:class": "http://fixme.com",
+          "sh:maxCount": "1",
+          "sh:name": "profielVan",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#profielVan"
         },
         {
           "sh:description": "TODO",
@@ -364,16 +387,14 @@
           "sh:path": "http://fixme.com"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#Kwaliteit",
-          "sh:description": "TODO",
-          "sh:maxCount": "1",
-          "sh:name": "kwaliteit",
-          "sh:path": "http://fixme.com"
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:name": "label",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#label"
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#LabelType",
           "sh:description": "TODO",
-          "sh:name": "label",
+          "sh:name": "labelType",
           "sh:path": "http://fixme.com"
         },
         {
@@ -471,6 +492,7 @@
         {
           "sh:class": "http://fixme.com",
           "sh:description": "TODO",
+          "sh:maxCount": "1",
           "sh:name": "heeftProfiel",
           "sh:path": "http://fixme.com"
         },
@@ -478,13 +500,6 @@
           "sh:class": "http://fixme.com",
           "sh:description": "TODO",
           "sh:name": "infrastructuur",
-          "sh:path": "http://fixme.com"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#Kwaliteit",
-          "sh:description": "TODO",
-          "sh:maxCount": "1",
-          "sh:name": "kwaliteit",
           "sh:path": "http://fixme.com"
         },
         {
@@ -560,6 +575,12 @@
         },
         {
           "sh:class": "http://fixme.com",
+          "sh:maxCount": "1",
+          "sh:name": "heeftPersoonlijkProfiel",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#heeftPersoonlijkProfiel"
+        },
+        {
+          "sh:class": "http://fixme.com",
           "sh:description": "TODO",
           "sh:name": "profielVan",
           "sh:path": "http://fixme.com"
@@ -599,6 +620,7 @@
         {
           "sh:class": "http://fixme.com",
           "sh:description": "TODO",
+          "sh:maxCount": "1",
           "sh:name": "profielVan",
           "sh:path": "http://fixme.com"
         }
@@ -634,6 +656,11 @@
           "sh:maxCount": "1",
           "sh:name": "prijs",
           "sh:path": "http://fixme.com"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:name": "terugkerend",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#terugkerend"
         },
         {
           "sh:class": "http://fixme.com",
@@ -789,14 +816,76 @@
       "@id": "https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#PrijsinfoShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
+      "sh:property": [
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:maxCount": "1",
+          "sh:name": "Prijs",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#Prijs"
+        },
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:maxCount": "1",
+          "sh:name": "beschikbaarTransactieVolume",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#beschikbaarTransactieVolume"
+        },
+        {
+          "sh:class": "https://schema.org/QuantitativeValue",
+          "sh:maxCount": "1",
+          "sh:name": "beschikbareHoeveelheid",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#beschikbareHoeveelheid"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:name": "geldigTot",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#geldigTot"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:name": "geldigVanaf",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#geldigVanaf"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:name": "inclusiefBTW",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#inclusiefBTW"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:maxCount": "1",
+          "sh:name": "munteenheid",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#munteenheid"
+        },
+        {
+          "sh:name": "prijsCategorie",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#prijsCategorie"
+        }
+      ],
       "sh:targetClass": "http://fixme.com"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#BoekinginfoShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:maxCount": "1",
+          "sh:name": "beschikbaarTot",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#beschikbaarTot"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:maxCount": "1",
+          "sh:name": "beschikbaarVanaf",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#beschikbaarVanaf"
+        },
+        {
+          "sh:class": "http://schema.org/ContactPoint",
+          "sh:name": "contactinfo",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#contactinfo"
+        }
+      ],
       "sh:targetClass": "http://fixme.com"
     },
     {
@@ -892,10 +981,12 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:name": "bron",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#bron"
+        },
+        {
           "sh:class": "http://fixme.com",
           "sh:description": "TODO",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": "content",
           "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#content"
         },
@@ -1002,7 +1093,7 @@
         {
           "sh:class": "http://fixme.com",
           "sh:description": "TODO",
-          "sh:name": "isdeelVan",
+          "sh:name": "deelVan",
           "sh:path": "http://fixme.com"
         },
         {
@@ -1118,8 +1209,6 @@
         {
           "sh:class": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#Infrastructuurtype",
           "sh:description": "TODO",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": "infrastructuurType",
           "sh:path": "http://fixme.com"
         },
@@ -1279,21 +1368,29 @@
       "sh:targetClass": "http://fixme.com"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#KwaliteitShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#UitvoerderShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:name": "alternatieveNaam",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#alternatieveNaam"
+        },
+        {
           "sh:class": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#UitvoerderRolType",
           "sh:name": "rol",
           "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#rol"
+        },
+        {
+          "sh:class": "http://fixme.com",
+          "sh:name": "subuitvoerder",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#subuitvoerder"
+        },
+        {
+          "sh:class": "http://fixme.com",
+          "sh:name": "superuitvoerder",
+          "sh:path": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#superuitvoerder"
         }
       ],
       "sh:targetClass": "http://fixme.com"
@@ -1302,15 +1399,7 @@
       "@id": "https://data.vlaanderen.be/shacl/DoelgerichtDigitaalTransformeren-ap#GeregistreerdPersoonShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:description": "Identificatiecode vd persoon ih register.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "registratie",
-          "sh:path": "http://fixme.com#registratie"
-        }
-      ],
+      "sh:property": [],
       "sh:targetClass": "http://fixme.com#GeregistreerdPersoon"
     },
     {
@@ -1328,8 +1417,6 @@
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:description": "Gedeelte van de volledige naam vd persoon ontvangen van de vorige generatie.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": "achternaam",
           "sh:path": "http://xmlns.com/foaf/0.1/familyName"
         },
@@ -1342,7 +1429,6 @@
         },
         {
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": "geboortedatum",
           "sh:path": "http://fixme.com#geboortedatum"
         },
@@ -1356,7 +1442,6 @@
         {
           "sh:description": "Het feit of de persoon een man of een vrouw is.",
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": "gender",
           "sh:path": "http://fixme.com#gender"
         },
@@ -1397,7 +1482,6 @@
         {
           "sh:description": "Identificator dat de organisatie verkreeg bij registratie.",
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": "registratie",
           "sh:path": "http://www.w3.org/ns/regorg#registration"
         },
@@ -1409,7 +1493,6 @@
           "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:description": "Wettelijk geregistreerde naam vd organisatie.",
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": "wettelijkeNaam",
           "sh:path": "http://www.w3.org/ns/regorg#legalName"
         }
