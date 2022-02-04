@@ -1,71 +1,80 @@
+@prefix org: <http://www.w3.org/ns/org#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schemas: <https://schema.org/> .
 @prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap> <https://data.vlaanderen.be/shacl/loongegevens-apshapes> <https://data.vlaanderen.be/shacl/loongegevens-ap#ArbeidsloonShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#ArbeidsrelatieShape>,
-    <https://data.vlaanderen.be/shacl/loongegevens-ap#BankrekeningnummerShape>,
-    <https://data.vlaanderen.be/shacl/loongegevens-ap#DecimalShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#InkomstShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#OvereenkomsttypeShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#SchuldbemiddelingstypeShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#StatuuttypeShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#TewerkstellingsbreukShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#VerloningstypeShape>,
-    <https://data.vlaanderen.be/shacl/loongegevens-ap#AdresvoorstellingShape>,
-    <https://data.vlaanderen.be/shacl/loongegevens-ap#GeregistreerdPersoonShape>,
-    <https://data.vlaanderen.be/shacl/loongegevens-ap#GeregistreerdeOrganisatieShape>,
+    <https://data.vlaanderen.be/shacl/loongegevens-ap#PeriodeShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#GezinShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#IdentificatorShape>,
+    <https://data.vlaanderen.be/shacl/loongegevens-ap#AdresvoorstellingShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#OrganisatieShape>,
-    <https://data.vlaanderen.be/shacl/loongegevens-ap#PeriodeShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#PersoonShape>,
+    <https://data.vlaanderen.be/shacl/loongegevens-ap#GeregistreerdeOrganisatieShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#RechtsvormShape>,
-    <https://data.vlaanderen.be/shacl/loongegevens-ap#VerblijfplaatsShape> .
+    <https://data.vlaanderen.be/shacl/loongegevens-ap#GeregistreerdPersoonShape>,
+    <https://data.vlaanderen.be/shacl/loongegevens-ap#VerblijfplaatsShape>,
+    <https://data.vlaanderen.be/shacl/loongegevens-ap#BankrekeningShape>,
+    <https://data.vlaanderen.be/shacl/loongegevens-ap#KwantitatieveWaardeShape> .
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#AdresvoorstellingShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
     shacl:datatype xsd:string;
+    shacl:description "Officieel toegekende alfanumerieke code die wordt toegevoegd aan het huisnummer om meerdere gebouweenheden, standplaatsen, ligplaatsen of percelen te onderscheiden die eenzelfde huisnummer hebben.";
     shacl:maxCount 1;
     shacl:name "busnummer";
-    shacl:path <http://fixme.com#busnummer>
+    shacl:path <https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer>
   ], [
+    shacl:description "Gemeentenaam vh adres.";
     shacl:maxCount 1;
     shacl:name "gemeentenaam";
-    shacl:path <http://fixme.com#gemeentenaam>
+    shacl:path <https://data.vlaanderen.be/ns/adres#gemeentenaam>
   ], [
     shacl:datatype xsd:string;
+    shacl:description "Alfanumerieke code officieel toegekend aan gebouweenheden, ligplaatsen, standplaatsen of percelen.";
     shacl:maxCount 1;
     shacl:name "huisnummer";
-    shacl:path <http://fixme.com#huisnummer>
+    shacl:path <https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer>
   ], [
+    shacl:description "Land waarin het adres gelegen is.";
     shacl:maxCount 1;
     shacl:name "land";
-    shacl:path <http://fixme.com#land>
+    shacl:path <https://data.vlaanderen.be/ns/adres#land>
   ], [
     shacl:datatype xsd:string;
+    shacl:description "Code waarmee het geografisch gebied dat adressen voor postale doeleinden groepeert wordt aangeduid.";
     shacl:maxCount 1;
     shacl:name "postcode";
-    shacl:path <http://fixme.com#postcode>
+    shacl:path <http://www.w3.org/ns/locn#postCode>
   ], [
+    shacl:description "Straatnaam vh adres.";
     shacl:maxCount 1;
     shacl:name "straatnaam";
-    shacl:path <http://fixme.com#straatnaam>
+    shacl:path <http://www.w3.org/ns/locn#thoroughfare>
   ];
-  shacl:targetClass <http://fixme.com#Adresvoorstelling> .
+  shacl:targetClass <http://www.w3.org/ns/locn#Address> .
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#ArbeidsloonShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://data.vlaanderen.be/ns/loongegevens#Decimal>;
+    shacl:class schemas:QuantitativeValue;
     shacl:description "Verplichte inhoudingen door de werkgever.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "afTeTrekkenNettoBedragen";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#afTeTrekkenNettoBedragen>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/loongegevens#Decimal>;
+    shacl:class schemas:QuantitativeValue;
     shacl:description "Voorschot op de definitieve inkomstenbelasting.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -78,21 +87,21 @@
     shacl:name "bedrijfswagen";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#bedrijfswagen>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/loongegevens#Decimal>;
+    shacl:class schemas:QuantitativeValue;
     shacl:description "De som van alle loonelementen voor sociale en fiscale inhoudingen.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "brutoloon";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#brutoloon>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/loongegevens#Decimal>;
+    shacl:class schemas:QuantitativeValue;
     shacl:description "Een eindejaarstoelage is een financiële bonus die een persoon krijgt van zijn/haar werkgever op het einde van het jaar. Er moeten sociale zekerheidsbijdragen en belastingen op betaald worden.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "eindejaarstoelage";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#eindejaarstoelage>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/loongegevens#Decimal>;
+    shacl:class schemas:QuantitativeValue;
     shacl:description "Dit is een bedrag van het arbeidsloon dat wordt ingehouden om de sociale zekerheid te financieren.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -105,14 +114,14 @@
     shacl:name "maaltijdcheques";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#maaltijdcheques>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/loongegevens#Decimal>;
+    shacl:class schemas:QuantitativeValue;
     shacl:description "Het werkelijk gestorte loon op de rekening van de persoon.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "nettoGestortLoon";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#nettoGestortLoon>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/loongegevens#Decimal>;
+    shacl:class schemas:QuantitativeValue;
     shacl:description "Het nettoloon is het brutoloon waar de sociale zekerheidsbijdrage en de bedrijfsvoorheffing van afgetrokken zijn.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -126,7 +135,7 @@
     shacl:name "periodiciteitVerloning";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#periodiciteitVerloning>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/loongegevens#Decimal>;
+    shacl:class schemas:QuantitativeValue;
     shacl:description "Dit is een deel van het loon dat afhankelijk is van geleverde prestaties.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -146,28 +155,28 @@
     shacl:name "schuldbemiddeling";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#schuldbemiddeling>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/loongegevens#Decimal>;
+    shacl:class schemas:QuantitativeValue;
     shacl:description "Bijkomende sommen die aan het brutoloon toegevoegd worden. Deze zijn vrijgesteld van inhoudingen voor de sociale zekerheid.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "supplementaireBelastbareBedragen";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#supplementaireBelastbareBedragen>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/loongegevens#Decimal>;
+    shacl:class schemas:QuantitativeValue;
     shacl:description "Bijkomende netto sommen die aan het nettoloon toegevoegd worden. Deze zijn vrijgesteld van belastingen en RSZ.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "supplementaireNettoBedragen";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#supplementaireNettoBedragen>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/loongegevens#Decimal>;
+    shacl:class schemas:QuantitativeValue;
     shacl:description "Dit is een jaarlijkse toelage die een werknemer krijgt om de extra kosten van vakantie te dekken.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "vakantiegeld";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#vakantiegeld>
   ], [
-    shacl:class <http://fixme.com#Periode>;
+    shacl:class <http://data.europa.eu/m8g/PeriodOfTime>;
     shacl:description "Een bepaalde tijdsduur met een start- en eindmoment die dient als referentie voor de bepaling van het brutoloon.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -183,14 +192,14 @@
     shacl:name "arbeidsloon";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#arbeidsloon>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/loongegevens#Bankrekeningnummer>;
+    shacl:class schemas:BankAccount;
     shacl:description "Een rekeningnummer dat gelinkt is aan de arbeidsrelatie. Op dit rekeningnummer wordt het arbeidsloon van de persoon gestort.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "bankrekeningnummer";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#bankrekeningnummer>
   ], [
-    shacl:class <http://fixme.com#Periode>;
+    shacl:class <http://data.europa.eu/m8g/PeriodOfTime>;
     shacl:description "Periode waarover in een arbeidscontract een overeenkomst is afgesloten. Een contractperiode heeft een begindatum, en in sommige gevallen een einddatum. Dat is dan de uitdienstdatum.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -220,24 +229,27 @@
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/loongegevens#Arbeidsrelatie> .
 
-<https://data.vlaanderen.be/shacl/loongegevens-ap#BankrekeningnummerShape> a shacl:NodeShape;
+<https://data.vlaanderen.be/shacl/loongegevens-ap#BankrekeningShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/loongegevens#Bankrekeningnummer> .
-
-<https://data.vlaanderen.be/shacl/loongegevens-ap#DecimalShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/loongegevens#Decimal> .
+  shacl:property [
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "bankrekeningnummer";
+    shacl:path <https://data.vlaanderen.be/ns/loongegevens#bankrekeningnummer>
+  ];
+  shacl:targetClass schemas:BankAccount .
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#GeregistreerdPersoonShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://fixme.com#Identificator>;
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:description "Identificatiecode vd persoon ih register.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "registratie";
     shacl:path <http://fixme.com#registratie>
   ];
-  shacl:targetClass <http://fixme.com#GeregistreerdPersoon> .
+  shacl:targetClass <https://data.vlaanderen.be/ns/persoon#GeregistreerdPersoon> .
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#GeregistreerdeOrganisatieShape> a shacl:NodeShape;
   shacl:closed false;
@@ -246,53 +258,74 @@
     shacl:maxCount 1;
     shacl:name "^vestiging"
   ], [
-    shacl:class <http://fixme.com#Rechtsvorm>;
+    shacl:class <https://data.vlaanderen.be/ns/organisatie#rechtsvorm>;
+    shacl:description "Juridisch statuut van de geregistreerde organisatie.";
     shacl:maxCount 1;
     shacl:name "rechtsvorm";
-    shacl:path <http://fixme.com#rechtsvorm>
+    shacl:path <https://data.vlaanderen.be/ns/organisatie#rechtsvorm>
   ], [
-    shacl:class <http://fixme.com#Identificator>;
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:description "Identificator dat de organisatie verkreeg bij registratie.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "registratie";
-    shacl:path <http://fixme.com#registratie>
+    shacl:path <http://www.w3.org/ns/regorg#registration>
   ];
-  shacl:targetClass <http://fixme.com#GeregistreerdeOrganisatie> .
+  shacl:targetClass <http://www.w3.org/ns/regorg#RegisteredOrganization> .
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#GezinShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://fixme.com#Persoon>;
+    shacl:class <http://www.w3.org/ns/person#Person>;
+    shacl:description "Persoon die standaard het gezin vertegenwoordigt.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "gezinshoofd";
-    shacl:path <http://fixme.com#gezinshoofd>
+    shacl:path <https://data.vlaanderen.be/ns/persoon#isHoofdVan>
   ], [
-    shacl:class <http://fixme.com#Persoon>;
+    shacl:class <http://www.w3.org/ns/person#Person>;
+    shacl:description "Persoon die tot een gezin behoort.";
     shacl:minCount 1;
     shacl:name "gezinslid";
-    shacl:path <http://fixme.com#gezinslid>
+    shacl:path <https://data.vlaanderen.be/ns/persoon#isLidVan>
   ];
   shacl:targetClass <http://fixme.com#Gezin> .
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#IdentificatorShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://fixme.com#Identificator> .
+  shacl:targetClass <http://www.w3.org/ns/adms#Identifier> .
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#InkomstShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass <https://data.vlaanderen.be/ns/loongegevens#Inkomst> .
 
+<https://data.vlaanderen.be/shacl/loongegevens-ap#KwantitatieveWaardeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:description "De gestandaardiseerde eenheid waarin de waarde is uitgedrukt.";
+    shacl:maxCount 1;
+    shacl:name "StandaardEenheid";
+    shacl:path schemas:unitCode
+  ], [
+    shacl:description """Getal waarmee de kwantiteit van het kenmerk kan worden uitgedrukt.	""";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path schemas:value
+  ];
+  shacl:targetClass schemas:QuantitativeValue .
+
 <https://data.vlaanderen.be/shacl/loongegevens-ap#OrganisatieShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
     shacl:class <https://data.vlaanderen.be/ns/loongegevens#TaalString>;
+    shacl:description "Naam waarmee de organisatie bij voorkeur wordt aangeduid.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "voorkeursnaam";
-    shacl:path <http://fixme.com#voorkeursnaam>
+    shacl:path skos:prefLabel
   ];
-  shacl:targetClass <http://fixme.com#Organisatie> .
+  shacl:targetClass org:Organization .
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#OvereenkomsttypeShape> a shacl:NodeShape;
   shacl:closed false;
@@ -302,18 +335,20 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype xsd:dateTime;
+    shacl:description "Aanvaang van dae tijdsduur.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "begin";
-    shacl:path <http://fixme.com#begin>
+    shacl:path <http://data.europa.eu/m8g/startTime>
   ], [
     shacl:datatype xsd:dateTime;
+    shacl:description "Einde vd tijdsduur.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "einde";
-    shacl:path <http://fixme.com#einde>
+    shacl:path <http://data.europa.eu/m8g/endTime>
   ];
-  shacl:targetClass <http://fixme.com#Periode> .
+  shacl:targetClass <http://data.europa.eu/m8g/PeriodOfTime> .
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#PersoonShape> a shacl:NodeShape;
   shacl:closed false;
@@ -339,23 +374,24 @@
     shacl:name "personenFiscaalTenLaste";
     shacl:path <http://fixme.com#personenFiscaalTenLaste>
   ], [
-    shacl:class <http://fixme.com#Verblijfplaats>;
+    shacl:class <https://data.vlaanderen.be/ns/persoon#Verblijfplaats>;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "verblijfplaats";
     shacl:path <http://fixme.com#verblijfplaats>
   ], [
     shacl:datatype xsd:string;
+    shacl:description "De volledige naam vd persoon, doorgaans de combinatie van voornamen en achternaam.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "volledigeNaam";
-    shacl:path <http://fixme.com#volledigeNaam>
+    shacl:path <https://data.vlaanderen.be/ns/persoon#volledigeNaam>
   ];
-  shacl:targetClass <http://fixme.com#Persoon> .
+  shacl:targetClass <http://www.w3.org/ns/person#Person> .
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#RechtsvormShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://fixme.com#Rechtsvorm> .
+  shacl:targetClass <https://data.vlaanderen.be/ns/organisatie#rechtsvorm> .
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#SchuldbemiddelingstypeShape> a shacl:NodeShape;
   shacl:closed false;
@@ -372,13 +408,14 @@
 <https://data.vlaanderen.be/shacl/loongegevens-ap#VerblijfplaatsShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://fixme.com#Adresvoorstelling>;
+    shacl:class <http://www.w3.org/ns/locn#Address>;
+    shacl:description "Plaats waar een persoon al dan niet tijdelijk woont of logeert.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "verblijfsadres";
-    shacl:path <http://fixme.com#verblijfsadres>
+    shacl:path <https://data.vlaanderen.be/ns/persoon#verblijfsadres>
   ];
-  shacl:targetClass <http://fixme.com#Verblijfplaats> .
+  shacl:targetClass <https://data.vlaanderen.be/ns/persoon#Verblijfplaats> .
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#VerloningstypeShape> a shacl:NodeShape;
   shacl:closed false;

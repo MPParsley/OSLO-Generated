@@ -1,33 +1,37 @@
 {
   "@context": {
-    "Adresvoorstelling": "http://fixme.com#Adresvoorstelling",
+    "Adresvoorstelling": "http://www.w3.org/ns/locn#Address",
     "Adresvoorstelling.busnummer": {
-      "@id": "http://fixme.com#busnummer",
+      "@id": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "Adresvoorstelling.gemeentenaam": {
-      "@id": "http://fixme.com#gemeentenaam",
+      "@id": "https://data.vlaanderen.be/ns/adres#gemeentenaam",
       "@type": ""
     },
     "Adresvoorstelling.huisnummer": {
-      "@id": "http://fixme.com#huisnummer",
+      "@id": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "Adresvoorstelling.land": {
-      "@id": "http://fixme.com#land",
+      "@id": "https://data.vlaanderen.be/ns/adres#land",
       "@type": ""
     },
     "Adresvoorstelling.postcode": {
-      "@id": "http://fixme.com#postcode",
+      "@id": "http://www.w3.org/ns/locn#postCode",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "Adresvoorstelling.straatnaam": {
-      "@id": "http://fixme.com#straatnaam",
+      "@id": "http://www.w3.org/ns/locn#thoroughfare",
       "@type": ""
     },
     "Arbeidsloon": "https://data.vlaanderen.be/ns/loongegevens#Arbeidsloon",
     "Arbeidsloon.afTeTrekkenNettoBedragen": {
       "@id": "https://data.vlaanderen.be/ns/loongegevens#afTeTrekkenNettoBedragen",
+      "@type": "@id"
+    },
+    "Arbeidsloon.arbeidsloon": {
+      "@id": "https://data.vlaanderen.be/ns/loongegevens#relatie",
       "@type": "@id"
     },
     "Arbeidsloon.bedrijfsvoorheffing": {
@@ -70,10 +74,6 @@
       "@id": "https://data.vlaanderen.be/ns/loongegevens#premie",
       "@type": "@id"
     },
-    "Arbeidsloon.relatie": {
-      "@id": "https://data.vlaanderen.be/ns/loongegevens#relatie",
-      "@type": "@id"
-    },
     "Arbeidsloon.schuldbemiddeling": {
       "@id": "https://data.vlaanderen.be/ns/loongegevens#schuldbemiddeling",
       "@type": "@id"
@@ -95,11 +95,6 @@
       "@type": "@id"
     },
     "Arbeidsrelatie": "https://data.vlaanderen.be/ns/loongegevens#Arbeidsrelatie",
-    "Arbeidsrelatie.arbeidsloon": {
-      "@container": "@set",
-      "@id": "https://data.vlaanderen.be/ns/loongegevens#arbeidsloon",
-      "@type": "@id"
-    },
     "Arbeidsrelatie.bankrekeningnummer": {
       "@id": "https://data.vlaanderen.be/ns/loongegevens#bankrekeningnummer",
       "@type": "@id"
@@ -112,6 +107,11 @@
       "@id": "https://data.vlaanderen.be/ns/loongegevens#overeenkomst",
       "@type": "@id"
     },
+    "Arbeidsrelatie.relatie": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/loongegevens#arbeidsloon",
+      "@type": "@id"
+    },
     "Arbeidsrelatie.statuut": {
       "@id": "https://data.vlaanderen.be/ns/loongegevens#statuut",
       "@type": "@id"
@@ -120,63 +120,75 @@
       "@id": "https://data.vlaanderen.be/ns/loongegevens#tewerkstellingsbreuk",
       "@type": "@id"
     },
-    "Bankrekeningnummer": "https://data.vlaanderen.be/ns/loongegevens#Bankrekeningnummer",
-    "Decimal": "https://data.vlaanderen.be/ns/loongegevens#Decimal",
-    "GeregistreerdPersoon": "http://fixme.com#GeregistreerdPersoon",
+    "Bankrekening": "https://schema.org/BankAccount",
+    "Bankrekening.bankrekeningnummer": {
+      "@id": "https://data.vlaanderen.be/ns/loongegevens#bankrekeningnummer",
+      "@type": ""
+    },
+    "GeregistreerdPersoon": "https://data.vlaanderen.be/ns/persoon#GeregistreerdPersoon",
     "GeregistreerdPersoon.registratie": {
       "@id": "http://fixme.com#registratie",
       "@type": "@id"
     },
-    "GeregistreerdeOrganisatie": "http://fixme.com#GeregistreerdeOrganisatie",
+    "GeregistreerdeOrganisatie": "http://www.w3.org/ns/regorg#RegisteredOrganization",
     "GeregistreerdeOrganisatie.^vestiging": {
       "@id": "http://fixme.com#^vestiging",
       "@type": "@id"
     },
     "GeregistreerdeOrganisatie.rechtsvorm": {
-      "@id": "http://fixme.com#rechtsvorm",
+      "@id": "https://data.vlaanderen.be/ns/organisatie#rechtsvorm",
       "@type": "@id"
     },
     "GeregistreerdeOrganisatie.registratie": {
-      "@id": "http://fixme.com#registratie",
+      "@id": "http://www.w3.org/ns/regorg#registration",
       "@type": "@id"
     },
     "Gezin": "http://fixme.com#Gezin",
-    "Gezin.gezinshoofd": {
-      "@id": "http://fixme.com#gezinshoofd",
+    "Gezin.isHoofdVan": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#isHoofdVan",
       "@type": "@id"
     },
-    "Gezin.gezinslid": {
+    "Gezin.isLidVan": {
       "@container": "@set",
-      "@id": "http://fixme.com#gezinslid",
+      "@id": "https://data.vlaanderen.be/ns/persoon#isLidVan",
       "@type": "@id"
     },
-    "Identificator": "http://fixme.com#Identificator",
+    "Identificator": "http://www.w3.org/ns/adms#Identifier",
     "Inkomst": "https://data.vlaanderen.be/ns/loongegevens#Inkomst",
-    "Organisatie": "http://fixme.com#Organisatie",
+    "KwantitatieveWaarde": "https://schema.org/QuantitativeValue",
+    "KwantitatieveWaarde.standaardEenheid": {
+      "@id": "https://schema.org/unitCode",
+      "@type": ""
+    },
+    "KwantitatieveWaarde.waarde": {
+      "@id": "https://schema.org/value",
+      "@type": ""
+    },
+    "Organisatie": "http://www.w3.org/ns/org#Organization",
     "Organisatie.voorkeursnaam": {
-      "@id": "http://fixme.com#voorkeursnaam",
+      "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
       "@type": "@id"
     },
     "Overeenkomsttype": "https://data.vlaanderen.be/ns/loongegevens#Overeenkomsttype",
-    "Periode": "http://fixme.com#Periode",
+    "Periode": "http://data.europa.eu/m8g/PeriodOfTime",
     "Periode.begin": {
-      "@id": "http://fixme.com#begin",
+      "@id": "http://data.europa.eu/m8g/startTime",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "Periode.einde": {
-      "@id": "http://fixme.com#einde",
+      "@id": "http://data.europa.eu/m8g/endTime",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
-    "Persoon": "http://fixme.com#Persoon",
-    "Persoon.geboorte": {
+    "Persoon": "http://www.w3.org/ns/person#Person",
+    "Persoon.geboortedatum": {
       "@id": "http://fixme.com#geboorte",
       "@type": "http://www.w3.org/2001/XMLSchema#date"
     },
-    "Persoon.isHoofdVan": {
+    "Persoon.gezinshoofd": {
       "@id": "http://fixme.com#isHoofdVan",
       "@type": "@id"
     },
-    "Persoon.isLidVan": {
+    "Persoon.gezinslid": {
       "@container": "@set",
       "@id": "http://fixme.com#isLidVan",
       "@type": "@id"
@@ -190,16 +202,16 @@
       "@type": "@id"
     },
     "Persoon.volledigeNaam": {
-      "@id": "http://fixme.com#volledigeNaam",
+      "@id": "https://data.vlaanderen.be/ns/persoon#volledigeNaam",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
-    "Rechtsvorm": "http://fixme.com#Rechtsvorm",
+    "Rechtsvorm": "https://data.vlaanderen.be/ns/organisatie#rechtsvorm",
     "Schuldbemiddelingstype": "https://data.vlaanderen.be/ns/loongegevens#Schuldbemiddelingstype",
     "Statuuttype": "https://data.vlaanderen.be/ns/loongegevens#Statuuttype",
     "Tewerkstellingsbreuk": "https://data.vlaanderen.be/ns/loongegevens#Tewerkstellingsbreuk",
-    "Verblijfplaats": "http://fixme.com#Verblijfplaats",
-    "Verblijfplaats.verblijfsadres": {
-      "@id": "http://fixme.com#verblijfsadres",
+    "Verblijfplaats": "https://data.vlaanderen.be/ns/persoon#Verblijfplaats",
+    "Verblijfplaats.verblijfadres": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#verblijfsadres",
       "@type": "@id"
     },
     "Verloningstype": "https://data.vlaanderen.be/ns/loongegevens#Verloningstype"
