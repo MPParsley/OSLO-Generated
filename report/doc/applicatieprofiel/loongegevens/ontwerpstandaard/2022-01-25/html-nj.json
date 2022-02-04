@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-loongegevens/tree/a64479505d13ef92e6556419a2be9ada400690a0",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-loongegevens/blob/a64479505d13ef92e6556419a2be9ada400690a0/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-loongegevens/tree/d91bdbf09c5c7a65892e03f4dc2599e51c28ad3d",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-loongegevens/blob/d91bdbf09c5c7a65892e03f4dc2599e51c28ad3d/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-loongegevens/issues",
     "standaardregisterurl": "https://test.data.vlaanderen.be/standaarden/standaard-in-ontwikkeling/applicatieprofiel-loongegevens.html",
     "usesVocs": [],
@@ -252,8 +252,21 @@
               "EA-Name": "Arbeidsloon"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         },
@@ -953,13 +966,13 @@
           "range": [
             {
               "range_label": "TaalString",
-              "range_uri": "https://data.vlaanderen.be/ns/loongegevens#TaalString"
+              "range_uri": "https://w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "https://data.vlaanderen.be/ns/loongegevens#TaalString",
-              "range_puri": "https://data.vlaanderen.be/ns/loongegevens#TaalString",
+              "range_uri": "https://w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "https://w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
                 "nl": "TaalString"
               }
@@ -985,11 +998,79 @@
           "name": "Agent",
           "label": "Agent",
           "package": "OSLO-Generiek",
-          "uri": "http://fixme.com#Agent",
-          "scoped_uri": "http://fixme.com#Agent"
+          "uri": "http://purl.org/dc/terms/Agent",
+          "scoped_uri": "http://purl.org/dc/terms/Agent"
         }
       ],
       "properties": [
+        {
+          "uri": "TODO",
+          "name": {
+            "nl": "gezinslid"
+          },
+          "sort_nl": "gezinslid",
+          "description": {
+            "nl": "TO DO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://www.w3.org/ns/person#Person",
+              "EA-Name": "Persoon"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Gezin",
+              "range_uri": "http://fixme.com#Gezin"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Gezin",
+              "range_puri": "http://fixme.com#Gezin",
+              "range_label": {
+                "nl": "Gezin"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "TODO",
+          "name": {
+            "nl": "gezinshoofd"
+          },
+          "sort_nl": "gezinshoofd",
+          "description": {
+            "nl": "TO DO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://www.w3.org/ns/person#Person",
+              "EA-Name": "Persoon"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Gezin",
+              "range_uri": "http://fixme.com#Gezin"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Gezin",
+              "range_puri": "http://fixme.com#Gezin",
+              "range_label": {
+                "nl": "Gezin"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
         {
           "uri": "http://fixme.com#geboorte",
           "name": {
@@ -1023,70 +1104,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://fixme.com#isHoofdVan",
-          "name": {
-            "nl": "gezinshoofd"
-          },
-          "sort_nl": "gezinshoofd",
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://www.w3.org/ns/person#Person",
-              "EA-Name": "Persoon"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Gezin",
-              "range_uri": "http://fixme.com#Gezin"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Gezin",
-              "range_puri": "http://fixme.com#Gezin",
-              "range_label": {
-                "nl": "Gezin"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com#isLidVan",
-          "name": {
-            "nl": "gezinslid"
-          },
-          "sort_nl": "gezinslid",
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://www.w3.org/ns/person#Person",
-              "EA-Name": "Persoon"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Gezin",
-              "range_uri": "http://fixme.com#Gezin"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Gezin",
-              "range_puri": "http://fixme.com#Gezin",
-              "range_label": {
-                "nl": "Gezin"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
           "uri": "http://fixme.com#personenFiscaalTenLaste",
           "name": {
             "nl": "personenFiscaalTenLaste"
@@ -1102,8 +1119,21 @@
               "EA-Name": "Persoon"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_label": {
+                "nl": "Integer"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         },
@@ -1317,7 +1347,7 @@
       ],
       "properties": [
         {
-          "uri": "http://fixme.com#registratie",
+          "uri": "https://data.vlaanderen.be/ns/persoon#registratie",
           "name": {
             "nl": "registratie"
           },
@@ -1444,6 +1474,19 @@
       "description": {
         "nl": "Een rekeningnummer dat gelinkt is aan de arbeidsrelatie. Op dit rekeningnummer wordt het arbeidsloon van de persoon gestort."
       },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/loongegevens#bankrekeningnummer",
+      "name": {},
+      "description": {},
       "domain": [
         null
       ],
@@ -2117,8 +2160,21 @@
               "EA-Name": "Bankrekening"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Identificator",
+              "range_uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Identificator",
+              "range_puri": "http://www.w3.org/ns/adms#Identifier",
+              "range_label": {
+                "nl": "Identificator"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         }

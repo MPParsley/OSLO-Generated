@@ -27,14 +27,14 @@ schemas:QuantitativeValue a rdfs:Class;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens>;
   rdfs:range <https://data.vlaanderen.be/ns/loongegevens#Arbeidsloon> .
 
-<https://data.vlaanderen.be/ns/loongegevens#bankrekeningnummer> a owl:ObjectProperty,
-    rdf:Property;
+<https://data.vlaanderen.be/ns/loongegevens#bankrekeningnummer> a owl:ObjectProperty;
   rdfs:label "bankrekeningnummer"@nl;
   rdfs:comment "Een rekeningnummer dat gelinkt is aan de arbeidsrelatie. Op dit rekeningnummer wordt het arbeidsloon van de persoon gestort."@nl;
   rdfs:domain <https://data.vlaanderen.be/ns/loongegevens#Arbeidsrelatie>,
     schemas:BankAccount;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens>;
-  rdfs:range schemas:BankAccount .
+  rdfs:range schemas:BankAccount,
+    <http://www.w3.org/ns/adms#Identifier> .
 
 <https://data.vlaanderen.be/ns/loongegevens#bedrijfsvoorheffing> a owl:ObjectProperty;
   rdfs:label "bedrijfsvoorheffing"@nl;
@@ -80,11 +80,12 @@ schemas:QuantitativeValue a rdfs:Class;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens>;
   rdfs:range schemas:QuantitativeValue .
 
-<https://data.vlaanderen.be/ns/loongegevens#maaltijdcheques> a rdf:Property;
+<https://data.vlaanderen.be/ns/loongegevens#maaltijdcheques> a owl:DatatypeProperty;
   rdfs:label "maaltijdcheques"@nl;
   rdfs:comment "Een maaltijdcheque is een extralegaal voordeel dat een werknemer van zijn/haar werkgever krijgt. Het is een bijdrage van de werkgever voor de kosten van de werknemer voor maaltijden."@nl;
   rdfs:domain <https://data.vlaanderen.be/ns/loongegevens#Arbeidsloon>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens> .
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens>;
+  rdfs:range xsd:boolean .
 
 <https://data.vlaanderen.be/ns/loongegevens#nettoGestortLoon> a owl:ObjectProperty;
   rdfs:label "nettoGestortLoon"@nl;
