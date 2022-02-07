@@ -55,7 +55,7 @@
     shacl:name "alternatieve identificator";
     shacl:path <http://www.w3.org/ns/adms#identifier>
   ], [
-    shacl:datatype xsd:anyURI;
+    shacl:class rdfs:Resource;
     shacl:description "De record in een andere catalogus waarvan deze record en de beschrijvingen van het bijhorende hoofdonderwerp van afgeleid zijn.";
     shacl:maxCount 1;
     shacl:name "bron metadata record";
@@ -239,7 +239,7 @@ wordt.""";
     shacl:name "endpointURL";
     shacl:path dcat:endpointURL
   ], [
-    shacl:datatype xsd:anyURI;
+    shacl:class rdfs:Resource;
     shacl:description "Een beschrijving van de diensten die beschikbaar zijn via de end-points, met inbegrip van hun operaties, parameters, enz.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -352,7 +352,7 @@ dataservice behoort""";
     shacl:name "titel";
     shacl:path dc:title
   ], [
-    <http://purl.org/linked-data/cube#codeList> <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;
+    <http://purl.org/linked-data/cube#codeList> <http://publications.europa.eu/resource/authority/access-right>;
     shacl:class skos:Concept;
     shacl:description "De toegankelijkheid voor de dataservice.";
     shacl:maxCount 1;
@@ -726,7 +726,9 @@ waaraan de distributie voldoet.""";
     shacl:name "CatalogusResource";
     shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#RelatieQualificatie.catalogusResource.target>
   ], [
+    <http://purl.org/linked-data/cube#codeList> <http://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationType>;
     shacl:class skos:Concept;
+    shacl:description "De functie hoe de entiteiten zich tot elkaar verhouden. ";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "rol";
@@ -770,7 +772,7 @@ gepubliceerd""";
     shacl:name "publicatiedatum";
     shacl:path dc:issued
   ], [
-    shacl:datatype xsd:anyURI;
+    shacl:class rdfs:Resource;
     shacl:description """Een URL waarop men de specificatie kan
 vinden""";
     shacl:maxCount 1;
@@ -837,16 +839,16 @@ standaard bekend is.""";
 
  [
     shacl:class rdfs:Resource;
-    shacl:description "Een webpagina die ofwel toelaat om contact op te nemen (via b.v. een webformulier) of die informatie bevat hoe men contact kan opnemen.";
-    shacl:maxCount 1;
-    shacl:name "contactpagina";
-    shacl:path foaf:page
-  ] .
-
- [
-    shacl:class rdfs:Resource;
     shacl:description "Het e-mailadres waarmee een gebruiker contact kan opnemen voor informatie.";
     shacl:maxCount 1;
     shacl:name "e-mail";
     shacl:path vcard:hasEmail
+  ] .
+
+ [
+    shacl:class rdfs:Resource;
+    shacl:description "Een webpagina die ofwel toelaat om contact op te nemen (via b.v. een webformulier) of die informatie bevat hoe men contact kan opnemen.";
+    shacl:maxCount 1;
+    shacl:name "contactpagina";
+    shacl:path foaf:page
   ] .
