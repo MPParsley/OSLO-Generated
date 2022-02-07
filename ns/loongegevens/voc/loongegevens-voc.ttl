@@ -6,6 +6,12 @@
 @prefix schemas: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<http://www.w3.org/2009/08/skos-reference/skos.html#Concept> a rdfs:Class;
+  rdfs:label "Overeenkomsttype"@nl,
+    "Statuurtype"@nl,
+    "Verloningstype"@nl,
+    "Schuldbemiddelingstype"@nl .
+
 schemas:BankAccount a rdfs:Class;
   rdfs:label "Bankrekening"@nl .
 
@@ -26,6 +32,7 @@ schemas:BankAccount a rdfs:Class;
 
 <https://data.vlaanderen.be/ns/loongegevens#arbeidsrelatie> a owl:ObjectProperty;
   rdfs:label "arbeidsrelatie"@nl;
+  rdfs:comment "TO DO"@nl;
   rdfs:domain <https://data.vlaanderen.be/ns/loongegevens#Arbeidsloon>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens>;
   rdfs:range <https://data.vlaanderen.be/ns/loongegevens#Arbeidsrelatie> .
@@ -112,14 +119,14 @@ schemas:BankAccount a rdfs:Class;
   rdfs:comment "Voltijds of deeltijds."@nl;
   rdfs:domain <https://data.vlaanderen.be/ns/loongegevens#Arbeidsrelatie>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens>;
-  rdfs:range <https://data.vlaanderen.be/ns/loongegevens#Overeenkomsttype> .
+  rdfs:range <http://www.w3.org/2009/08/skos-reference/skos.html#Concept> .
 
 <https://data.vlaanderen.be/ns/loongegevens#periodiciteitVerloning> a owl:ObjectProperty;
   rdfs:label "periodiciteitVerloning"@nl;
   rdfs:comment "Heeft betrekking op het verschil tussen een éénmalige verloning en een periodieke verloning."@nl;
   rdfs:domain <https://data.vlaanderen.be/ns/loongegevens#Arbeidsloon>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens>;
-  rdfs:range <https://data.vlaanderen.be/ns/loongegevens#Verloningstype> .
+  rdfs:range <http://www.w3.org/2009/08/skos-reference/skos.html#Concept> .
 
 <https://data.vlaanderen.be/ns/loongegevens#premie> a owl:ObjectProperty;
   rdfs:label "premie"@nl;
@@ -133,14 +140,14 @@ schemas:BankAccount a rdfs:Class;
   rdfs:comment "Bij schuldbemiddeling wordt een instantie ingeschakeld die een afbetalingsplan opstelt voor het betalen van schulden aan de schuldeisers. Het loon van een persoon wordt naar de schuldbemiddelaar gestort, die het volgens de opgestelde regeling spendeert."@nl;
   rdfs:domain <https://data.vlaanderen.be/ns/loongegevens#Arbeidsloon>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens>;
-  rdfs:range <https://data.vlaanderen.be/ns/loongegevens#Schuldbemiddelingstype> .
+  rdfs:range <http://www.w3.org/2009/08/skos-reference/skos.html#Concept> .
 
 <https://data.vlaanderen.be/ns/loongegevens#statuut> a owl:ObjectProperty;
   rdfs:label "statuut"@nl;
   rdfs:comment "Werknemer, ambtenaar, student, ..."@nl;
   rdfs:domain <https://data.vlaanderen.be/ns/loongegevens#Arbeidsrelatie>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens>;
-  rdfs:range <https://data.vlaanderen.be/ns/loongegevens#Statuuttype> .
+  rdfs:range <http://www.w3.org/2009/08/skos-reference/skos.html#Concept> .
 
 <https://data.vlaanderen.be/ns/loongegevens#supplementaireBelastbareBedragen> a owl:ObjectProperty;
   rdfs:label "supplementaireBelastbareBedragen"@nl;
@@ -183,28 +190,9 @@ schemas:BankAccount a rdfs:Class;
   rdfs:label "Inkomst"@nl;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens> .
 
-<https://data.vlaanderen.be/ns/loongegevens#Overeenkomsttype> a owl:Class;
-  rdfs:label "Overeenkomsttype"@nl;
-  rdfs:comment "Informatie over het type looptijd van de overeenkomst (voltijds of deeltijds)."@nl;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens> .
-
-<https://data.vlaanderen.be/ns/loongegevens#Schuldbemiddelingstype> a owl:Class;
-  rdfs:label "Schuldbemiddelingstype"@nl;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens> .
-
-<https://data.vlaanderen.be/ns/loongegevens#Statuuttype> a owl:Class;
-  rdfs:label "Statuurtype"@nl;
-  rdfs:comment "Informatie over het sociale statuut (werknemer, ambtenaar, student...)."@nl;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens> .
-
 <https://data.vlaanderen.be/ns/loongegevens#Tewerkstellingsbreuk> a owl:Class;
   rdfs:label "Tewerkstellingsbreuk"@nl;
   rdfs:comment "Het gemiddeld aantal uren per week waarin de werknemer geacht wordt te werken op basis van zijn contract, gedeeld door het gemiddeld aantal uren per week waarin een modelpersoon geacht wordt te werken."@nl;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens> .
-
-<https://data.vlaanderen.be/ns/loongegevens#Verloningstype> a owl:Class;
-  rdfs:label "Verloningstype"@nl;
-  rdfs:comment "Informatie over de periodiciteit van de verloning (eenmalig zoals bij een uitzonderlijke betaling of periodiek)."@nl;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens> .
 
 <https://data.vlaanderen.be/ns/loongegevens#Arbeidsrelatie> a owl:Class;
@@ -229,4 +217,5 @@ schemas:BankAccount a rdfs:Class;
     foaf:mbox <mailto:oslo@kb.vlaanderen.be>;
     foaf:name "Data Vlaanderen"
   ];
-  rdfs:seeAlso schemas:BankAccount .
+  rdfs:seeAlso <http://www.w3.org/2009/08/skos-reference/skos.html#Concept>,
+    schemas:BankAccount .

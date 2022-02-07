@@ -8,19 +8,19 @@
 <https://data.vlaanderen.be/shacl/loongegevens-ap> <https://data.vlaanderen.be/shacl/loongegevens-apshapes> <https://data.vlaanderen.be/shacl/loongegevens-ap#ArbeidsloonShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#ArbeidsrelatieShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#InkomstShape>,
-    <https://data.vlaanderen.be/shacl/loongegevens-ap#OvereenkomsttypeShape>,
-    <https://data.vlaanderen.be/shacl/loongegevens-ap#SchuldbemiddelingstypeShape>,
-    <https://data.vlaanderen.be/shacl/loongegevens-ap#StatuuttypeShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#TewerkstellingsbreukShape>,
-    <https://data.vlaanderen.be/shacl/loongegevens-ap#VerloningstypeShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#PeriodeShape>,
-    <https://data.vlaanderen.be/shacl/loongegevens-ap#GezinShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#RechtsvormtypeShape>,
+    <https://data.vlaanderen.be/shacl/loongegevens-ap#OvereenkomsttypeShape>,
+    <https://data.vlaanderen.be/shacl/loongegevens-ap#StatuuttypeShape>,
+    <https://data.vlaanderen.be/shacl/loongegevens-ap#VerloningstypeShape>,
+    <https://data.vlaanderen.be/shacl/loongegevens-ap#SchuldbemiddelingstypeShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#AdresvoorstellingShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#OrganisatieShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#PersoonShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#GeregistreerdeOrganisatieShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#GeregistreerdPersoonShape>,
+    <https://data.vlaanderen.be/shacl/loongegevens-ap#GezinShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#VerblijfplaatsShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#BankrekeningShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#KwantitatieveWaardeShape> .
@@ -77,6 +77,7 @@
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#afTeTrekkenNettoBedragen>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/loongegevens#Arbeidsrelatie>;
+    shacl:description "TO DO";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "arbeidsrelatie";
@@ -138,7 +139,7 @@
     shacl:name "nettoloon";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#nettoloon>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/loongegevens#Verloningstype>;
+    shacl:class <http://www.w3.org/2009/08/skos-reference/skos.html#Concept>;
     shacl:description "Heeft betrekking op het verschil tussen een éénmalige verloning en een periodieke verloning.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -152,7 +153,7 @@
     shacl:name "premie";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#premie>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/loongegevens#Schuldbemiddelingstype>;
+    shacl:class <http://www.w3.org/2009/08/skos-reference/skos.html#Concept>;
     shacl:description "Bij schuldbemiddeling wordt een instantie ingeschakeld die een afbetalingsplan opstelt voor het betalen van schulden aan de schuldeisers. Het loon van een persoon wordt naar de schuldbemiddelaar gestort, die het volgens de opgestelde regeling spendeert.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -211,14 +212,14 @@
     shacl:name "contractperiode";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#contractperiode>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/loongegevens#Overeenkomsttype>;
+    shacl:class <http://www.w3.org/2009/08/skos-reference/skos.html#Concept>;
     shacl:description "Voltijds of deeltijds.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "overeenkomst";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#overeenkomst>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/loongegevens#Statuuttype>;
+    shacl:class <http://www.w3.org/2009/08/skos-reference/skos.html#Concept>;
     shacl:description "Werknemer, ambtenaar, student, ...";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -280,19 +281,17 @@
   shacl:closed false;
   shacl:property [
     shacl:class <http://www.w3.org/ns/person#Person>;
-    shacl:description "Persoon die standaard het gezin vertegenwoordigt.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "gezinshoofd";
-    shacl:path <https://data.vlaanderen.be/ns/persoon#isHoofdVan>
+    shacl:path <http://fixme.com#gezinshoofd>
   ], [
     shacl:class <http://www.w3.org/ns/person#Person>;
-    shacl:description "Persoon die tot een gezin behoort.";
     shacl:minCount 1;
     shacl:name "gezinslid";
-    shacl:path <https://data.vlaanderen.be/ns/persoon#isLidVan>
+    shacl:path <http://fixme.com#gezinslid>
   ];
-  shacl:targetClass <http://fixme.com#Gezin> .
+  shacl:targetClass <https://data.vlaanderen.be/ns/persoon#Gezin> .
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#InkomstShape> a shacl:NodeShape;
   shacl:closed false;
@@ -336,7 +335,7 @@
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#OvereenkomsttypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/loongegevens#Overeenkomsttype> .
+  shacl:targetClass <http://www.w3.org/2009/08/skos-reference/skos.html#Concept> .
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#PeriodeShape> a shacl:NodeShape;
   shacl:closed false;
@@ -366,14 +365,16 @@
     shacl:name "geboorte";
     shacl:path <http://fixme.com#geboorte>
   ], [
-    shacl:class <http://fixme.com#Gezin>;
-    shacl:description "TO DO";
+    shacl:class <https://data.vlaanderen.be/ns/persoon#Gezin>;
+    shacl:description "Persoon die standaard het gezin vertegenwoordigt.";
     shacl:maxCount 1;
-    shacl:name "isHoofdVan"
+    shacl:name "isHoofdVan";
+    shacl:path <http://fixme.com#isHoofdVan>
   ], [
-    shacl:class <http://fixme.com#Gezin>;
-    shacl:description "TO DO";
-    shacl:name "isLidVan"
+    shacl:class <https://data.vlaanderen.be/ns/persoon#Gezin>;
+    shacl:description "Persoon die tot een gezin behoort.";
+    shacl:name "isLidVan";
+    shacl:path <http://fixme.com#isLidVan>
   ], [
     shacl:datatype xsd:integer;
     shacl:description "Personen die niet over een inkomen beschikken, of een netto jaarinkomen hebben dat lager is dan wettelijk vastgelegd voor deze regeling, en onder hetzelfde dak wonen als de persoon die voor hen moet voorzien.";
@@ -403,11 +404,11 @@
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#SchuldbemiddelingstypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/loongegevens#Schuldbemiddelingstype> .
+  shacl:targetClass <http://www.w3.org/2009/08/skos-reference/skos.html#Concept> .
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#StatuuttypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/loongegevens#Statuuttype> .
+  shacl:targetClass <http://www.w3.org/2009/08/skos-reference/skos.html#Concept> .
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#TewerkstellingsbreukShape> a shacl:NodeShape;
   shacl:closed false;
@@ -427,4 +428,4 @@
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#VerloningstypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/loongegevens#Verloningstype> .
+  shacl:targetClass <http://www.w3.org/2009/08/skos-reference/skos.html#Concept> .
