@@ -281,16 +281,17 @@
   shacl:closed false;
   shacl:property [
     shacl:class <http://www.w3.org/ns/person#Person>;
-    shacl:description "TO DO";
+    shacl:description "Persoon die standaard het gezin vertegenwoordigt.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "gezinshoofd";
     shacl:path <https://data.vlaanderen.be/ns/persoon#gezinshoofd>
   ], [
     shacl:class <http://www.w3.org/ns/person#Person>;
-    shacl:description "TO DO";
+    shacl:description "Persoon die tot een gezin behoort.";
     shacl:minCount 1;
-    shacl:name "gezinslid"
+    shacl:name "gezinslid";
+    shacl:path <http://data.vlaanderen.be/ns/persoon#gezinslid>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/persoon#Gezin> .
 
@@ -360,19 +361,20 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype xsd:date;
+    shacl:description "Datum waarop de Geboorte plaatsvond.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "geboortedatum";
     shacl:path <https://data.vlaanderen.be/ns/persoon#datum>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/persoon#Gezin>;
-    shacl:description "Persoon die standaard het gezin vertegenwoordigt.";
+    shacl:description "Gezin waarvan de persoon het gezinshoofd is.";
     shacl:maxCount 1;
     shacl:name "isHoofdVan";
     shacl:path <https://data.vlaanderen.be/ns/persoon#isHoofdVan>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/persoon#Gezin>;
-    shacl:description "Persoon die tot een gezin behoort.";
+    shacl:description "Gezin waartoe een persoon behoort.";
     shacl:name "isLidVan";
     shacl:path <https://data.vlaanderen.be/ns/persoon#isLidVan>
   ], [
@@ -385,8 +387,6 @@
   ], [
     shacl:class <https://data.vlaanderen.be/ns/persoon#Verblijfplaats>;
     shacl:description "Plaats waar een persoon verblijft.";
-    shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "verblijfplaats";
     shacl:path <https://data.vlaanderen.be/ns/persoon#heeftVerblijfplaats>
   ], [
