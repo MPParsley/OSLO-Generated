@@ -13,8 +13,6 @@ dc:LicenseDocument a rdfs:Class .
 
 dc:RightsStatement a rdfs:Class .
 
-dc:Standard a rdfs:Class .
-
 vcard:Kind a rdfs:Class .
 
 dcat:Catalog a rdfs:Class .
@@ -29,9 +27,36 @@ dcat:Distribution a rdfs:Class .
 
 dcat:Resource a rdfs:Class .
 
-<http://data.vlaanderen.be/ns/metadata-dcat#Statuut> a owl:ObjectProperty;
-  rdfs:label "statuut"@nl;
-  rdfs:comment "Een aanduiding van op welke basis de catalogusresource beschikbaar is."@nl;
+<http://data.vlaanderen.be/ns/metadata-dcat#GEMETconcept> a owl:ObjectProperty;
+  rdfs:label "GEMET concept"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Het verwachte bereik is een dataset."@nl;
+  rdfs:comment """De rubriek waartoe de
+ catalogusresource behoort volgens de 
+GEMET thesaurus."""@nl;
+  rdfs:domain dcat:Resource;
+  rdfs:isDefinedBy <http://data.vlaanderen.be/ns/metadata-dcat>;
+  rdfs:range skos:Concept;
+  rdfs:subPropertyOf dc:subject .
+
+<http://data.vlaanderen.be/ns/metadata-dcat#INSPIREthema> a owl:ObjectProperty;
+  rdfs:label "INSPIRE thema"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Het verwachte bereik is een dataset."@nl;
+  rdfs:comment """De rubriek waartoe de
+catalogusresource behoort volgens de 
+INSPIRE thema's"""@nl;
+  rdfs:domain dcat:Resource;
+  rdfs:isDefinedBy <http://data.vlaanderen.be/ns/metadata-dcat>;
+  rdfs:range skos:Concept;
+  rdfs:subPropertyOf dc:subject .
+
+<http://data.vlaanderen.be/ns/metadata-dcat#ISOcategorie> a owl:ObjectProperty;
+  rdfs:label "ISO categorie"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Het verwachte bereik is een dataset."@nl;
+  rdfs:comment """De rubriek waartoe de
+catalogusresource behoort volgens de
+ afspraken in de ISO-
+standaard voor
+geografische metadata"""@nl;
   rdfs:domain dcat:Resource;
   rdfs:isDefinedBy <http://data.vlaanderen.be/ns/metadata-dcat>;
   rdfs:range skos:Concept;
@@ -39,6 +64,7 @@ dcat:Resource a rdfs:Class .
 
 <http://data.vlaanderen.be/ns/metadata-dcat#landingspaginaVoorAuthenticatie> a owl:DatatypeProperty;
   rdfs:label "landingspagina voor authenticatie"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Het verwachte bereik is een dataservice."@nl;
   rdfs:comment "Een verwijzing naar de landingspagina met de specifieke informatie over de authenticatie voor de dataservice."@nl;
   rdfs:domain dcat:DataService;
   rdfs:isDefinedBy <http://data.vlaanderen.be/ns/metadata-dcat>;
@@ -47,6 +73,7 @@ dcat:Resource a rdfs:Class .
 
 <http://data.vlaanderen.be/ns/metadata-dcat#landingspaginaVoorGebruiksinformatie> a owl:DatatypeProperty;
   rdfs:label "landingspagina voor gebruiksinformatie"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Het verwachte bereik is een dataservice."@nl;
   rdfs:comment "Een verwijzing naar de landingspagina met de specifieke informatie over het gebruik van de dataservice."@nl;
   rdfs:domain dcat:DataService;
   rdfs:isDefinedBy <http://data.vlaanderen.be/ns/metadata-dcat>;
@@ -55,6 +82,7 @@ dcat:Resource a rdfs:Class .
 
 <http://data.vlaanderen.be/ns/metadata-dcat#landingspaginaVoorStatusinformatie> a owl:DatatypeProperty;
   rdfs:label "landingspagina voor statusinformatie"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Het verwachte bereik is een dataservice."@nl;
   rdfs:comment "Een verwijzing naar de statuspagina van de dataservice"@nl;
   rdfs:domain dcat:DataService;
   rdfs:isDefinedBy <http://data.vlaanderen.be/ns/metadata-dcat>;
@@ -63,6 +91,7 @@ dcat:Resource a rdfs:Class .
 
 <http://data.vlaanderen.be/ns/metadata-dcat#levensfase> a owl:ObjectProperty;
   rdfs:label "levensfase"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Het verwachte bereik is een dataservice."@nl;
   rdfs:comment "De levensfase waarin de dataservice zich bevindt."@nl;
   rdfs:domain dcat:DataService;
   rdfs:isDefinedBy <http://data.vlaanderen.be/ns/metadata-dcat>;
@@ -70,52 +99,55 @@ dcat:Resource a rdfs:Class .
 
 <http://data.vlaanderen.be/ns/metadata-dcat#ontwikkelingstoestand> a owl:ObjectProperty;
   rdfs:label "ontwikkelingstoestand"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Het verwachte bereik is een dataservice."@nl;
   rdfs:comment "De ontwikkelingstoestand waarin de dataservice is gedeployed."@nl;
   rdfs:domain dcat:DataService;
   rdfs:isDefinedBy <http://data.vlaanderen.be/ns/metadata-dcat>;
   rdfs:range skos:Concept .
 
-dc:accessRights a rdf:Property .
+<http://data.vlaanderen.be/ns/metadata-dcat#servicecategorie> a owl:ObjectProperty;
+  rdfs:label "service categorie"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Het verwachte bereik is een dataservice."@nl;
+  rdfs:comment "De categorie waartoe de catalogusresource behoort"@nl;
+  rdfs:domain dcat:Resource;
+  rdfs:isDefinedBy <http://data.vlaanderen.be/ns/metadata-dcat>;
+  rdfs:range skos:Concept;
+  rdfs:subPropertyOf dc:type .
 
-dc:conformsTo a rdf:Property .
+<http://data.vlaanderen.be/ns/metadata-dcat#servicetype> a owl:ObjectProperty;
+  rdfs:label "service type"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Het verwachte bereik is een dataservice."@nl;
+  rdfs:comment """Het type waartoe de
+ catalogusresource behoort"""@nl;
+  rdfs:domain dcat:Resource;
+  rdfs:isDefinedBy <http://data.vlaanderen.be/ns/metadata-dcat>;
+  rdfs:range skos:Concept;
+  rdfs:subPropertyOf dc:type .
 
-dc:description a rdf:Property .
+<http://data.vlaanderen.be/ns/metadata-dcat#status> a owl:ObjectProperty;
+  rdfs:label "status"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Het verwachte bereik is een dataset."@nl;
+  rdfs:comment "De progressie in het samenstellen van de catalogusresource"@nl;
+  rdfs:domain dcat:Resource;
+  rdfs:isDefinedBy <http://data.vlaanderen.be/ns/metadata-dcat>;
+  rdfs:range skos:Concept;
+  rdfs:subPropertyOf <http://www.w3.org/ns/adms#status> .
 
-dc:identifier a rdf:Property .
-
-dc:issued a rdf:Property .
-
-dc:license a rdf:Property .
-
-dc:modified a rdf:Property .
-
-dc:rights a rdf:Property .
-
-dc:title a rdf:Property .
-
-owl:versionInfo a rdf:Property .
+<http://data.vlaanderen.be/ns/metadata-dcat#statuut> a owl:ObjectProperty;
+  rdfs:label "statuut"@nl;
+  rdfs:comment "Een aanduiding van op welke basis de catalogusresource beschikbaar is."@nl;
+  rdfs:domain dcat:Resource;
+  rdfs:isDefinedBy <http://data.vlaanderen.be/ns/metadata-dcat>;
+  rdfs:range skos:Concept;
+  rdfs:subPropertyOf dc:subject .
 
 vcard:hasEmail a rdf:Property .
 
-<http://www.w3.org/ns/adms#identifier> a rdf:Property .
-
 dcat:accessService a rdf:Property .
-
-dcat:accessURL a rdf:Property .
-
-dcat:contactPoint a rdf:Property .
 
 dcat:dataset a rdf:Property .
 
 dcat:distribution a rdf:Property .
-
-dcat:downloadURL a rdf:Property .
-
-dcat:endpointDescription a rdf:Property .
-
-dcat:endpointURL a rdf:Property .
-
-dcat:keyword a rdf:Property .
 
 dcat:record a rdf:Property .
 
@@ -123,13 +155,9 @@ dcat:servesdataset a rdf:Property .
 
 dcat:service a rdf:Property .
 
-dcat:theme a rdf:Property .
-
 foaf:page a rdf:Property .
 
 foaf:primaryTopic a rdf:Property .
-
-dcat:landingPage a rdf:Property .
 
 <http://data.vlaanderen.be/ns/metadata-dcat> a owl:Ontology;
   rdfs:label "metadata-dcat"@en,
@@ -285,7 +313,6 @@ dcat:landingPage a rdf:Property .
   ];
   rdfs:seeAlso dc:LicenseDocument,
     dc:RightsStatement,
-    dc:Standard,
     vcard:Kind,
     dcat:Catalog,
     dcat:CatalogRecord,
@@ -293,32 +320,13 @@ dcat:landingPage a rdf:Property .
     dcat:Dataset,
     dcat:Distribution,
     dcat:Resource,
-    dc:accessRights,
-    dc:conformsTo,
-    dc:description,
-    dc:identifier,
-    dc:issued,
-    dc:license,
-    dc:modified,
-    dc:rights,
-    dc:title,
-    owl:versionInfo,
     vcard:hasEmail,
-    <http://www.w3.org/ns/adms#identifier>,
     dcat:accessService,
-    dcat:accessURL,
-    dcat:contactPoint,
     dcat:dataset,
     dcat:distribution,
-    dcat:downloadURL,
-    dcat:endpointDescription,
-    dcat:endpointURL,
-    dcat:keyword,
-    dcat:landingPage,
     dcat:record,
     dcat:servesdataset,
     dcat:service,
-    dcat:theme,
     foaf:page,
     foaf:primaryTopic;
   <http://www.w3.org/2001/02pd/rec54#editor> [
