@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-loongegevens/tree/127ac8b3be8be95189cf8c7d1f463339277a4cdc",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-loongegevens/blob/127ac8b3be8be95189cf8c7d1f463339277a4cdc/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-loongegevens/tree/5e892d89093bc5dc2d1ab547ccbe5be77e897dc0",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-loongegevens/blob/5e892d89093bc5dc2d1ab547ccbe5be77e897dc0/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-loongegevens/issues",
     "standaardregisterurl": "https://test.data.vlaanderen.be/standaarden/standaard-in-ontwikkeling/applicatieprofiel-loongegevens.html",
     "usesVocs": [],
@@ -69,6 +69,38 @@
               "range_puri": "https://schema.org/QuantitativeValue",
               "range_label": {
                 "nl": "KwantitatieveWaarde"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/loongegevens#arbeidsrelatie",
+          "name": {
+            "nl": "arbeidsrelatie"
+          },
+          "sort_nl": "arbeidsrelatie",
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/loongegevens#Arbeidsloon",
+              "EA-Name": "Arbeidsloon"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Arbeidsrelatie",
+              "range_uri": "https://data.vlaanderen.be/ns/loongegevens#Arbeidsrelatie"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Arbeidsrelatie",
+              "range_puri": "https://data.vlaanderen.be/ns/loongegevens#Arbeidsrelatie",
+              "range_label": {
+                "nl": "Arbeidsrelatie"
               }
             }
           ],
@@ -422,38 +454,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/loongegevens#relatie",
-          "name": {
-            "nl": "arbeidsloon"
-          },
-          "sort_nl": "arbeidsloon",
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/loongegevens#Arbeidsloon",
-              "EA-Name": "Arbeidsloon"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Arbeidsrelatie",
-              "range_uri": "https://data.vlaanderen.be/ns/loongegevens#Arbeidsrelatie"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Arbeidsrelatie",
-              "range_puri": "https://data.vlaanderen.be/ns/loongegevens#Arbeidsrelatie",
-              "range_label": {
-                "nl": "Arbeidsrelatie"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://data.vlaanderen.be/ns/loongegevens#schuldbemiddeling",
           "name": {
             "nl": "schuldbemiddeling"
@@ -477,10 +477,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#schuldbemiddelingstype",
+              "range_uri": "#Schuldbemiddelingstype",
               "range_puri": "https://data.vlaanderen.be/ns/loongegevens#Schuldbemiddelingstype",
               "range_label": {
-                "nl": "schuldbemiddelingstype"
+                "nl": "Schuldbemiddelingstype"
               }
             }
           ],
@@ -652,10 +652,12 @@
         {
           "uri": "https://data.vlaanderen.be/ns/loongegevens#arbeidsloon",
           "name": {
-            "nl": "relatie"
+            "nl": "arbeidsloon"
           },
-          "sort_nl": "relatie",
-          "description": {},
+          "sort_nl": "arbeidsloon",
+          "description": {
+            "nl": "TO DO"
+          },
           "usage": {},
           "domain": [
             {
@@ -1239,35 +1241,6 @@
       ],
       "properties": [
         {
-          "uri": "http://fixme.com#^vestiging",
-          "name": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://www.w3.org/ns/regorg#RegisteredOrganization",
-              "EA-Name": "GeregistreerdeOrganisatie"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "MaatschappelijkeZetel",
-              "range_uri": "http://fixme.com#MaatschappelijkeZetel"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://fixme.com#MaatschappelijkeZetel",
-              "range_puri": "http://fixme.com#MaatschappelijkeZetel",
-              "range_label": {
-                "nl": "MaatschappelijkeZetel"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "http://www.w3.org/ns/regorg#registration",
           "name": {
             "nl": "registratie"
@@ -1293,7 +1266,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Identificator",
+              "range_uri": "http://www.w3.org/ns/adms#Identifier",
               "range_puri": "http://www.w3.org/ns/adms#Identifier",
               "range_label": {
                 "nl": "Identificator"
@@ -1321,16 +1294,16 @@
           ],
           "range": [
             {
-              "range_label": "Rechtsvorm",
-              "range_uri": "https://data.vlaanderen.be/ns/organisatie#rechtsvorm"
+              "range_label": "Rechtsvormtype",
+              "range_uri": "http://www.w3.org/2009/08/skos-reference/skos.html#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Rechtsvorm",
-              "range_puri": "https://data.vlaanderen.be/ns/organisatie#rechtsvorm",
+              "range_uri": "#Rechtsvormtype",
+              "range_puri": "http://www.w3.org/2009/08/skos-reference/skos.html#Concept",
               "range_label": {
-                "nl": "Rechtsvorm"
+                "nl": "Rechtsvormtype"
               }
             }
           ],
@@ -1383,7 +1356,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Identificator",
+              "range_uri": "http://www.w3.org/ns/adms#Identifier",
               "range_puri": "http://www.w3.org/ns/adms#Identifier",
               "range_label": {
                 "nl": "Identificator"
@@ -1467,7 +1440,24 @@
     {
       "uri": "https://data.vlaanderen.be/ns/loongegevens#arbeidsloon",
       "name": {
-        "nl": "relatie"
+        "nl": "arbeidsloon"
+      },
+      "description": {
+        "nl": "TO DO"
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/loongegevens#arbeidsrelatie",
+      "name": {
+        "nl": "arbeidsrelatie"
       },
       "description": {},
       "domain": [
@@ -1486,6 +1476,23 @@
       },
       "description": {
         "nl": "Een rekeningnummer dat gelinkt is aan de arbeidsrelatie. Op dit rekeningnummer wordt het arbeidsloon van de persoon gestort."
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/loongegevens#bankrekeningnummer",
+      "name": {
+        "nl": "bankrekeningnummer"
+      },
+      "description": {
+        "nl": "TO DO"
       },
       "domain": [
         null
@@ -1665,21 +1672,6 @@
       "description": {
         "nl": "Dit is een deel van het loon dat afhankelijk is van geleverde prestaties."
       },
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "usage": {},
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/loongegevens#relatie",
-      "name": {
-        "nl": "arbeidsloon"
-      },
-      "description": {},
       "domain": [
         null
       ],
@@ -1913,21 +1905,6 @@
       ]
     },
     {
-      "uri": "http://www.w3.org/ns/adms#Identifier",
-      "name": {
-        "nl": "Identificator"
-      },
-      "sort_nl": "Identificator",
-      "description": {
-        "nl": "Informatie gebruikt om een object uniek te identificeren."
-      },
-      "usage": {
-        "nl": "Uitgangspunt hier is dat deze string door een organisatie wordt toegekend en dat dit gebeurt volgens een welbepaald systeem."
-      },
-      "parents": [],
-      "properties": []
-    },
-    {
       "uri": "http://www.w3.org/ns/locn#Address",
       "name": {
         "nl": "Adresvoorstelling"
@@ -2158,11 +2135,11 @@
       "parents": [],
       "properties": [
         {
-          "uri": "TO DO",
+          "uri": "https://data.vlaanderen.be/ns/loongegevens#bankrekeningnummer",
           "name": {
-            "nl": "TO DO"
+            "nl": "bankrekeningnummer"
           },
-          "sort_nl": "TO DO",
+          "sort_nl": "bankrekeningnummer",
           "description": {
             "nl": "TO DO"
           },
@@ -2181,7 +2158,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Identificator",
+              "range_uri": "http://www.w3.org/ns/adms#Identifier",
               "range_puri": "http://www.w3.org/ns/adms#Identifier",
               "range_label": {
                 "nl": "Identificator"

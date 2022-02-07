@@ -18,17 +18,27 @@ schemas:BankAccount a rdfs:Class;
   rdfs:range schemas:QuantitativeValue .
 
 <https://data.vlaanderen.be/ns/loongegevens#arbeidsloon> a owl:ObjectProperty;
-  rdfs:label "relatie"@nl;
+  rdfs:label "arbeidsloon"@nl;
+  rdfs:comment "TO DO"@nl;
   rdfs:domain <https://data.vlaanderen.be/ns/loongegevens#Arbeidsrelatie>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens>;
   rdfs:range <https://data.vlaanderen.be/ns/loongegevens#Arbeidsloon> .
 
+<https://data.vlaanderen.be/ns/loongegevens#arbeidsrelatie> a owl:ObjectProperty;
+  rdfs:label "arbeidsrelatie"@nl;
+  rdfs:domain <https://data.vlaanderen.be/ns/loongegevens#Arbeidsloon>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens>;
+  rdfs:range <https://data.vlaanderen.be/ns/loongegevens#Arbeidsrelatie> .
+
 <https://data.vlaanderen.be/ns/loongegevens#bankrekeningnummer> a owl:ObjectProperty;
   rdfs:label "bankrekeningnummer"@nl;
-  rdfs:comment "Een rekeningnummer dat gelinkt is aan de arbeidsrelatie. Op dit rekeningnummer wordt het arbeidsloon van de persoon gestort."@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/loongegevens#Arbeidsrelatie>;
+  rdfs:comment "Een rekeningnummer dat gelinkt is aan de arbeidsrelatie. Op dit rekeningnummer wordt het arbeidsloon van de persoon gestort."@nl,
+    "TO DO"@nl;
+  rdfs:domain <https://data.vlaanderen.be/ns/loongegevens#Arbeidsrelatie>,
+    schemas:BankAccount;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens>;
-  rdfs:range schemas:BankAccount .
+  rdfs:range schemas:BankAccount,
+    <http://www.w3.org/ns/adms#Identifier> .
 
 <https://data.vlaanderen.be/ns/loongegevens#bedrijfsvoorheffing> a owl:ObjectProperty;
   rdfs:label "bedrijfsvoorheffing"@nl;
@@ -118,12 +128,6 @@ schemas:BankAccount a rdfs:Class;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens>;
   rdfs:range schemas:QuantitativeValue .
 
-<https://data.vlaanderen.be/ns/loongegevens#relatie> a owl:ObjectProperty;
-  rdfs:label "arbeidsloon"@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/loongegevens#Arbeidsloon>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens>;
-  rdfs:range <https://data.vlaanderen.be/ns/loongegevens#Arbeidsrelatie> .
-
 <https://data.vlaanderen.be/ns/loongegevens#schuldbemiddeling> a owl:ObjectProperty;
   rdfs:label "schuldbemiddeling"@nl;
   rdfs:comment "Bij schuldbemiddeling wordt een instantie ingeschakeld die een afbetalingsplan opstelt voor het betalen van schulden aan de schuldeisers. Het loon van een persoon wordt naar de schuldbemiddelaar gestort, die het volgens de opgestelde regeling spendeert."@nl;
@@ -185,7 +189,7 @@ schemas:BankAccount a rdfs:Class;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens> .
 
 <https://data.vlaanderen.be/ns/loongegevens#Schuldbemiddelingstype> a owl:Class;
-  rdfs:label "schuldbemiddelingstype"@nl;
+  rdfs:label "Schuldbemiddelingstype"@nl;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens> .
 
 <https://data.vlaanderen.be/ns/loongegevens#Statuuttype> a owl:Class;

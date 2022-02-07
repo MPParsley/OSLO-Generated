@@ -15,12 +15,11 @@
     <https://data.vlaanderen.be/shacl/loongegevens-ap#VerloningstypeShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#PeriodeShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#GezinShape>,
-    <https://data.vlaanderen.be/shacl/loongegevens-ap#IdentificatorShape>,
+    <https://data.vlaanderen.be/shacl/loongegevens-ap#RechtsvormtypeShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#AdresvoorstellingShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#OrganisatieShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#PersoonShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#GeregistreerdeOrganisatieShape>,
-    <https://data.vlaanderen.be/shacl/loongegevens-ap#RechtsvormShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#GeregistreerdPersoonShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#VerblijfplaatsShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#BankrekeningShape>,
@@ -76,6 +75,12 @@
     shacl:minCount 1;
     shacl:name "afTeTrekkenNettoBedragen";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#afTeTrekkenNettoBedragen>
+  ], [
+    shacl:class <https://data.vlaanderen.be/ns/loongegevens#Arbeidsrelatie>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "arbeidsrelatie";
+    shacl:path <https://data.vlaanderen.be/ns/loongegevens#arbeidsrelatie>
   ], [
     shacl:class schemas:QuantitativeValue;
     shacl:description "Voorschot op de definitieve inkomstenbelasting.";
@@ -147,12 +152,6 @@
     shacl:name "premie";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#premie>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/loongegevens#Arbeidsrelatie>;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "relatie";
-    shacl:path <https://data.vlaanderen.be/ns/loongegevens#relatie>
-  ], [
     shacl:class <https://data.vlaanderen.be/ns/loongegevens#Schuldbemiddelingstype>;
     shacl:description "Bij schuldbemiddeling wordt een instantie ingeschakeld die een afbetalingsplan opstelt voor het betalen van schulden aan de schuldeisers. Het loon van een persoon wordt naar de schuldbemiddelaar gestort, die het volgens de opgestelde regeling spendeert.";
     shacl:maxCount 1;
@@ -194,6 +193,7 @@
   shacl:closed false;
   shacl:property [
     shacl:class <https://data.vlaanderen.be/ns/loongegevens#Arbeidsloon>;
+    shacl:description "TO DO";
     shacl:name "arbeidsloon";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#arbeidsloon>
   ], [
@@ -241,7 +241,8 @@
     shacl:description "TO DO";
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "bankrekeningnummer"
+    shacl:name "bankrekeningnummer";
+    shacl:path <https://data.vlaanderen.be/ns/loongegevens#bankrekeningnummer>
   ];
   shacl:targetClass schemas:BankAccount .
 
@@ -260,11 +261,7 @@
 <https://data.vlaanderen.be/shacl/loongegevens-ap#GeregistreerdeOrganisatieShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://fixme.com#MaatschappelijkeZetel>;
-    shacl:maxCount 1;
-    shacl:name "^vestiging"
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/organisatie#rechtsvorm>;
+    shacl:class <http://www.w3.org/2009/08/skos-reference/skos.html#Concept>;
     shacl:description "Juridisch statuut van de geregistreerde organisatie.";
     shacl:maxCount 1;
     shacl:name "rechtsvorm";
@@ -296,10 +293,6 @@
     shacl:path <https://data.vlaanderen.be/ns/persoon#isLidVan>
   ];
   shacl:targetClass <http://fixme.com#Gezin> .
-
-<https://data.vlaanderen.be/shacl/loongegevens-ap#IdentificatorShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <http://www.w3.org/ns/adms#Identifier> .
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#InkomstShape> a shacl:NodeShape;
   shacl:closed false;
@@ -404,9 +397,9 @@
   ];
   shacl:targetClass <http://www.w3.org/ns/person#Person> .
 
-<https://data.vlaanderen.be/shacl/loongegevens-ap#RechtsvormShape> a shacl:NodeShape;
+<https://data.vlaanderen.be/shacl/loongegevens-ap#RechtsvormtypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/organisatie#rechtsvorm> .
+  shacl:targetClass <http://www.w3.org/2009/08/skos-reference/skos.html#Concept> .
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#SchuldbemiddelingstypeShape> a shacl:NodeShape;
   shacl:closed false;
