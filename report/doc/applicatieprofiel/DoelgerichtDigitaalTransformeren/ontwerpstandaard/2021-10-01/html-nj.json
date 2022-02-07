@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-DoelgerichtDigitaalTransformeren/tree/37e6467201ba09756cf440c31851e9962836b62f",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-DoelgerichtDigitaalTransformeren/blob/37e6467201ba09756cf440c31851e9962836b62f/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-DoelgerichtDigitaalTransformeren/tree/027a766d6ff67680b3ad2f0f1816f7f8b94d8057",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-DoelgerichtDigitaalTransformeren/blob/027a766d6ff67680b3ad2f0f1816f7f8b94d8057/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-DoelgerichtDigitaalTransformeren/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/TODO/CORRECT-URL/index.html",
     "usesVocs": [],
@@ -235,6 +235,35 @@
       ],
       "properties": [
         {
+          "uri": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#heeftPersoonlijkProfiel",
+          "name": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://fixme.com",
+              "EA-Name": "Participant"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ParticipantProfiel",
+              "range_uri": "http://fixme.com"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#ParticipantProfiel",
+              "range_puri": "http://fixme.com",
+              "range_label": {
+                "nl": "ParticipantProfiel"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#locatie",
           "name": {},
           "description": {},
@@ -264,40 +293,11 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#profielVan",
-          "name": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "Participant"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "ParticipantProfiel",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#ParticipantProfiel",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "ParticipantProfiel"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "http://fixme.com",
           "name": {
-            "nl": "neemtDeelAan"
+            "nl": "heeftRelatieMet"
           },
-          "sort_nl": "neemtDeelAan",
+          "sort_nl": "heeftRelatieMet",
           "description": {
             "nl": "TODO"
           },
@@ -312,16 +312,16 @@
           ],
           "range": [
             {
-              "range_label": "Activiteit",
+              "range_label": "Participant",
               "range_uri": "http://fixme.com"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Activiteit",
+              "range_uri": "#Participant",
               "range_puri": "http://fixme.com",
               "range_label": {
-                "nl": "Activiteit"
+                "nl": "Participant"
               }
             }
           ],
@@ -367,9 +367,9 @@
         {
           "uri": "http://fixme.com",
           "name": {
-            "nl": "heeftRelatieMet"
+            "nl": "neemtDeelAan"
           },
-          "sort_nl": "heeftRelatieMet",
+          "sort_nl": "neemtDeelAan",
           "description": {
             "nl": "TODO"
           },
@@ -384,16 +384,16 @@
           ],
           "range": [
             {
-              "range_label": "Participant",
+              "range_label": "Activiteit",
               "range_uri": "http://fixme.com"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Participant",
+              "range_uri": "#Activiteit",
               "range_puri": "http://fixme.com",
               "range_label": {
-                "nl": "Participant"
+                "nl": "Activiteit"
               }
             }
           ],
@@ -608,42 +608,6 @@
         {
           "uri": "http://fixme.com",
           "name": {
-            "nl": "prijs"
-          },
-          "sort_nl": "prijs",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "Activiteit"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Prijsinfo",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Prijsinfo",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "Prijsinfo"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
             "nl": "isGepromoot"
           },
           "sort_nl": "isGepromoot",
@@ -671,114 +635,6 @@
               "range_puri": "http://fixme.com",
               "range_label": {
                 "nl": "Promotie"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "voertUit"
-          },
-          "sort_nl": "voertUit",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "Activiteit"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Uitvoerder",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Uitvoerder",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "Uitvoerder"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "aangebodenDoor"
-          },
-          "sort_nl": "aangebodenDoor",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "Activiteit"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Aanbieder",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Aanbieder",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "Aanbieder"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "gebruiktObject"
-          },
-          "sort_nl": "gebruiktObject",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "Activiteit"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Ding",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Ding",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "Ding"
               }
             }
           ],
@@ -851,6 +707,150 @@
               "range_puri": "http://fixme.com",
               "range_label": {
                 "nl": "Boekinginfo"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com",
+          "name": {
+            "nl": "aangebodenDoor"
+          },
+          "sort_nl": "aangebodenDoor",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://fixme.com",
+              "EA-Name": "Activiteit"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Aanbieder",
+              "range_uri": "http://fixme.com"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Aanbieder",
+              "range_puri": "http://fixme.com",
+              "range_label": {
+                "nl": "Aanbieder"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com",
+          "name": {
+            "nl": "voertUit"
+          },
+          "sort_nl": "voertUit",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://fixme.com",
+              "EA-Name": "Activiteit"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Uitvoerder",
+              "range_uri": "http://fixme.com"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Uitvoerder",
+              "range_puri": "http://fixme.com",
+              "range_label": {
+                "nl": "Uitvoerder"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com",
+          "name": {
+            "nl": "gebruiktObject"
+          },
+          "sort_nl": "gebruiktObject",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://fixme.com",
+              "EA-Name": "Activiteit"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Ding",
+              "range_uri": "http://fixme.com"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Ding",
+              "range_puri": "http://fixme.com",
+              "range_label": {
+                "nl": "Ding"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com",
+          "name": {
+            "nl": "prijs"
+          },
+          "sort_nl": "prijs",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://fixme.com",
+              "EA-Name": "Activiteit"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Prijsinfo",
+              "range_uri": "http://fixme.com"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Prijsinfo",
+              "range_puri": "http://fixme.com",
+              "range_label": {
+                "nl": "Prijsinfo"
               }
             }
           ],
@@ -1235,21 +1235,8 @@
               "EA-Name": "Activiteit"
             }
           ],
-          "range": [
-            {
-              "range_label": "Infrastructuur",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Infrastructuur",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "Infrastructuur"
-              }
-            }
-          ],
+          "range": [],
+          "scopedrange": [],
           "cardinality": "0..*",
           "codelist_uri": ""
         },
@@ -1573,8 +1560,21 @@
               "EA-Name": "Aanbieder"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "TaalString"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
@@ -1601,6 +1601,42 @@
               "range_puri": "http://fixme.com",
               "range_label": {
                 "nl": "Aanbieder"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com",
+          "name": {
+            "nl": "biedtAan"
+          },
+          "sort_nl": "biedtAan",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://fixme.com",
+              "EA-Name": "Aanbieder"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Activiteit",
+              "range_uri": "http://fixme.com"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Activiteit",
+              "range_puri": "http://fixme.com",
+              "range_label": {
+                "nl": "Activiteit"
               }
             }
           ],
@@ -1677,78 +1713,6 @@
             }
           ],
           "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "biedtAan"
-          },
-          "sort_nl": "biedtAan",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "Aanbieder"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Activiteit",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Activiteit",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "Activiteit"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "heeftProfiel"
-          },
-          "sort_nl": "heeftProfiel",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "Aanbieder"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "AanbiederProfiel",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#AanbiederProfiel",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "AanbiederProfiel"
-              }
-            }
-          ],
-          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -1936,21 +1900,8 @@
               "EA-Name": "Aanbieder"
             }
           ],
-          "range": [
-            {
-              "range_label": "Infrastructuur",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Infrastructuur",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "Infrastructuur"
-              }
-            }
-          ],
+          "range": [],
+          "scopedrange": [],
           "cardinality": "0..*",
           "codelist_uri": ""
         }
@@ -1971,7 +1922,7 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#heeftPersoonlijkProfiel",
+          "uri": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#persoonlijkProfielVan",
           "name": {},
           "description": {},
           "usage": {},
@@ -1997,42 +1948,6 @@
             }
           ],
           "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "sociodemografisch"
-          },
-          "sort_nl": "sociodemografisch",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "ParticipantProfiel"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "SociodemografischKenmerk",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Scholing",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "Scholing"
-              }
-            }
-          ],
-          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -2110,6 +2025,78 @@
         {
           "uri": "http://fixme.com",
           "name": {
+            "nl": "sociodemografisch"
+          },
+          "sort_nl": "sociodemografisch",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://fixme.com",
+              "EA-Name": "ParticipantProfiel"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "SociodemografischKenmerk",
+              "range_uri": "http://fixme.com"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Scholing",
+              "range_puri": "http://fixme.com",
+              "range_label": {
+                "nl": "Scholing"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com",
+          "name": {
+            "nl": "algemeenKenmerk"
+          },
+          "sort_nl": "algemeenKenmerk",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {
+            "nl": "TODO"
+          },
+          "domain": [
+            {
+              "uri": "http://fixme.com",
+              "EA-Name": "ParticipantProfiel"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "AlgemeenParticipantKenmerk",
+              "range_uri": "http://fixme.com"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#AlgemeenParticipantkenmerk",
+              "range_puri": "http://fixme.com",
+              "range_label": {
+                "nl": "AlgemeenParticipantkenmerk"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com",
+          "name": {
             "nl": "cultureel"
           },
           "sort_nl": "cultureel",
@@ -2142,202 +2129,6 @@
           ],
           "cardinality": "0..*",
           "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "algemeenKenmerk"
-          },
-          "sort_nl": "algemeenKenmerk",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "ParticipantProfiel"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "AlgemeenParticipantkenmerk",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#AlgemeenParticipantkenmerk",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "AlgemeenParticipantkenmerk"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "http://fixme.com",
-      "name": {
-        "nl": "AanbiederProfiel"
-      },
-      "sort_nl": "AanbiederProfiel",
-      "description": {
-        "nl": "TODO"
-      },
-      "usage": {
-        "nl": "TODO"
-      },
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "profielVan"
-          },
-          "sort_nl": "profielVan",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "AanbiederProfiel"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Aanbieder",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Aanbieder",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "Aanbieder"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "infrastructuur"
-          },
-          "sort_nl": "infrastructuur",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "AanbiederProfiel"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Infrastructuuraanbod",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Infrastructuuraanbod",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "Infrastructuuraanbod"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "cultureel"
-          },
-          "sort_nl": "cultureel",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "AanbiederProfiel"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Cultuuraanbod",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Cultuuraanbod",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "Cultuuraanbod"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "algemeenKenmerk"
-          },
-          "sort_nl": "algemeenKenmerk",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "AanbiederProfiel"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "AlgemeenAanbiederkenmerk",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#AlgemeenAanbiederkenmerk",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "AlgemeenAanbiederkenmerk"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
         }
       ]
     },
@@ -2356,7 +2147,7 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#terugkerend",
+          "uri": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#betaaltermijn",
           "name": {},
           "description": {},
           "usage": {},
@@ -3367,8 +3158,21 @@
               "EA-Name": "Prijsinfo"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
@@ -3539,9 +3343,9 @@
         {
           "uri": "http://fixme.com",
           "name": {
-            "nl": "doelParticipant"
+            "nl": "viaKanaal"
           },
-          "sort_nl": "doelParticipant",
+          "sort_nl": "viaKanaal",
           "description": {
             "nl": "TODO"
           },
@@ -3556,16 +3360,16 @@
           ],
           "range": [
             {
-              "range_label": "Participant",
+              "range_label": "Kanaal",
               "range_uri": "http://fixme.com"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Participant",
+              "range_uri": "#Kanaal",
               "range_puri": "http://fixme.com",
               "range_label": {
-                "nl": "Participant"
+                "nl": "Kanaal"
               }
             }
           ],
@@ -3611,9 +3415,9 @@
         {
           "uri": "http://fixme.com",
           "name": {
-            "nl": "viaKanaal"
+            "nl": "doelParticipant"
           },
-          "sort_nl": "viaKanaal",
+          "sort_nl": "doelParticipant",
           "description": {
             "nl": "TODO"
           },
@@ -3628,16 +3432,16 @@
           ],
           "range": [
             {
-              "range_label": "Kanaal",
+              "range_label": "Participant",
               "range_uri": "http://fixme.com"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Kanaal",
+              "range_uri": "#Participant",
               "range_puri": "http://fixme.com",
               "range_label": {
-                "nl": "Kanaal"
+                "nl": "Participant"
               }
             }
           ],
@@ -4060,241 +3864,6 @@
     {
       "uri": "http://fixme.com",
       "name": {
-        "nl": "Cultuuraanbod"
-      },
-      "sort_nl": "Cultuuraanbod",
-      "description": {
-        "nl": "TODO"
-      },
-      "usage": {
-        "nl": "TODO"
-      },
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "deelVan"
-          },
-          "sort_nl": "deelVan",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "Cultuuraanbod"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "AanbiederProfiel",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#AanbiederProfiel",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "AanbiederProfiel"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "typeActiviteit"
-          },
-          "sort_nl": "typeActiviteit",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "Cultuuraanbod"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Activiteittype",
-              "range_uri": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#Activiteittype"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Activiteittype",
-              "range_puri": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#Activiteittype",
-              "range_label": {
-                "nl": "Activiteittype"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "themaActiviteit"
-          },
-          "sort_nl": "themaActiviteit",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "Cultuuraanbod"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Thematype",
-              "range_uri": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#Thematype"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Thematype",
-              "range_puri": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#Thematype",
-              "range_label": {
-                "nl": "Thematype"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "http://fixme.com",
-      "name": {
-        "nl": "AlgemeenAanbiederkenmerk"
-      },
-      "sort_nl": "AlgemeenAanbiederkenmerk",
-      "description": {
-        "nl": "TODO"
-      },
-      "usage": {
-        "nl": "TODO"
-      },
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "isdeelVan"
-          },
-          "sort_nl": "isdeelVan",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "AlgemeenAanbiederkenmerk"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "AanbiederProfiel",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#AanbiederProfiel",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "AanbiederProfiel"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "officieel"
-          },
-          "sort_nl": "officieel",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "AlgemeenAanbiederkenmerk"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Officieeltype",
-              "range_uri": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#Officieeltype"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Officieeltype",
-              "range_puri": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#Officieeltype",
-              "range_label": {
-                "nl": "Officieeltype"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "type"
-          },
-          "sort_nl": "type",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "AlgemeenAanbiederkenmerk"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "http://fixme.com",
-      "name": {
         "nl": "Subsidie"
       },
       "sort_nl": "Subsidie",
@@ -4351,7 +3920,7 @@
           "domain": [
             {
               "uri": "http://fixme.com",
-              "EA-Name": "AlgemeenParticipantkenmerk"
+              "EA-Name": "AlgemeenParticipantKenmerk"
             }
           ],
           "range": [
@@ -4387,7 +3956,7 @@
           "domain": [
             {
               "uri": "http://fixme.com",
-              "EA-Name": "AlgemeenParticipantkenmerk"
+              "EA-Name": "AlgemeenParticipantKenmerk"
             }
           ],
           "range": [
@@ -4423,224 +3992,7 @@
         "nl": "TODO"
       },
       "parents": [],
-      "properties": [
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "subinfrastructuur"
-          },
-          "sort_nl": "subinfrastructuur",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "Infrastructuur"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Infrastructuur",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Infrastructuur",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "Infrastructuur"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "superinfrastructuur"
-          },
-          "sort_nl": "superinfrastructuur",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "Infrastructuur"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Infrastructuur",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Infrastructuur",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "Infrastructuur"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "type"
-          },
-          "sort_nl": "type",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "Infrastructuur"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Infrastructuurtype",
-              "range_uri": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#Infrastructuurtype"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Infrastructuurtype",
-              "range_puri": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#Infrastructuurtype",
-              "range_label": {
-                "nl": "Infrastructuurtype"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "capaciteit"
-          },
-          "sort_nl": "capaciteit",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "Infrastructuur"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "KwantitatieveWaarde",
-              "range_uri": "https://schema.org/QuantitativeValue"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "https://schema.org/QuantitativeValue",
-              "range_puri": "https://schema.org/QuantitativeValue",
-              "range_label": {
-                "nl": "KwantitatieveWaarde"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "toegankelijkheid"
-          },
-          "sort_nl": "toegankelijkheid",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "Infrastructuur"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Toegankelijkheid",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Toegankelijkheid",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "Toegankelijkheid"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "beschikbaarheid"
-          },
-          "sort_nl": "beschikbaarheid",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "Infrastructuur"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Beschikbaarheid",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Beschikbaarheid",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "Beschikbaarheid"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        }
-      ]
+      "properties": []
     },
     {
       "uri": "http://fixme.com",
@@ -4690,202 +4042,6 @@
             }
           ],
           "cardinality": "0..*",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "http://fixme.com",
-      "name": {
-        "nl": "Infrastructuuraanbod"
-      },
-      "sort_nl": "Infrastructuuraanbod",
-      "description": {
-        "nl": "TODO"
-      },
-      "usage": {
-        "nl": "TODO"
-      },
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "isdeelVan"
-          },
-          "sort_nl": "isdeelVan",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "Infrastructuuraanbod"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "AanbiederProfiel",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#AanbiederProfiel",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "AanbiederProfiel"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "infrastructuurType"
-          },
-          "sort_nl": "infrastructuurType",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "Infrastructuuraanbod"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Infrastructuurtype",
-              "range_uri": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#Infrastructuurtype"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Infrastructuurtype",
-              "range_puri": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#Infrastructuurtype",
-              "range_label": {
-                "nl": "Infrastructuurtype"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "capaciteitsklasse"
-          },
-          "sort_nl": "capaciteitsklasse",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "Infrastructuuraanbod"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Capaciteitsklasse",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Capaciteitsklasse",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "Capaciteitsklasse"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "toegankelijkheid"
-          },
-          "sort_nl": "toegankelijkheid",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "Infrastructuuraanbod"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Toegankelijkheid",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Toegankelijkheid",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "Toegankelijkheid"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com",
-          "name": {
-            "nl": "beschikbaarheid"
-          },
-          "sort_nl": "beschikbaarheid",
-          "description": {
-            "nl": "TODO"
-          },
-          "usage": {
-            "nl": "TODO"
-          },
-          "domain": [
-            {
-              "uri": "http://fixme.com",
-              "EA-Name": "Infrastructuuraanbod"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Beschikbaarheid",
-              "range_uri": "http://fixme.com"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Beschikbaarheid",
-              "range_puri": "http://fixme.com",
-              "range_label": {
-                "nl": "Beschikbaarheid"
-              }
-            }
-          ],
-          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -5503,6 +4659,35 @@
           ],
           "cardinality": "0..*",
           "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#voertUit",
+          "name": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://fixme.com",
+              "EA-Name": "Uitvoerder"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Activiteit",
+              "range_uri": "http://fixme.com"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Activiteit",
+              "range_puri": "http://fixme.com",
+              "range_label": {
+                "nl": "Activiteit"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
         }
       ]
     },
@@ -6041,7 +5226,20 @@
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#profielVan",
+      "uri": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#naam",
+      "name": {},
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#persoonlijkProfielVan",
       "name": {},
       "description": {},
       "domain": [
@@ -6147,6 +5345,19 @@
       "usage": {
         "nl": "TODO"
       },
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/doelgericht-digitaal-transformeren#voertUit",
+      "name": {},
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
       "parents": []
     },
     {
