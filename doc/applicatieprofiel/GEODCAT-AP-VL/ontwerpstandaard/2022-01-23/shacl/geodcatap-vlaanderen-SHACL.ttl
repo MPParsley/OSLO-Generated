@@ -10,14 +10,14 @@
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://data.vlaanderen.be/shacl/geodcatap-vlaanderen> <https://data.vlaanderen.be/shacl/geodcatap-vlaanderenshapes> <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ResolutieShape>,
-    <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#AgentShape>,
+<https://data.vlaanderen.be/shacl/geodcatap-vlaanderen> <https://data.vlaanderen.be/shacl/geodcatap-vlaanderenshapes> <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#AgentShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#LicentieDocumentShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#PlaatsShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#HerkomstVerklaringShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#JuridischeBepalingShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#StandaardShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ContactInfoShape>,
+    <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#URIShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#IdentificatorShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#CatalogusShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#CatalogusRecordShape>,
@@ -26,7 +26,8 @@
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#DistributieShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#VoorbeeldWeergaveShape>,
     <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#RelatieQualificatieShape>,
-    <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#CatalogusResourceShape> .
+    <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#CatalogusResourceShape>,
+    <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ResolutieShape> .
 
 <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#AgentShape> a shacl:NodeShape;
   shacl:closed false;
@@ -495,7 +496,7 @@ geografische metadata""";
     shacl:name "ruimtelijkVoorstellingsType";
     shacl:path <http://www.w3.org/ns/adms#representionTechnique>
   ], [
-    shacl:class <http://data.vlaanderen.be/ns/metadata-dcat#Resolutie>;
+    shacl:class <http://www.w3.org/ns/dqv#QualityMeasurement>;
     shacl:description "Het detailniveau van de dataset";
     shacl:maxCount 1;
     shacl:name "ruimtelijkeResolutie";
@@ -554,7 +555,7 @@ geografische metadata""";
     shacl:description "Een verkleinde weergave van een afbeelding die de dataset illustreert.?";
     shacl:maxCount "n"^^xsd:integer;
     shacl:name "voorbeeldweergave";
-    shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#voorbeeldweergave>
+    shacl:path <http://www.w3.org/ns/adms#sample>
   ], [
     shacl:datatype xsd:dateTime;
     shacl:description "Het tijdsmoment waarop de dataset werd geactualiseerd";
@@ -586,13 +587,6 @@ waaraan de distributie voldoet.""";
     shacl:maxCount 1;
     shacl:name "downloadURL";
     shacl:path dcat:downloadURL
-  ], [
-    <http://purl.org/linked-data/cube#codeList> <http://publications.europa.eu/resource/authority/file-type>;
-    shacl:class skos:Concept;
-    shacl:description "Het bestandsformaat waarin de data wordt gedeeld.";
-    shacl:maxCount 1;
-    shacl:name "formaat";
-    shacl:path <http://data.vlaanderen.be/ns/metadata-dcat#formaat>
   ], [
     shacl:datatype rdfs:Literal;
     shacl:description "De unieke identificator van de distributie.";
@@ -753,7 +747,7 @@ waaraan de distributie voldoet.""";
     shacl:name "waarde";
     shacl:path <http://www.w3.org/ns/dqv#value>
   ];
-  shacl:targetClass <http://data.vlaanderen.be/ns/metadata-dcat#Resolutie> .
+  shacl:targetClass <http://www.w3.org/ns/dqv#QualityMeasurement> .
 
 <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#StandaardShape> a shacl:NodeShape;
   shacl:closed false;
@@ -806,6 +800,10 @@ standaard bekend is.""";
   ];
   shacl:targetClass dc:Standard .
 
+<https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#URIShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass rdfs:Resource .
+
 <https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#VoorbeeldWeergaveShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
@@ -839,16 +837,16 @@ standaard bekend is.""";
 
  [
     shacl:datatype xsd:anyURI;
-    shacl:description "Een webpagina die ofwel toelaat om contact op te nemen (via b.v. een webformulier) of die informatie bevat hoe men contact kan opnemen.";
-    shacl:maxCount 1;
-    shacl:name "contactpagina";
-    shacl:path foaf:page
-  ] .
-
- [
-    shacl:datatype xsd:anyURI;
     shacl:description "Het e-mailadres waarmee een gebruiker contact kan opnemen voor informatie.";
     shacl:maxCount 1;
     shacl:name "e-mail";
     shacl:path vcard:hasEmail
+  ] .
+
+ [
+    shacl:datatype xsd:anyURI;
+    shacl:description "Een webpagina die ofwel toelaat om contact op te nemen (via b.v. een webformulier) of die informatie bevat hoe men contact kan opnemen.";
+    shacl:maxCount 1;
+    shacl:name "contactpagina";
+    shacl:path foaf:page
   ] .

@@ -34,29 +34,6 @@
   "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen",
   "shapes": [
     {
-      "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ResolutieShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "De schaal of eenheid waaronder de waarde moet worden geïntepreteerd.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "resolutiemethode",
-          "sh:path": "http://www.w3.org/ns/dqv#isMeasurementOf"
-        },
-        {
-          "sh:description": "De waarde van resolutie gemeten volgens de bijhorende methode.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "waarde",
-          "sh:path": "http://www.w3.org/ns/dqv#value"
-        }
-      ],
-      "sh:targetClass": "http://data.vlaanderen.be/ns/metadata-dcat#Resolutie"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#AgentShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -192,6 +169,13 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://schema.org/ContactPoint"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#URIShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2000/01/rdf-schema#Resource"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#Contactinfo Shape",
@@ -748,7 +732,7 @@
           "sh:path": "http://www.w3.org/ns/adms#representionTechnique"
         },
         {
-          "sh:class": "http://data.vlaanderen.be/ns/metadata-dcat#Resolutie",
+          "sh:class": "http://www.w3.org/ns/dqv#QualityMeasurement",
           "sh:description": "Het detailniveau van de dataset",
           "sh:maxCount": "1",
           "sh:name": "ruimtelijkeResolutie",
@@ -815,7 +799,7 @@
           "sh:description": "Een verkleinde weergave van een afbeelding die de dataset illustreert.?",
           "sh:maxCount": "n",
           "sh:name": "voorbeeldweergave",
-          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#voorbeeldweergave"
+          "sh:path": "http://www.w3.org/ns/adms#sample"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
@@ -852,14 +836,6 @@
           "sh:maxCount": "1",
           "sh:name": "downloadURL",
           "sh:path": "http://www.w3.org/ns/dcat#downloadURL"
-        },
-        {
-          "qb:codeList": "http://publications.europa.eu/resource/authority/file-type",
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Het bestandsformaat waarin de data wordt gedeeld.",
-          "sh:maxCount": "1",
-          "sh:name": "formaat",
-          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#formaat"
         },
         {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
@@ -1006,6 +982,29 @@
         }
       ],
       "sh:targetClass": "http://data.vlaanderen.be/ns/metadata-dcat#RelatieQualificatie.catalogusResource.target"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ResolutieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "De schaal of eenheid waaronder de waarde moet worden geïntepreteerd.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "resolutiemethode",
+          "sh:path": "http://www.w3.org/ns/dqv#isMeasurementOf"
+        },
+        {
+          "sh:description": "De waarde van resolutie gemeten volgens de bijhorende methode.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "waarde",
+          "sh:path": "http://www.w3.org/ns/dqv#value"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/dqv#QualityMeasurement"
     }
   ]
 }
