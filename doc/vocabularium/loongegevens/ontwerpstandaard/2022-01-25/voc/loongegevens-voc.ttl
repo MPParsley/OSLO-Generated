@@ -3,18 +3,14 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <http://schema.org/> .
 @prefix schemas: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 schemas:BankAccount a rdfs:Class;
   rdfs:label "Bankrekening"@nl .
 
-schemas:QuantitativeValue a rdfs:Class;
-  rdfs:label "Kwantitatieve Waarde"@nl .
-
 <https://data.vlaanderen.be/ns/loongegevens#afTeTrekkenNettoBedragen> a owl:ObjectProperty;
-  rdfs:label "Af te trekken netto bedragen"@nl;
+  rdfs:label "afTeTrekkenNettoBedragen"@nl;
   <http://purl.org/vocab/vann/usageNote> "Dit gaat over de sommen voor loonbeslag, loonoverdracht, persoonlijke bijdrage maaltijdcheques, ..."@nl;
   rdfs:comment "Verplichte inhoudingen door de werkgever."@nl;
   rdfs:domain <https://data.vlaanderen.be/ns/loongegevens#Arbeidsloon>;
@@ -42,11 +38,12 @@ schemas:QuantitativeValue a rdfs:Class;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens>;
   rdfs:range schemas:QuantitativeValue .
 
-<https://data.vlaanderen.be/ns/loongegevens#bedrijfswagen> a rdf:Property;
+<https://data.vlaanderen.be/ns/loongegevens#bedrijfswagen> a owl:DatatypeProperty;
   rdfs:label "bedrijfswagen"@nl;
   rdfs:comment "Een voertuig dat door de werkgever aan de werknemer ter beschikking wordt gesteld, als onderdeel van het loonpakket."@nl;
   rdfs:domain <https://data.vlaanderen.be/ns/loongegevens#Arbeidsloon>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens> .
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens>;
+  rdfs:range xsd:boolean .
 
 <https://data.vlaanderen.be/ns/loongegevens#brutoloon> a owl:ObjectProperty;
   rdfs:label "brutoloon"@nl;
@@ -183,7 +180,7 @@ schemas:QuantitativeValue a rdfs:Class;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens> .
 
 <https://data.vlaanderen.be/ns/loongegevens#Overeenkomsttype> a owl:Class;
-  rdfs:label "overeenkomsttype"@nl;
+  rdfs:label "Overeenkomsttype"@nl;
   rdfs:comment "Informatie over het type looptijd van de overeenkomst (voltijds of deeltijds)."@nl;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens> .
 
@@ -192,7 +189,7 @@ schemas:QuantitativeValue a rdfs:Class;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens> .
 
 <https://data.vlaanderen.be/ns/loongegevens#Statuuttype> a owl:Class;
-  rdfs:label "statuurtype"@nl;
+  rdfs:label "Statuurtype"@nl;
   rdfs:comment "Informatie over het sociale statuut (werknemer, ambtenaar, student...)."@nl;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens> .
 
@@ -202,15 +199,9 @@ schemas:QuantitativeValue a rdfs:Class;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens> .
 
 <https://data.vlaanderen.be/ns/loongegevens#Verloningstype> a owl:Class;
-  rdfs:label "verloningstype"@nl;
+  rdfs:label "Verloningstype"@nl;
   rdfs:comment "Informatie over de periodiciteit van de verloning (eenmalig zoals bij een uitzonderlijke betaling of periodiek)."@nl;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/loongegevens> .
-
-schemas:unitCode a rdf:Property;
-  rdfs:label "Standaard Eenheid"@nl .
-
-schemas:value a rdf:Property;
-  rdfs:label "waarde"@nl .
 
 <https://data.vlaanderen.be/ns/loongegevens#Arbeidsrelatie> a owl:Class;
   rdfs:label "Arbeidsrelatie"@nl;
@@ -234,36 +225,4 @@ schemas:value a rdf:Property;
     foaf:mbox <mailto:oslo@kb.vlaanderen.be>;
     foaf:name "Data Vlaanderen"
   ];
-  rdfs:seeAlso schemas:BankAccount,
-    schemas:QuantitativeValue,
-    schemas:unitCode,
-    schemas:value;
-  <http://www.w3.org/2001/02pd/rec54#editor> [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.pwc.be>;
-      foaf:name "PwC"
-    ];
-    foaf:firstName "Eva";
-    foaf:lastName "De Rore";
-    foaf:mbox <mailto:eva.de.rore@pwc.com>
-  ], [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://www.pwc.be>;
-      foaf:name "PwC"
-    ];
-    foaf:firstName "Yves";
-    foaf:lastName "Meersmans";
-    foaf:mbox <mailto:yves.meersmans@pwc.com>
-  ];
-  foaf:maker [
-    a foaf:Person;
-    schema:affiliation [
-      foaf:homepage <https://overheid.vlaanderen.be/>;
-      foaf:name "Digitaal Vlaanderen"
-    ];
-    foaf:firstName "Dorien";
-    foaf:lastName "Bauwens";
-    foaf:mbox <mailto:dorien.bauwens@vlaanderen.be>
-  ] .
+  rdfs:seeAlso schemas:BankAccount .

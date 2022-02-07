@@ -47,6 +47,7 @@
     shacl:name "huisnummer";
     shacl:path <https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer>
   ], [
+    shacl:class <https://w3.org/1999/02/22-rdf-syntax-ns#langString>;
     shacl:description "Land waarin het adres gelegen is.";
     shacl:maxCount 1;
     shacl:name "land";
@@ -83,6 +84,7 @@
     shacl:name "bedrijfsvoorheffing";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#bedrijfsvoorheffing>
   ], [
+    shacl:datatype xsd:boolean;
     shacl:description "Een voertuig dat door de werkgever aan de werknemer ter beschikking wordt gesteld, als onderdeel van het loonpakket.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -306,12 +308,20 @@
 <https://data.vlaanderen.be/shacl/loongegevens-ap#KwantitatieveWaardeShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:datatype xsd:string;
+    shacl:description "De eenheid waarin de waarde is uitgedrukt.";
+    shacl:maxCount 1;
+    shacl:name "eenheid";
+    shacl:path schemas:unitText
+  ], [
+    shacl:class <http://fixme.com#StandaardEenheid>;
     shacl:description "De gestandaardiseerde eenheid waarin de waarde is uitgedrukt.";
     shacl:maxCount 1;
-    shacl:name "StandaardEenheid";
+    shacl:name "standaardEenheid";
     shacl:path schemas:unitCode
   ], [
-    shacl:description """Getal waarmee de kwantiteit van het kenmerk kan worden uitgedrukt.	""";
+    shacl:class schemas:Number;
+    shacl:description "Getal waarmee de kwantiteit van het kenmerk kan worden uitgedrukt.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "waarde";
