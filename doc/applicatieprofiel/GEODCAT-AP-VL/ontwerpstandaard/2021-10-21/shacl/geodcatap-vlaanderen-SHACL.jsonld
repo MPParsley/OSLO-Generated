@@ -34,29 +34,6 @@
   "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen",
   "shapes": [
     {
-      "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ResolutieShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "De schaal of eenheid waaronder de waarde moet worden geïntepreteerd.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "resolutiemethode",
-          "sh:path": "http://www.w3.org/ns/dqv#isMeasurementOf"
-        },
-        {
-          "sh:description": "De waarde van resolutie gemeten volgens de bijhorende methode.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "waarde",
-          "sh:path": "http://www.w3.org/ns/dqv#value"
-        }
-      ],
-      "sh:targetClass": "http://data.vlaanderen.be/ns/metadata-dcat#Resolutie"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#AgentShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -149,7 +126,7 @@
           "sh:path": "http://purl.org/dc/terms/issued"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:class": "http://www.w3.org/2000/01/rdf-schema#Resource",
           "sh:description": "Een URL waarop men de specificatie kan\nvinden",
           "sh:maxCount": "1",
           "sh:name": "specificatieURL",
@@ -199,14 +176,14 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:class": "http://www.w3.org/2000/01/rdf-schema#Resource",
           "sh:description": "Een webpagina die ofwel toelaat om contact op te nemen (via b.v. een webformulier) of die informatie bevat hoe men contact kan opnemen.",
           "sh:maxCount": "1",
           "sh:name": "contactpagina",
           "sh:path": "http://xmlns.com/foaf/0.1/page"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:class": "http://www.w3.org/2000/01/rdf-schema#Resource",
           "sh:description": "Het e-mailadres waarmee een gebruiker contact kan opnemen voor informatie.",
           "sh:maxCount": "1",
           "sh:name": "e-mail",
@@ -229,24 +206,28 @@
         },
         {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:description": "String gebruikt om het object uniek te identificeren. ",
           "sh:maxCount": "1",
           "sh:name": "identificator",
           "sh:path": "http://www.w3.org/2004/02/skos/core#notation"
         },
         {
           "sh:class": "http://xmlns.com/foaf/0.1/Agent",
+          "sh:description": "Link naar de agent die de identificator heeft uitgegeven.",
           "sh:maxCount": "1",
           "sh:name": "toegekendDoor",
           "sh:path": "http://purl.org/dc/terms/creator"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Naam vd agent die de identificator heeft toegekend.",
           "sh:maxCount": "1",
           "sh:name": "toegekendDoorString",
           "sh:path": "http://www.w3.org/ns/adms#schemaAgency"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Tijdstip waarop de identificator werd uitgegeven.",
           "sh:maxCount": "1",
           "sh:name": "toegekendOp",
           "sh:path": "http://purl.org/dc/terms/issued"
@@ -358,7 +339,7 @@
           "sh:path": "http://www.w3.org/ns/adms#identifier"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:class": "http://www.w3.org/2000/01/rdf-schema#Resource",
           "sh:description": "De record in een andere catalogus waarvan deze record en de beschrijvingen van het bijhorende hoofdonderwerp van afgeleid zijn.",
           "sh:maxCount": "1",
           "sh:name": "bron metadata record",
@@ -455,14 +436,14 @@
           "sh:path": "http://purl.org/dc/terms/created"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:class": "http://www.w3.org/2000/01/rdf-schema#Resource",
           "sh:description": "De rootlocatie of het primaire endpoint van de dienst (een web-resolvable URI).",
           "sh:maxCount": "1",
           "sh:name": "endpointURL",
           "sh:path": "http://www.w3.org/ns/dcat#endpointURL"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:class": "http://www.w3.org/2000/01/rdf-schema#Resource",
           "sh:description": "Een beschrijving van de diensten die beschikbaar zijn via de end-points, met inbegrip van hun operaties, parameters, enz.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -485,28 +466,28 @@
           "sh:path": "http://purl.org/dc/terms/identifier"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:class": "http://www.w3.org/2000/01/rdf-schema#Resource",
           "sh:description": "Een algemene webpagina waarnaar kan worden genavigeerd in een webbrowser, met algemene aanvullende informatie over de dataservice.",
           "sh:maxCount": "n",
           "sh:name": "landingspagina",
           "sh:path": "http://www.w3.org/ns/dcat#landingPage"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:class": "http://www.w3.org/2000/01/rdf-schema#Resource",
           "sh:description": "Een verwijzing naar de landingspagina met de specifieke informatie over de authenticatie voor de dataservice.",
           "sh:maxCount": "1",
           "sh:name": "landingspaginaVoorAuthenticatie",
           "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#landingspaginaVoorAuthenticatie"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:class": "http://www.w3.org/2000/01/rdf-schema#Resource",
           "sh:description": "Een verwijzing naar de landingspagina met de specifieke informatie over het gebruik van de dataservice.",
           "sh:maxCount": "1",
           "sh:name": "landingspaginaVoorGebruiksinformatie",
           "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#landingspaginaVoorGebruiksinformatie"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:class": "http://www.w3.org/2000/01/rdf-schema#Resource",
           "sh:description": "Een verwijzing naar de statuspagina van de dataservice",
           "sh:maxCount": "1",
           "sh:name": "landingspaginaVoorStatusinformatie",
@@ -590,7 +571,7 @@
           "sh:path": "http://purl.org/dc/terms/title"
         },
         {
-          "qb:codeList": "http://publications.europa.eu/resource/authority/access-right/PUBLIC",
+          "qb:codeList": "http://publications.europa.eu/resource/authority/access-right",
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "De toegankelijkheid voor de dataservice.",
           "sh:maxCount": "1",
@@ -726,7 +707,7 @@
           "sh:path": "http://purl.org/dc/terms/identifier"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:class": "http://www.w3.org/2000/01/rdf-schema#Resource",
           "sh:description": "Een algemene webpagina waarnaar kan worden genavigeerd in een webbrowser, met algemene informatie over de dataset, zijn distributies en/of aanvullende informatie.",
           "sh:maxCount": "n",
           "sh:name": "landingspagina",
@@ -748,7 +729,7 @@
           "sh:path": "http://www.w3.org/ns/adms#representionTechnique"
         },
         {
-          "sh:class": "http://data.vlaanderen.be/ns/metadata-dcat#Resolutie",
+          "sh:class": "http://www.w3.org/ns/dqv#QualityMeasurement",
           "sh:description": "Het detailniveau van de dataset",
           "sh:maxCount": "1",
           "sh:name": "ruimtelijkeResolutie",
@@ -815,7 +796,7 @@
           "sh:description": "Een verkleinde weergave van een afbeelding die de dataset illustreert.?",
           "sh:maxCount": "n",
           "sh:name": "voorbeeldweergave",
-          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#voorbeeldweergave"
+          "sh:path": "http://www.w3.org/ns/adms#sample"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
@@ -847,19 +828,11 @@
           "sh:path": "http://purl.org/dc/terms/conformsTo"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:class": "http://www.w3.org/2000/01/rdf-schema#Resource",
           "sh:description": "De URL waar de data gedownload kan worden.",
           "sh:maxCount": "1",
           "sh:name": "downloadURL",
           "sh:path": "http://www.w3.org/ns/dcat#downloadURL"
-        },
-        {
-          "qb:codeList": "http://publications.europa.eu/resource/authority/file-type",
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Het bestandsformaat waarin de data wordt gedeeld.",
-          "sh:maxCount": "1",
-          "sh:name": "formaat",
-          "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#formaat"
         },
         {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
@@ -891,7 +864,7 @@
           "sh:path": "http://purl.org/dc/terms/title"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:class": "http://www.w3.org/2000/01/rdf-schema#Resource",
           "sh:description": "Een URL waar de data kan gevonden worden.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -928,7 +901,7 @@
           "sh:path": "http://purl.org/dc/terms/description"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:class": "http://www.w3.org/2000/01/rdf-schema#Resource",
           "sh:description": "De URL waar de afbeelding gedownload kan worden.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -975,7 +948,9 @@
           "sh:path": "http://data.vlaanderen.be/ns/metadata-dcat#RelatieQualificatie.catalogusResource.target"
         },
         {
+          "qb:codeList": "http://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationType",
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "De functie hoe de entiteiten zich tot elkaar verhouden. ",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "rol",
@@ -1006,6 +981,30 @@
         }
       ],
       "sh:targetClass": "http://data.vlaanderen.be/ns/metadata-dcat#RelatieQualificatie.catalogusResource.target"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/geodcatap-vlaanderen#ResolutieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "De schaal of eenheid waaronder de waarde moet worden geïntepreteerd.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "resolutiemethode",
+          "sh:path": "http://www.w3.org/ns/dqv#isMeasurementOf"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#Decimal",
+          "sh:description": "De waarde van resolutie gemeten volgens de bijhorende methode.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "waarde",
+          "sh:path": "http://www.w3.org/ns/dqv#value"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/dqv#QualityMeasurement"
     }
   ]
 }
