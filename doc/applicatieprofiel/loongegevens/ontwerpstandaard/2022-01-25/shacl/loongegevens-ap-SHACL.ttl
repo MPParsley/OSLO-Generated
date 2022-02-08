@@ -1,5 +1,6 @@
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schemas: <https://schema.org/> .
 @prefix shacl: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -10,6 +11,7 @@
     <https://data.vlaanderen.be/shacl/loongegevens-ap#InkomstShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#TewerkstellingsbreukShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#PeriodeShape>,
+    <https://data.vlaanderen.be/shacl/loongegevens-ap#GetypeerdeStringShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#RechtsvormtypeShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#OvereenkomsttypeShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#StatuuttypeShape>,
@@ -23,7 +25,7 @@
     <https://data.vlaanderen.be/shacl/loongegevens-ap#GezinShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#VerblijfplaatsShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#BankrekeningShape>,
-    <https://data.vlaanderen.be/shacl/loongegevens-ap#KwantitatieveWaardeShape> .
+    <https://data.vlaanderen.be/shacl/loongegevens-ap#GeldbedragShape> .
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#AdresvoorstellingShape> a shacl:NodeShape;
   shacl:closed false;
@@ -69,7 +71,7 @@
 <https://data.vlaanderen.be/shacl/loongegevens-ap#ArbeidsloonShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class schemas:QuantitativeValue;
+    shacl:class schemas:MonetaryAmount;
     shacl:description "Verplichte inhoudingen door de werkgever.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -83,7 +85,7 @@
     shacl:name "arbeidsrelatie";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#arbeidsrelatie>
   ], [
-    shacl:class schemas:QuantitativeValue;
+    shacl:class schemas:MonetaryAmount;
     shacl:description "Voorschot op de definitieve inkomstenbelasting.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -97,21 +99,21 @@
     shacl:name "bedrijfswagen";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#bedrijfswagen>
   ], [
-    shacl:class schemas:QuantitativeValue;
+    shacl:class schemas:MonetaryAmount;
     shacl:description "De som van alle loonelementen voor sociale en fiscale inhoudingen.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "brutoloon";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#brutoloon>
   ], [
-    shacl:class schemas:QuantitativeValue;
+    shacl:class schemas:MonetaryAmount;
     shacl:description "Een eindejaarstoelage is een financiële bonus die een persoon krijgt van zijn/haar werkgever op het einde van het jaar. Er moeten sociale zekerheidsbijdragen en belastingen op betaald worden.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "eindejaarstoelage";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#eindejaarstoelage>
   ], [
-    shacl:class schemas:QuantitativeValue;
+    shacl:class schemas:MonetaryAmount;
     shacl:description "Dit is een bedrag van het arbeidsloon dat wordt ingehouden om de sociale zekerheid te financieren.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -125,14 +127,14 @@
     shacl:name "maaltijdcheques";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#maaltijdcheques>
   ], [
-    shacl:class schemas:QuantitativeValue;
+    shacl:class schemas:MonetaryAmount;
     shacl:description "Het werkelijk gestorte loon op de rekening van de persoon.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "nettoGestortLoon";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#nettoGestortLoon>
   ], [
-    shacl:class schemas:QuantitativeValue;
+    shacl:class schemas:MonetaryAmount;
     shacl:description "Het nettoloon is het brutoloon waar de sociale zekerheidsbijdrage en de bedrijfsvoorheffing van afgetrokken zijn.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -146,7 +148,7 @@
     shacl:name "periodiciteitVerloning";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#periodiciteitVerloning>
   ], [
-    shacl:class schemas:QuantitativeValue;
+    shacl:class schemas:MonetaryAmount;
     shacl:description "Dit is een deel van het loon dat afhankelijk is van geleverde prestaties.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -160,21 +162,21 @@
     shacl:name "schuldbemiddeling";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#schuldbemiddeling>
   ], [
-    shacl:class schemas:QuantitativeValue;
+    shacl:class schemas:MonetaryAmount;
     shacl:description "Bijkomende sommen die aan het brutoloon toegevoegd worden. Deze zijn vrijgesteld van inhoudingen voor de sociale zekerheid.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "supplementaireBelastbareBedragen";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#supplementaireBelastbareBedragen>
   ], [
-    shacl:class schemas:QuantitativeValue;
+    shacl:class schemas:MonetaryAmount;
     shacl:description "Bijkomende netto sommen die aan het nettoloon toegevoegd worden. Deze zijn vrijgesteld van belastingen en RSZ.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "supplementaireNettoBedragen";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#supplementaireNettoBedragen>
   ], [
-    shacl:class schemas:QuantitativeValue;
+    shacl:class schemas:MonetaryAmount;
     shacl:description "Dit is een jaarlijkse toelage die een werknemer krijgt om de extra kosten van vakantie te dekken.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -247,6 +249,25 @@
   ];
   shacl:targetClass schemas:BankAccount .
 
+<https://data.vlaanderen.be/shacl/loongegevens-ap#GeldbedragShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "Munteenheid waarin het geldbedrag is gedefinieerd.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "valuta";
+    shacl:path schemas:currency
+  ], [
+    shacl:class schemas:Number;
+    shacl:description "Getal dat de waarde van het geldbedrag uitdrukt.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path schemas:value
+  ];
+  shacl:targetClass schemas:MonetaryAmount .
+
 <https://data.vlaanderen.be/shacl/loongegevens-ap#GeregistreerdPersoonShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
@@ -277,6 +298,10 @@
   ];
   shacl:targetClass <http://www.w3.org/ns/regorg#RegisteredOrganization> .
 
+<https://data.vlaanderen.be/shacl/loongegevens-ap#GetypeerdeStringShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass rdfs:Literal .
+
 <https://data.vlaanderen.be/shacl/loongegevens-ap#GezinShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
@@ -298,30 +323,6 @@
 <https://data.vlaanderen.be/shacl/loongegevens-ap#InkomstShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass <https://data.vlaanderen.be/ns/loongegevens#Inkomst> .
-
-<https://data.vlaanderen.be/shacl/loongegevens-ap#KwantitatieveWaardeShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:datatype xsd:string;
-    shacl:description "De eenheid waarin de waarde is uitgedrukt.";
-    shacl:maxCount 1;
-    shacl:name "eenheid";
-    shacl:path schemas:unitText
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/generiek#StandaardEenheid>;
-    shacl:description "De gestandaardiseerde eenheid waarin de waarde is uitgedrukt.";
-    shacl:maxCount 1;
-    shacl:name "standaardEenheid";
-    shacl:path schemas:unitCode
-  ], [
-    shacl:class schemas:Number;
-    shacl:description "Getal waarmee de kwantiteit van het kenmerk kan worden uitgedrukt.";
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "waarde";
-    shacl:path schemas:value
-  ];
-  shacl:targetClass schemas:QuantitativeValue .
 
 <https://data.vlaanderen.be/shacl/loongegevens-ap#OrganisatieShape> a shacl:NodeShape;
   shacl:closed false;
@@ -365,7 +366,7 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "geboortedatum";
-    shacl:path <https://data.vlaanderen.be/ns/persoon#datum>
+    shacl:path <https://data.vlaanderen.be/ns/loongegevens#Persoon.geboortedatum>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/persoon#Gezin>;
     shacl:description "Gezin waarvan de persoon het gezinshoofd is.";
@@ -388,7 +389,7 @@
     shacl:class <https://data.vlaanderen.be/ns/persoon#Verblijfplaats>;
     shacl:description "Plaats waar een persoon verblijft.";
     shacl:name "verblijfplaats";
-    shacl:path <https://data.vlaanderen.be/ns/persoon#heeftVerblijfplaats>
+    shacl:path <https://data.vlaanderen.be/ns/loongegevens#Persoon.verblijfplaats>
   ], [
     shacl:datatype xsd:string;
     shacl:description "De volledige naam vd persoon, doorgaans de combinatie van voornamen en achternaam.";
