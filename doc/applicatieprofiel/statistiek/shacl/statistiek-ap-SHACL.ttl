@@ -3,10 +3,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://data.vlaanderen.be/shacl/statistiek-ap> <https://data.vlaanderen.be/shacl/statistiek-apshapes> <https://data.vlaanderen.be/shacl/statistiek-ap#DiscreteProbabiliteitShape>,
+    <https://data.vlaanderen.be/shacl/statistiek-ap#KwantielShape>,
     <https://data.vlaanderen.be/shacl/statistiek-ap#MomentShape>,
     <https://data.vlaanderen.be/shacl/statistiek-ap#OperatortypeShape>,
     <https://data.vlaanderen.be/shacl/statistiek-ap#ProbabiliteitShape>,
-    <https://data.vlaanderen.be/shacl/statistiek-ap#QuantielShape>,
     <https://data.vlaanderen.be/shacl/statistiek-ap#StatistiekShape>,
     <https://data.vlaanderen.be/shacl/statistiek-ap#StatistiekTypeShape>,
     <https://data.vlaanderen.be/shacl/statistiek-ap#StatistischeObservatieShape> .
@@ -21,6 +21,16 @@
     shacl:path <https://data.vlaanderen.be/ns/statistiek#categorie>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/statistiek#DiscreteProbabiliteit> .
+
+<https://data.vlaanderen.be/shacl/statistiek-ap#KwantielShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:double;
+    shacl:maxCount 1;
+    shacl:name "niveau";
+    shacl:path <https://data.vlaanderen.be/ns/statistiek#niveau>
+  ];
+  shacl:targetClass <https://data.vlaanderen.be/ns/statistiek#Kwantiel> .
 
 <https://data.vlaanderen.be/shacl/statistiek-ap#MomentShape> a shacl:NodeShape;
   shacl:closed false;
@@ -53,16 +63,6 @@
     shacl:path <https://data.vlaanderen.be/ns/statistiek#waarde>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/statistiek#Probabiliteit> .
-
-<https://data.vlaanderen.be/shacl/statistiek-ap#QuantielShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:datatype xsd:double;
-    shacl:maxCount 1;
-    shacl:name "niveau";
-    shacl:path <https://data.vlaanderen.be/ns/statistiek#niveau>
-  ];
-  shacl:targetClass <https://data.vlaanderen.be/ns/statistiek#Quantiel> .
 
 <https://data.vlaanderen.be/shacl/statistiek-ap#StatistiekShape> a shacl:NodeShape;
   shacl:closed false;
