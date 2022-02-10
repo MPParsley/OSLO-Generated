@@ -1,0 +1,343 @@
+{
+  "@context": {
+    "@vocab": "https://data.vlaanderen.be/shacl/datakwaliteit-ap",
+    "qb": "http://purl.org/linked-data/cube#",
+    "qb:codeList": {
+      "@type": "@id"
+    },
+    "sh": "http://www.w3.org/ns/shacl#",
+    "sh:class": {
+      "@type": "@id"
+    },
+    "sh:datatype": {
+      "@type": "@id"
+    },
+    "sh:maxCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:minCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:path": {
+      "@type": "@id"
+    },
+    "sh:property": {
+      "@type": "@id"
+    },
+    "sh:targetClass": {
+      "@type": "@id"
+    },
+    "shapes": {
+      "@type": "@id"
+    }
+  },
+  "@id": "https://data.vlaanderen.be/shacl/datakwaliteit-ap",
+  "shapes": [
+    {
+      "@id": "https://data.vlaanderen.be/shacl/datakwaliteit-ap#CI_CitationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/datakwaliteit#CI_Citation"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/datakwaliteit-ap#DQ_CompletenessShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/datakwaliteit#DQ_Completeness"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/datakwaliteit-ap#DQ_ConformanceResultShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:maxCount": "1",
+          "sh:name": "explanation",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#explanation"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "pass",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#pass"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/datakwaliteit#CI_Citation",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "specification",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#specification"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/datakwaliteit#DQ_ConformanceResult"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/datakwaliteit-ap#DQ_DescriptiveResultShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "statement",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#statement"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/datakwaliteit#DQ_DescriptiveResult"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/datakwaliteit-ap#DQ_ElementShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/datakwaliteit#DQ_Element",
+          "sh:name": "derivedElement",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#derivedElement"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/datakwaliteit#DQ_EvaluationMethod",
+          "sh:maxCount": "1",
+          "sh:name": "evaluationMethod",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#evaluationMethod"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/datakwaliteit#DQ_MeasureReference",
+          "sh:maxCount": "1",
+          "sh:name": "measure",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#measure"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/datakwaliteit#DQ_Result",
+          "sh:minCount": "1",
+          "sh:name": "result",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#result"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:name": "standaloneQualityReportDetails",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#standaloneQualityReportDetails"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/datakwaliteit#DQ_Element"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/datakwaliteit-ap#DQ_EvaluationMethodShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:name": "dateTime",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#dateTime"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:name": "evaluationMethodDescription",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#evaluationMethodDescription"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/datakwaliteit#DQ_EvaluationMethodTypeCode",
+          "sh:maxCount": "1",
+          "sh:name": "evaluationMethodType",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#evaluationMethodType"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/datakwaliteit#CI_Citation",
+          "sh:maxCount": "1",
+          "sh:name": "evaluationProcedure",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#evaluationProcedure"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/datakwaliteit#CI_Citation",
+          "sh:name": "referenceDoc",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#referenceDoc"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/datakwaliteit#DQ_EvaluationMethod"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/datakwaliteit-ap#DQ_EvaluationMethodTypeCodeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/datakwaliteit#DQ_EvaluationMethodTypeCode"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/datakwaliteit-ap#DQ_LogicalConsistencyShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/datakwaliteit#DQ_LogicalConsistency"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/datakwaliteit-ap#DQ_MeasureReferenceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:maxCount": "1",
+          "sh:name": "measureDescription",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#measureDescription"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/datakwaliteit#MD_Identier",
+          "sh:maxCount": "1",
+          "sh:name": "measureIdentification",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#measureIdentification"
+        },
+        {
+          "sh:name": "nameOfMeasure",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#nameOfMeasure"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/datakwaliteit#DQ_MeasureReference"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/datakwaliteit-ap#DQ_PositionalAccuracyShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/datakwaliteit#DQ_PositionalAccuracy"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/datakwaliteit-ap#DQ_QuantitiveResultShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/generiek#Record",
+          "sh:minCount": "1",
+          "sh:name": "value",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#value"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/datakwaliteit#RecordType",
+          "sh:maxCount": "1",
+          "sh:name": "valueRecordType",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#valueRecordType"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/datakwaliteit#UnitOfMeasure",
+          "sh:maxCount": "1",
+          "sh:name": "valueUnit",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#valueUnit"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/datakwaliteit#DQ_QuantitiveResult"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/datakwaliteit-ap#DQ_ResultShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:maxCount": "1",
+          "sh:name": "dateTime",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#dateTime"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/datakwaliteit#MD_Scope",
+          "sh:maxCount": "1",
+          "sh:name": "resultScope",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#resultScope"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/datakwaliteit#DQ_Result"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/datakwaliteit-ap#DQ_TemporalQualityShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/datakwaliteit#DQ_TemporalQuality"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/datakwaliteit-ap#DQ_ThematicAccuracyShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/datakwaliteit#DQ_ThematicAccuracy"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/datakwaliteit-ap#DQ_UsabilityElementShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/datakwaliteit#DQ_UsabilityElement"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/datakwaliteit-ap#DateTimeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/datakwaliteit#DateTime"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/datakwaliteit-ap#MD_IdentierShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/datakwaliteit#CI_Citation",
+          "sh:maxCount": "1",
+          "sh:name": "authority",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#authority"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "code",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#code"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:name": "codeSpace",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#codeSpace"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:name": "description",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#description"
+        },
+        {
+          "sh:maxCount": "1",
+          "sh:name": "version",
+          "sh:path": "https://data.vlaanderen.be/ns/datakwaliteit#version"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/datakwaliteit#MD_Identier"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/datakwaliteit-ap#MD_ScopeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/datakwaliteit#MD_Scope"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/datakwaliteit-ap#RecordShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/datakwaliteit#Record"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/datakwaliteit-ap#RecordTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/datakwaliteit#RecordType"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/datakwaliteit-ap#UnitOfMeasureShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/datakwaliteit#UnitOfMeasure"
+    }
+  ]
+}
