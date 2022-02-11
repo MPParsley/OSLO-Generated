@@ -305,13 +305,6 @@
       "sh:targetClass": "http://data.europa.eu/m8g/PublicOrganisation"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#AutomatischeParkeergarageShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#AutomatischeParkeergarage"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#BushokShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -395,6 +388,7 @@
       "sh:property": [
         {
           "sh:class": "https://data.vlaanderen.be/ns/vervoersknooppunten#Informatiezuiltype",
+          "sh:description": "type van informatiezuil",
           "sh:maxCount": "1",
           "sh:name": "type",
           "sh:path": "http://purl.org/dc/terms/type"
@@ -408,30 +402,6 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://fixme.com#Knoop"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#LaderShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://fixme.com#Plug",
-          "sh:minCount": "1",
-          "sh:name": "plug",
-          "sh:path": "http://fixme.com#plug"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/vervoersknooppunten#Ladertype",
-          "sh:name": "type",
-          "sh:path": "http://fixme.com#type"
-        },
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:name": "vervoermiddel",
-          "sh:path": "http://fixme.com#vervoermiddel"
-        }
-      ],
-      "sh:targetClass": "http://fixme.com#Lader"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#NetwerkShape",
@@ -448,73 +418,11 @@
       "sh:targetClass": "http://fixme.com#Netwerkelement"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#OndergrondseParkeergarageShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#OndergrondseParkeergarage"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#OpeningHoursSpecificationShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://fixme.com#OpeningHoursSpecification"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ParkeerfaciliteitShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://fixme.com#Capaciteit",
-          "sh:name": "^capaciteit",
-          "sh:path": "http://fixme.com#^capaciteit"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
-          "sh:maxCount": "1",
-          "sh:name": "^openingsuren",
-          "sh:path": "http://fixme.com#^openingsuren"
-        },
-        {
-          "sh:class": "http://fixme.com#Entrance",
-          "sh:name": "entrance",
-          "sh:path": "http://fixme.com#entrance"
-        },
-        {
-          "sh:class": "http://fixme.com#Exit",
-          "sh:name": "exit",
-          "sh:path": "http://fixme.com#exit"
-        },
-        {
-          "sh:class": "http://fixme.com#Parkeerplaats",
-          "sh:name": "parkeerplaats",
-          "sh:path": "http://fixme.com#parkeerplaats"
-        }
-      ],
-      "sh:targetClass": "http://fixme.com#Parkeerfaciliteit"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ParkeergarageShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#Parkeergarage"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ParkeerplaatsShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#Parkeerplaats"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ParkeerterreinShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#Parkeerterrein"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#PerronShape",
@@ -523,12 +431,14 @@
       "sh:property": [
         {
           "sh:class": "http://fixme.com#Perron",
+          "sh:description": "Het perron horende bij de stopplaats",
           "sh:maxCount": "1",
           "sh:name": "perron",
           "sh:path": "http://fixme.com#perron"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Gebruik om het perron aan het publiek te identificeren.",
           "sh:maxCount": "1",
           "sh:name": "publiekeCode",
           "sh:path": "http://fixme.com#publiekeCode"
@@ -564,46 +474,47 @@
       "sh:property": [
         {
           "sh:class": "http://www.opengis.net/ont/sf#Point",
-          "sh:description": "TODO",
+          "sh:description": "Middenpunt van de stopplaats.",
           "sh:maxCount": "1",
           "sh:name": "^centroïde",
           "sh:path": "http://fixme.com#centroid"
         },
         {
           "sh:class": "http://fixme.com#Site",
+          "sh:description": "Parent site die deze stopplaats bevat.",
           "sh:maxCount": "1",
           "sh:name": "^parentSite",
           "sh:path": "http://fixme.com#^parentSite"
         },
         {
           "sh:class": "http://fixme.com#Plaatstype",
-          "sh:description": "TODO",
+          "sh:description": "Categorisering van de stopplaats.",
           "sh:maxCount": "1",
           "sh:name": "^plaatsType",
           "sh:path": "http://fixme.com#placeType"
         },
         {
           "sh:class": "http://www.opengis.net/ont/sf#Polygon",
-          "sh:description": "TODO",
+          "sh:description": "Polygoon geassocieerd met de stopplaats.",
           "sh:maxCount": "1",
           "sh:name": "^polygoon",
           "sh:path": "http://fixme.com#polygon"
         },
         {
           "sh:class": "http://fixme.com#Toegangsmodus",
-          "sh:description": "TODO",
+          "sh:description": "Toegangsmodi waarmee de stopplaats toegankelijk is.",
           "sh:name": "^toegangsmodus",
           "sh:path": "http://fixme.com#accessModes"
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Toegankelijkheid",
-          "sh:description": "TODO",
+          "sh:description": "De algehele toegankelijkheidskenmerken van de stopplaats.",
           "sh:name": "^toegankelijkheid",
           "sh:path": "http://fixme.com#accessabilityAssessment"
         },
         {
           "sh:class": "http://www.w3.org/ns/locn#Address",
-          "sh:description": "TODO",
+          "sh:description": "Adres van een genummerd gebouw op een benoemde weg.",
           "sh:maxCount": "1",
           "sh:name": "^wegadres",
           "sh:path": "http://fixme.com#roadAddress"
@@ -616,14 +527,14 @@
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:description": "TODO",
+          "sh:description": "Code gebruikt om een stopplaats aan het publiek te identificeren als een alternatief voor een naam.",
           "sh:maxCount": "1",
           "sh:name": "publiekeCode",
           "sh:path": "http://fixme.com#publiekeCode"
         },
         {
           "sh:class": "http://fixme.com#Stopplaatstype",
-          "sh:description": "TODO",
+          "sh:description": "Het type stopplaats.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "stopplaatstype",
@@ -631,7 +542,7 @@
         },
         {
           "sh:class": "http://fixme.com#Transportmode",
-          "sh:description": "TODO",
+          "sh:description": "De hoofdtransportmodus van de stopplaats.",
           "sh:maxCount": "1",
           "sh:name": "transportmodus",
           "sh:path": "http://fixme.com#transportmodus"
@@ -722,7 +633,7 @@
           "sh:description": "Naam van het Transportobject.",
           "sh:maxCount": "1",
           "sh:name": "geografischeNaam",
-          "sh:path": "http://fixme.com#Transportobject.geografischeNaam"
+          "sh:path": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Toegankelijkheid",
@@ -803,6 +714,114 @@
         }
       ],
       "sh:targetClass": "http://purl.org/vocab/cpsv#FormalFramework"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#AutomatischeParkeergarageShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://schema.mobivoc.org/#AutomatedParkingGarage"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#FietsparkingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://schema.mobivoc.org/#BicycleParkingStation"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#LaderShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#Plug",
+          "sh:description": "Onderdeel van de lader die gebruikt wordt om de connectie te vormen met de electrische vervoermiddelen.",
+          "sh:minCount": "1",
+          "sh:name": "plug",
+          "sh:path": "http://schema.mobivoc.org/#plug"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/vervoersknooppunten#Ladertype",
+          "sh:description": "Het type van de plug.",
+          "sh:name": "type",
+          "sh:path": "http://schema.mobivoc.org/#PlugType"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Vervoermiddel dat elektrisch aangedreven wordt.",
+          "sh:name": "vervoermiddel",
+          "sh:path": "http://schema.mobivoc.org/#ElectricVehicle"
+        }
+      ],
+      "sh:targetClass": "http://schema.mobivoc.org/#Charger"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ParkeerfaciliteitShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#Capaciteit",
+          "sh:description": "De capaciteit van de parkeerfaciliteit.",
+          "sh:name": "^capaciteit",
+          "sh:path": "http://schema.mobivoc.org/#Capacity"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:description": "De openingsuren van de parkeerfaciliteit.",
+          "sh:maxCount": "1",
+          "sh:name": "^openingsuren",
+          "sh:path": "http://schema.mobivoc.org/#http://schema.org/OpeningHoursSpecification"
+        },
+        {
+          "sh:class": "http://fixme.com#Entrance",
+          "sh:description": "De ingang van de parkeerfaciliteit.",
+          "sh:name": "entrance",
+          "sh:path": "http://schema.mobivoc.org/#entrance"
+        },
+        {
+          "sh:class": "http://fixme.com#Exit",
+          "sh:description": "De uitgang van de parkeerfaciliteit.",
+          "sh:name": "exit",
+          "sh:path": "http://schema.mobivoc.org/#exit"
+        },
+        {
+          "sh:class": "http://schema.mobivoc.org/#parkingSpace",
+          "sh:description": "De parkeerplaats van de parkeerfaciliteit.",
+          "sh:name": "parkeerplaats",
+          "sh:path": "http://schema.mobivoc.org/#parkingSpace"
+        }
+      ],
+      "sh:targetClass": "http://schema.mobivoc.org/#ParkingFacility"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ParkeergarageShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://schema.mobivoc.org/#ParkingGarage"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ParkeerterreinShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://schema.mobivoc.org/#ParkingLot"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#OndergrondseParkeergarageShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://schema.mobivoc.org/#UndergroundParkingGarage"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ParkeerplaatsShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://schema.mobivoc.org/#parkingSpace"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ContactInfoShape",
@@ -1647,7 +1666,7 @@
       "sh:property": [
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
-          "sh:description": "To Do",
+          "sh:description": "Duidt aan of het object al dan niet kan afgesloten worden om toegang voor onbevoegden te verhinderen.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "afsluitbaar",
@@ -1655,7 +1674,7 @@
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
-          "sh:description": "To Do",
+          "sh:description": "Geeft aan hoeveel fietsen gestald kunnen worden aan of in de fietsenstalling.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "capaciteit",
@@ -1663,7 +1682,7 @@
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
-          "sh:description": "To Do",
+          "sh:description": "Duidt aan of de fietsstalling al dan niet gebruikt wordt voor deelfietsen.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "fietsdelen",
@@ -1671,7 +1690,7 @@
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
-          "sh:description": "To Do",
+          "sh:description": "Duidt aan of het object al dan niet overdekt is.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "overdekt",
@@ -1679,20 +1698,13 @@
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
-          "sh:description": "To Do",
+          "sh:description": "Duidt aan of het element al dan niet verplaatsbaar is en dus niet permanent verankerd werd met het aardoppervlak.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "verplaatsbaar",
           "sh:path": "https://fixme.com"
         }
       ],
-      "sh:targetClass": "https://fixme.com"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#FietsparkingShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
       "sh:targetClass": "https://fixme.com"
     },
     {
@@ -1714,7 +1726,7 @@
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "^geometrie",
-          "sh:path": "https://fixme.com"
+          "sh:path": "http://www.w3.org/ns/locn#geometry"
         },
         {
           "sh:class": "http://www.w3.org/ns/adms#Identifier",
@@ -1725,6 +1737,7 @@
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Toegankelijkheid",
+          "sh:description": "De algehele toegankelijkheidskenmerken van de het infrastructuurelement.",
           "sh:name": "toegankelijkheid",
           "sh:path": "http://fixme.com#toegankelijkheid"
         },
@@ -1747,7 +1760,7 @@
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "^geografischeNaam",
-          "sh:path": "https://fixme.com"
+          "sh:path": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
