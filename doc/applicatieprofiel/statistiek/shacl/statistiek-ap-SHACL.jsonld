@@ -40,6 +40,7 @@
       "sh:property": [
         {
           "sh:class": "http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Any",
+          "sh:description": "TODO",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "categorie",
@@ -55,6 +56,7 @@
       "sh:property": [
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "sh:description": "TODO",
           "sh:maxCount": "1",
           "sh:name": "niveau",
           "sh:path": "https://data.vlaanderen.be/ns/statistiek#niveau"
@@ -69,6 +71,7 @@
       "sh:property": [
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:description": "TODO",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "orde",
@@ -78,19 +81,13 @@
       "sh:targetClass": "https://data.vlaanderen.be/ns/statistiek#Moment"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/statistiek-ap#OperatortypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/statistiek#Operatortype"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/statistiek-ap#ProbabiliteitShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://data.vlaanderen.be/ns/statistiek#Operatortype",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "TODO",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "operator",
@@ -98,6 +95,7 @@
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "sh:description": "TODO",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "waarde",
@@ -112,14 +110,16 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://data.vlaanderen.be/ns/statistiek#StatistiekType",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "TODO",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "statistiektype",
           "sh:path": "https://data.vlaanderen.be/ns/statistiek#statistiektype"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/generiek#Waarde",
+          "sh:class": "TODO",
+          "sh:description": "TODO",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "waarde",
@@ -129,54 +129,66 @@
       "sh:targetClass": "https://data.vlaanderen.be/ns/statistiek#Statistiek"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/statistiek-ap#StatistiekTypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/statistiek#StatistiekType"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/statistiek-ap#StatistischeObservatieShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
           "sh:class": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
+          "sh:description": "Het moment waarop het resultaat van de Observatie van toepassing was.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "^fenomeentijd",
-          "sh:path": "https://data.vlaanderen.be/ns/statistiek#^fenomeentijd"
+          "sh:path": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.phenomenonTime"
         },
         {
           "sh:class": "http://def.isotc211.org/iso19109/2005/GeneralFeatureModel#GF_PropertyType",
+          "sh:description": "Kenmerk dat men observeert vh geobserveerdObject.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "^geobserveerdKenmerk",
-          "sh:path": "https://data.vlaanderen.be/ns/statistiek#^geobserveerdKenmerk"
+          "sh:path": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.observedProperty"
         },
         {
           "sh:class": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature",
+          "sh:description": "Object dat met observeert.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "^geobserveerdObject",
-          "sh:path": "https://data.vlaanderen.be/ns/statistiek#^geobserveerdObject"
+          "sh:path": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.featureOfInterest"
         },
         {
           "sh:class": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Instant",
+          "sh:description": "Tijdstip waarop het resultaat van de Observatie werd bekomen.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
-          "sh:name": "^resultaatTijd",
-          "sh:path": "https://data.vlaanderen.be/ns/statistiek#^resultaatTijd"
+          "sh:name": "^resultaattijd",
+          "sh:path": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.resultTime"
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/statistiek#Statistiek",
+          "sh:description": "TODO e waarde van het geobserveerdeKenmerk als resultaat van de Observatie.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "resultaat",
-          "sh:path": "https://data.vlaanderen.be/ns/statistiek#resultaat"
+          "sh:path": "http://data.vlaanderen.be/ns/statistiek#StatistischeObservatie.resultaat"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/statistiek#StatistischeObservatie"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/statistiek-ap#StatistiekTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/statistiek-ap#OperatorTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     }
   ]
 }
