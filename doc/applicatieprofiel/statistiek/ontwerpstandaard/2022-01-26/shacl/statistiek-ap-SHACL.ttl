@@ -3,11 +3,11 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://data.vlaanderen.be/shacl/statistiek-ap> <https://data.vlaanderen.be/shacl/statistiek-apshapes> <https://data.vlaanderen.be/shacl/statistiek-ap#StatistiekShape>,
+<https://data.vlaanderen.be/shacl/statistiek-ap> <https://data.vlaanderen.be/shacl/statistiek-apshapes> <https://data.vlaanderen.be/shacl/statistiek-ap#DiscreteProbabiliteitShape>,
     <https://data.vlaanderen.be/shacl/statistiek-ap#KwantielShape>,
     <https://data.vlaanderen.be/shacl/statistiek-ap#MomentShape>,
-    <https://data.vlaanderen.be/shacl/statistiek-ap#DiscreteProbabiliteitShape>,
     <https://data.vlaanderen.be/shacl/statistiek-ap#ProbabiliteitShape>,
+    <https://data.vlaanderen.be/shacl/statistiek-ap#StatistiekShape>,
     <https://data.vlaanderen.be/shacl/statistiek-ap#StatistischeObservatieShape>,
     <https://data.vlaanderen.be/shacl/statistiek-ap#StatistiekTypeShape>,
     <https://data.vlaanderen.be/shacl/statistiek-ap#OperatortypeShape> .
@@ -19,8 +19,10 @@
     shacl:description "TODO";
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "categorie"
-  ] .
+    shacl:name "categorie";
+    shacl:path <https://data.vlaanderen.be/ns/statistiek#categorie>
+  ];
+  shacl:targetClass <https://data.vlaanderen.be/ns/statistiek#DiscreteProbabiliteit> .
 
 <https://data.vlaanderen.be/shacl/statistiek-ap#KwantielShape> a shacl:NodeShape;
   shacl:closed false;
@@ -28,8 +30,10 @@
     shacl:datatype xsd:double;
     shacl:description "TODO";
     shacl:maxCount 1;
-    shacl:name "niveau"
-  ] .
+    shacl:name "niveau";
+    shacl:path <https://data.vlaanderen.be/ns/statistiek#niveau>
+  ];
+  shacl:targetClass <https://data.vlaanderen.be/ns/statistiek#Kwantiel> .
 
 <https://data.vlaanderen.be/shacl/statistiek-ap#MomentShape> a shacl:NodeShape;
   shacl:closed false;
@@ -38,8 +42,10 @@
     shacl:description "TODO";
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "orde"
-  ] .
+    shacl:name "orde";
+    shacl:path <https://data.vlaanderen.be/ns/statistiek#orde>
+  ];
+  shacl:targetClass <https://data.vlaanderen.be/ns/statistiek#Moment> .
 
 <https://data.vlaanderen.be/shacl/statistiek-ap#OperatortypeShape> a shacl:NodeShape;
   shacl:closed false;
@@ -52,14 +58,17 @@
     shacl:description "TODO";
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "operator"
+    shacl:name "operator";
+    shacl:path <https://data.vlaanderen.be/ns/statistiek#operator>
   ], [
     shacl:datatype xsd:double;
     shacl:description "TODO";
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "waarde"
-  ] .
+    shacl:name "waarde";
+    shacl:path <https://data.vlaanderen.be/ns/statistiek#waarde>
+  ];
+  shacl:targetClass <https://data.vlaanderen.be/ns/statistiek#Probabiliteit> .
 
 <https://data.vlaanderen.be/shacl/statistiek-ap#StatistiekShape> a shacl:NodeShape;
   shacl:closed false;
@@ -68,14 +77,16 @@
     shacl:description "TODO";
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "statistiektype"
+    shacl:name "statistiektype";
+    shacl:path <https://data.vlaanderen.be/ns/statistiek#statistiektype>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/generiek#Waarde>;
     shacl:description "TODO";
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "waarde"
-  ] .
+    shacl:name "waarde";
+    shacl:path <https://data.vlaanderen.be/ns/statistiek#waarde>
+  ];
+  shacl:targetClass <https://data.vlaanderen.be/ns/statistiek#Statistiek> .
 
 <https://data.vlaanderen.be/shacl/statistiek-ap#StatistiekTypeShape> a shacl:NodeShape;
   shacl:closed false;
@@ -85,31 +96,38 @@
   shacl:closed false;
   shacl:property [
     shacl:class <http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object>;
-    shacl:description "TODO";
+    shacl:description "Het moment waarop het resultaat van de Observatie van toepassing was.";
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "^fenomeentijd"
+    shacl:name "^fenomeentijd";
+    shacl:path <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.phenomenonTime>
   ], [
     shacl:class <http://def.isotc211.org/iso19109/2005/GeneralFeatureModel#GF_PropertyType>;
-    shacl:description "TODO";
+    shacl:description "Kenmerk dat men observeert vh geobserveerdObject.";
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "^geobserveerdKenmerk"
+    shacl:name "^geobserveerdKenmerk";
+    shacl:path <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.observedProperty>
   ], [
     shacl:class <http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature>;
-    shacl:description "TODO";
+    shacl:description "Object dat met observeert.";
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "^geobserveerdObject"
+    shacl:name "^geobserveerdObject";
+    shacl:path <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.featureOfInterest>
   ], [
     shacl:class <http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Instant>;
-    shacl:description "TODO";
+    shacl:description "Tijdstip waarop het resultaat van de Observatie werd bekomen.";
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "^resultaatTijd"
+    shacl:name "^resultaattijd";
+    shacl:path <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.resultTime>
   ], [
-    shacl:description "TODO";
+    shacl:class <https://data.vlaanderen.be/ns/statistiek#Statistiek>;
+    shacl:description "De waarde van het geobserveerdeKenmerk als resultaat van de Observatie.";
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "resultaat"
-  ] .
+    shacl:name "resultaat";
+    shacl:path <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.result>
+  ];
+  shacl:targetClass <https://data.vlaanderen.be/ns/statistiek#StatistischeObservatie> .
