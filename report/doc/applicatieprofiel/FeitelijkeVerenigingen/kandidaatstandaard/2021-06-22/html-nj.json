@@ -4,7 +4,7 @@
       "nl": "Feitelijke Verenigingen - Applicatieprofiel"
     },
     "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen",
-    "issued": "2021-06-22",
+    "issued": "2022-02-03",
     "baseURI": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#",
     "filename": "Feitelijke-Verenigingen-ap",
     "navigation": {
@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
     "statuslabel": "Kandidaat Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/tree/02cc4ea0e96b19c8ee8b9a2a2db903a12c667c22",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/blob/02cc4ea0e96b19c8ee8b9a2a2db903a12c667c22/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/tree/e08ebb4fc59271a1e0466ae55d184240978f9fbb",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/blob/e08ebb4fc59271a1e0466ae55d184240978f9fbb/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-feitelijkeVerenigingen/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/kandidaat-standaard/applicatieprofiel-feitelijke-verenigingen.html",
     "usesVocs": [],
@@ -62,7 +62,7 @@
               }
             }
           ],
-          "cardinality": "0..1",
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -244,7 +244,7 @@
               }
             }
           ],
-          "cardinality": "0..1",
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -510,55 +510,7 @@
       ],
       "properties": [
         {
-          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#bankrekeningnummer",
-          "name": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
-              "EA-Name": "FeitelijkeVereniging"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftDeelVereniging",
-          "name": {
-            "nl": "heeftDeelVereniging"
-          },
-          "sort_nl": "heeftDeelVereniging",
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
-              "EA-Name": "FeitelijkeVereniging"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "FeitelijkeVereniging",
-              "range_uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#FeitelijkeVereniging",
-              "range_puri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
-              "range_label": {
-                "nl": "FeitelijkeVereniging"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVestiging",
+          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#^heeftVestiging",
           "name": {},
           "description": {},
           "usage": {},
@@ -587,11 +539,8 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#isDeelVan",
-          "name": {
-            "nl": "isDeelVan"
-          },
-          "sort_nl": "isDeelVan",
+          "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#bankrekeningnummer",
+          "name": {},
           "description": {},
           "usage": {},
           "domain": [
@@ -602,16 +551,16 @@
           ],
           "range": [
             {
-              "range_label": "FeitelijkeVereniging",
-              "range_uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging"
+              "range_label": "GetypeerdeString",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#FeitelijkeVereniging",
-              "range_puri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+              "range_uri": "#GetypeerdeString",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
               "range_label": {
-                "nl": "FeitelijkeVereniging"
+                "nl": "GetypeerdeString"
               }
             }
           ],
@@ -757,6 +706,64 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://www.w3.org/ns/org#hasSubOrganization",
+          "name": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+              "EA-Name": "FeitelijkeVereniging"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "FeitelijkeVereniging",
+              "range_uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#FeitelijkeVereniging",
+              "range_puri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+              "range_label": {
+                "nl": "FeitelijkeVereniging"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/org#subOrganizationOf",
+          "name": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+              "EA-Name": "FeitelijkeVereniging"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "FeitelijkeVereniging",
+              "range_uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#FeitelijkeVereniging",
+              "range_puri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+              "range_label": {
+                "nl": "FeitelijkeVereniging"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://www.w3.org/ns/regorg#orgActivity",
           "name": {
             "nl": "activiteit"
@@ -789,7 +796,7 @@
               }
             }
           ],
-          "cardinality": "0..1",
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -891,7 +898,7 @@
               }
             }
           ],
-          "cardinality": "1..*",
+          "cardinality": "2..*",
           "codelist_uri": ""
         },
         {
@@ -1448,7 +1455,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "http://purl.org/dc/terms/Location",
+              "range_uri": "#Plaats",
               "range_puri": "http://purl.org/dc/terms/Location",
               "range_label": {
                 "nl": "Plaats"
@@ -1474,6 +1481,52 @@
       },
       "parents": [],
       "properties": []
+    },
+    {
+      "uri": "http://fixme.com#Oprichting",
+      "name": {},
+      "description": {},
+      "usage": {},
+      "parents": [
+        {
+          "name": "Veranderingsgebeurtenis",
+          "label": "Veranderingsgebeurtenis",
+          "package": "OSLO-Persoon",
+          "uri": "http://fixme.com#Veranderingsgebeurtenis",
+          "scoped_uri": "http://fixme.com#Veranderingsgebeurtenis"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "http://fixme.com#^datum",
+          "name": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://fixme.com#Oprichting",
+              "EA-Name": "Oprichting"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "nl": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
     },
     {
       "uri": "http://purl.org/dc/terms/Agent",
@@ -1553,6 +1606,41 @@
             }
           ],
           "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://purl.org/dc/terms/Location",
+      "name": {
+        "nl": "Plaats"
+      },
+      "sort_nl": "Plaats",
+      "description": {
+        "nl": "Een ruimtelijk gebied of benoemde plaats."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+          "name": {
+            "nl": "plaatsnaam"
+          },
+          "sort_nl": "plaatsnaam",
+          "description": {
+            "nl": "Naam van de plaats of van het gebied."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://purl.org/dc/terms/Location",
+              "EA-Name": "Plaats"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -1931,6 +2019,35 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://www.w3.org/ns/org#hasSubOrganization",
+          "name": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://www.w3.org/ns/org#Organization",
+              "EA-Name": "Organisatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Organisatie",
+              "range_uri": "http://www.w3.org/ns/org#Organization"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Organisatie",
+              "range_puri": "http://www.w3.org/ns/org#Organization",
+              "range_label": {
+                "nl": "Organisatie"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://www.w3.org/ns/org#resultedFrom",
           "name": {
             "nl": "^isHetresultaatVan"
@@ -1954,7 +2071,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "http://fixme.com#Oprichting",
+              "range_uri": "#Oprichting",
               "range_puri": "http://fixme.com#Oprichting",
               "range_label": {
                 "nl": "Oprichting"
@@ -1962,6 +2079,35 @@
             }
           ],
           "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/org#subOrganizationOf",
+          "name": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://www.w3.org/ns/org#Organization",
+              "EA-Name": "Organisatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Organisatie",
+              "range_uri": "http://www.w3.org/ns/org#Organization"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Organisatie",
+              "range_puri": "http://www.w3.org/ns/org#Organization",
+              "range_label": {
+                "nl": "Organisatie"
+              }
+            }
+          ],
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -1997,7 +2143,7 @@
               }
             }
           ],
-          "cardinality": "0..1",
+          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]
@@ -2130,7 +2276,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "http://purl.org/dc/terms/Location",
+              "range_uri": "#Plaats",
               "range_puri": "http://purl.org/dc/terms/Location",
               "range_label": {
                 "nl": "Plaats"
@@ -2437,6 +2583,19 @@
   ],
   "properties": [
     {
+      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#^heeftVestiging",
+      "name": {},
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
       "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#^isPositieIn",
       "name": {
         "nl": "isPositieIn"
@@ -2506,49 +2665,6 @@
       "description": {
         "nl": "Tijdsinterval waarbinnen de erkenning van toepassing is."
       },
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "usage": {},
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftDeelVereniging",
-      "name": {
-        "nl": "heeftDeelVereniging"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "usage": {},
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVestiging",
-      "name": {},
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "usage": {},
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#isDeelVan",
-      "name": {
-        "nl": "isDeelVan"
-      },
-      "description": {},
       "domain": [
         null
       ],
@@ -3207,6 +3323,73 @@
       },
       "parents": [],
       "properties": []
+    },
+    {
+      "uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+      "name": {},
+      "description": {},
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://fixme.com#string",
+          "name": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "EA-Name": "GetypeerdeString"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com#type",
+          "name": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "EA-Name": "GetypeerdeString"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_label": {
+                "nl": "URI"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
     },
     {
       "uri": "http://www.w3.org/ns/adms#Identifier",

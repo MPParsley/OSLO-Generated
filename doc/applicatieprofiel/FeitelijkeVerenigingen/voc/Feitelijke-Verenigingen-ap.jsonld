@@ -157,7 +157,7 @@
   "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
   "namespace": null,
   "navigation": {},
-  "publication-date": "2021-06-22",
+  "publication-date": "2022-02-03",
   "publication-state": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
   "title": "Feitelijke Verenigingen - Applicatieprofiel",
   "dcterms:license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
@@ -225,6 +225,20 @@
   ],
   "properties": [
     {
+      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#^heeftVestiging",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {},
+      "domain": [
+        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging"
+      ],
+      "generalization": [],
+      "name": {},
+      "range": [
+        "http://www.w3.org/ns/org#Site"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#^isPositieIn",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {},
@@ -274,14 +288,16 @@
     },
     {
       "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#bankrekeningnummer",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "description": {},
       "domain": [
         "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging"
       ],
       "generalization": [],
       "name": {},
-      "range": [],
+      "range": [
+        "http://www.w3.org/2000/01/rdf-schema#Literal"
+      ],
       "usage": {}
     },
     {
@@ -317,52 +333,6 @@
       },
       "range": [
         "http://data.europa.eu/m8g/PeriodOfTime"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftDeelVereniging",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {},
-      "domain": [
-        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "heeftDeelVereniging"
-      },
-      "range": [
-        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVestiging",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {},
-      "domain": [
-        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging"
-      ],
-      "generalization": [],
-      "name": {},
-      "range": [
-        "http://www.w3.org/ns/org#Site"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#isDeelVan",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {},
-      "domain": [
-        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "isDeelVan"
-      },
-      "range": [
-        "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging"
       ],
       "usage": {}
     },
@@ -499,11 +469,21 @@
       }
     },
     {
+      "@id": "http://www.w3.org/ns/org#hasSubOrganization",
+      "@type": "rdf:Property",
+      "name": {}
+    },
+    {
       "@id": "http://www.w3.org/ns/org#role",
       "@type": "rdf:Property",
       "name": {
         "nl": "rol"
       }
+    },
+    {
+      "@id": "http://www.w3.org/ns/org#subOrganizationOf",
+      "@type": "rdf:Property",
+      "name": {}
     },
     {
       "@id": "http://www.w3.org/ns/regorg#orgActivity",

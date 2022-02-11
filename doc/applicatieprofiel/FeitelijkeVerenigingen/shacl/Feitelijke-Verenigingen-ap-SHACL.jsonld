@@ -40,7 +40,6 @@
       "sh:property": [
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:maxCount": "1",
           "sh:name": "activiteit",
           "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#activiteit"
         },
@@ -83,7 +82,6 @@
       "sh:property": [
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:maxCount": "1",
           "sh:name": "activiteit",
           "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#activiteit"
         },
@@ -146,7 +144,6 @@
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "Type activiteit die door de organisatie wordt uitgeoefend.",
-          "sh:maxCount": "1",
           "sh:name": "^activiteit",
           "sh:path": "http://www.w3.org/ns/regorg#orgActivity"
         },
@@ -157,9 +154,24 @@
           "sh:path": "http://schema.org/contactPoint"
         },
         {
+          "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+          "sh:name": "^heeftSuborganisatie",
+          "sh:path": "http://www.w3.org/ns/org#hasSubOrganization"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/org#Site",
+          "sh:name": "^heeftVestiging",
+          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#^heeftVestiging"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+          "sh:name": "^isSuborganisatieVan",
+          "sh:path": "http://www.w3.org/ns/org#subOrganizationOf"
+        },
+        {
           "sh:class": "http://purl.org/dc/terms/Agent",
           "sh:description": "Verwijzing naar de leden die deel uitmaken van de feitelijke vereniging.",
-          "sh:minCount": "1",
+          "sh:minCount": "2",
           "sh:name": "^lid",
           "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftLid"
         },
@@ -172,6 +184,7 @@
           "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
         },
         {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:maxCount": "1",
           "sh:name": "bankrekeningnummer",
           "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#bankrekeningnummer"
@@ -183,20 +196,10 @@
           "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#dientIn"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
-          "sh:name": "heeftDeelVereniging",
-          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftDeelVereniging"
-        },
-        {
           "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
           "sh:description": "Verwijzing naar de erkenning(en) die de feitelijke vereniging heeft.",
           "sh:name": "heeftErkenning",
           "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftErkenning"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/org#Site",
-          "sh:name": "heeftVestiging",
-          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVestiging"
         },
         {
           "sh:class": "http://www.w3.org/ns/adms#Identifier",
@@ -205,12 +208,6 @@
           "sh:minCount": "1",
           "sh:name": "identificator",
           "sh:path": "http://www.w3.org/ns/adms#Identifier"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
-          "sh:maxCount": "1",
-          "sh:name": "isDeelVan",
-          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#isDeelVan"
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Verantwoordelijke",
@@ -408,6 +405,21 @@
       "sh:targetClass": "http://fixme.com#Hoedanigheid"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#OprichtingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "^datum",
+          "sh:path": "http://fixme.com#^datum"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#Oprichting"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#AgentShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -430,6 +442,20 @@
         }
       ],
       "sh:targetClass": "http://purl.org/dc/terms/Agent"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PlaatsShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:description": "Naam van de plaats of van het gebied.",
+          "sh:maxCount": "1",
+          "sh:name": "plaatsnaam",
+          "sh:path": "http://www.w3.org/2000/01/rdf-schema#label"
+        }
+      ],
+      "sh:targetClass": "http://purl.org/dc/terms/Location"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PubliekeDienstverleningShape",
@@ -531,6 +557,28 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#GetypeerdeStringShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "string",
+          "sh:path": "http://fixme.com#string"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "type",
+          "sh:path": "http://fixme.com#type"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#TaalcodeShape",
@@ -646,7 +694,6 @@
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "Type activiteit die door de organisatie wordt uitgeoefend.",
-          "sh:maxCount": "1",
           "sh:name": "activiteit",
           "sh:path": "http://www.w3.org/ns/regorg#orgActivity"
         },
@@ -673,8 +720,13 @@
           "sh:class": "http://www.w3.org/ns/org#Site",
           "sh:description": "Verwijst naar een plek waar de organisatie op een of andere manier, desnoods indirect, aanwezig is.",
           "sh:maxCount": "1",
-          "sh:name": "heeftPrimaireVestiging",
+          "sh:name": "heefVestiging",
           "sh:path": "http://www.w3.org/ns/org#hasSite"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/org#Organization",
+          "sh:name": "heeftSuborganisatie",
+          "sh:path": "http://www.w3.org/ns/org#hasSubOrganization"
         },
         {
           "sh:class": "http://fixme.com#Oprichting",
@@ -682,6 +734,11 @@
           "sh:maxCount": "1",
           "sh:name": "isHetresultaatVan",
           "sh:path": "http://www.w3.org/ns/org#resultedFrom"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/org#Organization",
+          "sh:name": "isSuborganisatieVan",
+          "sh:path": "http://www.w3.org/ns/org#subOrganizationOf"
         },
         {
           "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",

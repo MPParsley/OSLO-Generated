@@ -2,6 +2,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
 @prefix shacl: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -18,10 +19,13 @@
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PeriodeShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PubliekeOrganisatieShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#HoedanigheidShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#OprichtingShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#AgentShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PlaatsShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PubliekeDienstverleningShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ContactInfoShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#TaalStringShape>,
+    <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#GetypeerdeStringShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#TaalcodeShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#RoltypeShape>,
     <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#ActiviteitTypeShape>,
@@ -206,7 +210,6 @@
   shacl:closed false;
   shacl:property [
     shacl:class skos:Concept;
-    shacl:maxCount 1;
     shacl:name "activiteit";
     shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#activiteit>
   ], [
@@ -241,7 +244,6 @@
   shacl:closed false;
   shacl:property [
     shacl:class skos:Concept;
-    shacl:maxCount 1;
     shacl:name "activiteit";
     shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#activiteit>
   ], [
@@ -297,7 +299,6 @@
   shacl:property [
     shacl:class skos:Concept;
     shacl:description "Type activiteit die door de organisatie wordt uitgeoefend.";
-    shacl:maxCount 1;
     shacl:name "^activiteit";
     shacl:path <http://www.w3.org/ns/regorg#orgActivity>
   ], [
@@ -306,9 +307,20 @@
     shacl:name "^contactinfo";
     shacl:path schema:contactPoint
   ], [
+    shacl:class <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging>;
+    shacl:name "^heeftSuborganisatie";
+    shacl:path org:hasSubOrganization
+  ], [
+    shacl:class org:Site;
+    shacl:name "^heeftVestiging"
+  ], [
+    shacl:class <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging>;
+    shacl:name "^isSuborganisatieVan";
+    shacl:path org:subOrganizationOf
+  ], [
     shacl:class dc:Agent;
     shacl:description "Verwijzing naar de leden die deel uitmaken van de feitelijke vereniging.";
-    shacl:minCount 1;
+    shacl:minCount 2;
     shacl:name "^lid";
     shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftLid>
   ], [
@@ -319,6 +331,7 @@
     shacl:name "^voorkeursnaam";
     shacl:path skos:prefLabel
   ], [
+    shacl:datatype rdfs:Literal;
     shacl:maxCount 1;
     shacl:name "bankrekeningnummer";
     shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#bankrekeningnummer>
@@ -328,18 +341,10 @@
     shacl:name "dientIn";
     shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#dientIn>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging>;
-    shacl:name "heeftDeelVereniging";
-    shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftDeelVereniging>
-  ], [
     shacl:class <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning>;
     shacl:description "Verwijzing naar de erkenning(en) die de feitelijke vereniging heeft.";
     shacl:name "heeftErkenning";
     shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftErkenning>
-  ], [
-    shacl:class org:Site;
-    shacl:name "heeftVestiging";
-    shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVestiging>
   ], [
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
     shacl:description "Identificator van het object.";
@@ -347,11 +352,6 @@
     shacl:minCount 1;
     shacl:name "identificator";
     shacl:path <http://www.w3.org/ns/adms#Identifier>
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging>;
-    shacl:maxCount 1;
-    shacl:name "isDeelVan";
-    shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#isDeelVan>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Verantwoordelijke>;
     shacl:name "verantwoordelijke";
@@ -405,6 +405,23 @@
   ];
   shacl:targetClass <http://www.w3.org/ns/regorg#RegisteredOrganization> .
 
+<https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#GetypeerdeStringShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:string;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "string";
+    shacl:path <http://fixme.com#string>
+  ], [
+    shacl:datatype xsd:anyURI;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "type";
+    shacl:path <http://fixme.com#type>
+  ];
+  shacl:targetClass rdfs:Literal .
+
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#HoedanigheidShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass <http://fixme.com#Hoedanigheid> .
@@ -441,6 +458,16 @@
   shacl:closed false;
   shacl:targetClass skos:Concept .
 
+<https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#OprichtingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:dateTime;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "^datum"
+  ];
+  shacl:targetClass <http://fixme.com#Oprichting> .
+
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#OrganisatieActiviteitShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass skos:Concept .
@@ -450,7 +477,6 @@
   shacl:property [
     shacl:class skos:Concept;
     shacl:description "Type activiteit die door de organisatie wordt uitgeoefend.";
-    shacl:maxCount 1;
     shacl:name "activiteit";
     shacl:path <http://www.w3.org/ns/regorg#orgActivity>
   ], [
@@ -473,14 +499,22 @@
     shacl:class org:Site;
     shacl:description "Verwijst naar een plek waar de organisatie op een of andere manier, desnoods indirect, aanwezig is.";
     shacl:maxCount 1;
-    shacl:name "heeftPrimaireVestiging";
+    shacl:name "heefVestiging";
     shacl:path org:hasSite
+  ], [
+    shacl:class org:Organization;
+    shacl:name "heeftSuborganisatie";
+    shacl:path org:hasSubOrganization
   ], [
     shacl:class <http://fixme.com#Oprichting>;
     shacl:description "Verwijst naar het verandersinsmoment dat tot de huidige organisatie heeft geleid.";
     shacl:maxCount 1;
     shacl:name "isHetresultaatVan";
     shacl:path org:resultedFrom
+  ], [
+    shacl:class org:Organization;
+    shacl:name "isSuborganisatieVan";
+    shacl:path org:subOrganizationOf
   ], [
     shacl:class rdf:langString;
     shacl:description "Naam waarmee de organisatie bij voorkeur wordt aangeduid.";
@@ -542,6 +576,16 @@
     shacl:path foaf:givenName
   ];
   shacl:targetClass <http://www.w3.org/ns/person#Person> .
+
+<https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PlaatsShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:description "Naam van de plaats of van het gebied.";
+    shacl:maxCount 1;
+    shacl:name "plaatsnaam";
+    shacl:path rdfs:label
+  ];
+  shacl:targetClass dc:Location .
 
 <https://data.vlaanderen.be/shacl/Feitelijke-Verenigingen-ap#PubliekeDienstverleningShape> a shacl:NodeShape;
   shacl:closed false;
