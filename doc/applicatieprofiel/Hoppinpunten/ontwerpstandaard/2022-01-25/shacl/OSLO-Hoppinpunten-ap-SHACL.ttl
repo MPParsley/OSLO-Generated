@@ -365,12 +365,14 @@
   shacl:closed false;
   shacl:property [
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:description "De registratie van het geregistreerd vervoersknooppunt.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "registratie";
     shacl:path <https://data.vlaanderen.be/ns/vervoersknooppunten#registratie>
   ], [
     shacl:class foaf:Document;
+    shacl:description "De specificatie van het geregistreerd vervoersknooppunt.";
     shacl:maxCount 1;
     shacl:name "specificatie";
     shacl:path <https://data.vlaanderen.be/ns/vervoersknooppunten#specificatie>
@@ -397,11 +399,13 @@
   shacl:closed false;
   shacl:property [
     shacl:class <https://data.vlaanderen.be/ns/vervoersknooppunten#Hoppinpunttype>;
+    shacl:description "De classificatie van het Hoppinpunt";
     shacl:maxCount 1;
     shacl:name "classificatie";
     shacl:path <https://data.vlaanderen.be/ns/vervoersknooppunten#classificatie>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/vervoersknooppunten#Hoppinpuntstatus>;
+    shacl:description "De status van het Hoppinpunt";
     shacl:maxCount 1;
     shacl:name "status";
     shacl:path <https://data.vlaanderen.be/ns/vervoersknooppunten#status>
@@ -416,16 +420,19 @@
   shacl:closed false;
   shacl:property [
     shacl:class <https://data.vlaanderen.be/ns/vervoersknooppunten#VervoersmodusOpKaart>;
+    shacl:description "Een aanduiding van de mogelijke vervoersmodi aan het Hoppinpunt.";
     shacl:name "weergegevenVervoersmodusOpKaart";
     shacl:path <https://data.vlaanderen.be/ns/vervoersknooppunten#weergegevenVervoersmodusOpKaart>
   ], [
     shacl:datatype xsd:string;
+    shacl:description "De naam van de hoppinzuil";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "zuilnaam";
     shacl:path <https://data.vlaanderen.be/ns/vervoersknooppunten#zuilnaam>
   ], [
     shacl:datatype xsd:string;
+    shacl:description "Het identificatienummer van de hoppinzuil.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "zuilnummer";
@@ -741,15 +748,21 @@
 <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#PerronShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <http://fixme.com#Perron>;
+    shacl:maxCount 1;
+    shacl:name "perron";
+    shacl:path <http://fixme.com#perron>
+  ], [
     shacl:datatype xsd:string;
     shacl:maxCount 1;
     shacl:name "publiekeCode";
     shacl:path <http://fixme.com#publiekeCode>
   ], [
-    shacl:class <http://fixme.com#Perron>;
+    shacl:class <http://fixme.com#Stopplaats>;
     shacl:maxCount 1;
-    shacl:name "quay";
-    shacl:path <http://fixme.com#quay>
+    shacl:minCount 1;
+    shacl:name "stopplaats";
+    shacl:path <http://fixme.com#stopplaats>
   ];
   shacl:targetClass <http://fixme.com#Perron> .
 
@@ -1147,8 +1160,8 @@
   ], [
     shacl:class <http://fixme.com#Perron>;
     shacl:description "TODO";
-    shacl:name "containing";
-    shacl:path <http://fixme.com#containing>
+    shacl:name "omvat";
+    shacl:path <http://fixme.com#omvat>
   ], [
     shacl:datatype rdf:langString;
     shacl:description "TODO";
@@ -1377,33 +1390,40 @@
   shacl:closed false;
   shacl:property [
     shacl:class <https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunttype>;
+    shacl:description "De classificatie van het vervoersknooppunt.";
     shacl:name "classificatie";
     shacl:path <https://data.vlaanderen.be/ns/vervoersknooppunten#classificatie>
   ], [
     shacl:class prov:Location;
+    shacl:description "De locatie van het vervoersknooppunt.";
     shacl:name "locatie";
     shacl:path <https://data.vlaanderen.be/ns/vervoersknooppunten#locatie>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/vervoersknooppunten#Merktype>;
+    shacl:description "Het merk van het vervoersknooppunt.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "merk";
     shacl:path <https://data.vlaanderen.be/ns/vervoersknooppunten#merk>
   ], [
     shacl:datatype rdf:langString;
+    shacl:description "De naam van het vervoersknooppunt.";
     shacl:name "naam";
     shacl:path <https://data.vlaanderen.be/ns/vervoersknooppunten#naam>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppuntstatus>;
+    shacl:description "De status van het vervoersknooppunt.";
     shacl:maxCount 1;
     shacl:name "status";
     shacl:path <https://data.vlaanderen.be/ns/vervoersknooppunten#status>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Toegankelijkheid>;
+    shacl:description "De toegankelijkheid van het vervoersknooppunt.";
     shacl:name "toegankelijkheid";
     shacl:path <https://data.vlaanderen.be/ns/vervoersknooppunten#toegankelijkheid>
   ], [
     shacl:class dc:Agent;
+    shacl:description "De wegbeheerder van het vervoersknooppunt.";
     shacl:name "wegbeheerder";
     shacl:path <https://data.vlaanderen.be/ns/vervoersknooppunten#wegbeheerder>
   ];
