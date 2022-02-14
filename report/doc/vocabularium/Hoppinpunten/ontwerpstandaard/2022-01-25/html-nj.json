@@ -12,8 +12,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/tree/8a6a4b0b34d943842e6194dbca7cdfe4337a0662",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/blob/8a6a4b0b34d943842e6194dbca7cdfe4337a0662/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/tree/65824afc131d62b8b941f85da8b1a1916a392662",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/blob/65824afc131d62b8b941f85da8b1a1916a392662/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/standaard-in-ontwikkeling/vocabularia-en-applicatieprofielen-hoppinpunten.html",
     "usesVocs": [],
@@ -34,7 +34,7 @@
       },
       "equivalent": [],
       "parents": [
-        "https://fixme.com"
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement"
       ]
     },
     {
@@ -89,7 +89,7 @@
         "nl": "Informatiezuil van een Hoppinpunt."
       },
       "usage": {
-        "nl": "Bedoeld om aan te geven dat een Vervoersknooppunt een Hoppinpunt is en/of om te informeren over de vervoersmogelijkheden die er worden geboden."
+        "nl": "Bedoeld om aan te geven dat een Vervoersknooppunt een Hoppinpunt is en/of om te informeren over de vervoersmogelijkheden die er worden geboden.\nMeer info kan teruggevonden worden in het implementatiemodel: https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hoppinpunten/"
       },
       "equivalent": [],
       "parents": [
@@ -110,7 +110,7 @@
       },
       "equivalent": [],
       "parents": [
-        "https://fixme.com"
+        "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement"
       ]
     },
     {
@@ -139,6 +139,22 @@
     },
     {
       "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Merktype",
+      "name": {},
+      "description": {},
+      "usage": {},
+      "equivalent": [],
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#ParkeerfaciliteitKenmerktype",
+      "name": {},
+      "description": {},
+      "usage": {},
+      "equivalent": [],
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#ParkeerplaatsKenmerktype",
       "name": {},
       "description": {},
       "usage": {},
@@ -409,24 +425,6 @@
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#weergegevenVervoersmodusOpKaart",
-      "name": {
-        "nl": "weergegevenVervoersmodusOpKaart"
-      },
-      "sort_nl": "weergegevenVervoersmodusOpKaart",
-      "description": {
-        "nl": "Een aanduiding van de mogelijke vervoersmodi aan het Hoppinpunt."
-      },
-      "usage": {},
-      "domain": [
-        "https://data.vlaanderen.be/ns/vervoersknooppunten#Hoppinzuil"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/vervoersknooppunten#VervoersmodusOpKaart"
-      ],
-      "parents": []
-    },
-    {
       "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#wegbeheerder",
       "name": {
         "nl": "wegbeheerder"
@@ -441,42 +439,6 @@
       ],
       "range": [
         "http://purl.org/dc/terms/Agent"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#zuilnaam",
-      "name": {
-        "nl": "zuilnaam"
-      },
-      "sort_nl": "zuilnaam",
-      "description": {
-        "nl": "De naam van de hoppinzuil"
-      },
-      "usage": {},
-      "domain": [
-        "https://data.vlaanderen.be/ns/vervoersknooppunten#Hoppinzuil"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#zuilnummer",
-      "name": {
-        "nl": "zuilnummer"
-      },
-      "sort_nl": "zuilnummer",
-      "description": {
-        "nl": "Het identificatienummer van de hoppinzuil."
-      },
-      "usage": {},
-      "domain": [
-        "https://data.vlaanderen.be/ns/vervoersknooppunten#Hoppinzuil"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#string"
       ],
       "parents": []
     }
@@ -742,6 +704,51 @@
       },
       "usage": {},
       "sort_nl": "Geometrie van de plaats of het gebied.",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Hoppinzuil.weergegevenVervoersmodiOpKaart",
+      "name": {
+        "nl": "weergegevenVervoersmodusOpKaart"
+      },
+      "description": {
+        "nl": "De verschillende beschikbare vervoersmodi die op de bijhorende kaart worden weergegeven."
+      },
+      "usage": {},
+      "sort_nl": "weergegevenVervoersmodusOpKaart",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Hoppinzuil.zuilnaam",
+      "name": {
+        "nl": "zuilnaam"
+      },
+      "description": {
+        "nl": "Naam van het hoppinpunt die verwijst naar een duidelijke en herkenbare plaatsnaam."
+      },
+      "usage": {},
+      "sort_nl": "zuilnaam",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Hoppinzuil.zuilnummer",
+      "name": {
+        "nl": "zuilnummer"
+      },
+      "description": {
+        "nl": "Uniek identificatienummer dat elke zuil krijgt en dat wordt opgenomen in de vervoersknooppuntendatabank."
+      },
+      "usage": {},
+      "sort_nl": "zuilnummer",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
