@@ -361,13 +361,6 @@
       "sh:targetClass": "http://fixme.com#GerichteLink"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#OpeningHoursSpecificationShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#OpeningHoursSpecification"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#PlaatstypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -540,10 +533,11 @@
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/vervoersknooppunten#ParkeerfaciliteitKenmerktype",
+          "sh:description": "De kenmerken van een parkeerfaciliteit",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "kenmerk",
-          "sh:path": "http://fixme.com#kenmerk"
+          "sh:path": "http://schema.mobivoc.org/#ParkingFacilityFeature"
         },
         {
           "sh:class": "http://schema.mobivoc.org/#parkingSpace",
@@ -582,8 +576,9 @@
       "sh:property": [
         {
           "sh:class": "https://data.vlaanderen.be/ns/vervoersknooppunten#ParkeerplaatsKenmerktype",
+          "sh:description": "De kenmerken van de parkeerplaats",
           "sh:name": "kenmerk",
-          "sh:path": "http://fixme.com#kenmerk"
+          "sh:path": "http://schema.mobivoc.org/#ParkingFacilityFeature"
         }
       ],
       "sh:targetClass": "http://schema.mobivoc.org/#parkingSpace"
@@ -872,7 +867,7 @@
           "sh:path": "https://schema.org/hoursAvailable"
         },
         {
-          "sh:class": "http://fixme.com#OpeningHoursSpecification",
+          "sh:class": "https://schema.org/hoursAvailable",
           "sh:description": "Periode waarin iets beschikbaar is.",
           "sh:maxCount": "1",
           "sh:name": "periode",
@@ -1409,6 +1404,7 @@
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject",
+          "sh:description": "Netwerkelementen die door de Connectie verbonden zijn.",
           "sh:minCount": "2",
           "sh:name": "verbindt",
           "sh:path": "https://data.vlaanderen.be/ns/netwerk#verbindt"
@@ -1573,6 +1569,7 @@
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/vervoersknooppunten#Infrastructuurelementtype",
+          "sh:description": "Het type van infrastructuurelement.",
           "sh:name": "type",
           "sh:path": "http://purl.org/dc/terms/type"
         }
@@ -1696,6 +1693,7 @@
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#StopPlace",
+          "sh:description": "De stopplaats als groter geheel waartoe het perron behoort.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "stopplaats",
@@ -1765,7 +1763,7 @@
         },
         {
           "sh:class": "https://purl.eu/ns/mobility#Quay",
-          "sh:description": "TODO",
+          "sh:description": "Perron als onderdeel van de stopplaats.",
           "sh:name": "omvat",
           "sh:path": "http://fixme.com#omvat"
         },
@@ -1884,6 +1882,13 @@
         }
       ],
       "sh:targetClass": "https://schema.org/Trip"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#OpeningHoursSpecificationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://schema.org/hoursAvailable"
     }
   ]
 }

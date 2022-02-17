@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/tree/7b20ca7ce20c93d9f0d07da4f88be10c36c9a0c8",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/blob/7b20ca7ce20c93d9f0d07da4f88be10c36c9a0c8/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/tree/efc6f44767136d661519e220397a004fe818a276",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/blob/efc6f44767136d661519e220397a004fe818a276/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/standaard-in-ontwikkeling/vocabularia-en-applicatieprofielen-hoppinpunten.html",
     "usesVocs": [],
@@ -400,9 +400,9 @@
         {
           "uri": "http://www.w3.org/2000/01/rdf-schema#label",
           "name": {
-            "nl": "plaatsnaam"
+            "nl": "^plaatsnaam"
           },
-          "sort_nl": "plaatsnaam",
+          "sort_nl": "^plaatsnaam",
           "description": {
             "nl": "Naam van de plaats of van het gebied."
           },
@@ -434,9 +434,9 @@
         {
           "uri": "http://www.w3.org/ns/locn#geometry",
           "name": {
-            "nl": "Geometrie van de plaats of het gebied."
+            "nl": "^geometrie"
           },
-          "sort_nl": "Geometrie van de plaats of het gebied.",
+          "sort_nl": "^geometrie",
           "description": {
             "nl": "Geometrie van de plaats of het gebied."
           },
@@ -1214,35 +1214,6 @@
       ],
       "properties": [
         {
-          "uri": "http://fixme.com#kenmerk",
-          "name": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://schema.mobivoc.org/#ParkingFacility",
-              "EA-Name": "Parkeerfaciliteit"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "ParkeerfaciliteitKenmerktype",
-              "range_uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#ParkeerfaciliteitKenmerktype"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#ParkeerfaciliteitKenmerktype",
-              "range_puri": "https://data.vlaanderen.be/ns/vervoersknooppunten#ParkeerfaciliteitKenmerktype",
-              "range_label": {
-                "nl": "ParkeerfaciliteitKenmerktype"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "http://schema.mobivoc.org/#Capacity",
           "name": {
             "nl": "^capaciteit"
@@ -1274,6 +1245,42 @@
             }
           ],
           "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://schema.mobivoc.org/#ParkingFacilityFeature",
+          "name": {
+            "nl": "kenmerk"
+          },
+          "sort_nl": "kenmerk",
+          "description": {
+            "nl": "De kenmerken van een parkeerfaciliteit"
+          },
+          "usage": {
+            "nl": "Bv kiss- and ridezone, laad- en loszone"
+          },
+          "domain": [
+            {
+              "uri": "http://schema.mobivoc.org/#ParkingFacility",
+              "EA-Name": "Parkeerfaciliteit"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ParkeerfaciliteitKenmerktype",
+              "range_uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#ParkeerfaciliteitKenmerktype"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#ParkeerfaciliteitKenmerktype",
+              "range_puri": "https://data.vlaanderen.be/ns/vervoersknooppunten#ParkeerfaciliteitKenmerktype",
+              "range_label": {
+                "nl": "ParkeerfaciliteitKenmerktype"
+              }
+            }
+          ],
+          "cardinality": "1",
           "codelist_uri": ""
         },
         {
@@ -1498,10 +1505,17 @@
       ],
       "properties": [
         {
-          "uri": "http://fixme.com#kenmerk",
-          "name": {},
-          "description": {},
-          "usage": {},
+          "uri": "http://schema.mobivoc.org/#ParkingFacilityFeature",
+          "name": {
+            "nl": "kenmerk"
+          },
+          "sort_nl": "kenmerk",
+          "description": {
+            "nl": "De kenmerken van de parkeerplaats"
+          },
+          "usage": {
+            "nl": "Bv parkeerplaats voor mensen met een handicap"
+          },
           "domain": [
             {
               "uri": "http://schema.mobivoc.org/#parkingSpace",
@@ -1623,9 +1637,9 @@
         {
           "uri": "http://schema.org/contactPoint",
           "name": {
-            "nl": "contactinfo"
+            "nl": "^contactinfo"
           },
-          "sort_nl": "contactinfo",
+          "sort_nl": "^contactinfo",
           "description": {
             "nl": "Informatie zoals email, telefoon... die toelaat de Organisatie te contacteren."
           },
@@ -1657,9 +1671,9 @@
         {
           "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
           "name": {
-            "nl": "voorkeursnaam"
+            "nl": "^voorkeursnaam"
           },
-          "sort_nl": "voorkeursnaam",
+          "sort_nl": "^voorkeursnaam",
           "description": {
             "nl": "Naam waarmee de Organisatie bij voorkeur wordt aangeduid."
           },
@@ -1691,9 +1705,9 @@
         {
           "uri": "http://www.w3.org/ns/regorg#registration",
           "name": {
-            "nl": "registratie"
+            "nl": "^registratie"
           },
-          "sort_nl": "registratie",
+          "sort_nl": "^registratie",
           "description": {
             "nl": "Identificator die de organisatie verkreeg bij registratie."
           },
@@ -1741,9 +1755,9 @@
         {
           "uri": "http://data.europa.eu/m8g/territorialApplication",
           "name": {
-            "nl": "territoriale toepassing"
+            "nl": "toepassingsgebied"
           },
-          "sort_nl": "territoriale toepassing",
+          "sort_nl": "toepassingsgebied",
           "description": {
             "nl": "Gebied of Plaats waarbinnen de Licentie geldt."
           },
@@ -1775,9 +1789,9 @@
         {
           "uri": "http://purl.org/dc/terms/date",
           "name": {
-            "nl": "datum"
+            "nl": "periode"
           },
-          "sort_nl": "datum",
+          "sort_nl": "periode",
           "description": {
             "nl": "Periode waarvoor de Licentie geldt."
           },
@@ -3851,9 +3865,9 @@
         {
           "uri": "http://www.w3.org/ns/adms#Identifier",
           "name": {
-            "nl": "identificator"
+            "nl": "^identificator"
           },
-          "sort_nl": "identificator",
+          "sort_nl": "^identificator",
           "description": {
             "nl": "Identificator van de Transportconnectie."
           },
@@ -3888,7 +3902,9 @@
             "nl": "verbindt"
           },
           "sort_nl": "verbindt",
-          "description": {},
+          "description": {
+            "nl": "Netwerkelementen die door de Connectie verbonden zijn."
+          },
           "usage": {},
           "domain": [
             {
@@ -3931,9 +3947,9 @@
         {
           "uri": "http://schema.org/contactPoint",
           "name": {
-            "nl": "contactinfo"
+            "nl": "^contactinfo"
           },
-          "sort_nl": "contactinfo",
+          "sort_nl": "^contactinfo",
           "description": {
             "nl": "Informatie zoals email, telefoon... die toelaat de uitvoerder te contacteren."
           },
@@ -3965,9 +3981,9 @@
         {
           "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
           "name": {
-            "nl": "voorkeursnaam"
+            "nl": "^voorkeursnaam"
           },
-          "sort_nl": "voorkeursnaam",
+          "sort_nl": "^voorkeursnaam",
           "description": {
             "nl": "Naam waarmee de uitvoerder bij voorkeur wordt aangeduid."
           },
@@ -3999,9 +4015,9 @@
         {
           "uri": "http://www.w3.org/ns/regorg#registration",
           "name": {
-            "nl": "registratie"
+            "nl": "^registratie"
           },
-          "sort_nl": "registratie",
+          "sort_nl": "^registratie",
           "description": {
             "nl": "De registratie van de uitvoerder."
           },
@@ -4367,7 +4383,9 @@
             "nl": "type"
           },
           "sort_nl": "type",
-          "description": {},
+          "description": {
+            "nl": "Het type van infrastructuurelement."
+          },
           "usage": {},
           "domain": [
             {
@@ -4610,9 +4628,9 @@
         {
           "uri": "https://data.vlaanderen.be/ns/netwerk#Knoop.geometrie",
           "name": {
-            "nl": "geometrie"
+            "nl": "^geometrie"
           },
-          "sort_nl": "geometrie",
+          "sort_nl": "^geometrie",
           "description": {
             "nl": "Locatie van de Transportknoop."
           },
@@ -4644,9 +4662,9 @@
         {
           "uri": "https://data.vlaanderen.be/ns/netwerk#identificator",
           "name": {
-            "nl": "identificator"
+            "nl": "^identificator"
           },
-          "sort_nl": "identificator",
+          "sort_nl": "^identificator",
           "description": {
             "nl": "Identificator van de Transportknoop."
           },
@@ -4991,7 +5009,9 @@
             "nl": "stopplaats"
           },
           "sort_nl": "stopplaats",
-          "description": {},
+          "description": {
+            "nl": "De stopplaats als groter geheel waartoe het perron behoort."
+          },
           "usage": {},
           "domain": [
             {
@@ -5102,7 +5122,7 @@
           },
           "sort_nl": "omvat",
           "description": {
-            "nl": "TODO"
+            "nl": "Perron als onderdeel van de stopplaats."
           },
           "usage": {},
           "domain": [
@@ -5132,9 +5152,9 @@
         {
           "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transportobject.toegankelijkheid",
           "name": {
-            "nl": "toegankelijkheid"
+            "nl": "^toegankelijkheid"
           },
-          "sort_nl": "toegankelijkheid",
+          "sort_nl": "^toegankelijkheid",
           "description": {
             "nl": "De algehele toegankelijkheidskenmerken van de stopplaats."
           },
@@ -5166,9 +5186,9 @@
         {
           "uri": "https://purl.eu/ns/mobility#^parentSite",
           "name": {
-            "nl": "parent site"
+            "nl": "^parent site"
           },
-          "sort_nl": "parent site",
+          "sort_nl": "^parent site",
           "description": {
             "nl": "Parent site die deze stopplaats bevat."
           },
@@ -5200,9 +5220,9 @@
         {
           "uri": "https://purl.eu/ns/mobility#accessModes",
           "name": {
-            "nl": "toegangsmodi"
+            "nl": "^toegangsmodi"
           },
-          "sort_nl": "toegangsmodi",
+          "sort_nl": "^toegangsmodi",
           "description": {
             "nl": "Toegangsmodi waarmee de stopplaats toegankelijk is."
           },
@@ -5234,9 +5254,9 @@
         {
           "uri": "https://purl.eu/ns/mobility#centroid",
           "name": {
-            "nl": "centroïde"
+            "nl": "^centroïde"
           },
-          "sort_nl": "centroïde",
+          "sort_nl": "^centroïde",
           "description": {
             "nl": "Middenpunt van de stopplaats."
           },
@@ -5268,9 +5288,9 @@
         {
           "uri": "https://purl.eu/ns/mobility#placeType",
           "name": {
-            "nl": "plaatstype"
+            "nl": "^plaatstype"
           },
-          "sort_nl": "plaatstype",
+          "sort_nl": "^plaatstype",
           "description": {
             "nl": "Categorisering van de stopplaats."
           },
@@ -5302,9 +5322,9 @@
         {
           "uri": "https://purl.eu/ns/mobility#polygon",
           "name": {
-            "nl": "polygoon"
+            "nl": "^polygoon"
           },
-          "sort_nl": "polygoon",
+          "sort_nl": "^polygoon",
           "description": {
             "nl": "Polygoon geassocieerd met de stopplaats."
           },
@@ -5370,9 +5390,9 @@
         {
           "uri": "https://purl.eu/ns/mobility#roadAddress",
           "name": {
-            "nl": "wegadres"
+            "nl": "^wegadres"
           },
-          "sort_nl": "wegadres",
+          "sort_nl": "^wegadres",
           "description": {
             "nl": "Adres van een genummerd gebouw op een benoemde weg."
           },
@@ -6523,14 +6543,6 @@
       ]
     },
     {
-      "uri": "http://fixme.com#OpeningHoursSpecification",
-      "name": {},
-      "description": {},
-      "usage": {},
-      "parents": [],
-      "properties": []
-    },
-    {
       "uri": "http://schema.org/ContactPoint",
       "name": {
         "nl": "Contactpunt"
@@ -6990,15 +7002,15 @@
           "range": [
             {
               "range_label": "OpeningHoursSpecification",
-              "range_uri": "http://fixme.com#OpeningHoursSpecification"
+              "range_uri": "https://schema.org/hoursAvailable"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#OpeningHoursSpecification",
-              "range_puri": "http://fixme.com#OpeningHoursSpecification",
+              "range_uri": "#Openingsuren",
+              "range_puri": "https://schema.org/hoursAvailable",
               "range_label": {
-                "nl": "OpeningHoursSpecification"
+                "nl": "Openingsuren"
               }
             }
           ],
@@ -7265,6 +7277,19 @@
       "sort_nl": "Geldbedrag",
       "description": {
         "nl": "Een geldwaarde of -bereik."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "https://schema.org/hoursAvailable",
+      "name": {
+        "nl": "Openingsuren"
+      },
+      "sort_nl": "Openingsuren",
+      "description": {
+        "nl": "De uren waarop een dienst of contact beschikbaar is."
       },
       "usage": {},
       "parents": [],

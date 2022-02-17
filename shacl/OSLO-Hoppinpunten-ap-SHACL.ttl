@@ -32,7 +32,6 @@
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#PubliekeOrganisatieShape>,
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#CapaciteitShape>,
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#GerichteLinkShape>,
-    <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#OpeningHoursSpecificationShape>,
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#PlaatstypeShape>,
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#StopplaatstypeShape>,
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ToegangsmodusShape>,
@@ -107,7 +106,8 @@
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#CivicStructureShape>,
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#GeldbedragShape>,
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#PrijsplanShape>,
-    <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ReisShape> .
+    <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ReisShape>,
+    <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#OpeningHoursSpecificationShape> .
 
 <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#AanbiederShape> a shacl:NodeShape;
   shacl:closed false;
@@ -207,7 +207,7 @@
     shacl:name "openingsuren";
     shacl:path schemas:hoursAvailable
   ], [
-    shacl:class <http://fixme.com#OpeningHoursSpecification>;
+    shacl:class schemas:hoursAvailable;
     shacl:description "Periode waarin iets beschikbaar is.";
     shacl:maxCount 1;
     shacl:name "periode";
@@ -495,6 +495,7 @@
     shacl:path <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transportobject.toegankelijkheid>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/vervoersknooppunten#Infrastructuurelementtype>;
+    shacl:description "Het type van infrastructuurelement.";
     shacl:name "type";
     shacl:path dc:type
   ];
@@ -661,7 +662,7 @@
 
 <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#OpeningHoursSpecificationShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://fixme.com#OpeningHoursSpecification> .
+  shacl:targetClass schemas:hoursAvailable .
 
 <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#OverstapShape> a shacl:NodeShape;
   shacl:closed false;
@@ -735,10 +736,11 @@
     shacl:path <http://schema.mobivoc.org/#exit>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/vervoersknooppunten#ParkeerfaciliteitKenmerktype>;
+    shacl:description "De kenmerken van een parkeerfaciliteit";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "kenmerk";
-    shacl:path <http://fixme.com#kenmerk>
+    shacl:path <http://schema.mobivoc.org/#ParkingFacilityFeature>
   ], [
     shacl:class <http://schema.mobivoc.org/#parkingSpace>;
     shacl:description "De parkeerplaats van de parkeerfaciliteit.";
@@ -759,8 +761,9 @@
   shacl:closed false;
   shacl:property [
     shacl:class <https://data.vlaanderen.be/ns/vervoersknooppunten#ParkeerplaatsKenmerktype>;
+    shacl:description "De kenmerken van de parkeerplaats";
     shacl:name "kenmerk";
-    shacl:path <http://fixme.com#kenmerk>
+    shacl:path <http://schema.mobivoc.org/#ParkingFacilityFeature>
   ];
   shacl:targetClass <http://schema.mobivoc.org/#parkingSpace> .
 
@@ -802,6 +805,7 @@
     shacl:path <https://purl.eu/ns/mobility#publicCode>
   ], [
     shacl:class <https://purl.eu/ns/mobility#StopPlace>;
+    shacl:description "De stopplaats als groter geheel waartoe het perron behoort.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "stopplaats";
@@ -1207,7 +1211,7 @@
     shacl:path <https://purl.eu/ns/mobility#roadAddress>
   ], [
     shacl:class <https://purl.eu/ns/mobility#Quay>;
-    shacl:description "TODO";
+    shacl:description "Perron als onderdeel van de stopplaats.";
     shacl:name "omvat";
     shacl:path <http://fixme.com#omvat>
   ], [
@@ -1306,6 +1310,7 @@
     shacl:path dc:type
   ], [
     shacl:class <https://data.vlaanderen.be/ns/transportnetwerk#Transportobject>;
+    shacl:description "Netwerkelementen die door de Connectie verbonden zijn.";
     shacl:minCount 2;
     shacl:name "verbindt";
     shacl:path <https://data.vlaanderen.be/ns/netwerk#verbindt>
