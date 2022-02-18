@@ -30,8 +30,6 @@
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#VirtueleKnoopShape>,
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#PeriodeShape>,
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#PubliekeOrganisatieShape>,
-    <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#CapaciteitShape>,
-    <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#GerichteLinkShape>,
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#PlaatstypeShape>,
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#StopplaatstypeShape>,
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ToegangsmodusShape>,
@@ -43,6 +41,7 @@
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#FormeelKaderShape>,
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#AutomatischeParkeergarageShape>,
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#FietsparkingShape>,
+    <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#CapaciteitShape>,
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#LaderShape>,
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ParkeerfaciliteitShape>,
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ParkeergarageShape>,
@@ -88,6 +87,7 @@
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ToegankelijkheidShape>,
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#TransportconnectieShape>,
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#UitvoerderShape>,
+    <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#GerichteLinkShape>,
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#KnoopShape>,
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#NetwerkShape>,
     <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#NetwerkelementShape>,
@@ -223,21 +223,23 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype xsd:integer;
+    shacl:description "Geeft de maximale waarde van de capaciteit aan.";
     shacl:maxCount 1;
     shacl:name "maximum";
-    shacl:path <http://fixme.com#maximum>
+    shacl:path <http://schema.mobivoc.org/#maximumValue>
   ], [
     shacl:datatype xsd:integer;
+    shacl:description "Geeft de capaciteit van een resource aan.";
     shacl:maxCount 1;
     shacl:name "totaal";
-    shacl:path <http://fixme.com#totaal>
+    shacl:path <http://schema.mobivoc.org/#totalCapacity>
   ], [
     shacl:class <http://fixme.com#Voertuigtype>;
     shacl:maxCount 1;
     shacl:name "voertuigtype";
     shacl:path <http://fixme.com#voertuigtype>
   ];
-  shacl:targetClass <http://fixme.com#Capaciteit> .
+  shacl:targetClass <http://schema.mobivoc.org/#Capacity> .
 
 <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#CivicStructureShape> a shacl:NodeShape;
   shacl:closed false;
@@ -350,13 +352,13 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype rdfs:Literal;
-    shacl:description "To Do";
+    shacl:description "Geometrie uitgedrukt in gml-formaat.";
     shacl:maxCount 1;
     shacl:name "gml";
     shacl:path <http://www.opengis.net/ont/geosparql#asGML>
   ], [
     shacl:datatype rdfs:Literal;
-    shacl:description "To Do";
+    shacl:description "Geometrie uitgedrukt in wkt-formaat.";
     shacl:maxCount 1;
     shacl:name "wkt";
     shacl:path <http://www.opengis.net/ont/geosparql#asWKT>
@@ -389,9 +391,9 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "richting";
-    shacl:path <http://fixme.com#GerichteLink.richting>
+    shacl:path <https://data.vlaanderen.be/ns/netwerk#richting>
   ];
-  shacl:targetClass <http://fixme.com#GerichteLink> .
+  shacl:targetClass <https://data.vlaanderen.be/ns/netwerk#GerichteLink> .
 
 <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#HaltepaalShape> a shacl:NodeShape;
   shacl:closed false;
@@ -714,7 +716,7 @@
 <https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#ParkeerfaciliteitShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://fixme.com#Capaciteit>;
+    shacl:class <http://schema.mobivoc.org/#Capacity>;
     shacl:description "De capaciteit van de parkeerfaciliteit.";
     shacl:name "^capaciteit";
     shacl:path <http://schema.mobivoc.org/#Capacity>
@@ -1138,7 +1140,7 @@
     shacl:name "gerealiseerdMet";
     shacl:path <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Routesegment.gerealiseerdMet>
   ], [
-    shacl:class <http://fixme.com#GerichteLink>;
+    shacl:class <https://data.vlaanderen.be/ns/netwerk#GerichteLink>;
     shacl:description "Opeenvolging van Gerichte Links waaruit het Routesegment bestaat.";
     shacl:minCount 1;
     shacl:name "link";

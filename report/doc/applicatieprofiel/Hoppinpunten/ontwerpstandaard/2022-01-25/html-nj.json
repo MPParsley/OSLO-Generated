@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/tree/c7ad3471a44aa04fafd07c570e574a0a6684022b",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/blob/c7ad3471a44aa04fafd07c570e574a0a6684022b/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/tree/176c05cffd8596c0909ac615fca2d98e5d17c701",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/blob/176c05cffd8596c0909ac615fca2d98e5d17c701/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/standaard-in-ontwikkeling/vocabularia-en-applicatieprofielen-hoppinpunten.html",
     "usesVocs": [],
@@ -1232,13 +1232,13 @@
           "range": [
             {
               "range_label": "Capaciteit",
-              "range_uri": "http://fixme.com#Capaciteit"
+              "range_uri": "http://schema.mobivoc.org/#Capacity"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Capaciteit",
-              "range_puri": "http://fixme.com#Capaciteit",
+              "range_puri": "http://schema.mobivoc.org/#Capacity",
               "range_label": {
                 "nl": "Capaciteit"
               }
@@ -3621,13 +3621,13 @@
           "range": [
             {
               "range_label": "GerichteLink",
-              "range_uri": "http://fixme.com#GerichteLink"
+              "range_uri": "https://data.vlaanderen.be/ns/netwerk#GerichteLink"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#GerichteLink",
-              "range_puri": "http://fixme.com#GerichteLink",
+              "range_puri": "https://data.vlaanderen.be/ns/netwerk#GerichteLink",
               "range_label": {
                 "nl": "GerichteLink"
               }
@@ -6309,7 +6309,7 @@
       },
       "sort_nl": "Periode",
       "description": {
-        "nl": "To Do"
+        "nl": "Min of meer afgebakende tijdsduur."
       },
       "usage": {
         "nl": "Typisch volgt de duur uit het opgeven ve begin- en eindtijdstip."
@@ -6387,79 +6387,17 @@
       ]
     },
     {
-      "uri": "http://fixme.com#Capaciteit",
+      "uri": "http://schema.mobivoc.org/#Capacity",
       "name": {
         "nl": "Capaciteit"
       },
       "sort_nl": "Capaciteit",
-      "description": {},
+      "description": {
+        "nl": "Capaciteit van een burgerlijke structuur."
+      },
       "usage": {},
       "parents": [],
       "properties": [
-        {
-          "uri": "http://fixme.com#maximum",
-          "name": {
-            "nl": "maximum"
-          },
-          "sort_nl": "maximum",
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://fixme.com#Capaciteit",
-              "EA-Name": "Capaciteit"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Integer",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
-              "range_label": {
-                "nl": "Integer"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com#totaal",
-          "name": {
-            "nl": "totaal"
-          },
-          "sort_nl": "totaal",
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "uri": "http://fixme.com#Capaciteit",
-              "EA-Name": "Capaciteit"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Integer",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
-              "range_label": {
-                "nl": "Integer"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
         {
           "uri": "http://fixme.com#voertuigtype",
           "name": {
@@ -6470,7 +6408,7 @@
           "usage": {},
           "domain": [
             {
-              "uri": "http://fixme.com#Capaciteit",
+              "uri": "http://schema.mobivoc.org/#Capacity",
               "EA-Name": "Capaciteit"
             }
           ],
@@ -6491,54 +6429,74 @@
           ],
           "cardinality": "0..1",
           "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "http://fixme.com#GerichteLink",
-      "name": {
-        "nl": "GerichteLink"
-      },
-      "sort_nl": "GerichteLink",
-      "description": {
-        "nl": "Link in hetzij zijn positieve, hetzij zijn negatieve richting."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
+        },
         {
-          "uri": "http://fixme.com#GerichteLink.richting",
+          "uri": "http://schema.mobivoc.org/#maximumValue",
           "name": {
-            "nl": "richting"
+            "nl": "maximum"
           },
-          "sort_nl": "richting",
+          "sort_nl": "maximum",
           "description": {
-            "nl": "Geeft aan of de richting van de link overeenstemt met zijn positieve of zijn negatieve richting."
+            "nl": "Geeft de maximale waarde van de capaciteit aan."
           },
           "usage": {},
           "domain": [
             {
-              "uri": "http://fixme.com#GerichteLink",
-              "EA-Name": "GerichteLink"
+              "uri": "http://schema.mobivoc.org/#Capacity",
+              "EA-Name": "Capaciteit"
             }
           ],
           "range": [
             {
-              "range_label": "Teken",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+              "range_label": "Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Teken",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
               "range_label": {
-                "nl": "Teken"
+                "nl": "Integer"
               }
             }
           ],
-          "cardinality": "1",
-          "codelist_uri": "https://wherever/TODO"
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://schema.mobivoc.org/#totalCapacity",
+          "name": {
+            "nl": "totaal"
+          },
+          "sort_nl": "totaal",
+          "description": {
+            "nl": "Geeft de capaciteit van een resource aan."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "http://schema.mobivoc.org/#Capacity",
+              "EA-Name": "Capaciteit"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_label": {
+                "nl": "Integer"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
         }
       ]
     },
@@ -6549,7 +6507,7 @@
       },
       "sort_nl": "Contactpunt",
       "description": {
-        "nl": "To Do"
+        "nl": "Informatie zoals email,telefoon,adres die toelaat om iemand of iets te contacteren."
       },
       "usage": {
         "nl": "Bvb een persoon of organisatie of dienstverlening... Mogelijke vormen van contact: bellen,mailen etc. Meer uitgebreide beschrijving in het AP OSLO-Generiek."
@@ -6564,7 +6522,7 @@
       },
       "sort_nl": "Punt",
       "description": {
-        "nl": "To Do"
+        "nl": "Een 0-dimensioneel geometrisch object dat een bepaalde locatie in een coördinaatruimte voorstelt. Heeft een x-coördinaat en een y-coördinaat. Kan ook een z-coördinaat (hoogte) en een m-coördinaat (afstand langs een curve) hebben."
       },
       "usage": {},
       "parents": [
@@ -6608,7 +6566,7 @@
       },
       "sort_nl": "Geografische Naam",
       "description": {
-        "nl": "To Do"
+        "nl": "Benaming toegekend aan of gebruikt voor een geografisch object."
       },
       "usage": {
         "nl": "Te implementeren als Langstring."
@@ -6638,7 +6596,7 @@
       },
       "sort_nl": "Identificator",
       "description": {
-        "nl": "To Do"
+        "nl": "Informatie gebruikt om een object uniek te identificeren."
       },
       "usage": {
         "nl": "Uitgangspunt hier is dat deze string door een organisatie wordt toegekend en dat dit gebeurt volgens een welbepaald systeem. Meer uitgebreide beschrijving in het AP OSLO-Generiek."
@@ -6871,7 +6829,7 @@
       },
       "sort_nl": "Geometrie",
       "description": {
-        "nl": "To Do"
+        "nl": "Vorm- en positiekenmerken van een object."
       },
       "usage": {
         "nl": "Beschrijft deze kenmerken dmv punten, lijnen, polygonen en coördinaten."
@@ -6885,7 +6843,7 @@
           },
           "sort_nl": "gml",
           "description": {
-            "nl": "To Do"
+            "nl": "Geometrie uitgedrukt in gml-formaat."
           },
           "usage": {
             "nl": "Gebruik http://www.opengis.net/ont/geosparql#gmlLiteral als datatype."
@@ -6921,7 +6879,7 @@
           },
           "sort_nl": "wkt",
           "description": {
-            "nl": "To Do"
+            "nl": "Geometrie uitgedrukt in wkt-formaat."
           },
           "usage": {
             "nl": "Gebruik http://www.opengis.net/ont/geosparql#wktLiteral als datatype."
@@ -7266,6 +7224,54 @@
           ],
           "cardinality": "0..1",
           "codelist_uri": "hhttps://wherever/TODO"
+        }
+      ]
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/netwerk#GerichteLink",
+      "name": {
+        "nl": "GerichteLink"
+      },
+      "sort_nl": "GerichteLink",
+      "description": {
+        "nl": "Link in hetzij zijn positieve, hetzij zijn negatieve richting."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/netwerk#richting",
+          "name": {
+            "nl": "richting"
+          },
+          "sort_nl": "richting",
+          "description": {
+            "nl": "Geeft aan of de richting van de link overeenstemt met zijn positieve of zijn negatieve richting."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/netwerk#GerichteLink",
+              "EA-Name": "GerichteLink"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Teken",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Teken",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Teken"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": "https://wherever/TODO"
         }
       ]
     },
