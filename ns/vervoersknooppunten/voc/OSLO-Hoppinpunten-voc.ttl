@@ -49,30 +49,6 @@ Meer info kan teruggevonden worden in het implementatiemodel: https://wegenenver
   rdfs:comment "Het type van lader."@nl;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/vervoersknooppunten> .
 
-<https://data.vlaanderen.be/ns/vervoersknooppunten#Mobiliteitsdienst.beschikbaarheid> a owl:ObjectProperty;
-  rdfs:label "beschikbaarheid"@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/vervoersknooppunten>;
-  rdfs:range <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Beschikbaarheid> .
-
-<https://data.vlaanderen.be/ns/vervoersknooppunten#Mobiliteitsdienst.naam> a owl:DatatypeProperty;
-  rdfs:label "naam"@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/vervoersknooppunten>;
-  rdfs:range rdf:langString .
-
-<https://data.vlaanderen.be/ns/vervoersknooppunten#Mobiliteitsdienst.toegankelijkheid> a owl:ObjectProperty;
-  rdfs:label "toegankelijkheid"@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/vervoersknooppunten>;
-  rdfs:range <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Toegankelijkheid> .
-
-<https://data.vlaanderen.be/ns/vervoersknooppunten#Mobiliteitsdienst.type> a owl:ObjectProperty;
-  rdfs:label "type"@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/vervoersknooppunten>;
-  rdfs:range <https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDiensttype> .
-
 <https://data.vlaanderen.be/ns/vervoersknooppunten#ParkeerfaciliteitKenmerktype> a owl:Class;
   rdfs:label "ParkeerfaciliteitKenmerktype"@nl;
   <http://purl.org/vocab/vann/usageNote> "Vb: Kiss- and Ride"@nl;
@@ -111,9 +87,17 @@ Meer info kan teruggevonden worden in het implementatiemodel: https://wegenenver
 
 <https://data.vlaanderen.be/ns/vervoersknooppunten#aanbieder> a owl:ObjectProperty;
   rdfs:label "aanbieder"@nl;
+  rdfs:comment "De aanbieder van de aanvullende dienst."@nl;
   rdfs:domain <https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/vervoersknooppunten>;
   rdfs:range <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Aanbieder> .
+
+<https://data.vlaanderen.be/ns/vervoersknooppunten#beschikbaarheid> a owl:ObjectProperty;
+  rdfs:label "beschikbaarheid"@nl;
+  rdfs:comment "Beschikbaarheid van de aanvullende dienst."@nl;
+  rdfs:domain <https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/vervoersknooppunten>;
+  rdfs:range <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Beschikbaarheid> .
 
 <https://data.vlaanderen.be/ns/vervoersknooppunten#classificatie> a owl:ObjectProperty;
   rdfs:label "classificatie"@nl;
@@ -126,6 +110,8 @@ Meer info kan teruggevonden worden in het implementatiemodel: https://wegenenver
     <https://data.vlaanderen.be/ns/vervoersknooppunten#Hoppinpunttype> .
 
 <https://data.vlaanderen.be/ns/vervoersknooppunten#dienst> a owl:ObjectProperty;
+  rdfs:label "aanvullende dienst"@nl;
+  rdfs:comment "De secundaire diensten die aangeboden worden op het vervoersknooppunt."@nl;
   rdfs:domain <https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/vervoersknooppunten>;
   rdfs:range <https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst> .
@@ -143,6 +129,13 @@ Meer info kan teruggevonden worden in het implementatiemodel: https://wegenenver
   rdfs:domain <https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/vervoersknooppunten>;
   rdfs:range <https://data.vlaanderen.be/ns/vervoersknooppunten#Merktype> .
+
+<https://data.vlaanderen.be/ns/vervoersknooppunten#naam> a owl:DatatypeProperty;
+  rdfs:label "naam"@nl;
+  rdfs:comment "Naam van de aanvullende dienst."@nl;
+  rdfs:domain <https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/vervoersknooppunten>;
+  rdfs:range rdf:langString .
 
 <https://data.vlaanderen.be/ns/vervoersknooppunten#registratie> a owl:ObjectProperty;
   rdfs:label "registratie"@nl;
@@ -170,16 +163,20 @@ Meer info kan teruggevonden worden in het implementatiemodel: https://wegenenver
 
 <https://data.vlaanderen.be/ns/vervoersknooppunten#toegankelijkheid> a owl:ObjectProperty;
   rdfs:label "toegankelijkheid"@nl;
-  rdfs:comment "De toegankelijkheid van het vervoersknooppunt."@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt>;
+  rdfs:comment "De toegankelijkheid van het vervoersknooppunt."@nl,
+    "Toegankelijkheid van de aanvullende dienst."@nl;
+  rdfs:domain <https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt>,
+    <https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/vervoersknooppunten>;
   rdfs:range <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Toegankelijkheid> .
 
-<https://data.vlaanderen.be/ns/vervoersknooppunten#vervoersknoop> a owl:ObjectProperty;
-  rdfs:label "vervoersknoop"@nl;
+<https://data.vlaanderen.be/ns/vervoersknooppunten#type> a owl:ObjectProperty;
+  rdfs:label "type"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Bv ticketing, wachtaccomodatie, sanitair, AED"@nl;
+  rdfs:comment "Aard van de aanvullende dienst."@nl;
   rdfs:domain <https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/vervoersknooppunten>;
-  rdfs:range <https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt> .
+  rdfs:range <https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDiensttype> .
 
 <https://data.vlaanderen.be/ns/vervoersknooppunten#wegbeheerder> a owl:ObjectProperty;
   rdfs:label "wegbeheerder"@nl;
@@ -226,6 +223,9 @@ rdfs:label a rdf:Property;
   rdfs:label "Vervoersknooppunttype"@nl;
   rdfs:comment "Het type van het vervoersknooppunt"@nl;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/vervoersknooppunten> .
+
+<https://data.vlaanderen.be/ns/vervoersknooppunten#vervoersknoop> a rdf:Property;
+  rdfs:label "vervoersknoop"@nl .
 
 <https://data.vlaanderen.be/ns/vervoersknooppunten#voertuigtype> a owl:Class,
     owl:ObjectProperty;
@@ -425,6 +425,7 @@ rdfs:label a rdf:Property;
     dc:type,
     rdfs:label,
     <http://www.w3.org/ns/locn#geometry>,
+    <https://data.vlaanderen.be/ns/vervoersknooppunten#vervoersknoop>,
     <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Hoppinzuil.weergegevenVervoersmodiOpKaart>,
     <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Hoppinzuil.zuilnaam>,
     <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Hoppinzuil.zuilnummer>,
