@@ -47,7 +47,19 @@
           "sh:path": "https://data.vlaanderen.be/ns/vervoersknooppunten#aanbieder"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Beschikbaarheid",
+          "sh:class": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject",
+          "sh:description": "Transportobject waarop de aanvullende dienst wordt aangeboden.",
+          "sh:name": "beschikbaarOp",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#beschikbaarOp"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement",
+          "sh:description": "Infrastructuurelement waarop de aanvullende dienst wordt aangeboden.",
+          "sh:name": "beschikbaarOp",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#beschikbaarOp"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Aanbieder",
           "sh:description": "Beschikbaarheid van de aanvullende dienst.",
           "sh:name": "beschikbaarheid",
           "sh:path": "https://data.vlaanderen.be/ns/vervoersknooppunten#beschikbaarheid"
@@ -75,7 +87,7 @@
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt",
-          "sh:description": "Het vervoersknooppunt waarop de aanvullende dienst aangeboden wordt.",
+          "sh:description": "Het vervoersknooppunt waarop de aanvullende dienst wordt aangeboden.",
           "sh:name": "vervoersknoop",
           "sh:path": "https://data.vlaanderen.be/ns/vervoersknooppunten#vervoersknoop"
         }
@@ -276,9 +288,21 @@
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst",
-          "sh:description": "De secundaire diensten die aangeboden worden op het vervoersknooppunt.",
+          "sh:description": "De aanvullende diensten verbonden met het transportobject",
           "sh:name": "dienst",
-          "sh:path": "https://data.vlaanderen.be/ns/vervoersknooppunten#dienst"
+          "sh:path": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst",
+          "sh:description": "De mobiliteitsdienst aangeboden binnen het vervoersknooppunt.",
+          "sh:name": "dienst",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement",
+          "sh:description": "Het infrastructuurelement van het vervoersknooppunt.",
+          "sh:name": "infrastructuurelement",
+          "sh:path": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement"
         },
         {
           "sh:description": "De locatie van het vervoersknooppunt.",
@@ -311,6 +335,12 @@
           "sh:description": "De toegankelijkheid van het vervoersknooppunt.",
           "sh:name": "toegankelijkheid",
           "sh:path": "https://data.vlaanderen.be/ns/vervoersknooppunten#toegankelijkheid"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject",
+          "sh:description": "Het transportobject van het vervoersknooppunt.",
+          "sh:name": "transportobject",
+          "sh:path": "https://data.vlaanderen.be/ns/transportnetwerk#Transportnetwerk"
         },
         {
           "sh:class": "http://purl.org/dc/terms/Agent",
@@ -981,6 +1011,18 @@
           "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#aangebodenBinnen"
         },
         {
+          "sh:class": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement",
+          "sh:description": "Infrastructuurelement waarop de Mobiliteitsdienst beschikbaar is",
+          "sh:name": "beschikbaarOp",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#beschikbaarOp"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject",
+          "sh:description": "Transportobject waarop de Mobiliteitsdienst wordt aangeboden.",
+          "sh:name": "beschikbaarOp",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#beschikbaarOp"
+        },
+        {
           "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Beschikbaarheid",
           "sh:description": "Beschikbaarheid van de Mobiliteitsdienst.",
           "sh:name": "beschikbaarheid",
@@ -1049,6 +1091,12 @@
           "sh:description": "Vervoermiddel waarmee of waarvoor de Mobiliteitsdienst doorgaans wordt georganiseerd.",
           "sh:name": "vervoermiddel",
           "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst.vervoermiddel"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt",
+          "sh:description": "De vervoersknoop waar de Mobiliteitsdienst gelinkt is.",
+          "sh:name": "vervoersknoop",
+          "sh:path": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst"
@@ -1532,6 +1580,13 @@
       "sh:targetClass": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Bushok"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#FietsstallingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Fietsstalling"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#HaltepaalShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -1657,11 +1712,29 @@
           "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transportobject.beschikbaarheid"
         },
         {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst",
+          "sh:description": "De mobiliteitsdiensten verbonden met het transportobject.",
+          "sh:name": "dienst",
+          "sh:path": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst",
+          "sh:description": "De aanvullende diensten verbonden met het transportobject",
+          "sh:name": "dienst",
+          "sh:path": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
+        },
+        {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:description": "Naam van het Transportobject.",
           "sh:maxCount": "1",
           "sh:name": "geografischeNaam",
           "sh:path": "https://data.vlaanderen.be/ns/transportnetwerk#geografischeNaam"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement",
+          "sh:description": "De infrastructuurelementen verbonden met het transportobject.",
+          "sh:name": "infrastructuurelement",
+          "sh:path": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement"
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Toegankelijkheid",
@@ -1674,6 +1747,12 @@
           "sh:description": "Transportnetwerk waartoe het transportobject behoort.",
           "sh:name": "transportNetwerk",
           "sh:path": "https://data.vlaanderen.be/ns/transportnetwerk#Transportnetwerk"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt",
+          "sh:description": "De vervoersknopen waartoe dit transportobject behoort.",
+          "sh:name": "vervoersknoop",
+          "sh:path": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject"

@@ -97,7 +97,7 @@ Meer info kan teruggevonden worden in het implementatiemodel: https://wegenenver
   rdfs:comment "Beschikbaarheid van de aanvullende dienst."@nl;
   rdfs:domain <https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/vervoersknooppunten>;
-  rdfs:range <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Beschikbaarheid> .
+  rdfs:range <https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Aanbieder> .
 
 <https://data.vlaanderen.be/ns/vervoersknooppunten#classificatie> a owl:ObjectProperty;
   rdfs:label "classificatie"@nl;
@@ -108,13 +108,6 @@ Meer info kan teruggevonden worden in het implementatiemodel: https://wegenenver
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/vervoersknooppunten>;
   rdfs:range <https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunttype>,
     <https://data.vlaanderen.be/ns/vervoersknooppunten#Hoppinpunttype> .
-
-<https://data.vlaanderen.be/ns/vervoersknooppunten#dienst> a owl:ObjectProperty;
-  rdfs:label "aanvullende dienst"@nl;
-  rdfs:comment "De secundaire diensten die aangeboden worden op het vervoersknooppunt."@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/vervoersknooppunten>;
-  rdfs:range <https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst> .
 
 <https://data.vlaanderen.be/ns/vervoersknooppunten#locatie> a rdf:Property;
   rdfs:label "locatie"@nl;
@@ -262,8 +255,10 @@ rdfs:label a rdf:Property;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/vervoersknooppunten>;
   rdfs:subClassOf <https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt> .
 
-<https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst> a owl:Class;
-  rdfs:label "AanvullendeDienst"@nl;
+<https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst> a owl:Class,
+    rdf:Property;
+  rdfs:label "AanvullendeDienst"@nl,
+    "dienst"@nl;
   rdfs:comment "Dienstverlening die aanvullend en ondersteunend is."@nl;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/vervoersknooppunten>;
   rdfs:subClassOf <https://data.vlaanderen.be/ns/vervoersknooppunten#Dienst> .
@@ -425,6 +420,7 @@ rdfs:label a rdf:Property;
     dc:type,
     rdfs:label,
     <http://www.w3.org/ns/locn#geometry>,
+    <https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst>,
     <https://data.vlaanderen.be/ns/vervoersknooppunten#vervoersknoop>,
     <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Hoppinzuil.weergegevenVervoersmodiOpKaart>,
     <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Hoppinzuil.zuilnaam>,

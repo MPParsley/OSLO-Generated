@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/tree/17aff9fb8ec69b10a258203cb7859f0f4a8076fa",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/blob/17aff9fb8ec69b10a258203cb7859f0f4a8076fa/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/tree/65c71fa2612282347c76c22831829195c99d1bc4",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/blob/65c71fa2612282347c76c22831829195c99d1bc4/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/standaard-in-ontwikkeling/vocabularia-en-applicatieprofielen-hoppinpunten.html",
     "usesVocs": [],
@@ -95,16 +95,16 @@
           ],
           "range": [
             {
-              "range_label": "Beschikbaarheid",
-              "range_uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Beschikbaarheid"
+              "range_label": "Aanbieder",
+              "range_uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Aanbieder"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Beschikbaarheid",
-              "range_puri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Beschikbaarheid",
+              "range_uri": "#Aanbieder",
+              "range_puri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Aanbieder",
               "range_label": {
-                "nl": "Beschikbaarheid"
+                "nl": "Aanbieder"
               }
             }
           ],
@@ -218,13 +218,81 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#beschikbaarOp",
+          "name": {
+            "nl": "beschikbaarOp"
+          },
+          "sort_nl": "beschikbaarOp",
+          "description": {
+            "nl": "Transportobject waarop de aanvullende dienst wordt aangeboden."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst",
+              "EA-Name": "AanvullendeDienst"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Transportobject",
+              "range_uri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Transportobject",
+              "range_puri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject",
+              "range_label": {
+                "nl": "Transportobject"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#beschikbaarOp",
+          "name": {
+            "nl": "beschikbaarOp"
+          },
+          "sort_nl": "beschikbaarOp",
+          "description": {
+            "nl": "Infrastructuurelement waarop de aanvullende dienst wordt aangeboden."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst",
+              "EA-Name": "AanvullendeDienst"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Infrastructuurelement",
+              "range_uri": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Infrastructuurelement",
+              "range_puri": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement",
+              "range_label": {
+                "nl": "Infrastructuurelement"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#vervoersknoop",
           "name": {
             "nl": "vervoersknoop"
           },
           "sort_nl": "vervoersknoop",
           "description": {
-            "nl": "Het vervoersknooppunt waarop de aanvullende dienst aangeboden wordt."
+            "nl": "Het vervoersknooppunt waarop de aanvullende dienst wordt aangeboden."
           },
           "usage": {},
           "domain": [
@@ -761,40 +829,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#dienst",
-          "name": {
-            "nl": "aanvullende dienst"
-          },
-          "sort_nl": "aanvullende dienst",
-          "description": {
-            "nl": "De secundaire diensten die aangeboden worden op het vervoersknooppunt."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt",
-              "EA-Name": "Vervoersknooppunt"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "AanvullendeDienst",
-              "range_uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#AanvullendeDienst",
-              "range_puri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst",
-              "range_label": {
-                "nl": "AanvullendeDienst"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#locatie",
           "name": {
             "nl": "locatie"
@@ -947,6 +981,142 @@
               "range_puri": "http://purl.org/dc/terms/Agent",
               "range_label": {
                 "nl": "Agent"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst",
+          "name": {
+            "nl": "dienst"
+          },
+          "sort_nl": "dienst",
+          "description": {
+            "nl": "De mobiliteitsdienst aangeboden binnen het vervoersknooppunt."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt",
+              "EA-Name": "Vervoersknooppunt"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Mobiliteitsdienst",
+              "range_uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Mobiliteitsdienst",
+              "range_puri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst",
+              "range_label": {
+                "nl": "Mobiliteitsdienst"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement",
+          "name": {
+            "nl": "infrastructuurelement"
+          },
+          "sort_nl": "infrastructuurelement",
+          "description": {
+            "nl": "Het infrastructuurelement van het vervoersknooppunt."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt",
+              "EA-Name": "Vervoersknooppunt"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Infrastructuurelement",
+              "range_uri": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Infrastructuurelement",
+              "range_puri": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement",
+              "range_label": {
+                "nl": "Infrastructuurelement"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportnetwerk",
+          "name": {
+            "nl": "transportobject"
+          },
+          "sort_nl": "transportobject",
+          "description": {
+            "nl": "Het transportobject van het vervoersknooppunt."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt",
+              "EA-Name": "Vervoersknooppunt"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Transportobject",
+              "range_uri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Transportobject",
+              "range_puri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject",
+              "range_label": {
+                "nl": "Transportobject"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst",
+          "name": {
+            "nl": "dienst"
+          },
+          "sort_nl": "dienst",
+          "description": {
+            "nl": "De aanvullende diensten verbonden met het transportobject"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt",
+              "EA-Name": "Vervoersknooppunt"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "AanvullendeDienst",
+              "range_uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#AanvullendeDienst",
+              "range_puri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst",
+              "range_label": {
+                "nl": "AanvullendeDienst"
               }
             }
           ],
@@ -2450,6 +2620,78 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#beschikbaarOp",
+          "name": {
+            "nl": "beschikbaar op"
+          },
+          "sort_nl": "beschikbaar op",
+          "description": {
+            "nl": "Infrastructuurelement waarop de Mobiliteitsdienst beschikbaar is"
+          },
+          "usage": {
+            "nl": "Bv openbaarvervoer zoals bussen, worden aangeboden aan een haltepaal."
+          },
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst",
+              "EA-Name": "Mobiliteitsdienst"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Infrastructuurelement",
+              "range_uri": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Infrastructuurelement",
+              "range_puri": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement",
+              "range_label": {
+                "nl": "Infrastructuurelement"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#beschikbaarOp",
+          "name": {
+            "nl": "beschikbaar op"
+          },
+          "sort_nl": "beschikbaar op",
+          "description": {
+            "nl": "Transportobject waarop de Mobiliteitsdienst wordt aangeboden."
+          },
+          "usage": {
+            "nl": "Bv P+R wordt aangeboden op parking van station, deelfiets+trein aangeboden in combipunt."
+          },
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst",
+              "EA-Name": "Mobiliteitsdienst"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Transportobject",
+              "range_uri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Transportobject",
+              "range_puri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject",
+              "range_label": {
+                "nl": "Transportobject"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#licentie",
           "name": {
             "nl": "licentie"
@@ -2621,6 +2863,40 @@
             }
           ],
           "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt",
+          "name": {
+            "nl": "vervoersknoop"
+          },
+          "sort_nl": "vervoersknoop",
+          "description": {
+            "nl": "De vervoersknoop waar de Mobiliteitsdienst gelinkt is."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst",
+              "EA-Name": "Mobiliteitsdienst"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Vervoersknooppunt",
+              "range_uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Vervoersknooppunt",
+              "range_puri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt",
+              "range_label": {
+                "nl": "Vervoersknooppunt"
+              }
+            }
+          ],
+          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]
@@ -4348,6 +4624,36 @@
       "properties": []
     },
     {
+      "uri": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Fietsstalling",
+      "name": {
+        "nl": "Fietsstalling"
+      },
+      "sort_nl": "Fietsstalling",
+      "description": {
+        "nl": "Een fietsstalling is het geheel aan palen en/of verankeringspunten van een constructie bestemd voor het vastmaken van fietsen, gelegen op het openbare domein."
+      },
+      "usage": {
+        "nl": "Naar GRB-skeletaanvulling detail - WPI16: Fietsstalling. Met het attribuut overdekt als True: GRB-basis - WGA3: Overdekte fietsstalling."
+      },
+      "parents": [
+        {
+          "name": "Infrastructuurelement",
+          "label": "Infrastructuurelement",
+          "package": "OSLO-OpenbaarDomein",
+          "uri": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement",
+          "scoped_uri": "#Infrastructuurelement"
+        },
+        {
+          "name": "Fietsparking",
+          "label": "Fietsparking",
+          "package": "Mobivoc",
+          "uri": "http://schema.mobivoc.org/#BicycleParkingStation",
+          "scoped_uri": "#Fietsparking"
+        }
+      ],
+      "properties": []
+    },
+    {
       "uri": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Haltepaal",
       "name": {
         "nl": "Haltepaal"
@@ -4821,6 +5127,40 @@
       ],
       "properties": [
         {
+          "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst",
+          "name": {
+            "nl": "dienst"
+          },
+          "sort_nl": "dienst",
+          "description": {
+            "nl": "De mobiliteitsdiensten verbonden met het transportobject."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject",
+              "EA-Name": "Transportobject"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Mobiliteitsdienst",
+              "range_uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Mobiliteitsdienst",
+              "range_puri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Mobiliteitsdienst",
+              "range_label": {
+                "nl": "Mobiliteitsdienst"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Transportobject.beschikbaarheid",
           "name": {
             "nl": "beschikbaarheid"
@@ -4893,6 +5233,40 @@
           "codelist_uri": ""
         },
         {
+          "uri": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement",
+          "name": {
+            "nl": "infrastructuurelement"
+          },
+          "sort_nl": "infrastructuurelement",
+          "description": {
+            "nl": "De infrastructuurelementen verbonden met het transportobject."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject",
+              "EA-Name": "Transportobject"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Infrastructuurelement",
+              "range_uri": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Infrastructuurelement",
+              "range_puri": "https://data.vlaanderen.be/ns/openbaardomein/infrastructuur#Infrastructuurelement",
+              "range_label": {
+                "nl": "Infrastructuurelement"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportnetwerk",
           "name": {
             "nl": "transportnetwerk"
@@ -4958,6 +5332,74 @@
             }
           ],
           "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst",
+          "name": {
+            "nl": "dienst"
+          },
+          "sort_nl": "dienst",
+          "description": {
+            "nl": "De aanvullende diensten verbonden met het transportobject"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject",
+              "EA-Name": "Transportobject"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "AanvullendeDienst",
+              "range_uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#AanvullendeDienst",
+              "range_puri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst",
+              "range_label": {
+                "nl": "AanvullendeDienst"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt",
+          "name": {
+            "nl": "vervoersknoop"
+          },
+          "sort_nl": "vervoersknoop",
+          "description": {
+            "nl": "De vervoersknopen waartoe dit transportobject behoort."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/transportnetwerk#Transportobject",
+              "EA-Name": "Transportobject"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Vervoersknooppunt",
+              "range_uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Vervoersknooppunt",
+              "range_puri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt",
+              "range_label": {
+                "nl": "Vervoersknooppunt"
+              }
+            }
+          ],
+          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]
@@ -5916,23 +6358,6 @@
       },
       "description": {
         "nl": "De classificatie van het Hoppinpunt"
-      },
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "usage": {},
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#dienst",
-      "name": {
-        "nl": "aanvullende dienst"
-      },
-      "description": {
-        "nl": "De secundaire diensten die aangeboden worden op het vervoersknooppunt."
       },
       "domain": [
         null
