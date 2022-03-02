@@ -34,6 +34,60 @@
   "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap",
   "shapes": [
     {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#AanvullendeDienstShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Aanbieder",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "aanbieder",
+          "sh:path": "https://data.vlaanderen.be/ns/vervoersknooppunten#aanbieder"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Beschikbaarheid",
+          "sh:description": "Beschikbaarheid van de Mobiliteitsdienst.",
+          "sh:name": "beschikbaarheid",
+          "sh:path": "https://data.vlaanderen.be/ns/vervoersknooppunten#Mobiliteitsdienst.beschikbaarheid"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Naam van de Mobiliteitsdienst.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "naam",
+          "sh:path": "https://data.vlaanderen.be/ns/vervoersknooppunten#Mobiliteitsdienst.naam"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Toegankelijkheid",
+          "sh:description": "Toegankelijkheid van de Mobiliteitsdienst.",
+          "sh:name": "toegankelijkheid",
+          "sh:path": "https://data.vlaanderen.be/ns/vervoersknooppunten#Mobiliteitsdienst.toegankelijkheid"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDiensttype",
+          "sh:description": "Aard van de Mobiliteitsdienst.",
+          "sh:minCount": "1",
+          "sh:name": "type",
+          "sh:path": "https://data.vlaanderen.be/ns/vervoersknooppunten#Mobiliteitsdienst.type"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt",
+          "sh:name": "vervoersknoop",
+          "sh:path": "https://data.vlaanderen.be/ns/vervoersknooppunten#vervoersknoop"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#AanvullendeDiensttypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDiensttype"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#DatauitwisselingsinfrastructuurShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -219,6 +273,11 @@
           "sh:path": "https://data.vlaanderen.be/ns/vervoersknooppunten#classificatie"
         },
         {
+          "sh:class": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst",
+          "sh:name": "dienst",
+          "sh:path": "https://data.vlaanderen.be/ns/vervoersknooppunten#dienst"
+        },
+        {
           "sh:description": "De locatie van het vervoersknooppunt.",
           "sh:name": "locatie",
           "sh:path": "https://data.vlaanderen.be/ns/vervoersknooppunten#locatie"
@@ -286,6 +345,13 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "https://data.vlaanderen.be/ns/vervoersknooppunten#VirtueleKnoop"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#VoertuigtypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/vervoersknooppunten#voertuigtype"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#PeriodeShape",
@@ -358,13 +424,6 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://fixme.com#Transportmode"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#VoertuigtypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#Voertuigtype"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#AgentShape",
@@ -458,11 +517,11 @@
           "sh:path": "http://schema.mobivoc.org/#totalCapacity"
         },
         {
-          "sh:class": "http://fixme.com#Voertuigtype",
+          "sh:class": "https://data.vlaanderen.be/ns/vervoersknooppunten#voertuigtype",
           "sh:description": "Geeft de voertuigtypes weer waaraan de capaciteit gelinkt is.",
           "sh:maxCount": "1",
           "sh:name": "voertuigtype",
-          "sh:path": "https://data.vlaanderen.be/ns/vervoersknooppunten#capaciteit"
+          "sh:path": "https://data.vlaanderen.be/ns/vervoersknooppunten#voertuigtype"
         }
       ],
       "sh:targetClass": "http://schema.mobivoc.org/#Capacity"
@@ -626,7 +685,7 @@
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#DienstverleningtypeShape",
+      "@id": "https://data.vlaanderen.be/shacl/OSLO-Hoppinpunten-ap#MobiliteitsdiensttypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],

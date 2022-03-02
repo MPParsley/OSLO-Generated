@@ -13,14 +13,242 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/tree/7db51f824578dda31d3e059d1d408724d2a2a9fd",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/blob/7db51f824578dda31d3e059d1d408724d2a2a9fd/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/tree/1ea90ce6aa701b2a8b04ca04fadd602408174316",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/blob/1ea90ce6aa701b2a8b04ca04fadd602408174316/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/standaard-in-ontwikkeling/vocabularia-en-applicatieprofielen-hoppinpunten.html",
     "usesVocs": [],
     "usesAPs": []
   },
   "classes": [
+    {
+      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst",
+      "name": {
+        "nl": "AanvullendeDienst"
+      },
+      "sort_nl": "AanvullendeDienst",
+      "description": {
+        "nl": "Dienstverlening die aanvullend en ondersteunend is."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "name": "Dienst",
+          "label": "Dienst",
+          "package": "Schema.org",
+          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Dienst",
+          "scoped_uri": "#Dienst"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Mobiliteitsdienst.beschikbaarheid",
+          "name": {
+            "nl": "beschikbaarheid"
+          },
+          "sort_nl": "beschikbaarheid",
+          "description": {
+            "nl": "Beschikbaarheid van de Mobiliteitsdienst."
+          },
+          "usage": {
+            "nl": "Bv dienstregeling of openingsuren."
+          },
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst",
+              "EA-Name": "AanvullendeDienst"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Beschikbaarheid",
+              "range_uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Beschikbaarheid"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Beschikbaarheid",
+              "range_puri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Beschikbaarheid",
+              "range_label": {
+                "nl": "Beschikbaarheid"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Mobiliteitsdienst.naam",
+          "name": {
+            "nl": "naam"
+          },
+          "sort_nl": "naam",
+          "description": {
+            "nl": "Naam van de Mobiliteitsdienst."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst",
+              "EA-Name": "AanvullendeDienst"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "TaalString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Taalstring",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Taalstring"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Mobiliteitsdienst.toegankelijkheid",
+          "name": {
+            "nl": "toegankelijkheid"
+          },
+          "sort_nl": "toegankelijkheid",
+          "description": {
+            "nl": "Toegankelijkheid van de Mobiliteitsdienst."
+          },
+          "usage": {
+            "nl": "Bv of de Mobiliteitsdienst toegankelijk is voor personen met een beperking."
+          },
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst",
+              "EA-Name": "AanvullendeDienst"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Toegankelijkheid",
+              "range_uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Toegankelijkheid"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Toegankelijkheid",
+              "range_puri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Toegankelijkheid",
+              "range_label": {
+                "nl": "Toegankelijkheid"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Mobiliteitsdienst.type",
+          "name": {
+            "nl": "type"
+          },
+          "sort_nl": "type",
+          "description": {
+            "nl": "Aard van de Mobiliteitsdienst."
+          },
+          "usage": {
+            "nl": "Bv openbaar vervoer, parking etc. Combinaties zijn mogelijk, bv collectief vervoer & openbaar vervoer (bv NMBS), individueel vervoer & privé vervoer (taxi's)..."
+          },
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst",
+              "EA-Name": "AanvullendeDienst"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "AanvullendeDiensttype",
+              "range_uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDiensttype"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#AanvullendeDiensttype",
+              "range_puri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDiensttype",
+              "range_label": {
+                "nl": "AanvullendeDiensttype"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#aanbieder",
+          "name": {
+            "nl": "aanbieder"
+          },
+          "sort_nl": "aanbieder",
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst",
+              "EA-Name": "AanvullendeDienst"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Aanbieder",
+              "range_uri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Aanbieder"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Aanbieder",
+              "range_puri": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Aanbieder",
+              "range_label": {
+                "nl": "Aanbieder"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#vervoersknoop",
+          "name": {
+            "nl": "vervoersknoop"
+          },
+          "sort_nl": "vervoersknoop",
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst",
+              "EA-Name": "AanvullendeDienst"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Vervoersknooppunt",
+              "range_uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Vervoersknooppunt",
+              "range_puri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt",
+              "range_label": {
+                "nl": "Vervoersknooppunt"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
     {
       "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Datauitwisselingsinfrastructuur",
       "name": {
@@ -522,6 +750,35 @@
               "range_puri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunttype",
               "range_label": {
                 "nl": "Vervoersknooppunttype"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#dienst",
+          "name": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt",
+              "EA-Name": "Vervoersknooppunt"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "AanvullendeDienst",
+              "range_uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#AanvullendeDienst",
+              "range_puri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst",
+              "range_label": {
+                "nl": "AanvullendeDienst"
               }
             }
           ],
@@ -1859,7 +2116,7 @@
         {
           "name": "Dienst",
           "label": "Dienst",
-          "package": "OSLO-Hoppinpunten",
+          "package": "Schema.org",
           "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Dienst",
           "scoped_uri": "#Dienst"
         }
@@ -1955,7 +2212,7 @@
           ],
           "range": [
             {
-              "range_label": "Dienstverleningtype",
+              "range_label": "Mobiliteitsdiensttype",
               "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
@@ -5591,13 +5848,68 @@
   ],
   "properties": [
     {
-      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#capaciteit",
+      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Mobiliteitsdienst.beschikbaarheid",
       "name": {
-        "nl": "voertuigtype"
+        "nl": "beschikbaarheid"
       },
       "description": {
-        "nl": "Geeft de voertuigtypes weer waaraan de capaciteit gelinkt is."
+        "nl": "Beschikbaarheid van de Mobiliteitsdienst."
       },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {
+        "nl": "Bv dienstregeling of openingsuren."
+      },
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Mobiliteitsdienst.toegankelijkheid",
+      "name": {
+        "nl": "toegankelijkheid"
+      },
+      "description": {
+        "nl": "Toegankelijkheid van de Mobiliteitsdienst."
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {
+        "nl": "Bv of de Mobiliteitsdienst toegankelijk is voor personen met een beperking."
+      },
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Mobiliteitsdienst.type",
+      "name": {
+        "nl": "type"
+      },
+      "description": {
+        "nl": "Aard van de Mobiliteitsdienst."
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {
+        "nl": "Bv openbaar vervoer, parking etc. Combinaties zijn mogelijk, bv collectief vervoer & openbaar vervoer (bv NMBS), individueel vervoer & privé vervoer (taxi's)..."
+      },
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#aanbieder",
+      "name": {
+        "nl": "aanbieder"
+      },
+      "description": {},
       "domain": [
         null
       ],
@@ -5632,6 +5944,19 @@
       "description": {
         "nl": "De classificatie van het Hoppinpunt"
       },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#dienst",
+      "name": {},
+      "description": {},
       "domain": [
         null
       ],
@@ -5735,6 +6060,38 @@
       },
       "description": {
         "nl": "De toegankelijkheid van het vervoersknooppunt."
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#vervoersknoop",
+      "name": {
+        "nl": "vervoersknoop"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#voertuigtype",
+      "name": {
+        "nl": "voertuigtype"
+      },
+      "description": {
+        "nl": "Geeft de voertuigtypes weer waaraan de capaciteit gelinkt is."
       },
       "domain": [
         null
@@ -6133,7 +6490,7 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#capaciteit",
+          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#voertuigtype",
           "name": {
             "nl": "voertuigtype"
           },
@@ -6151,13 +6508,13 @@
           "range": [
             {
               "range_label": "Voertuigtype",
-              "range_uri": "http://fixme.com#Voertuigtype"
+              "range_uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#voertuigtype"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Voertuigtype",
-              "range_puri": "http://fixme.com#Voertuigtype",
+              "range_puri": "https://data.vlaanderen.be/ns/vervoersknooppunten#voertuigtype",
               "range_label": {
                 "nl": "Voertuigtype"
               }

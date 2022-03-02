@@ -298,6 +298,28 @@
   },
   "classes": [
     {
+      "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Dienstverlening die aanvullend en ondersteunend is."
+      },
+      "name": {
+        "nl": "AanvullendeDienst"
+      },
+      "parents": [
+        "https://data.vlaanderen.be/ns/vervoersknooppunten#Dienst"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDiensttype",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {},
+      "name": {},
+      "parents": [],
+      "usage": {}
+    },
+    {
       "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#Datauitwisselingsinfrastructuur",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
@@ -578,24 +600,96 @@
       "usage": {
         "nl": "De plek waar een Reis gestart wordt valt doorgaans niet samen met een bestaande Transportknoop, het is bv de woning van de Reiziger gelegen tussen twee kruispunten. Om alsnog het netwerk op te gaan om zijn Reis te starten creëert de Reiziger ahw een VirtueleKnoop op de link tussen deze kruispunten. VirtueleKnopen zijn van belang om een correcte inschatting van de reistijd te maken bv bij routeplanning omdat concreet nog de afstand moet bijgeteld worden tussen de VirtueleKnoop en de eerstvolgende echte Transportknoop. Ook belangrijk bvb bij free floating deelvervoer waar de positie van bvb de deelstep niet noodzakelijk samenvalt met deze van een bestaande Transportknoop."
       }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#voertuigtype",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {},
+      "name": {
+        "nl": "Voertuigtype"
+      },
+      "parents": [],
+      "usage": {}
     }
   ],
   "properties": [
     {
-      "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#capaciteit",
+      "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#Mobiliteitsdienst.beschikbaarheid",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Geeft de voertuigtypes weer waaraan de capaciteit gelinkt is."
-      },
+      "description": {},
       "domain": [
-        "http://schema.mobivoc.org/#Capacity"
+        "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
       ],
       "generalization": [],
       "name": {
-        "nl": "voertuigtype"
+        "nl": "beschikbaarheid"
       },
       "range": [
-        "http://fixme.com#Voertuigtype"
+        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Beschikbaarheid"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#Mobiliteitsdienst.naam",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "description": {},
+      "domain": [
+        "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "naam"
+      },
+      "range": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#Mobiliteitsdienst.toegankelijkheid",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {},
+      "domain": [
+        "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "toegankelijkheid"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Toegankelijkheid"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#Mobiliteitsdienst.type",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {},
+      "domain": [
+        "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "type"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDiensttype"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#aanbieder",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {},
+      "domain": [
+        "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "aanbieder"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Aanbieder"
       ],
       "usage": {}
     },
@@ -632,6 +726,20 @@
       },
       "range": [
         "https://data.vlaanderen.be/ns/vervoersknooppunten#Hoppinpunttype"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#dienst",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {},
+      "domain": [
+        "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt"
+      ],
+      "generalization": [],
+      "name": {},
+      "range": [
+        "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
       ],
       "usage": {}
     },
@@ -758,6 +866,40 @@
       },
       "range": [
         "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Toegankelijkheid"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#vervoersknoop",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {},
+      "domain": [
+        "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "vervoersknoop"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#voertuigtype",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Geeft de voertuigtypes weer waaraan de capaciteit gelinkt is."
+      },
+      "domain": [
+        "http://schema.mobivoc.org/#Capacity"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "voertuigtype"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/vervoersknooppunten#voertuigtype"
       ],
       "usage": {}
     },
