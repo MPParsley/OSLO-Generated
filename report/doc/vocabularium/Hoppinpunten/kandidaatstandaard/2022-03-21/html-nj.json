@@ -12,8 +12,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
     "statuslabel": "Kandidaat Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/tree/3209552f1c4abeca5b7a7586d5c470d0739029e5",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/blob/3209552f1c4abeca5b7a7586d5c470d0739029e5/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/tree/f11519af059fefb2801ebaa315881253721680ac",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/blob/f11519af059fefb2801ebaa315881253721680ac/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/standaard-in-ontwikkeling/vocabularia-en-applicatieprofielen-hoppinpunten.html",
     "usesVocs": [],
@@ -27,9 +27,11 @@
       },
       "sort_nl": "AanvullendeDienst",
       "description": {
-        "nl": "Dienstverlening die aanvullend en ondersteunend is."
+        "nl": "Dienst die een aanvulling biedt op andere Diensten of deze ondersteunt."
       },
-      "usage": {},
+      "usage": {
+        "nl": "Bv Krantenwinkel, Postdienst of Restaurant in een Station. De Diensten die daarmee worden aangevuld of ondersteund zijn bv Mobiliteitsdiensten."
+      },
       "equivalent": [],
       "parents": [
         "https://data.vlaanderen.be/ns/vervoersknooppunten#Dienst"
@@ -368,13 +370,13 @@
   ],
   "properties": [
     {
-      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#aanbieder",
+      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst.beschikbaarheid",
       "name": {
-        "nl": "aanbieder"
+        "nl": "beschikbaarheid"
       },
-      "sort_nl": "aanbieder",
+      "sort_nl": "beschikbaarheid",
       "description": {
-        "nl": "De aanbieder van de aanvullende dienst."
+        "nl": "Beschikbaarheid van de aanvullende dienst."
       },
       "usage": {},
       "domain": [
@@ -386,13 +388,31 @@
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#beschikbaarheid",
+      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst.toegankelijkheid",
       "name": {
-        "nl": "beschikbaarheid"
+        "nl": "toegankelijkheid"
       },
-      "sort_nl": "beschikbaarheid",
+      "sort_nl": "toegankelijkheid",
       "description": {
-        "nl": "Beschikbaarheid van de aanvullende dienst."
+        "nl": "Toegankelijkheid van de aanvullende dienst."
+      },
+      "usage": {},
+      "domain": [
+        "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Toegankelijkheid"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#aanbieder",
+      "name": {
+        "nl": "aanbieder"
+      },
+      "sort_nl": "aanbieder",
+      "description": {
+        "nl": "De aanbieder van de aanvullende dienst."
       },
       "usage": {},
       "domain": [
@@ -474,24 +494,6 @@
       ],
       "range": [
         "https://data.vlaanderen.be/ns/vervoersknooppunten#Merktype"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#naam",
-      "name": {
-        "nl": "naam"
-      },
-      "sort_nl": "naam",
-      "description": {
-        "nl": "Naam van de aanvullende dienst."
-      },
-      "usage": {},
-      "domain": [
-        "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
-      ],
-      "range": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
       ],
       "parents": []
     },
@@ -582,44 +584,6 @@
       ],
       "range": [
         "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Toegankelijkheid"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#toegankelijkheid",
-      "name": {
-        "nl": "toegankelijkheid"
-      },
-      "sort_nl": "toegankelijkheid",
-      "description": {
-        "nl": "Toegankelijkheid van de aanvullende dienst."
-      },
-      "usage": {},
-      "domain": [
-        "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Toegankelijkheid"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#type",
-      "name": {
-        "nl": "type"
-      },
-      "sort_nl": "type",
-      "description": {
-        "nl": "Aard van de aanvullende dienst."
-      },
-      "usage": {
-        "nl": "Bv ticketing, wachtaccomodatie, sanitair, AED"
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDiensttype"
       ],
       "parents": []
     },
@@ -947,6 +911,36 @@
       "show": true
     },
     {
+      "uri": "http://purl.org/dc/terms/title",
+      "name": {
+        "nl": "naam"
+      },
+      "description": {
+        "nl": "De naam van het Vervoersknooppunt."
+      },
+      "usage": {},
+      "sort_nl": "naam",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://purl.org/dc/terms/title",
+      "name": {
+        "nl": "naam"
+      },
+      "description": {
+        "nl": "Naam van de aanvullende dienst."
+      },
+      "usage": {},
+      "sort_nl": "naam",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
       "uri": "http://purl.org/dc/terms/type",
       "name": {
         "nl": "type"
@@ -955,6 +949,23 @@
         "nl": "Het type van infrastructuurelement."
       },
       "usage": {},
+      "sort_nl": "type",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://purl.org/dc/terms/type",
+      "name": {
+        "nl": "type"
+      },
+      "description": {
+        "nl": "Aard van de aanvullende dienst."
+      },
+      "usage": {
+        "nl": "Bv ticketing, wachtaccomodatie, sanitair, AED"
+      },
       "sort_nl": "type",
       "inscope": true,
       "indvl": false,
@@ -1031,21 +1042,6 @@
       },
       "usage": {},
       "sort_nl": "zuilnummer",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#title",
-      "name": {
-        "nl": "naam"
-      },
-      "description": {
-        "nl": "De naam van het Vervoersknooppunt."
-      },
-      "usage": {},
-      "sort_nl": "naam",
       "inscope": true,
       "indvl": false,
       "inpackage": false,

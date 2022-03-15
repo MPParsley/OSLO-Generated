@@ -301,7 +301,7 @@
       "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
-        "nl": "Dienstverlening die aanvullend en ondersteunend is."
+        "nl": "Dienst die een aanvulling biedt op andere Diensten of deze ondersteunt."
       },
       "name": {
         "nl": "AanvullendeDienst"
@@ -309,7 +309,9 @@
       "parents": [
         "https://data.vlaanderen.be/ns/vervoersknooppunten#Dienst"
       ],
-      "usage": {}
+      "usage": {
+        "nl": "Bv Krantenwinkel, Postdienst of Restaurant in een Station. De Diensten die daarmee worden aangevuld of ondersteund zijn bv Mobiliteitsdiensten."
+      }
     },
     {
       "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDiensttype",
@@ -622,6 +624,42 @@
   ],
   "properties": [
     {
+      "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst.beschikbaarheid",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Beschikbaarheid van de aanvullende dienst."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "beschikbaarheid"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Aanbieder"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst.toegankelijkheid",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Toegankelijkheid van de aanvullende dienst."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "toegankelijkheid"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Toegankelijkheid"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#aanbieder",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
@@ -633,24 +671,6 @@
       "generalization": [],
       "name": {
         "nl": "aanbieder"
-      },
-      "range": [
-        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Aanbieder"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#beschikbaarheid",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Beschikbaarheid van de aanvullende dienst."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "beschikbaarheid"
       },
       "range": [
         "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Aanbieder"
@@ -730,24 +750,6 @@
       "usage": {
         "nl": "Voorbeeld: Hoppinpunt, Mobipunt,"
       }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#naam",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "description": {
-        "nl": "Naam van de aanvullende dienst."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "naam"
-      },
-      "range": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      ],
-      "usage": {}
     },
     {
       "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#registratie",
@@ -840,44 +842,6 @@
       "usage": {}
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#toegankelijkheid",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Toegankelijkheid van de aanvullende dienst."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "toegankelijkheid"
-      },
-      "range": [
-        "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Toegankelijkheid"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#type",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Aard van de aanvullende dienst."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "type"
-      },
-      "range": [
-        "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDiensttype"
-      ],
-      "usage": {
-        "nl": "Bv ticketing, wachtaccomodatie, sanitair, AED"
-      }
-    },
-    {
       "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#voertuigtype",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
@@ -925,6 +889,27 @@
   ],
   "externalproperties": [
     {
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "naam"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "naam"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/type",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "type"
+      }
+    },
+    {
       "@id": "http://purl.org/dc/terms/type",
       "@type": "rdf:Property",
       "name": {
@@ -953,7 +938,7 @@
       }
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst.beschikbaarOpInfrastructuurelement",
+      "@id": "https://data.vlaanderen.be/ns/vervoersknooppunten#AanvullendeDienst.vervoersknoop",
       "@type": "rdf:Property",
       "name": {
         "nl": "vervoersknoop"
@@ -978,13 +963,6 @@
       "@type": "rdf:Property",
       "name": {
         "nl": "zuilnummer"
-      }
-    },
-    {
-      "@id": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#title",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "naam"
       }
     }
   ],
