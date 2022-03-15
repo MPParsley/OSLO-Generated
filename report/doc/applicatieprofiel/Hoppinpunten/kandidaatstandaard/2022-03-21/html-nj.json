@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
     "statuslabel": "Kandidaat Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/tree/f11519af059fefb2801ebaa315881253721680ac",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/blob/f11519af059fefb2801ebaa315881253721680ac/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/tree/daa0dce799462798b1616fa24d3cba5c2007dc82",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/blob/daa0dce799462798b1616fa24d3cba5c2007dc82/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-hoppinPunten/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/standaard-in-ontwikkeling/vocabularia-en-applicatieprofielen-hoppinpunten.html",
     "usesVocs": [],
@@ -474,7 +474,7 @@
       ],
       "properties": [
         {
-          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#classificatie",
+          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Hoppinpunt.classificatie",
           "name": {
             "nl": "classificatie"
           },
@@ -508,7 +508,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#status",
+          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Hoppinpunt.status",
           "name": {
             "nl": "status"
           },
@@ -797,7 +797,7 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#classificatie",
+          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt.classificatie",
           "name": {
             "nl": "classificatie"
           },
@@ -828,6 +828,40 @@
             }
           ],
           "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt.status",
+          "name": {
+            "nl": "status"
+          },
+          "sort_nl": "status",
+          "description": {
+            "nl": "De status van het Vervoersknooppunt."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt",
+              "EA-Name": "Vervoersknooppunt"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Vervoersknooppuntstatus",
+              "range_uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppuntstatus"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Vervoersknooppuntstatus",
+              "range_puri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppuntstatus",
+              "range_label": {
+                "nl": "Vervoersknooppuntstatus"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -898,40 +932,6 @@
             }
           ],
           "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#status",
-          "name": {
-            "nl": "status"
-          },
-          "sort_nl": "status",
-          "description": {
-            "nl": "De status van het Vervoersknooppunt."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt",
-              "EA-Name": "Vervoersknooppunt"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Vervoersknooppuntstatus",
-              "range_uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppuntstatus"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Vervoersknooppuntstatus",
-              "range_puri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppuntstatus",
-              "range_label": {
-                "nl": "Vervoersknooppuntstatus"
-              }
-            }
-          ],
-          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -6404,12 +6404,12 @@
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#aanbieder",
+      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Hoppinpunt.classificatie",
       "name": {
-        "nl": "aanbieder"
+        "nl": "classificatie"
       },
       "description": {
-        "nl": "De aanbieder van de aanvullende dienst."
+        "nl": "De classificatie van het Hoppinpunt"
       },
       "domain": [
         null
@@ -6421,7 +6421,24 @@
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#classificatie",
+      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Hoppinpunt.status",
+      "name": {
+        "nl": "status"
+      },
+      "description": {
+        "nl": "De status van het Hoppinpunt"
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt.classificatie",
       "name": {
         "nl": "classificatie"
       },
@@ -6438,12 +6455,29 @@
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#classificatie",
+      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#Vervoersknooppunt.status",
       "name": {
-        "nl": "classificatie"
+        "nl": "status"
       },
       "description": {
-        "nl": "De classificatie van het Hoppinpunt"
+        "nl": "De status van het Vervoersknooppunt."
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#aanbieder",
+      "name": {
+        "nl": "aanbieder"
+      },
+      "description": {
+        "nl": "De aanbieder van de aanvullende dienst."
       },
       "domain": [
         null
@@ -6514,40 +6548,6 @@
       },
       "description": {
         "nl": "De specificatie van het geregistreerd vervoersknooppunt."
-      },
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "usage": {},
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#status",
-      "name": {
-        "nl": "status"
-      },
-      "description": {
-        "nl": "De status van het Vervoersknooppunt."
-      },
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "usage": {},
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/vervoersknooppunten#status",
-      "name": {
-        "nl": "status"
-      },
-      "description": {
-        "nl": "De status van het Hoppinpunt"
       },
       "domain": [
         null
