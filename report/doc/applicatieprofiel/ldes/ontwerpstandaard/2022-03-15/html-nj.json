@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-ldes/tree/d2407bf64d9d50a5d5f2918ce29c8a7ed1db2774",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-ldes/blob/d2407bf64d9d50a5d5f2918ce29c8a7ed1db2774/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-ldes/tree/904cdac0636ffaea4387afdad76bae632a2ac070",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-ldes/blob/904cdac0636ffaea4387afdad76bae632a2ac070/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-ldes/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/standaard-in-ontwikkeling/vocabularia-en-applicatieprofielen-ldes.html",
     "usesVocs": [],
@@ -199,14 +199,14 @@
           ],
           "range": [
             {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+              "range_label": "URi",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Resource"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_uri": "#URI",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_label": {
                 "nl": "URI"
               }
@@ -235,14 +235,14 @@
           ],
           "range": [
             {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+              "range_label": "URi",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Resource"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_uri": "#URI",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_label": {
                 "nl": "URI"
               }
@@ -389,16 +389,16 @@
           ],
           "range": [
             {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+              "range_label": "Shape",
+              "range_uri": "http://www.w3.org/ns/shacl#NodeShape"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_uri": "#Shape",
+              "range_puri": "http://www.w3.org/ns/shacl#NodeShape",
               "range_label": {
-                "nl": "URI"
+                "nl": "Shape"
               }
             }
           ],
@@ -546,8 +546,21 @@
               "EA-Name": "DataService"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Standaard",
+              "range_uri": "http://purl.org/dc/terms/Standard"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://purl.org/dc/terms/Standard",
+              "range_puri": "http://purl.org/dc/terms/Standard",
+              "range_label": {
+                "nl": "Standaard"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         },
@@ -569,14 +582,14 @@
           ],
           "range": [
             {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+              "range_label": "URi",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Resource"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_uri": "#URI",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_label": {
                 "nl": "URI"
               }
@@ -629,6 +642,19 @@
       "sort_nl": "Versie",
       "description": {
         "nl": "Stelt een entiteit voor in één specifieke periode."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "http://www.w3.org/ns/shacl#NodeShape",
+      "name": {
+        "nl": "Shape"
+      },
+      "sort_nl": "Shape",
+      "description": {
+        "nl": "A node shape is a shape in the shapes graph that is not the subject of a triple with sh:path as its predicate. It is recommended, but not required, for a node shape to be declared as a SHACL instance of sh:NodeShape. SHACL instances of sh:NodeShape cannot"
       },
       "usage": {},
       "parents": [],
@@ -697,7 +723,7 @@
       },
       "sort_nl": "EventStream",
       "description": {
-        "nl": "Een Linked Data Event Stream is een collectie van onveranderlijke objecten (zoals versie-objecten & sensor-observaties). Deze objecten volgen op opgelegde shape."
+        "nl": "Een collectie van onveranderlijke objecten (zoals versie-objecten & sensor-observaties). Deze objecten volgen op opgelegde shape."
       },
       "usage": {},
       "parents": [
@@ -718,61 +744,6 @@
       ],
       "properties": [
         {
-          "uri": "http://purl.org/dc/terms/conformsTo",
-          "name": {
-            "nl": "conformAanProtocol"
-          },
-          "sort_nl": "conformAanProtocol",
-          "description": {
-            "nl": "Een protocol waaraan de dataservice voldoet."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://w3id.org/ldes#EventStream",
-              "EA-Name": "EventStream"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/dcat#endpointURL",
-          "name": {
-            "nl": "endpointURL"
-          },
-          "sort_nl": "endpointURL",
-          "description": {
-            "nl": "De rootlocatie of het primaire endpoint van de dienst (een web-resolvable URI)."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://w3id.org/ldes#EventStream",
-              "EA-Name": "EventStream"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "RootNode",
-              "range_uri": "https://data.vlaanderen.be/ns/ldes#RootNode"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#RootNode",
-              "range_puri": "https://data.vlaanderen.be/ns/ldes#RootNode",
-              "range_label": {
-                "nl": "RootNode"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://w3id.org/ldes#timestampPath",
           "name": {
             "nl": "timestampPath"
@@ -792,14 +763,14 @@
           ],
           "range": [
             {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+              "range_label": "URi",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Resource"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_uri": "#URI",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_label": {
                 "nl": "URI"
               }
@@ -828,14 +799,14 @@
           ],
           "range": [
             {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+              "range_label": "URi",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Resource"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_uri": "#URI",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_label": {
                 "nl": "URI"
               }
@@ -898,16 +869,16 @@
           ],
           "range": [
             {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+              "range_label": "Shape",
+              "range_uri": "http://www.w3.org/ns/shacl#NodeShape"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_uri": "#Shape",
+              "range_puri": "http://www.w3.org/ns/shacl#NodeShape",
               "range_label": {
-                "nl": "URI"
+                "nl": "Shape"
               }
             }
           ],
@@ -1024,14 +995,14 @@
           ],
           "range": [
             {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+              "range_label": "URi",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Resource"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_uri": "#URI",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_label": {
                 "nl": "URI"
               }
@@ -1081,14 +1052,14 @@
           ],
           "range": [
             {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+              "range_label": "URi",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Resource"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_uri": "#URI",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_label": {
                 "nl": "URI"
               }
@@ -1143,13 +1114,13 @@
           "range": [
             {
               "range_label": "Shape",
-              "range_uri": "http://fixme.com#Shape"
+              "range_uri": "http://www.w3.org/ns/shacl#NodeShape"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://fixme.com#Shape",
-              "range_puri": "http://fixme.com#Shape",
+              "range_uri": "#Shape",
+              "range_puri": "http://www.w3.org/ns/shacl#NodeShape",
               "range_label": {
                 "nl": "Shape"
               }
@@ -1589,14 +1560,14 @@
           ],
           "range": [
             {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+              "range_label": "URi",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Resource"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_uri": "#URI",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_label": {
                 "nl": "URI"
               }
@@ -1625,16 +1596,16 @@
           ],
           "range": [
             {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
               "range_label": {
-                "nl": "URI"
+                "nl": "Literal"
               }
             }
           ],
@@ -1829,8 +1800,21 @@
               "EA-Name": "Dataset"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Standaard",
+              "range_uri": "http://purl.org/dc/terms/Standard"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://purl.org/dc/terms/Standard",
+              "range_puri": "http://purl.org/dc/terms/Standard",
+              "range_label": {
+                "nl": "Standaard"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         }
@@ -1886,7 +1870,23 @@
       "email": "medewerkervoornaam.medewerkernaam@medewerkerdomein"
     }
   ],
-  "datatypes": [],
+  "datatypes": [
+    {
+      "uri": "http://www.w3.org/2000/01/rdf-schema#Resource",
+      "name": {
+        "nl": "URI"
+      },
+      "sort_nl": "URI",
+      "description": {
+        "nl": "Een URI die technisch als een klasse wordt voorgesteld in RDF,maar in het gebruik een literal is."
+      },
+      "usage": {
+        "nl": "Een zinvolle toepassing van dit datatype is het vermijden van de introductie van placeholder klassen. Een andere toepassing is om compliancy te bekomen met de bereik definitie van eigenschappen.  "
+      },
+      "parents": [],
+      "properties": []
+    }
+  ],
   "parents": [],
   "documentroot": "/doc/applicatieprofiel/ldes/ontwerpstandaard/2022-03-15"
 }
