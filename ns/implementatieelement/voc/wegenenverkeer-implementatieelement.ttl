@@ -421,6 +421,21 @@ schemas:OpeningHoursSpecification a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:range <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
 
+<https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcCameraBeeldverwerking.configBestand> a owl:ObjectProperty;
+  rdfs:label "configuratiebestand beeldverwerking"@nl;
+  rdfs:comment "Een bestand met de details van de configuratie voor het type beeldverwerking dat gekozen is in het type-attribuut van de instantie."@nl;
+  rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcCameraBeeldverwerking>;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcCameraBeeldverwerking.typeBeeldverwerking> a owl:ObjectProperty;
+  rdfs:label "type beeldverwerking"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Wanneer de camera de beeldverwerking niet zelf doet maar enkel beelden  verstuurt voor verwerking in een externe eenheid, moet die externe eenheid als aparte asset aangemaakt worden indien het specifieke type bestaat in de OTL of moet een instantie van Software gebruikt worden wanneer geen specifieke externe verwerkingseenheid voorzien is."@nl;
+  rdfs:comment "Geeft aan welk type beeldverwerking als onlosmakelijk deel van de camera geconfigureerd is."@nl;
+  rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcCameraBeeldverwerking>;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range skos:Concept .
+
 <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcConstructiestaalspecificaties.staalsoort> a owl:ObjectProperty;
   rdfs:label "staalsoort"@nl;
   rdfs:comment "Staalkwaliteit die wordt gebruikt volgens Europese normen."@nl;
@@ -1384,6 +1399,11 @@ schemas:opens a rdf:Property;
   rdfs:comment "Complex datatype voor de afmeting van een diameter in millimeter."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement> .
 
+<https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcCameraBeeldverwerking> a owl:Class;
+  rdfs:label "Camera beeldverwerkingsinstellingen"@nl;
+  rdfs:comment "Complex datatype waarmee een type beeldverwerking van een camera en het relevant configuratiebestand, bijgehouden worden."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement> .
+
 <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcConstructiestaalspecificaties> a owl:Class;
   rdfs:label "Constructiestaalspecificaties"@nl;
   rdfs:comment "Complex datatype om de eigenschappen van constructiestaal te bundelen."@nl;
@@ -1621,6 +1641,7 @@ schemas:opens a rdf:Property;
 
 <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject> a owl:Class;
   rdfs:label "Derdenobject"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Een Derdenobject mag enkel gebruikt worden om objecten aan te duiden die niet in beheer zijn van AWV en waarvan het type niet gekend is of aangeleverd."@nl;
   rdfs:comment "Object niet in eigendom van de assetbeheerder dat zonder verdere typering bewaard wordt om relaties met getypeerde assets te kunnen beheren."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand>,
@@ -1631,11 +1652,6 @@ schemas:opens a rdf:Property;
   rdfs:comment "Abstracte die de relaties voorziet van gemeenschappelijk eigenschappen."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus> .
-
-<https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument> a owl:Class;
-  rdfs:label "Bestandsbijlage"@nl;
-  rdfs:comment "Complex datatype voor alle bestandsbijlages."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement> .
 
 <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator> a owl:Class;
   rdfs:label "Identificator"@nl;
@@ -1652,6 +1668,11 @@ schemas:opens a rdf:Property;
 <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres> a owl:Class;
   rdfs:label "Adres"@nl;
   rdfs:comment "Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, gebouw of faciliteit, op de aarde."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement> .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument> a owl:Class;
+  rdfs:label "Bestandsbijlage"@nl;
+  rdfs:comment "Complex datatype voor alle bestandsbijlages."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement> .
 
 <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon> a owl:Class;

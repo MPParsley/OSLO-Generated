@@ -14,9 +14,9 @@
   "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
   "namespace": null,
   "navigation": {
-    "prev": "/doc/vocabularium/wegenenverkeer/onderdeel/ontwerpdocument/2.1.0"
+    "prev": "/doc/vocabularium/wegenenverkeer/onderdeel/ontwerpdocument/2.2.0"
   },
-  "publication-date": "2021-10-13",
+  "publication-date": "2022-04-01",
   "publication-state": "https://data.vlaanderen.be/id/concept/StandaardStatus/ErkendeStandaard",
   "title": "Onderdeel",
   "dcterms:license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
@@ -3164,7 +3164,7 @@
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Netwerkelement",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
-        "nl": "Toestel,onderdeel van het netwerk,waarop netwerkverbindingen kunnen aangelegd worden."
+        "nl": "Toestel, onderdeel van het netwerk zoals een backbone of IP-netwerk, waarop netwerkverbindingen kunnen aangelegd worden."
       },
       "name": {
         "nl": "Netwerkelement"
@@ -3291,7 +3291,7 @@
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Omhult",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
-        "nl": "Deze relatie geeft aan dat het ene onderdeel het andere omhult. Deze relatie heeft een richting en gaat van het omhullende onderdeel naar het onderdeel dat omhult wordt."
+        "nl": "Deze relatie geeft aan dat het ene onderdeel het andere omhult. Dit vereist geen gesloten omhulling: de omhulling kan een open zijde hebben of bestaan uit open ruimtes. Deze relatie heeft een richting en gaat van het omhullende onderdeel naar het onderdeel dat omhuld wordt."
       },
       "name": {
         "nl": "Omhult"
@@ -5075,7 +5075,7 @@
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelLED",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
-        "nl": "Het geheel van de LEDlichtmodule en de behuizing die werden samengesteld met als doel:\r\n * de lichtstroom van de lichtbronnen hoofdzakelijk op het te verlichten oppervlak (doorlopende wegsectie, conflictgebied,...) te richten, teneinde de zichtbaarheid te verhogen;\r\n * de lichtstroom te beheersen zodat de weggebruikers niet verblind worden en de lichthinder beperkt wordt;\r\n * het optisch systeem, de lichtbronnen en de hulpapparatuur tegen uitwendige invloeden te beschermen\r\nDe LED driver bevindt zich fysiek in het verlichtingstoestel maar wordt als een appart onderdeel behandeld."
+        "nl": "Het geheel van de LEDlichtmodule en de behuizing die werden samengesteld met als doel:\r\n * de lichtstroom van de lichtbronnen hoofdzakelijk op het te verlichten oppervlak (doorlopende wegsectie, conflictgebied,...) te richten, teneinde de zichtbaarheid te verhogen;\r\n * de lichtstroom te beheersen zodat de weggebruikers niet verblind worden en de lichthinder beperkt wordt;\r\n * het optisch systeem, de lichtbronnen en de hulpapparatuur tegen uitwendige invloeden te beschermen\r\nDe LED driver bevindt zich fysiek in het verlichtingstoestel maar wordt als een apart onderdeel behandeld."
       },
       "name": {
         "nl": "Verlichtingstoestel LED"
@@ -5856,6 +5856,26 @@
         "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "usage": {}
+    },
+    {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.opstelhoogte",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "De hoogte waarop de camera bevestigd is, gemeten ten opzichte van het maaiveld waarin de draagconstructie voor de camera verankerd is."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "opstelhoogte"
+      },
+      "range": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter"
+      ],
+      "usage": {
+        "nl": "De plaats waar de draagconstructie in de grond bevestigd is, bepaalt van waar gemeten wordt voor het bepalen van de opstelhoogte. Wanneer een camera die een brugdek overziet, bevestigd is aan een paal die naast de brug staat, wordt de hoogte gemeten vanaf de basis van de paal en niet vanaf het brugdek."
+      }
     },
     {
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#ANPRCamera.rijrichting",
@@ -8175,7 +8195,9 @@
       "range": [
         "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter"
       ],
-      "usage": {}
+      "usage": {
+        "nl": "TODO"
+      }
     },
     {
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Cabine.standaardtype",
@@ -8376,6 +8398,26 @@
       "usage": {}
     },
     {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Camera.beeldverwerkingsinstelling",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Geeft aan welke types beeldverwerking die camera zelf uitvoert dus zonder gebruik te maken van een externe verwerkingseenheid."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Camera"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "beeldverwerkingsinstelling"
+      },
+      "range": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcCameraBeeldverwerking"
+      ],
+      "usage": {
+        "nl": "Wanneer de camera de beeldverwerking niet zelf doet maar enkel beelden  verstuurt voor verwerking in een externe eenheid, moet die externe eenheid als aparte asset aangemaakt worden indien het specifieke type bestaat in de OTL of moet een instantie van Software gebruikt worden wanneer geen specifieke externe verwerkingseenheid voorzien is. \r\nDit attribuut kan dus enkel gebruikt worden indien de camera of een verwerkingseenheid van de camera zelf de analyse doet en die analyse doorstuurt naar een asset die met de analyse werkt en niet met de beelden."
+      }
+    },
+    {
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Camera.configBestandAid",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
@@ -8392,7 +8434,7 @@
         "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument"
       ],
       "usage": {
-        "nl": "Enkel in te gebruiken wanneer de camera zelf een AID component bevat (attribuut heeftAid van Camera is 1). Voor camera's met een externe AID module maakt het configuratiebestand deel uit van die aparte AID module. "
+        "nl": "Attribuut uit gebruik sinds versie 2.3.0 "
       }
     },
     {
@@ -8429,7 +8471,9 @@
       "range": [
         "http://www.w3.org/2001/XMLSchema#boolean"
       ],
-      "usage": {}
+      "usage": {
+        "nl": "Attribuut uit gebruik sinds versie 2.3.0 "
+      }
     },
     {
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Camera.heeftSpitsstrook",
@@ -8447,7 +8491,9 @@
       "range": [
         "http://www.w3.org/2001/XMLSchema#boolean"
       ],
-      "usage": {}
+      "usage": {
+        "nl": "Attribuut uit gebruik sinds versie 2.3.0 "
+      }
     },
     {
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Camera.ipAdres",
@@ -8540,6 +8586,24 @@
       "usage": {
         "nl": "De plaats waar de draagconstructie in de grond bevestigd is, bepaalt van waar gemeten wordt voor het bepalen van de opstelhoogte. Wanneer een camera die een brugdek overziet, bevestigd is aan een paal die naast de brug staat, wordt de hoogte gemeten vanaf de basis van de paal en niet vanaf het brugdek. "
       }
+    },
+    {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Camera.servicePrioriteit",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Het prioriteitsniveau dat aangeeft hoe dringend iets moet onderhouden/gerepareerd worden"
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Camera"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "Service Prioriteit"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
     },
     {
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Camera.technischeFiche",
@@ -9525,7 +9589,7 @@
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBSSRandafwerking.randafwerking",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
-        "nl": "De mogelijke wijzen van randafwerking van de verharding."
+        "nl": "De wijze waarop de rand van de bestrating is afgewerkt."
       },
       "domain": [
         "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcBSSRandafwerking"
@@ -14353,7 +14417,7 @@
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver.maximaalVermogen",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
-        "nl": "Maximaal afgenomen vermogen van de driver en lamp samen (incl. verlies/verbruik van de driver zelf)."
+        "nl": "Maximaal afgenomen vermogen van de driver en lamp/lichtbron samen (incl. verlies/verbruik van de driver zelf)."
       },
       "domain": [
         "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver"
@@ -14371,7 +14435,7 @@
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver.maximaleAanstuurstroom",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
-        "nl": "Maximale aanstuurstroom die de LED driver kan leveren."
+        "nl": "Maximale aanstuurstroom die de LED-driver kan leveren."
       },
       "domain": [
         "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver"
@@ -14425,7 +14489,7 @@
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver.protocol",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
-        "nl": "Protocol gebruikt door de LED driver voor het aansturen van de LED's."
+        "nl": "Protocol gebruikt door de LED-driver voor het aansturen van de LED's."
       },
       "domain": [
         "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#LEDDriver"
@@ -15540,6 +15604,42 @@
       },
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Neerslagsensor.dnsNaam",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "description": {
+        "nl": "De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Neerslagsensor"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "DNS naam"
+      },
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#string"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Neerslagsensor.ipAdres",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "IP-adres van de neerslagsensor."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Neerslagsensor"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "ip adres"
+      },
+      "range": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteIPv4Adres"
       ],
       "usage": {}
     },
@@ -20538,6 +20638,24 @@
       "usage": {}
     },
     {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TechnischePut.materiaal",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Het materiaal waaruit de technische put opgebouwd is."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#TechnischePut"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "materiaal"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Terugkeer.typeUitvoering",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
@@ -22015,7 +22133,9 @@
       "range": [
         "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL"
       ],
-      "usage": {}
+      "usage": {
+        "nl": "Attribuut uit gebruik sinds versie 2.3.0 "
+      }
     },
     {
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelLED.heeftAntiVandalisme",
@@ -22050,6 +22170,24 @@
       },
       "range": [
         "http://www.w3.org/2001/XMLSchema#boolean"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelLED.kleurArmatuur",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "De kleur van de zichtbare buitenkant van het verlichtingstoestel."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelLED"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "kleur armatuur"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "usage": {}
     },
@@ -22165,7 +22303,7 @@
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelLED.verlichtingsNiveau",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
-        "nl": "Een set van verlichtingstechnische eisen zoals gemiddelde luminantie, verlichtingssterkte, uniformeiten."
+        "nl": "Een set van verlichtingstechnische eisen zoals gemiddelde luminantie, verlichtingssterkte, uniformiteiten."
       },
       "domain": [
         "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelLED"
@@ -22231,7 +22369,9 @@
       "range": [
         "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteKleurRAL"
       ],
-      "usage": {}
+      "usage": {
+        "nl": "Attribuut uit gebruik sinds versie 2.3.0 "
+      }
     },
     {
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelNaHP.heeftAntiVandalisme",
@@ -22266,6 +22406,24 @@
       },
       "range": [
         "http://www.w3.org/2001/XMLSchema#boolean"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelNaHP.kleurArmatuur",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "De kleur van de zichtbare buitenkant van het verlichtingstoestel."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#VerlichtingstoestelNaHP"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "kleur armatuur"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "usage": {}
     },
@@ -23327,13 +23485,6 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "Betrokkenheid rol"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
         "nl": "Rijrichting"
       }
     },
@@ -23356,6 +23507,13 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "Ingress Protection Codering"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Betrokkenheid rol"
       }
     },
     {
@@ -23425,6 +23583,13 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
+        "nl": "Ecokoker type"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
         "nl": "Werkingsbreedte"
       }
     },
@@ -23447,13 +23612,6 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "Norm"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Ecokoker type"
       }
     },
     {
@@ -23558,13 +23716,6 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "Materiaal"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
         "nl": "Obstakelbeveiliger type"
       }
     },
@@ -23580,6 +23731,13 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "Uitbuigingstype"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Materiaal afschermende constructie"
       }
     },
     {
@@ -23628,28 +23786,7 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "Trottoirband type"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Schampkant type"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Schokindex MVP"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Materiaal"
+        "nl": "Materiaal geluidswerende constructie"
       }
     },
     {
@@ -23685,6 +23822,27 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "Rooster indeling"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Trottoirband type"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Schampkant type"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Schokindex MVP"
       }
     },
     {
@@ -24174,62 +24332,6 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "Wegbebakening type"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Retroreflecterend verkeersbord grootteorde"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Wegreflector type"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Dwarse markering code verschuind"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Verkeersbord categorie"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Retroreflecterend Verkeersbord Merk"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Kleur markering"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Dwarse markering code"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
         "nl": "Kleur reflector"
       }
     },
@@ -24280,6 +24382,62 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "Signalisatie markering opvatting"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Wegbebakening type"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Retroreflecterend verkeersbord grootteorde"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Wegreflector type"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Dwarse markering code verschuind"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Verkeersbord categorie"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Retroreflecterend Verkeersbord Merk"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Kleur markering"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Dwarse markering code"
       }
     },
     {
@@ -24370,6 +24528,27 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
+        "nl": "Boomspiegel"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Vegetatieelement hoogte"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "aanplantingswijze sierbeplanting"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
         "nl": "Plantmaat houtige vegetatie"
       }
     },
@@ -24399,27 +24578,6 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "Boomtoestand meerwaardefactor"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Boomspiegel"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Vegetatieelement hoogte"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "aanplantingswijze sierbeplanting"
       }
     },
     {
@@ -24475,20 +24633,6 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "Vegetatie wortel"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Klasse plantjaar"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
         "nl": "Boom conditiebeoordeling"
       }
     },
@@ -24504,6 +24648,20 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "Sierbeplanting type"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Vegetatie wortel"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Klasse plantjaar"
       }
     },
     {
@@ -24622,34 +24780,6 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "CBV oppervlaktebehandeling"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Plaatsingswijze"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "randafwerking"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Type supplementen CBV"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
         "nl": "Steenslag type"
       }
     },
@@ -24672,6 +24802,34 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "Scheurremmende laag type"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "CBV oppervlaktebehandeling"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Plaatsingswijze"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "randafwerking"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Type supplementen CBV"
       }
     },
     {
@@ -24846,14 +25004,14 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "Helling"
+        "nl": "Talud waarde"
       }
     },
     {
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "Talud waarde"
+        "nl": "Helling"
       }
     },
     {
@@ -24881,6 +25039,20 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
+        "nl": "Binnenverlichtingstoestel soort lamp"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Lichtmast leverancier"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
         "nl": "Contactpunt type"
       }
     },
@@ -24895,7 +25067,14 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "Binnenverlichtingstoestel soort lamp"
+        "nl": "WV-mast aantal armen"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Draagconstructie beschermlaag"
       }
     },
     {
@@ -24917,27 +25096,6 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "lichtmast type"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Lichtmast leverancier"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "WV-mast aantal armen"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Draagconstructie beschermlaag"
       }
     },
     {
@@ -25007,20 +25165,6 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "HS-beveiligingscel merk"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Meetcel nauwkeurigheidsklasse"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
         "nl": "Batterij modelnaam"
       }
     },
@@ -25036,6 +25180,20 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "Batterij merk"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "HS-beveiligingscel merk"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Meetcel nauwkeurigheidsklasse"
       }
     },
     {
@@ -25112,6 +25270,34 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
+        "nl": "Energiemeter DNB uurtarief"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Meetcel veiligheidsfactor"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Klimatisatie merk"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Toegangscontrole sleuteltype"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
         "nl": "Transformator trafobeveiliging"
       }
     },
@@ -25134,34 +25320,6 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "Weergegeven vervoersmodi op kaart"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Energiemeter DNB uurtarief"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Meetcel veiligheidsfactor"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Hoppinzuil type"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "PCI-kaart modelnaam"
       }
     },
     {
@@ -25197,6 +25355,20 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "IO bit snelheid"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Hoppinzuil type"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "PCI-kaart modelnaam"
       }
     },
     {
@@ -25302,20 +25474,6 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "Cabine aardingsstelsel"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Klimatisatie merk"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Toegangscontrole sleuteltype"
       }
     },
     {
@@ -25483,6 +25641,34 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
+        "nl": "Intercomtoestel merk"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Intercomserver merk"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Luidspreker modelnaam"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Audioversterker modelnaam"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
         "nl": "Luidspreker vormgeving"
       }
     },
@@ -25540,34 +25726,6 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "Brandblusser blusmiddel"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Intercomtoestel merk"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Intercomserver merk"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Luidspreker modelnaam"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Audioversterker modelnaam"
       }
     },
     {
@@ -25756,6 +25914,13 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
+        "nl": "Armatuurkleur"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
         "nl": "Voorschakelapparaat type"
       }
     },
@@ -25764,6 +25929,20 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "Hoogtedetectie modelnaam"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Dyn bord PK modelnaam"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Weegsensor merk"
       }
     },
     {
@@ -25785,20 +25964,6 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "Weegsensor type"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Dyn bord PK modelnaam"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Weegsensor merk"
       }
     },
     {
@@ -25882,48 +26047,6 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "Seinbrug type"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Neerslagsensor type"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Neerslagsensor merk"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "WIM-datalogger modelnaam"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Neerslagsensor modelnaam"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Power over ethernet injector merk"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
         "nl": "Keuzelijst modelnamen voor dynamische borden op maat"
       }
     },
@@ -25973,6 +26096,48 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
+        "nl": "Seinbrug type"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Neerslagsensor type"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Neerslagsensor merk"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "WIM-datalogger modelnaam"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Neerslagsensor modelnaam"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Power over ethernet injector merk"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
         "nl": "Power over ethernet injector modelnaam"
       }
     },
@@ -25988,6 +26153,48 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "Bevestigingsbeugel type"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Camera beeldverwerkingstypes"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "ANPR modelnaam"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Omvormer merk"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Keuzelijst met modellen van Externe PU"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Seinbrug rijrichting"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Serviceprioriteit"
       }
     },
     {
@@ -26037,34 +26244,6 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "repeater modelnaam"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "ANPR modelnaam"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Omvormer merk"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Keuzelijst met modellen van Externe PU"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Seinbrug rijrichting"
       }
     },
     {
@@ -26309,48 +26488,6 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "Externedetectie communicatiewijze"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Drukknop modelnaam"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Detectiecamera modelnaam"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Weggebondendetector modelnaam"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Radar merk"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "VRI-lus soort voertuig"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
         "nl": "Detectiecamera detectieprincipe"
       }
     },
@@ -26414,14 +26551,42 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "Opstelling"
+        "nl": "Externedetectie communicatiewijze"
       }
     },
     {
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "Schermelement type"
+        "nl": "Drukknop modelnaam"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Detectiecamera modelnaam"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Weggebondendetector modelnaam"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Radar merk"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "VRI-lus soort voertuig"
       }
     },
     {
@@ -26442,14 +26607,14 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "Typepomp merk"
+        "nl": "Opstelling"
       }
     },
     {
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
-        "nl": "Verwarmingselement merk"
+        "nl": "Schermelement type"
       }
     },
     {
@@ -26464,6 +26629,20 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "Putrooster"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Typepomp merk"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Verwarmingselement merk"
       }
     },
     {
