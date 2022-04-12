@@ -60,7 +60,7 @@
         },
         {
           "sh:class": "http://data.europa.eu/m8g/PublicOrganisation",
-          "sh:description": "Verijwzing naar de organisatie die de erkenning heeft toegekend aan de feitelijke vereniging.",
+          "sh:description": "Verwijzing naar de organisatie die de erkenning heeft toegekend aan de feitelijke vereniging.",
           "sh:minCount": "1",
           "sh:name": "toegekendDoor",
           "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#toegekenddoor"
@@ -115,17 +115,17 @@
           "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geldigheidsperiodeErkenning"
         },
         {
+          "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
+          "sh:description": "De erkenning die toegekend wordt op basis van de ingediende erkenningsaanvraag.",
+          "sh:maxCount": "1",
+          "sh:name": "heeftResultaat",
+          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geeftrechtOp"
+        },
+        {
           "sh:class": "http://data.europa.eu/m8g/Evidence",
           "sh:description": "Bewijsstuk(ken) dat moet(en) voorgelegd worden om de erkenning te kunnen verkrijgen.",
           "sh:name": "input",
           "sh:path": "http://purl.org/vocab/cpsv#hasInput"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning",
-          "sh:description": "De erkenning die toegekend wordt op basis van de ingediende erkenningsaanvraag.",
-          "sh:maxCount": "1",
-          "sh:name": "resultaat",
-          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geeftrechtOp"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -157,6 +157,7 @@
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+          "sh:description": "De feitelijke vereniging heeft een suborganisatie.",
           "sh:name": "^heeftSuborganisatie",
           "sh:path": "http://www.w3.org/ns/org#hasSubOrganization"
         },
@@ -168,6 +169,7 @@
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+          "sh:description": "De feitelijke vereniging is een suborganisatie van een andere feitelijke vereniging.",
           "sh:name": "^isSuborganisatieVan",
           "sh:path": "http://www.w3.org/ns/org#subOrganizationOf"
         },
@@ -206,17 +208,18 @@
           "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftErkenning"
         },
         {
+          "sh:class": "http://purl.org/dc/terms/Agent",
+          "sh:description": "Verwijzing naar de vertegenwoordiger van de feitelijke vereniging.",
+          "sh:name": "heeftVertegenwoordiger",
+          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVertegenwoordiger"
+        },
+        {
           "sh:class": "http://www.w3.org/ns/adms#Identifier",
           "sh:description": "Identificator van het object.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "identificator",
           "sh:path": "http://www.w3.org/ns/adms#Identifier"
-        },
-        {
-          "sh:class": "http://purl.org/dc/terms/Agent",
-          "sh:name": "vertegenwoordiger",
-          "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#vertegenwoordiger"
         },
         {
           "sh:class": "http://purl.org/vocab/cpsv#PublicService",
@@ -368,6 +371,7 @@
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging",
+          "sh:description": "De vertegenwoordiger is een positie in de feitelijke vereniging.",
           "sh:name": "^isPositieIn",
           "sh:path": "https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#isPositieIn"
         },
@@ -418,6 +422,13 @@
           "sh:path": "http://purl.org/dc/terms/description"
         },
         {
+          "sh:class": "http://data.europa.eu/m8g/PublicOrganisation",
+          "sh:description": "Publieke organisatie die verantwoordelijk is voor het aanbieden en beheren van de publieke dienstverlening.",
+          "sh:minCount": "1",
+          "sh:name": "heeftVerantwoordelijke",
+          "sh:path": "http://data.europa.eu/m8g/hasCompetentAuthority"
+        },
+        {
           "sh:class": "http://data.europa.eu/m8g/Cost",
           "sh:description": "Kostprijs verbonden aan het gebruik van de publieke dienstverlening.",
           "sh:name": "kost",
@@ -436,13 +447,6 @@
           "sh:description": "Het werkelijke resultaat van de uitvoering vd Publieke Dienstverlening.",
           "sh:name": "produceert",
           "sh:path": "https://purl.org/vocab/cpsv#produces"
-        },
-        {
-          "sh:class": "http://data.europa.eu/m8g/PublicOrganisation",
-          "sh:description": "Publieke organisatie die verantwoordelijk is voor het aanbieden en beheren van de publieke dienstverlening.",
-          "sh:minCount": "1",
-          "sh:name": "verantwoordelijke",
-          "sh:path": "http://data.europa.eu/m8g/hasCompetentAuthority"
         }
       ],
       "sh:targetClass": "http://purl.org/vocab/cpsv#PublicService"

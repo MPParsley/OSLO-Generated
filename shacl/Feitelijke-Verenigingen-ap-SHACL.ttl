@@ -184,7 +184,7 @@
     shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geldigheidsperiode>
   ], [
     shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
-    shacl:description "Verijwzing naar de organisatie die de erkenning heeft toegekend aan de feitelijke vereniging.";
+    shacl:description "Verwijzing naar de organisatie die de erkenning heeft toegekend aan de feitelijke vereniging.";
     shacl:minCount 1;
     shacl:name "toegekendDoor";
     shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#toegekenddoor>
@@ -229,16 +229,16 @@
     shacl:name "geldigheidsperiodeErkenning";
     shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geldigheidsperiodeErkenning>
   ], [
+    shacl:class <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning>;
+    shacl:description "De erkenning die toegekend wordt op basis van de ingediende erkenningsaanvraag.";
+    shacl:maxCount 1;
+    shacl:name "heeftResultaat";
+    shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geeftrechtOp>
+  ], [
     shacl:class <http://data.europa.eu/m8g/Evidence>;
     shacl:description "Bewijsstuk(ken) dat moet(en) voorgelegd worden om de erkenning te kunnen verkrijgen.";
     shacl:name "input";
     shacl:path <http://purl.org/vocab/cpsv#hasInput>
-  ], [
-    shacl:class <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#Erkenning>;
-    shacl:description "De erkenning die toegekend wordt op basis van de ingediende erkenningsaanvraag.";
-    shacl:maxCount 1;
-    shacl:name "resultaat";
-    shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#geeftrechtOp>
   ], [
     shacl:class skos:Concept;
     shacl:description "De aard van de erkenning.";
@@ -267,6 +267,7 @@
     shacl:path schema:contactPoint
   ], [
     shacl:class <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging>;
+    shacl:description "De feitelijke vereniging heeft een suborganisatie.";
     shacl:name "^heeftSuborganisatie";
     shacl:path org:hasSubOrganization
   ], [
@@ -276,6 +277,7 @@
     shacl:path org:hasSite
   ], [
     shacl:class <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging>;
+    shacl:description "De feitelijke vereniging is een suborganisatie van een andere feitelijke vereniging.";
     shacl:name "^isSuborganisatieVan";
     shacl:path org:subOrganizationOf
   ], [
@@ -308,16 +310,17 @@
     shacl:name "heeftErkenning";
     shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftErkenning>
   ], [
+    shacl:class dc:Agent;
+    shacl:description "Verwijzing naar de vertegenwoordiger van de feitelijke vereniging.";
+    shacl:name "heeftVertegenwoordiger";
+    shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#heeftVertegenwoordiger>
+  ], [
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
     shacl:description "Identificator van het object.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "identificator";
     shacl:path <http://www.w3.org/ns/adms#Identifier>
-  ], [
-    shacl:class dc:Agent;
-    shacl:name "vertegenwoordiger";
-    shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#vertegenwoordiger>
   ], [
     shacl:class <http://purl.org/vocab/cpsv#PublicService>;
     shacl:description "Verwijzing naar de publieke dienstverlening die de feitelijke vereniging aanvraagt.";
@@ -557,6 +560,12 @@
     shacl:name "beschrijving";
     shacl:path dc:description
   ], [
+    shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
+    shacl:description "Publieke organisatie die verantwoordelijk is voor het aanbieden en beheren van de publieke dienstverlening.";
+    shacl:minCount 1;
+    shacl:name "heeftVerantwoordelijke";
+    shacl:path <http://data.europa.eu/m8g/hasCompetentAuthority>
+  ], [
     shacl:class <http://data.europa.eu/m8g/Cost>;
     shacl:description "Kostprijs verbonden aan het gebruik van de publieke dienstverlening.";
     shacl:name "kost";
@@ -573,12 +582,6 @@
     shacl:description "Het werkelijke resultaat van de uitvoering vd Publieke Dienstverlening.";
     shacl:name "produceert";
     shacl:path <https://purl.org/vocab/cpsv#produces>
-  ], [
-    shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
-    shacl:description "Publieke organisatie die verantwoordelijk is voor het aanbieden en beheren van de publieke dienstverlening.";
-    shacl:minCount 1;
-    shacl:name "verantwoordelijke";
-    shacl:path <http://data.europa.eu/m8g/hasCompetentAuthority>
   ];
   shacl:targetClass <http://purl.org/vocab/cpsv#PublicService> .
 
@@ -625,6 +628,7 @@
     shacl:path schema:contactPoint
   ], [
     shacl:class <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#FeitelijkeVereniging>;
+    shacl:description "De vertegenwoordiger is een positie in de feitelijke vereniging.";
     shacl:name "^isPositieIn";
     shacl:path <https://data.vlaanderen.be/ns/FeitelijkeVerenigingen#isPositieIn>
   ], [
