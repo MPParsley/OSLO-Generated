@@ -24,6 +24,8 @@
   rdfs:range rdf:langString .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#Block.endTime> a owl:DatatypeProperty;
+  rdfs:label "eindtijd"@nl;
+  rdfs:comment "Tijd waarop het Blok eindigt."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Block>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range xsd:dateTime .
@@ -36,11 +38,15 @@
   rdfs:range rdf:langString .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#Block.startTime> a owl:DatatypeProperty;
+  rdfs:label "starttijd"@nl;
+  rdfs:comment "Tijd wanneer het Blok start."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Block>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range xsd:dateTime .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#Block.workedOn> a owl:ObjectProperty;
+  rdfs:label "gewerkt op"@nl;
+  rdfs:comment "Dag Type wanneer de Blok gewerkt wordt."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Block>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#DayType> .
@@ -192,6 +198,8 @@
   rdfs:range skos:Concept .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#DeadRunPattern> a owl:Class;
+  rdfs:label "Onbeladen Ritpatroon"@nl;
+  rdfs:comment "Ritpatroon dat wordt gebruikt voor de onbeladen rit."@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern> .
 
@@ -618,7 +626,7 @@ beschrijvende informatie."""@nl;
   rdfs:range <http://www.w3.org/ns/locn#Address> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#Operator.country> a owl:DatatypeProperty;
-  rdfs:label "Land"@nl;
+  rdfs:label "land"@nl;
   rdfs:comment "Verwijzing naar het land."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Operator>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
@@ -643,20 +651,6 @@ beschrijvende informatie."""@nl;
   rdfs:comment "Projectie van de parkeerplaats."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
-
-<https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.scheduledStopPoint> a owl:ObjectProperty;
-  rdfs:label "gepland Stoppunt"@nl;
-  rdfs:comment "Referentie naar verbonden klasse."@nl;
-  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment>;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
-  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint> .
-
-<https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment.stopPlace> a owl:ObjectProperty;
-  rdfs:label "stopplaats"@nl;
-  rdfs:comment "Referentie naar verbonden klasse."@nl;
-  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment>;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
-  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#Point.name> a owl:DatatypeProperty;
   rdfs:label "naam"@nl;
@@ -784,7 +778,7 @@ beschrijvende informatie."""@nl;
   rdfs:range xsd:integer .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay.country> a owl:ObjectProperty;
-  rdfs:label "Land"@nl;
+  rdfs:label "land"@nl;
   rdfs:comment "Land van vakantietype."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
@@ -1085,6 +1079,55 @@ beschrijvende informatie."""@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyPattern> .
 
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.arrivalStop> a owl:ObjectProperty;
+  rdfs:label "aankomst stopplaats"@nl;
+  rdfs:comment "Stopplaats waar de Link aankomt."@nl;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.arrivalTime> a owl:DatatypeProperty;
+  rdfs:label "aankomsttijd"@nl;
+  rdfs:comment "Aankomsttijd."@nl;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:dateTime .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.departureStop> a owl:ObjectProperty;
+  rdfs:label "vertrek stopplaats"@nl;
+  rdfs:comment "Stopplaats waar de Link vertrekt."@nl;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.departureTime> a owl:DatatypeProperty;
+  rdfs:label "vertrektijd"@nl;
+  rdfs:comment "Tijd wanneer de Link vertrekt."@nl;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:dateTime .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.forAlighting> a owl:DatatypeProperty;
+  rdfs:label "om af te stappen"@nl;
+  rdfs:comment "Geeft aan of de stopplaats kan worden gebruikt voor het afstappen."@nl;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.forBoarding> a owl:DatatypeProperty;
+  rdfs:label "om op te stappen"@nl;
+  rdfs:comment "Geeft aan of de stopplaats kan worden gebruikt voor het instappen."@nl;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.line> a owl:ObjectProperty;
+  rdfs:label "lijn"@nl;
+  rdfs:comment "De lijn."@nl;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Line> .
+
 <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyPattern.madeUpOf> a owl:ObjectProperty;
   rdfs:label "bestaande uit"@nl;
   rdfs:comment "De stoppunten in ritpatroon die samen het dienstpatroon vormen."@nl;
@@ -1285,7 +1328,7 @@ beschrijvende informatie."""@nl;
   rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#LightingType> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace.locale> a owl:ObjectProperty;
-  rdfs:label "Locale"@nl;
+  rdfs:label "locale"@nl;
   rdfs:comment "Locale instellingen van de tijdzone, standaardtaal, enz., voor de stopplaats."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
@@ -1518,7 +1561,7 @@ beschrijvende informatie."""@nl;
 
 <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney.in> a owl:ObjectProperty;
   rdfs:label "in"@nl;
-  rdfs:comment "Ritten opgenomen in het blok."@nl;
+  rdfs:comment "Blok waar de Rit deel van uitmaakt."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Block> .
@@ -1650,22 +1693,12 @@ beschrijvende informatie."""@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range xsd:integer .
 
-<https://purl.eu/ns/mobility/timetables-and-planning#arrivalStop> a owl:ObjectProperty;
-  rdfs:label "aankomst stopplaats"@nl;
-  rdfs:comment "Stopplaats waar de Link aankomt."@nl;
-  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink>;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
-  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint> .
-
 <https://purl.eu/ns/mobility/timetables-and-planning#arrivalTime> a owl:DatatypeProperty;
   rdfs:label "aankomsttijd"@nl;
-  rdfs:comment "Aankomsttijd op punt in patroon."@nl,
-    "Aankomsttijd."@nl;
-  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime>,
-    <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink>;
+  rdfs:comment "Aankomsttijd op punt in patroon."@nl;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#TimeTabledPassingTime>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
-  rdfs:range xsd:time,
-    xsd:dateTime .
+  rdfs:range xsd:time .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#at> a owl:ObjectProperty;
   rdfs:label "bij"@nl;
@@ -1682,6 +1715,8 @@ beschrijvende informatie."""@nl;
   rdfs:range xsd:boolean .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#belongingTo> a owl:ObjectProperty;
+  rdfs:label "behoort tot"@nl;
+  rdfs:comment "Garage waar het Garagepunt toebehoort."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#GaragePoint>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Garage> .
@@ -1780,6 +1815,8 @@ beschrijvende informatie."""@nl;
   rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#crewBase> a owl:ObjectProperty;
+  rdfs:label "bemanningsbasis"@nl;
+  rdfs:comment "Bemanningsbasis bij de Garage."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Garage>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#CrewBase> .
@@ -1811,11 +1848,12 @@ beschrijvende informatie."""@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range skos:Concept .
 
-<https://purl.eu/ns/mobility/timetables-and-planning#dayOfYear> a rdf:Property;
+<https://purl.eu/ns/mobility/timetables-and-planning#dayOfYear> a owl:DatatypeProperty;
   rdfs:label "dag van het jaar"@nl;
   rdfs:comment "Voor die dagtypes die elk jaar op dezelfde dag plaatsvinden, maand en dag."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay>;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:gMonthDay .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#dayType> a owl:ObjectProperty;
   rdfs:label "dagtype"@nl;
@@ -1849,20 +1887,6 @@ beschrijvende informatie."""@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range xsd:integer .
-
-<https://purl.eu/ns/mobility/timetables-and-planning#departureStop> a owl:ObjectProperty;
-  rdfs:label "vertrek stopplaats"@nl;
-  rdfs:comment "Stopplaats waar de Link vertrekt."@nl;
-  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink>;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
-  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint> .
-
-<https://purl.eu/ns/mobility/timetables-and-planning#departureTime> a owl:DatatypeProperty;
-  rdfs:label "vertrektijd"@nl;
-  rdfs:comment "Tijd wanneer de Link vertrekt."@nl;
-  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink>;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
-  rdfs:range xsd:dateTime .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#describedBy> a owl:ObjectProperty;
   rdfs:label "beschreven door"@nl;
@@ -1900,6 +1924,8 @@ beschrijvende informatie."""@nl;
   rdfs:range xsd:integer .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#endedAt> a owl:ObjectProperty;
+  rdfs:label "eindigt op"@nl;
+  rdfs:comment "Parkeerpunt waar het Blok eindigt."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Block>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint> .
@@ -1911,6 +1937,13 @@ beschrijvende informatie."""@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#StopPlaceEntrance> .
 
+<https://purl.eu/ns/mobility/timetables-and-planning#entrance> a owl:ObjectProperty;
+  rdfs:label "ingang"@nl;
+  rdfs:comment "Ingang van de Point of Interest."@nl;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance> .
+
 <https://purl.eu/ns/mobility/timetables-and-planning#entranceType> a owl:ObjectProperty;
   rdfs:label "toegangstype"@nl;
   rdfs:comment "Type ingang van de site."@nl;
@@ -1919,7 +1952,7 @@ beschrijvende informatie."""@nl;
   rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#EntranceType> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#euroClass> a owl:DatatypeProperty;
-  rdfs:label "Euro-klasse"@nl;
+  rdfs:label "euro-klasse"@nl;
   rdfs:comment "Euro-klasse van het voertuigtype."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleType>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
@@ -1940,7 +1973,7 @@ beschrijvende informatie."""@nl;
   rdfs:range skos:Concept .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#fequencyRegulated> a owl:DatatypeProperty;
-  rdfs:label "Gereguleerde frequentie"@nl;
+  rdfs:label "gereguleerde frequentie"@nl;
   rdfs:comment "Geeft aan of de frequentie valt onder de regelgevende overeenkomst of niet."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#JourneyFrequency>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
@@ -1952,6 +1985,13 @@ beschrijvende informatie."""@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Block>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range xsd:duration .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#flexible> a owl:DatatypeProperty;
+  rdfs:label "flexibel"@nl;
+  rdfs:comment "Geeft aan of de parkeerplaats flexibel is."@nl;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:boolean .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#flexibleLineView> a rdf:Property;
   rdfs:label "flexibele lijn view"@nl;
@@ -1971,18 +2011,6 @@ beschrijvende informatie."""@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace> .
-
-<https://purl.eu/ns/mobility/timetables-and-planning#forAlighting> a owl:DatatypeProperty;
-  rdfs:label "om af te stappen"@nl;
-  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink>;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
-  rdfs:range xsd:boolean .
-
-<https://purl.eu/ns/mobility/timetables-and-planning#forBoarding> a owl:DatatypeProperty;
-  rdfs:label "om op te stappen"@nl;
-  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink>;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
-  rdfs:range xsd:boolean .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#frequency> a owl:ObjectProperty;
   rdfs:label "frequentie"@nl;
@@ -2019,14 +2047,16 @@ beschrijvende informatie."""@nl;
 
 <https://purl.eu/ns/mobility/timetables-and-planning#image> a owl:DatatypeProperty;
   rdfs:label "afbeelding"@nl;
-  rdfs:comment "TODO"@nl;
-  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace>;
+  rdfs:comment "TODO"@nl,
+    "Afbeelding van de garage."@nl;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace>,
+    <https://purl.eu/ns/mobility/timetables-and-planning#Garage>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range xsd:anyURI .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#including> a owl:ObjectProperty;
   rdfs:label "bevat"@nl;
-  rdfs:comment "TODO"@nl;
+  rdfs:comment "Ritten opgenomen in het blok."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Block>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney> .
@@ -2067,7 +2097,7 @@ beschrijvende informatie."""@nl;
   rdfs:range xsd:string .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#journeyPart> a owl:ObjectProperty;
-  rdfs:label "Ritdeel"@nl;
+  rdfs:label "ritdeel"@nl;
   <http://purl.org/vocab/vann/usageNote> "Alleen voor een multi-part-reis."@nl;
   rdfs:comment "Reis een deel van een reis."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney>;
@@ -2089,10 +2119,8 @@ beschrijvende informatie."""@nl;
 
 <https://purl.eu/ns/mobility/timetables-and-planning#line> a owl:ObjectProperty;
   rdfs:label "lijn"@nl;
-  rdfs:comment "Lijn waarmee de route geassocieerd is."@nl,
-    "De lijn."@nl;
-  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Route>,
-    <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink>;
+  rdfs:comment "Lijn waarmee de route geassocieerd is."@nl;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Route>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Line> .
 
@@ -2140,8 +2168,15 @@ beschrijvende informatie."""@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Line> .
 
+<https://purl.eu/ns/mobility/timetables-and-planning#managedBy> a owl:ObjectProperty;
+  rdfs:label "beheert door"@nl;
+  rdfs:comment "Bemanningsbasis die het Parkeerpunt beheert."@nl;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#CrewBase> .
+
 <https://purl.eu/ns/mobility/timetables-and-planning#maximumHeadwayInterval> a owl:DatatypeProperty;
-  rdfs:label "Maximaal volgtijdinterval"@nl;
+  rdfs:label "maximaal volgtijdinterval"@nl;
   rdfs:comment "Maximaal volgtijdinterval."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#HeadwayInterval>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
@@ -2155,7 +2190,7 @@ beschrijvende informatie."""@nl;
   rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#StopPlace> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#minimumHeadwayInterval> a owl:DatatypeProperty;
-  rdfs:label "Minimaal volgtijdinterval"@nl;
+  rdfs:label "minimaal volgtijdinterval"@nl;
   rdfs:comment "Minimaal volgtijdinterval."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#HeadwayInterval>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
@@ -2168,11 +2203,12 @@ beschrijvende informatie."""@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range xsd:boolean .
 
-<https://purl.eu/ns/mobility/timetables-and-planning#monthOfYear> a rdf:Property;
+<https://purl.eu/ns/mobility/timetables-and-planning#monthOfYear> a owl:DatatypeProperty;
   rdfs:label "maand van het jaar"@nl;
   rdfs:comment "Voor die dagsoorten die elk jaar op dezelfde maand voorkomen; een maand als een nummer."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay>;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range xsd:gMonth .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#nearTopographicPlace> a owl:ObjectProperty;
   rdfs:label "nabije topografische plaats"@nl;
@@ -2210,7 +2246,7 @@ beschrijvende informatie."""@nl;
   rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#OperatingPeriod> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#operator> a owl:ObjectProperty;
-  rdfs:label "Operator"@nl;
+  rdfs:label "operator"@nl;
   rdfs:comment "Verwijzing naar een operator."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourney>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
@@ -2331,7 +2367,7 @@ beschrijvende informatie."""@nl;
   rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Route> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#scheduledHeadwayInterval> a owl:DatatypeProperty;
-  rdfs:label "Gepland volgtijdinterval"@nl;
+  rdfs:label "gepland volgtijdinterval"@nl;
   rdfs:comment "Geplande volgtijdinterval."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#HeadwayInterval>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
@@ -2396,6 +2432,8 @@ beschrijvende informatie."""@nl;
   rdfs:range xsd:integer .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#startedAt> a owl:ObjectProperty;
+  rdfs:label "start op"@nl;
+  rdfs:comment "Parkeerpunt waar het Blok start."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Block>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint> .
@@ -2484,6 +2522,19 @@ beschrijvende informatie."""@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#Timeband> .
 
+<https://purl.eu/ns/mobility/timetables-and-planning#timingPointType> a rdf:Property;
+  rdfs:label "type"@nl;
+  rdfs:comment "Type timingpunt."@nl;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#timingpointStatus> a owl:ObjectProperty;
+  rdfs:label "tijdspuntstatus"@nl;
+  rdfs:comment "Timing compliance-status van het punt."@nl;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint>;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#TimingpointStatus> .
+
 <https://purl.eu/ns/mobility/timetables-and-planning#topographicPlaceType> a rdf:Property;
   rdfs:label "topografische plaats type"@nl;
   rdfs:comment "Categorisering van de topografische plaats."@nl;
@@ -2537,7 +2588,7 @@ beschrijvende informatie."""@nl;
   rdfs:range skos:Concept .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#uicCode> a owl:DatatypeProperty;
-  rdfs:label "Uic-code"@nl;
+  rdfs:label "uic-code"@nl;
   rdfs:comment "Uic-code van het land."@nl;
   rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#Country>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
@@ -2575,9 +2626,9 @@ beschrijvende informatie."""@nl;
 <https://purl.eu/ns/mobility/timetables-and-planning#variant> a owl:ObjectProperty;
   rdfs:label "variant"@nl;
   rdfs:comment "Variant van het bestemmingsdisplay."@nl;
-  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant>;
+  rdfs:domain <https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay>;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
-  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay> .
+  rdfs:range <https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#vehicleType> a owl:ObjectProperty;
   rdfs:label "voertuigtype"@nl;
@@ -2634,8 +2685,15 @@ beschrijvende informatie."""@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#GaragePoint> a owl:Class;
+  rdfs:label "Garagepunt"@nl;
+  rdfs:comment "Parkeerplaats in een Garage."@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment> a owl:Class;
+  rdfs:label "Passagier Stopplaatstoewijzing"@nl;
+  rdfs:comment "Een Passagier Stopplaatstoewijzing is de toewijzing van een Geplande Stopplaats aan een fysieke Stopplaats."@nl;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#ServiceFacilitySet> a owl:Class;
   rdfs:label "Dienst faciliteitenset"@nl;
@@ -2643,9 +2701,16 @@ beschrijvende informatie."""@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#StopPlaceEntrance> a owl:Class;
+  rdfs:label "Stopplaatstoegang"@nl;
+  rdfs:comment "Fysieke toegang of uitgang naar/van een stopplaats voor een passagier."@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#SiteElement>,
     <https://purl.eu/ns/mobility/timetables-and-planning#SiteEntrance> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#TimingPoint> a owl:Class;
+  rdfs:label "Tijdspunt."@nl;
+  rdfs:comment "Tijdspunt"@nl;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#TrainNumber> a owl:Class;
   rdfs:label "Treinnummer"@nl;
@@ -2653,10 +2718,14 @@ beschrijvende informatie."""@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#DeadRun> a owl:Class;
+  rdfs:label "Onbeladen Rit"@nl;
+  rdfs:comment "Een rit waarbij geen dienst wordt geleverd."@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#VehicleJourney> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities> a owl:Class;
+  rdfs:label "Groep van Entiteiten"@nl;
+  rdfs:comment "Een set Entiteiten die zijn gegroepeerd volgens een doel van groepering, b.v. groepering van haltes die bij het publiek bekend zijn onder een gemeenschappelijke naam."@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPart> a owl:Class;
@@ -2698,13 +2767,12 @@ beschrijvende informatie."""@nl;
     <http://fixme.com#Transportnetwerk> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#NoticeAssignment> a owl:Class;
-  rdfs:label "opmerking"@nl;
+  rdfs:label "Opmerking"@nl;
   rdfs:comment "De toewijzing van een kennisgeving aan een entiteit."@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
-<https://purl.eu/ns/mobility/timetables-and-planning#PassengerStopAssignment> a owl:Class;
-  rdfs:label "Passagier Stopplaatstoewijzing"@nl;
-  rdfs:comment "Een Passagier Stopplaatstoewijzing is de toewijzing van een Geplande Stopplaats aan een fysieke Stopplaats."@nl;
+<https://purl.eu/ns/mobility/timetables-and-planning#PointInLinkSequence> a owl:Class;
+  rdfs:label "Punt in Linksequentie"@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#Via> a owl:Class;
@@ -2744,7 +2812,7 @@ beschrijvende informatie."""@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant> a owl:Class;
-  rdfs:label "Bestemmingsdisplay"@nl;
+  rdfs:label "Bestemmingsdisplayvariant"@nl;
   rdfs:comment "Variant van een bepaald bestemmingsdisplay, zoals nodig is voor verschillende mediakanalen (elektronische, afgedrukte, audio, mobiele app, enz.)."@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
@@ -2766,11 +2834,6 @@ beschrijvende informatie."""@nl;
   rdfs:comment "Verzameling van dagtype-toewijzingen."@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
-<https://purl.eu/ns/mobility/timetables-and-planning#CrewBase> a owl:Class;
-  rdfs:label "Bemanningsbasis"@nl;
-  rdfs:comment "Een plaats waar opererende werknemers (bijvoorbeeld bestuurders) rapporteren en hun werk registreren."@nl;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
-
 <https://purl.eu/ns/mobility/timetables-and-planning#Direction> a owl:Class;
   rdfs:label "Richting"@nl;
   rdfs:comment "Vermeldt de relatieve richting van het gebruik van een lijn, b.v. \"North Bound\", \"South Bound\", etc."@nl;
@@ -2788,7 +2851,14 @@ beschrijvende informatie."""@nl;
   rdfs:comment "Een continu interval tussen twee operationele dagen die zullen worden gebruikt om de geldigheid te definiëren."@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
+<https://purl.eu/ns/mobility/timetables-and-planning#CrewBase> a owl:Class;
+  rdfs:label "Bemanningsbasis"@nl;
+  rdfs:comment "Een plaats waar opererende werknemers (bijvoorbeeld bestuurders) rapporteren en hun werk registreren."@nl;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
 <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfStopPlaces> a owl:Class;
+  rdfs:label "Groep van Stopplaatsen"@nl;
+  rdfs:comment "Een groep Stopplaatsen waarnaar vaak wordt verwezen voor een specifiek doel (haltes op een luchthaven, hoofdhaltes van een stad, enz.)."@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#GroupOfEntities> .
 
@@ -2856,10 +2926,6 @@ De Geplande Doorkomsttijden zijn normaliter een lange tijd voordat ze ingaan gep
   rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#Link>,
     <http://fixme.com#Transportlink> .
 
-<https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint> a owl:Class;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
-  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#ReliefPoint> .
-
 <https://purl.eu/ns/mobility/timetables-and-planning#JourneyPattern> a owl:Class;
   rdfs:label "Ritpatroon"@nl;
   rdfs:comment """Het Ritpatroon geeft een ruimtelijke beschrijving van de dienst, m.a.w. hoe deze ruimtelijk wordt uitgevoerd. Waar Routes en Lijnen het pad weergeven dat in het netwerk wordt gevolgd, zegt het Ritpatroon hoe deze paden worden uitgevoerd. Als het om een Dienstpatroon gaat beschrijft het Ritpatroon de volgorde van punten waar wordt gestopt (de Geplande Stopplaatsen) met hun Doorkomsttijden. 
@@ -2870,17 +2936,17 @@ Het Ritpatroon is geassocieerd met de Route die ze volgt, meerdere Ritpatronen k
     <http://fixme.com#Transportlinksequentie>,
     <http://fixme.com#Route> .
 
-<https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest> a owl:Class;
-  rdfs:label "Point of Interest"@nl;
-  rdfs:comment "Een soort plaats waarnaar of waardoor passagiers misschien willen navigeren als onderdeel van hun rit en die in detail wordt gemodelleerd door reisplanners."@nl;
-  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
-  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#Site> .
-
 <https://purl.eu/ns/mobility/timetables-and-planning#DayType> a owl:Class;
   rdfs:label "Dagtype"@nl;
   <http://purl.org/vocab/vann/usageNote> "Bijvoorbeeld: weekdag in schoolvakanties."@nl;
   rdfs:comment "Een type dag gekenmerkt door een of meer eigenschappen die van invloed zijn op het openbaar vervoer."@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
+
+<https://purl.eu/ns/mobility/timetables-and-planning#PointOfInterest> a owl:Class;
+  rdfs:label "Point of Interest"@nl;
+  rdfs:comment "Een soort plaats waarnaar of waardoor passagiers misschien willen navigeren als onderdeel van hun rit en die in detail wordt gemodelleerd door reisplanners."@nl;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#Site> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#Route> a owl:Class;
   rdfs:label "Route"@nl;
@@ -2901,12 +2967,20 @@ Het Ritpatroon is geassocieerd met de Route die ze volgt, meerdere Ritpatronen k
   rdfs:comment "Een geïdentificeerde verdieping (gelijkvloers, eerste, kelder, mezzanine, enz.) Binnen een uitwisselingsgebouw of site waarop sitecomponenten verblijven."@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
+<https://purl.eu/ns/mobility/timetables-and-planning#ParkingPoint> a owl:Class;
+  rdfs:label "Parkeerplaats"@nl;
+  rdfs:comment "Een parkeerplaats waar voertuigen voor een lange tijd onbeheerd kunnen blijven."@nl;
+  rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
+  rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#ReliefPoint> .
+
 <https://purl.eu/ns/mobility/timetables-and-planning#PropertyOfDay> a owl:Class;
   rdfs:label "Eigenschap van Dag"@nl;
   rdfs:comment "Een eigenschap die een dag kan bezitten, zoals schoolvakantie, weekdag, zomer, winter etc."@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#Block> a owl:Class;
+  rdfs:label "Blok"@nl;
+  rdfs:comment "Het werk van een voertuig vanaf het moment dat het een parkeerplaats verlaat totdat het de volgende keer op een parkeerplaats parkeert."@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#VehicleType> a owl:Class;
@@ -2934,6 +3008,8 @@ Het Ritpatroon is geassocieerd met de Route die ze volgt, meerdere Ritpatronen k
   rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#Journey> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#Garage> a owl:Class;
+  rdfs:label "Garage"@nl;
+  rdfs:comment "Faciliteit gebruikt voor het parkeren en onderhoud van voertuigen."@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#AddressablePlace> .
 
@@ -2943,6 +3019,8 @@ Het Ritpatroon is geassocieerd met de Route die ze volgt, meerdere Ritpatronen k
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#Quay> a owl:Class;
+  rdfs:label "Perron"@nl;
+  rdfs:comment "Een plaats zoals een platform, bushalte, stand of perron waar passagiers toegang hebben tot openbaar vervoer voertuigen, taxi, auto's of ander vervoermiddel."@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:subClassOf <https://purl.eu/ns/mobility/timetables-and-planning#SiteElement>,
     <https://purl.eu/ns/mobility/timetables-and-planning#StopPlaceSpace> .
@@ -2969,6 +3047,8 @@ Het Ritpatroon is geassocieerd met de Route die ze volgt, meerdere Ritpatronen k
   rdfs:subClassOf <http://fixme.com#Mobiliteitsdienst> .
 
 <https://purl.eu/ns/mobility/timetables-and-planning#TopographicPlace> a owl:Class;
+  rdfs:label "Topografische Plaats"@nl;
+  rdfs:comment "Een geografische nederzetting die topografische context biedt bij het zoeken of presenteren van reisinformatie, bijvoorbeeld als de oorsprong of de bestemming van een reis."@nl;
   rdfs:isDefinedBy <https://purl.eu/ns/mobility/timetables-and-planning>;
   rdfs:subClassOf dc:Location .
 
@@ -2984,13 +3064,13 @@ Het Ritpatroon is geassocieerd met de Route die ze volgt, meerdere Ritpatronen k
   dc:contributor [
     a foaf:Person;
     schema:affiliation [foaf:name "De Lijn"];
-    foaf:firstName "Mitchel";
-    foaf:lastName "Desmet"
+    foaf:firstName "Wim";
+    foaf:lastName "Van Laere"
   ], [
     a foaf:Person;
-    schema:affiliation [foaf:name "Taxistop vzw"];
-    foaf:firstName "Tjalle";
-    foaf:lastName "Groen"
+    schema:affiliation [foaf:name "De Lijn"];
+    foaf:firstName "Mitchel";
+    foaf:lastName "Desmet"
   ], [
     a foaf:Person;
     schema:affiliation [foaf:name "MIVB"];
@@ -3013,9 +3093,9 @@ Het Ritpatroon is geassocieerd met de Route die ze volgt, meerdere Ritpatronen k
     foaf:lastName "Smeulders"
   ], [
     a foaf:Person;
-    schema:affiliation [foaf:name "De Lijn"];
-    foaf:firstName "Wim";
-    foaf:lastName "Van Laere"
+    schema:affiliation [foaf:name "Taxistop vzw"];
+    foaf:firstName "Tjalle";
+    foaf:lastName "Groen"
   ], [
     a foaf:Person;
     schema:affiliation [foaf:name "De Lijn"];

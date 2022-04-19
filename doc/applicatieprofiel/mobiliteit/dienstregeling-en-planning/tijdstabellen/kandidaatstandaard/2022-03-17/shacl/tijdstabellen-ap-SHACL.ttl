@@ -352,6 +352,7 @@
     shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplay.sideText>
   ], [
     shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#DestinationDisplayVariant>;
+    shacl:description "Variant van het bestemmingsdisplay.";
     shacl:name "variant";
     shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#variant>
   ], [
@@ -1109,6 +1110,7 @@
     shacl:name "dayOfWeek";
     shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#dayOfWeek>
   ], [
+    shacl:datatype xsd:gMonthDay;
     shacl:description "Voor die dagtypes die elk jaar op dezelfde dag plaatsvinden, maand en dag.";
     shacl:maxCount 1;
     shacl:name "dayOfYear";
@@ -1127,6 +1129,7 @@
     shacl:name "holidayType";
     shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#holidayType>
   ], [
+    shacl:datatype xsd:gMonth;
     shacl:description "Voor die dagsoorten die elk jaar op dezelfde maand voorkomen; een maand als een nummer.";
     shacl:maxCount 1;
     shacl:name "monthOfYear";
@@ -1301,7 +1304,8 @@
     shacl:class skos:Concept;
     shacl:description "Timing compliance-status van het punt.";
     shacl:maxCount 1;
-    shacl:name "^timingpointStatus"
+    shacl:name "^timingpointStatus";
+    shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#timingpointStatus>
   ], [
     shacl:datatype rdf:langString;
     shacl:description "Beschrijving van het geplande stoppunt.";
@@ -1410,47 +1414,49 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "arrivalStop";
-    shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#arrivalStop>
+    shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.arrivalStop>
   ], [
     shacl:datatype xsd:dateTime;
     shacl:description "Aankomsttijd.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "arrivalTime";
-    shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#arrivalTime>
+    shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.arrivalTime>
   ], [
     shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#ScheduledStopPoint>;
     shacl:description "Stopplaats waar de Link vertrekt.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "departureStop";
-    shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#departureStop>
+    shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.departureStop>
   ], [
     shacl:datatype xsd:dateTime;
     shacl:description "Tijd wanneer de Link vertrekt.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "departureTime";
-    shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#departureTime>
+    shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.departureTime>
   ], [
     shacl:datatype xsd:boolean;
+    shacl:description "Geeft aan of de Link is om af te stappen.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "forAlighting";
-    shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#forAlighting>
+    shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.forAlighting>
   ], [
     shacl:datatype xsd:boolean;
+    shacl:description "Geeft aan of de Link is om op te stappen.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "forBoarding";
-    shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#forBoarding>
+    shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.forBoarding>
   ], [
     shacl:class <https://purl.eu/ns/mobility/timetables-and-planning#Line>;
     shacl:description "De lijn.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "line";
-    shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#line>
+    shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink.line>
   ];
   shacl:targetClass <https://purl.eu/ns/mobility/timetables-and-planning#ServiceJourneyLink> .
 
@@ -1539,6 +1545,7 @@
     shacl:name "^distance";
     shacl:path <https://purl.eu/ns/mobility/timetables-and-planning#ServiceLink.distance>
   ], [
+    shacl:class <http://www.opengis.net/ont/sf#LineString>;
     shacl:description "Lijnstring die de dienstverbinding aangeeft.";
     shacl:maxCount 1;
     shacl:name "^linestring";
