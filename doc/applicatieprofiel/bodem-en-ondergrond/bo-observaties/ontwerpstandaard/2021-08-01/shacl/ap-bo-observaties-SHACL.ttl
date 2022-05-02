@@ -3,6 +3,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schemas: <https://schema.org/> .
 @prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://data.vlaanderen.be/shacl/ap-bo-observaties> <https://data.vlaanderen.be/shacl/ap-bo-observatiesshapes> <https://data.vlaanderen.be/shacl/ap-bo-observaties#BoorgatmetingShape>,
@@ -29,26 +30,32 @@
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#PeriodeShape>,
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#GeneriekeNaamShape>,
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#GeneriekDatatypeShape>,
-    <https://data.vlaanderen.be/shacl/ap-bo-observaties#TM_InstantShape>,
-    <https://data.vlaanderen.be/shacl/ap-bo-observaties#TM_ObjectShape>,
-    <https://data.vlaanderen.be/shacl/ap-bo-observaties#TM_PeriodShape>,
+    <https://data.vlaanderen.be/shacl/ap-bo-observaties#MomentShape>,
+    <https://data.vlaanderen.be/shacl/ap-bo-observaties#TemporeleEntiteitShape>,
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#KenmerktypeShape>,
-    <https://data.vlaanderen.be/shacl/ap-bo-observaties#CI_ResponsiblePartyShape>,
-    <https://data.vlaanderen.be/shacl/ap-bo-observaties#DQ_ElementShape>,
-    <https://data.vlaanderen.be/shacl/ap-bo-observaties#DQ_PositionalAccuracyShape>,
-    <https://data.vlaanderen.be/shacl/ap-bo-observaties#LI_LineageShape>,
+    <https://data.vlaanderen.be/shacl/ap-bo-observaties#BetrokkenPartijShape>,
+    <https://data.vlaanderen.be/shacl/ap-bo-observaties#KwaliteitselementShape>,
+    <https://data.vlaanderen.be/shacl/ap-bo-observaties#PositioneleNauwkeurigheidShape>,
+    <https://data.vlaanderen.be/shacl/ap-bo-observaties#HerkomstShape>,
+    <https://data.vlaanderen.be/shacl/ap-bo-observaties#DiscreetCurvebereikShape>,
+    <https://data.vlaanderen.be/shacl/ap-bo-observaties#DiscreetBereikObservatieShape>,
+    <https://data.vlaanderen.be/shacl/ap-bo-observaties#BoorgatShape>,
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#ObjectShape>,
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#BenoemdeWaardeShape>,
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#ObservatieShape>,
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#ProcesShape>,
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#BemonsteringsobjectShape>,
-    <https://data.vlaanderen.be/shacl/ap-bo-observaties#BoorgatShape>,
+    <https://data.vlaanderen.be/shacl/ap-bo-observaties#MonsterShape>,
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#AgentShape>,
+    <https://data.vlaanderen.be/shacl/ap-bo-observaties#ObservatieproceduretypeShape>,
+    <https://data.vlaanderen.be/shacl/ap-bo-observaties#BemonsteringsobjecttypeShape>,
+    <https://data.vlaanderen.be/shacl/ap-bo-observaties#ObservatietypeShape>,
+    <https://data.vlaanderen.be/shacl/ap-bo-observaties#OutputTypeShape>,
+    <https://data.vlaanderen.be/shacl/ap-bo-observaties#InputTypeShape>,
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#IdentificatorShape>,
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#ProcedureShape>,
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#InputShape>,
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#OutputShape>,
-    <https://data.vlaanderen.be/shacl/ap-bo-observaties#BemonsteringsobjecttypeShape>,
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#FractiemetingShape>,
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#FractiemetingresultaatShape>,
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#FractiemetingwaardeShape>,
@@ -56,13 +63,6 @@
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#OpdrachtShape>,
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#StandaardEenheidShape>,
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#GrondmonsterShape>,
-    <https://data.vlaanderen.be/shacl/ap-bo-observaties#DiscreetBereikObservatieShape>,
-    <https://data.vlaanderen.be/shacl/ap-bo-observaties#MonsterShape>,
-    <https://data.vlaanderen.be/shacl/ap-bo-observaties#ObservatietypeShape>,
-    <https://data.vlaanderen.be/shacl/ap-bo-observaties#DiscreetCurvebereikShape>,
-    <https://data.vlaanderen.be/shacl/ap-bo-observaties#InputTypeShape>,
-    <https://data.vlaanderen.be/shacl/ap-bo-observaties#ObservatieproceduretypeShape>,
-    <https://data.vlaanderen.be/shacl/ap-bo-observaties#OutputTypeShape>,
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#GetalShape>,
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#KwantitatieveWaardeShape>,
     <https://data.vlaanderen.be/shacl/ap-bo-observaties#ObservatieprocedureShape>,
@@ -93,37 +93,37 @@
     shacl:description "Verwijzing naar de informatie die het Bemonsteringsobject uniek identificeert.";
     shacl:minCount 1;
     shacl:name "identificator";
-    shacl:path <https://data.vlaanderen.be/ns/observaties-en-metingen#identificator>
+    shacl:path <https://data.vlaanderen.be/ns/observaties-en-metingen#Bemonsteringsobject.identificator>
   ], [
     shacl:class <http://def.isotc211.org/iso19156/2011/Observation#NamedValue>;
     shacl:description "Willekeurig gegeven gassocieerd met het Bemonsteringsobject.";
     shacl:name "parameter";
     shacl:path <http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature.parameter>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Bemonsteringsobjecttype>;
+    shacl:class skos:Concept;
     shacl:description "Aard van het Bemonsteringsobject.";
     shacl:maxCount 1;
     shacl:name "type";
-    shacl:path <https://data.vlaanderen.be/ns/observaties-en-metingen#type>
+    shacl:path <http://purl.org/cd/terms/type>
   ];
   shacl:targetClass <http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature> .
 
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#BemonsteringsobjecttypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Bemonsteringsobjecttype> .
+  shacl:targetClass skos:Concept .
 
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#BenoemdeWaardeShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
     shacl:class <http://def.isotc211.org/iso19103/2005/Names#GenericName>;
-    shacl:description "TODO";
+    shacl:description "Naam vh type van de waarde.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "naam";
     shacl:path <http://def.isotc211.org/iso19156/2011/Observation#NamedValue.name>
   ], [
     shacl:class <http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Any>;
-    shacl:description "TODO";
+    shacl:description "Kwalitatieve of kwantitatieve invulling van de waarde.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "waarde";
@@ -131,9 +131,13 @@
   ];
   shacl:targetClass <http://def.isotc211.org/iso19156/2011/Observation#NamedValue> .
 
+<https://data.vlaanderen.be/shacl/ap-bo-observaties#BetrokkenPartijShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://def.isotc211.org/iso19115/2006/CitationAndResponsiblePartyInformation#CI_ResponsibleParty> .
+
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#BoorgatShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://fixme.com#Boorgat> .
+  shacl:targetClass <http://def.isotc211.org/iso19156/2011/DomainSpecificSamplingFeatures#Borehole> .
 
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#BoorgatmetingShape> a shacl:NodeShape;
   shacl:closed false;
@@ -150,10 +154,6 @@
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#BreukcriteriumShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass <https://data.vlaanderen.be/ns/bo-observaties#Breukcriterium> .
-
-<https://data.vlaanderen.be/shacl/ap-bo-observaties#CI_ResponsiblePartyShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <http://def.isotc211.org/iso19115/2006/CitationAndResponsiblePartyInformation#CI_ResponsibleParty> .
 
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#CVmetingShape> a shacl:NodeShape;
   shacl:closed false;
@@ -181,21 +181,13 @@
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/bo-observaties#CVmeting> .
 
-<https://data.vlaanderen.be/shacl/ap-bo-observaties#DQ_ElementShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_Element> .
-
-<https://data.vlaanderen.be/shacl/ap-bo-observaties#DQ_PositionalAccuracyShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_PositionalAccuracy> .
-
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#DiscreetBereikObservatieShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/observaties-en-metingen#DiscreetBereikObservatie> .
+  shacl:targetClass <http://def.isotc211.org/iso19156/2011/CoverageObservation#OM_DiscreteCoverageObservation> .
 
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#DiscreetCurvebereikShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/ruimtelijke-bereiken#DiscreetCurveBereik> .
+  shacl:targetClass <http://def.isotc211.org/iso19123/2005/DiscreteCoverages#CV_DiscreteCurveCoverage> .
 
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#DoorlatendheidsproefCVShape> a shacl:NodeShape;
   shacl:closed false;
@@ -331,10 +323,10 @@
   shacl:closed false;
   shacl:property [
     shacl:class <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemetingwaarde>;
-    shacl:description "TODO";
+    shacl:description "Eén waarde in het resultaat van een Fractiemeting.";
     shacl:minCount 1;
     shacl:name "fractiemetingwaarde";
-    shacl:path <https://data.vlaanderen.be/ns/bodem-en-ondergrond#fractiemetingwaarde>
+    shacl:path <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemetingresultaat.fractiemetingwaarde>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemetingresultaat> .
 
@@ -342,29 +334,29 @@
   shacl:closed false;
   shacl:property [
     shacl:class schemas:QuantitativeValue;
-    shacl:description "TODO";
+    shacl:description "Waarde van het meetpunt.";
     shacl:maxCount 1;
     shacl:name "meetpunt";
-    shacl:path <https://data.vlaanderen.be/ns/bodem-en-ondergrond#meetpunt>
+    shacl:path <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemetingwaarde.meetpunt>
   ], [
     shacl:class schemas:QuantitativeValue;
-    shacl:description "TODO";
+    shacl:description "Bovengrens van een klasse van waarden van meetpunten.";
     shacl:maxCount 1;
     shacl:name "meetpuntBovengrens";
-    shacl:path <https://data.vlaanderen.be/ns/bodem-en-ondergrond#meetpuntBovengrens>
+    shacl:path <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemetingwaarde.meetpuntBovengrens>
   ], [
     shacl:class schemas:QuantitativeValue;
-    shacl:description "TODO";
+    shacl:description "Ondergrens van een klasse van waarden van meetpunten.";
     shacl:maxCount 1;
     shacl:name "meetpuntOndergrens";
-    shacl:path <https://data.vlaanderen.be/ns/bodem-en-ondergrond#meetpuntOndergrens>
+    shacl:path <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemetingwaarde.meetpuntOndergrens>
   ], [
     shacl:class schemas:QuantitativeValue;
-    shacl:description "TODO";
+    shacl:description "Waarde van de fractie.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "meetwaarde";
-    shacl:path <https://data.vlaanderen.be/ns/bodem-en-ondergrond#meetwaarde>
+    shacl:path <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemetingwaarde.meetpuntwaarde>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Fractiemetingwaarde> .
 
@@ -404,7 +396,7 @@
     shacl:maxCount 1;
     shacl:name "^huidigeLocatie"
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Materiaalklasse>;
+    shacl:class skos:Concept;
     shacl:description "Basisclassificatie vh materiaal waaruit het Grondmonster bestaat.";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -445,6 +437,10 @@
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/bo-observaties#HVVmeting> .
 
+<https://data.vlaanderen.be/shacl/ap-bo-observaties#HerkomstShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://def.isotc211.org/iso19115/2006/DataQualityInformation#LI_Lineage> .
+
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#IdentificatorShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass <http://www.w3.org/ns/adms#Identifier> .
@@ -453,12 +449,12 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype xsd:anyURI;
-    shacl:description "TODO";
+    shacl:description "Verwijzing naar originele Input.";
     shacl:maxCount 1;
     shacl:name "referentie";
-    shacl:path <http://fixme.com#referentie>
+    shacl:path <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Input.referentie>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#InputType>;
+    shacl:class skos:Concept;
     shacl:description "Aard van de input.";
     shacl:maxCount 1;
     shacl:name "type";
@@ -468,7 +464,7 @@
 
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#InputTypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#InputType> .
+  shacl:targetClass skos:Concept .
 
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#KenmerktypeShape> a shacl:NodeShape;
   shacl:closed false;
@@ -476,7 +472,7 @@
     shacl:class <https://www.w3.org/ns/sosa/Sensor>;
     shacl:description "Het kenmerktype van de gebruikte sensor tijdens de observatie.";
     shacl:name "isGeobserveerdMet";
-    shacl:path <http://fixme.com>
+    shacl:path <http://www.w3.org/ns/sosa/isObservedBy>
   ];
   shacl:targetClass <http://def.isotc211.org/iso19109/2005/GeneralFeatureModel#GF_PropertyType> .
 
@@ -528,6 +524,10 @@
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/bo-observaties#Korrelverdeling> .
 
+<https://data.vlaanderen.be/shacl/ap-bo-observaties#KwaliteitselementShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_Element> .
+
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#KwantitatieveWaardeShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
@@ -552,17 +552,17 @@
   ];
   shacl:targetClass schemas:QuantitativeValue .
 
-<https://data.vlaanderen.be/shacl/ap-bo-observaties#LI_LineageShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <http://def.isotc211.org/iso19115/2006/DataQualityInformation#LI_Lineage> .
-
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#MeetreeksShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Meetreeks> .
 
+<https://data.vlaanderen.be/shacl/ap-bo-observaties#MomentShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Instant> .
+
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#MonsterShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/observaties-en-metingen#Monster> .
+  shacl:targetClass <http://def.isotc211.org/iso19156/2011/Specimen#SF_Specimen> .
 
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#ObjectShape> a shacl:NodeShape;
   shacl:closed false;
@@ -570,7 +570,7 @@
     shacl:class <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation>;
     shacl:description "Observaties die op het Object gebeuren.";
     shacl:name "waardeverschaffer";
-    shacl:path <https://data.vlaanderen.be/ns/observaties-en-metingen#waardeverschaffer>
+    shacl:path <https://data.vlaanderen.be/ns/observaties-en-metingen#Object.waardeverschaffer>
   ];
   shacl:targetClass <http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature> .
 
@@ -592,7 +592,7 @@
     shacl:class <https://www.w3.org/TR/vocab-ssn/#SOSAProcedure>;
     shacl:description "De gebruikte procedure van de observatie.";
     shacl:name "gebruikteProcedure";
-    shacl:path <http://fixme.com>
+    shacl:path <http://www.w3.org/ns/sosa/usedProcedure>
   ], [
     shacl:class <http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Period>;
     shacl:description "Periode waarvoor het resultaat van de Observatie geldt.";
@@ -617,12 +617,12 @@
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
     shacl:description "De persoon of het ding dat dient om de observatie vast te stellen.";
     shacl:name "identificator";
-    shacl:path <https://data.vlaanderen.be/ns/observaties-en-metingen#identificator>
+    shacl:path <https://data.vlaanderen.be/ns/observaties-en-metingen#Observatie.identificator>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/bodem-en-ondergrond#Opdracht>;
-    shacl:description "Een te verrichten werk.";
+    shacl:description "Opdracht in het kader waarvan de Observatie plaatsvindt.";
     shacl:name "opdracht";
-    shacl:path <https://data.vlaanderen.be/ns/observaties-en-metingen#opdracht>
+    shacl:path <https://data.vlaanderen.be/ns/observaties-en-metingen#Observatie.opdracht>
   ], [
     shacl:class <http://def.isotc211.org/iso19156/2011/Observation#NamedValue>;
     shacl:description "Willekeurig gegeven gassocieerd met het gebeuren van de Observatie.";
@@ -648,22 +648,22 @@
     shacl:name "resultaattijd";
     shacl:path <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.resultTime>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/observaties-en-metingen#Observatietype>;
+    shacl:class skos:Concept;
     shacl:description "Het type van observatie.";
     shacl:name "type";
-    shacl:path <https://data.vlaanderen.be/ns/observaties-en-metingen#type>
+    shacl:path <http://purl.org/cd/terms/type>
   ], [
     shacl:class dc:Agent;
-    shacl:description "De persoon die de observatie heeft uitgevoerd.";
+    shacl:description "Agent die de Observatie heeft uitgevoerd.";
     shacl:name "uitgevoerdDoor";
-    shacl:path <https://data.vlaanderen.be/ns/observaties-en-metingen#uitgevoerdDoor>
+    shacl:path <https://data.vlaanderen.be/ns/observaties-en-metingen#Observatie.uitgevoerdDoor>
   ], [
     shacl:class <https://www.w3.org/ns/sosa/Sensor>;
-    shacl:description "De aanduiding die aangeeft of de observatie al dan niet met een sensor is uitgevoerd.";
+    shacl:description "Sensor waarmee de Observatie is uitgevoerd.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "uitgevoerdMetSensor";
-    shacl:path <http://fixme.com>
+    shacl:path <http://www.w3.org/ns/sosa/madeBySensor>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/observaties-en-metingen#Observatiecontext.observatie.target> .
 
@@ -706,27 +706,27 @@
     shacl:class <http://def.isotc211.org/iso19156/2011/Observation#NamedValue>;
     shacl:description "Willekeurig gegeven gassocieerd met de Observatieprocedure.";
     shacl:name "parameter";
-    shacl:path <http://fixme.com#parameter>
+    shacl:path <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Observatieprocedure.parameter>
   ], [
     shacl:datatype xsd:anyURI;
     shacl:description "Verwijzing naar een document dat de Observatieprocedure beschrijft.";
     shacl:name "specificatie";
-    shacl:path <http://fixme.com#specificatie>
+    shacl:path <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Observatieprocedure.specificatie>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Observatieproceduretype>;
-    shacl:description "TODO";
+    shacl:class skos:Concept;
+    shacl:description "Aard van de Observatieprocedure.";
     shacl:name "type";
-    shacl:path <http://fixme.com#type>
+    shacl:path <http://purl.org/cd/terms/type>
   ];
   shacl:targetClass <https://www.w3.org/TR/vocab-ssn/#SOSAProcedure> .
 
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#ObservatieproceduretypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Observatieproceduretype> .
+  shacl:targetClass skos:Concept .
 
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#ObservatietypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/observaties-en-metingen#Observatietype> .
+  shacl:targetClass skos:Concept .
 
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#OpdrachtShape> a shacl:NodeShape;
   shacl:closed false;
@@ -736,12 +736,12 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype xsd:anyURI;
-    shacl:description "TODO";
+    shacl:description "Verwijzing naar originele Output.";
     shacl:maxCount 1;
     shacl:name "referentie";
-    shacl:path <http://fixme.com#referentie>
+    shacl:path <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Output.referentie>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#OutputType>;
+    shacl:class skos:Concept;
     shacl:description "Aard van de Output.";
     shacl:maxCount 1;
     shacl:name "type";
@@ -751,7 +751,7 @@
 
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#OutputTypeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/sensoren-en-bemonstering#OutputType> .
+  shacl:targetClass skos:Concept .
 
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#PeriodeShape> a shacl:NodeShape;
   shacl:closed false;
@@ -769,7 +769,11 @@
     shacl:name "einde";
     shacl:path <http://data.europa.eu/m8g/endTime>
   ];
-  shacl:targetClass <http://data.europa.eu/m8g/PeriodOfTime> .
+  shacl:targetClass <http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Period> .
+
+<https://data.vlaanderen.be/shacl/ap-bo-observaties#PositioneleNauwkeurigheidShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_PositionalAccuracy> .
 
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#ProcedureShape> a shacl:NodeShape;
   shacl:closed false;
@@ -1094,17 +1098,9 @@
   shacl:closed false;
   shacl:targetClass <https://www.w3.org/TR/vocab-ssn/#ssn-system> .
 
-<https://data.vlaanderen.be/shacl/ap-bo-observaties#TM_InstantShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Instant> .
-
-<https://data.vlaanderen.be/shacl/ap-bo-observaties#TM_ObjectShape> a shacl:NodeShape;
+<https://data.vlaanderen.be/shacl/ap-bo-observaties#TemporeleEntiteitShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass <http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object> .
-
-<https://data.vlaanderen.be/shacl/ap-bo-observaties#TM_PeriodShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Period> .
 
 <https://data.vlaanderen.be/shacl/ap-bo-observaties#VVVmetingShape> a shacl:NodeShape;
   shacl:closed false;

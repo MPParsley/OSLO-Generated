@@ -1132,21 +1132,28 @@
       "sh:targetClass": "http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Any"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#TM_InstantShape",
+      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#RecordShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Record"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#MomentShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Instant"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#TM_ObjectShape",
+      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#TemporeleEntiteitShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#TM_PeriodShape",
+      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#PeriodeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
@@ -1161,17 +1168,38 @@
           "sh:class": "https://www.w3.org/ns/sosa/Sensor",
           "sh:description": "Het kenmerktype van de gebruikte sensor tijdens de observatie.",
           "sh:name": "isGeobserveerdMet",
-          "sh:path": "http://fixme.com"
+          "sh:path": "http://www.w3.org/ns/sosa/isObservedBy"
         }
       ],
       "sh:targetClass": "http://def.isotc211.org/iso19109/2005/GeneralFeatureModel#GF_PropertyType"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#DQ_ElementShape",
+      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#KwaliteitselementShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://def.isotc211.org/iso19115/2006/DataQualityInformation#DQ_Element"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#CurveWaardepaarShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://def.isotc211.org/iso19123/2005/CoverageCore#CV_CurveValuePair"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#DiscreetCurvebereikShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://def.isotc211.org/iso19123/2005/DiscreteCoverages#CV_DiscreteCurveCoverage"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#DiscreetBereikObservatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://def.isotc211.org/iso19156/2011/CoverageObservation#OM_DiscreteCoverageObservation"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#ObjectShape",
@@ -1182,7 +1210,7 @@
           "sh:class": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
           "sh:description": "Observaties die op het Object gebeuren.",
           "sh:name": "waardeverschaffer",
-          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#waardeverschaffer"
+          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#Object.waardeverschaffer"
         }
       ],
       "sh:targetClass": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature"
@@ -1194,7 +1222,7 @@
       "sh:property": [
         {
           "sh:class": "http://def.isotc211.org/iso19103/2005/Names#GenericName",
-          "sh:description": "TODO",
+          "sh:description": "Naam vh type van de waarde.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "naam",
@@ -1202,7 +1230,7 @@
         },
         {
           "sh:class": "http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Any",
-          "sh:description": "TODO",
+          "sh:description": "Kwalitatieve of kwantitatieve invulling van de waarde.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "waarde",
@@ -1234,7 +1262,7 @@
           "sh:class": "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure",
           "sh:description": "De gebruikte procedure van de observatie.",
           "sh:name": "gebruikteProcedure",
-          "sh:path": "http://fixme.com"
+          "sh:path": "http://www.w3.org/ns/sosa/usedProcedure"
         },
         {
           "sh:class": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Period",
@@ -1263,13 +1291,13 @@
           "sh:class": "http://www.w3.org/ns/adms#Identifier",
           "sh:description": "De persoon of het ding dat dient om de observatie vast te stellen.",
           "sh:name": "identificator",
-          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#identificator"
+          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatie.identificator"
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Opdracht",
-          "sh:description": "Een te verrichten werk.",
+          "sh:description": "Opdracht in het kader waarvan de Observatie plaatsvindt.",
           "sh:name": "opdracht",
-          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#opdracht"
+          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatie.opdracht"
         },
         {
           "sh:class": "http://def.isotc211.org/iso19156/2011/Observation#NamedValue",
@@ -1300,24 +1328,24 @@
           "sh:path": "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.resultTime"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatietype",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "Het type van observatie.",
           "sh:name": "type",
-          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#type"
+          "sh:path": "http://purl.org/cd/terms/type"
         },
         {
           "sh:class": "http://purl.org/dc/terms/Agent",
-          "sh:description": "De persoon die de observatie heeft uitgevoerd.",
+          "sh:description": "Agent die de Observatie heeft uitgevoerd.",
           "sh:name": "uitgevoerdDoor",
-          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#uitgevoerdDoor"
+          "sh:path": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatie.uitgevoerdDoor"
         },
         {
           "sh:class": "https://www.w3.org/ns/sosa/Sensor",
-          "sh:description": "De aanduiding die aangeeft of de observatie al dan niet met een sensor is uitgevoerd.",
+          "sh:description": "Sensor waarmee de Observatie is uitgevoerd.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "uitgevoerdMetSensor",
-          "sh:path": "http://fixme.com"
+          "sh:path": "http://www.w3.org/ns/sosa/madeBySensor"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatiecontext.observatie.target"
@@ -1337,25 +1365,46 @@
       "sh:targetClass": "http://def.isotc211.org/iso19156/2011/SamplingCurve#SF_SamplingCurve"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#CurveWaardepaarShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#CurveWaardepaar"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#ProfielelementShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#Profielelement"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#AgentShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://purl.org/dc/terms/Agent"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#CurveShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.opengis.net/ont/geosparql#Curve"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#ObservatietypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#ObservatieproceduretypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#InputTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#OutputTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#IdentificatorShape",
@@ -1378,13 +1427,13 @@
       "sh:property": [
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
-          "sh:description": "TODO",
+          "sh:description": "Verwijzing naar originele Input.",
           "sh:maxCount": "1",
           "sh:name": "referentie",
-          "sh:path": "http://fixme.com#referentie"
+          "sh:path": "https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Input.referentie"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/sensoren-en-bemonstering#InputType",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "Aard van de input.",
           "sh:maxCount": "1",
           "sh:name": "type",
@@ -1400,13 +1449,13 @@
       "sh:property": [
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
-          "sh:description": "TODO",
+          "sh:description": "Verwijzing naar originele Output.",
           "sh:maxCount": "1",
           "sh:name": "referentie",
-          "sh:path": "http://fixme.com#referentie"
+          "sh:path": "https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Output.referentie"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/sensoren-en-bemonstering#OutputType",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "Aard van de Output.",
           "sh:maxCount": "1",
           "sh:name": "type",
@@ -1421,27 +1470,27 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://data.vlaanderen.be/ns/generiek#Curve",
-          "sh:description": "TODO",
+          "sh:class": "http://www.opengis.net/ont/geosparql#Curve",
+          "sh:description": "Geometrie van het element.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "^geometrie",
-          "sh:path": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#^geometrie"
+          "sh:path": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_Curvewaardepaar.geometrie"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/generiek#Record",
-          "sh:description": "TODO",
+          "sh:class": "http://def.isotc211.org/iso19103/2005/RecordsAndClassMetadata#Record",
+          "sh:description": "Waarde van het element.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "^waarde",
-          "sh:path": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#^waarde"
+          "sh:path": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_Curvewaardepaar.waarde"
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Profielelement",
-          "sh:description": "TODO",
+          "sh:description": "Overeenstemmend Profielelement.",
           "sh:maxCount": "1",
           "sh:name": "laag",
-          "sh:path": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#laag"
+          "sh:path": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_Curvewaardepaar.laag"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#BO_CurveWaardepaar"
@@ -1454,11 +1503,11 @@
       "sh:targetClass": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Opdracht"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#CurveShape",
+      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#ProfielelementShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#Curve"
+      "sh:targetClass": "https://data.vlaanderen.be/ns/bodem-en-ondergrond#Profielelement"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#DirectePositieShape",
@@ -1473,7 +1522,7 @@
           "sh:path": "https://data.vlaanderen.be/ns/generiek#gml"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/generiek#Opmeting",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "De manier waarop het punt werd bepaald.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -1491,60 +1540,11 @@
       "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#DirectePositie"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#RecordShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#Record"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#StandaardEenheidShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#StandaardEenheid"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#DiscreetBereikObservatieShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/observaties-en-metingen#DiscreetBereikObservatie"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#ObservatietypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/observaties-en-metingen#Observatietype"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#DiscreetCurvebereikShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/ruimtelijke-bereiken#DiscreetCurveBereik"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#InputTypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/sensoren-en-bemonstering#InputType"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#ObservatieproceduretypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Observatieproceduretype"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#OutputTypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/sensoren-en-bemonstering#OutputType"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/ap-bo-interpretaties#GetalShape",
@@ -1610,19 +1610,19 @@
           "sh:class": "http://def.isotc211.org/iso19156/2011/Observation#NamedValue",
           "sh:description": "Willekeurig gegeven gassocieerd met de Observatieprocedure.",
           "sh:name": "parameter",
-          "sh:path": "http://fixme.com#parameter"
+          "sh:path": "https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Observatieprocedure.parameter"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
           "sh:description": "Verwijzing naar een document dat de Observatieprocedure beschrijft.",
           "sh:name": "specificatie",
-          "sh:path": "http://fixme.com#specificatie"
+          "sh:path": "https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Observatieprocedure.specificatie"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/sensoren-en-bemonstering#Observatieproceduretype",
-          "sh:description": "TODO",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Aard van de Observatieprocedure.",
           "sh:name": "type",
-          "sh:path": "http://fixme.com#type"
+          "sh:path": "http://purl.org/cd/terms/type"
         }
       ],
       "sh:targetClass": "https://www.w3.org/TR/vocab-ssn/#SOSAProcedure"

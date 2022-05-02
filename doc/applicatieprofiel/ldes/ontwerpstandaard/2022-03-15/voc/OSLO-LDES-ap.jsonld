@@ -47,7 +47,7 @@
   "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
   "namespace": null,
   "navigation": {},
-  "publication-date": "2022-03-15",
+  "publication-date": "2022-04-21",
   "publication-state": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
   "title": "OSLO-LDES",
   "dcterms:license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
@@ -72,53 +72,72 @@
       "usage": {}
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/ldes#AfgeleideEventStream",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "description": {
-        "nl": "Een event stream die is afgeleid van een andere event stream."
-      },
-      "name": {
-        "nl": "AfgeleideEventStream"
-      },
-      "parents": [
-        "https://w3id.org/ldes#EventStream"
-      ],
-      "usage": {
-        "nl": "Voorbeelden van afgeleide event streams zijn snapshots, versie-materialisaties, etc."
-      }
-    },
-    {
       "@id": "https://data.vlaanderen.be/ns/ldes#OnveranderlijkObject",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
-        "nl": "Een onveranderlijkObject is het basiselement van een Linked Data Event Stream."
+        "nl": "Een onveranderlijk object is een object wiens status niet meer kan veranderen nadat het werd gecreëerd."
       },
       "name": {
         "nl": "OnveranderlijkObject"
       },
-      "parents": [],
+      "parents": [
+        "https://data.vlaanderen.be/ns/ldes#CollectieLid"
+      ],
       "usage": {
-        "nl": "Een OnveranderlijkObject maakt deel uit van een Linked Data Event Stream en wordt beschreven d.m.v. RDF tripples. Het OnveranderlijkObject moet voldoen aan de shape vereisten van de LDES."
+        "nl": "Een onveranderlijk object is het basiselement van iedere Linked Data Event Stream en wordt beschreven a.d.h.v. RDF triples. "
       }
     },
     {
       "@id": "https://data.vlaanderen.be/ns/ldes#RootNode",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
-        "nl": "Een RootNode is een beginpagina, die zelf al leden kan bevatten, via wiens gelinkte paginas alle leden kunnen gevonden worden."
+        "nl": "Een rootnode is een beginpagina, die zelf al leden kan bevatten, via wiens gelinkte paginas alle leden kunnen gevonden worden."
       },
       "name": {
-        "nl": "RootNode"
+        "nl": "Rootnode"
       },
       "parents": [],
       "usage": {
-        "nl": "een tree:Node die verwezen wordt vanuit een ldes:EventStream via een tree:view property"
+        "nl": "Een tree:Node die verwezen wordt vanuit een ldes:EventStream via een tree:view property."
+      }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/ldes#Snapshot",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Een event stream van versies waarbij enkel laatste versie behouden blijft t.o.v. een opgegeven datum."
+      },
+      "name": {
+        "nl": "Snapshot"
+      },
+      "parents": [
+        "https://w3id.org/ldes#EventStream",
+        "https://www.w3.org/ns/dcat#Dataset"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/ldes#VeranderlijkObject",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Een veranderlijk object is een object wiens status nog kan veranderen nadat het werd gecreëerd."
+      },
+      "name": {
+        "nl": "VeranderlijkObject"
+      },
+      "parents": [
+        "https://data.vlaanderen.be/ns/ldes#CollectieLid"
+      ],
+      "usage": {
+        "nl": "Een veranderlijk object wordt gebruikt als basiselement van een dataset. "
       }
     },
     {
       "@id": "https://data.vlaanderen.be/ns/ldes#VersieEventStream",
       "@type": "http://www.w3.org/2002/07/owl#Class",
-      "description": {},
+      "description": {
+        "nl": "Een specifieke versie van een event stream."
+      },
       "name": {
         "nl": "VersieEventStream"
       },
@@ -130,23 +149,82 @@
     {
       "@id": "https://data.vlaanderen.be/ns/ldes#VersieMaterialisatie",
       "@type": "http://www.w3.org/2002/07/owl#Class",
-      "description": {},
+      "description": {
+        "nl": "Een snapshot waarbij de versie-identificatoren zijn vervangen door object-identificatoren."
+      },
       "name": {
         "nl": "VersieMaterialisatie"
       },
       "parents": [
-        "https://data.vlaanderen.be/ns/ldes#AfgeleideCollectie"
+        "https://w3id.org/tree#Collection",
+        "https://www.w3.org/ns/dcat#Dataset"
       ],
       "usage": {}
     }
   ],
   "properties": [
     {
-      "@id": "https://data.vlaanderen.be/ns/ldes#versieMaterialisatieTot",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "description": {},
+      "@id": "https://data.vlaanderen.be/ns/ldes#^lid",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Een lid maakt deel uit van de collectie."
+      },
       "domain": [
         "https://data.vlaanderen.be/ns/ldes#VersieMaterialisatie"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "lid"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/ldes#VeranderlijkObject"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/ldes#eventstreamView",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "De event stream view connecteert de collectie met de rootnode zodanig dat alle leden van de collectie gevonden kunnen worden."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/ldes#RootNode"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "eventstreamView"
+      },
+      "range": [
+        "https://w3id.org/tree#view"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/ldes#retentiebeleid",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Een retentiebeleid is een beleid volgens welke elementen (i.e. data) verwijderd zullen worden."
+      },
+      "domain": [
+        "https://w3id.org/tree#view"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "retentiebeleid"
+      },
+      "range": [
+        "https://w3id.org/ldes#retentionPolicy"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/ldes#snapshotTot",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "description": {
+        "nl": "Het tijdstip tot wanneer versies werden verwerkt."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/ldes#Snapshot"
       ],
       "generalization": [],
       "name": {
@@ -158,9 +236,49 @@
       "usage": {}
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/ldes#versieMaterialisatieVan",
+      "@id": "https://data.vlaanderen.be/ns/ldes#snapshotVan",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {},
+      "description": {
+        "nl": "Verwijst naar de originele Linked Data Event Stream."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/ldes#Snapshot"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "snapshotVan"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/ldes#VersieEventStream"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/ldes#versieMaterialisatieTot",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "description": {
+        "nl": "Het tijdstip tot wanneer versies werden verwerkt."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/ldes#VersieMaterialisatie"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "versieMaterialisatieTot"
+      },
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#dateTime"
+      ],
+      "usage": {
+        "nl": "Het attribuut versieMaterialisatieTot geeft weer tot op welk moment de versies werden geaggregeerd."
+      }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/ldes#versiematerialisatieVan",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Verwijst naar de originele Linked Data Event Stream."
+      },
       "domain": [
         "https://data.vlaanderen.be/ns/ldes#VersieMaterialisatie"
       ],
@@ -169,12 +287,38 @@
         "nl": "versieMaterialisatieVan"
       },
       "range": [
-        "https://data.vlaanderen.be/ns/ldes#VersieEventStream"
+        "https://data.vlaanderen.be/ns/ldes#Snapshot"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/ldes#view",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Een rootnode is een beginpagina, die zelf al leden kan bevatten, via wiens gelinkte paginas alle leden kunnen gevonden worden."
+      },
+      "domain": [
+        "https://w3id.org/tree#view"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "rootNode"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/ldes#RootNode"
       ],
       "usage": {}
     }
   ],
-  "externals": [],
+  "externals": [
+    {
+      "@id": "https://w3id.org/tree#view",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "EventstreamView"
+      }
+    }
+  ],
   "externalproperties": [
     {
       "@id": "https://w3id.org/ldes#timestampPath",
@@ -195,6 +339,13 @@
       "@type": "rdf:Property",
       "name": {
         "nl": "^lid"
+      }
+    },
+    {
+      "@id": "https://w3id.org/tree#shape",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "shape"
       }
     },
     {

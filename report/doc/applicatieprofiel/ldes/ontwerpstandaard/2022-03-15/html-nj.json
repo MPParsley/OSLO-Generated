@@ -4,7 +4,7 @@
       "nl": "OSLO-LDES"
     },
     "uri": "https://data.vlaanderen.be/ns/ldes",
-    "issued": "2022-03-15",
+    "issued": "2022-04-21",
     "baseURI": "https://data.vlaanderen.be/ns/ldes#",
     "filename": "OSLO-LDES-ap",
     "navigation": {
@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-ldes/tree/904cdac0636ffaea4387afdad76bae632a2ac070",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-ldes/blob/904cdac0636ffaea4387afdad76bae632a2ac070/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-ldes/tree/aff8cc5393e3f01772625b640830d701bc967331",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-ldes/blob/aff8cc5393e3f01772625b640830d701bc967331/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-ldes/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/standaard-in-ontwikkeling/vocabularia-en-applicatieprofielen-ldes.html",
     "usesVocs": [],
@@ -47,7 +47,9 @@
             "nl": "afgeleidVan"
           },
           "sort_nl": "afgeleidVan",
-          "description": {},
+          "description": {
+            "nl": "Een afleiding is een transformatie van de ene entiteit in een andere, een update van de ene entiteit naar een nieuwe, of de constructie van een nieuwe entiteit gebaseerd op een reeds bestaande entiteit."
+          },
           "usage": {},
           "domain": [
             {
@@ -76,17 +78,88 @@
       ]
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/ldes#AfgeleideEventStream",
+      "uri": "https://data.vlaanderen.be/ns/ldes#OnveranderlijkObject",
       "name": {
-        "nl": "AfgeleideEventStream"
+        "nl": "OnveranderlijkObject"
       },
-      "sort_nl": "AfgeleideEventStream",
+      "sort_nl": "OnveranderlijkObject",
       "description": {
-        "nl": "Een event stream die is afgeleid van een andere event stream."
+        "nl": "Een onveranderlijk object is een object wiens status niet meer kan veranderen nadat het werd gecreëerd."
       },
       "usage": {
-        "nl": "Voorbeelden van afgeleide event streams zijn snapshots, versie-materialisaties, etc."
+        "nl": "Een onveranderlijk object is het basiselement van iedere Linked Data Event Stream en wordt beschreven a.d.h.v. RDF triples. "
       },
+      "parents": [
+        {
+          "name": "CollectieLid",
+          "label": "CollectieLid",
+          "package": "OSLO LDES",
+          "uri": "https://data.vlaanderen.be/ns/ldes#CollectieLid",
+          "scoped_uri": "#CollectieLid"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/ldes#RootNode",
+      "name": {
+        "nl": "Rootnode"
+      },
+      "sort_nl": "Rootnode",
+      "description": {
+        "nl": "Een rootnode is een beginpagina, die zelf al leden kan bevatten, via wiens gelinkte paginas alle leden kunnen gevonden worden."
+      },
+      "usage": {
+        "nl": "Een tree:Node die verwezen wordt vanuit een ldes:EventStream via een tree:view property."
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/ldes#eventstreamView",
+          "name": {
+            "nl": "eventstreamView"
+          },
+          "sort_nl": "eventstreamView",
+          "description": {
+            "nl": "De event stream view connecteert de collectie met de rootnode zodanig dat alle leden van de collectie gevonden kunnen worden."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/ldes#RootNode",
+              "EA-Name": "RootNode"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "EventstreamView",
+              "range_uri": "https://w3id.org/tree#view"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#EventstreamView",
+              "range_puri": "https://w3id.org/tree#view",
+              "range_label": {
+                "nl": "EventstreamView"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/ldes#Snapshot",
+      "name": {
+        "nl": "Snapshot"
+      },
+      "sort_nl": "Snapshot",
+      "description": {
+        "nl": "Een event stream van versies waarbij enkel laatste versie behouden blijft t.o.v. een opgegeven datum."
+      },
+      "usage": {},
       "parents": [
         {
           "name": "EventStream",
@@ -94,71 +167,177 @@
           "package": "LDES",
           "uri": "https://w3id.org/ldes#EventStream",
           "scoped_uri": "#EventStream"
+        },
+        {
+          "name": "Dataset",
+          "label": "Dataset",
+          "package": "hulppakket",
+          "uri": "https://www.w3.org/ns/dcat#Dataset",
+          "scoped_uri": "#Dataset"
         }
       ],
       "properties": [
         {
-          "uri": "http://purl.org/pav/derivedfrom",
+          "uri": "https://data.vlaanderen.be/ns/ldes#snapshotTot",
           "name": {
-            "nl": "afgeleidVan"
+            "nl": "versieMaterialisatieTot"
           },
-          "sort_nl": "afgeleidVan",
-          "description": {},
+          "sort_nl": "versieMaterialisatieTot",
+          "description": {
+            "nl": "Het tijdstip tot wanneer versies werden verwerkt."
+          },
           "usage": {},
           "domain": [
             {
-              "uri": "https://data.vlaanderen.be/ns/ldes#AfgeleideEventStream",
-              "EA-Name": "AfgeleideEventStream"
+              "uri": "https://data.vlaanderen.be/ns/ldes#Snapshot",
+              "EA-Name": "Snapshot"
             }
           ],
           "range": [
             {
-              "range_label": "EventStream",
-              "range_uri": "https://w3id.org/ldes#EventStream"
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#EventStream",
-              "range_puri": "https://w3id.org/ldes#EventStream",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
               "range_label": {
-                "nl": "EventStream"
+                "nl": "DateTime"
               }
             }
           ],
-          "cardinality": "1..*",
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/ldes#snapshotVan",
+          "name": {
+            "nl": "snapshotVan"
+          },
+          "sort_nl": "snapshotVan",
+          "description": {
+            "nl": "Verwijst naar de originele Linked Data Event Stream."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/ldes#Snapshot",
+              "EA-Name": "Snapshot"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "VersieEventStream",
+              "range_uri": "https://data.vlaanderen.be/ns/ldes#VersieEventStream"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#VersieEventStream",
+              "range_puri": "https://data.vlaanderen.be/ns/ldes#VersieEventStream",
+              "range_label": {
+                "nl": "VersieEventStream"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://w3id.org/tree#member",
+          "name": {
+            "nl": "^lid"
+          },
+          "sort_nl": "^lid",
+          "description": {
+            "nl": "Een lid maakt deel uit van de collectie."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/ldes#Snapshot",
+              "EA-Name": "Snapshot"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "OnveranderlijkObject",
+              "range_uri": "https://data.vlaanderen.be/ns/ldes#OnveranderlijkObject"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#OnveranderlijkObject",
+              "range_puri": "https://data.vlaanderen.be/ns/ldes#OnveranderlijkObject",
+              "range_label": {
+                "nl": "OnveranderlijkObject"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://w3id.org/tree#shape",
+          "name": {
+            "nl": "shape"
+          },
+          "sort_nl": "shape",
+          "description": {
+            "nl": "Een bepaalde shape aan welke alle elementen in de event stream moeten voldoen."
+          },
+          "usage": {
+            "nl": "Een shape wordt opgelegd aan alle elementen van de LDES. Voorbeelden van zo'n shape zijn SHACL en ShEx. De shape moet cohorent zijn doorheen heel de Linked Data Event Stream."
+          },
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/ldes#Snapshot",
+              "EA-Name": "Snapshot"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Shape",
+              "range_uri": "http://www.w3.org/ns/shacl#NodeShape"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Shape",
+              "range_puri": "http://www.w3.org/ns/shacl#NodeShape",
+              "range_label": {
+                "nl": "Shape"
+              }
+            }
+          ],
+          "cardinality": "1",
           "codelist_uri": ""
         }
       ]
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/ldes#OnveranderlijkObject",
+      "uri": "https://data.vlaanderen.be/ns/ldes#VeranderlijkObject",
       "name": {
-        "nl": "OnveranderlijkObject"
+        "nl": "VeranderlijkObject"
       },
-      "sort_nl": "OnveranderlijkObject",
+      "sort_nl": "VeranderlijkObject",
       "description": {
-        "nl": "Een onveranderlijkObject is het basiselement van een Linked Data Event Stream."
+        "nl": "Een veranderlijk object is een object wiens status nog kan veranderen nadat het werd gecreëerd."
       },
       "usage": {
-        "nl": "Een OnveranderlijkObject maakt deel uit van een Linked Data Event Stream en wordt beschreven d.m.v. RDF tripples. Het OnveranderlijkObject moet voldoen aan de shape vereisten van de LDES."
+        "nl": "Een veranderlijk object wordt gebruikt als basiselement van een dataset. "
       },
-      "parents": [],
-      "properties": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/ldes#RootNode",
-      "name": {
-        "nl": "RootNode"
-      },
-      "sort_nl": "RootNode",
-      "description": {
-        "nl": "Een RootNode is een beginpagina, die zelf al leden kan bevatten, via wiens gelinkte paginas alle leden kunnen gevonden worden."
-      },
-      "usage": {
-        "nl": "een tree:Node die verwezen wordt vanuit een ldes:EventStream via een tree:view property"
-      },
-      "parents": [],
+      "parents": [
+        {
+          "name": "CollectieLid",
+          "label": "CollectieLid",
+          "package": "OSLO LDES",
+          "uri": "https://data.vlaanderen.be/ns/ldes#CollectieLid",
+          "scoped_uri": "#CollectieLid"
+        }
+      ],
       "properties": []
     },
     {
@@ -167,7 +346,9 @@
         "nl": "VersieEventStream"
       },
       "sort_nl": "VersieEventStream",
-      "description": {},
+      "description": {
+        "nl": "Een specifieke versie van een event stream."
+      },
       "usage": {},
       "parents": [
         {
@@ -186,10 +367,10 @@
           },
           "sort_nl": "timestampPath",
           "description": {
-            "nl": "Geeft weer hoe elementen van een LDES zich tot elkaar verhouden door een tiidstip."
+            "nl": "Geeft weer hoe elementen van een LDES zich tot elkaar verhouden door een tijdstip."
           },
           "usage": {
-            "nl": "Bijvoorbeeld een SHACL property path aan het tijdstip wanneer het versieobject is toegevoegd aan de Linked Date Event Stream."
+            "nl": "Een SHACL property path naar de timestamp wanneer het versie-object een element werd van de event stream."
           },
           "domain": [
             {
@@ -205,10 +386,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#URI",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_puri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_label": {
-                "nl": "URI"
+                "nl": "URi"
               }
             }
           ],
@@ -241,10 +422,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#URI",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_puri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_label": {
-                "nl": "URI"
+                "nl": "URi"
               }
             }
           ],
@@ -259,26 +440,73 @@
         "nl": "VersieMaterialisatie"
       },
       "sort_nl": "VersieMaterialisatie",
-      "description": {},
+      "description": {
+        "nl": "Een snapshot waarbij de versie-identificatoren zijn vervangen door object-identificatoren."
+      },
       "usage": {},
       "parents": [
         {
-          "name": "AfgeleideCollectie",
-          "label": "AfgeleideCollectie",
-          "package": "OSLO LDES",
-          "uri": "https://data.vlaanderen.be/ns/ldes#AfgeleideCollectie",
-          "scoped_uri": "#AfgeleideCollectie"
+          "name": "Collection",
+          "label": "Collectie",
+          "package": "TREE",
+          "uri": "https://w3id.org/tree#Collection",
+          "scoped_uri": "#Collectie"
+        },
+        {
+          "name": "Dataset",
+          "label": "Dataset",
+          "package": "hulppakket",
+          "uri": "https://www.w3.org/ns/dcat#Dataset",
+          "scoped_uri": "#Dataset"
         }
       ],
       "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/ldes#^lid",
+          "name": {
+            "nl": "lid"
+          },
+          "sort_nl": "lid",
+          "description": {
+            "nl": "Een lid maakt deel uit van de collectie."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.vlaanderen.be/ns/ldes#VersieMaterialisatie",
+              "EA-Name": "VersieMaterialisatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "VeranderlijkObject",
+              "range_uri": "https://data.vlaanderen.be/ns/ldes#VeranderlijkObject"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#VeranderlijkObject",
+              "range_puri": "https://data.vlaanderen.be/ns/ldes#VeranderlijkObject",
+              "range_label": {
+                "nl": "VeranderlijkObject"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
         {
           "uri": "https://data.vlaanderen.be/ns/ldes#versieMaterialisatieTot",
           "name": {
             "nl": "versieMaterialisatieTot"
           },
           "sort_nl": "versieMaterialisatieTot",
-          "description": {},
-          "usage": {},
+          "description": {
+            "nl": "Het tijdstip tot wanneer versies werden verwerkt."
+          },
+          "usage": {
+            "nl": "Het attribuut versieMaterialisatieTot geeft weer tot op welk moment de versies werden geaggregeerd."
+          },
           "domain": [
             {
               "uri": "https://data.vlaanderen.be/ns/ldes#VersieMaterialisatie",
@@ -304,45 +532,13 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/ldes#versieMaterialisatieVan",
+          "uri": "https://data.vlaanderen.be/ns/ldes#versiematerialisatieVan",
           "name": {
             "nl": "versieMaterialisatieVan"
           },
           "sort_nl": "versieMaterialisatieVan",
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/ldes#VersieMaterialisatie",
-              "EA-Name": "VersieMaterialisatie"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "VersieEventStream",
-              "range_uri": "https://data.vlaanderen.be/ns/ldes#VersieEventStream"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#VersieEventStream",
-              "range_puri": "https://data.vlaanderen.be/ns/ldes#VersieEventStream",
-              "range_label": {
-                "nl": "VersieEventStream"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://w3id.org/tree#member",
-          "name": {
-            "nl": "^lid"
-          },
-          "sort_nl": "^lid",
           "description": {
-            "nl": "Een lid maakt deel uit van de collectie."
+            "nl": "Verwijst naar de originele Linked Data Event Stream."
           },
           "usage": {},
           "domain": [
@@ -353,20 +549,20 @@
           ],
           "range": [
             {
-              "range_label": "OnveranderlijkObject",
-              "range_uri": "https://data.vlaanderen.be/ns/ldes#OnveranderlijkObject"
+              "range_label": "Snapshot",
+              "range_uri": "https://data.vlaanderen.be/ns/ldes#Snapshot"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#OnveranderlijkObject",
-              "range_puri": "https://data.vlaanderen.be/ns/ldes#OnveranderlijkObject",
+              "range_uri": "#Snapshot",
+              "range_puri": "https://data.vlaanderen.be/ns/ldes#Snapshot",
               "range_label": {
-                "nl": "OnveranderlijkObject"
+                "nl": "Snapshot"
               }
             }
           ],
-          "cardinality": "0..*",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -376,10 +572,10 @@
           },
           "sort_nl": "shape",
           "description": {
-            "nl": "Een bepaalde shape, gedefinieerd door een URI, aan welke alle elementen in de eventstream moeten voldoen."
+            "nl": "Een bepaalde shape aan welke alle elementen in de event stream moeten voldoen."
           },
           "usage": {
-            "nl": "Een shape wordt opgelegd aan alle elementen van de LDES. Voorbeelden van zo'n shape zijn SHACL en ShEx. De shape moet cohorent zijn doorheen heel de LDES."
+            "nl": "Een shape wordt opgelegd aan alle elementen van de LDES. Voorbeelden van zo'n shape zijn SHACL en ShEx. De shape moet cohorent zijn doorheen heel de Linked Data Event Stream."
           },
           "domain": [
             {
@@ -404,40 +600,6 @@
           ],
           "cardinality": "1",
           "codelist_uri": ""
-        },
-        {
-          "uri": "https://w3id.org/tree#view",
-          "name": {
-            "nl": "^view"
-          },
-          "sort_nl": "^view",
-          "description": {
-            "nl": "Een view is de index/invariant/organisatie waarmee doorheen de collectie (LDES) kan worden genavigeerd .?"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://data.vlaanderen.be/ns/ldes#VersieMaterialisatie",
-              "EA-Name": "VersieMaterialisatie"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Node",
-              "range_uri": "https://w3id.org/tree#Node"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Node",
-              "range_puri": "https://w3id.org/tree#Node",
-              "range_label": {
-                "nl": "Node"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
         }
       ]
     },
@@ -448,11 +610,24 @@
       },
       "sort_nl": "Observatie",
       "description": {
-        "nl": "Het vaststellen van de waarde van een bepaald kenmerk van een Object op een bepaald tijdstip of tussen twee tijdstippen."
+        "nl": "Het vaststellen van de waarde van een bepaald kenmerk van een object op een bepaald tijdstip of tussen twee tijdstippen."
       },
       "usage": {
-        "nl": "Het gaat om schattingen van de waarde,maw op de waarde zit een zekere foutmarge. Voorbeelden zijn temperatuur,klasse,kleur. Dit is verschillend van waarden die zijn toegekend en dus geen schattingen zijn zoals naam of prijs."
+        "nl": "Het gaat om schattingen van de waarde, m.a.w. op de waarde zit een zekere foutmarge. Voorbeelden zijn temperatuur, klasse, kleur, etc."
       },
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "http://fixme.com#CollectieLid",
+      "name": {
+        "nl": "CollectieLid"
+      },
+      "sort_nl": "CollectieLid",
+      "description": {
+        "nl": "TO DO"
+      },
+      "usage": {},
       "parents": [],
       "properties": []
     },
@@ -490,8 +665,21 @@
               "EA-Name": "DataServiceLDES"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Standaard",
+              "range_uri": "http://purl.org/dc/terms/Standard"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://purl.org/dc/terms/Standard",
+              "range_puri": "http://purl.org/dc/terms/Standard",
+              "range_label": {
+                "nl": "Standaard"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         },
@@ -502,7 +690,7 @@
           },
           "sort_nl": "endpointURL",
           "description": {
-            "nl": "De rootlocatie of het primaire endpoint van de dienst (een web-resolvable URI)."
+            "nl": "De rootlocatie of het primaire endpoint van de dienst (een web-resolvable URi)."
           },
           "usage": {},
           "domain": [
@@ -511,8 +699,21 @@
               "EA-Name": "DataServiceLDES"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "RootNode",
+              "range_uri": "https://data.vlaanderen.be/ns/ldes#RootNode"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rootnode",
+              "range_puri": "https://data.vlaanderen.be/ns/ldes#RootNode",
+              "range_label": {
+                "nl": "Rootnode"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         }
@@ -537,7 +738,7 @@
           },
           "sort_nl": "conformAanProtocol",
           "description": {
-            "nl": "Een protocal waaraan de dataservice voldoet"
+            "nl": "Een protocol waaraan de dataservice voldoet."
           },
           "usage": {},
           "domain": [
@@ -571,7 +772,7 @@
           },
           "sort_nl": "endpointURL",
           "description": {
-            "nl": "De rootlocatie of het primaire endpoint van de dienst (een web-resolvable URI)."
+            "nl": "De rootlocatie of het primaire endpoint van de dienst (een web-resolvable URi)."
           },
           "usage": {},
           "domain": [
@@ -588,10 +789,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#URI",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_puri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_label": {
-                "nl": "URI"
+                "nl": "URi"
               }
             }
           ],
@@ -637,11 +838,11 @@
     {
       "uri": "http://www.w3.org/ns/prov#Entity",
       "name": {
-        "nl": "Versie"
+        "nl": "Object"
       },
-      "sort_nl": "Versie",
+      "sort_nl": "Object",
       "description": {
-        "nl": "Stelt een entiteit voor in één specifieke periode."
+        "nl": "Entiteit waarvan alle entiteiten zijn afgeleid."
       },
       "usage": {},
       "parents": [],
@@ -654,7 +855,22 @@
       },
       "sort_nl": "Shape",
       "description": {
-        "nl": "A node shape is a shape in the shapes graph that is not the subject of a triple with sh:path as its predicate. It is recommended, but not required, for a node shape to be declared as a SHACL instance of sh:NodeShape. SHACL instances of sh:NodeShape cannot"
+        "nl": "Een bepaalde shape aan welke alle elementen in de event stream moeten voldoen."
+      },
+      "usage": {
+        "nl": "Een shape wordt ofwel door een URi beschreven ofwel inline. Beide opties zijn mogelijk."
+      },
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/generiek#Versie",
+      "name": {
+        "nl": "Versie"
+      },
+      "sort_nl": "Versie",
+      "description": {
+        "nl": "Stelt een entiteit voor in één specifieke periode."
       },
       "usage": {},
       "parents": [],
@@ -667,9 +883,11 @@
       },
       "sort_nl": "DurationAgoPolicy",
       "description": {
-        "nl": "Een DurationAgoPolicy maakt gebruikt van een tree:value om aan te duiden of de timestamp mag geherdefinieerd worden door het beleid zelf."
+        "nl": "Een op tijd gebaseerd retentiebeleid dat door middel van een waarde aangeeft van op welk moment in de tijd elementen geen deel meer mogen uitmaken van de Linked Data Event Stream. "
       },
-      "usage": {},
+      "usage": {
+        "nl": "Een DurationAgoPolicy maakt gebruik van een tree:view om aan te duiden of de timestamp mag geherdefinieerd worden door het beleid zelf."
+      },
       "parents": [
         {
           "name": "RetentionPolicy",
@@ -687,7 +905,7 @@
           },
           "sort_nl": "value",
           "description": {
-            "nl": "De waarde in de node waarmee de relatie gaat vergelijken om een volgende node aan te linken."
+            "nl": "De waarde waarmee de gelinkte node in de relatie tussen de nodes is vergeleken."
           },
           "usage": {},
           "domain": [
@@ -723,7 +941,7 @@
       },
       "sort_nl": "EventStream",
       "description": {
-        "nl": "Een collectie van onveranderlijke objecten (zoals versie-objecten & sensor-observaties). Deze objecten volgen op opgelegde shape."
+        "nl": "Een collectie van onveranderlijke objecten (zoals versie-objecten & sensor-observaties). Deze objecten volgen een opgelegde shape."
       },
       "usage": {},
       "parents": [
@@ -740,6 +958,13 @@
           "package": "metadata_DCAT",
           "uri": "https://www.w3.org/ns/dcat#Dataset",
           "scoped_uri": "#Dataset"
+        },
+        {
+          "name": "Dataset",
+          "label": "Dataset",
+          "package": "hulppakket",
+          "uri": "https://www.w3.org/ns/dcat#Dataset",
+          "scoped_uri": "#Dataset"
         }
       ],
       "properties": [
@@ -750,10 +975,10 @@
           },
           "sort_nl": "timestampPath",
           "description": {
-            "nl": "Geeft weer hoe elementen van een LDES zich tot elkaar verhouden door een tiidstip."
+            "nl": "Geeft weer hoe elementen van een LDES zich tot elkaar verhouden door een specifiek tijdstip."
           },
           "usage": {
-            "nl": "Bijvoorbeeld een SHACL property path aan het tijdstip wanneer het versieobject is toegevoegd aan de Linked Date Event Stream."
+            "nl": "Een SHACL property path naar de timestamp wanneer het versie-object een element werd van de event stream."
           },
           "domain": [
             {
@@ -769,10 +994,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#URI",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_puri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_label": {
-                "nl": "URI"
+                "nl": "URi"
               }
             }
           ],
@@ -789,7 +1014,7 @@
             "nl": "Geeft de versie van het element weer."
           },
           "usage": {
-            "nl": "Bijvoorbeeld een SHACL property path naar de niet-geversioneerde identifier van een element."
+            "nl": "Een SHACL property path naar de niet-geversioneerde identifier van een element."
           },
           "domain": [
             {
@@ -805,10 +1030,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#URI",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_puri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_label": {
-                "nl": "URI"
+                "nl": "URi"
               }
             }
           ],
@@ -856,10 +1081,10 @@
           },
           "sort_nl": "shape",
           "description": {
-            "nl": "Een bepaalde shape, gedefinieerd door een URI, aan welke alle elementen in de eventstream moeten voldoen."
+            "nl": "Een bepaalde shape aan welke alle elementen in de event stream moeten voldoen."
           },
           "usage": {
-            "nl": "Een shape wordt opgelegd aan alle elementen van de LDES. Voorbeelden van zo'n shape zijn SHACL en ShEx. De shape moet cohorent zijn doorheen heel de LDES."
+            "nl": "Een shape wordt opgelegd aan alle elementen van de LDES. Voorbeelden van zo'n shape zijn SHACL en ShEx."
           },
           "domain": [
             {
@@ -888,11 +1113,11 @@
         {
           "uri": "https://w3id.org/tree#view",
           "name": {
-            "nl": "view"
+            "nl": "viewOf"
           },
-          "sort_nl": "view",
+          "sort_nl": "viewOf",
           "description": {
-            "nl": "Een view is de index/invariant/organisatie waarmee doorheen de collectie (LDES) kan worden genavigeerd .?"
+            "nl": "Een view is de index/invariant/organisatie waarmee doorheen de collectie/ Linked Data Event Stream kan worden genavigeerd."
           },
           "usage": {},
           "domain": [
@@ -903,16 +1128,16 @@
           ],
           "range": [
             {
-              "range_label": "Node",
-              "range_uri": "https://w3id.org/tree#Node"
+              "range_label": "RootNode",
+              "range_uri": "https://data.vlaanderen.be/ns/ldes#RootNode"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Node",
-              "range_puri": "https://w3id.org/tree#Node",
+              "range_uri": "#Rootnode",
+              "range_puri": "https://data.vlaanderen.be/ns/ldes#RootNode",
               "range_label": {
-                "nl": "Node"
+                "nl": "Rootnode"
               }
             }
           ],
@@ -982,10 +1207,10 @@
           },
           "sort_nl": "timestampPath",
           "description": {
-            "nl": "Geeft weer hoe elementen van een LDES zich tot elkaar verhouden door een tiidstip."
+            "nl": "Geeft weer hoe elementen van een Linked Data Event Stream zich tot elkaar verhouden door een tijdstip."
           },
           "usage": {
-            "nl": "Bijvoorbeeld een SHACL property path aan het tijdstip wanneer het versieobject is toegevoegd aan de Linked Date Event Stream."
+            "nl": "Een SHACL property path naar de timestamp wanneer het versie-object een element werd van de event stream."
           },
           "domain": [
             {
@@ -1001,10 +1226,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#URI",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_puri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_label": {
-                "nl": "URI"
+                "nl": "URi"
               }
             }
           ],
@@ -1018,7 +1243,7 @@
           },
           "sort_nl": "versionKey",
           "description": {
-            "nl": "Een lijst van SHACL property paths om die samen een version key vormen."
+            "nl": "Een lijst van SHACL property paths die samen een version key vormen."
           },
           "usage": {},
           "domain": [
@@ -1027,8 +1252,21 @@
               "EA-Name": "LatestVersionSubset"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "URi",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Resource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Resource",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Resource",
+              "range_label": {
+                "nl": "URi"
+              }
+            }
+          ],
           "cardinality": "0..*",
           "codelist_uri": ""
         },
@@ -1042,7 +1280,7 @@
             "nl": "Geeft de versie van het element weer."
           },
           "usage": {
-            "nl": "Bijvoorbeeld een SHACL property path naar de niet-geversioneerde identifier van een element."
+            "nl": "Een SHACL property path naar de niet-geversioneerde identifier van een element."
           },
           "domain": [
             {
@@ -1058,10 +1296,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#URI",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_puri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_label": {
-                "nl": "URI"
+                "nl": "URi"
               }
             }
           ],
@@ -1077,9 +1315,11 @@
       },
       "sort_nl": "RetentionPolicy",
       "description": {
-        "nl": "Een retentiebeleid is een beleid volgens dewelke elementen (i.e. data) verwijdert zullen worden."
+        "nl": "Een retentiebeleid is een beleid volgens welke elementen (i.e. data) verwijderd zullen worden."
       },
-      "usage": {},
+      "usage": {
+        "nl": "Enkele voorbeelden van retentiebeleiden zijn DurationAgoPolicy en LatestVersionSubset."
+      },
       "parents": [],
       "properties": []
     },
@@ -1090,11 +1330,45 @@
       },
       "sort_nl": "Collectie",
       "description": {
-        "nl": "Een collectie heeft leden die allen voldoen aan een bepaalde shape."
+        "nl": "Een collectie is een verzameling van objecten. Deze leden voldoen allen aan een opgelegde shape."
       },
       "usage": {},
       "parents": [],
       "properties": [
+        {
+          "uri": "http://fixme.com#lid",
+          "name": {
+            "nl": "lid"
+          },
+          "sort_nl": "lid",
+          "description": {
+            "nl": "Een lid maakt deel uit van de collectie."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://w3id.org/tree#Collection",
+              "EA-Name": "Collection"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "CollectieLid",
+              "range_uri": "https://data.vlaanderen.be/ns/ldes#CollectieLid"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#CollectieLid",
+              "range_puri": "https://data.vlaanderen.be/ns/ldes#CollectieLid",
+              "range_label": {
+                "nl": "CollectieLid"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
         {
           "uri": "https://w3id.org/tree#shape",
           "name": {
@@ -1102,7 +1376,7 @@
           },
           "sort_nl": "shape",
           "description": {
-            "nl": "Een bepaalde shape, gedefinieerd door een URI, aan welke alle elementen in de eventstream moeten voldoen."
+            "nl": "Een bepaalde shape aan welke alle elementen in de event stream moeten voldoen."
           },
           "usage": {},
           "domain": [
@@ -1128,198 +1402,42 @@
           ],
           "cardinality": "1",
           "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "https://w3id.org/tree#EqualToRelation",
-      "name": {
-        "nl": "GelijkAanRelatie"
-      },
-      "sort_nl": "GelijkAanRelatie",
-      "description": {
-        "nl": "Gelijk aan een gedefinieerde waarde."
-      },
-      "usage": {},
-      "parents": [
-        {
-          "name": "Relation",
-          "label": "Relatie",
-          "package": "TREE",
-          "uri": "https://w3id.org/tree#Relation",
-          "scoped_uri": "#Relatie"
-        }
-      ],
-      "properties": []
-    },
-    {
-      "uri": "https://w3id.org/tree#GeospatiallyContainsRelation",
-      "name": {
-        "nl": "RuimtelijkeOmvatRelatie"
-      },
-      "sort_nl": "RuimtelijkeOmvatRelatie",
-      "description": {
-        "nl": "Een relatie die definieerd of een element al dan niet binnen een gebied valt dat afgebakent is volgens de lengte- en breedtegraad."
-      },
-      "usage": {},
-      "parents": [
-        {
-          "name": "Relation",
-          "label": "Relatie",
-          "package": "TREE",
-          "uri": "https://w3id.org/tree#Relation",
-          "scoped_uri": "#Relatie"
-        }
-      ],
-      "properties": [
-        {
-          "uri": "https://w3id.org/tree#latitudeTile",
-          "name": {
-            "nl": "latitudeTile"
-          },
-          "sort_nl": "latitudeTile",
-          "description": {
-            "nl": "De tegel volgens de lengtegraad"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://w3id.org/tree#GeospatiallyContainsRelation",
-              "EA-Name": "GeoSpatiallyContainsRelation"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
         },
         {
-          "uri": "https://w3id.org/tree#longitudeTile",
+          "uri": "https://w3id.org/tree#view",
           "name": {
-            "nl": "longitudeTile"
+            "nl": "^view"
           },
-          "sort_nl": "longitudeTile",
+          "sort_nl": "^view",
           "description": {
-            "nl": "De tegel volgens de breedtegraad"
+            "nl": "Een view is de index/ invariant/ organisatie waarmee doorheen de collectie (LDES) kan worden genavigeerd."
           },
           "usage": {},
           "domain": [
             {
-              "uri": "https://w3id.org/tree#GeospatiallyContainsRelation",
-              "EA-Name": "GeoSpatiallyContainsRelation"
+              "uri": "https://w3id.org/tree#Collection",
+              "EA-Name": "Collection"
             }
           ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://w3id.org/tree#zoom",
-          "name": {
-            "nl": "zoom"
-          },
-          "sort_nl": "zoom",
-          "description": {
-            "nl": "Het zoom level van een specifieke tegel conform de OSM conventie."
-          },
-          "usage": {},
-          "domain": [
+          "range": [
             {
-              "uri": "https://w3id.org/tree#GeospatiallyContainsRelation",
-              "EA-Name": "GeoSpatiallyContainsRelation"
+              "range_label": "RootNode",
+              "range_uri": "https://data.vlaanderen.be/ns/ldes#RootNode"
             }
           ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
+          "scopedrange": [
+            {
+              "range_uri": "#Rootnode",
+              "range_puri": "https://data.vlaanderen.be/ns/ldes#RootNode",
+              "range_label": {
+                "nl": "Rootnode"
+              }
+            }
+          ],
+          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]
-    },
-    {
-      "uri": "https://w3id.org/tree#GreaterThanOrEqualToRelation",
-      "name": {
-        "nl": "GroterDanOfGelijkAanRelatie"
-      },
-      "sort_nl": "GroterDanOfGelijkAanRelatie",
-      "description": {
-        "nl": "Groter dan of gelijk aan eeen gedefinieerde waarde."
-      },
-      "usage": {},
-      "parents": [
-        {
-          "name": "Relation",
-          "label": "Relatie",
-          "package": "TREE",
-          "uri": "https://w3id.org/tree#Relation",
-          "scoped_uri": "#Relatie"
-        }
-      ],
-      "properties": []
-    },
-    {
-      "uri": "https://w3id.org/tree#GreaterThanRelation",
-      "name": {
-        "nl": "GroterDanRelatie"
-      },
-      "sort_nl": "GroterDanRelatie",
-      "description": {
-        "nl": "Groter dan een gedefinieerde waarde."
-      },
-      "usage": {},
-      "parents": [
-        {
-          "name": "Relation",
-          "label": "Relatie",
-          "package": "TREE",
-          "uri": "https://w3id.org/tree#Relation",
-          "scoped_uri": "#Relatie"
-        }
-      ],
-      "properties": []
-    },
-    {
-      "uri": "https://w3id.org/tree#LessThanOrEqualToRelation",
-      "name": {
-        "nl": "KleinerdanOfGelijkAanRelatie"
-      },
-      "sort_nl": "KleinerdanOfGelijkAanRelatie",
-      "description": {
-        "nl": "Kleiner dan of gelijk aan een gedefinieerde waarde."
-      },
-      "usage": {},
-      "parents": [
-        {
-          "name": "Relation",
-          "label": "Relatie",
-          "package": "TREE",
-          "uri": "https://w3id.org/tree#Relation",
-          "scoped_uri": "#Relatie"
-        }
-      ],
-      "properties": []
-    },
-    {
-      "uri": "https://w3id.org/tree#LessThanRelation",
-      "name": {
-        "nl": "KleinerdanRelatie"
-      },
-      "sort_nl": "KleinerdanRelatie",
-      "description": {
-        "nl": "Kleiner dan een gedefinieerde waarde."
-      },
-      "usage": {},
-      "parents": [
-        {
-          "name": "Relation",
-          "label": "Relatie",
-          "package": "TREE",
-          "uri": "https://w3id.org/tree#Relation",
-          "scoped_uri": "#Relatie"
-        }
-      ],
-      "properties": []
     },
     {
       "uri": "https://w3id.org/tree#Node",
@@ -1328,23 +1446,21 @@
       },
       "sort_nl": "Node",
       "description": {
-        "nl": "Een node is een pagina die de relatie tot andere pagina's beschrijft via een relatie. Via deze relatie kunnen andere nodes gevonden worden."
+        "nl": "Een node is een pagina die relaties naar andere nodes kan bevatten. "
       },
       "usage": {},
       "parents": [],
       "properties": [
         {
-          "uri": "https://w3id.org/ldes#retentionPolicy",
+          "uri": "http://fixme.com#lid",
           "name": {
-            "nl": "retentiebeleid"
+            "nl": "lid"
           },
-          "sort_nl": "retentiebeleid",
+          "sort_nl": "lid",
           "description": {
-            "nl": "Een retentiebeleid is een beleid volgens dewelke elementen (i.e. data) verwijdert zullen worden."
+            "nl": "Een lid maakt deel uit van de collectie."
           },
-          "usage": {
-            "nl": "Een retentiebeleid KAN gebruikt worden door een data-leverancier wanneer hij/zij niet meer alle events wenst aan te bieden."
-          },
+          "usage": {},
           "domain": [
             {
               "uri": "https://w3id.org/tree#Node",
@@ -1353,20 +1469,20 @@
           ],
           "range": [
             {
-              "range_label": "Retentiebeleid",
-              "range_uri": "https://semiceu.github.io/LinkedDataEventStreams/#retention"
+              "range_label": "CollectieLid",
+              "range_uri": "https://data.vlaanderen.be/ns/ldes#CollectieLid"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "https://semiceu.github.io/LinkedDataEventStreams/#retention",
-              "range_puri": "https://semiceu.github.io/LinkedDataEventStreams/#retention",
+              "range_uri": "#CollectieLid",
+              "range_puri": "https://data.vlaanderen.be/ns/ldes#CollectieLid",
               "range_label": {
-                "nl": "Retentiebeleid"
+                "nl": "CollectieLid"
               }
             }
           ],
-          "cardinality": "0..1",
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -1402,97 +1518,8 @@
           ],
           "cardinality": "0..*",
           "codelist_uri": ""
-        },
-        {
-          "uri": "https://w3id.org/tree#Relation",
-          "name": {
-            "nl": "relatie"
-          },
-          "sort_nl": "relatie",
-          "description": {
-            "nl": "Een klasse die de relatie tussen twee nodes beschrijft"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://w3id.org/tree#Node",
-              "EA-Name": "Node"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Relation",
-              "range_uri": "https://w3id.org/tree#Relation"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Relatie",
-              "range_puri": "https://w3id.org/tree#Relation",
-              "range_label": {
-                "nl": "Relatie"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://w3id.org/tree#member",
-          "name": {
-            "nl": "lid"
-          },
-          "sort_nl": "lid",
-          "description": {
-            "nl": "Een lid maakt deel uit van de collectie."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://w3id.org/tree#Node",
-              "EA-Name": "Node"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "OnveranderlijkObject",
-              "range_uri": "https://data.vlaanderen.be/ns/ldes#OnveranderlijkObject"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#OnveranderlijkObject",
-              "range_puri": "https://data.vlaanderen.be/ns/ldes#OnveranderlijkObject",
-              "range_label": {
-                "nl": "OnveranderlijkObject"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
         }
       ]
-    },
-    {
-      "uri": "https://w3id.org/tree#PrefixRelation",
-      "name": {
-        "nl": "PrefixRelatie"
-      },
-      "sort_nl": "PrefixRelatie",
-      "description": {
-        "nl": "Bevat het zelfde begin dan een gedefinieerde string."
-      },
-      "usage": {},
-      "parents": [
-        {
-          "name": "Relation",
-          "label": "Relatie",
-          "package": "TREE",
-          "uri": "https://w3id.org/tree#Relation",
-          "scoped_uri": "#Relatie"
-        }
-      ],
-      "properties": []
     },
     {
       "uri": "https://w3id.org/tree#Relation",
@@ -1501,9 +1528,11 @@
       },
       "sort_nl": "Relatie",
       "description": {
-        "nl": "Een klasse die de relatie tussen twee nodes beschrijft"
+        "nl": "Een klasse die de relatie tussen twee nodes beschrijft."
       },
-      "usage": {},
+      "usage": {
+        "nl": "Er bestaan specifieke subklassen die een specifiek type van relatie tussen de nodes beschrijven. Deze specifieke relaties zijn beschreven op <a href=\"https://treecg.github.io/specification/#Relation\">de TREE specificatie</a>."
+      },
       "parents": [],
       "properties": [
         {
@@ -1513,7 +1542,7 @@
           },
           "sort_nl": "node",
           "description": {
-            "nl": "Een node is een pagina die de relatie tot andere pagina's beschrijft via een relatie. Via deze relatie kunnen andere nodes gevonden worden."
+            "nl": "Een node is een pagina die relaties naar andere nodes kan bevatten. "
           },
           "usage": {},
           "domain": [
@@ -1547,10 +1576,10 @@
           },
           "sort_nl": "path",
           "description": {
-            "nl": "Een property path, gedefinieerd door een SHACL, die weergeeft welke zaken beïnvloed worden door tree:value"
+            "nl": "Een property path, gedefinieerd door een SHACL, die weergeeft welke zaken beïnvloed worden door tree:value."
           },
           "usage": {
-            "nl": "TO DO"
+            "nl": "Binnen SHACL zijn er RDF terms die een subset van SPARQL property paths beschrijven. Meer informatie kan [zie <a href=\"https://www.w3.org/TR/shacl/#x2.3.1-shacl-property-paths\">hier</a>] teruggevonden worden."
           },
           "domain": [
             {
@@ -1566,10 +1595,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#URI",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_puri": "http://www.w3.org/2000/01/rdf-schema#Resource",
               "range_label": {
-                "nl": "URI"
+                "nl": "URi"
               }
             }
           ],
@@ -1586,7 +1615,7 @@
             "nl": "De waarde in de node waarmee de relatie gaat vergelijken om een volgende node aan te linken."
           },
           "usage": {
-            "nl": "TO DO"
+            "nl": "De tree:value is de contextuele waarde van de node. Deze waarde is vrij in te vullen door bijvoorbeeld een string, een integer of een link naar een andere resource waar een duidelijke vergelijkingsregel werd gedefinieerd."
           },
           "domain": [
             {
@@ -1615,141 +1644,31 @@
       ]
     },
     {
-      "uri": "https://w3id.org/tree#SubstringRelation",
-      "name": {
-        "nl": "SubstringRelatie"
-      },
-      "sort_nl": "SubstringRelatie",
-      "description": {
-        "nl": "Bevat een deel van een gedefinieerde string."
-      },
-      "usage": {},
-      "parents": [
-        {
-          "name": "Relation",
-          "label": "Relatie",
-          "package": "TREE",
-          "uri": "https://w3id.org/tree#Relation",
-          "scoped_uri": "#Relatie"
-        }
-      ],
-      "properties": []
-    },
-    {
-      "uri": "https://w3id.org/tree#SuffixRelation",
-      "name": {
-        "nl": "SuffixRelatie"
-      },
-      "sort_nl": "SuffixRelatie",
-      "description": {
-        "nl": "Bevat het zelfde einde dan een gedefinieerde string."
-      },
-      "usage": {},
-      "parents": [
-        {
-          "name": "Relation",
-          "label": "Relatie",
-          "package": "TREE",
-          "uri": "https://w3id.org/tree#Relation",
-          "scoped_uri": "#Relatie"
-        }
-      ],
-      "properties": []
-    },
-    {
       "uri": "https://w3id.org/tree#view",
       "name": {
-        "nl": "(View)"
+        "nl": "EventstreamView"
       },
-      "sort_nl": "(View)",
-      "description": {},
+      "sort_nl": "EventstreamView",
+      "description": {
+        "nl": "De event stream view connecteert de collectie met de rootnode zodanig dat alle leden van de collectie gevonden kunnen worden."
+      },
       "usage": {},
       "parents": [],
       "properties": [
         {
-          "uri": "http://fixme.com#(View).eventStream",
+          "uri": "https://data.vlaanderen.be/ns/ldes#retentiebeleid",
           "name": {
-            "nl": "eventStream"
+            "nl": "retentiebeleid"
           },
-          "sort_nl": "eventStream",
+          "sort_nl": "retentiebeleid",
           "description": {
-            "nl": "Referentie naar verbonden klasse."
+            "nl": "Een retentiebeleid is een beleid volgens welke elementen (i.e. data) verwijderd zullen worden."
           },
-          "usage": {
-            "nl": ""
-          },
-          "domain": [
-            {
-              "uri": "https://w3id.org/tree#view",
-              "EA-Name": "(View)"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "EventStream",
-              "range_uri": "https://w3id.org/ldes#EventStream"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#EventStream",
-              "range_puri": "https://w3id.org/ldes#EventStream",
-              "range_label": {
-                "nl": "EventStream"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com#(View).node",
-          "name": {
-            "nl": "node"
-          },
-          "sort_nl": "node",
-          "description": {
-            "nl": "Referentie naar verbonden klasse."
-          },
-          "usage": {
-            "nl": ""
-          },
-          "domain": [
-            {
-              "uri": "https://w3id.org/tree#view",
-              "EA-Name": "(View)"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Node",
-              "range_uri": "https://w3id.org/tree#Node"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Node",
-              "range_puri": "https://w3id.org/tree#Node",
-              "range_label": {
-                "nl": "Node"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com#retentienbeleid",
-          "name": {
-            "nl": "retentienbeleid"
-          },
-          "sort_nl": "retentienbeleid",
-          "description": {},
           "usage": {},
           "domain": [
             {
               "uri": "https://w3id.org/tree#view",
-              "EA-Name": "(View)"
+              "EA-Name": "EventstreamView"
             }
           ],
           "range": [
@@ -1768,6 +1687,40 @@
             }
           ],
           "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/ldes#view",
+          "name": {
+            "nl": "rootNode"
+          },
+          "sort_nl": "rootNode",
+          "description": {
+            "nl": "Een rootnode is een beginpagina, die zelf al leden kan bevatten, via wiens gelinkte paginas alle leden kunnen gevonden worden."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://w3id.org/tree#view",
+              "EA-Name": "EventstreamView"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "RootNode",
+              "range_uri": "https://data.vlaanderen.be/ns/ldes#RootNode"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rootnode",
+              "range_puri": "https://data.vlaanderen.be/ns/ldes#RootNode",
+              "range_label": {
+                "nl": "Rootnode"
+              }
+            }
+          ],
+          "cardinality": "1",
           "codelist_uri": ""
         }
       ]
@@ -1823,11 +1776,98 @@
   ],
   "properties": [
     {
-      "uri": "https://data.vlaanderen.be/ns/ldes#versieMaterialisatieVan",
+      "uri": "https://data.vlaanderen.be/ns/ldes#^lid",
+      "name": {
+        "nl": "lid"
+      },
+      "description": {
+        "nl": "Een lid maakt deel uit van de collectie."
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/ldes#eventstreamView",
+      "name": {
+        "nl": "eventstreamView"
+      },
+      "description": {
+        "nl": "De event stream view connecteert de collectie met de rootnode zodanig dat alle leden van de collectie gevonden kunnen worden."
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/ldes#retentiebeleid",
+      "name": {
+        "nl": "retentiebeleid"
+      },
+      "description": {
+        "nl": "Een retentiebeleid is een beleid volgens welke elementen (i.e. data) verwijderd zullen worden."
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/ldes#snapshotVan",
+      "name": {
+        "nl": "snapshotVan"
+      },
+      "description": {
+        "nl": "Verwijst naar de originele Linked Data Event Stream."
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/ldes#versiematerialisatieVan",
       "name": {
         "nl": "versieMaterialisatieVan"
       },
-      "description": {},
+      "description": {
+        "nl": "Verwijst naar de originele Linked Data Event Stream."
+      },
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "usage": {},
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/ldes#view",
+      "name": {
+        "nl": "rootNode"
+      },
+      "description": {
+        "nl": "Een rootnode is een beginpagina, die zelf al leden kan bevatten, via wiens gelinkte paginas alle leden kunnen gevonden worden."
+      },
       "domain": [
         null
       ],
@@ -1870,23 +1910,7 @@
       "email": "medewerkervoornaam.medewerkernaam@medewerkerdomein"
     }
   ],
-  "datatypes": [
-    {
-      "uri": "http://www.w3.org/2000/01/rdf-schema#Resource",
-      "name": {
-        "nl": "URI"
-      },
-      "sort_nl": "URI",
-      "description": {
-        "nl": "Een URI die technisch als een klasse wordt voorgesteld in RDF,maar in het gebruik een literal is."
-      },
-      "usage": {
-        "nl": "Een zinvolle toepassing van dit datatype is het vermijden van de introductie van placeholder klassen. Een andere toepassing is om compliancy te bekomen met de bereik definitie van eigenschappen.  "
-      },
-      "parents": [],
-      "properties": []
-    }
-  ],
+  "datatypes": [],
   "parents": [],
   "documentroot": "/doc/applicatieprofiel/ldes/ontwerpstandaard/2022-03-15"
 }
