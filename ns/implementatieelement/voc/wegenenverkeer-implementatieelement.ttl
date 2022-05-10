@@ -13,16 +13,22 @@ dc:Agent a rdfs:Class;
 
 skos:Concept a rdfs:Class;
   rdfs:label "AIM toestand"@nl,
+    "Electricity appurtenance type"@nl,
+    "Telecommunications appurtenance type"@nl,
+    "Electricity subthema"@nl,
+    "Pipe container type"@nl,
+    "Datakabel materiaal"@nl,
+    "Telecommunications subthema"@nl,
     "Betonomgevingsklasse"@nl,
+    "Betonsterkteklasse"@nl,
+    "Mimetype"@nl,
+    "Gebruiksdomein"@nl,
     "Schoorhoek"@nl,
     "Duurzaamheidsklasse van hout"@nl,
     "Walsmethode"@nl,
     "Constructiestaalsoort"@nl,
-    "Betonsterkteklasse"@nl,
     "Provincie"@nl,
     "Gemeente"@nl,
-    "Mimetype"@nl,
-    "Gebruiksdomein"@nl,
     "Kwaliteitsklasse van hout"@nl,
     "Sterkteklasse van hout"@nl,
     "Betonmilieuklasse"@nl .
@@ -105,6 +111,20 @@ schemas:OpeningHoursSpecification a rdfs:Class;
   rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand>;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:range skos:Concept .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#ActivityComplex.netwerk> a owl:ObjectProperty;
+  rdfs:label "netwerk"@nl;
+  rdfs:comment "Geeft aan bij welk type nutsvoorzieningennet de kabelmof hoort volgens de types uit IMKL en Inspire."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#ActivityComplex>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range skos:Concept .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Appurtenance.opstelhoogte> a owl:ObjectProperty;
+  rdfs:label "opstelhoogte"@nl;
+  rdfs:comment "De hoogte waarop het functionele deel van de appurtenance zich bevindt."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Appurtenance>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Derdenobject.assetId> a owl:ObjectProperty;
   rdfs:label "asset-id"@nl;
@@ -704,6 +724,41 @@ schemas:OpeningHoursSpecification a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:range skos:Concept .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#ElectricityAppurtenance.appurtenanceType> a owl:ObjectProperty;
+  rdfs:label "appurtenanceType"@nl;
+  rdfs:comment "AppurtenanceType van de ElectricityAppurtenance."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#ElectricityAppurtenance>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range skos:Concept .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#ElectricityAppurtenance.subthema> a owl:ObjectProperty;
+  rdfs:label "subthema"@nl;
+  rdfs:comment "Classificatie van de asset volgens zijn functie op basis van een vaste lijst."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#ElectricityAppurtenance>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range skos:Concept .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#ElectricityCable.nominaleSpanning> a owl:ObjectProperty;
+  rdfs:label "nominale spanning"@nl;
+  rdfs:comment "Beschrijft de nominale systeemspanning op de plaats van levering."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#ElectricityCable>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#ElectricityCable.operationeleSpanning> a owl:ObjectProperty;
+  rdfs:label "operationele spanning"@nl;
+  rdfs:comment "Beschrijft de gebruiks- of bedrijfsspanning op de leiding."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#ElectricityCable>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#ElectricityCable.subthema> a owl:ObjectProperty;
+  rdfs:label "subthema"@nl;
+  rdfs:comment "Classificatie van een kabel, leiding, of leidingelementen volgens het thematisch domein waar deze toe behoren."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#ElectricityCable>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range skos:Concept .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInAmpere.standaardEenheid> a owl:DatatypeProperty;
   rdfs:label "standaard eenheid"@nl;
   <http://purl.org/vocab/vann/usageNote> "\"A\"^^cdt:ucumunit"@nl;
@@ -1109,6 +1164,21 @@ schemas:OpeningHoursSpecification a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:range xsd:nonNegativeInteger .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInOhm.standaardEenheid> a owl:DatatypeProperty;
+  rdfs:label "standaard eenheid"@nl;
+  <http://purl.org/vocab/vann/usageNote> "\"Ohm\"^^cdt:ucumunit"@nl;
+  rdfs:comment "De standaard eenheid bij dit datatype is uitgedrukt in ohm."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInOhm>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range rdfs:Literal .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInOhm.waarde> a owl:ObjectProperty;
+  rdfs:label "waarde"@nl;
+  rdfs:comment "Bevat een getal die bij het datatype hoort."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInOhm>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range xsd:decimal .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInProcent.standaardEenheid> a owl:DatatypeProperty;
   rdfs:label "standaard eenheid"@nl;
   <http://purl.org/vocab/vann/usageNote> "\"%\"^^cdt:ucumunit"@nl;
@@ -1272,6 +1342,27 @@ schemas:OpeningHoursSpecification a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#RelatieObject> .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Pipe.containerType> a owl:ObjectProperty;
+  rdfs:label "containertype"@nl;
+  rdfs:comment "Attribuut dat het soort van kabel- en leidingcontainer aangeeft."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Pipe>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range skos:Concept .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Pipe.kleur> a owl:ObjectProperty;
+  rdfs:label "kleur"@nl;
+  rdfs:comment "Kleur van buitenmantel volgens een vaste lijst."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Pipe>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range skos:Concept .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Pipe.netwerkType> a owl:ObjectProperty;
+  rdfs:label "netwerktype"@nl;
+  rdfs:comment "Geeft aan bij welk type nutsvoorzieningennet de kabelmof hoort volgens de types uit IMKL en Inspire."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Pipe>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range skos:Concept .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#RelatieObject.assetId> a owl:ObjectProperty;
   rdfs:label "asset-id"@nl;
   rdfs:comment "Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier."@nl;
@@ -1299,6 +1390,27 @@ schemas:OpeningHoursSpecification a rdfs:Class;
   rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#RelatieObject>;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:range xsd:anyURI .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#TelecommunicationsAppurtenance.appurtenanceType> a owl:ObjectProperty;
+  rdfs:label "appurtenance type"@nl;
+  rdfs:comment "Classificatie van accessoires."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#TelecommunicationsAppurtenance>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range skos:Concept .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#TelecommunicationsCable.materiaalType> a owl:ObjectProperty;
+  rdfs:label "materiaal type"@nl;
+  rdfs:comment "De indeling van het type volgens soort en materiaal van de kabel conform de indeling in IMKL."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#TelecommunicationsCable>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range skos:Concept .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#TelecommunicationsCable.subthema> a owl:ObjectProperty;
+  rdfs:label "subthema"@nl;
+  rdfs:comment "Classificatie van een kabel, leiding, of leidingelementen volgens het thematisch domein waar deze toe behoren."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#TelecommunicationsCable>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range skos:Concept .
 
 dc:Agent.agentId a rdf:Property;
   rdfs:label "agent identificatie"@nl .
@@ -1342,6 +1454,13 @@ schemas:dayOfWeek a rdf:Property;
 schemas:opens a rdf:Property;
   rdfs:label "openingstijd"@nl .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#ActivityComplex> a owl:Class;
+  rdfs:label "Activiy complex"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Gebruik dit type enkel voor aanlevering voor AKELA indien geen specifieke types aanwezig zijn in OTL."@nl;
+  rdfs:comment "Het gehele gebied dat door dezelfde exploitant op dezelfde locatie of op verschillende geografische locaties wordt beheerd, inclusief alle infrastructuur, apparatuur en materialen."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingDiameterInCm> a owl:Class;
   rdfs:label "Afmeting diameter in centimeter"@nl;
   rdfs:comment "Complex datatype voor de afmeting van een diameter in centimeter."@nl;
@@ -1368,11 +1487,12 @@ schemas:opens a rdf:Property;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> .
 
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> a owl:Class;
-  rdfs:label "AIM naam object"@nl;
-  rdfs:comment "Abstracte als de basisklasse voor elk OTL object dat benoemd wordt met een mensleesbare identificator."@nl;
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#TelecommunicationsAppurtenance> a owl:Class;
+  rdfs:label "Telecommunications appurtenance"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Gebruik dit type enkel voor aanlevering voor AKELA indien geen specifieke types aanwezig zijn in OTL."@nl;
+  rdfs:comment "Appurtenance-objecten zijn toebehoren of accessoires, dus allerlei apparaten, toestellen en dergelijke,kortom diverse soorten leidingelementen."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Appurtenance> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxhInM> a owl:Class;
   rdfs:label "Afmeting bxh in meter"@nl;
@@ -1423,6 +1543,13 @@ schemas:opens a rdf:Property;
   rdfs:label "Hellings- of schoorhoek"@nl;
   rdfs:comment "Union datatype voor de hellings- of de schoorhoek."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#ElectricityAppurtenance> a owl:Class;
+  rdfs:label "Electricity appurtenance"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Gebruik dit type enkel voor aanlevering voor AKELA indien geen specifieke types aanwezig zijn in OTL."@nl;
+  rdfs:comment "Appurtenance-objecten zijn toebehoren of accessoires, dus allerlei apparaten, toestellen en dergelijke,kortom diverse soorten leidingelementen."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Appurtenance> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInAmpere> a owl:Class;
   rdfs:label "Kwantitatieve waarde in ampère"@nl;
@@ -1529,6 +1656,11 @@ schemas:opens a rdf:Property;
   rdfs:comment "Een kwantitatieve waarde die een getal in milliampère uitdrukt."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInOhm> a owl:Class;
+  rdfs:label "Kwantitatieve waarde in ohm"@nl;
+  rdfs:comment "Een kwantitatieve waarde die een getal in ohm."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInProcent> a owl:Class;
   rdfs:label "Kwantitatieve waarde in procent"@nl;
   rdfs:comment "Een kwantitatieve waarde die een getal in procent uitdrukt."@nl;
@@ -1549,11 +1681,6 @@ schemas:opens a rdf:Property;
   rdfs:comment "Een kwantitatieve waarde die een getal in vierkante meter uitdrukt."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt> a owl:Class;
-  rdfs:label "Kwantitatieve waarde in volt"@nl;
-  rdfs:comment "Een kwantitatieve waarde die een getal in volt uitdrukt."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
-
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt> a owl:Class;
   rdfs:label "Kwantitatieve waarde in watt"@nl;
   rdfs:comment "Een kwantitatieve waarde die een getal in watt uitdrukt."@nl;
@@ -1569,10 +1696,30 @@ schemas:opens a rdf:Property;
   rdfs:comment "Een kwantitatieve waarde die een getal in kiloWattUur uitdrukt."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#TelecommunicationsCable> a owl:Class;
+  rdfs:label "Telecommunications cable"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Gebruik dit type enkel voor aanlevering voor AKELA indien geen specifieke types aanwezig zijn in OTL."@nl;
+  rdfs:comment "Een aansluiting of reeks aansluitingen van een nutsvoorzieningennet voor het overbrengen van data van de ene locatie naar een andere."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Kabel> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> a owl:Class;
+  rdfs:label "AIM naam object"@nl;
+  rdfs:comment "Abstracte als de basisklasse voor elk OTL object dat benoemd wordt met een mensleesbare identificator."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand> a owl:Class;
   rdfs:label "AIM Toestand"@nl;
   rdfs:comment "Voegt een attribuut toe aan de subklasse dat de huidige stand in de levenscyclus van het object aangeeft."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Appurtenance> a owl:Class;
+  rdfs:label "Appurtenance"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Gebruik dit type enkel voor aanlevering voor AKELA indien geen specifieke types aanwezig zijn in OTL."@nl;
+  rdfs:comment "Appurtenance-objecten zijn toebehoren of accessoires, dus allerlei apparaten, toestellen en dergelijke,kortom diverse soorten leidingelementen."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInCm> a owl:Class;
   rdfs:label "Afmeting bxlxh in centimeter"@nl;
@@ -1588,6 +1735,13 @@ schemas:opens a rdf:Property;
   rdfs:label "Tijdsduur"@nl;
   rdfs:comment "Complex datatype voor de instelling van een tijdsbepaling."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#ElectricityCable> a owl:Class;
+  rdfs:label "Electricity cable"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Gebruik dit type enkel voor aanlevering voor AKELA indien geen specifieke types aanwezig zijn in OTL."@nl;
+  rdfs:comment "Een aansluiting of reeks aansluitingen van een nutsvoorzieningennet voor het overbrengen van elektriciteit van de ene locatie naar een andere."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Kabel> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInDecimaleGraden> a owl:Class;
   rdfs:label "Kwantitatieve waarde in decimale graden"@nl;
@@ -1614,6 +1768,14 @@ schemas:opens a rdf:Property;
   rdfs:comment "Een kwantitatieve waarde die een getal in uur uitdrukt."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Pipe> a owl:Class;
+  rdfs:label "Pipe"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Gebruik dit type enkel voor aanlevering voor AKELA indien geen specifieke types aanwezig zijn in OTL."@nl;
+  rdfs:comment "Een buis die dienst kan doen als object voor het omhullen van meerdere kabels of andere (kleinere) leidingen."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#OmhullendeInrichting>,
+    <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Leiding> .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus> a owl:Class;
   rdfs:label "AIM databank status"@nl;
   rdfs:comment "Voegt een attribuut toe aan de subklasse dat aangeeft of de asset zichtbaar is in de databank of (zacht) verwijderd is."@nl;
@@ -1639,6 +1801,11 @@ schemas:opens a rdf:Property;
   rdfs:comment "Complex datatype voor een rechtspersoon."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt> a owl:Class;
+  rdfs:label "Kwantitatieve waarde in volt"@nl;
+  rdfs:comment "Een kwantitatieve waarde die een getal in volt uitdrukt."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Derdenobject> a owl:Class;
   rdfs:label "Derdenobject"@nl;
   <http://purl.org/vocab/vann/usageNote> "Een Derdenobject mag enkel gebruikt worden om objecten aan te duiden die niet in beheer zijn van AWV en waarvan het type niet gekend is of aangeleverd."@nl;
@@ -1657,13 +1824,6 @@ schemas:opens a rdf:Property;
   rdfs:label "Identificator"@nl;
   rdfs:comment "Complex datatype voor de identificator van een AIM object volgens de bron van de identificator."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> a owl:Class;
-  rdfs:label "AIM object"@nl;
-  rdfs:comment "Abstracte als de basisklasse voor alle uniek geïdentificeerde OTL objecten met de basiseigenschappen die elk OTL object minstens heeft."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand>,
-    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAdres> a owl:Class;
   rdfs:label "Adres"@nl;
@@ -1684,6 +1844,13 @@ schemas:opens a rdf:Property;
   rdfs:label "Kwantitatieve waarde in centimeter"@nl;
   rdfs:comment "Een kwantitatieve waarde die een getal in centimeter uitdrukt."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> a owl:Class;
+  rdfs:label "AIM object"@nl;
+  rdfs:comment "Abstracte als de basisklasse voor alle uniek geïdentificeerde OTL objecten met de basiseigenschappen die elk OTL object minstens heeft."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand>,
+    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter> a owl:Class;
   rdfs:label "Kwantitatieve waarde in meter"@nl;

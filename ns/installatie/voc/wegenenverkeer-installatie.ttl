@@ -9,8 +9,31 @@
 skos:Concept a rdfs:Class;
   rdfs:label "Wegberm type"@nl,
     "Wegberm BIO"@nl,
+    "Aardingsinstallatie aardingsnet"@nl,
+    "Aardingsinstallatie aardingsstelsel"@nl,
     "Z-pad type"@nl,
     "Pad netwerkprotectie"@nl .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aardingsinstallatie.aardingsnet> a owl:ObjectProperty;
+  rdfs:label "aardingsnet"@nl;
+  rdfs:comment "De manier waarop respectievelijk de bron en de verbruiker met de aarde verbonden worden om op die manier foutstromen af te voeren."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aardingsinstallatie>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range skos:Concept .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aardingsinstallatie.aardingsstelsel> a owl:ObjectProperty;
+  rdfs:label "aardingsstelsel"@nl;
+  rdfs:comment "De wijze waarop verschillende aardingen (bv. laagspanningsaarding, nulpuntsaarding, hoogspanningsaarding) zich t.o.v. elkaar bevinden: ofwel bevinden alle aardingen zich uit elkaars invloedssfeer en hebben ze geen impact op elkaars potentiaal ofwel zijn alle aardverbindingen galvanisch met elkaar in contact. In het eerste geval spreekt men van gescheiden aardingsstelsel, in het tweede geval van een globale aarding."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aardingsinstallatie>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#DtcAardingsstelsel> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aardingsinstallatie.aardingsweerstand> a owl:ObjectProperty;
+  rdfs:label "aardingsweerstand"@nl;
+  rdfs:comment "De grootte van de weerstand tussen de aardelektrode en de omringende grond."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aardingsinstallatie>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInOhm> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Baanlichaam.dwarsprofiel> a owl:ObjectProperty;
   rdfs:label "dwarsprofiel"@nl;
@@ -40,6 +63,35 @@ skos:Concept a rdfs:Class;
   rdfs:label "materiaal"@nl;
   rdfs:comment "Het materiaal waaruit de blinde put is vervaardigd."@nl;
   rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#BlindePut>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range skos:Concept .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Bochtafbakeningsinstallatie.aantalBorden> a owl:ObjectProperty;
+  rdfs:label "aantal borden"@nl;
+  rdfs:comment "Het aantal borden in de bochtafbakening voor het aanduiden van een bocht in een rijrichting."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Bochtafbakeningsinstallatie>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range xsd:nonNegativeInteger .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Bochtafbakeningsinstallatie.materiaalBehuizing> a owl:ObjectProperty;
+  rdfs:label "materiaal behuizing"@nl;
+  rdfs:comment "Het materiaal waaruit de behuizing gemaakt is."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Bochtafbakeningsinstallatie>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range skos:Concept .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#DtcAardingsstelsel.attestDNB> a owl:ObjectProperty;
+  rdfs:label "attest distributienetbeheerder"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Voor een globaal aardingsstelsel moet een attest voorzien worden zoniet moet er van uitgegaan worden dat het om een gescheiden stelsel gaat "@nl;
+  rdfs:comment "Een bestandsbijlage met het attest volgens het aardingsstelsel voorzien door de distributienetbeheerder ."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#DtcAardingsstelsel>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#DtcAardingsstelsel.type> a owl:ObjectProperty;
+  rdfs:label "type"@nl;
+  rdfs:comment "Geeft het type aan van het aardingsstelsel volgens een keuzelijst."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#DtcAardingsstelsel>;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:range skos:Concept .
 
@@ -81,6 +133,26 @@ skos:Concept a rdfs:Class;
   rdfs:comment "Groepering van onderdelen die samen een installatie vormen voor het verzamelen van telgegevens over passerende fietsers en in sommige installaties het tonenvan de gegevens."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Flitsgroep.externeReferentie> a owl:ObjectProperty;
+  rdfs:label "externe referentie"@nl;
+  rdfs:comment "Referentie zoals gekend bij een externe partij bv. aannemer, VLCC, ..."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Flitsgroep>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#DtcExterneReferentie> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Flitsgroep.isRoodLicht> a owl:DatatypeProperty;
+  rdfs:label "is rood licht"@nl;
+  rdfs:comment "Duidt aan of de groepering een snelheids- of roodlichtcamera installatie betreft."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Flitsgroep>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range xsd:boolean .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Flitspaal> a owl:Class;
+  rdfs:label "Flitspaal"@nl;
+  rdfs:comment "Buiteninstallatie waarin een flitscamera geplaatst kan worden."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Gebouw.grondplan> a owl:ObjectProperty;
   rdfs:label "grondplan"@nl;
@@ -234,11 +306,94 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:range skos:Concept .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Kabelkoker> a owl:Class;
+  rdfs:label "Kabelkoker"@nl;
+  rdfs:comment "Een ruimte die een of meerdere kabels of leidingen beschermt tegen beschadiging en/of de kabels of leidingen op een gecontroleerde plaats laat hangen of liggen. De constructieve elementen die de ruimte creëeren vormen een aaneen- en afgesloten geheel dat niet meer uit elkaar kan gehaald worden. De kabels en leidingen zijn enkel nog toegankelijk door in de koker zelf rond te lopen (of te kruipen). De koker is op die toegankelijkheid voorzien."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Kabelgeleiding> .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#L2AccessStructuur> a owl:Class;
   rdfs:label "L2 access structuur"@nl;
   rdfs:comment "Opstelling die het mogelijk maakt om een techniek direct te koppelen met het IP telematica netwerk. Een L2 access structuur bestaat uit meerdere L2 Switches die met elkaar verbonden zijn."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDRotondeafbakening.aantalActieveReflectoren> a owl:ObjectProperty;
+  rdfs:label "aantal actieve reflectoren"@nl;
+  rdfs:comment "Het aantal actieve reflectoren in de verzameling van reflectoren die hetzelfde obstakel of risico aangeven."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDRotondeafbakening>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range xsd:nonNegativeInteger .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDRotondeafbakening.lengte> a owl:ObjectProperty;
+  rdfs:label "lengte"@nl;
+  rdfs:comment "De afstand tussen de eerste en de laatste actieve reflector in de verzameling gevoed door dezelfde stroomkring. "@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDRotondeafbakening>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDRotondeafbakening.nominaalVermogen> a owl:ObjectProperty;
+  rdfs:label "nominale spanning"@nl;
+  rdfs:comment "Nominale spanning (in volt) van de LED rotondeafbakening."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDRotondeafbakening>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDRotondeafbakening.nominaleSpanning> a owl:ObjectProperty;
+  rdfs:label "nominaal vermogen"@nl;
+  rdfs:comment "Nominaal vermogen (in watt) van de LED rotondeafbakening."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDRotondeafbakening>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDRotondeafbakening.tussenafstand> a owl:ObjectProperty;
+  rdfs:label "tussenafstand"@nl;
+  rdfs:comment "De afstand van middelpunt tot middelpunt tussen twee reflectoren in de verzameling."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDRotondeafbakening>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDWegdekreflectorBebakening.aantalActieveReflectoren> a owl:ObjectProperty;
+  rdfs:label "aantal actieve reflectoren"@nl;
+  rdfs:comment "Het aantal actieve reflectoren in de verzameling van reflectoren die hetzelfde obstakel of risico aangeven."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDWegdekreflectorBebakening>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range xsd:nonNegativeInteger .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDWegdekreflectorBebakening.heeftVoedingOpZonneEnergie> a owl:DatatypeProperty;
+  rdfs:label "heeft voeding op zonne-energie"@nl;
+  rdfs:comment "Geeft aan dat de verzameling bestaat uit actieve reflectoren met geintegreerde zonnecellen en een batterij die zorgen voor de voeding van de verlichting in de relfector."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDWegdekreflectorBebakening>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range xsd:boolean .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDWegdekreflectorBebakening.kleurReflectorAflopend> a owl:ObjectProperty;
+  rdfs:label "kleur aflopend"@nl;
+  rdfs:comment "De kleur van het niet-actieve deel de reflector stroomafwaarts."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDWegdekreflectorBebakening>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range skos:Concept .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDWegdekreflectorBebakening.kleurReflectorOplopend> a owl:ObjectProperty;
+  rdfs:label "kleur oplopend"@nl;
+  rdfs:comment "De kleur van het niet-actieve deel de reflector stroomopwaarts."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDWegdekreflectorBebakening>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range skos:Concept .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDWegdekreflectorBebakening.lengte> a owl:ObjectProperty;
+  rdfs:label "lengte"@nl;
+  rdfs:comment "De afstand tussen de eerste en de laatste actieve reflector in de verzameling gevoed door dezelfde stroomkring. "@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDWegdekreflectorBebakening>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDWegdekreflectorBebakening.tussenafstand> a owl:ObjectProperty;
+  rdfs:label "tussenafstand"@nl;
+  rdfs:comment "De afstand van middelpunt tot middelpunt tussen twee reflectoren in de verzameling."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDWegdekreflectorBebakening>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Link.geleidingsgroepTnummer> a owl:DatatypeProperty;
   rdfs:label "geleidingsgroep T-nummer"@nl;
@@ -353,11 +508,33 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:range skos:Concept .
 
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VLAN> a owl:Class;
-  rdfs:label "VLAN"@nl;
-  rdfs:comment "Binnen de L2 access structuur vormt de VLAN een specifieke virtuele LAN. De toepassingen zijn verbonden met een specifieke VLAN.   Rechtstreekse communicatie tussen toepassingen is enkel mogelijk indien deze zijn verbonden met dezelfde VLAN."@nl;
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VLAN.defaultGateway> a owl:ObjectProperty;
+  rdfs:label "default gateway"@nl;
+  rdfs:comment "Het IP adres van de gateway. Binnen een deelnetwerk is de Gateway de toegangspoort tot het ruimere netwerk."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VLAN>;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DteIPv4Adres> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VLAN.ipMask> a owl:ObjectProperty;
+  rdfs:label "IP mask"@nl;
+  rdfs:comment "Bepaalt welke range van IP adressen beschikbaar zijn in een netwerk."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VLAN>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DteIPv4Adres> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VLAN.ipSubnet> a owl:ObjectProperty;
+  rdfs:label "IP subnet"@nl;
+  rdfs:comment "Identificatie van een IP netwerk binnen een ruimer netwerk."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VLAN>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DteIPv4Adres> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VLAN.vlanId> a owl:ObjectProperty;
+  rdfs:label "VLAN identificatienummer"@nl;
+  rdfs:comment "Identificeert een VLAN met een getal tussen 0 en 4095."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VLAN>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range xsd:nonNegativeInteger .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VerkeersbordConcept.afbeelding> a owl:ObjectProperty;
   rdfs:label "afbeelding"@nl;
@@ -547,6 +724,18 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Bochtafbakeningsinstallatie> a owl:Class;
+  rdfs:label "Bochtafbakeningsinstallatie"@nl;
+  rdfs:comment "De verzameling van alle bochtafbakeningsborden in dezelfde bocht en rijrichting."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#EMAfbakening> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Flitsgroep> a owl:Class;
+  rdfs:label "Flitsinstallatiegroep"@nl;
+  rdfs:comment "Groepering om de flitspalen van een kruispunt of bepaalde zone in onder te brengen."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#GroepDwarseMarkeringEnFiguratie> a owl:Class;
   rdfs:label "Groep dwarse- en figuratiemarkering"@nl;
   rdfs:comment "Groepering van de dwarse- en figuratiemarkering."@nl;
@@ -585,11 +774,23 @@ skos:Concept a rdfs:Class;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject>,
     <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#TerreinDeel> .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aardingsinstallatie> a owl:Class;
+  rdfs:label "Aardingsinstallatie"@nl;
+  rdfs:comment "Een galvanische verbinding van een elektrische installatie met de aarde. De elektrische installatie die op deze wijze met de aarde wordt verbonden krijgt een spanning van nul volt."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Baanlichaam> a owl:Class;
   rdfs:label "Baanlichaam"@nl;
   rdfs:comment "De lagen tussen het baanbed en het baanoppervlak."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#DtcAardingsstelsel> a owl:Class;
+  rdfs:label "Aardingsstelsel details."@nl;
+  <http://purl.org/vocab/vann/usageNote> "Het attest is enkel vereist voor globale aardingsstelsels. Voor gescheiden aardinsstelsel kanhet attribuut attestDNB leeg blijven."@nl;
+  rdfs:comment "Complex datatype dat het mogelijk maakt om het attest van de distributienetbeheerder toe te voegen in het geval van een globaal aardingsstelsel."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Link> a owl:Class;
   rdfs:label "Link"@nl;
@@ -603,11 +804,23 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VLAN> a owl:Class;
+  rdfs:label "VLAN"@nl;
+  rdfs:comment "Binnen de L2 access structuur vormt de VLAN een specifieke virtuele LAN. De toepassingen zijn verbonden met een specifieke VLAN.   Rechtstreekse communicatie tussen toepassingen is enkel mogelijk indien deze zijn verbonden met dezelfde VLAN."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Zpad> a owl:Class;
   rdfs:label "Zpad"@nl;
   rdfs:comment "End-to-end gebruikersverbinding over het transport netwerk."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDRotondeafbakening> a owl:Class;
+  rdfs:label "LED rotondeafbakening"@nl;
+  rdfs:comment "De verzameling van actieve lichtgevende modules ter hoogte van één toerit die ingeslepen worden in, of geplaatst worden op, de boordsteen van een rotonde en als doel hebben om de rand van de rotonde duidelijk zichtbaar te maken."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#EMAfbakening> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling> a owl:Class;
   rdfs:label "Verkeersbordopstelling"@nl;
@@ -623,6 +836,12 @@ De onderkant van de gronddam wordt direct op het bestaand maaiveld aangebracht o
 Een gronddam kan volgende functies vervullen: geluidswering, geleiding van dieren, veiligheid en lichtwering."""@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#LEDWegdekreflectorBebakening> a owl:Class;
+  rdfs:label "LED wegdekreflector bebakening"@nl;
+  rdfs:comment "De verzameling van op de rijbaan verankerde actieve lichtmodules. De modules hebben als doel de randen van de rijbaan of de grenzen tussen rijstroken te markeren of gevaarlijke plaatsen te signaleren. De verzameling bundelt de actieve reflectoren die hetzelfde obstakel of risico aanduiden."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#EMAfbakening> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VerkeersbordConcept> a owl:Class;
   rdfs:label "Verkeersbordconcept"@nl;
