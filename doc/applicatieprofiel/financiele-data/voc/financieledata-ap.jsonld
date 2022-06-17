@@ -119,8 +119,7 @@
     {
       "@type": "foaf:Person",
       "foaf:firstName": "Stijn",
-      "foaf:lastName": "Goedertier",
-      "foaf:mbox": "mailto:stijn.goedertier@vlaanderen.be"
+      "foaf:lastName": "Goedertier"
     },
     {
       "@type": "foaf:Person",
@@ -363,7 +362,7 @@
   "navigation": {},
   "publication-date": "2020-01-31",
   "publication-state": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
-  "title": "Financiële Data",
+  "title": "Financiële Data - Applicatieprofiel",
   "dcterms:license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
   "dcterms:mediator": {
     "foaf:homepage": "https://data.vlaanderen.be",
@@ -371,56 +370,6 @@
     "foaf:name": "Data Vlaanderen"
   },
   "classes": [
-    {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "description": {
-        "nl": "Geeft het verband tussen concepten weer"
-      },
-      "name": {
-        "nl": "Conceptrelatie"
-      },
-      "parents": [],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#DimensieWaarde",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "description": {
-        "nl": "De waarde van een specifieke dimensie"
-      },
-      "name": {
-        "nl": "Dimensiewaarde"
-      },
-      "parents": [],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#Feit",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "description": {
-        "nl": "Een individueel stuk informatie uit een rapport."
-      },
-      "name": {
-        "nl": "Feit"
-      },
-      "parents": [],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "description": {
-        "nl": "Een rapportage van een organisatie over haar financieel-economische positie."
-      },
-      "name": {
-        "nl": "FinancieelRapport"
-      },
-      "parents": [
-        "https://data.vlaanderen.be/ns/financiele-data#ZakelijkRapport"
-      ],
-      "usage": {}
-    },
     {
       "@id": "https://data.vlaanderen.be/ns/financiele-data#Neerlegging",
       "@type": "http://www.w3.org/2002/07/owl#Class",
@@ -468,82 +417,164 @@
       },
       "parents": [],
       "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/financiele-data#ZakelijkRapport",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "De beschrijving van een toestand of gebeurtenis van een organisatie"
+      },
+      "name": {
+        "nl": "ZakelijkRapport"
+      },
+      "parents": [],
+      "usage": {}
     }
   ],
   "properties": [
     {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie.concept.source",
+      "@id": "https://data.vlaanderen.be/ns/financiele-data#Dossier.rapport",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
-        "nl": "Referentie naar verbonden klasse."
+        "nl": "TODO"
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie"
+        "https://data.vlaanderen.be/ns/dossier#Dossier"
       ],
       "generalization": [],
       "name": {
-        "nl": "concept (source)"
+        "nl": "rapport"
       },
       "range": [
-        "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Concept"
+        "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport"
       ],
       "usage": {}
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie.concept.target",
+      "@id": "https://data.vlaanderen.be/ns/financiele-data#Dossier.totAanvragen",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
-        "nl": "Referentie naar verbonden klasse."
+        "nl": "Een dossier wordt ingediend om een publieke dienstverlening aan te vragen"
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie"
+        "https://data.vlaanderen.be/ns/dossier#Dossier"
       ],
       "generalization": [],
       "name": {
-        "nl": "concept (target)"
+        "nl": "totAanvragen"
       },
       "range": [
-        "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Concept"
+        "http://purl.org/vocab/cpsv#PublicService"
       ],
       "usage": {}
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie.rol",
+      "@id": "https://data.vlaanderen.be/ns/financiele-data#Dossier.validatiestatus",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
-        "nl": "Het type relatie tussen concepten"
+        "nl": "Een dossier kan gevalideerd worden"
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie"
+        "https://data.vlaanderen.be/ns/dossier#Dossier"
       ],
       "generalization": [],
       "name": {
-        "nl": "rol"
+        "nl": "validatiestatus"
       },
       "range": [
-        "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie"
+        "https://data.vlaanderen.be/ns/financiele-data#Validatie"
       ],
       "usage": {}
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#Feit.balansType",
+      "@id": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport.dossier",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
-        "nl": "Een type, relevant bij monetaire items, dat wordt aangeduid als debet, credit of geen van beide. De aanduiding geeft het natuurlijke of meest verwachte element weer"
+        "nl": "Een financieel rapport kan gelinkt worden aan een dossier"
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#Feit"
+        "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport"
       ],
       "generalization": [],
       "name": {
-        "nl": "balansType"
+        "nl": "dossier"
       },
       "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
+        "https://data.vlaanderen.be/ns/dossier#Dossier"
       ],
-      "usage": {
-        "nl": "Bv. Debit, credit of geen van beide"
-      }
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport.neerlegging",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Een financieel rapport kan bij verschillende instanties neergelegd worden."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "neerlegging"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/financiele-data#Neerlegging"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport.validatiestatus",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Een financieel rapport heeft een bepaalde validatiestatus"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "validatieStatus"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/financiele-data#Validatie"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/financiele-data#Neerlegging.datum",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "De datum waarop een financieel rapport werd neergelegd."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/financiele-data#Neerlegging"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "datum"
+      },
+      "range": [
+        "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Instant"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/financiele-data#Neerlegging.neergelegdBij",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "De organisatie waarbij een financieel rapport werd neergelegd"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/financiele-data#Neerlegging"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "neergelegdBij"
+      },
+      "range": [
+        "http://www.w3.org/ns/org#Organization"
+      ],
+      "usage": {}
     },
     {
       "@id": "https://data.vlaanderen.be/ns/financiele-data#Opmerking.feit",
@@ -636,6 +667,62 @@
       "usage": {}
     },
     {
+      "@id": "https://data.vlaanderen.be/ns/financiele-data#Validatie.datum",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "description": {
+        "nl": "De datum waarop een validatie werd uitgevoerd"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/financiele-data#Validatie"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "datum"
+      },
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#dateTime"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/financiele-data#Validatie.gevalideerddoor",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "De agent die de juistheid van een rapport en/of dossier nagaat."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/financiele-data#Validatie"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "gevalideerdDoor"
+      },
+      "range": [
+        "http://purl.org/dc/terms/Agent"
+      ],
+      "usage": {
+        "nl": "TODO"
+      }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/financiele-data#Validatie.opmerking",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Tijdens de validatie kan een agent een opmerking hebben over het financieel rapport om toelichting te geven bij de validatie"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/financiele-data#Validatie"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "opmerking"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/financiele-data#Opmerking"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://data.vlaanderen.be/ns/financiele-data#Validatie.status",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
@@ -656,278 +743,20 @@
       }
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#^bevat",
+      "@id": "https://data.vlaanderen.be/ns/financiele-data#ingediendDoor",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
-        "nl": "Een financieel rapport bevat feiten"
+        "nl": "Een dossier wordt steeds ingediend door een organisatie"
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport"
+        "https://data.vlaanderen.be/ns/dossier#Dossier"
       ],
       "generalization": [],
       "name": {
-        "nl": "bevat"
-      },
-      "range": [
-        "https://data.vlaanderen.be/ns/financiele-data#Feit"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#datum",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "description": {
-        "nl": "De datum waarop een validatie werd uitgevoerd"
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#Validatie"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "datum"
-      },
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#dateTime"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#datum",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "De datum waarop een financieel rapport werd neergelegd."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#Neerlegging"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "datum"
-      },
-      "range": [
-        "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Instant"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#gaatOver",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Een financieel rapport gaat steeds over een specifieke organisatie"
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "gaatOver"
+        "nl": "ingediendDoor"
       },
       "range": [
         "http://www.w3.org/ns/org#Organization"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#geassocieerdMet",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Een financieel rapport kan in relatie staan tot een ander financieel rapport."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "geassocieerdMet"
-      },
-      "range": [
-        "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#neergelegdBij",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "De organisatie waarbij een financieel rapport werd neergelegd"
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#Neerlegging"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "neergelegdBij"
-      },
-      "range": [
-        "http://www.w3.org/ns/org#Organization"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#neerlegging",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Een financieel rapport kan bij verschillende instanties neergelegd worden."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "neerlegging"
-      },
-      "range": [
-        "https://data.vlaanderen.be/ns/financiele-data#Neerlegging"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#opmerking",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Tijdens de validatie kan een agent een opmerking hebben over het financieel rapport om toelichting te geven bij de validatie"
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#Validatie"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "opmerking"
-      },
-      "range": [
-        "https://data.vlaanderen.be/ns/financiele-data#Opmerking"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#orde",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "description": {
-        "nl": "Geeft de gerangschikte indeling van een concept weer."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#Feit"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "orde"
-      },
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#integer"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#periode",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Min of meer afgebakende tijdsduur."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "periode"
-      },
-      "range": [
-        "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object"
-      ],
-      "usage": {
-        "nl": "Typisch volgt de duur uit het opgeven ve begin- en eindtijdstip maar kan hier ook een moment zijn."
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#rapport",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Een feit maakt deel uit van een financieel rapport"
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#Feit"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "rapport"
-      },
-      "range": [
-        "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#rubriek",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Geeft de groep gelijksoortige rekeningen uit een rekeningenstelsel aan"
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#Feit"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "rubriek"
-      },
-      "range": [
-        "http://www.w3.org/ns/adms#Identifier"
-      ],
-      "usage": {}
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#taal",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "description": {
-        "nl": "De taal waarin het financieel rapport werd opgesteld."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "taal"
-      },
-      "range": [
-        "http://www.w3.org/2000/01/rdf-schema#Literal"
-      ],
-      "usage": {
-        "nl": "De ISO-taalcodes kunnen hier gebruikt worden"
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#typeRapport",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Het type van het rapport."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "typeRapport"
-      },
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "usage": {
-        "nl": "Een rapport heeft een type zoals een jaarrekening, balans, resultatenrekening, "
-      }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#validatieStatus",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Een financieel rapport heeft een bepaalde validatiestatus"
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "validatieStatus"
-      },
-      "range": [
-        "https://data.vlaanderen.be/ns/financiele-data#Validatie"
       ],
       "usage": {}
     }
@@ -945,13 +774,6 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "SchemaType"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "EenheidType"
       }
     },
     {
@@ -983,6 +805,16 @@
       }
     },
     {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {}
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {}
+    },
+    {
       "@id": "https://schema.org/MonetaryAmount",
       "@type": "rdfs:Class",
       "name": {
@@ -1004,36 +836,7 @@
       }
     }
   ],
-  "externalproperties": [
-    {
-      "@id": "http://purl.org/dc/terms/Agent",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "gevalideerdDoor"
-      }
-    },
-    {
-      "@id": "http://purl.org/dc/terms/title",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "naam"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/ns/adms#identifier",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "id"
-      }
-    },
-    {
-      "@id": "https://schema.org/value",
-      "@type": "rdf:Property",
-      "name": {
-        "nl": "waarde"
-      }
-    }
-  ],
+  "externalproperties": [],
   "@context": {
     "vlaanderen": "http://data.vlaanderen.be/ns/",
     "owl": "http://www.w3.org/2002/07/owl#",

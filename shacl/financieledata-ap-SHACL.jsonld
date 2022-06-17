@@ -34,169 +34,6 @@
   "@id": "https://data.vlaanderen.be/shacl/financieledata-ap",
   "shapes": [
     {
-      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#ConceptrelatieShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Concept",
-          "sh:description": "Referentie naar verbonden klasse.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "Concept",
-          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie.concept.source"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Concept",
-          "sh:description": "Referentie naar verbonden klasse.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "Concept",
-          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie.concept.target"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie",
-          "sh:description": "Het type relatie tussen concepten",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "rol",
-          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie.rol"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#DimensieWaardeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#DimensieWaarde"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#FeitShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Een type, relevant bij monetaire items, dat wordt aangeduid als debet, credit of geen van beide. De aanduiding geeft het natuurlijke of meest verwachte element weer",
-          "sh:maxCount": "1",
-          "sh:name": "balansType",
-          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Feit.balansType"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
-          "sh:description": "Geeft de gerangschikte indeling van een concept weer.",
-          "sh:maxCount": "1",
-          "sh:name": "orde",
-          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#orde"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport",
-          "sh:description": "Een feit maakt deel uit van een financieel rapport",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "rapport",
-          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#rapport"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/adms#Identifier",
-          "sh:description": "Geeft de groep gelijksoortige rekeningen uit een rekeningenstelsel aan",
-          "sh:maxCount": "1",
-          "sh:name": "rubriek",
-          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#rubriek"
-        },
-        {
-          "sh:class": "http://www.w3.org/2001/XMLSchema#anyType",
-          "sh:description": "De waarde van een feit",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "waarde",
-          "sh:path": "https://schema.org/value"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#Feit"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#FinancieelRapportShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Feit",
-          "sh:description": "Een financieel rapport bevat feiten",
-          "sh:name": "^bevat",
-          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#^bevat"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/org#Organization",
-          "sh:description": "Een financieel rapport gaat steeds over een specifieke organisatie",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "gaatOver",
-          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#gaatOver"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport",
-          "sh:description": "Een financieel rapport kan in relatie staan tot een ander financieel rapport.",
-          "sh:name": "geassocieerdMet",
-          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#geassocieerdMet"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/adms#Identifier",
-          "sh:description": "De unieke identificator van een financieel rapport.",
-          "sh:maxCount": "1",
-          "sh:name": "id",
-          "sh:path": "http://www.w3.org/ns/adms#identifier"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "De naam van het financieel rapport.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "naam",
-          "sh:path": "http://purl.org/dc/terms/title"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Neerlegging",
-          "sh:description": "Een financieel rapport kan bij verschillende instanties neergelegd worden.",
-          "sh:name": "neerlegging",
-          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#neerlegging"
-        },
-        {
-          "sh:class": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
-          "sh:description": "Min of meer afgebakende tijdsduur.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "periode",
-          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#periode"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
-          "sh:description": "De taal waarin het financieel rapport werd opgesteld.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "taal",
-          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#taal"
-        },
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Het type van het rapport.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "typeRapport",
-          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#typeRapport"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Validatie",
-          "sh:description": "Een financieel rapport heeft een bepaalde validatiestatus",
-          "sh:name": "validatieStatus",
-          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#validatieStatus"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#Rapportrelatie.financieelRapport.target"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#NeerleggingShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -207,7 +44,7 @@
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "datum",
-          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#datum"
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Neerlegging.datum"
         },
         {
           "sh:class": "http://www.w3.org/ns/org#Organization",
@@ -215,7 +52,7 @@
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "neergelegdBij",
-          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#neergelegdBij"
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Neerlegging.neergelegdBij"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#Neerlegging"
@@ -286,7 +123,7 @@
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "datum",
-          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#datum"
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Validatie.datum"
         },
         {
           "sh:class": "http://purl.org/dc/terms/Agent",
@@ -294,13 +131,13 @@
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "gevalideerdDoor",
-          "sh:path": "http://purl.org/dc/terms/Agent"
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Validatie.gevalideerddoor"
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Opmerking",
           "sh:description": "Tijdens de validatie kan een agent een opmerking hebben over het financieel rapport om toelichting te geven bij de validatie",
           "sh:name": "opmerking",
-          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#opmerking"
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Validatie.opmerking"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -312,6 +149,13 @@
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#Validatie"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#ZakelijkRapportShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#ZakelijkRapport"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#OprichtingShape",
@@ -402,13 +246,6 @@
       "sh:targetClass": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Period"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#ZakelijkRapportShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#ZakelijkRapport"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#AgentShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -421,6 +258,7 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:description": "Naam van de plaats of van het gebied.",
           "sh:maxCount": "1",
           "sh:name": "plaatsnaam",
@@ -455,7 +293,7 @@
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "heeftVerantwoordelijke",
-          "sh:path": "http://fixme.com#heeftVerantwoordelijke"
+          "sh:path": "https://data.vlaanderen.be/ns/dienst#heeftVerantwoordelijke"
         },
         {
           "sh:class": "http://www.w3.org/ns/adms#Identifier",
@@ -545,6 +383,13 @@
       "sh:targetClass": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#GeografischeNaamShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#AnyDatatypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -581,13 +426,6 @@
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#BalansTypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#EenheidTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
@@ -636,11 +474,75 @@
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#DimensieConceptrelatietypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#DimensieItemtypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#IdentificatorShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://www.w3.org/ns/adms#Identifier"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#AdresvoorstellingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Officieel toegekende alfanumerieke code die wordt toegevoegd aan het huisnummer om meerdere gebouweenheden, standplaatsen, ligplaatsen of percelen te onderscheiden die eenzelfde huisnummer hebben.",
+          "sh:maxCount": "1",
+          "sh:name": "busnummer",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Gemeentenaam vh adres.",
+          "sh:maxCount": "1",
+          "sh:name": "gemeentenaam",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#gemeentenaam"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Alfanumerieke code officieel toegekend aan gebouweenheden, ligplaatsen, standplaatsen of percelen.",
+          "sh:maxCount": "1",
+          "sh:name": "huisnummer",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Land waarin het adres gelegen is.",
+          "sh:maxCount": "1",
+          "sh:name": "land",
+          "sh:path": "https://data.vlaanderen.be/ns/adres#land"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Code waarmee het geografisch gebied dat adressen voor postale doeleinden groepeert wordt aangeduid.",
+          "sh:maxCount": "1",
+          "sh:name": "postcode",
+          "sh:path": "http://www.w3.org/ns/locn#postCode"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "Straatnaam vh adres.",
+          "sh:maxCount": "1",
+          "sh:name": "straatnaam",
+          "sh:path": "http://www.w3.org/ns/locn#thoroughfare"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/locn#Address"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#OrganisatieShape",
@@ -710,7 +612,7 @@
           "sh:description": "De plaats waar een persoon woonachtig is.",
           "sh:maxCount": "1",
           "sh:name": "/woonplaats",
-          "sh:path": "http://fixme.com#/woonplaats"
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-info#Persoon.woonplaats"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -769,264 +671,6 @@
       "sh:targetClass": "http://www.w3.org/ns/regorg#RegisteredOrganization"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#AandelenShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Aandelen"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#AandelenDatatypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Aandelen",
-          "sh:description": "De waarde van een aandeel",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "getal",
-          "sh:path": "https://schema.org/value"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#AandelenDatatype"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#ConceptShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Een type, relevant bij monetaire items, dat wordt aangeduid als debet, credit of geen van beide. De aanduiding geeft het natuurlijke of meest verwachte element weer",
-          "sh:maxCount": "1",
-          "sh:name": "balansType",
-          "sh:path": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Concept.balansType"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
-          "sh:description": "Het datatype dat bij het concept hoort.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "datatype",
-          "sh:path": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Concept.datatype"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:description": "De definitie van een concept",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "definitie",
-          "sh:path": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Concept.definitie"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Concept",
-          "sh:description": "Een concept kan met een ander concept geassocieerd zijn",
-          "sh:name": "geassocieerdMet",
-          "sh:path": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#geassocieerdMet"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/adms#Identifier",
-          "sh:description": "Unieke ID van een concept",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "id",
-          "sh:path": "http://www.w3.org/ns/adms#identifier"
-        },
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "TODO",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "itemtype",
-          "sh:path": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Concept.itemtype"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:description": "TODO",
-          "sh:name": "label",
-          "sh:path": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#label"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:description": "De naam van het concept zoals gedefinieerd in het schema.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "naam",
-          "sh:path": "http://purl.org/dc/terms/title"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
-          "sh:description": "Geeft de gerangschikte indeling van een concept weer.",
-          "sh:maxCount": "1",
-          "sh:name": "orde",
-          "sh:path": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#orde"
-        },
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Het type periode waar het concept over rapporteert.",
-          "sh:maxCount": "1",
-          "sh:name": "periodeType",
-          "sh:path": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Concept.periodeType"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie.concept.target"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#ContextShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/ns/adms#Identifier",
-          "sh:description": "De unieke code van een context",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "code",
-          "sh:path": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Context.code"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/org#Organization",
-          "sh:description": "De agent (een onderneming, een departement, zelfs een segment (economisch of geografisch)) waarover de context gaat.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "entiteit",
-          "sh:path": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#entiteit"
-        },
-        {
-          "sh:class": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
-          "sh:description": "De periode of datum waarover een feit gaat",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "periode",
-          "sh:path": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Context.periode"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "Aanvullende informatie die waarde toevoegt aan een feit.",
-          "sh:maxCount": "1",
-          "sh:name": "scenario",
-          "sh:path": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#scenario"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Context"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#DimensieShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/ns/adms#Identifier",
-          "sh:description": "De unieke identificator van de dimensie",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "id",
-          "sh:path": "http://www.w3.org/ns/adms#identifier"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "De naam van een dimensie",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "naam",
-          "sh:path": "http://purl.org/dc/terms/title"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
-          "sh:description": "Het type van een dimensie",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "type",
-          "sh:path": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Dimensie.type"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Dimensie"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#DimensieschemaShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Dimensie",
-          "sh:description": "Een schema definieert verschillende dimensies",
-          "sh:minCount": "1",
-          "sh:name": "definieert",
-          "sh:path": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#definieert"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Dimensieschema"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#MonetairDatatypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "https://schema.org/MonetaryAmount",
-          "sh:description": "De waarde van een monetair datatype",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "getal",
-          "sh:path": "https://schema.org/value"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#MonetairDatatype"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#PuurShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Puur"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#PuurDatatypeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#PuurDatatype"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#SchemaShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Concept",
-          "sh:description": "Een schema definieert verschillende concepten",
-          "sh:minCount": "1",
-          "sh:name": "definieert",
-          "sh:path": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#definieert"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/adms#Identifier",
-          "sh:description": "De unieke identificator van het schema",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "id",
-          "sh:path": "http://www.w3.org/ns/adms#identifier"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:description": "De naam van een schema.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "naam",
-          "sh:path": "http://purl.org/dc/terms/title"
-        },
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Een voorgedefinieerd type van schema.",
-          "sh:maxCount": "1",
-          "sh:name": "type",
-          "sh:path": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Schema.type"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#Schema"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#FeitelijkeVerenigingShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -1073,7 +717,7 @@
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "ingediendDoor",
-          "sh:path": "http://fixme.com#ingediendDoor"
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#ingediendDoor"
         },
         {
           "sh:class": "http://dbpedia.org/ontology/Case",
@@ -1090,9 +734,650 @@
           "sh:minCount": "1",
           "sh:name": "naam",
           "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport",
+          "sh:description": "TODO",
+          "sh:name": "rapport",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Dossier.rapport"
+        },
+        {
+          "sh:class": "http://purl.org/vocab/cpsv#PublicService",
+          "sh:description": "Een dossier wordt ingediend om een publieke dienstverlening aan te vragen",
+          "sh:minCount": "1",
+          "sh:name": "totAanvragen",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Dossier.totAanvragen"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Validatie",
+          "sh:description": "Een dossier kan gevalideerd worden",
+          "sh:name": "validatieStatus",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Dossier.validatiestatus"
         }
       ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/dossier#Dossier"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#AandelenShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#Aandelen"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#AandelenDatatypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Aandelen",
+          "sh:description": "De waarde van een aandeel",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "getal",
+          "sh:path": "https://schema.org/value"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#AandelenDatatype"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#ConceptShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "abstract",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Concept.abstract"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Een type, relevant bij monetaire items, dat wordt aangeduid als debet, credit of geen van beide. De aanduiding geeft het natuurlijke of meest verwachte element weer",
+          "sh:maxCount": "1",
+          "sh:name": "balansType",
+          "sh:path": "http://purl.org/dc/elements/1.1/type"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:description": "Het datatype dat bij het concept hoort.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "datatype",
+          "sh:path": "http://purl.org/dc/elements/1.1/type"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "De definitie van een concept",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "definitie",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Concept.definitie"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Concept",
+          "sh:description": "Een concept kan met een ander concept geassocieerd zijn",
+          "sh:name": "geassocieerdMet",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Concept.geassocieerdMet"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Hypercube",
+          "sh:description": "TODO",
+          "sh:name": "hypercube",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Concept.hypercube"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "Unieke ID van een concept",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "id",
+          "sh:path": "http://www.w3.org/ns/adms#identifier"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Unieke ID van een concept",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "itemtype",
+          "sh:path": "http://purl.org/dc/elements/1.1/type"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "TODO",
+          "sh:name": "label",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Concept.label"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "De naam van het concept zoals gedefinieerd in het schema.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "naam",
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Het type periode waar het concept over rapporteert.",
+          "sh:maxCount": "1",
+          "sh:name": "periodeType",
+          "sh:path": "http://purl.org/dc/elements/1.1/type"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie.concept.target"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#ConceptrelatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Concept",
+          "sh:description": "Referentie naar verbonden klasse.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "Concept",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie.concept.source"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Concept",
+          "sh:description": "Referentie naar verbonden klasse.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "Concept",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie.concept.target"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:description": "Geeft de gerangschikte indeling van een concept weer.",
+          "sh:maxCount": "1",
+          "sh:name": "orde",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie.orde"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie",
+          "sh:description": "Het type relatie tussen concepten",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "rol",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie.rol"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#ContextShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Dimensie",
+          "sh:description": "TODO",
+          "sh:name": "dimensie",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Context.dimensie"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/org#Organization",
+          "sh:description": "De agent (een onderneming, een departement, zelfs een segment (economisch of geografisch)) waarover de context gaat.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "entiteit",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Context.entiteit"
+        },
+        {
+          "sh:class": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
+          "sh:description": "De periode of datum waarover een feit gaat",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "periode",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Context.periode"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "rapport",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Context.rapport"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Aanvullende informatie die waarde toevoegt aan een feit.",
+          "sh:maxCount": "1",
+          "sh:name": "scenario",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Context.scenario"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#Context"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#DimensieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Dimensieconcept",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "concept",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Dimensie.concept"
+        },
+        {
+          "sh:class": "http://www.w3.org/2001/XMLSchema#anyType",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "waarde",
+          "sh:path": "https://schema.org/value"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#Dimensie"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#DimensieConceptrelatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Dimensieconcept",
+          "sh:description": "Referentie naar verbonden klasse.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "Dimensieconcept",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#DimensieConceptrelatie.dimensieconcept.source"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Dimensieconcept",
+          "sh:description": "Referentie naar verbonden klasse.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "Dimensieconcept",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#DimensieConceptrelatie.dimensieconcept.target"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:description": "Geeft de gerangschikte indeling van een concept weer.",
+          "sh:maxCount": "1",
+          "sh:name": "orde",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Dimensieconceptrelatie.orde"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Het type relatie tussen concepten",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "rol",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie.rol"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#DimensieConceptrelatie"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#DimensieconceptShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "abstract",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Dimensieconcept.abstract"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:description": "Het type van een dimensie",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "datatype",
+          "sh:path": "http://purl.org/dc/elements/1.1/type"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "definitie",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Dimensieconcept.definitie"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Dimensieconcept",
+          "sh:description": "TODO",
+          "sh:name": "geassocieerdMet",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Dimensieconcept.geassocieerdMet"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "De unieke identificator van de dimensie",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "id",
+          "sh:path": "http://www.w3.org/ns/adms#identifier"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "itemType",
+          "sh:path": "http://purl.org/dc/elements/1.1/type"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "TODO",
+          "sh:name": "label",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Dimensieconcept.label"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "De naam van een dimensie",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "naam",
+          "sh:path": "http://purl.org/dc/terms/title"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#DimensieConceptrelatie.dimensieconcept.target"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#DimensieschemaShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Dimensieconcept",
+          "sh:description": "Een schema definieert verschillende dimensies",
+          "sh:minCount": "1",
+          "sh:name": "definieert",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Dimensieschema.definieert"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "De unieke identificator van het schema",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "id",
+          "sh:path": "http://www.w3.org/ns/adms#identifier"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "De naam van een schema.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "naam",
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Een voorgedefinieerd type van schema.",
+          "sh:maxCount": "1",
+          "sh:name": "type",
+          "sh:path": "http://purl.org/dc/elements/1.1/type"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#Dimensieschema"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#FeitShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Context",
+          "sh:description": "Een feit kan één of meerdere contexten hebben",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "^context",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Feit.context"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Concept",
+          "sh:description": "Een feit geeft extra informatie aan een concept",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "concept",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Feit.concept"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport",
+          "sh:description": "Een feit maakt deel uit van een financieel rapport",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "rapport",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Feit.rapport"
+        },
+        {
+          "sh:class": "http://www.w3.org/2001/XMLSchema#anyType",
+          "sh:description": "De waarde van een feit",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "waarde",
+          "sh:path": "https://schema.org/value"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#Feit"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#FinancieelRapportShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Feit",
+          "sh:description": "Een financieel rapport bevat feiten",
+          "sh:name": "^bevat",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport.bevat"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Schema",
+          "sh:description": "Een financieel rapport volgt een bepaald (wettelijk) schema",
+          "sh:maxCount": "1",
+          "sh:name": "^schema",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport.schema"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Context",
+          "sh:description": "Een financieel rapport heeft mogelijk verschillende contexten",
+          "sh:name": "context",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport.context"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/dossier#Dossier",
+          "sh:description": "Een financieel rapport kan gelinkt worden aan een dossier",
+          "sh:name": "dossier",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport.dossier"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/org#Organization",
+          "sh:description": "Een financieel rapport gaat steeds over een specifieke organisatie",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "gaatOver",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport.gaatOver"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport",
+          "sh:description": "Een financieel rapport kan in relatie staan tot een ander financieel rapport.",
+          "sh:name": "geassocieerdMet",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport.geassocieerdMet"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "De unieke identificator van een financieel rapport.",
+          "sh:maxCount": "1",
+          "sh:name": "id",
+          "sh:path": "http://www.w3.org/ns/adms#identifier"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "De naam van het financieel rapport.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "naam",
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Neerlegging",
+          "sh:description": "Een financieel rapport kan bij verschillende instanties neergelegd worden.",
+          "sh:name": "neerlegging",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport.neerlegging"
+        },
+        {
+          "sh:class": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
+          "sh:description": "Min of meer afgebakende tijdsduur.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "periode",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport.periode"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:description": "De taal waarin het financieel rapport werd opgesteld.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "taal",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport.taal"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Het type van het rapport.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "type",
+          "sh:path": "http://purl.org/dc/elements/1.1/type"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Validatie",
+          "sh:description": "Een financieel rapport heeft een bepaalde validatiestatus",
+          "sh:name": "validatieStatus",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport.validatiestatus"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#Rapportrelatie.financieelRapport.target"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#HypercubeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:name": "definitie",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Hypercube.definitie"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Dimensieconcept",
+          "sh:description": "TODO",
+          "sh:minCount": "1",
+          "sh:name": "dimensie",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Hypercube.dimensie"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "id",
+          "sh:path": "http://www.w3.org/ns/adms#identifier"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "TODO",
+          "sh:name": "label",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Hypercube.label"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "naam",
+          "sh:path": "http://purl.org/dc/terms/title"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#Hypercube"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#MonetairDatatypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://schema.org/MonetaryAmount",
+          "sh:description": "De waarde van een monetair datatype",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "getal",
+          "sh:path": "https://schema.org/value"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#MonetairDatatype"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#PuurShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#Puur"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#PuurDatatypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Puur",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "getal",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#getal"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#PuurDatatype"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#SchemaShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Concept",
+          "sh:description": "Een schema definieert verschillende concepten",
+          "sh:minCount": "1",
+          "sh:name": "definieert",
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Schema.definieert"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "De unieke identificator van het schema",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "id",
+          "sh:path": "http://www.w3.org/ns/adms#identifier"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "De naam van een schema.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "naam",
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Een voorgedefinieerd type van schema.",
+          "sh:maxCount": "1",
+          "sh:name": "type",
+          "sh:path": "http://purl.org/dc/elements/1.1/type"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#Schema"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#GeregistreerdPersoonShape",
@@ -1141,7 +1426,7 @@
           "sh:description": "Een beschrijving van de accuraatheid van een cijfer",
           "sh:maxCount": "1",
           "sh:name": "decimalen",
-          "sh:path": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#decimalen"
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#NumeriekDatatype.decimalen"
         },
         {
           "sh:class": "https://schema.org/unitText",
@@ -1157,14 +1442,14 @@
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "getal",
-          "sh:path": "https://schema.org/Number"
+          "sh:path": "https://schema.org/value"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
           "sh:description": "Het aantal accurate cijfers in een getal",
           "sh:maxCount": "1",
           "sh:name": "precisie",
-          "sh:path": "https://data.vlaanderen.be/doc/applicatieprofiel/financiele-data#precisie"
+          "sh:path": "https://data.vlaanderen.be/ns/financiele-data#Numeriekdatatype.precisie"
         }
       ],
       "sh:targetClass": "https://schema.org/QuantitativeValue"
