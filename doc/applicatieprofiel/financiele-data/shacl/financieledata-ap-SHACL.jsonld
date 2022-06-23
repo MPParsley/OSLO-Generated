@@ -34,6 +34,13 @@
   "@id": "https://data.vlaanderen.be/shacl/financieledata-ap",
   "shapes": [
     {
+      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#EenheidShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/financiele-data#Eenheid"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#NeerleggingShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -491,7 +498,36 @@
       "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#IdentificatorShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:description": "String gebruikt om het object uniek te identificeren.",
+          "sh:maxCount": "1",
+          "sh:name": "identificator",
+          "sh:path": "http://www.w3.org/2004/02/skos/core#notation"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Agent",
+          "sh:description": "Link naar de agent die de identificator heeft uitgegeven.",
+          "sh:maxCount": "1",
+          "sh:name": "toegekendDoor",
+          "sh:path": "http://purl.org/dc/terms/creator"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Naam vd agent die de identificator heeft toegekend.",
+          "sh:maxCount": "1",
+          "sh:name": "toegekendDoorString",
+          "sh:path": "http://www.w3.org/ns/adms#schemaAgency"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:description": "Tijdstip waarop de identificator werd uitgegeven.",
+          "sh:maxCount": "1",
+          "sh:name": "toegekendOp",
+          "sh:path": "http://purl.org/dc/terms/issued"
+        }
+      ],
       "sh:targetClass": "http://www.w3.org/ns/adms#Identifier"
     },
     {
@@ -1430,7 +1466,7 @@
           "sh:path": "https://data.vlaanderen.be/ns/financiele-data#NumeriekDatatype.decimalen"
         },
         {
-          "sh:class": "https://schema.org/unitText",
+          "sh:class": "https://data.vlaanderen.be/ns/financiele-data#Eenheid",
           "sh:description": "De eenheid waarin de waarde is uitgedrukt.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -1454,13 +1490,6 @@
         }
       ],
       "sh:targetClass": "https://schema.org/QuantitativeValue"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/financieledata-ap#EenheidShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://schema.org/unitText"
     }
   ]
 }

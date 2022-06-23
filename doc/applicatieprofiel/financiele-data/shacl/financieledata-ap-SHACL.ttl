@@ -11,7 +11,8 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://data.vlaanderen.be/shacl/financieledata-ap> <https://data.vlaanderen.be/shacl/financieledata-apshapes> <https://data.vlaanderen.be/shacl/financieledata-ap#NeerleggingShape>,
+<https://data.vlaanderen.be/shacl/financieledata-ap> <https://data.vlaanderen.be/shacl/financieledata-apshapes> <https://data.vlaanderen.be/shacl/financieledata-ap#EenheidShape>,
+    <https://data.vlaanderen.be/shacl/financieledata-ap#NeerleggingShape>,
     <https://data.vlaanderen.be/shacl/financieledata-ap#OpmerkingShape>,
     <https://data.vlaanderen.be/shacl/financieledata-ap#RapportrelatieShape>,
     <https://data.vlaanderen.be/shacl/financieledata-ap#ValidatieShape>,
@@ -71,8 +72,7 @@
     <https://data.vlaanderen.be/shacl/financieledata-ap#MonetairDatatypeShape>,
     <https://data.vlaanderen.be/shacl/financieledata-ap#GetalShape>,
     <https://data.vlaanderen.be/shacl/financieledata-ap#NietNumeriekDatatypeShape>,
-    <https://data.vlaanderen.be/shacl/financieledata-ap#NumeriekDatatypeShape>,
-    <https://data.vlaanderen.be/shacl/financieledata-ap#EenheidShape> .
+    <https://data.vlaanderen.be/shacl/financieledata-ap#NumeriekDatatypeShape> .
 
 <https://data.vlaanderen.be/shacl/financieledata-ap#AandelenDatatypeShape> a shacl:NodeShape;
   shacl:closed false;
@@ -543,7 +543,7 @@
 
 <https://data.vlaanderen.be/shacl/financieledata-ap#EenheidShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass schemas:unitText .
+  shacl:targetClass <https://data.vlaanderen.be/ns/financiele-data#Eenheid> .
 
 <https://data.vlaanderen.be/shacl/financieledata-ap#FeitShape> a shacl:NodeShape;
   shacl:closed false;
@@ -755,6 +755,31 @@
 
 <https://data.vlaanderen.be/shacl/financieledata-ap#IdentificatorShape> a shacl:NodeShape;
   shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "String gebruikt om het object uniek te identificeren.";
+    shacl:maxCount 1;
+    shacl:name "identificator";
+    shacl:path skos:notation
+  ], [
+    shacl:class dc:Agent;
+    shacl:description "Link naar de agent die de identificator heeft uitgegeven.";
+    shacl:maxCount 1;
+    shacl:name "toegekendDoor";
+    shacl:path dc:creator
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Naam vd agent die de identificator heeft toegekend.";
+    shacl:maxCount 1;
+    shacl:name "toegekendDoorString";
+    shacl:path <http://www.w3.org/ns/adms#schemaAgency>
+  ], [
+    shacl:datatype xsd:dateTime;
+    shacl:description "Tijdstip waarop de identificator werd uitgegeven.";
+    shacl:maxCount 1;
+    shacl:name "toegekendOp";
+    shacl:path dc:issued
+  ];
   shacl:targetClass <http://www.w3.org/ns/adms#Identifier> .
 
 <https://data.vlaanderen.be/shacl/financieledata-ap#InformatieclassificatieShape> a shacl:NodeShape;
@@ -817,7 +842,7 @@
     shacl:name "decimalen";
     shacl:path <https://data.vlaanderen.be/ns/financiele-data#NumeriekDatatype.decimalen>
   ], [
-    shacl:class schemas:unitText;
+    shacl:class <https://data.vlaanderen.be/ns/financiele-data#Eenheid>;
     shacl:description "De eenheid waarin de waarde is uitgedrukt.";
     shacl:maxCount 1;
     shacl:minCount 1;
