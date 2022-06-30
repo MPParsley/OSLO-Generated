@@ -99,13 +99,10 @@ schemas:QuantitativeValue a rdfs:Class;
 
 <https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie.rol> a owl:ObjectProperty;
   rdfs:label "rol"@nl;
-  rdfs:comment "Aard van de associatie tussen de Concepten."@nl,
-    "Aard van de associatie tussen twee Dimensieconcepten."@nl;
-  rdfs:domain <https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie>,
-    <https://data.vlaanderen.be/ns/financiele-data#DimensieConceptrelatie>;
+  rdfs:comment "Aard van de associatie tussen de Concepten."@nl;
+  rdfs:domain <https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/financiele-data>;
-  rdfs:range <https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie>,
-    skos:Concept .
+  rdfs:range <https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie> .
 
 <https://data.vlaanderen.be/ns/financiele-data#Context.entiteit> a owl:ObjectProperty;
   rdfs:label "entiteit"@nl;
@@ -188,6 +185,13 @@ schemas:QuantitativeValue a rdfs:Class;
   rdfs:domain <https://data.vlaanderen.be/ns/financiele-data#Dimensieconcept>;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/financiele-data>;
   rdfs:range rdf:langString .
+
+<https://data.vlaanderen.be/ns/financiele-data#Dimensieconcept.rol> a owl:ObjectProperty;
+  rdfs:label "rol"@nl;
+  rdfs:comment "Aard van de associatie tussen twee Dimensieconcepten."@nl;
+  rdfs:domain <https://data.vlaanderen.be/ns/financiele-data#DimensieConceptrelatie>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/financiele-data>;
+  rdfs:range skos:Concept .
 
 <https://data.vlaanderen.be/ns/financiele-data#Dimensieconceptrelatie.orde> a owl:DatatypeProperty;
   rdfs:label "orde"@nl;
@@ -475,6 +479,12 @@ schemas:QuantitativeValue a rdfs:Class;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/financiele-data>;
   rdfs:range skos:Concept .
 
+<https://data.vlaanderen.be/ns/financiele-data#eenheid> a owl:ObjectProperty;
+  rdfs:label "eenheid"@nl;
+  rdfs:domain schemas:QuantitativeValue;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/financiele-data>;
+  rdfs:range <https://fixme.com> .
+
 dc11:type a rdf:Property;
   rdfs:label "type"@nl,
     "datatype"@nl,
@@ -503,9 +513,6 @@ dc:title a rdf:Property;
 <https://data.vlaanderen.be/ns/financiele-data#ZakelijkRapport> a owl:Class;
   rdfs:label "ZakelijkRapport"@nl;
   rdfs:isDefinedBy <https://data.vlaanderen.be/ns/financiele-data> .
-
-schemas:unitText a rdf:Property;
-  rdfs:label "eenheid"@nl .
 
 schemas:value a rdf:Property;
   rdfs:label "getal"@nl,
@@ -762,7 +769,6 @@ schemas:value a rdf:Property;
     dc11:type,
     dc:title,
     <http://www.w3.org/ns/adms#identifier>,
-    schemas:unitText,
     schemas:value;
   <http://www.w3.org/2001/02pd/rec54#editor> [
     a foaf:Person;
