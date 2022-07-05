@@ -739,6 +739,26 @@
       }
     },
     {
+      "@id": "https://data.vlaanderen.be/ns/financiele-data#Concept.hypercube",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Hypercube waarmee Feiten van dit type geassocieerd worden."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/financiele-data#Concept"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "hypercube"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/financiele-data#Hypercube"
+      ],
+      "usage": {
+        "nl": "Een Hypercube is een set van Dimensies die op een Feit van toepassing kan zijn, bvb Opbrengsten worden uitgesplitst volgens Boekjaar, Product en regio."
+      }
+    },
+    {
       "@id": "https://data.vlaanderen.be/ns/financiele-data#Concept.label",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "description": {
@@ -829,6 +849,26 @@
         "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie"
       ],
       "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/financiele-data#Context.dimensie",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Perpectief van waaruit naar het Feit is gekeken."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/financiele-data#Context"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "dimensie"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/financiele-data#Dimensie"
+      ],
+      "usage": {
+        "nl": "Bvb voor welke periode het Feit geldig is of op welk product het slaat of op welke regio of al deze Dimensies samen. Bvb Omzet123 geldt voor het huidig boekjaar en voor product ABC (Dimensies zijn dus Periode en Product met resp waarde \"huidig boekjaar\" en \"product ABC\").  Omzet 456 in hetzelfde rapport kan bvb gelden voor hetzelfde boekjaar maar voor product DEF."
+      }
     },
     {
       "@id": "https://data.vlaanderen.be/ns/financiele-data#Context.entiteit",
@@ -1225,24 +1265,6 @@
       "usage": {}
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport.bevat",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Feit dat in het rapport staat."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "bevat"
-      },
-      "range": [
-        "https://data.vlaanderen.be/ns/financiele-data#Feit"
-      ],
-      "usage": {}
-    },
-    {
       "@id": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport.context",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
@@ -1353,24 +1375,6 @@
       "usage": {
         "nl": "Typisch volgt de duur uit het opgeven ve begin- en eindtijdstip maar kan hier ook een moment zijn."
       }
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport.schema",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Schema waaraan het rapport voldoet."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "schema"
-      },
-      "range": [
-        "https://data.vlaanderen.be/ns/financiele-data#Schema"
-      ],
-      "usage": {}
     },
     {
       "@id": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport.taal",
@@ -1723,6 +1727,42 @@
       }
     },
     {
+      "@id": "https://data.vlaanderen.be/ns/financiele-data#ZakelijkRapport.bevat",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Feit dat in het rapport staat."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "bevat"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/financiele-data#Feit"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/financiele-data#ZakelijkRapport.schema",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Schema waaraan het rapport voldoet."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "schema"
+      },
+      "range": [
+        "https://data.vlaanderen.be/ns/financiele-data#Schema"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://data.vlaanderen.be/ns/financiele-data#eenheid",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {},
@@ -1740,6 +1780,41 @@
     }
   ],
   "externals": [
+    {
+      "@id": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Instant",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Moment"
+      }
+    },
+    {
+      "@id": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "TemporeleEntiteit"
+      }
+    },
+    {
+      "@id": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Period",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Periode"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2001/XMLSchema#anyType",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "AnyDatatype"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2001/XMLSchema#decimal",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Decimal"
+      }
+    },
     {
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
@@ -1805,6 +1880,20 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {}
+    },
+    {
+      "@id": "http://www.w3.org/ns/person#Person",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Persoon"
+      }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/dossier#Dossier",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Dossier"
+      }
     },
     {
       "@id": "https://schema.org/MonetaryAmount",
@@ -1942,10 +2031,17 @@
       }
     },
     {
-      "@id": "http://www.w3.org/ns/adms#identifier",
+      "@id": "http://purl.org/dc/terms/title",
       "@type": "rdf:Property",
       "name": {
-        "nl": "id"
+        "nl": "naam"
+      }
+    },
+    {
+      "@id": "http://schema.org/contactPoint",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "contactinfo"
       }
     },
     {
@@ -1973,6 +2069,13 @@
       "@id": "http://www.w3.org/ns/adms#identifier",
       "@type": "rdf:Property",
       "name": {
+        "nl": "identificator"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/adms#identifier",
+      "@type": "rdf:Property",
+      "name": {
         "nl": "id"
       }
     },
@@ -1981,6 +2084,48 @@
       "@type": "rdf:Property",
       "name": {
         "nl": "id"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/adms#identifier",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "id"
+      }
+    },
+    {
+      "@id": "http://xmlns.com/foaf/0.1/birthday",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "geboortedatum"
+      }
+    },
+    {
+      "@id": "http://xmlns.com/foaf/0.1/familyName",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "familienaam"
+      }
+    },
+    {
+      "@id": "http://xmlns.com/foaf/0.1/givenName",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "voornaam"
+      }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/dossier#informatieclassificatie",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "informatieclassificatie"
+      }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/financiele-info#Persoon.woonplaats",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "woonplaats"
       }
     },
     {

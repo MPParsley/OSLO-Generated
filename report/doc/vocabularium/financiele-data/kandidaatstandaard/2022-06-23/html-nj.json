@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/KandidaatStandaard",
     "statuslabel": "Kandidaat Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-FinancieleData/tree/0855903850da113fbe13c0fbb71ba2fcb8e29e69",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-FinancieleData/blob/0855903850da113fbe13c0fbb71ba2fcb8e29e69/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-FinancieleData/tree/ffaf270d2484a298708bfb09ea2037b7399802a5",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-FinancieleData/blob/ffaf270d2484a298708bfb09ea2037b7399802a5/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-FinancieleData/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/kandidaat-standaard/vocabularium-en-applicatieprofiel-financiële-data.html",
     "usesVocs": [],
@@ -410,6 +410,26 @@
       "parents": []
     },
     {
+      "uri": "https://data.vlaanderen.be/ns/financiele-data#Concept.hypercube",
+      "name": {
+        "nl": "hypercube"
+      },
+      "sort_nl": "hypercube",
+      "description": {
+        "nl": "Hypercube waarmee Feiten van dit type geassocieerd worden."
+      },
+      "usage": {
+        "nl": "Een Hypercube is een set van Dimensies die op een Feit van toepassing kan zijn, bvb Opbrengsten worden uitgesplitst volgens Boekjaar, Product en regio."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/financiele-data#Concept"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/financiele-data#Hypercube"
+      ],
+      "parents": []
+    },
+    {
       "uri": "https://data.vlaanderen.be/ns/financiele-data#Concept.label",
       "name": {
         "nl": "label"
@@ -502,6 +522,26 @@
       ],
       "range": [
         "https://data.vlaanderen.be/ns/financiele-data#Conceptrelatie"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/financiele-data#Context.dimensie",
+      "name": {
+        "nl": "dimensie"
+      },
+      "sort_nl": "dimensie",
+      "description": {
+        "nl": "Perpectief van waaruit naar het Feit is gekeken."
+      },
+      "usage": {
+        "nl": "Bvb voor welke periode het Feit geldig is of op welk product het slaat of op welke regio of al deze Dimensies samen. Bvb Omzet123 geldt voor het huidig boekjaar en voor product ABC (Dimensies zijn dus Periode en Product met resp waarde \"huidig boekjaar\" en \"product ABC\").  Omzet 456 in hetzelfde rapport kan bvb gelden voor hetzelfde boekjaar maar voor product DEF."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/financiele-data#Context"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/financiele-data#Dimensie"
       ],
       "parents": []
     },
@@ -904,24 +944,6 @@
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport.bevat",
-      "name": {
-        "nl": "bevat"
-      },
-      "sort_nl": "bevat",
-      "description": {
-        "nl": "Feit dat in het rapport staat."
-      },
-      "usage": {},
-      "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/financiele-data#Feit"
-      ],
-      "parents": []
-    },
-    {
       "uri": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport.context",
       "name": {
         "nl": "context"
@@ -1030,24 +1052,6 @@
       ],
       "range": [
         "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport.schema",
-      "name": {
-        "nl": "schema"
-      },
-      "sort_nl": "schema",
-      "description": {
-        "nl": "Schema waaraan het rapport voldoet."
-      },
-      "usage": {},
-      "domain": [
-        "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/financiele-data#Schema"
       ],
       "parents": []
     },
@@ -1402,6 +1406,42 @@
       ],
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/financiele-data#ZakelijkRapport.bevat",
+      "name": {
+        "nl": "bevat"
+      },
+      "sort_nl": "bevat",
+      "description": {
+        "nl": "Feit dat in het rapport staat."
+      },
+      "usage": {},
+      "domain": [
+        "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/financiele-data#Feit"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/financiele-data#ZakelijkRapport.schema",
+      "name": {
+        "nl": "schema"
+      },
+      "sort_nl": "schema",
+      "description": {
+        "nl": "Schema waaraan het rapport voldoet."
+      },
+      "usage": {},
+      "domain": [
+        "https://data.vlaanderen.be/ns/financiele-data#FinancieelRapport"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/financiele-data#Schema"
       ],
       "parents": []
     },
@@ -1770,6 +1810,77 @@
   ],
   "external_terms": [
     {
+      "uri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Instant",
+      "name": {
+        "nl": "Moment"
+      },
+      "description": {},
+      "usage": {},
+      "sort_nl": "Moment",
+      "indvl": false,
+      "inpackage": false,
+      "inscope": true,
+      "show": true
+    },
+    {
+      "uri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Object",
+      "name": {
+        "nl": "TemporeleEntiteit"
+      },
+      "description": {
+        "nl": "Abstracte klasse voor temporele objecten."
+      },
+      "usage": {
+        "nl": "Die temporele objecten zijn temporele geometrische primitieven zoals Moment of Periode. Of het zijn composieten van temporele primitieven, bv om de geschiedenis van een fenomeen weer te geven (bv de opeenvolgende Periodes dat het fenomeen zich voordeed). Te gebruiken wanneer bvb beide temporele geometrische primitieven mogelijk zijn. OPMERKING: Meer info in <a href=\"https://iso.org/standard/26013.html\">ISO 19108 Geographic Information - Temporal schema</a>. Substitutie door een eenvoudiger equivalent bv time:TemporalEntity uit de <a href=\"https://w3.org/TR/owl-time/\">W3C Time Ontology</a> is aanbevolen."
+      },
+      "sort_nl": "TemporeleEntiteit",
+      "indvl": false,
+      "inpackage": false,
+      "inscope": true,
+      "show": true
+    },
+    {
+      "uri": "http://def.isotc211.org/iso19108/2006/TemporalObjects#TM_Period",
+      "name": {
+        "nl": "Periode"
+      },
+      "description": {},
+      "usage": {},
+      "sort_nl": "Periode",
+      "indvl": false,
+      "inpackage": false,
+      "inscope": true,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/2001/XMLSchema#anyType",
+      "name": {
+        "nl": "AnyDatatype"
+      },
+      "description": {},
+      "usage": {},
+      "sort_nl": "AnyDatatype",
+      "indvl": false,
+      "inpackage": false,
+      "inscope": true,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/2001/XMLSchema#decimal",
+      "name": {
+        "nl": "Decimal"
+      },
+      "description": {
+        "nl": "Een getal met een decimaalpunt gevolgd door cijfers die het breukdeel aangeven."
+      },
+      "usage": {},
+      "sort_nl": "Decimal",
+      "indvl": false,
+      "inpackage": false,
+      "inscope": true,
+      "show": true
+    },
+    {
       "uri": "http://www.w3.org/2004/02/skos/core#Concept",
       "name": {
         "nl": "RapportType"
@@ -1884,6 +1995,19 @@
       },
       "usage": {},
       "sort_nl": "Conceptrelatietype",
+      "indvl": false,
+      "inpackage": false,
+      "inscope": true,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/person#Person",
+      "name": {
+        "nl": "Persoon"
+      },
+      "description": {},
+      "usage": {},
+      "sort_nl": "Persoon",
       "indvl": false,
       "inpackage": false,
       "inscope": true,
@@ -2141,6 +2265,32 @@
       "show": true
     },
     {
+      "uri": "http://purl.org/dc/terms/title",
+      "name": {
+        "nl": "naam"
+      },
+      "description": {},
+      "usage": {},
+      "sort_nl": "naam",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://schema.org/contactPoint",
+      "name": {
+        "nl": "contactinfo"
+      },
+      "description": {},
+      "usage": {},
+      "sort_nl": "contactinfo",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
       "uri": "http://www.w3.org/ns/adms#identifier",
       "name": {
         "nl": "id"
@@ -2184,6 +2334,19 @@
     {
       "uri": "http://www.w3.org/ns/adms#identifier",
       "name": {
+        "nl": "identificator"
+      },
+      "description": {},
+      "usage": {},
+      "sort_nl": "identificator",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://www.w3.org/ns/adms#identifier",
+      "name": {
         "nl": "id"
       },
       "description": {},
@@ -2217,6 +2380,45 @@
       "description": {},
       "usage": {},
       "sort_nl": "id",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://xmlns.com/foaf/0.1/birthday",
+      "name": {
+        "nl": "geboortedatum"
+      },
+      "description": {},
+      "usage": {},
+      "sort_nl": "geboortedatum",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://xmlns.com/foaf/0.1/familyName",
+      "name": {
+        "nl": "familienaam"
+      },
+      "description": {},
+      "usage": {},
+      "sort_nl": "familienaam",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://xmlns.com/foaf/0.1/givenName",
+      "name": {
+        "nl": "voornaam"
+      },
+      "description": {},
+      "usage": {},
+      "sort_nl": "voornaam",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
