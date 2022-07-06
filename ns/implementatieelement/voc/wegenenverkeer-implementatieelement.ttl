@@ -20,13 +20,14 @@ skos:Concept a rdfs:Class;
     "Datakabel materiaal"@nl,
     "Telecommunications subthema"@nl,
     "Betonomgevingsklasse"@nl,
-    "Betonsterkteklasse"@nl,
-    "Mimetype"@nl,
-    "Gebruiksdomein"@nl,
     "Schoorhoek"@nl,
     "Duurzaamheidsklasse van hout"@nl,
     "Walsmethode"@nl,
     "Constructiestaalsoort"@nl,
+    "Betonsterkteklasse"@nl,
+    "Mimetype"@nl,
+    "Gebruiksdomein"@nl,
+    "Toeslagmiddel beton"@nl,
     "Provincie"@nl,
     "Gemeente"@nl,
     "Kwaliteitsklasse van hout"@nl,
@@ -70,9 +71,16 @@ schemas:OpeningHoursSpecification a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:range xsd:string .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.bevestiging> a owl:ObjectProperty;
+  rdfs:label "bevestiging"@nl;
+  rdfs:comment "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Derdenobject> .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.datumOprichtingObject> a owl:DatatypeProperty;
   rdfs:label "datum oprichting object"@nl;
-  rdfs:comment "Datum van de oprichting van het object."@nl;
+  rdfs:comment "De datum waarop het object op het terrein is beginnen bestaan, bv. de datum van aanleg."@nl;
   rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject>;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:range xsd:date .
@@ -90,6 +98,13 @@ schemas:OpeningHoursSpecification a rdfs:Class;
   rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject>;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:range xsd:string .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.sturing> a owl:ObjectProperty;
+  rdfs:label "sturing"@nl;
+  rdfs:comment "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Derdenobject> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.theoretischeLevensduur> a owl:ObjectProperty;
   rdfs:label "theoretische levensduur"@nl;
@@ -133,6 +148,13 @@ schemas:OpeningHoursSpecification a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator> .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Derdenobject.bevestiging> a owl:ObjectProperty;
+  rdfs:label "bevestiging"@nl;
+  rdfs:comment "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Derdenobject>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Derdenobject.contactgegevens> a owl:DatatypeProperty;
   rdfs:label "contactgegevens"@nl;
   rdfs:comment "Naam, voornaam, telefoonnummer en/of e-mailadres van de contactpersoon."@nl;
@@ -161,6 +183,13 @@ schemas:OpeningHoursSpecification a rdfs:Class;
   rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Derdenobject>;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:range xsd:string .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Derdenobject.sturing> a owl:ObjectProperty;
+  rdfs:label "sturing"@nl;
+  rdfs:comment "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Derdenobject>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Derdenobject.typeURI> a owl:ObjectProperty;
   rdfs:label "type URI"@nl;
@@ -357,6 +386,20 @@ schemas:OpeningHoursSpecification a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter> .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcBereikInKg.maximum> a owl:ObjectProperty;
+  rdfs:label "maximum"@nl;
+  rdfs:comment "Bovengrens van het bereik uitgedrukt in kilogram."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcBereikInKg>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcBereikInKg.minimium> a owl:ObjectProperty;
+  rdfs:label "minimum"@nl;
+  rdfs:comment "Ondergrens van het bereik uitgedrukt in kilogram."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcBereikInKg>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram> .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.betondekking> a owl:ObjectProperty;
   rdfs:label "betondekking"@nl;
   rdfs:comment "De afstand in millimeter tussen de buitenkant van het beton (het oppervlak van het beton) tot het dichtstbijzijnde wapeningsstaal."@nl;
@@ -436,10 +479,25 @@ schemas:OpeningHoursSpecification a rdfs:Class;
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.technischeFiche> a owl:ObjectProperty;
   rdfs:label "technische fiche"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Attribuut uit gebruik sinds versie 2.5.0-RC1"@nl;
   rdfs:comment "De technische fiche van het beton. Deze moet volgende eigenschappen bevatten: de norm waaraan het beton voldoet, de sterkteklasse, de duurzaamheid (bestaande uit het gebruiksdomein en de omgevingsklasse(n)), de consistentieklasse, de nominale grootste korrelafmeting,..."@nl;
   rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties>;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.technischeFicheSpecificatiesBeton> a owl:ObjectProperty;
+  rdfs:label "technische fiche specificaties beton"@nl;
+  rdfs:comment "De technische fiche van de specificaties van het beton. Deze moet volgende eigenschappen bevatten: de norm waaraan het beton voldoet, de sterkteklasse, de duurzaamheid (bestaande uit het gebruiksdomein en de omgevingsklasse(n)), de consistentieklasse, de nominale grootste korrelafmeting,..."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.toeslagmiddelen> a owl:ObjectProperty;
+  rdfs:label "toeslagmiddelen"@nl;
+  rdfs:comment "Materialen die aan het beton worden toegevoegd om vb.: een beter geheel te maken, holle ruimten te vullen waardoor de sterkte toeneemt, ruimten met minder massa te creëren,... Dit kunnen er meerdere zijn."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range skos:Concept .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcCameraBeeldverwerking.configBestand> a owl:ObjectProperty;
   rdfs:label "configuratiebestand beeldverwerking"@nl;
@@ -498,6 +556,13 @@ schemas:OpeningHoursSpecification a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:range xsd:anyURI .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcHoutspecificaties.fscCertificaat> a owl:ObjectProperty;
+  rdfs:label "FSC-certificaat"@nl;
+  rdfs:comment "Een attest of een bewijs dat voor elke boom die gebruikt wordt er een andere in de plaats is geplant."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcHoutspecificaties>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcHoutspecificaties.houtduurzaamheidsklasse> a owl:ObjectProperty;
   rdfs:label "houtduurzaamheidsklasse"@nl;
   rdfs:comment "De verwachte levensduur van het hout. De klasse geeft de resistentie aan van het kernhout tegen ongunstige omstandigheden."@nl;
@@ -537,6 +602,27 @@ schemas:OpeningHoursSpecification a rdfs:Class;
   rdfs:label "toegekend door"@nl;
   rdfs:comment "Gegevens van de organisatie die de toekenning deed."@nl;
   rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range xsd:string .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcKwaliteitscertifcaat.datumOndertekening> a owl:DatatypeProperty;
+  rdfs:label "datum ondertekening"@nl;
+  rdfs:comment "De datum waarop het kwalitetiscertificaat ondertekend is door de administrateur-generaal."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcKwaliteitscertifcaat>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range xsd:date .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcKwaliteitscertifcaat.document> a owl:ObjectProperty;
+  rdfs:label "document"@nl;
+  rdfs:comment "Documentbijlage met de vergunning."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcKwaliteitscertifcaat>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcKwaliteitscertifcaat.identificator> a owl:DatatypeProperty;
+  rdfs:label "identificator"@nl;
+  rdfs:comment "De identificator van de vergunning."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcKwaliteitscertifcaat>;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:range xsd:string .
 
@@ -1329,6 +1415,21 @@ schemas:OpeningHoursSpecification a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:range xsd:decimal .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInmAh.standaardEenheid> a owl:DatatypeProperty;
+  rdfs:label "standaard eenheid"@nl;
+  <http://purl.org/vocab/vann/usageNote> "\"mAh\"^^cdt:ucumunit"@nl;
+  rdfs:comment "De standaard eenheid bij dit datatype is uitgedrukt in milliampere per uur."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInmAh>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range rdfs:Literal .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInmAh.waarde> a owl:ObjectProperty;
+  rdfs:label "waarde"@nl;
+  rdfs:comment "Bevat een getal die bij het datatype hoort."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInmAh>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range xsd:decimal .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#NaampadObject.naampad> a owl:DatatypeProperty;
   rdfs:label "naampad"@nl;
   rdfs:comment "Een set van objecten (bv. collecties) die aanduiden waar het object zich bevindt in de objectenboom (EM-Infra)."@nl;
@@ -1412,6 +1513,42 @@ schemas:OpeningHoursSpecification a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:range skos:Concept .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#heeftBetrokkene> a owl:ObjectProperty;
+  rdfs:label "heeft betrokkene"@nl;
+  rdfs:comment "Koppelt een natuurlijk persoon,rechtspersoon of een hoedanigheid (een functie eerder dan de persoon die de functie uitoefent) aan een object in een bepaalde rol."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Derdenobject>,
+    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject>,
+    dc:Agent;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range dc:Agent .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#ligtOp> a owl:ObjectProperty;
+  rdfs:label "ligt op"@nl;
+  rdfs:comment "Deze relatie geeft aan dat 2 onderdelen direct fysiek op elkaar liggen. Deze relatie heeft een richting en gaat van het bovenste naar het onderste onderdeel."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Derdenobject>,
+    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject>,
+    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Derdenobject> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#sluitAanOp> a owl:ObjectProperty;
+  rdfs:label "sluit aan op"@nl;
+  rdfs:comment "Deze relatie geeft aan hoe 2 onderdelen in horizontale zin elkaar opvolgen. Dit wordt gebruikt om een topologisch netwerk op te bouwen. Enkel in gebruik bij afschermende constructies en riolering/waterlopen. Deze relatie heeft steeds een richting van het opwaartse naar het afwaartse onderdeel."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject>,
+    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Derdenobject>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Derdenobject>,
+    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#voedt> a owl:ObjectProperty;
+  rdfs:label "voedt"@nl;
+  rdfs:comment "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject>,
+    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Derdenobject>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Derdenobject>,
+    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
+
 dc:Agent\.agentId a rdf:Property;
   rdfs:label "agent identificatie"@nl .
 
@@ -1455,9 +1592,9 @@ schemas:opens a rdf:Property;
   rdfs:label "openingstijd"@nl .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#ActivityComplex> a owl:Class;
-  rdfs:label "Activiy complex"@nl;
+  rdfs:label "Activity complex"@nl;
   <http://purl.org/vocab/vann/usageNote> "Gebruik dit type enkel voor aanlevering voor AKELA indien geen specifieke types aanwezig zijn in OTL."@nl;
-  rdfs:comment "Het gehele gebied dat door dezelfde exploitant op dezelfde locatie of op verschillende geografische locaties wordt beheerd, inclusief alle infrastructuur, apparatuur en materialen."@nl;
+  rdfs:comment "Het gehele gebied dat door dezelfde exploitant op dezelfde locatie of op verschillende geografische locaties wordt beheerd,inclusief alle infrastructuur,apparatuur en materialen."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> .
 
@@ -1517,6 +1654,11 @@ schemas:opens a rdf:Property;
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingDiameterInMm> a owl:Class;
   rdfs:label "Afmeting diameter in millimeter"@nl;
   rdfs:comment "Complex datatype voor de afmeting van een diameter in millimeter."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcBereikInKg> a owl:Class;
+  rdfs:label "Bereik in kg"@nl;
+  rdfs:comment "Complex datatype om een bereik uit te drukken met een minimium en maximum in kilogram."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcCameraBeeldverwerking> a owl:Class;
@@ -1616,11 +1758,6 @@ schemas:opens a rdf:Property;
   rdfs:comment "Een kwantitatieve waarde die een getal in kilowatt uitdrukt."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram> a owl:Class;
-  rdfs:label "Kwantitatieve waarde in kilogram"@nl;
-  rdfs:comment "Een kwantitatieve waarde die een getal in kilogram uitdrukt."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
-
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogramPerKubiekeMeter> a owl:Class;
   rdfs:label "Kwantitatieve waarde in kilogram per kubieke meter"@nl;
   rdfs:comment "Een kwantitatieve waarde die een getal in kilogram per kubieke meter uitdrukt."@nl;
@@ -1696,6 +1833,11 @@ schemas:opens a rdf:Property;
   rdfs:comment "Een kwantitatieve waarde die een getal in kiloWattUur uitdrukt."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInmAh> a owl:Class;
+  rdfs:label "Kwantitatieve waarde in mAh"@nl;
+  rdfs:comment "Een kwantitatieve waarde die een getal in milliampere per uur uitdrukt."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#TelecommunicationsCable> a owl:Class;
   rdfs:label "Telecommunications cable"@nl;
   <http://purl.org/vocab/vann/usageNote> "Gebruik dit type enkel voor aanlevering voor AKELA indien geen specifieke types aanwezig zijn in OTL."@nl;
@@ -1729,6 +1871,11 @@ schemas:opens a rdf:Property;
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxlxhInM> a owl:Class;
   rdfs:label "Afmeting bxlxh in meter"@nl;
   rdfs:comment "Complex datatype voor de afmeting van de breedte, de lengte en hoogte in meter."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcKwaliteitscertifcaat> a owl:Class;
+  rdfs:label "kwaliteitscertificaat"@nl;
+  rdfs:comment "Complex datatype voor een rapport waarin vastgelegd wordt dat een apparaat of installatie voldoet aan vooropgestelde kwaliteitseisen. Kan vereist zijn voor de tegenstelbaarheid van het gebruik van het toestel of de installatie in kwestie"@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcTijdsduur> a owl:Class;
@@ -1786,11 +1933,6 @@ schemas:opens a rdf:Property;
   rdfs:comment "Complex datatype voor de afmeting van de breedte,de lengte en hoogte in millimeter."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcHoutspecificaties> a owl:Class;
-  rdfs:label "Houtspecificaties"@nl;
-  rdfs:comment "Complex datatype om de eigenschappen van hout te bundelen."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
-
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcProductidentificatiecode> a owl:Class;
   rdfs:label "Productidentificatiecode"@nl;
   rdfs:comment "Complex datatype dat alle nodige informatie van het product capteert."@nl;
@@ -1801,18 +1943,20 @@ schemas:opens a rdf:Property;
   rdfs:comment "Complex datatype voor een rechtspersoon."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram> a owl:Class;
+  rdfs:label "Kwantitatieve waarde in kilogram"@nl;
+  rdfs:comment "Een kwantitatieve waarde die een getal in kilogram uitdrukt."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt> a owl:Class;
   rdfs:label "Kwantitatieve waarde in volt"@nl;
   rdfs:comment "Een kwantitatieve waarde die een getal in volt uitdrukt."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Derdenobject> a owl:Class;
-  rdfs:label "Derdenobject"@nl;
-  <http://purl.org/vocab/vann/usageNote> "Een Derdenobject mag enkel gebruikt worden om objecten aan te duiden die niet in beheer zijn van AWV en waarvan het type niet gekend is of aangeleverd."@nl;
-  rdfs:comment "Object niet in eigendom van de assetbeheerder dat zonder verdere typering bewaard wordt om relaties met getypeerde assets te kunnen beheren."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand>,
-    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus> .
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcHoutspecificaties> a owl:Class;
+  rdfs:label "Houtspecificaties"@nl;
+  rdfs:comment "Complex datatype om de eigenschappen van hout te bundelen."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#RelatieObject> a owl:Class;
   rdfs:label "Relatieobject"@nl;
@@ -1830,11 +1974,6 @@ schemas:opens a rdf:Property;
   rdfs:comment "Complex datatype voor de aanduiding van een bepaalde locatie, doorgaans van een huis, woning, gebouw of faciliteit, op de aarde."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument> a owl:Class;
-  rdfs:label "Bestandsbijlage"@nl;
-  rdfs:comment "Complex datatype voor alle bestandsbijlages."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
-
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcNatuurlijkPersoon> a owl:Class;
   rdfs:label "Natuurlijk persoon"@nl;
   rdfs:comment "Complex datatype dat een natuurlijk persoon beschrijft."@nl;
@@ -1845,16 +1984,14 @@ schemas:opens a rdf:Property;
   rdfs:comment "Een kwantitatieve waarde die een getal in centimeter uitdrukt."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> a owl:Class;
-  rdfs:label "AIM object"@nl;
-  rdfs:comment "Abstracte als de basisklasse voor alle uniek geïdentificeerde OTL objecten met de basiseigenschappen die elk OTL object minstens heeft."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand>,
-    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus> .
-
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter> a owl:Class;
   rdfs:label "Kwantitatieve waarde in meter"@nl;
   rdfs:comment "Een kwantitatieve waarde die een getal in meter uitdrukt."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument> a owl:Class;
+  rdfs:label "Bestandsbijlage"@nl;
+  rdfs:comment "Complex datatype voor alle bestandsbijlages."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter> a owl:Class;
@@ -1864,12 +2001,1455 @@ schemas:opens a rdf:Property;
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties> a owl:Class;
   rdfs:label "Betonspecificaties"@nl;
-  rdfs:comment "Complex datatype om de eigenschappen van beton te bundelen."@nl;
+  rdfs:comment "Complex datatype om de eigenschappen van beton te bundelen. Deze omvat onder andere de verschillende betonklassen,hoe het beton gebruikt wordt,eigenschappen van het cement,een technische fiche van het beton,..."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#Derdenobject> a owl:Class;
+  rdfs:label "Derdenobject"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Een Derdenobject mag enkel gebruikt worden om objecten aan te duiden die niet in beheer zijn van AWV en waarvan het type niet gekend is of aangeleverd."@nl;
+  rdfs:comment "Object niet in eigendom van de assetbeheerder dat zonder verdere typering bewaard wordt om relaties met getypeerde assets te kunnen beheren."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand>,
+    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> a owl:Class;
+  rdfs:label "AIM object"@nl;
+  rdfs:comment "Abstracte als de basisklasse voor alle uniek geïdentificeerde OTL objecten met de basiseigenschappen die elk OTL object minstens heeft."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand>,
+    <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement> a owl:Ontology;
   rdfs:label "wegenenverkeer-implementatieelement"@en,
     "wegenenverkeer-implementatieelement"@nl;
+  dc:contributor [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.pointfree.be>;
+      foaf:name "Pointfree"
+    ];
+    foaf:firstName "Joachim";
+    foaf:lastName "Maes";
+    foaf:mbox <mailto:joachim.maes@pointfree.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Kris";
+    foaf:lastName "Aernout";
+    foaf:mbox <mailto:kris.aernout@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://dynniq.com/>;
+      foaf:name "Dynniq"
+    ];
+    foaf:firstName "Danny";
+    foaf:lastName "Asselman";
+    foaf:mbox <mailto:danny.asselman@dynniq.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://geosolutions.be/>;
+      foaf:name "Geosolutions"
+    ];
+    foaf:firstName "Bernard";
+    foaf:lastName "Baetens";
+    foaf:mbox <mailto:bernard.baetens@geosolutions.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vmm.be/>;
+      foaf:name "VMM"
+    ];
+    foaf:firstName "Katia";
+    foaf:lastName "Beringhs";
+    foaf:mbox <mailto:K.Beringhs@vmm.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Carine";
+    foaf:lastName "Berre";
+    foaf:mbox <mailto:carine.berre@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Koen";
+    foaf:lastName "Beuckels";
+    foaf:mbox <mailto:koen.beuckels@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Natasha";
+    foaf:lastName "Blommaert";
+    foaf:mbox <mailto:Natasha.Blommaert@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Hans";
+    foaf:lastName "Bonte";
+    foaf:mbox <mailto:hans.bonte@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://departement-mow.vlaanderen.be/nl>;
+      foaf:name "MOW"
+    ];
+    foaf:firstName "Sophie";
+    foaf:lastName "Bordere";
+    foaf:mbox <mailto:Sophie.Bordere@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Jan";
+    foaf:lastName "Bosmans";
+    foaf:mbox <mailto:jan.bosmans@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Margo";
+    foaf:lastName "Briessinck";
+    foaf:mbox <mailto:Margo.Briessinck@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Boudewijn";
+    foaf:lastName "Broodcoorens";
+    foaf:mbox <mailto:Boudewijn.Broodcoorens@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://geonius.nl/>;
+      foaf:name "Geonius"
+    ];
+    foaf:firstName "Jordy";
+    foaf:lastName "Brouwers";
+    foaf:mbox <mailto:j.brouwers@geonius.nl>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Ann";
+    foaf:lastName "Buytaert";
+    foaf:mbox <mailto:Ann.Buytaert@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Kurt";
+    foaf:lastName "Ceulemans";
+    foaf:mbox <mailto:kurt.ceulemans@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.willemen.be/nl/aannemer/willemen-infra>;
+      foaf:name "Willemen Infra"
+    ];
+    foaf:firstName "Frank";
+    foaf:lastName "Christianen";
+    foaf:mbox <mailto:frank.christianen@willemeninfra.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Kristof";
+    foaf:lastName "Coppens";
+    foaf:mbox <mailto:Kristof.Coppens@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Jan";
+    foaf:lastName "Couck";
+    foaf:mbox <mailto:Jan.Couck@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Kathy";
+    foaf:lastName "Courtens";
+    foaf:mbox <mailto:kathy.courtens@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vmsw.be/>;
+      foaf:name "VMSW"
+    ];
+    foaf:firstName "Johan";
+    foaf:lastName "Criquielion";
+    foaf:mbox <mailto:johan.criquielion@vmsw.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Sammy";
+    foaf:lastName "Dalewyn";
+    foaf:mbox <mailto:sammy.dalewyn@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Johan";
+    foaf:lastName "Dalins";
+    foaf:mbox <mailto:Johan.Dalins@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Wim";
+    foaf:lastName "Danheel";
+    foaf:mbox <mailto:Wim.Danheel@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Erik";
+    foaf:lastName "De Bisschop";
+    foaf:mbox <mailto:Erik.DeBisschop@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vmsw.be/>;
+      foaf:name "VMSW"
+    ];
+    foaf:firstName "Marcel";
+    foaf:lastName "De Brael";
+    foaf:mbox <mailto:marcel.debrael@vmsw.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.natuurenbos.be>;
+      foaf:name "Natuur en Bos"
+    ];
+    foaf:firstName "Carl";
+    foaf:lastName "De Schepper";
+    foaf:mbox <mailto:carl.deschepper@vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.arcadis.com/en/global/>;
+      foaf:name "Arcadis"
+    ];
+    foaf:firstName "Geert";
+    foaf:lastName "De Smedt";
+    foaf:mbox <mailto:geert.desmedt@arcadis.com>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vmsw.be/>;
+      foaf:name "VMSW"
+    ];
+    foaf:firstName "Theo";
+    foaf:lastName "De Vos";
+    foaf:mbox <mailto:theo.devos@vmsw.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Karen";
+    foaf:lastName "De Winne";
+    foaf:mbox <mailto:karen.dewinne@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vmm.be/>;
+      foaf:name "VMM"
+    ];
+    foaf:firstName "Koen";
+    foaf:lastName "De Witte";
+    foaf:mbox <mailto:K.DeWitte@vmm.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://data.vlaanderen.be/>;
+      foaf:name "AIV"
+    ];
+    foaf:firstName "Liesbet";
+    foaf:lastName "De wolf";
+    foaf:mbox <mailto:liesbet.dewolf@kb.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Katrien";
+    foaf:lastName "Decock";
+    foaf:mbox <mailto:Katrien.Decock@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Veerle";
+    foaf:lastName "Delcourt";
+    foaf:mbox <mailto:veerle.delcourt@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Joachim";
+    foaf:lastName "Dero";
+    foaf:mbox <mailto:Joachim.Dero@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Tom";
+    foaf:lastName "Deschilder";
+    foaf:mbox <mailto:Tom.Deschilder@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://www.confederatiebouw.be/newhome/index.html>;
+      foaf:name "VlaWeBo"
+    ];
+    foaf:firstName "Eli";
+    foaf:lastName "Desmedt";
+    foaf:mbox <mailto:eli.desmedt@confederatiebouw.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Bram";
+    foaf:lastName "Dewil";
+    foaf:mbox <mailto:Bram.Dewil@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "Vlaanderen Connect"
+    ];
+    foaf:firstName "Anthony";
+    foaf:lastName "Dewulf";
+    foaf:mbox <mailto:anthony.dewulf@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Kris";
+    foaf:lastName "Dhondt";
+    foaf:mbox <mailto:kris.dhondt@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Lieven";
+    foaf:lastName "Duchateau";
+    foaf:mbox <mailto:lieven.duchateau@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://ixor.be/>;
+      foaf:name "Ixor"
+    ];
+    foaf:firstName "Vincent";
+    foaf:lastName "Ducheyne";
+    foaf:mbox <mailto:vincent.ducheyne@ixor.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Mario";
+    foaf:lastName "Dumon";
+    foaf:mbox <mailto:Mario.Dumon@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Tony";
+    foaf:lastName "Durinck";
+    foaf:mbox <mailto:tony.durinck@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Migäel";
+    foaf:lastName "Duro Gonzalez";
+    foaf:mbox <mailto:migäel.durogonzalez@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Dirk";
+    foaf:lastName "Eelen";
+    foaf:mbox <mailto:dirk.eelen@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://lantis.be/>;
+      foaf:name "BAM NV"
+    ];
+    foaf:firstName "Yves";
+    foaf:lastName "Ferong";
+    foaf:mbox <mailto:yves.ferong@bamnv.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vlario.be/>;
+      foaf:name "Vlario"
+    ];
+    foaf:firstName "Wendy";
+    foaf:lastName "Francken";
+    foaf:mbox <mailto:wendy.francken@vlario.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://dynniq.com/>;
+      foaf:name "Dynniq"
+    ];
+    foaf:firstName "Peter";
+    foaf:lastName "Gaublomme";
+    foaf:mbox <mailto:peter.gaublomme@dynniq.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Sofie";
+    foaf:lastName "Geens";
+    foaf:mbox <mailto:Sofie.Geens@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Ben";
+    foaf:lastName "Geerts";
+    foaf:mbox <mailto:ben.geerts@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Dave";
+    foaf:lastName "Geudens";
+    foaf:mbox <mailto:dave.geudens@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://pau.be/>;
+      foaf:name "Pàu"
+    ];
+    foaf:firstName "Benoit";
+    foaf:lastName "Gevaert";
+    foaf:mbox <mailto:benoit@pau.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Nele";
+    foaf:lastName "Gheysen";
+    foaf:mbox <mailto:nele.gheysen@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.gim.be>;
+      foaf:name "GIM"
+    ];
+    foaf:firstName "Stijn";
+    foaf:lastName "Goedertier";
+    foaf:mbox <mailto:stijn.goedertier@gim.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Dirk";
+    foaf:lastName "Goelen";
+    foaf:mbox <mailto:dirk.goelen@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Josef";
+    foaf:lastName "Hennissen";
+    foaf:mbox <mailto:josef.hennissen@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://dynniq.com/>;
+      foaf:name "Dynniq"
+    ];
+    foaf:firstName "Annick";
+    foaf:lastName "Hooge";
+    foaf:mbox <mailto:annick.hooge@dynniq.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Peter";
+    foaf:lastName "Hooreweghe";
+    foaf:mbox <mailto:peter.hooreweghe@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Kris";
+    foaf:lastName "Huygen";
+    foaf:mbox <mailto:Kris.Huygen@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Ruben";
+    foaf:lastName "Huylebroeck";
+    foaf:mbox <mailto:ruben.huylebroeck@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.autodesk.com/>;
+      foaf:name "Autodesk"
+    ];
+    foaf:firstName "Peter";
+    foaf:lastName "Ingels";
+    foaf:mbox <mailto:peter.ingels@autodesk.com>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Bart";
+    foaf:lastName "Janssens";
+    foaf:mbox <mailto:Bart.Janssens@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Claudia";
+    foaf:lastName "Juvyns";
+    foaf:mbox <mailto:claudia.juvyns@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Philippe";
+    foaf:lastName "Keppens";
+    foaf:mbox <mailto:Philippe.Keppens@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Philip";
+    foaf:lastName "Lameire";
+    foaf:mbox <mailto:philip.lameire@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "John";
+    foaf:lastName "Lammertyn";
+    foaf:mbox <mailto:john.lammertyn@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Jo";
+    foaf:lastName "Laps";
+    foaf:mbox <mailto:Jo.Laps@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Yanick";
+    foaf:lastName "Lathuy";
+    foaf:mbox <mailto:yanick.lathuy@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Jurgen";
+    foaf:lastName "Latte";
+    foaf:mbox <mailto:jurgen.latte@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Luc";
+    foaf:lastName "Laurys";
+    foaf:mbox <mailto:luc.laurys@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.aquafin.be/>;
+      foaf:name "Aquafin"
+    ];
+    foaf:firstName "Mieke";
+    foaf:lastName "Lesage";
+    foaf:mbox <mailto:mieke.lesage@aquafin.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Peter";
+    foaf:lastName "Lewyllie";
+    foaf:mbox <mailto:peter.lewyllie@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Herman";
+    foaf:lastName "Longueville";
+    foaf:mbox <mailto:herman.longueville@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Tim";
+    foaf:lastName "Lonneux";
+    foaf:mbox <mailto:tim.lonneux@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.aquafin.be/>;
+      foaf:name "Aquafin"
+    ];
+    foaf:firstName "Pieter";
+    foaf:lastName "Lootens";
+    foaf:mbox <mailto:pieter.lootens@aquafin.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vmm.be/>;
+      foaf:name "VMM"
+    ];
+    foaf:firstName "Dries";
+    foaf:lastName "Luts";
+    foaf:mbox <mailto:D.Luts@vmm.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.linkedin.com/company/infoflow_2/about/>;
+      foaf:name "Infoflow"
+    ];
+    foaf:firstName "Christophe";
+    foaf:lastName "Luyckx";
+    foaf:mbox <mailto:christopheluyckx@infoflow.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Rudi";
+    foaf:lastName "Luyten";
+    foaf:mbox <mailto:Rudi.Luyten@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Mustafa";
+    foaf:lastName "Aktas";
+    foaf:mbox <mailto:Mustafa.Aktas@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [foaf:name "Geovise"];
+    foaf:firstName "Karel";
+    foaf:lastName "Maesen";
+    foaf:mbox <mailto:karel@geovise.com>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vmm.be/>;
+      foaf:name "VMM"
+    ];
+    foaf:firstName "Koen";
+    foaf:lastName "Martens";
+    foaf:mbox <mailto:k.martens@vmm.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Wim";
+    foaf:lastName "Meermans";
+    foaf:mbox <mailto:Wim.Meermans@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Davy";
+    foaf:lastName "Meeus";
+    foaf:mbox <mailto:davy.meeus@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.lne.be/>;
+      foaf:name "LNE"
+    ];
+    foaf:firstName "Jan";
+    foaf:lastName "Menschaert";
+    foaf:mbox <mailto:jan.menschaert@lne.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Bart";
+    foaf:lastName "Mergaerts";
+    foaf:mbox <mailto:Bart.Mergaerts@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Peter";
+    foaf:lastName "Merlevede";
+    foaf:mbox <mailto:Peter.Merlevede@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Alex";
+    foaf:lastName "Mettepenningen";
+    foaf:mbox <mailto:alex.mettepenningen@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Koen";
+    foaf:lastName "Meulemans";
+    foaf:mbox <mailto:koen.meulemans@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vmm.be/>;
+      foaf:name "VMM"
+    ];
+    foaf:firstName "Katleen";
+    foaf:lastName "Miserez";
+    foaf:mbox <mailto:K.Miserez@vmm.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Marleen";
+    foaf:lastName "Moelants";
+    foaf:mbox <mailto:Marleen.Moelants@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Bjorn";
+    foaf:lastName "Mortier";
+    foaf:mbox <mailto:Bjorn.Mortier@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Timothy";
+    foaf:lastName "Nuttens";
+    foaf:mbox <mailto:Timothy.Nuttens@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Willem";
+    foaf:lastName "Pauwels";
+    foaf:mbox <mailto:willem.pauwels@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Danny";
+    foaf:lastName "Peelaers";
+    foaf:mbox <mailto:Danny.Peelaers@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Stephane";
+    foaf:lastName "Peeters";
+    foaf:mbox <mailto:stephane.peeters@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Isabelle";
+    foaf:lastName "Piette";
+    foaf:mbox <mailto:isabelle.piette@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Mark";
+    foaf:lastName "Pissens";
+    foaf:mbox <mailto:Mark.Pissens@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Thomas";
+    foaf:lastName "Plumet";
+    foaf:mbox <mailto:thomas.plumet@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Kristof";
+    foaf:lastName "Ramaekers";
+    foaf:mbox <mailto:Kristof.Ramaekers@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Mathias";
+    foaf:lastName "Renders";
+    foaf:mbox <mailto:Mathias.Renders@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://data.vlaanderen.be/>;
+      foaf:name "AIV"
+    ];
+    foaf:firstName "Liesbeth";
+    foaf:lastName "Rombouts";
+    foaf:mbox <mailto:Liesbeth.Rombouts@kb.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://lantis.be/>;
+      foaf:name "BAM NV"
+    ];
+    foaf:firstName "Stephan";
+    foaf:lastName "Schaeffer";
+    foaf:mbox <mailto:stephan.schaeffer@bamnv.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://data.vlaanderen.be/>;
+      foaf:name "AIV"
+    ];
+    foaf:firstName "Jens";
+    foaf:lastName "Scheerlinck";
+    foaf:mbox <mailto:Jens.Scheerlinck@kb.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.pwc.com/>;
+      foaf:name "PWC"
+    ];
+    foaf:firstName "Jens";
+    foaf:lastName "Scheerlinck";
+    foaf:mbox <mailto:jens.scheerlinck@pwc.com>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Jeremy";
+    foaf:lastName "Soenens";
+    foaf:mbox <mailto:Jeremy.Soenens@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Guy";
+    foaf:lastName "Sonck";
+    foaf:mbox <mailto:guy.sonck@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Peter";
+    foaf:lastName "Stulens";
+    foaf:mbox <mailto:Peter.Stulens@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Immanuel";
+    foaf:lastName "Taets";
+    foaf:mbox <mailto:Immanuel.Taets@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.witas.be/nl/>;
+      foaf:name "Witas"
+    ];
+    foaf:firstName "Wim";
+    foaf:lastName "Tas";
+    foaf:mbox <mailto:wim@witas.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vmm.be/>;
+      foaf:name "VMM"
+    ];
+    foaf:firstName "Ivo";
+    foaf:lastName "Terrens";
+    foaf:mbox <mailto:I.Terrens@vmm.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vmm.be/>;
+      foaf:name "VMM"
+    ];
+    foaf:firstName "Philip";
+    foaf:lastName "Thomas";
+    foaf:mbox <mailto:P.Thomas@vmm.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.arcadis.com/en/global/>;
+      foaf:name "Arcadis"
+    ];
+    foaf:firstName "Andrea";
+    foaf:lastName "Trincado Fernandez";
+    foaf:mbox <mailto:andrea.trincadofernandez@arcadis.com>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://ixor.be/>;
+      foaf:name "Ixor"
+    ];
+    foaf:firstName "Christian";
+    foaf:lastName "Tytgat";
+    foaf:mbox <mailto:christian.tytgat@ixor.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Patrick";
+    foaf:lastName "Van Acker";
+    foaf:mbox <mailto:patrick.vanacker@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Jan";
+    foaf:lastName "Van Boxelaere";
+    foaf:mbox <mailto:jan.vanboxelaere@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Bert";
+    foaf:lastName "Van Buyten";
+    foaf:mbox <mailto:Bert.VanBuyten@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Tom";
+    foaf:lastName "Van Calster";
+    foaf:mbox <mailto:tom.vancalster@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Liesbeth";
+    foaf:lastName "Van Camp";
+    foaf:mbox <mailto:Liesbeth.VanCamp@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.dov.vlaanderen.be/>;
+      foaf:name "Departement Omgeving"
+    ];
+    foaf:firstName "Marleen";
+    foaf:lastName "Van Damme";
+    foaf:mbox <mailto:marleen.vandamme@vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Tine";
+    foaf:lastName "Van Damme";
+    foaf:mbox <mailto:tine.vandamme@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.techlink.be/nl/home>;
+      foaf:name "Techlink"
+    ];
+    foaf:firstName "Kris";
+    foaf:lastName "Van Dingenen";
+    foaf:mbox <mailto:kris.vandingenen@techlink.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.vmm.be>;
+      foaf:name "VMM"
+    ];
+    foaf:firstName "Koen";
+    foaf:lastName "Van Driessen";
+    foaf:mbox <mailto:k.vandriessen@vmm.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Karl";
+    foaf:lastName "Van Duppen";
+    foaf:mbox <mailto:karl.vanduppen@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Geert";
+    foaf:lastName "Van Gaever"
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Bert";
+    foaf:lastName "Van Gaver";
+    foaf:mbox <mailto:Bert.VanGaver@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Jan";
+    foaf:lastName "Van Gestel";
+    foaf:mbox <mailto:Jan.VanGestel@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Wouter";
+    foaf:lastName "Van Herck";
+    foaf:mbox <mailto:Wouter.VanHerck@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Stanny";
+    foaf:lastName "Van Herzeele";
+    foaf:mbox <mailto:stanny.vanherzeele@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Annick";
+    foaf:lastName "Van Laere";
+    foaf:mbox <mailto:annick.vanlaere@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.arcadis.com/en/global/>;
+      foaf:name "Arcadis"
+    ];
+    foaf:firstName "Ann";
+    foaf:lastName "Van Melkebeek";
+    foaf:mbox <mailto:ann.vanmelkebeek@arcadis.com>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Sam";
+    foaf:lastName "Van Nieuwenhuyse";
+    foaf:mbox <mailto:sam.vannieuwenhuyse@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Pieter";
+    foaf:lastName "Van Nieuwerburgh";
+    foaf:mbox <mailto:Pieter.VanNieuwerburgh@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Bart";
+    foaf:lastName "Van Vaerenberg";
+    foaf:mbox <mailto:bart.vanvaerenberg@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://lantis.be/>;
+      foaf:name "BAM NV"
+    ];
+    foaf:firstName "Maarten";
+    foaf:lastName "Van de poel";
+    foaf:mbox <mailto:maarten.vandepoel@bamnv.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Patrick";
+    foaf:lastName "Van den Heuvel";
+    foaf:mbox <mailto:patrick.vandenheuvel@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Freek";
+    foaf:lastName "Vandenbussche";
+    foaf:mbox <mailto:Freek.Vandenbussche@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Peter";
+    foaf:lastName "Vandenhole";
+    foaf:mbox <mailto:peter.vandenhole@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Barbara";
+    foaf:lastName "Vanhooreweder";
+    foaf:mbox <mailto:Barbara.Vanhooreweder@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Alvarez";
+    foaf:lastName "Vanhove";
+    foaf:mbox <mailto:Alvarez.Vanhove@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://pureportal.inbo.be/>;
+      foaf:name "INBO"
+    ];
+    foaf:firstName "Andy";
+    foaf:lastName "Vankerckvoorde";
+    foaf:mbox <mailto:andy.vankerckvoorde@inbo.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.bouwunie.be/nl/>;
+      foaf:name "Bouwunie"
+    ];
+    foaf:firstName "Jerome";
+    foaf:lastName "Vanroye";
+    foaf:mbox <mailto:jerome.vanroye@telenet.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://geosolutions.be/>;
+      foaf:name "Geosolutions"
+    ];
+    foaf:firstName "Anouck";
+    foaf:lastName "Vanrykel";
+    foaf:mbox <mailto:anouck.vanrykel@geosolutions.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Arne";
+    foaf:lastName "Verburgh";
+    foaf:mbox <mailto:Arne.Verburgh@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Frederick";
+    foaf:lastName "Verdonck";
+    foaf:mbox <mailto:frederick.verdonck@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Tim";
+    foaf:lastName "Verhaeghe";
+    foaf:mbox <mailto:tim.verhaeghe@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.jidoka.be/>;
+      foaf:name "Jidoka"
+    ];
+    foaf:firstName "Christopher";
+    foaf:lastName "Verhulst";
+    foaf:mbox <mailto:christopher.verhulst@jidoka.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Yoeri";
+    foaf:lastName "Vernelen";
+    foaf:mbox <mailto:Yoeri.Vernelen@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://departement-mow.vlaanderen.be/nl/afdelingen/geotechniek>;
+      foaf:name "MOW afdeling Geotechniek"
+    ];
+    foaf:firstName "Leen";
+    foaf:lastName "Vincke";
+    foaf:mbox <mailto:leen.vincke@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://dynniq.com/>;
+      foaf:name "Dynniq"
+    ];
+    foaf:firstName "Els";
+    foaf:lastName "Vivijs";
+    foaf:mbox <mailto:els.vivijs@dynniq.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "David";
+    foaf:lastName "Vlaminck";
+    foaf:mbox <mailto:david.vlaminck@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Pieter";
+    foaf:lastName "Vrijsen";
+    foaf:mbox <mailto:Pieter.Vrijsen@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Koen";
+    foaf:lastName "Wardenier";
+    foaf:mbox <mailto:koen.wardenier@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Eli";
+    foaf:lastName "Weerts";
+    foaf:mbox <mailto:Eli.Weerts@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Bert";
+    foaf:lastName "Weyne";
+    foaf:mbox <mailto:bert.weyne@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Kristof";
+    foaf:lastName "Wieme";
+    foaf:mbox <mailto:kristof.wieme@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Wim";
+    foaf:lastName "Willaert";
+    foaf:mbox <mailto:Wim.Willaert@mow.vlaanderen.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.realdolmen.com>;
+      foaf:name "RealDolmen"
+    ];
+    foaf:firstName "Pim";
+    foaf:lastName "Wollants";
+    foaf:mbox <mailto:pim.wollants@realdolmen.com>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Julien";
+    foaf:lastName "Wynants";
+    foaf:mbox <mailto:julien.wynants@mow.vlaanderen.be>
+  ];
   dc:issued "TODO";
   dc:license <https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>,
     "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0";
@@ -1896,4 +3476,77 @@ schemas:opens a rdf:Property;
     schemas:ContactPoint\.opmerkingen,
     schemas:closes,
     schemas:dayOfWeek,
-    schemas:opens .
+    schemas:opens;
+  foaf:maker [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "Geosolutions"
+    ];
+    foaf:firstName "Simon";
+    foaf:lastName "Baert";
+    foaf:mbox <mailto:simon.baert@geosolutions.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://maximbroos.com/>;
+      foaf:name "MB"
+    ];
+    foaf:firstName "Maxim";
+    foaf:lastName "Broos";
+    foaf:mbox <mailto:hello@maximbroos.com>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.geonius.be/>;
+      foaf:name "Geonius"
+    ];
+    foaf:firstName "Jordy";
+    foaf:lastName "Brouwers";
+    foaf:mbox <mailto:j.brouwers@geonius.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://www.acpartners.be/>;
+      foaf:name "ACPartners"
+    ];
+    foaf:firstName "Joost";
+    foaf:lastName "De Weghe";
+    foaf:mbox <mailto:deweghejoost@gmail.com>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://swecobelgium.be/>;
+      foaf:name "Swecobelgium"
+    ];
+    foaf:firstName "Ricardo";
+    foaf:lastName "Sousa";
+    foaf:mbox <mailto:Ricardo.Sousa@swecobelgium.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://swecobelgium.be/>;
+      foaf:name "Swecobelgium"
+    ];
+    foaf:firstName "Arno";
+    foaf:lastName "VanDyck";
+    foaf:mbox <mailto:Arno.vandyck@swecobelgium.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <https://www.linkedin.com/in/davy-vanhoudt-447082138/?originalSubdomain=be>;
+      foaf:name "2m@BIT"
+    ];
+    foaf:firstName "Davy";
+    foaf:lastName "Vanhoudt";
+    foaf:mbox <mailto:Davy.Vanhoudt@outlook.be>
+  ], [
+    a foaf:Person;
+    schema:affiliation [
+      foaf:homepage <http://wegenenverkeer.be/>;
+      foaf:name "AWV"
+    ];
+    foaf:firstName "Raf";
+    foaf:lastName "Vanlathem";
+    foaf:mbox <mailto:raf.vanlathem@mow.vlaanderen.be>
+  ] .
