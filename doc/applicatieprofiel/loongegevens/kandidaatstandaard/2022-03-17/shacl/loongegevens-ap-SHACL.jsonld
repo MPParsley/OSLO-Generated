@@ -72,11 +72,35 @@
         },
         {
           "sh:class": "https://schema.org/MonetaryAmount",
+          "sh:description": "Een belastbare maaltijdcheque is een maaltijdchecque met een bedrag boven het wettelijk plafond voor belastingvrije maaltijdcheques. Ze worden apart vermeld op de loonbrief.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "belastbareMaaltijdcheques",
+          "sh:path": "https://data.vlaanderen.be/ns/loongegevens#belastbareMaaltijdcheques"
+        },
+        {
+          "sh:class": "https://schema.org/MonetaryAmount",
           "sh:description": "De som van alle loonelementen voor sociale en fiscale inhoudingen.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "brutoloon",
           "sh:path": "https://data.vlaanderen.be/ns/loongegevens#brutoloon"
+        },
+        {
+          "sh:class": "https://schema.org/MonetaryAmount",
+          "sh:description": "Een cheque bevat een bepaalde som geld. Bv.Ecocheques",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "cheques",
+          "sh:path": "https://data.vlaanderen.be/ns/loongegevens#cheques"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Bij collectieve schuldenregeling wordt een afbetalingsplan opgestelt voor het betalen van schulden aan de schuldeisers. Het loon van een persoon wordt gestort en volgens de opgestelde regeling verdeelt.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "collectieveSchuldenregeling",
+          "sh:path": "https://data.vlaanderen.be/ns/loongegevens#collectieveSchuldenregeling"
         },
         {
           "sh:class": "https://schema.org/MonetaryAmount",
@@ -135,14 +159,6 @@
           "sh:path": "https://data.vlaanderen.be/ns/loongegevens#premie"
         },
         {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "Bij schuldbemiddeling wordt een instantie ingeschakeld die een afbetalingsplan opstelt voor het betalen van schulden aan de schuldeisers. Het loon van een persoon wordt naar de schuldbemiddelaar gestort, die het volgens de opgestelde regeling spendeert.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "schuldbemiddeling",
-          "sh:path": "https://data.vlaanderen.be/ns/loongegevens#schuldbemiddeling"
-        },
-        {
           "sh:class": "https://schema.org/MonetaryAmount",
           "sh:description": "Bijkomende sommen die aan het brutoloon toegevoegd worden. Deze zijn vrijgesteld van inhoudingen voor de sociale zekerheid.",
           "sh:maxCount": "1",
@@ -189,12 +205,11 @@
           "sh:path": "https://data.vlaanderen.be/ns/loongegevens#arbeidsloon"
         },
         {
-          "sh:class": "https://schema.org/BankAccount",
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:description": "Een rekeningnummer dat gelinkt is aan de arbeidsrelatie. Op dit rekeningnummer wordt het arbeidsloon van de persoon gestort.",
           "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "bankrekening",
-          "sh:path": "https://data.vlaanderen.be/ns/loongegevens#bankrekening"
+          "sh:name": "bankrekeningnummer",
+          "sh:path": "https://data.vlaanderen.be/ns/loongegevens#bankrekeningnummer"
         },
         {
           "sh:class": "http://data.europa.eu/m8g/PeriodOfTime",
@@ -304,7 +319,7 @@
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/loongegevens-ap#SchuldbemiddelingstypeShape",
+      "@id": "https://data.vlaanderen.be/shacl/loongegevens-ap#SchuldenregelingstypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],

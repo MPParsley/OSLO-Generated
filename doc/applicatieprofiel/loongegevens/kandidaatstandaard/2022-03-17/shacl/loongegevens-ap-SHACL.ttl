@@ -16,7 +16,7 @@
     <https://data.vlaanderen.be/shacl/loongegevens-ap#OvereenkomsttypeShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#StatuuttypeShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#VerloningstypeShape>,
-    <https://data.vlaanderen.be/shacl/loongegevens-ap#SchuldbemiddelingstypeShape>,
+    <https://data.vlaanderen.be/shacl/loongegevens-ap#SchuldenregelingstypeShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#NAL_currencyShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#AdresvoorstellingShape>,
     <https://data.vlaanderen.be/shacl/loongegevens-ap#OrganisatieShape>,
@@ -101,11 +101,32 @@
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#bedrijfswagen>
   ], [
     shacl:class schemas:MonetaryAmount;
+    shacl:description "Een belastbare maaltijdcheque is een maaltijdchecque met een bedrag boven het wettelijk plafond voor belastingvrije maaltijdcheques. Ze worden apart vermeld op de loonbrief.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "belastbareMaaltijdcheques";
+    shacl:path <https://data.vlaanderen.be/ns/loongegevens#belastbareMaaltijdcheques>
+  ], [
+    shacl:class schemas:MonetaryAmount;
     shacl:description "De som van alle loonelementen voor sociale en fiscale inhoudingen.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "brutoloon";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#brutoloon>
+  ], [
+    shacl:class schemas:MonetaryAmount;
+    shacl:description "Een cheque bevat een bepaalde som geld. Bv.Ecocheques";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "cheques";
+    shacl:path <https://data.vlaanderen.be/ns/loongegevens#cheques>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "Bij collectieve schuldenregeling wordt een afbetalingsplan opgestelt voor het betalen van schulden aan de schuldeisers. Het loon van een persoon wordt gestort en volgens de opgestelde regeling verdeelt.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "collectieveSchuldenregeling";
+    shacl:path <https://data.vlaanderen.be/ns/loongegevens#collectieveSchuldenregeling>
   ], [
     shacl:class schemas:MonetaryAmount;
     shacl:description "Een eindejaarstoelage is een financiële bonus die een persoon krijgt van zijn/haar werkgever op het einde van het jaar. Er moeten sociale zekerheidsbijdragen en belastingen op betaald worden.";
@@ -156,13 +177,6 @@
     shacl:name "premie";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#premie>
   ], [
-    shacl:class skos:Concept;
-    shacl:description "Bij schuldbemiddeling wordt een instantie ingeschakeld die een afbetalingsplan opstelt voor het betalen van schulden aan de schuldeisers. Het loon van een persoon wordt naar de schuldbemiddelaar gestort, die het volgens de opgestelde regeling spendeert.";
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "schuldbemiddeling";
-    shacl:path <https://data.vlaanderen.be/ns/loongegevens#schuldbemiddeling>
-  ], [
     shacl:class schemas:MonetaryAmount;
     shacl:description "Bijkomende sommen die aan het brutoloon toegevoegd worden. Deze zijn vrijgesteld van inhoudingen voor de sociale zekerheid.";
     shacl:maxCount 1;
@@ -201,12 +215,11 @@
     shacl:name "arbeidsloon";
     shacl:path <https://data.vlaanderen.be/ns/loongegevens#arbeidsloon>
   ], [
-    shacl:class schemas:BankAccount;
+    shacl:datatype rdfs:Literal;
     shacl:description "Een rekeningnummer dat gelinkt is aan de arbeidsrelatie. Op dit rekeningnummer wordt het arbeidsloon van de persoon gestort.";
     shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "bankrekening";
-    shacl:path <https://data.vlaanderen.be/ns/loongegevens#bankrekening>
+    shacl:name "bankrekeningnummer";
+    shacl:path <https://data.vlaanderen.be/ns/loongegevens#bankrekeningnummer>
   ], [
     shacl:class <http://data.europa.eu/m8g/PeriodOfTime>;
     shacl:description "Periode waarover in een arbeidscontract een overeenkomst is afgesloten. Een contractperiode heeft een begindatum, en in sommige gevallen een einddatum. Dat is dan de uitdienstdatum.";
@@ -409,7 +422,7 @@
   shacl:closed false;
   shacl:targetClass skos:Concept .
 
-<https://data.vlaanderen.be/shacl/loongegevens-ap#SchuldbemiddelingstypeShape> a shacl:NodeShape;
+<https://data.vlaanderen.be/shacl/loongegevens-ap#SchuldenregelingstypeShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass skos:Concept .
 

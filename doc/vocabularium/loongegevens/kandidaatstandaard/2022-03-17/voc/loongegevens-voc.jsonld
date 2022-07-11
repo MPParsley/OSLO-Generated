@@ -201,8 +201,8 @@
       "usage": {}
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/loongegevens#bankrekening",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "@id": "https://data.vlaanderen.be/ns/loongegevens#bankrekeningnummer",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "description": {
         "nl": "Een rekeningnummer dat gelinkt is aan de arbeidsrelatie. Op dit rekeningnummer wordt het arbeidsloon van de persoon gestort."
       },
@@ -211,10 +211,10 @@
       ],
       "generalization": [],
       "name": {
-        "nl": "bankrekening"
+        "nl": "bankrekeningnummer"
       },
       "range": [
-        "https://schema.org/BankAccount"
+        "http://www.w3.org/2000/01/rdf-schema#Literal"
       ],
       "usage": {}
     },
@@ -275,6 +275,24 @@
       "usage": {}
     },
     {
+      "@id": "https://data.vlaanderen.be/ns/loongegevens#belastbareMaaltijdcheques",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Een belastbare maaltijdcheque is een maaltijdchecque met een bedrag boven het wettelijk plafond voor belastingvrije maaltijdcheques. Ze worden apart vermeld op de loonbrief."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/loongegevens#Arbeidsloon"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "belastbareMaaltijdcheques"
+      },
+      "range": [
+        "https://schema.org/MonetaryAmount"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://data.vlaanderen.be/ns/loongegevens#brutoloon",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
@@ -293,6 +311,42 @@
       "usage": {
         "nl": "Dit gaat over de sommen voor gepresteerde arbeid, betaalde afwezigheden, toeslagen, premies, ..."
       }
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/loongegevens#cheques",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Een cheque bevat een bepaalde som geld. Bv.Ecocheques"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/loongegevens#Arbeidsloon"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "cheque"
+      },
+      "range": [
+        "https://schema.org/MonetaryAmount"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/loongegevens#collectieveSchuldenregeling",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Bij collectieve schuldenregeling wordt een afbetalingsplan opgestelt voor het betalen van schulden aan de schuldeisers. Het loon van een persoon wordt gestort en volgens de opgestelde regeling verdeelt."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/loongegevens#Arbeidsloon"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "collectieveSchuldenregeling"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
     },
     {
       "@id": "https://data.vlaanderen.be/ns/loongegevens#contractperiode",
@@ -479,24 +533,6 @@
       "usage": {}
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/loongegevens#schuldbemiddeling",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "description": {
-        "nl": "Bij schuldbemiddeling wordt een instantie ingeschakeld die een afbetalingsplan opstelt voor het betalen van schulden aan de schuldeisers. Het loon van een persoon wordt naar de schuldbemiddelaar gestort, die het volgens de opgestelde regeling spendeert."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/loongegevens#Arbeidsloon"
-      ],
-      "generalization": [],
-      "name": {
-        "nl": "schuldbemiddeling"
-      },
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "usage": {}
-    },
-    {
       "@id": "https://data.vlaanderen.be/ns/loongegevens#statuut",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
@@ -531,7 +567,7 @@
         "https://schema.org/MonetaryAmount"
       ],
       "usage": {
-        "nl": "Gewaarborgd maandloon ziekte, dubbel vakantiegeld, ..."
+        "nl": "Gewaarborgd maandloon ziekte, dubbel vakantiegeld, ... Let op dat belastbare maaltijdcheques hier niet in zijn opgenomen. Deze hebben namelijk een apart attribuut in deze klasse."
       }
     },
     {
