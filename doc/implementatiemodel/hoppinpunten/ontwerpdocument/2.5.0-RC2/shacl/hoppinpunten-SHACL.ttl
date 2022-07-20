@@ -1,0 +1,557 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten> <https://data.vlaanderen.be/shacl/hoppinpuntenshapes> <https://data.vlaanderen.be/shacl/hoppinpunten#LiteralShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#AnyURIShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#BooleanShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#DateShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#DecimalShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#NonNegativeIntegerShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#StringShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#KlAIMToestandShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#KlAlgMimeTypeShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#KlHoppinzuilTypeShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#KlWeergegevenVervoersmodiOpKaartShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#KlLaagRolShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#KlZonnepaneelMerkShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#KlZonnepaneelModelnaamShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#BevestigingGCShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#ConstructieElementShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#FunderingShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#HoppinzuilShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#LaagShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#VoedingspuntShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#AIMDBStatusShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#AIMNaamObjectShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#AIMObjectShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#AIMToestandShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#DtcDocumentShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#DtcIdentificatorShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#DteTekstblokShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#KwantWrdInCentimeterShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#KwantWrdInMaandShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#KwantWrdInMeterShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#KwantWrdInMeterTAWShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#KwantWrdInVierkanteMeterShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#KwantWrdInWattShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#AnalogeHoppinzuilShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#BevestigingShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#LigtOpShape>,
+    <https://data.vlaanderen.be/shacl/hoppinpunten#ZonnepaneelShape> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#AIMDBStatusShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:boolean;
+    shacl:description "Geeft aan of het object actief kan gebruikt worden of (zacht) verwijderd is uit het asset beheer systeem.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "isActief";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus.isActief>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#AIMNaamObjectShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:string;
+    shacl:description "De mensleesbare naam van een asset zoals dit bv. ook terug te vinden is op een etiket op het object zelf. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Indien een object een algemeen gangbare naam heeft zoals bv. bij een waterloop dan wordt deze gebruikt.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "naam";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject.naam>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#AIMObjectShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator>;
+    shacl:description "Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "assetId";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.assetId>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Een verwijzing naar een postnummer uit het specifieke bestek waar het object mee verband houdt.";
+    shacl:minCount 1;
+    shacl:name "bestekPostNummer";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.bestekPostNummer>
+  ], [
+    shacl:datatype xsd:date;
+    shacl:description "De datum waarop het object op het terrein is beginnen bestaan, bv. de datum van aanleg.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "datumOprichtingObject";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.datumOprichtingObject>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Extra notitie voor het object.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "notitie";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.notitie>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Een verwijzing naar een postnummer uit het standaardbestek waar het object mee verband houdt. De notatie van het postnummer moet overeenkomen met de notatie die gebruikt is in de catalogi van standaardbestekken, bijvoorbeeld postnummer 0701.20404G.";
+    shacl:minCount 1;
+    shacl:name "standaardBestekPostNummer";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.standaardBestekPostNummer>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand>;
+    shacl:description " De levensduur in aantal maanden die theoretisch mag verwacht worden voor een object.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "theoretischeLevensduur";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.theoretischeLevensduur>
+  ], [
+    shacl:class xsd:anyURI;
+    shacl:description "De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI .";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "typeURI";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.typeURI>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#AIMToestandShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:description "Geeft de actuele stand in de levenscyclus van het object.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "toestand";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand.toestand>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#AnalogeHoppinzuilShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Zonnepaneel>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hoppinpunten/#Bevestiging>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument>;
+    shacl:description "Cartografische weergave van het hoppinpunt en de omliggende hoppinpunten met daarop aangeduid de attractiepolen in de omgeving.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "macrokaart";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#AnalogeHoppinzuil.macrokaart>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument>;
+    shacl:description "Cartografische weergave van het hoppinpunt en de omliggende straten met daarop de hoppinzuil, de verschillende beschikbare vervoersmodi en diensten aangeduid.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "microkaart";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#AnalogeHoppinzuil.microkaart>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "De mogelijke types van een analoge hoppinzuil.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "type";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#AnalogeHoppinzuil.type>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#AnalogeHoppinzuil> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#AnyURIShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:anyURI .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#BevestigingGCShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#BevestigingGC> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#BevestigingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hoppinpunten/#Bevestiging> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#BooleanShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:boolean .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#ConstructieElementShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ConstructieElement> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#DateShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:date .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#DecimalShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:decimal .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#DtcDocumentShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:string;
+    shacl:description "De naam van het Document inclusief de bestandsextensie, van de naam gescheiden door een punt.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "bestandsnaam";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument.bestandsnaam>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "Het MIME type van het document.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "mimeType";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument.mimeType>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DteTekstblok>;
+    shacl:description "Een korte toelichting over waar het document juist voor dient.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "omschrijving";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument.omschrijving>
+  ], [
+    shacl:class xsd:anyURI;
+    shacl:description "De verwijzing naar de bestandslocatie via een link. Bij lokale bestanden kan dit eventueel ook een pad zijn.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "uri";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument.uri>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#DtcIdentificatorShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:string;
+    shacl:description "Een groep van tekens om een AIM object te identificeren of te benoemen.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "identificator";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Gegevens van de organisatie die de toekenning deed.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "toegekendDoor";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.toegekendDoor>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#DteTekstblokShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:string;
+    shacl:description "De string welke uit meerdere zinnen bestaat, en ook regeleindes kan bevatten. Een tekstblok bevat maximaal 65.000 karakters.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DteTekstblok.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DteTekstblok> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#FunderingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Laag>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hoppinpunten/#Bevestiging>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Hoppinzuil>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hoppinpunten/#Bevestiging>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeterTAW>;
+    shacl:description "De hoogte van het laagste punt van de onderkant van een element, ten opzichte van gemiddeld laagwaterpeil te Oostende (TAWpeil).";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "aanzetpeil";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Fundering.aanzetpeil>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter>;
+    shacl:description "De afstand tussen het laagste punt van de onderkant en hoogste punt van de bovenkant van de fundering.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "hoogte";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Fundering.hoogte>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Fundering> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#HoppinzuilShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Fundering>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hoppinpunten/#Bevestiging>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Laag>;
+    shacl:description "Deze relatie geeft aan dat 2 onderdelen direct fysiek op elkaar liggen. Deze relatie heeft een richting en gaat van het bovenste naar het onderste onderdeel.";
+    shacl:name "LigtOp"
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "De verschillende beschikbare vervoersmodi die op de bijhorende kaart worden weergegeven.";
+    shacl:minCount 1;
+    shacl:name "weergegevenVervoersmodiOpKaart";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Hoppinzuil.weergegevenVervoersmodiOpKaart>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Naam van het hoppinpunt die verwijst naar een duidelijke en herkenbare plaatsnaam.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "zuilnaam";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Hoppinzuil.zuilnaam>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Uniek identificatienummer dat elke zuil krijgt en dat wordt opgenomen in de hoppinpuntendatabank.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "zuilnummer";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Hoppinzuil.zuilnummer>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Hoppinzuil> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#KlAIMToestandShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#KlAlgMimeTypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#KlHoppinzuilTypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#KlLaagRolShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#KlWeergegevenVervoersmodiOpKaartShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#KlZonnepaneelMerkShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#KlZonnepaneelModelnaamShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#KwantWrdInCentimeterShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in centimeter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter.standaardEenheid>
+  ], [
+    shacl:class xsd:decimal;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#KwantWrdInMaandShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in maand.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand.standaardEenheid>
+  ], [
+    shacl:class xsd:nonNegativeInteger;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#KwantWrdInMeterShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in meter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter.standaardEenheid>
+  ], [
+    shacl:class xsd:decimal;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#KwantWrdInMeterTAWShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in meter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeterTAW.standaardEenheid>
+  ], [
+    shacl:class xsd:decimal;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeterTAW.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeterTAW> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#KwantWrdInVierkanteMeterShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in vierkante meter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter.standaardEenheid>
+  ], [
+    shacl:class xsd:decimal;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#KwantWrdInWattShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in Watt.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt.standaardEenheid>
+  ], [
+    shacl:class xsd:decimal;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#LaagShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Fundering>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hoppinpunten/#Bevestiging>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Laag>;
+    shacl:description "Deze relatie geeft aan dat 2 onderdelen direct fysiek op elkaar liggen. Deze relatie heeft een richting en gaat van het bovenste naar het onderste onderdeel.";
+    shacl:name "LigtOp"
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter>;
+    shacl:description "De (gemiddelde) breedte van een laag in meter. Dit kan ook de nominale breedte zijn afhankelijk van de laag en situatie.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "breedte";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Laag.breedte>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "De functie die de laag vervult in de verticale opbouw.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "laagRol";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Laag.laagRol>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter>;
+    shacl:description "De (gemiddelde) lengte van een laag in meter. Dit kan ook de nominale lengte zijn afhankelijk van de laag en situatie.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "lengte";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Laag.lengte>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter>;
+    shacl:description "De oppervlakte van een laag in vierkante meter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "oppervlakte";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Laag> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#LigtOpShape> a shacl:NodeShape;
+  shacl:closed false .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#LiteralShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass rdfs:Literal .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#NonNegativeIntegerShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:nonNegativeInteger .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#StringShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:string .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#VoedingspuntShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Voedingspunt> .
+
+<https://data.vlaanderen.be/shacl/hoppinpunten#ZonnepaneelShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#AnalogeHoppinzuil>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hoppinpunten/#Bevestiging>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "Het merk van het zonnepaneel.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "merk";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Zonnepaneel.merk>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "De modelnaam van het zonnepaneel.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "modelnaam";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Zonnepaneel.modelnaam>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument>;
+    shacl:description "De technsiche fiche als bijlage van het zonnepaneel.";
+    shacl:minCount 1;
+    shacl:name "technischeFiche";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Zonnepaneel.technischeFiche>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt>;
+    shacl:description "Het vermogen van het zonnepaneel.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "vermogen";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Zonnepaneel.vermogen>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Zonnepaneel> .

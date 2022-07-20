@@ -1,0 +1,468 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://data.vlaanderen.be/shacl/aarding> <https://data.vlaanderen.be/shacl/aardingshapes> <https://data.vlaanderen.be/shacl/aarding#LiteralShape>,
+    <https://data.vlaanderen.be/shacl/aarding#AnyURIShape>,
+    <https://data.vlaanderen.be/shacl/aarding#BooleanShape>,
+    <https://data.vlaanderen.be/shacl/aarding#DateShape>,
+    <https://data.vlaanderen.be/shacl/aarding#DecimalShape>,
+    <https://data.vlaanderen.be/shacl/aarding#NonNegativeIntegerShape>,
+    <https://data.vlaanderen.be/shacl/aarding#StringShape>,
+    <https://data.vlaanderen.be/shacl/aarding#KlAIMToestandShape>,
+    <https://data.vlaanderen.be/shacl/aarding#KlAardingskabelSectieShape>,
+    <https://data.vlaanderen.be/shacl/aarding#KlAardingAardingsnetShape>,
+    <https://data.vlaanderen.be/shacl/aarding#KlAardingAardingsstelselShape>,
+    <https://data.vlaanderen.be/shacl/aarding#KlAlgMimeTypeShape>,
+    <https://data.vlaanderen.be/shacl/aarding#KabelAardingShape>,
+    <https://data.vlaanderen.be/shacl/aarding#KabelAardingSamenstellingShape>,
+    <https://data.vlaanderen.be/shacl/aarding#AIMDBStatusShape>,
+    <https://data.vlaanderen.be/shacl/aarding#AIMNaamObjectShape>,
+    <https://data.vlaanderen.be/shacl/aarding#AIMObjectShape>,
+    <https://data.vlaanderen.be/shacl/aarding#AIMToestandShape>,
+    <https://data.vlaanderen.be/shacl/aarding#DtcDocumentShape>,
+    <https://data.vlaanderen.be/shacl/aarding#DtcIdentificatorShape>,
+    <https://data.vlaanderen.be/shacl/aarding#DteTekstblokShape>,
+    <https://data.vlaanderen.be/shacl/aarding#KwantWrdInCentimeterShape>,
+    <https://data.vlaanderen.be/shacl/aarding#KwantWrdInMaandShape>,
+    <https://data.vlaanderen.be/shacl/aarding#KwantWrdInMillimeterShape>,
+    <https://data.vlaanderen.be/shacl/aarding#KwantWrdInOhmShape>,
+    <https://data.vlaanderen.be/shacl/aarding#AardingsinstallatieShape>,
+    <https://data.vlaanderen.be/shacl/aarding#DtcAardingsstelselShape>,
+    <https://data.vlaanderen.be/shacl/aarding#AardingskabelShape>,
+    <https://data.vlaanderen.be/shacl/aarding#AardingslusShape>,
+    <https://data.vlaanderen.be/shacl/aarding#AardingsonderbrekerShape>,
+    <https://data.vlaanderen.be/shacl/aarding#AardingspenShape>,
+    <https://data.vlaanderen.be/shacl/aarding#BevestigingShape>,
+    <https://data.vlaanderen.be/shacl/aarding#EquipotentiaalVerbindingShape>,
+    <https://data.vlaanderen.be/shacl/aarding#HoortBijShape> .
+
+<https://data.vlaanderen.be/shacl/aarding#AIMDBStatusShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:boolean;
+    shacl:description "Geeft aan of het object actief kan gebruikt worden of (zacht) verwijderd is uit het asset beheer systeem.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "isActief";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus.isActief>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus> .
+
+<https://data.vlaanderen.be/shacl/aarding#AIMNaamObjectShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:string;
+    shacl:description "De mensleesbare naam van een asset zoals dit bv. ook terug te vinden is op een etiket op het object zelf. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Indien een object een algemeen gangbare naam heeft zoals bv. bij een waterloop dan wordt deze gebruikt.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "naam";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject.naam>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> .
+
+<https://data.vlaanderen.be/shacl/aarding#AIMObjectShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator>;
+    shacl:description "Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "assetId";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.assetId>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Een verwijzing naar een postnummer uit het specifieke bestek waar het object mee verband houdt.";
+    shacl:minCount 1;
+    shacl:name "bestekPostNummer";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.bestekPostNummer>
+  ], [
+    shacl:datatype xsd:date;
+    shacl:description "De datum waarop het object op het terrein is beginnen bestaan, bv. de datum van aanleg.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "datumOprichtingObject";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.datumOprichtingObject>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Extra notitie voor het object.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "notitie";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.notitie>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Een verwijzing naar een postnummer uit het standaardbestek waar het object mee verband houdt. De notatie van het postnummer moet overeenkomen met de notatie die gebruikt is in de catalogi van standaardbestekken, bijvoorbeeld postnummer 0701.20404G.";
+    shacl:minCount 1;
+    shacl:name "standaardBestekPostNummer";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.standaardBestekPostNummer>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand>;
+    shacl:description " De levensduur in aantal maanden die theoretisch mag verwacht worden voor een object.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "theoretischeLevensduur";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.theoretischeLevensduur>
+  ], [
+    shacl:class xsd:anyURI;
+    shacl:description "De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI .";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "typeURI";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.typeURI>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
+
+<https://data.vlaanderen.be/shacl/aarding#AIMToestandShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:description "Geeft de actuele stand in de levenscyclus van het object.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "toestand";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand.toestand>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand> .
+
+<https://data.vlaanderen.be/shacl/aarding#AardingsinstallatieShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aardingsinstallatie>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/aarding/#Bevestiging>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aardingsinstallatie>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/aarding/#Bevestiging>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "De manier waarop respectievelijk de bron en de verbruiker met de aarde verbonden worden om op die manier foutstromen af te voeren.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "aardingsnet";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aardingsinstallatie.aardingsnet>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#DtcAardingsstelsel>;
+    shacl:description "De wijze waarop verschillende aardingen (bv. laagspanningsaarding, nulpuntsaarding, hoogspanningsaarding) zich t.o.v. elkaar bevinden: ofwel bevinden alle aardingen zich uit elkaars invloedssfeer en hebben ze geen impact op elkaars potentiaal ofwel zijn alle aardverbindingen galvanisch met elkaar in contact. In het eerste geval spreekt men van gescheiden aardingsstelsel, in het tweede geval van een globale aarding.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "aardingsstelsel";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aardingsinstallatie.aardingsstelsel>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInOhm>;
+    shacl:description "De grootte van de weerstand tussen de aardelektrode en de omringende grond.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "aardingsweerstand";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aardingsinstallatie.aardingsweerstand>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aardingsinstallatie> .
+
+<https://data.vlaanderen.be/shacl/aarding#AardingskabelShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aardingsinstallatie>;
+    shacl:description "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.";
+    shacl:name "HoortBij"
+  ], [
+    shacl:datatype xsd:boolean;
+    shacl:description "Geeft expliciet aan of de aardingskabel al dan niet geïsoleerd is. ";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "isGeisoleerd";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Aardingskabel.isGeisoleerd>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Aardingskabel> .
+
+<https://data.vlaanderen.be/shacl/aarding#AardingslusShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aardingsinstallatie>;
+    shacl:description "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.";
+    shacl:name "HoortBij"
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Aardingslus> .
+
+<https://data.vlaanderen.be/shacl/aarding#AardingsonderbrekerShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aardingsinstallatie>;
+    shacl:description "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.";
+    shacl:name "HoortBij"
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Aardingsonderbreker> .
+
+<https://data.vlaanderen.be/shacl/aarding#AardingspenShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aardingsinstallatie>;
+    shacl:description "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.";
+    shacl:name "HoortBij"
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter>;
+    shacl:description "De totale lengte van de aardingspen.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "lengte";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Aardingspen.lengte>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Aardingspen> .
+
+<https://data.vlaanderen.be/shacl/aarding#AnyURIShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:anyURI .
+
+<https://data.vlaanderen.be/shacl/aarding#BevestigingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/aarding/#Bevestiging> .
+
+<https://data.vlaanderen.be/shacl/aarding#BooleanShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:boolean .
+
+<https://data.vlaanderen.be/shacl/aarding#DateShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:date .
+
+<https://data.vlaanderen.be/shacl/aarding#DecimalShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:decimal .
+
+<https://data.vlaanderen.be/shacl/aarding#DtcAardingsstelselShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument>;
+    shacl:description "Een bestandsbijlage met het attest volgens het aardingsstelsel voorzien door de distributienetbeheerder .";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "attestDNB";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#DtcAardingsstelsel.attestDNB>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "Geeft het type aan van het aardingsstelsel volgens een keuzelijst.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "type";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#DtcAardingsstelsel.type>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#DtcAardingsstelsel> .
+
+<https://data.vlaanderen.be/shacl/aarding#DtcDocumentShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:string;
+    shacl:description "De naam van het Document inclusief de bestandsextensie, van de naam gescheiden door een punt.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "bestandsnaam";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument.bestandsnaam>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "Het MIME type van het document.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "mimeType";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument.mimeType>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DteTekstblok>;
+    shacl:description "Een korte toelichting over waar het document juist voor dient.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "omschrijving";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument.omschrijving>
+  ], [
+    shacl:class xsd:anyURI;
+    shacl:description "De verwijzing naar de bestandslocatie via een link. Bij lokale bestanden kan dit eventueel ook een pad zijn.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "uri";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument.uri>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
+
+<https://data.vlaanderen.be/shacl/aarding#DtcIdentificatorShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:string;
+    shacl:description "Een groep van tekens om een AIM object te identificeren of te benoemen.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "identificator";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Gegevens van de organisatie die de toekenning deed.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "toegekendDoor";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.toegekendDoor>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator> .
+
+<https://data.vlaanderen.be/shacl/aarding#DteTekstblokShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:string;
+    shacl:description "De string welke uit meerdere zinnen bestaat, en ook regeleindes kan bevatten. Een tekstblok bevat maximaal 65.000 karakters.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DteTekstblok.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DteTekstblok> .
+
+<https://data.vlaanderen.be/shacl/aarding#EquipotentiaalVerbindingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aardingsinstallatie>;
+    shacl:description "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.";
+    shacl:name "HoortBij"
+  ], [
+    shacl:datatype xsd:boolean;
+    shacl:description "Geeft expliciet aan of de aardingskabel al dan niet geïsoleerd is. ";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "isGeisoleerd";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#EquipotentiaalVerbinding.isGeisoleerd>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#EquipotentiaalVerbinding> .
+
+<https://data.vlaanderen.be/shacl/aarding#HoortBijShape> a shacl:NodeShape;
+  shacl:closed false .
+
+<https://data.vlaanderen.be/shacl/aarding#KabelAardingSamenstellingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:description "Geeft de dikte van een kabel of pen voor aarding weer als oppervlakte van een doorsnede, uitgedrukt in mm².";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "sectie";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#KabelAardingSamenstelling.sectie>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#KabelAardingSamenstelling> .
+
+<https://data.vlaanderen.be/shacl/aarding#KabelAardingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter>;
+    shacl:description "De buitenste afmeting van de kabel in millimeter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "buitenmantelDiameter";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#KabelAarding.buitenmantelDiameter>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#KabelAarding> .
+
+<https://data.vlaanderen.be/shacl/aarding#KlAIMToestandShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/aarding#KlAardingAardingsnetShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/aarding#KlAardingAardingsstelselShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/aarding#KlAardingskabelSectieShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/aarding#KlAlgMimeTypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/aarding#KwantWrdInCentimeterShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in centimeter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter.standaardEenheid>
+  ], [
+    shacl:class xsd:decimal;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter> .
+
+<https://data.vlaanderen.be/shacl/aarding#KwantWrdInMaandShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in maand.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand.standaardEenheid>
+  ], [
+    shacl:class xsd:nonNegativeInteger;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand> .
+
+<https://data.vlaanderen.be/shacl/aarding#KwantWrdInMillimeterShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in millimeter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter.standaardEenheid>
+  ], [
+    shacl:class xsd:decimal;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter> .
+
+<https://data.vlaanderen.be/shacl/aarding#KwantWrdInOhmShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in ohm.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInOhm.standaardEenheid>
+  ], [
+    shacl:class xsd:decimal;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInOhm.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInOhm> .
+
+<https://data.vlaanderen.be/shacl/aarding#LiteralShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass rdfs:Literal .
+
+<https://data.vlaanderen.be/shacl/aarding#NonNegativeIntegerShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:nonNegativeInteger .
+
+<https://data.vlaanderen.be/shacl/aarding#StringShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:string .
