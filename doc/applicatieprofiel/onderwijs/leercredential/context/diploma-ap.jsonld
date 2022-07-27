@@ -1,5 +1,287 @@
 {
   "@context": {
+    "Accreditatie": "https://data.europa.eu/snb/model#Accreditation",
+    "Accreditatie.aanvullendDocument": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#supplementaryDocument",
+      "@type": "@id"
+    },
+    "Accreditatie.accreditatiestatus": {
+      "@id": "https://data.europa.eu/snb/model#status",
+      "@type": "@id"
+    },
+    "Accreditatie.accreditatietype": {
+      "@container": "@set",
+      "@id": "http://purl.org/dc/terms/type",
+      "@type": "@id"
+    },
+    "Accreditatie.beschrijving": {
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "@id"
+    },
+    "Accreditatie.beslissing": {
+      "@id": "https://data.europa.eu/snb/model#decision",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Accreditatie.extraInformatie": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#additionalNote",
+      "@type": "@id"
+    },
+    "Accreditatie.herzieningsdatum": {
+      "@id": "https://data.europa.eu/snb/model#reviewDate",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Accreditatie.homepagina": {
+      "@container": "@set",
+      "@id": "http://xmlns.com/foaf/0.1/homepage",
+      "@type": "@id"
+    },
+    "Accreditatie.identificator": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/adms#identifier",
+      "@type": "@id"
+    },
+    "Accreditatie.jurisdictie": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#limitJurisdiction",
+      "@type": "@id"
+    },
+    "Accreditatie.landingspagina": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#landingPage",
+      "@type": "@id"
+    },
+    "Accreditatie.onderwijsniveau": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#limitEQFLevel",
+      "@type": "@id"
+    },
+    "Accreditatie.organisatie": {
+      "@id": "https://data.europa.eu/snb/model#organisation",
+      "@type": "@id"
+    },
+    "Accreditatie.rapport": {
+      "@id": "https://data.europa.eu/snb/model#report",
+      "@type": "@id"
+    },
+    "Accreditatie.studiegebied": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#limitField",
+      "@type": "@id"
+    },
+    "Accreditatie.titel": {
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Accreditatie.uitgaveDatum": {
+      "@id": "http://purl.org/dc/terms/issued",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Accreditatie.verstrektDoor": {
+      "@id": "https://data.europa.eu/snb/model#accreditingAgent",
+      "@type": "@id"
+    },
+    "Accreditatie.vervaldatum": {
+      "@id": "https://data.europa.eu/snb/model#expiryDate",
+      "@type": ""
+    },
+    "Accreditatiestatus": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Accreditatietype": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Assessment": "https://data.europa.eu/snb/model#Assessment",
+    "Assessment.assessmentdatum": {
+      "@id": "http://purl.org/dc/terms/issued",
+      "@type": ""
+    },
+    "Assessment.beoordeling": {
+      "@id": "https://data.europa.eu/snb/model#grade",
+      "@type": "@id"
+    },
+    "Assessment.bewijst": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#proves",
+      "@type": "@id"
+    },
+    "Assessment.heeftDeel": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#hasPart",
+      "@type": "@id"
+    },
+    "Assessment.idVerificatie": {
+      "@id": "https://data.europa.eu/snb/model#idVerification",
+      "@type": "@id"
+    },
+    "Assessment.relatieveBeoordeling": {
+      "@id": "https://data.europa.eu/snb/model#shortenedGrading",
+      "@type": "@id"
+    },
+    "Assessment.resultaatverdeling": {
+      "@id": "https://data.europa.eu/snb/model#resultDistribution",
+      "@type": "@id"
+    },
+    "Assessment.specificatie": {
+      "@id": "https://data.europa.eu/snb/model#specifiedBy",
+      "@type": "@id"
+    },
+    "Assessment.uitgevoerdDoor": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#assessedBy",
+      "@type": "@id"
+    },
+    "Assessmenttype": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Assessmentvorm": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Beoordelingsschema": "https://data.europa.eu/snb/model#GradingScheme",
+    "Beoordelingsschema.beschrijving": {
+      "@container": "@set",
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "@id"
+    },
+    "Beoordelingsschema.bijkomendDocument": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#supplementaryDocument",
+      "@type": "@id"
+    },
+    "Beoordelingsschema.identificator": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/adms#identifier",
+      "@type": "@id"
+    },
+    "Beoordelingsschema.titel": {
+      "@container": "@set",
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Beroep": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Bewijs": "https://data.vlaanderen.be/ns/onderwijs/leercredential#Bewijs",
+    "Contactinfo": "http://schema.org/ContactPoint",
+    "Contactinfo.aanschrijfvorm": {
+      "@id": "http://ww.w3.org/2006/vcard/ns#honorific-prefix",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Contactinfo.adres": {
+      "@id": "http://www.w3.org/ns/locn#address",
+      "@type": "@id"
+    },
+    "Contactinfo.contactnaam": {
+      "@id": "http://xmlns.com/foaf/0.1/name",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Contactinfo.email": {
+      "@id": "http://schema.org/email",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Contactinfo.telefoon": {
+      "@id": "http://schema.org/telephone",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Credential": "https://data.vlaanderen.be/ns/onderwijs/leercredential#Credential",
+    "Credential.geldigVan": {
+      "@id": "https://www.w3.org/2018/credentials#validFrom",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Credential.uitgifteDatum": {
+      "@id": "https://www.w3.org/2018/credentials#issued",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Credential.vervalDatum": {
+      "@id": "https://www.w3.org/2018/credentials#validUntil",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Credentialtype": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Doelgroep": "http://www.w3.org/2004/02/skos/core#Concept",
+    "EuropeesDigitaalCredential": "https://data.europa.eu/snb/model#EuropeanDigitalCredential",
+    "Gender": "http://fixme.com#Gender",
+    "GeografischeNaam": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+    "GeregistreerdPersoon": "https://data.vlaanderen.be/ns/persoon#GeregistreerdPersoon",
+    "GeregistreerdPersoon.registratie": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#registratie",
+      "@type": "@id"
+    },
+    "GeregistreerdeOrganisatie": "http://www.w3.org/ns/regorg#RegisteredOrganization",
+    "GeregistreerdeOrganisatie.registratie": {
+      "@id": "http://www.w3.org/ns/regorg#registration",
+      "@type": "@id"
+    },
+    "GeregistreerdeOrganisatie.wettelijkeNaam": {
+      "@id": "http://www.w3.org/ns/regorg#legalName",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "GetypeerdeString": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "GetypeerdeString.string": {
+      "@id": "http://fixme.com#string",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "GetypeerdeString.type": {
+      "@id": "http://fixme.com#type",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "Herbruikbaarheidsniveau": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Identificator": "http://www.w3.org/ns/adms#Identifier",
+    "Jurisdictie": "http://purl.org/dc/terms/Jurisdiction",
+    "Jurisdictie.identificator": {
+      "@id": "http://fixme.com#identificator",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "Kredietpunten": "https://data.europa.eu/snb/model#CreditPoint",
+    "Kredietpunten.framework": {
+      "@id": "https://data.europa.eu/snb/model#framework",
+      "@type": "@id"
+    },
+    "Kredietpunten.punten": {
+      "@id": "https://data.europa.eu/snb/model#point",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Kredietpuntenframework": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Kwalificatieklasse": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Kwalificatieniveau": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Leeractiviteit": "https://data.europa.eu/snb/model#LearningActivity",
+    "Leeractiviteit.contacturen": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#contactHour",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Leeractiviteit.heeftDeel": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#hasPart",
+      "@type": "@id"
+    },
+    "Leeractiviteit.ingerichtDoor": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#directedBy",
+      "@type": "@id"
+    },
+    "Leeractiviteit.leerOpportuniteit": {
+      "@id": "https://data.europa.eu/snb/model#learningOpportunity",
+      "@type": ""
+    },
+    "Leeractiviteit.locatie": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#location",
+      "@type": "@id"
+    },
+    "Leeractiviteit.periode": {
+      "@container": "@set",
+      "@id": "http://purl.org/dc/terms/temporal",
+      "@type": "@id"
+    },
+    "Leeractiviteit.resulteerdeIn": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#influences",
+      "@type": "@id"
+    },
+    "Leeractiviteit.specificatie": {
+      "@id": "https://data.europa.eu/snb/model#specifiedBy",
+      "@type": "@id"
+    },
+    "Leeractiviteit.voltooiingsniveau": {
+      "@id": "https://data.europa.eu/snb/model#levelOfCompletion",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "Leeractiviteit.workload": {
+      "@id": "https://data.europa.eu/snb/model#workload",
+      "@type": "http://www.w3.org/2001/XMLSchema#duration"
+    },
+    "Leeractiviteittype": "http://www.w3.org/2004/02/skos/core#Concept",
     "Leerclaim": "https://data.europa.eu/snb/model#Claim",
     "Leerclaim.aanvullendDocument": {
       "@container": "@set",
@@ -29,10 +311,458 @@
       "@id": "http://purl.org/dc/terms/title",
       "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     },
+    "Leerclaim.toegekendDoor": {
+      "@id": "https://data.europa.eu/snb/model#awardedBy",
+      "@type": "@id"
+    },
     "Leerclaim.type": {
       "@container": "@set",
       "@id": "http://purl.org/dc/terms/type",
       "@type": "@id"
+    },
+    "Leercredential": "https://data.vlaanderen.be/ns/onderwijs/leercredential#Leercredential",
+    "Leercredential.beschrijving": {
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "@id"
+    },
+    "Leercredential.bewijs": {
+      "@id": "https://w3id.org/security#proof",
+      "@type": "@id"
+    },
+    "Leercredential.bijvoegsel": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#attachment",
+      "@type": "@id"
+    },
+    "Leercredential.display": {
+      "@id": "https://data.europa.eu/snb/model#displayParameter",
+      "@type": ""
+    },
+    "Leercredential.eigenaar": {
+      "@id": "https://w3.org/2018/credentials#credentialSubject",
+      "@type": "@id"
+    },
+    "Leercredential.hoofdTaal": {
+      "@id": "https://data.europa.eu/snb/model#primaryLanguage",
+      "@type": "@id"
+    },
+    "Leercredential.identificator": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/adms#identifier",
+      "@type": "@id"
+    },
+    "Leercredential.omvat": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#hasPart",
+      "@type": "@id"
+    },
+    "Leercredential.taal": {
+      "@container": "@set",
+      "@id": "http://purl.org/dc/terms/language",
+      "@type": "@id"
+    },
+    "Leercredential.titel": {
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Leercredential.type": {
+      "@id": "http://purl.org/dc/terms/type",
+      "@type": "@id"
+    },
+    "Leercredential.uitgever": {
+      "@id": "https://w3.org/2018/credentials#issuer",
+      "@type": "@id"
+    },
+    "Leercredentialtype": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Leerprestatie": "https://data.europa.eu/snb/model#LearningAchievement",
+    "Leerprestatie.bewezenDoor": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#provenBy",
+      "@type": "@id"
+    },
+    "Leerprestatie.geeftRechtOp": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#entitlesTo",
+      "@type": "@id"
+    },
+    "Leerprestatie.heeftDeel": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#hasPart",
+      "@type": "@id"
+    },
+    "Leerprestatie.isResultaatVan": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#influencedBy",
+      "@type": "@id"
+    },
+    "Leerprestatie.leerOpportuniteit": {
+      "@id": "https://data.europa.eu/snb/model#learningOpportunity",
+      "@type": ""
+    },
+    "Leerprestatie.specificatie": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#specifiedBy",
+      "@type": "@id"
+    },
+    "Leerprestatietype": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Leersetting": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Leeruitkomst": "https://data.europa.eu/snb/model#LearningOutcome",
+    "Leeruitkomst.beschrijving": {
+      "@container": "@set",
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "@id"
+    },
+    "Leeruitkomst.geassocieerdeAndereVaardigheid": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#relatedSkill",
+      "@type": "@id"
+    },
+    "Leeruitkomst.geassocieerdeEscoVaardigheid": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#relatedESCOSkill",
+      "@type": "@id"
+    },
+    "Leeruitkomst.geassocieerdeVaardigheid": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/onderwijs/leercredential#geassocieerdeVaardigheid",
+      "@type": "@id"
+    },
+    "Leeruitkomst.herbruikbaarheidsniveau": {
+      "@id": "https://data.europa.eu/snb/model#reusabilityLevel",
+      "@type": "@id"
+    },
+    "Leeruitkomst.identificator": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/adms#identifier",
+      "@type": "@id"
+    },
+    "Leeruitkomst.titel": {
+      "@container": "@set",
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Leeruitkomst.type": {
+      "@id": "http://purl.org/dc/terms/type",
+      "@type": "@id"
+    },
+    "Leeruitkomsttype": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Locatie": "http://www.w3.org/ns/prov#Location",
+    "Locatie.adres": {
+      "@container": "@set",
+      "@id": "http://fixme.com#adres",
+      "@type": "@id"
+    },
+    "Locatie.naam": {
+      "@container": "@set",
+      "@id": "http://fixme.com#naam",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Locatie.plaats": {
+      "@container": "@set",
+      "@id": "http://fixme.com#plaats",
+      "@type": "@id"
+    },
+    "Mediacoderingtype": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Mediaobject": "https://data.europa.eu/snb/model#MediaObject",
+    "Mediaobject.codering": {
+      "@id": "https://data.europa.eu/snb/model#contentEncoding",
+      "@type": "@id"
+    },
+    "Mediaobject.content": {
+      "@id": "https://data.europa.eu/snb/model#content",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Mediaobject.contentURl": {
+      "@id": "https://data.europa.eu/snb/model#contentUrl",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "Mediaobject.omvang": {
+      "@id": "https://data.europa.eu/snb/model#contentSize",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "Mediaobject.type": {
+      "@id": "http://purl.org/dc/terms/type",
+      "@type": "@id"
+    },
+    "Mediaobjecttype": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Nota": "https://data.europa.eu/snb/model#Note",
+    "Nota.onderwerp": {
+      "@id": "http://purl.org/dc/terms/subject",
+      "@type": "@id"
+    },
+    "Nota.text": {
+      "@id": "https://data.europa.eu/snb/model#noteLiteral",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Onderwerp": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Onderwijsniveau": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Onderwijsvorm": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Organisatie": "http://www.w3.org/ns/org#Organization",
+    "Organisatie.accreditatie": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#accreditation",
+      "@type": "@id"
+    },
+    "Organisatie.alternatieveNaam": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Organisatie.contactinfo": {
+      "@container": "@set",
+      "@id": "http://schema.org/contactPoint",
+      "@type": "@id"
+    },
+    "Organisatie.extraInformatie": {
+      "@container": "@set",
+      "@id": "http://fixme.com#extraInformatie",
+      "@type": "@id"
+    },
+    "Organisatie.heeftSuborganisatie": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/org#hasSubOrganization",
+      "@type": "@id"
+    },
+    "Organisatie.homepage": {
+      "@id": "http://xmlns.com/foaf/0.1/homepage",
+      "@type": "@id"
+    },
+    "Organisatie.identificator": {
+      "@container": "@set",
+      "@id": "http://fixme.com#identificator",
+      "@type": "@id"
+    },
+    "Organisatie.isSuborganisatieVan": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/org#subOrganizationOf",
+      "@type": "@id"
+    },
+    "Organisatie.logo": {
+      "@id": "http://fixme.com#logo",
+      "@type": "@id"
+    },
+    "Organisatie.vestiging": {
+      "@container": "@set",
+      "@id": "http://fixme.com#vestiging",
+      "@type": "@id"
+    },
+    "Organisatie.voorkeursnaam": {
+      "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Periode": "http://www.w3.org/2006/time#ProperInterval",
+    "Periode.begin": {
+      "@id": "http://www.w3.org/2006/time#hasBeginning",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Periode.duur": {
+      "@id": "http://fixme.com#duur",
+      "@type": "http://www.w3.org/2001/XMLSchema#duration"
+    },
+    "Periode.einde": {
+      "@id": "http://www.w3.org/2006/time#hasEnd",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Persoon": "http://www.w3.org/ns/person#Person",
+    "Persoon.achternaam": {
+      "@id": "http://xmlns.com/foaf/0.1/familyName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Persoon.claimt": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#hasClaim",
+      "@type": "@id"
+    },
+    "Persoon.contactinfo": {
+      "@id": "http://schema.org/contactPoint",
+      "@type": "@id"
+    },
+    "Persoon.geboortedatum": {
+      "@id": "http://xmlns.com/foaf/0.1/birthday",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Persoon.geboorteplaats": {
+      "@id": "http://fixme.com#geboorteplaats",
+      "@type": "@id"
+    },
+    "Persoon.gender": {
+      "@id": "http://fixme.com#gender",
+      "@type": "@id"
+    },
+    "Persoon.heeftCredential": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#hasCredential",
+      "@type": "@id"
+    },
+    "Persoon.identificator": {
+      "@container": "@set",
+      "@id": "http://fixme.com#identificator",
+      "@type": "@id"
+    },
+    "Persoon.patroniem": {
+      "@id": "http://www.w3.org/ns/person#patronymicName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Persoon.staatsburgerschap": {
+      "@container": "@set",
+      "@id": "http://fixme.com#staatsburgerschap",
+      "@type": "@id"
+    },
+    "Persoon.voornaam": {
+      "@container": "@set",
+      "@id": "http://xmlns.com/foaf/0.1/givenName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Persoon.woonplaats": {
+      "@id": "http://fixme.com#verblijfsadres",
+      "@type": "@id"
+    },
+    "Plaats": "http://purl.org/dc/terms/Location",
+    "Plaats.identificator": {
+      "@id": "http://fixme.com#identificator",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "Plaats.plaatsnaam": {
+      "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "RelatieveBeoordeling": "https://data.europa.eu/snb/model#ShortenedGrading",
+    "RelatieveBeoordeling.percentageBoven": {
+      "@id": "https://data.europa.eu/snb/model#percentageHigher",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "RelatieveBeoordeling.percentageGelijk": {
+      "@id": "https://data.europa.eu/snb/model#percentageEqual",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "RelatieveBeoordeling.percentageOnder": {
+      "@id": "https://data.europa.eu/snb/model#percentageLower",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "ResultaatCategorie": "https://data.europa.eu/snb/model#ResultCategory",
+    "ResultaatCategorie.aantal": {
+      "@id": "https://data.europa.eu/snb/model#count",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "ResultaatCategorie.label": {
+      "@id": "https://data.europa.eu/snb/model#label",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "ResultaatCategorie.maximumScore": {
+      "@id": "https://data.europa.eu/snb/model#maxScore",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "ResultaatCategorie.minimumScore": {
+      "@id": "https://data.europa.eu/snb/model#minScore",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "ResultaatCategorie.score": {
+      "@id": "https://data.europa.eu/snb/model#score",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Resultaatverdeling": "https://data.europa.eu/snb/model#ResultDistribution",
+    "Resultaatverdeling.beschrijving": {
+      "@container": "@set",
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "@id"
+    },
+    "Resultaatverdeling.resultaatCategorie": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#resultCategory",
+      "@type": "@id"
+    },
+    "Studiegebied": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Taal": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Taalstring": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+    "ToegekendRecht": "https://data.europa.eu/snb/model#LearningEntitlement",
+    "ToegekendRecht.heeftDeel": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#hasPart",
+      "@type": "@id"
+    },
+    "ToegekendRecht.specificatie": {
+      "@id": "https://data.europa.eu/snb/model#specifiedBy",
+      "@type": "@id"
+    },
+    "ToegekendRecht.toegekendBij": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#entitledBy",
+      "@type": "@id"
+    },
+    "ToegekendRecht.uitgaveDatum": {
+      "@id": "http://purl.org/dc/terms/issued",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "ToegekendRecht.vervaldatum": {
+      "@id": "https://data.europa.eu/snb/model#expiryDate",
+      "@type": ""
+    },
+    "Toegekendrechtstatus": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Toegekendrechttype": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Toekenningsproces": "https://data.europa.eu/snb/model#AwardingProcess",
+    "Toekenningsproces.beschrijving": {
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "@id"
+    },
+    "Toekenningsproces.doorMiddelVan": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#used",
+      "@type": "@id"
+    },
+    "Toekenningsproces.extraInformatie": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#additionalNote",
+      "@type": "@id"
+    },
+    "Toekenningsproces.identificator": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/adms#identifier",
+      "@type": "@id"
+    },
+    "Toekenningsproces.kentToe": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#awards",
+      "@type": "@id"
+    },
+    "Toekenningsproces.locatie": {
+      "@id": "https://data.europa.eu/snb/model#location",
+      "@type": "@id"
+    },
+    "Toekenningsproces.nationaalSysteem": {
+      "@id": "https://data.europa.eu/snb/model#nationalSystemNote",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Toekenningsproces.toekenningsdatum": {
+      "@id": "https://data.europa.eu/snb/model#awardingDate",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Toekenningsproces.uitgevoerdDoor": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/snb/model#awardingBody",
+      "@type": "@id"
+    },
+    "Vaardigheidtype": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Verificatiechecktype": "http://www.w3.org/2004/02/skos/core#Concept",
+    "VerifieerbareCredential": "https://w3.org/2018/credentials#VerifiableCredential",
+    "Vestiging": "http://www.w3.org/ns/org#Site",
+    "Vestiging.locatie": {
+      "@container": "@set",
+      "@id": "http://fixme.com#locatie",
+      "@type": "@id"
+    },
+    "Webdocument": "https://data.europa.eu/snb/model#Webresource",
+    "Webdocument.inhoud": {
+      "@id": "https://data.europa.eu/snb/model#contentUrl",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "Webdocument.taal": {
+      "@id": "http://purl.org/dc/terms/language",
+      "@type": "@id"
+    },
+    "Webdocument.titel": {
+      "@container": "@set",
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
     }
   }
 }
