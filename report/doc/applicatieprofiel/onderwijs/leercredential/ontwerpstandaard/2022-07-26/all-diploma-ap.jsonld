@@ -1,0 +1,892 @@
+{
+  "@context": {
+    "vlaanderen": "http://data.vlaanderen.be/ns/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "void": "http://rdfs.org/ns/void#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "sdmx-dimension": "http://purl.org/linked-data/sdmx/2009/dimension#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "sdmx-attribute": "http://purl.org/linked-data/sdmx/2009/attribute#",
+    "qb": "http://purl.org/linked-data/cube#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "sdmx-concept": "http://purl.org/linked-data/sdmx/2009/concept#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "person": "http://www.w3.org/ns/person#",
+    "rec": "http://www.w3.org/2001/02pd/rec54#",
+    "vann": "http://purl.org/vocab/vann/",
+    "sh": "http://w3.org/ns/shacl#",
+    "label": {
+      "@id": "rdfs:label",
+      "@container": "@language"
+    },
+    "modified": {
+      "@id": "dcterms:modified",
+      "@type": "xsd:date"
+    },
+    "issued": {
+      "@id": "dcterms:issued"
+    },
+    "authors": {
+      "@type": "foaf:Person",
+      "@id": "foaf:maker"
+    },
+    "editors": {
+      "@type": "foaf:Person",
+      "@id": "rec:editor"
+    },
+    "contributors": {
+      "@type": "foaf:Person",
+      "@id": "dcterms:contributor"
+    },
+    "affiliation": {
+      "@id": "http://schema.org/affiliation"
+    },
+    "classes": {
+      "@reverse": "rdfs:isDefinedBy"
+    },
+    "datatypes": {
+      "@reverse": "rdfs:isDefinedBy"
+    },
+    "name": {
+      "@id": "rdfs:label",
+      "@container": "@language"
+    },
+    "description": {
+      "@id": "rdfs:comment",
+      "@container": "@language"
+    },
+    "properties": {
+      "@reverse": "rdfs:isDefinedBy"
+    },
+    "domain": {
+      "@id": "rdfs:domain"
+    },
+    "range": {
+      "@id": "rdfs:range"
+    },
+    "minCardinality": {
+      "@id": "sh:minCount"
+    },
+    "maxCardinality": {
+      "@id": "sh:maxCount"
+    },
+    "generalization": {
+      "@id": "rdfs:subPropertyOf"
+    },
+    "externals": {
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Class",
+      "@id": "rdfs:seeAlso"
+    },
+    "usage": {
+      "@id": "vann:usageNote",
+      "@container": "@language"
+    }
+  },
+  "@id": "https://data.vlaanderen.be/ns/onderwijs/leercredential",
+  "@type": "http://www.w3.org/2002/07/owl#Ontology",
+  "label": {
+    "nl": "diploma-ap",
+    "en": "diploma-ap"
+  },
+  "baseURI": "https://data.vlaanderen.be/ns/onderwijs/leercredential#",
+  "issued": "TODO",
+  "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
+  "extra": {
+    "EA-Name": "OSLO-Diploma",
+    "EA-Guid": "{6EB570D5-96BF-4501-8148-02F11A31E57F}",
+    "baseURI": "https://data.vlaanderen.be/ns/onderwijs/leercredential#",
+    "issued": "TODO",
+    "license": "TODO",
+    "RawTags": [
+      {
+        "key": "baseURI",
+        "value": "https://data.vlaanderen.be/ns/onderwijs/leercredential#",
+        "note": "null"
+      }
+    ]
+  },
+  "authors": [
+    {
+      "foaf:firstName": "AuteurVoornaam",
+      "foaf:lastName": "AuteurNaam",
+      "affiliation": {
+        "foaf:name": "AuteurAffiliatie",
+        "foaf:homepage": "https://auteurwebsiteurl"
+      },
+      "foaf:mbox": "auteurvoornaam.auteurnaam@auteurdomein",
+      "@type": "foaf:Person"
+    }
+  ],
+  "editors": [
+    {
+      "foaf:firstName": "EditorVoornaam",
+      "foaf:lastName": "EditorNaam",
+      "affiliation": {
+        "foaf:name": "EditorAffiliatie",
+        "foaf:homepage": "https://editorwebsiteurl"
+      },
+      "foaf:mbox": "editorvoornaam.editornaam@editordomein",
+      "@type": "foaf:Person"
+    }
+  ],
+  "contributors": [
+    {
+      "foaf:firstName": "MedewerkerVoornaam",
+      "foaf:lastName": "MedewerkerNaam",
+      "affiliation": {
+        "foaf:name": "MedewerkerAffiliatie",
+        "foaf:homepage": "https://medewerkerwebsiteurl"
+      },
+      "foaf:mbox": "medewerkervoornaam.medewerkernaam@medewerkerdomein",
+      "@type": "foaf:Person"
+    }
+  ],
+  "classes": [],
+  "properties": [],
+  "externals": [
+    {
+      "@id": "https://data.europa.eu/snb/model#Claim",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "inpackage": "OTHER_PACKAGE",
+      "definition": {
+        "nl": "TODO"
+      },
+      "label": {
+        "nl": "Leerclaim"
+      },
+      "ap-label-nl": {
+        "nl": "Leerclaim"
+      },
+      "ap-definition-nl": {
+        "nl": "TODO"
+      },
+      "extra": {
+        "EA-Name": "Leerclaim",
+        "EA-Guid": "{E5D8FF07-80F0-4aec-A175-56AB8DF67C1E}",
+        "EA-Package": "OSLO-Diploma",
+        "EA-Type": "CLASS",
+        "EA-Parents": "",
+        "EA-Parents2": [],
+        "parentclasses": "",
+        "label": {
+          "nl": "Leerclaim"
+        },
+        "definition": {
+          "nl": "TODO"
+        },
+        "usage": "",
+        "ap-label-nl": {
+          "nl": "Leerclaim"
+        },
+        "ap-definition-nl": {
+          "nl": "TODO"
+        },
+        "ap-usageNote-nl": "",
+        "ap-codelist": "",
+        "RawTags": [
+          {
+            "key": "label-nl",
+            "value": "Leerclaim",
+            "note": "null"
+          },
+          {
+            "key": "definition-nl",
+            "value": "TODO",
+            "note": "null"
+          },
+          {
+            "key": "uri",
+            "value": "https://data.europa.eu/snb/model#Claim",
+            "note": "null"
+          }
+        ],
+        "Scope": "TRANSLATIONS_ONLY"
+      },
+      "name": {
+        "nl": "Leerclaim"
+      },
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {}
+    }
+  ],
+  "externalproperties": [
+    {
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "name": {
+        "nl": "beschrijving"
+      },
+      "inpackage": "OTHER_PACKAGE",
+      "definition": {
+        "nl": "TODO"
+      },
+      "label": {
+        "nl": "beschrijving"
+      },
+      "ap-label-nl": {
+        "nl": "beschrijving"
+      },
+      "ap-definition-nl": {
+        "nl": "TODO"
+      },
+      "extra": {
+        "EA-Name": "beschrijving",
+        "EA-Guid": "{C767CEAB-E54A-4011-ACB0-A33FFA135927}",
+        "EA-Package": "OSLO-Diploma",
+        "EA-Type": "attribute",
+        "EA-Domain": "Leerclaim",
+        "EA-Domain-Guid": "{E5D8FF07-80F0-4aec-A175-56AB8DF67C1E}",
+        "EA-Range": "Nota",
+        "RangeData": {
+          "EA-Name": "Nota",
+          "EA-GUID": "{BAD7B9DB-90F5-4478-81DF-6754AC8F03FE}",
+          "EA-Package": "OSLO-Diploma",
+          "uri": "https://data.europa.eu/snb/model#Note"
+        },
+        "label": {
+          "nl": "beschrijving"
+        },
+        "definition": {
+          "nl": "TODO"
+        },
+        "usage": "",
+        "ap-label-nl": {
+          "nl": "beschrijving"
+        },
+        "ap-definition-nl": {
+          "nl": "TODO"
+        },
+        "ap-usageNote-nl": "",
+        "ap-codelist": "",
+        "RawTags": [
+          {
+            "key": "label-nl",
+            "value": "beschrijving",
+            "note": "null"
+          },
+          {
+            "key": "definition-nl",
+            "value": "TODO",
+            "note": "null"
+          },
+          {
+            "key": "uri",
+            "value": "http://purl.org/dc/terms/description",
+            "note": "null"
+          }
+        ],
+        "Scope": "TRANSLATIONS_ONLY"
+      },
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {},
+      "codelist": [],
+      "domain": [
+        {
+          "uri": "https://data.europa.eu/snb/model#Claim",
+          "EA-Name": "Leerclaim"
+        }
+      ],
+      "range": [
+        {
+          "EA-Name": "Nota",
+          "EA-GUID": "{BAD7B9DB-90F5-4478-81DF-6754AC8F03FE}",
+          "EA-Package": "OSLO-Diploma",
+          "uri": "https://data.europa.eu/snb/model#Note"
+        }
+      ],
+      "generalization": [],
+      "minCardinality": "0",
+      "maxCardinality": "1"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "name": {
+        "nl": "titel"
+      },
+      "inpackage": "OTHER_PACKAGE",
+      "definition": {
+        "nl": "TODO"
+      },
+      "label": {
+        "nl": "titel"
+      },
+      "ap-label-nl": {
+        "nl": "titel"
+      },
+      "ap-definition-nl": {
+        "nl": "TODO"
+      },
+      "extra": {
+        "EA-Name": "titel",
+        "EA-Guid": "{E1F7DBFB-96DD-4d0c-A06F-63D6911ACE54}",
+        "EA-Package": "OSLO-Diploma",
+        "EA-Type": "attribute",
+        "EA-Domain": "Leerclaim",
+        "EA-Domain-Guid": "{E5D8FF07-80F0-4aec-A175-56AB8DF67C1E}",
+        "EA-Range": "TaalString",
+        "RangeData": {
+          "EA-Name": "TaalString",
+          "EA-GUID": "{3F85DBBC-1D18-47a3-9F66-92CEF3E8592C}",
+          "EA-Package": "OSLO-Generiek",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        },
+        "label": {
+          "nl": "titel"
+        },
+        "definition": {
+          "nl": "TODO"
+        },
+        "usage": "",
+        "ap-label-nl": {
+          "nl": "titel"
+        },
+        "ap-definition-nl": {
+          "nl": "TODO"
+        },
+        "ap-usageNote-nl": "",
+        "ap-codelist": "",
+        "RawTags": [
+          {
+            "key": "label-nl",
+            "value": "titel",
+            "note": "null"
+          },
+          {
+            "key": "definition-nl",
+            "value": "TODO",
+            "note": "null"
+          },
+          {
+            "key": "uri",
+            "value": "http://purl.org/dc/terms/title",
+            "note": "null"
+          }
+        ],
+        "Scope": "TRANSLATIONS_ONLY"
+      },
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {},
+      "codelist": [],
+      "domain": [
+        {
+          "uri": "https://data.europa.eu/snb/model#Claim",
+          "EA-Name": "Leerclaim"
+        }
+      ],
+      "range": [
+        {
+          "EA-Name": "TaalString",
+          "EA-GUID": "{3F85DBBC-1D18-47a3-9F66-92CEF3E8592C}",
+          "EA-Package": "OSLO-Generiek",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        }
+      ],
+      "generalization": [],
+      "minCardinality": "1",
+      "maxCardinality": "1"
+    },
+    {
+      "@id": "http://purl.org/dc/terms/type",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "name": {
+        "nl": "type"
+      },
+      "inpackage": "OTHER_PACKAGE",
+      "definition": {
+        "nl": "TODO"
+      },
+      "label": {
+        "nl": "type"
+      },
+      "ap-label-nl": {
+        "nl": "type"
+      },
+      "ap-definition-nl": {
+        "nl": "TODO"
+      },
+      "extra": {
+        "EA-Name": "type",
+        "EA-Guid": "{B172C391-7C37-4626-AB7D-5A4658A0ABCB}",
+        "EA-Package": "OSLO-Diploma",
+        "EA-Type": "attribute",
+        "EA-Domain": "Leerclaim",
+        "EA-Domain-Guid": "{E5D8FF07-80F0-4aec-A175-56AB8DF67C1E}",
+        "EA-Range": "Leercredentialtype",
+        "RangeData": {
+          "EA-Name": "Leercredentialtype",
+          "EA-GUID": "{A00EBB23-16A5-47fa-B163-BF866B7D333B}",
+          "EA-Package": "OSLO-Diploma",
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        "label": {
+          "nl": "type"
+        },
+        "definition": {
+          "nl": "TODO"
+        },
+        "usage": "",
+        "ap-label-nl": {
+          "nl": "type"
+        },
+        "ap-definition-nl": {
+          "nl": "TODO"
+        },
+        "ap-usageNote-nl": "",
+        "ap-codelist": "",
+        "RawTags": [
+          {
+            "key": "label-nl",
+            "value": "type",
+            "note": "null"
+          },
+          {
+            "key": "definition-nl",
+            "value": "TODO",
+            "note": "null"
+          },
+          {
+            "key": "uri",
+            "value": "http://purl.org/dc/terms/type",
+            "note": "null"
+          }
+        ],
+        "Scope": "TRANSLATIONS_ONLY"
+      },
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {},
+      "codelist": [],
+      "domain": [
+        {
+          "uri": "https://data.europa.eu/snb/model#Claim",
+          "EA-Name": "Leerclaim"
+        }
+      ],
+      "range": [
+        {
+          "EA-Name": "Leercredentialtype",
+          "EA-GUID": "{A00EBB23-16A5-47fa-B163-BF866B7D333B}",
+          "EA-Package": "OSLO-Diploma",
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
+      "generalization": [],
+      "minCardinality": "0",
+      "maxCardinality": "*"
+    },
+    {
+      "@id": "http://www.w3.org/ns/adms#identifier",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "name": {
+        "nl": "identificator"
+      },
+      "inpackage": "OTHER_PACKAGE",
+      "definition": {
+        "nl": "TODO"
+      },
+      "label": {
+        "nl": "identificator"
+      },
+      "ap-label-nl": {
+        "nl": "identificator"
+      },
+      "ap-definition-nl": {
+        "nl": "TODO"
+      },
+      "extra": {
+        "EA-Name": "Identificator",
+        "EA-Guid": "{E82C1021-5DD4-4ea3-A861-EB9AE3D91C56}",
+        "EA-Package": "OSLO-Diploma",
+        "EA-Type": "attribute",
+        "EA-Domain": "Leerclaim",
+        "EA-Domain-Guid": "{E5D8FF07-80F0-4aec-A175-56AB8DF67C1E}",
+        "EA-Range": "Identificator",
+        "RangeData": {
+          "EA-Name": "Identificator",
+          "EA-GUID": "{9CEC1605-65F4-4d58-ABC4-D689494F93C5}",
+          "EA-Package": "OSLO-Generiek",
+          "uri": "http://www.w3.org/ns/adms#Identifier"
+        },
+        "label": {
+          "nl": "identificator"
+        },
+        "definition": {
+          "nl": "TODO"
+        },
+        "usage": "",
+        "ap-label-nl": {
+          "nl": "identificator"
+        },
+        "ap-definition-nl": {
+          "nl": "TODO"
+        },
+        "ap-usageNote-nl": "",
+        "ap-codelist": "",
+        "RawTags": [
+          {
+            "key": "label-nl",
+            "value": "identificator",
+            "note": "null"
+          },
+          {
+            "key": "definition-nl",
+            "value": "TODO",
+            "note": "null"
+          },
+          {
+            "key": "uri",
+            "value": "http://www.w3.org/ns/adms#identifier",
+            "note": "null"
+          }
+        ],
+        "Scope": "TRANSLATIONS_ONLY"
+      },
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {},
+      "codelist": [],
+      "domain": [
+        {
+          "uri": "https://data.europa.eu/snb/model#Claim",
+          "EA-Name": "Leerclaim"
+        }
+      ],
+      "range": [
+        {
+          "EA-Name": "Identificator",
+          "EA-GUID": "{9CEC1605-65F4-4d58-ABC4-D689494F93C5}",
+          "EA-Package": "OSLO-Generiek",
+          "uri": "http://www.w3.org/ns/adms#Identifier"
+        }
+      ],
+      "generalization": [],
+      "minCardinality": "0",
+      "maxCardinality": "*"
+    },
+    {
+      "@id": "https://data.europa.eu/snb/model#additionalNote",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "name": {
+        "nl": "extra informatie"
+      },
+      "inpackage": "OTHER_PACKAGE",
+      "definition": {
+        "nl": "TODO"
+      },
+      "label": {
+        "nl": "extra informatie"
+      },
+      "ap-label-nl": {
+        "nl": "extra informatie"
+      },
+      "ap-definition-nl": {
+        "nl": "TODO"
+      },
+      "extra": {
+        "EA-Name": "extraInformatie",
+        "EA-Guid": "{C208EA88-97FF-44e2-B3BE-A7F7E94DD9B3}",
+        "EA-Package": "OSLO-Diploma",
+        "EA-Type": "attribute",
+        "EA-Domain": "Leerclaim",
+        "EA-Domain-Guid": "{E5D8FF07-80F0-4aec-A175-56AB8DF67C1E}",
+        "EA-Range": "Nota",
+        "RangeData": {
+          "EA-Name": "Nota",
+          "EA-GUID": "{BAD7B9DB-90F5-4478-81DF-6754AC8F03FE}",
+          "EA-Package": "OSLO-Diploma",
+          "uri": "https://data.europa.eu/snb/model#Note"
+        },
+        "label": {
+          "nl": "extra informatie"
+        },
+        "definition": {
+          "nl": "TODO"
+        },
+        "usage": "",
+        "ap-label-nl": {
+          "nl": "extra informatie"
+        },
+        "ap-definition-nl": {
+          "nl": "TODO"
+        },
+        "ap-usageNote-nl": "",
+        "ap-codelist": "",
+        "RawTags": [
+          {
+            "key": "label-nl",
+            "value": "extra informatie",
+            "note": "null"
+          },
+          {
+            "key": "definition-nl",
+            "value": "TODO",
+            "note": "null"
+          },
+          {
+            "key": "uri",
+            "value": "https://data.europa.eu/snb/model#additionalNote",
+            "note": "null"
+          }
+        ],
+        "Scope": "TRANSLATIONS_ONLY"
+      },
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {},
+      "codelist": [],
+      "domain": [
+        {
+          "uri": "https://data.europa.eu/snb/model#Claim",
+          "EA-Name": "Leerclaim"
+        }
+      ],
+      "range": [
+        {
+          "EA-Name": "Nota",
+          "EA-GUID": "{BAD7B9DB-90F5-4478-81DF-6754AC8F03FE}",
+          "EA-Package": "OSLO-Diploma",
+          "uri": "https://data.europa.eu/snb/model#Note"
+        }
+      ],
+      "generalization": [],
+      "minCardinality": "0",
+      "maxCardinality": "*"
+    },
+    {
+      "@id": "https://data.europa.eu/snb/model#hasPart",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "name": {
+        "nl": "omvat"
+      },
+      "inpackage": "ACTIVE_PACKAGE",
+      "definition": {
+        "nl": "TODO"
+      },
+      "label": {
+        "nl": "omvat"
+      },
+      "ap-label-nl": {
+        "nl": "omvat"
+      },
+      "ap-definition-nl": {
+        "nl": "TODO"
+      },
+      "extra": {
+        "EA-Name": "omvat",
+        "EA-Guid": "{47D1D090-570B-44e6-9BE3-42CAFD6CAAF5}",
+        "derived": "false",
+        "EA-Package": "",
+        "EA-Type": "connector",
+        "EA-Domain": "Leerclaim",
+        "EA-Domain-Guid": "{E5D8FF07-80F0-4aec-A175-56AB8DF67C1E}",
+        "EA-Range": "Leerclaim",
+        "RangeData": {
+          "EA-Name": "Leerclaim",
+          "EA-GUID": "{E5D8FF07-80F0-4aec-A175-56AB8DF67C1E}",
+          "EA-Package": "OSLO-Diploma",
+          "uri": "https://data.europa.eu/snb/model#Claim"
+        },
+        "sourceRole": "null",
+        "destRole": "omvat",
+        "label": {
+          "nl": "omvat"
+        },
+        "definition": {
+          "nl": "TODO"
+        },
+        "usage": "",
+        "ap-label-nl": {
+          "nl": "omvat"
+        },
+        "ap-definition-nl": {
+          "nl": "TODO"
+        },
+        "ap-usageNote-nl": "",
+        "ap-codelist": "",
+        "RawTags": [
+          {
+            "key": "label-nl",
+            "value": "NOTE",
+            "note": "omvat"
+          },
+          {
+            "key": "uri",
+            "value": "NOTE",
+            "note": "https://data.europa.eu/snb/model#hasPart"
+          },
+          {
+            "key": "definition-nl",
+            "value": "NOTE",
+            "note": "TODO"
+          }
+        ],
+        "DestRoleTags": [
+          {
+            "key": "label-nl",
+            "value": "NOTE",
+            "note": "omvat"
+          },
+          {
+            "key": "uri",
+            "value": "NOTE",
+            "note": "https://data.europa.eu/snb/model#hasPart"
+          },
+          {
+            "key": "definition-nl",
+            "value": "NOTE",
+            "note": "TODO"
+          }
+        ],
+        "Scope": "TRANSLATIONS_ONLY"
+      },
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {},
+      "codelist": [],
+      "domain": [
+        {
+          "uri": "https://data.europa.eu/snb/model#Claim",
+          "EA-Name": "Leerclaim"
+        }
+      ],
+      "range": [
+        {
+          "EA-Name": "Leerclaim",
+          "EA-GUID": "{E5D8FF07-80F0-4aec-A175-56AB8DF67C1E}",
+          "EA-Package": "OSLO-Diploma",
+          "uri": "https://data.europa.eu/snb/model#Claim"
+        }
+      ],
+      "generalization": [],
+      "minCardinality": "0",
+      "maxCardinality": "*"
+    },
+    {
+      "@id": "https://data.europa.eu/snb/model#supplementaryDocument",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "name": {
+        "nl": "aanvullend document"
+      },
+      "inpackage": "OTHER_PACKAGE",
+      "definition": {
+        "nl": "TODO"
+      },
+      "label": {
+        "nl": "aanvullend document"
+      },
+      "ap-label-nl": {
+        "nl": "aanvullend document"
+      },
+      "ap-definition-nl": {
+        "nl": "TODO"
+      },
+      "extra": {
+        "EA-Name": "aanvullendDocument",
+        "EA-Guid": "{115AF6B6-0949-44d2-9A15-1167BC87A4D7}",
+        "EA-Package": "OSLO-Diploma",
+        "EA-Type": "attribute",
+        "EA-Domain": "Leerclaim",
+        "EA-Domain-Guid": "{E5D8FF07-80F0-4aec-A175-56AB8DF67C1E}",
+        "EA-Range": "Webdocument",
+        "RangeData": {
+          "EA-Name": "Webdocument",
+          "EA-GUID": "{9234CE89-8DA1-484e-8FE1-F9283FA53C42}",
+          "EA-Package": "OSLO-Diploma",
+          "uri": "https://data.europa.eu/snb/model#Webresource"
+        },
+        "label": {
+          "nl": "aanvullend document"
+        },
+        "definition": {
+          "nl": "TODO"
+        },
+        "usage": "",
+        "ap-label-nl": {
+          "nl": "aanvullend document"
+        },
+        "ap-definition-nl": {
+          "nl": "TODO"
+        },
+        "ap-usageNote-nl": "",
+        "ap-codelist": "",
+        "RawTags": [
+          {
+            "key": "label-nl",
+            "value": "aanvullend document",
+            "note": "null"
+          },
+          {
+            "key": "definition-nl",
+            "value": "TODO",
+            "note": "null"
+          },
+          {
+            "key": "uri",
+            "value": "https://data.europa.eu/snb/model#supplementaryDocument",
+            "note": "null"
+          }
+        ],
+        "Scope": "TRANSLATIONS_ONLY"
+      },
+      "description": {
+        "nl": "TODO"
+      },
+      "usage": {},
+      "codelist": [],
+      "domain": [
+        {
+          "uri": "https://data.europa.eu/snb/model#Claim",
+          "EA-Name": "Leerclaim"
+        }
+      ],
+      "range": [
+        {
+          "EA-Name": "Webdocument",
+          "EA-GUID": "{9234CE89-8DA1-484e-8FE1-F9283FA53C42}",
+          "EA-Package": "OSLO-Diploma",
+          "uri": "https://data.europa.eu/snb/model#Webresource"
+        }
+      ],
+      "generalization": [],
+      "minCardinality": "0",
+      "maxCardinality": "*"
+    }
+  ],
+  "name": "diploma-ap",
+  "type": "ap",
+  "eap": "OSLO-Diploma.eap",
+  "diagram": "OSLO-Diploma-test",
+  "template": "OSLO-Diploma-AP.j2",
+  "title": "OSLO Diploma (applicatieprofiel)",
+  "publication-state": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
+  "publication-date": "2022-07-26",
+  "contributors-file": "stakeholders.csv",
+  "contributors-column": "MijnKolom",
+  "site": "site-skeleton/OSLO-Diploma",
+  "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-diploma/issues",
+  "standaardregisterurl": "https://data.vlaanderen.be/standaarden/TODO/CORRECT-URL/index.html",
+  "config": "config/config-ap.json",
+  "urlref": "/doc/applicatieprofiel/onderwijs/leercredential/ontwerpstandaard/2022-07-26",
+  "repository": "https://github.com/Informatievlaanderen/OSLOthema-diploma",
+  "branchtag": "ontwerp-2022-07-26",
+  "filename": "config/OSLO-Diploma-AP.json",
+  "dummy": "dimi-7",
+  "navigation": {},
+  "documentcommit": "df3f3c8b68397be8cea9358bfe6a4edb8db5b6e4",
+  "toolchaincommit": "3494ea0d5d59e5f1fff379d3527d5b95d37dd687",
+  "hostname": "https://data.vlaanderen.be"
+}

@@ -1,0 +1,50 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://data.vlaanderen.be/shacl/diploma-ap> <https://data.vlaanderen.be/shacl/diploma-apshapes> <https://data.vlaanderen.be/shacl/diploma-ap#LeerclaimShape> .
+
+<https://data.vlaanderen.be/shacl/diploma-ap#LeerclaimShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:description "TODO";
+    shacl:name "Identificator";
+    shacl:path <http://www.w3.org/ns/adms#identifier>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#Webresource>;
+    shacl:description "TODO";
+    shacl:name "aanvullendDocument";
+    shacl:path <https://data.europa.eu/snb/model#supplementaryDocument>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#Note>;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:name "beschrijving";
+    shacl:path dc:description
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#Note>;
+    shacl:description "TODO";
+    shacl:name "extraInformatie";
+    shacl:path <https://data.europa.eu/snb/model#additionalNote>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#Claim>;
+    shacl:description "TODO";
+    shacl:name "omvat";
+    shacl:path <https://data.europa.eu/snb/model#hasPart>
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "titel";
+    shacl:path dc:title
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "TODO";
+    shacl:name "type";
+    shacl:path dc:type
+  ];
+  shacl:targetClass <https://data.europa.eu/snb/model#Claim> .
