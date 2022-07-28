@@ -55,14 +55,18 @@
     <https://data.vlaanderen.be/shacl/diploma-ap#GeregistreerdeOrganisatieShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#AccreditatieShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#AssessmentShape>,
+    <https://data.vlaanderen.be/shacl/diploma-ap#AssessmentspecificatieShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#ToekenningsprocesShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#LeerclaimShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#KredietpuntenShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#EuropeesDigitaalCredentialShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#BeoordelingsschemaShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#LeerprestatieShape>,
+    <https://data.vlaanderen.be/shacl/diploma-ap#LeerprestatiespecificatieShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#LeeractiviteitShape>,
+    <https://data.vlaanderen.be/shacl/diploma-ap#LeeractiviteitspecificatieShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#ToegekendRechtShape>,
+    <https://data.vlaanderen.be/shacl/diploma-ap#ToegekendRechtspecificatieShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#LeeruitkomstShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#MediaobjectShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#NotaShape>,
@@ -70,6 +74,7 @@
     <https://data.vlaanderen.be/shacl/diploma-ap#ResultaatCategorieShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#ResultaatverdelingShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#RelatieveBeoordelingShape>,
+    <https://data.vlaanderen.be/shacl/diploma-ap#LeerspecificatieShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#WebdocumentShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#GeregistreerdPersoonShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#VerifieerbareCredentialShape> .
@@ -256,6 +261,49 @@
     shacl:path <https://data.europa.eu/snb/model#assessedBy>
   ];
   shacl:targetClass <https://data.europa.eu/snb/model#Assessment> .
+
+<https://data.vlaanderen.be/shacl/diploma-ap#AssessmentspecificatieShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De gebruikte taal of talen voor de evaluatie.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "assesmenttaal";
+    shacl:path dc:language
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "TODO";
+    shacl:name "assessmentvorm";
+    shacl:path <https://data.europa.eu/snb/model#mode>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#GradingScheme>;
+    shacl:description "Een beschrijving van de specificatie van welke leerresultaten worden of zijn verworven.";
+    shacl:maxCount 1;
+    shacl:name "beoordelingsschema";
+    shacl:path <https://data.europa.eu/snb/model#gradingScheme>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#LearningAchievementSpecification>;
+    shacl:description "TODO";
+    shacl:name "bewijst";
+    shacl:path <https://data.europa.eu/snb/model#proves>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#AssessmentSpecification>;
+    shacl:description "TODO";
+    shacl:name "heeftDeel";
+    shacl:path <https://data.europa.eu/snb/model#hasPart>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#AssessmentSpecification>;
+    shacl:description "TODO";
+    shacl:name "specialisatieVan";
+    shacl:path <https://data.europa.eu/snb/model#specialisationOf>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "Het type beoordeling.";
+    shacl:name "type";
+    shacl:path dc:type
+  ];
+  shacl:targetClass <https://data.europa.eu/snb/model#AssessmentSpecification> .
 
 <https://data.vlaanderen.be/shacl/diploma-ap#AssessmenttypeShape> a shacl:NodeShape;
   shacl:closed false;
@@ -567,6 +615,41 @@
   ];
   shacl:targetClass <https://data.europa.eu/snb/model#LearningActivity> .
 
+<https://data.vlaanderen.be/shacl/diploma-ap#LeeractiviteitspecificatieShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://data.europa.eu/snb/model#LearningAchievementSpecification>;
+    shacl:description "TODO";
+    shacl:name "beinvloedt";
+    shacl:path <https://data.europa.eu/snb/model#influences>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#LearningActivitySpecification>;
+    shacl:description "TODO";
+    shacl:name "heeftDeel";
+    shacl:path <https://data.europa.eu/snb/model#hasPart>
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De gebruikte instructietaal of -talen.";
+    shacl:name "instructietaal";
+    shacl:path dc:language
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "De wijze van leren en/of beoordelen.";
+    shacl:name "onderwijsmethode";
+    shacl:path <https://data.europa.eu/snb/model#mode>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#LearningActivitySpecification>;
+    shacl:description "TODO";
+    shacl:name "specialisatieVan";
+    shacl:path <https://data.europa.eu/snb/model#specialisationOf>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "Het soort activiteit.";
+    shacl:name "type";
+    shacl:path dc:type
+  ];
+  shacl:targetClass <https://data.europa.eu/snb/model#LearningActivitySpecification> .
+
 <https://data.vlaanderen.be/shacl/diploma-ap#LeeractiviteittypeShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass skos:Concept .
@@ -738,6 +821,115 @@
   ];
   shacl:targetClass <https://data.europa.eu/snb/model#LearningAchievement> .
 
+<https://data.vlaanderen.be/shacl/diploma-ap#LeerprestatiespecificatieShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://data.europa.eu/snb/model#LearningActivitySpecification>;
+    shacl:description "TODO";
+    shacl:name "beinvloedDoor";
+    shacl:path <https://data.europa.eu/snb/model#influencedBy>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#AssessmentSpecification>;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:name "bewezenDoor";
+    shacl:path <https://data.europa.eu/snb/model#provenBy>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "TODO";
+    shacl:name "doelgroep";
+    shacl:path <https://data.europa.eu/snb/model#targetGroup>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#LearningEntitlementSpecification>;
+    shacl:description "TODO";
+    shacl:name "geeftRechtOp";
+    shacl:path <https://data.europa.eu/snb/model#entitlesTo>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#LearningAchievementSpecification>;
+    shacl:description "TODO";
+    shacl:name "heeftDeel";
+    shacl:path <https://data.europa.eu/snb/model#hasPart>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#CreditPoint>;
+    shacl:description "TODO";
+    shacl:name "kredietpunten";
+    shacl:path <https://data.europa.eu/snb/model#creditPoint>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:name "leersetting";
+    shacl:path <https://data.europa.eu/snb/model#learningSetting>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#LearningOutcome>;
+    shacl:description "TODO";
+    shacl:minCount 1;
+    shacl:name "leeruitkomst";
+    shacl:path <https://data.europa.eu/snb/model#learningOutcome>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#Note>;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:name "leeruitkomstbeschrijving";
+    shacl:path <https://data.europa.eu/snb/model#learningOutcomeSummary>
+  ], [
+    shacl:datatype xsd:duration;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:name "leervolume";
+    shacl:path <https://data.europa.eu/snb/model#volumeOfLearning>
+  ], [
+    shacl:datatype xsd:duration;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:name "maximumduur";
+    shacl:path <https://data.europa.eu/snb/model#maximumDuration>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "TODO";
+    shacl:name "onderwerp";
+    shacl:path <https://data.europa.eu/snb/model#educationSubject>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "TODO";
+    shacl:minCount 1;
+    shacl:name "onderwijsniveau";
+    shacl:path <https://data.europa.eu/snb/model#educationLevel>
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:description "TODO";
+    shacl:name "onderwijstaal";
+    shacl:path dc:language
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "TODO";
+    shacl:name "onderwijsvorm";
+    shacl:path <https://data.europa.eu/snb/model#mode>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#LearningAchievementSpecification>;
+    shacl:description "TODO";
+    shacl:name "specialisatieVan";
+    shacl:path <https://data.europa.eu/snb/model#specialisationOf>
+  ], [
+    <http://purl.org/linked-data/cube#codeList> <https://fixme.com>;
+    shacl:class skos:Concept;
+    shacl:description "TODO";
+    shacl:name "studiegebied";
+    shacl:path <https://data.europa.eu/snb/model#ISCEDFCode>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#Note>;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:name "toelatingsvoorwaarde";
+    shacl:path <https://data.europa.eu/snb/model#entryRequirement>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "TODO";
+    shacl:name "type";
+    shacl:path dc:type
+  ];
+  shacl:targetClass <https://data.europa.eu/snb/model#LearningAchievementSpecification> .
+
 <https://data.vlaanderen.be/shacl/diploma-ap#LeerprestatietypeShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass skos:Concept .
@@ -745,6 +937,53 @@
 <https://data.vlaanderen.be/shacl/diploma-ap#LeersettingShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/diploma-ap#LeerspecificatieShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://data.europa.eu/snb/model#Webresource>;
+    shacl:description "TODO";
+    shacl:name "aanvullendDocument";
+    shacl:path <https://data.europa.eu/snb/model#supplementaryDocument>
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:description "TODO";
+    shacl:name "alternatieveNaam";
+    shacl:path skos:altLabel
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#Note>;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:name "beschrijving";
+    shacl:path dc:description
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:description "TODO";
+    shacl:name "categorie";
+    shacl:path <https://data.europa.eu/snb/model#category>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#Note>;
+    shacl:description "TODO";
+    shacl:name "extraInformatie";
+    shacl:path <https://data.europa.eu/snb/model#additionalNote>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#Webresource>;
+    shacl:description "TODO";
+    shacl:name "homepagina";
+    shacl:path foaf:homepage
+  ], [
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:description "TODO";
+    shacl:name "identificator";
+    shacl:path <http://www.w3.org/ns/adms#identifier>
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:name "titel";
+    shacl:path dc:title
+  ];
+  shacl:targetClass <https://data.europa.eu/snb/model#Specification> .
 
 <https://data.vlaanderen.be/shacl/diploma-ap#LeeruitkomstShape> a shacl:NodeShape;
   shacl:closed false;
@@ -1179,6 +1418,62 @@
     shacl:path <https://data.europa.eu/snb/model#expiryDate>
   ];
   shacl:targetClass <https://data.europa.eu/snb/model#LearningEntitlement> .
+
+<https://data.vlaanderen.be/shacl/diploma-ap#ToegekendRechtspecificatieShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:description "TODO";
+    shacl:name "geassocieerdBeroep";
+    shacl:path <https://data.europa.eu/snb/model#limitOccupation>
+  ], [
+    <http://purl.org/linked-data/cube#codeList> <https://fixme.com>;
+    shacl:class skos:Concept;
+    shacl:description "TODO";
+    shacl:name "geassocieerdNationaalBeroep";
+    shacl:path <https://data.europa.eu/snb/model#limitNationalOccupation>
+  ], [
+    shacl:class org:Organization;
+    shacl:description "TODO";
+    shacl:name "geldigBij";
+    shacl:path <https://data.europa.eu/snb/model#limitOrganisation>
+  ], [
+    shacl:class dc:Jurisdiction;
+    shacl:description "TODO";
+    shacl:name "geldigBinnen";
+    shacl:path <https://data.europa.eu/snb/model#limitJurisdiction>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#LearningEntitlementSpecification>;
+    shacl:description "TODO";
+    shacl:name "heeftDeel";
+    shacl:path <https://data.europa.eu/snb/model#hasPart>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#LearningAchievementSpecification>;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:name "resultaatVan";
+    shacl:path <https://data.europa.eu/snb/model#entitledBy>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#LearningEntitlementSpecification>;
+    shacl:description "TODO";
+    shacl:name "specialisatieVan";
+    shacl:path <https://data.europa.eu/snb/model#specialisationOf>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "status";
+    shacl:path <https://data.europa.eu/snb/model#status>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "type";
+    shacl:path dc:type
+  ];
+  shacl:targetClass <https://data.europa.eu/snb/model#LearningEntitlementSpecification> .
 
 <https://data.vlaanderen.be/shacl/diploma-ap#ToegekendrechtstatusShape> a shacl:NodeShape;
   shacl:closed false;
