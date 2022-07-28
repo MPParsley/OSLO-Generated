@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/id/concept/StandaardStatus/OntwerpStandaard",
     "statuslabel": "Ontwerp Standaard",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-diploma/tree/f7d4f90d6dd48a252b340234ac9e2d222408d9b2",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-diploma/blob/f7d4f90d6dd48a252b340234ac9e2d222408d9b2/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-diploma/tree/04f6515c0da84e86fd4bf5e15da96d5f4b576dc2",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-diploma/blob/04f6515c0da84e86fd4bf5e15da96d5f4b576dc2/CHANGELOG",
     "feedbackurl": "https://github.com/Informatievlaanderen/OSLOthema-diploma/issues",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/TODO/CORRECT-URL/index.html",
     "usesVocs": [],
@@ -2139,6 +2139,40 @@
             }
           ],
           "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.europa.eu/snb/model#limitQualification",
+          "name": {
+            "nl": "geaccrediteerde kwalificatie"
+          },
+          "sort_nl": "geaccrediteerde kwalificatie",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.europa.eu/snb/model#Accreditation",
+              "EA-Name": "Accreditatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Kwalificatie",
+              "range_uri": "https://data.europa.eu/snb/model#Qualification"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Kwalificatie",
+              "range_puri": "https://data.europa.eu/snb/model#Qualification",
+              "range_label": {
+                "nl": "Kwalificatie"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -4619,6 +4653,198 @@
             }
           ],
           "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://data.europa.eu/snb/model#Qualification",
+      "name": {
+        "nl": "Kwalificatie"
+      },
+      "sort_nl": "Kwalificatie",
+      "description": {
+        "nl": "Een specificatie van een beoordelings- en validatieproces dat wordt verkregen wanneer een bevoegde autoriteit vaststelt dat een individu leerresultaten volgens bepaalde normen heeft bereikt."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "name": "Leerprestatiespecificatie",
+          "label": "Leerprestatiespecificatie",
+          "package": "OSLO-Diploma",
+          "uri": "https://data.europa.eu/snb/model#LearningAchievementSpecification",
+          "scoped_uri": "https://data.europa.eu/snb/model#LearningAchievementSpecification"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://data.europa.eu/snb/model#EQFLevel",
+          "name": {
+            "nl": "EQF-niveau"
+          },
+          "sort_nl": "EQF-niveau",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.europa.eu/snb/model#Qualification",
+              "EA-Name": "Kwalificatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Kwalificatieniveau",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Kwalificatieniveau",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Kwalificatieniveau"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.europa.eu/snb/model#NQFLevel",
+          "name": {
+            "nl": "NQF-niveau"
+          },
+          "sort_nl": "NQF-niveau",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.europa.eu/snb/model#Qualification",
+              "EA-Name": "Kwalificatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Kwalificatieniveau",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Kwalificatieniveau",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Kwalificatieniveau"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": "https://fixme.com"
+        },
+        {
+          "uri": "https://data.europa.eu/snb/model#accreditation",
+          "name": {
+            "nl": "heeft accreditatie"
+          },
+          "sort_nl": "heeft accreditatie",
+          "description": {
+            "nl": "De accreditatie van een kwalificatie."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.europa.eu/snb/model#Qualification",
+              "EA-Name": "Kwalificatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Accreditatie",
+              "range_uri": "https://data.europa.eu/snb/model#Accreditation"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Accreditatie",
+              "range_puri": "https://data.europa.eu/snb/model#Accreditation",
+              "range_label": {
+                "nl": "Accreditatie"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.europa.eu/snb/model#isPartialQualification",
+          "name": {
+            "nl": "partieel"
+          },
+          "sort_nl": "partieel",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.europa.eu/snb/model#Qualification",
+              "EA-Name": "Kwalificatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "nl": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.europa.eu/snb/model#qualificationCode",
+          "name": {
+            "nl": "klassificatie"
+          },
+          "sort_nl": "klassificatie",
+          "description": {
+            "nl": "TODO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://data.europa.eu/snb/model#Qualification",
+              "EA-Name": "Kwalificatie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Kwalificatieklasse",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Kwalificatieklasse",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Kwalificatieklasse"
+              }
+            }
+          ],
+          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]

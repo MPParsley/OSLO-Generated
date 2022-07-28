@@ -66,6 +66,7 @@
     <https://data.vlaanderen.be/shacl/diploma-ap#LeeruitkomstShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#MediaobjectShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#NotaShape>,
+    <https://data.vlaanderen.be/shacl/diploma-ap#KwalificatieShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#ResultaatCategorieShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#ResultaatverdelingShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#RelatieveBeoordelingShape>,
@@ -113,6 +114,12 @@
     shacl:description "Een aanvullende opmerking in vrije tekst over de accreditatie.";
     shacl:name "extraInformatie";
     shacl:path <https://data.europa.eu/snb/model#additionalNote>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#Qualification>;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:name "geaccrediteerdeKwalificatie";
+    shacl:path <https://data.europa.eu/snb/model#limitQualification>
   ], [
     shacl:datatype xsd:dateTime;
     shacl:description "De datum waarop de accreditatie opnieuw moet worden bekeken.";
@@ -461,6 +468,38 @@
 <https://data.vlaanderen.be/shacl/diploma-ap#KredietpuntenframeworkShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/diploma-ap#KwalificatieShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:description "TODO";
+    shacl:name "eqfNiveau";
+    shacl:path <https://data.europa.eu/snb/model#EQFLevel>
+  ], [
+    shacl:class <https://data.europa.eu/snb/model#Accreditation>;
+    shacl:description "De accreditatie van een kwalificatie.";
+    shacl:name "heeftAccreditatie";
+    shacl:path <https://data.europa.eu/snb/model#accreditation>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "TODO";
+    shacl:name "klassificatie";
+    shacl:path <https://data.europa.eu/snb/model#qualificationCode>
+  ], [
+    <http://purl.org/linked-data/cube#codeList> <https://fixme.com>;
+    shacl:class skos:Concept;
+    shacl:description "TODO";
+    shacl:name "nqfNiveau";
+    shacl:path <https://data.europa.eu/snb/model#NQFLevel>
+  ], [
+    shacl:datatype xsd:boolean;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:name "partieel";
+    shacl:path <https://data.europa.eu/snb/model#isPartialQualification>
+  ];
+  shacl:targetClass <https://data.europa.eu/snb/model#Qualification> .
 
 <https://data.vlaanderen.be/shacl/diploma-ap#KwalificatieklasseShape> a shacl:NodeShape;
   shacl:closed false;
