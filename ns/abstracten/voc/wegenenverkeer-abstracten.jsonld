@@ -1686,9 +1686,9 @@
   "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
   "namespace": null,
   "navigation": {
-    "prev": "/doc/vocabularium/wegenenverkeer/abstracten/ontwerpdocument/2.3.0"
+    "prev": "/doc/vocabularium/wegenenverkeer/abstracten/ontwerpdocument/2.4.0"
   },
-  "publication-date": "2022-06-13",
+  "publication-date": "2022-8-8",
   "publication-state": "https://data.vlaanderen.be/id/concept/StandaardStatus/ErkendeStandaard",
   "title": "Abstracten",
   "dcterms:license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
@@ -1814,6 +1814,18 @@
       "usage": {}
     },
     {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AxiaalDraagvermogen",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Abstracte voor de bundeling van de axiale druk- en trekdraagvermogens, berekend volgens verschillende grenstoestanden."
+      },
+      "name": {
+        "nl": "Axiaal draagvermogen"
+      },
+      "parents": [],
+      "usage": {}
+    },
+    {
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Bebakening",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
@@ -1823,8 +1835,8 @@
         "nl": "Bebakening"
       },
       "parents": [
-        "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject",
-        "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Signalisatie"
+        "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Signalisatie",
+        "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject"
       ],
       "usage": {}
     },
@@ -2637,6 +2649,21 @@
       "usage": {}
     },
     {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#NietGedragenSensor",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Abstracte om de eigenschappen en relatie te groeperen voor niet gedragen sensoren."
+      },
+      "name": {
+        "nl": "Niet gedragen sensor"
+      },
+      "parents": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject",
+        "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Sensor"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#NietWeggebondenDetectie",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
@@ -2801,6 +2828,32 @@
       "usage": {}
     },
     {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Sensor",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Abstracte om de eigenschappen en relaties van alle sensoren te groeperen."
+      },
+      "name": {
+        "nl": "Sensor"
+      },
+      "parents": [],
+      "usage": {}
+    },
+    {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Sensoropstelling",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {
+        "nl": "Abstracte voor de gemeenschappelijke eigenschappen en relaties van de sensoren op een draagconstructie."
+      },
+      "name": {
+        "nl": "Sensoropstelling"
+      },
+      "parents": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Sensor"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Signalisatie",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
@@ -2848,8 +2901,8 @@
         "nl": "Stalen profiel"
       },
       "parents": [
-        "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ConstructieElement",
         "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#StalenConstructieElement",
+        "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ConstructieElement",
         "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#ConstructieElementenGC"
       ],
       "usage": {}
@@ -3485,6 +3538,78 @@
       }
     },
     {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AxiaalDraagvermogen.drukdraagvermogenGGT",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Karakteristieke waarde van de maximale druklast die een constructie-element kan dragen in gebruiksgrenstoestanden (GGT), uitgedrukt in kilonewton."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AxiaalDraagvermogen"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "drukdraagvermogen in gebruiksgrenstoestanden"
+      },
+      "range": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewton"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AxiaalDraagvermogen.drukdraagvermogenUGT",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Drukdraagvermogen, uitgedrukt in kilonewton, in uiterste grenstoestand (UGT) design approach DA1/1."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AxiaalDraagvermogen"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "drukdraagvermogen in uiterste grenstoestand"
+      },
+      "range": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewton"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AxiaalDraagvermogen.trekdraagvermorgenGGT",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Karakteristieke waarde van de maximale treklast die een constructie-element kan dragen in gebruiksgrenstoestanden (GGT), uitgedrukt in kilonewton."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AxiaalDraagvermogen"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "trekdraagvermogen in gebruiksgrenstoestanden"
+      },
+      "range": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewton"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AxiaalDraagvermogen.trekdraagvermorgenUGT",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Trekdraagvermogen, uitgedrukt in kilonewton, in uiterste grenstoestand (UGT) design approach DA1/1."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#AxiaalDraagvermogen"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "trekdraagvermogen in uiterste grenstoestand"
+      },
+      "range": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKiloNewton"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Bebakening.kleurReflectorAflopend",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
@@ -3681,7 +3806,7 @@
         "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument"
       ],
       "usage": {
-        "nl": "De risicoanalyse heeft in eerste instantie betrekking op werken in en rond een behuziing met elektrische installaties. Voor behuizingen met installaties van de distributienetbeheerder wordt de risicoanalyse bestemd voor die beheerder, bewaard in het gelijknamig attribuut van het onderdeel van die beheerder, bv. EnergiemeterDNB."
+        "nl": "De risicoanalyse heeft in eerste instantie betrekking op werken in en rond een behuizing met elektrische installaties. Voor behuizingen met installaties van de distributienetbeheerder wordt de risicoanalyse bestemd voor die beheerder, bewaard in het gelijknamig attribuut van het onderdeel van die beheerder, bv. EnergiemeterDNB."
       }
     },
     {
@@ -6613,6 +6738,96 @@
       "usage": {}
     },
     {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Sensor.kalibratiecertificaat",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "Een kwaliteitsdocument dat aangeeft of de testresultaten van de sensor al dan niet binnen de vereiste bedrijfsspecificaties vallen."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Sensor"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "kalibratiecertificaat"
+      },
+      "range": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Sensor.serienummer",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "description": {
+        "nl": "Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Sensor"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "serienummer"
+      },
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#string"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Sensor.technischeFiche",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "De technsiche fiche als bijlage van de sensor."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Sensor"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "technische fiche"
+      },
+      "range": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Sensoropstelling.opstelhoogte",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "De hoogte van de bevestiging van de sensor aan de draaconstructie."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Sensoropstelling"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "opstelhoogte"
+      },
+      "range": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Sensoropstelling.opstelwijze",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "De manier waarop de meteosensor is opgesteld, bv. via dwarsligger,..."
+      },
+      "domain": [
+        "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Sensoropstelling"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "opstelwijze"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#StalenConstructieElement.staalspecificaties",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
@@ -6670,7 +6885,7 @@
       "@id": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#StalenProfiel.lengte",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
-        "nl": "De lengte van het profiel uitgedrukt in in meter."
+        "nl": "De lengte van het profiel uitgedrukt in lopende meter."
       },
       "domain": [
         "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#StalenProfiel"
@@ -7596,6 +7811,13 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
+        "nl": "Sensor opstelwijze"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
         "nl": "Luchtkwaliteitsopstelling merk"
       }
     },
@@ -7652,6 +7874,20 @@
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class",
       "name": {
+        "nl": "Verkeerslicht masker"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "PT regelaarmodule merk"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
         "nl": "verkeerslicht merk"
       }
     },
@@ -7667,55 +7903,6 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "seinlantaarn modelnaam"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Lantaarn vormgeving"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "Verkeerslicht masker"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "PT regelaarmodule merk"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "VR-module met firmware modelnaam"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "VR-module met firmware merk"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "seinlantaarn merk"
-      }
-    },
-    {
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class",
-      "name": {
-        "nl": "PT regelaarmodule modelnaam"
       }
     },
     {
@@ -7744,6 +7931,41 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "Verlichtingstoestel verlicht gebied."
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Lantaarn vormgeving"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "VR-module met firmware modelnaam"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "VR-module met firmware merk"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "seinlantaarn merk"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "PT regelaarmodule modelnaam"
       }
     },
     {

@@ -12,6 +12,7 @@ skos:Concept a rdfs:Class;
     "Wegberm BIO"@nl,
     "Aardingsinstallatie aardingsnet"@nl,
     "Aardingsinstallatie aardingsstelsel"@nl,
+    "Lokaal terreintype"@nl,
     "Z-pad type"@nl,
     "Pad netwerkprotectie"@nl .
 
@@ -36,6 +37,34 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
   rdfs:range <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInOhm> .
 
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aswegersite.afmetingAswegerZone> a owl:ObjectProperty;
+  rdfs:label "afmeting aswegerzone"@nl;
+  rdfs:comment "De afmeting van de zone voor en na de weegplaat, inclusief de weegplaat zelf, als een waarde uit een vaste lijst van standaard afmetingen."@nl;
+  rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aswegersite>;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:range skos:Concept .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aswegersite.kwaliteitscertificaat> a owl:ObjectProperty;
+  rdfs:label "kwaliteitscertificaat"@nl;
+  rdfs:comment "Het certificaat uitgereikt bij de eerste ijk nodig voor de rechtsgeldige uitbating van de aswegersite."@nl;
+  rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aswegersite>;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:range <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcKwaliteitscertifcaat> .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aswegersite.typeMarkering> a owl:ObjectProperty;
+  rdfs:label "type markering"@nl;
+  rdfs:comment "Geeft welke wegmarkering er aanwezig zijn rond de aswegerzone als een waarde uit een vaste lijst van mogelijkheden."@nl;
+  rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aswegersite>;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:range skos:Concept .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aswegersite.weegvermogenBereik> a owl:ObjectProperty;
+  rdfs:label "weegvermogen bereik"@nl;
+  rdfs:comment "Het bereik (gewicht) dat de asweger kan wegen, uitgedrukt in kilo."@nl;
+  rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aswegersite>;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:range <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBereikInKg> .
+
 <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Baanlichaam.dwarsprofiel> a owl:ObjectProperty;
   rdfs:label "dwarsprofiel"@nl;
   <http://purl.org/vocab/vann/usageNote> "Bestanden van het type xlsx, dwg of pdf."@nl;
@@ -59,6 +88,12 @@ skos:Concept a rdfs:Class;
   rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Baanlichaam>;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
   rdfs:range <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#BiFlashInstallatie> a owl:Class;
+  rdfs:label "Bi-Flash installatie"@nl;
+  rdfs:comment "Het geheel van twee bi-flashsteunen, seinlantaarns, retroreflecterende verkeersborden en hun aansluiting, beveiligingsapparatuur en sturing op een bepaalde locatie."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
 
 <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#BlindePut.materiaal> a owl:ObjectProperty;
   rdfs:label "materiaal"@nl;
@@ -440,6 +475,55 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
   rdfs:range <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
 
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Meetstation.beoordelingLokaleTerrein> a owl:ObjectProperty;
+  rdfs:label "Beoordeling lokale terrein"@nl;
+  rdfs:comment "Het soort terrein waarin het meetstation staat met betrekking tot het reliëf en de vegetatie."@nl;
+  rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Meetstation>;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:range skos:Concept .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Meetstation.keuringsrapport> a owl:ObjectProperty;
+  rdfs:label "keuringsrapport"@nl;
+  rdfs:comment "Het rapport dat 5 jaarlijks wordt opgesteld met details over het meetstation."@nl;
+  rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Meetstation>;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:range <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Meetstation.masterOfBridgeSensor> a owl:DatatypeProperty;
+  rdfs:label "Master of bridge sensor"@nl;
+  rdfs:comment "Geeft aan of het meetstation ingeplant is ter hoogte van een brug."@nl;
+  rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Meetstation>;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:range xsd:boolean .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Meetstation.nabijheidVanHindernissen> a owl:ObjectProperty;
+  rdfs:label "Nabijheid van hindernissen"@nl;
+  rdfs:comment "De afstand tot een hindernis in de nabijheid."@nl;
+  rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Meetstation>;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:range <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter> .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Meetstation.nabijheidVanWaterlopen> a owl:ObjectProperty;
+  rdfs:label "Nabijheid van waterlopen"@nl;
+  rdfs:comment "De afstand tot een waterloop in de nabijheid."@nl;
+  rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Meetstation>;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:range <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter> .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Meetstation.onderhoudsrapport> a owl:ObjectProperty;
+  rdfs:label "onderhoudsrapport"@nl;
+  rdfs:comment "Het rapport dat jaarlijks wordt opgesteld met details over het onderhoud van het meetstation."@nl;
+  rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Meetstation>;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:range <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Meetstation.sitePhysicsRapport> a owl:ObjectProperty;
+  rdfs:label "site physics rapport"@nl;
+  rdfs:comment "Beschrijvend overzichtsrapport van het meteostation."@nl;
+  rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Meetstation>;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:range <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
+
 <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Onderbord> a owl:Class;
   rdfs:label "Onderbord"@nl;
   rdfs:comment "Een bord met een verkeersteken dat als toevoeging onder een verkeersbord is gehangen."@nl;
@@ -468,11 +552,13 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
   rdfs:range skos:Concept .
 
-<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom> a owl:Class;
-  rdfs:label "Slagboom installatie"@nl;
-  rdfs:comment "Een afsluitingsmechanisme met slagboomarmen dat dient om controle uit te kunnen oefenen over het gebruik van een doorgang of een toegang."@nl;
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom.isManueel> a owl:DatatypeProperty;
+  rdfs:label "is manueel"@nl;
+  <http://purl.org/vocab/vann/usageNote> "Voor een manuele slagboom zijn geen instanties van de onderliggende onderdelen Slagboomkolom en Slagboomarm vereist."@nl;
+  rdfs:comment "Geeft aan of de slagboom (uitsluitend) manueel bediend wordt of door een aangestuurde motor in de slagboomkolom."@nl;
+  rdfs:domain <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom>;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
+  rdfs:range xsd:boolean .
 
 <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Trajectcontrole.attest> a owl:ObjectProperty;
   rdfs:label "attest"@nl;
@@ -709,7 +795,7 @@ skos:Concept a rdfs:Class;
 
 <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Gebouw> a owl:Class;
   rdfs:label "Gebouw"@nl;
-  rdfs:comment "Elk bouwwerk, dat een voor mensen toegankelijke overdekte, geheel of gedeeltelijk met wanden omsloten ruimte vormt."@nl;
+  rdfs:comment "Elk bouwwerk,dat een voor mensen toegankelijke overdekte,geheel of gedeeltelijk met wanden omsloten ruimte vormt."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing> .
 
@@ -728,6 +814,12 @@ skos:Concept a rdfs:Class;
 <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Pad> a owl:Class;
   rdfs:label "Pad"@nl;
   rdfs:comment "Een aaneengesloten reeks van links die samen een verbinding realiseren over het netwerk, gebruik makende van eenzelfde technologie (vb SDH, OTN)."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Slagboom> a owl:Class;
+  rdfs:label "Slagboom installatie"@nl;
+  rdfs:comment "Een afsluitingsmechanisme met slagboomarmen dat dient om controle uit te kunnen oefenen over het gebruik van een doorgang of een toegang."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
 
@@ -799,6 +891,12 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
 
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aswegersite> a owl:Class;
+  rdfs:label "Aswegersite"@nl;
+  rdfs:comment "Het geheel van infrastructuurelementen en toestellen op één locatie voor de exploitatie van een asweger."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> .
+
 <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Trajectcontrole> a owl:Class;
   rdfs:label "Trajectcontrole"@nl;
   rdfs:comment "Trajectcontrole is een systeem waarbij de gemiddelde snelheid over een langere afstand wordt gemeten."@nl;
@@ -855,6 +953,12 @@ Een gronddam kan volgende functies vervullen: geluidswering, geleiding van diere
   rdfs:comment "Een geluidswerende wandvormige constructie bestaande uit een desgevallend geluidsisolerend materiaal en/of geluidsabsorberend materiaal en voorzien van de nodige structuren om de bouwkundige stabiliteit te verzekeren."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
+
+<https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Meetstation> a owl:Class;
+  rdfs:label "Meetstation"@nl;
+  rdfs:comment "De plaats waar verschillende sensoren samen 1 meetstation vormen. "@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> .
 
 <https://wegenenverkeer.data.vlaanderen.be/ns/installatie> a owl:Ontology;
   rdfs:label "wegenenverkeer-installatie"@en,

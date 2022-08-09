@@ -6,8 +6,8 @@
 </rdfs:Class>
 
 <rdfs:Class rdf:about='http://www.w3.org/2004/02/skos/core#Concept'>
-<rdfs:label xml:lang='nl'>AIM toestand</rdfs:label>
- <rdfs:label xml:lang='nl'>Electricity appurtenance type</rdfs:label>
+<rdfs:label xml:lang='nl'>Electricity appurtenance type</rdfs:label>
+ <rdfs:label xml:lang='nl'>AIM toestand</rdfs:label>
  <rdfs:label xml:lang='nl'>Telecommunications appurtenance type</rdfs:label>
  <rdfs:label xml:lang='nl'>Electricity subthema</rdfs:label>
  <rdfs:label xml:lang='nl'>Pipe container type</rdfs:label>
@@ -21,6 +21,7 @@
  <rdfs:label xml:lang='nl'>Betonsterkteklasse</rdfs:label>
  <rdfs:label xml:lang='nl'>Mimetype</rdfs:label>
  <rdfs:label xml:lang='nl'>Gebruiksdomein</rdfs:label>
+ <rdfs:label xml:lang='nl'>Toeslagmiddel beton</rdfs:label>
  <rdfs:label xml:lang='nl'>Provincie</rdfs:label>
  <rdfs:label xml:lang='nl'>Gemeente</rdfs:label>
  <rdfs:label xml:lang='nl'>Kwaliteitsklasse van hout</rdfs:label>
@@ -3784,38 +3785,10 @@
 
 </owl:DatatypeProperty>
 
-<owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.bevestiging'>
-<rdfs:label xml:lang='nl'>bevestiging</rdfs:label>
-
-<rdfs:comment xml:lang='nl'>Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.</rdfs:comment>
-
-<rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject' />
-
-<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
-
-<rdfs:range>
-<owl:Class rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject'>
-<rdfs:label xml:lang='nl'>Derdenobject</rdfs:label>
-
-<ns0:usageNote xml:lang='nl'>Een Derdenobject mag enkel gebruikt worden om objecten aan te duiden die niet in beheer zijn van AWV en waarvan het type niet gekend is of aangeleverd.</ns0:usageNote>
-
-<rdfs:comment xml:lang='nl'>Object niet in eigendom van de assetbeheerder dat zonder verdere typering bewaard wordt om relaties met getypeerde assets te kunnen beheren.</rdfs:comment>
-
-<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
-
-<rdfs:subClassOf rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand' />
- <rdfs:subClassOf rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus' />
-
-</owl:Class>
-
-</rdfs:range>
-
-</owl:ObjectProperty>
-
 <owl:DatatypeProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.datumOprichtingObject'>
 <rdfs:label xml:lang='nl'>datum oprichting object</rdfs:label>
 
-<rdfs:comment xml:lang='nl'>Datum van de oprichting van het object.</rdfs:comment>
+<rdfs:comment xml:lang='nl'>De datum waarop het object op het terrein is beginnen bestaan, bv. de datum van aanleg.</rdfs:comment>
 
 <rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject' />
 
@@ -3850,19 +3823,6 @@
 <rdfs:range rdf:resource='http://www.w3.org/2001/XMLSchema#string' />
 
 </owl:DatatypeProperty>
-
-<owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.sturing'>
-<rdfs:label xml:lang='nl'>sturing</rdfs:label>
-
-<rdfs:comment xml:lang='nl'>Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting.</rdfs:comment>
-
-<rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject' />
-
-<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
-
-<rdfs:range rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject' />
-
-</owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.theoretischeLevensduur'>
 <rdfs:label xml:lang='nl'>theoretische levensduur</rdfs:label>
@@ -3920,11 +3880,11 @@
 
 <rdfs:domain>
 <owl:Class rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#ActivityComplex'>
-<rdfs:label xml:lang='nl'>Activiy complex</rdfs:label>
+<rdfs:label xml:lang='nl'>Activity complex</rdfs:label>
 
 <ns0:usageNote xml:lang='nl'>Gebruik dit type enkel voor aanlevering voor AKELA indien geen specifieke types aanwezig zijn in OTL.</ns0:usageNote>
 
-<rdfs:comment xml:lang='nl'>Het gehele gebied dat door dezelfde exploitant op dezelfde locatie of op verschillende geografische locaties wordt beheerd, inclusief alle infrastructuur, apparatuur en materialen.</rdfs:comment>
+<rdfs:comment xml:lang='nl'>Het gehele gebied dat door dezelfde exploitant op dezelfde locatie of op verschillende geografische locaties wordt beheerd,inclusief alle infrastructuur,apparatuur en materialen.</rdfs:comment>
 
 <rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
 
@@ -3982,24 +3942,26 @@
 
 <rdfs:comment xml:lang='nl'>Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier.</rdfs:comment>
 
-<rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject' />
+<rdfs:domain>
+<owl:Class rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject'>
+<rdfs:label xml:lang='nl'>Derdenobject</rdfs:label>
+
+<ns0:usageNote xml:lang='nl'>Een Derdenobject mag enkel gebruikt worden om objecten aan te duiden die niet in beheer zijn van AWV en waarvan het type niet gekend is of aangeleverd.</ns0:usageNote>
+
+<rdfs:comment xml:lang='nl'>Object niet in eigendom van de assetbeheerder dat zonder verdere typering bewaard wordt om relaties met getypeerde assets te kunnen beheren.</rdfs:comment>
+
+<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
+
+<rdfs:subClassOf rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand' />
+ <rdfs:subClassOf rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus' />
+
+</owl:Class>
+
+</rdfs:domain>
 
 <rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
 
 <rdfs:range rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator' />
-
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject.bevestiging'>
-<rdfs:label xml:lang='nl'>bevestiging</rdfs:label>
-
-<rdfs:comment xml:lang='nl'>Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.</rdfs:comment>
-
-<rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject' />
-
-<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
-
-<rdfs:range rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject' />
 
 </owl:ObjectProperty>
 
@@ -4066,19 +4028,6 @@
 <rdfs:range rdf:resource='http://www.w3.org/2001/XMLSchema#string' />
 
 </owl:DatatypeProperty>
-
-<owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject.sturing'>
-<rdfs:label xml:lang='nl'>sturing</rdfs:label>
-
-<rdfs:comment xml:lang='nl'>Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting.</rdfs:comment>
-
-<rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject' />
-
-<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
-
-<rdfs:range rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject' />
-
-</owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject.typeURI'>
 <rdfs:label xml:lang='nl'>type URI</rdfs:label>
@@ -4584,6 +4533,52 @@
 
 </owl:ObjectProperty>
 
+<owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBereikInKg.maximum'>
+<rdfs:label xml:lang='nl'>maximum</rdfs:label>
+
+<rdfs:comment xml:lang='nl'>Bovengrens van het bereik uitgedrukt in kilogram.</rdfs:comment>
+
+<rdfs:domain>
+<owl:Class rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBereikInKg'>
+<rdfs:label xml:lang='nl'>Bereik in kg</rdfs:label>
+
+<rdfs:comment xml:lang='nl'>Complex datatype om een bereik uit te drukken met een minimium en maximum in kilogram.</rdfs:comment>
+
+<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
+
+</owl:Class>
+
+</rdfs:domain>
+
+<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
+
+<rdfs:range>
+<owl:Class rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram'>
+<rdfs:label xml:lang='nl'>Kwantitatieve waarde in kilogram</rdfs:label>
+
+<rdfs:comment xml:lang='nl'>Een kwantitatieve waarde die een getal in kilogram uitdrukt.</rdfs:comment>
+
+<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
+
+</owl:Class>
+
+</rdfs:range>
+
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBereikInKg.minimium'>
+<rdfs:label xml:lang='nl'>minimum</rdfs:label>
+
+<rdfs:comment xml:lang='nl'>Ondergrens van het bereik uitgedrukt in kilogram.</rdfs:comment>
+
+<rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBereikInKg' />
+
+<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
+
+<rdfs:range rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram' />
+
+</owl:ObjectProperty>
+
 <owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.betondekking'>
 <rdfs:label xml:lang='nl'>betondekking</rdfs:label>
 
@@ -4593,7 +4588,7 @@
 <owl:Class rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties'>
 <rdfs:label xml:lang='nl'>Betonspecificaties</rdfs:label>
 
-<rdfs:comment xml:lang='nl'>Complex datatype om de eigenschappen van beton te bundelen.</rdfs:comment>
+<rdfs:comment xml:lang='nl'>Complex datatype om de eigenschappen van beton te bundelen. Deze omvat onder andere de verschillende betonklassen,hoe het beton gebruikt wordt,eigenschappen van het cement,een technische fiche van het beton,...</rdfs:comment>
 
 <rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
 
@@ -4740,6 +4735,8 @@
 <owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.technischeFiche'>
 <rdfs:label xml:lang='nl'>technische fiche</rdfs:label>
 
+<ns0:usageNote xml:lang='nl'>Attribuut uit gebruik sinds versie 2.5.0</ns0:usageNote>
+
 <rdfs:comment xml:lang='nl'>De technische fiche van het beton. Deze moet volgende eigenschappen bevatten: de norm waaraan het beton voldoet, de sterkteklasse, de duurzaamheid (bestaande uit het gebruiksdomein en de omgevingsklasse(n)), de consistentieklasse, de nominale grootste korrelafmeting,...</rdfs:comment>
 
 <rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties' />
@@ -4747,6 +4744,32 @@
 <rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
 
 <rdfs:range rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument' />
+
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.technischeFicheSpecificatiesBeton'>
+<rdfs:label xml:lang='nl'>technische fiche specificaties beton</rdfs:label>
+
+<rdfs:comment xml:lang='nl'>De technische fiche van de specificaties van het beton. Deze moet volgende eigenschappen bevatten: de norm waaraan het beton voldoet, de sterkteklasse, de duurzaamheid (bestaande uit het gebruiksdomein en de omgevingsklasse(n)), de consistentieklasse, de nominale grootste korrelafmeting,...</rdfs:comment>
+
+<rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties' />
+
+<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
+
+<rdfs:range rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument' />
+
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties.toeslagmiddelen'>
+<rdfs:label xml:lang='nl'>toeslagmiddelen</rdfs:label>
+
+<rdfs:comment xml:lang='nl'>Materialen die aan het beton worden toegevoegd om vb.: een beter geheel te maken, holle ruimten te vullen waardoor de sterkte toeneemt, ruimten met minder massa te creëren,... Dit kunnen er meerdere zijn.</rdfs:comment>
+
+<rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcBetonspecificaties' />
+
+<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
+
+<rdfs:range rdf:resource='http://www.w3.org/2004/02/skos/core#Concept' />
 
 </owl:ObjectProperty>
 
@@ -4886,10 +4909,10 @@
 
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcHoutspecificaties.houtduurzaamheidsklasse'>
-<rdfs:label xml:lang='nl'>houtduurzaamheidsklasse</rdfs:label>
+<owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcHoutspecificaties.fscCertificaat'>
+<rdfs:label xml:lang='nl'>FSC-certificaat</rdfs:label>
 
-<rdfs:comment xml:lang='nl'>De verwachte levensduur van het hout. De klasse geeft de resistentie aan van het kernhout tegen ongunstige omstandigheden.</rdfs:comment>
+<rdfs:comment xml:lang='nl'>Een attest of een bewijs dat voor elke boom die gebruikt wordt er een andere in de plaats is geplant.</rdfs:comment>
 
 <rdfs:domain>
 <owl:Class rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcHoutspecificaties'>
@@ -4902,6 +4925,19 @@
 </owl:Class>
 
 </rdfs:domain>
+
+<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
+
+<rdfs:range rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument' />
+
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcHoutspecificaties.houtduurzaamheidsklasse'>
+<rdfs:label xml:lang='nl'>houtduurzaamheidsklasse</rdfs:label>
+
+<rdfs:comment xml:lang='nl'>De verwachte levensduur van het hout. De klasse geeft de resistentie aan van het kernhout tegen ongunstige omstandigheden.</rdfs:comment>
+
+<rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcHoutspecificaties' />
 
 <rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
 
@@ -4967,6 +5003,55 @@
 <rdfs:comment xml:lang='nl'>Gegevens van de organisatie die de toekenning deed.</rdfs:comment>
 
 <rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator' />
+
+<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
+
+<rdfs:range rdf:resource='http://www.w3.org/2001/XMLSchema#string' />
+
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcKwaliteitscertifcaat.datumOndertekening'>
+<rdfs:label xml:lang='nl'>datum ondertekening</rdfs:label>
+
+<rdfs:comment xml:lang='nl'>De datum waarop het kwalitetiscertificaat ondertekend is door de administrateur-generaal.</rdfs:comment>
+
+<rdfs:domain>
+<owl:Class rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcKwaliteitscertifcaat'>
+<rdfs:label xml:lang='nl'>kwaliteitscertificaat</rdfs:label>
+
+<rdfs:comment xml:lang='nl'>Complex datatype voor een rapport waarin vastgelegd wordt dat een apparaat of installatie voldoet aan vooropgestelde kwaliteitseisen. Kan vereist zijn voor de tegenstelbaarheid van het gebruik van het toestel of de installatie in kwestie</rdfs:comment>
+
+<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
+
+</owl:Class>
+
+</rdfs:domain>
+
+<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
+
+<rdfs:range rdf:resource='http://www.w3.org/2001/XMLSchema#date' />
+
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcKwaliteitscertifcaat.document'>
+<rdfs:label xml:lang='nl'>document</rdfs:label>
+
+<rdfs:comment xml:lang='nl'>Documentbijlage met de vergunning.</rdfs:comment>
+
+<rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcKwaliteitscertifcaat' />
+
+<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
+
+<rdfs:range rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument' />
+
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcKwaliteitscertifcaat.identificator'>
+<rdfs:label xml:lang='nl'>identificator</rdfs:label>
+
+<rdfs:comment xml:lang='nl'>De identificator van de vergunning.</rdfs:comment>
+
+<rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcKwaliteitscertifcaat' />
 
 <rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
 
@@ -6096,17 +6181,7 @@
 
 <rdfs:comment xml:lang='nl'>De standaard eenheid bij dit datatype is uitgedrukt in kilogram.</rdfs:comment>
 
-<rdfs:domain>
-<owl:Class rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram'>
-<rdfs:label xml:lang='nl'>Kwantitatieve waarde in kilogram</rdfs:label>
-
-<rdfs:comment xml:lang='nl'>Een kwantitatieve waarde die een getal in kilogram uitdrukt.</rdfs:comment>
-
-<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
-
-</owl:Class>
-
-</rdfs:domain>
+<rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram' />
 
 <rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
 
@@ -6893,6 +6968,44 @@
 
 </owl:ObjectProperty>
 
+<owl:DatatypeProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInmAh.standaardEenheid'>
+<rdfs:label xml:lang='nl'>standaard eenheid</rdfs:label>
+
+<ns0:usageNote xml:lang='nl'>"mAh"^^cdt:ucumunit</ns0:usageNote>
+
+<rdfs:comment xml:lang='nl'>De standaard eenheid bij dit datatype is uitgedrukt in milliampere per uur.</rdfs:comment>
+
+<rdfs:domain>
+<owl:Class rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInmAh'>
+<rdfs:label xml:lang='nl'>Kwantitatieve waarde in mAh</rdfs:label>
+
+<rdfs:comment xml:lang='nl'>Een kwantitatieve waarde die een getal in milliampere per uur uitdrukt.</rdfs:comment>
+
+<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
+
+</owl:Class>
+
+</rdfs:domain>
+
+<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
+
+<rdfs:range rdf:resource='http://www.w3.org/2000/01/rdf-schema#Literal' />
+
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInmAh.waarde'>
+<rdfs:label xml:lang='nl'>waarde</rdfs:label>
+
+<rdfs:comment xml:lang='nl'>Bevat een getal die bij het datatype hoort.</rdfs:comment>
+
+<rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInmAh' />
+
+<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
+
+<rdfs:range rdf:resource='http://www.w3.org/2001/XMLSchema#decimal' />
+
+</owl:ObjectProperty>
+
 <owl:DatatypeProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#NaampadObject.naampad'>
 <rdfs:label xml:lang='nl'>naampad</rdfs:label>
 
@@ -7099,66 +7212,6 @@
 <rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
 
 <rdfs:range rdf:resource='http://www.w3.org/2004/02/skos/core#Concept' />
-
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#heeftBetrokkene'>
-<rdfs:label xml:lang='nl'>heeft betrokkene</rdfs:label>
-
-<rdfs:comment xml:lang='nl'>Koppelt een natuurlijk persoon,rechtspersoon of een hoedanigheid (een functie eerder dan de persoon die de functie uitoefent) aan een object in een bepaalde rol.</rdfs:comment>
-
-<rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject' />
- <rdfs:domain rdf:resource='http://purl.org/dc/terms/Agent' />
- <rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject' />
-
-<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
-
-<rdfs:range rdf:resource='http://purl.org/dc/terms/Agent' />
-
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#ligtOp'>
-<rdfs:label xml:lang='nl'>ligt op</rdfs:label>
-
-<rdfs:comment xml:lang='nl'>Deze relatie geeft aan dat 2 onderdelen direct fysiek op elkaar liggen. Deze relatie heeft een richting en gaat van het bovenste naar het onderste onderdeel.</rdfs:comment>
-
-<rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject' />
- <rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject' />
-
-<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
-
-<rdfs:range rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject' />
- <rdfs:range rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject' />
-
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#sluitAanOp'>
-<rdfs:label xml:lang='nl'>sluit aan op</rdfs:label>
-
-<rdfs:comment xml:lang='nl'>Deze relatie geeft aan hoe 2 onderdelen in horizontale zin elkaar opvolgen. Dit wordt gebruikt om een topologisch netwerk op te bouwen. Enkel in gebruik bij afschermende constructies en riolering/waterlopen. Deze relatie heeft steeds een richting van het opwaartse naar het afwaartse onderdeel.</rdfs:comment>
-
-<rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject' />
- <rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject' />
-
-<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
-
-<rdfs:range rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject' />
- <rdfs:range rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject' />
-
-</owl:ObjectProperty>
-
-<owl:ObjectProperty rdf:about='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#voedt'>
-<rdfs:label xml:lang='nl'>voedt</rdfs:label>
-
-<rdfs:comment xml:lang='nl'>Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.</rdfs:comment>
-
-<rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject' />
- <rdfs:domain rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject' />
-
-<rdfs:isDefinedBy rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement' />
-
-<rdfs:range rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#Derdenobject' />
- <rdfs:range rdf:resource='https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject' />
 
 </owl:ObjectProperty>
 
