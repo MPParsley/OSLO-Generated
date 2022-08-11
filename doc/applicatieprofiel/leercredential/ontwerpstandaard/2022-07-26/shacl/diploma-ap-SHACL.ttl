@@ -12,7 +12,7 @@
 <https://data.vlaanderen.be/shacl/diploma-ap> <https://data.vlaanderen.be/shacl/diploma-apshapes> <https://data.vlaanderen.be/shacl/diploma-ap#BewijsShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#CredentialShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#LeercredentialShape>,
-    <https://data.vlaanderen.be/shacl/diploma-ap#GenderShape>,
+    <https://data.vlaanderen.be/shacl/diploma-ap#VoorstellingShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#JurisdictieShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#PlaatsShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#ContactInfoShape>,
@@ -33,6 +33,7 @@
     <https://data.vlaanderen.be/shacl/diploma-ap#AccreditatietypeShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#CredentialtypeShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#TaalShape>,
+    <https://data.vlaanderen.be/shacl/diploma-ap#GenderShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#LeercredentialtypeShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#VerificatiechecktypeShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#KredietpuntenframeworkShape>,
@@ -46,6 +47,8 @@
     <https://data.vlaanderen.be/shacl/diploma-ap#AccreditatiestatusShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#MediaobjecttypeShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#MediacoderingtypeShape>,
+    <https://data.vlaanderen.be/shacl/diploma-ap#OrganisatieClassificatieShape>,
+    <https://data.vlaanderen.be/shacl/diploma-ap#AuthenticiteitShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#PeriodeShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#IdentificatorShape>,
     <https://data.vlaanderen.be/shacl/diploma-ap#OrganisatieShape>,
@@ -82,11 +85,6 @@
 <https://data.vlaanderen.be/shacl/diploma-ap#AccreditatieShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://www.w3.org/ns/adms#Identifier>;
-    shacl:description "De overdraagbare en unieke identificatiecode van het accreditatiedossier.";
-    shacl:name "Identificator";
-    shacl:path <http://www.w3.org/ns/adms#identifier>
-  ], [
     shacl:class <https://data.europa.eu/snb/model#Webresource>;
     shacl:description "TODO";
     shacl:name "aanvullendDocument";
@@ -137,6 +135,11 @@
     shacl:name "homepagina";
     shacl:path foaf:homepage
   ], [
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:description "De overdraagbare en unieke identificatiecode van het accreditatiedossier.";
+    shacl:name "identificator";
+    shacl:path <http://www.w3.org/ns/adms#identifier>
+  ], [
     shacl:class dc:Jurisdiction;
     shacl:description "TODO";
     shacl:name "jurisdictie";
@@ -185,12 +188,13 @@
     shacl:path dc:issued
   ], [
     shacl:class org:Organization;
-    shacl:description "De kwaliteitsborgingsautoriteit. (d.w.z. beoordelaar)";
+    shacl:description "De kwaliteitsborgingsautoriteit (d.w.z. beoordelaar).";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "verstrektDoor";
     shacl:path <https://data.europa.eu/snb/model#accreditingAgent>
   ], [
+    shacl:datatype xsd:dateTime;
     shacl:description "De datum waarop de accreditatie vervalt of is verlopen.";
     shacl:maxCount 1;
     shacl:name "vervaldatum";
@@ -313,6 +317,10 @@
   shacl:closed false;
   shacl:targetClass skos:Concept .
 
+<https://data.vlaanderen.be/shacl/diploma-ap#AuthenticiteitShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
 <https://data.vlaanderen.be/shacl/diploma-ap#BeoordelingsschemaShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
@@ -345,7 +353,7 @@
 
 <https://data.vlaanderen.be/shacl/diploma-ap#BewijsShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/onderwijs/leercredential#Bewijs> .
+  shacl:targetClass <https://data.vlaanderen.be/ns/leercredential#Bewijs> .
 
 <https://data.vlaanderen.be/shacl/diploma-ap#ContactInfoShape> a shacl:NodeShape;
   shacl:closed false;
@@ -396,16 +404,16 @@
     shacl:description "De datum en tijd waarop het certificaat digitaal ondertekend is.";
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "uitgifteDatum";
+    shacl:name "uitgiftedatum";
     shacl:path <https://www.w3.org/2018/credentials#issued>
   ], [
     shacl:datatype xsd:dateTime;
     shacl:description "De vervaldatum.";
     shacl:maxCount 1;
-    shacl:name "vervalDatum";
+    shacl:name "vervaldatum";
     shacl:path <https://www.w3.org/2018/credentials#validUntil>
   ];
-  shacl:targetClass <https://data.vlaanderen.be/ns/onderwijs/leercredential#Credential> .
+  shacl:targetClass <https://data.vlaanderen.be/ns/leercredential#Credential> .
 
 <https://data.vlaanderen.be/shacl/diploma-ap#CredentialtypeShape> a shacl:NodeShape;
   shacl:closed false;
@@ -421,7 +429,7 @@
 
 <https://data.vlaanderen.be/shacl/diploma-ap#GenderShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://fixme.com#Gender> .
+  shacl:targetClass skos:Concept .
 
 <https://data.vlaanderen.be/shacl/diploma-ap#GeografischeNaamShape> a shacl:NodeShape;
   shacl:closed false;
@@ -465,13 +473,13 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "string";
-    shacl:path <http://fixme.com#string>
+    shacl:path rdfs:comment
   ], [
     shacl:datatype xsd:anyURI;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "type";
-    shacl:path <http://fixme.com#type>
+    shacl:path dc:type
   ];
   shacl:targetClass rdfs:Literal .
 
@@ -481,7 +489,45 @@
 
 <https://data.vlaanderen.be/shacl/diploma-ap#IdentificatorShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://www.w3.org/ns/adms#identifier> .
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "notatie";
+    shacl:path skos:notation
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:name "schemaNaam";
+    shacl:path <http://www.w3.org/2001/01/rdf-schema#label>
+  ], [
+    shacl:datatype xsd:anyURI;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:name "schemaURI";
+    shacl:path dc:conformsTo
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:name "uitgevendeAutoriteitNaam";
+    shacl:path <http://www.w3.org/ns/adms#schemeAgency>
+  ], [
+    shacl:datatype xsd:anyURI;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:name "uitgevendeAutoriteitURI";
+    shacl:path <http://purl.org/dc/term/creator>
+  ], [
+    shacl:datatype xsd:date;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:name "uitgifteDatum";
+    shacl:path dc:issued
+  ];
+  shacl:targetClass <http://www.w3.org/ns/adms#Identifier> .
 
 <https://data.vlaanderen.be/shacl/diploma-ap#JurisdictieShape> a shacl:NodeShape;
   shacl:closed false;
@@ -490,7 +536,7 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "identificator";
-    shacl:path <http://fixme.com#identificator>
+    shacl:path <http://www.w3.org/ns/adms#Identifier>
   ];
   shacl:targetClass dc:Jurisdiction .
 
@@ -657,15 +703,16 @@
 <https://data.vlaanderen.be/shacl/diploma-ap#LeerclaimShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://www.w3.org/ns/adms#Identifier>;
-    shacl:description "TODO";
-    shacl:name "Identificator";
-    shacl:path <http://www.w3.org/ns/adms#identifier>
-  ], [
     shacl:class <https://data.europa.eu/snb/model#Webresource>;
     shacl:description "TODO";
     shacl:name "aanvullendDocument";
     shacl:path <https://data.europa.eu/snb/model#supplementaryDocument>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:name "authenticiteit";
+    shacl:path <https://data.vlaanderen.be/ns/leercredential#authenticiteit>
   ], [
     shacl:class <https://data.europa.eu/snb/model#Note>;
     shacl:description "TODO";
@@ -677,6 +724,11 @@
     shacl:description "TODO";
     shacl:name "extraInformatie";
     shacl:path <https://data.europa.eu/snb/model#additionalNote>
+  ], [
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:description "TODO";
+    shacl:name "identificator";
+    shacl:path <http://www.w3.org/ns/adms#identifier>
   ], [
     shacl:class <https://data.europa.eu/snb/model#Claim>;
     shacl:description "TODO";
@@ -712,7 +764,7 @@
     shacl:name "beschrijving";
     shacl:path dc:description
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/onderwijs/leercredential#Bewijs>;
+    shacl:class <https://data.vlaanderen.be/ns/leercredential#Bewijs>;
     shacl:description "TODO";
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -724,6 +776,7 @@
     shacl:name "bijvoegsel";
     shacl:path <https://data.europa.eu/snb/model#attachment>
   ], [
+    shacl:class <https://data.vlaanderen.be/ns/leercredential#Voorstelling>;
     shacl:description "TODO";
     shacl:maxCount 1;
     shacl:name "display";
@@ -736,28 +789,15 @@
     shacl:name "eigenaar";
     shacl:path <https://w3.org/2018/credentials#credentialSubject>
   ], [
-    shacl:class skos:Concept;
-    shacl:description "TODO";
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "hoofdTaal";
-    shacl:path <https://data.europa.eu/snb/model#primaryLanguage>
-  ], [
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
     shacl:description "TODO";
     shacl:name "identificator";
     shacl:path <http://www.w3.org/ns/adms#identifier>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/onderwijs/leercredential#Leercredential>;
+    shacl:class <https://data.vlaanderen.be/ns/leercredential#Leercredential>;
     shacl:description "TODO";
     shacl:name "omvat";
     shacl:path <https://data.europa.eu/snb/model#hasPart>
-  ], [
-    shacl:class skos:Concept;
-    shacl:description "TODO";
-    shacl:minCount 1;
-    shacl:name "taal";
-    shacl:path dc:language
   ], [
     shacl:datatype rdf:langString;
     shacl:description "TODO";
@@ -779,8 +819,14 @@
     shacl:minCount 1;
     shacl:name "uitgever";
     shacl:path <https://w3.org/2018/credentials#issuer>
+  ], [
+    shacl:class <https://data.vlaanderen.be/ns/leercredential#Voorstelling>;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:name "voorstelling";
+    shacl:path <https://data.europa.eu/snb/model#displayParameter>
   ];
-  shacl:targetClass <https://data.vlaanderen.be/ns/onderwijs/leercredential#Leercredential> .
+  shacl:targetClass <https://data.vlaanderen.be/ns/leercredential#Leercredential> .
 
 <https://data.vlaanderen.be/shacl/diploma-ap#LeercredentialtypeShape> a shacl:NodeShape;
   shacl:closed false;
@@ -911,7 +957,6 @@
     shacl:name "specialisatieVan";
     shacl:path <https://data.europa.eu/snb/model#specialisationOf>
   ], [
-    <http://purl.org/linked-data/cube#codeList> <https://fixme.com>;
     shacl:class skos:Concept;
     shacl:description "TODO";
     shacl:name "studiegebied";
@@ -1006,7 +1051,7 @@
     shacl:class skos:Concept;
     shacl:description "TODO";
     shacl:name "geassocieerdeVaardigheid";
-    shacl:path <https://data.vlaanderen.be/ns/onderwijs/leercredential#geassocieerdeVaardigheid>
+    shacl:path <https://data.vlaanderen.be/ns/leercredential#geassocieerdeVaardigheid>
   ], [
     shacl:class skos:Concept;
     shacl:description "TODO";
@@ -1042,15 +1087,15 @@
   shacl:property [
     shacl:class <http://www.w3.org/ns/locn#Address>;
     shacl:name "adres";
-    shacl:path <http://fixme.com#adres>
+    shacl:path <http://data.europa.eu/m8g/address>
   ], [
     shacl:datatype rdf:langString;
     shacl:name "naam";
-    shacl:path <http://fixme.com#naam>
+    shacl:path <http://www.w3.org/ns/locn#geographicName>
   ], [
     shacl:class dc:Location;
     shacl:name "plaats";
-    shacl:path <http://fixme.com#plaats>
+    shacl:path <http://data.europa.eu/m8g/location>
   ];
   shacl:targetClass prov:Location .
 
@@ -1128,6 +1173,10 @@
   shacl:closed false;
   shacl:targetClass skos:Concept .
 
+<https://data.vlaanderen.be/shacl/diploma-ap#OrganisatieClassificatieShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
 <https://data.vlaanderen.be/shacl/diploma-ap#OrganisatieShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
@@ -1141,6 +1190,11 @@
     shacl:name "alternatieveNaam";
     shacl:path skos:altLabel
   ], [
+    shacl:class skos:Concept;
+    shacl:description "Rangschikking van de organisatie in een classificatiesysteem.";
+    shacl:name "classificatie";
+    shacl:path org:classification
+  ], [
     shacl:class schema:ContactPoint;
     shacl:description "Informatie zoals email, telefoon... die toelaat de Organisatie te contacteren.";
     shacl:name "contactinfo";
@@ -1148,7 +1202,7 @@
   ], [
     shacl:class <https://data.europa.eu/snb/model#Note>;
     shacl:name "extraInformatie";
-    shacl:path <http://fixme.com#extraInformatie>
+    shacl:path <https://data.europa.eu/snb/model#additionalNote>
   ], [
     shacl:class org:Organization;
     shacl:description "Organisatie die dochter of onderdeel is van de organisatie.";
@@ -1163,7 +1217,7 @@
   ], [
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
     shacl:name "identificator";
-    shacl:path <http://fixme.com#identificator>
+    shacl:path <http://www.w3.org/ns/adms#identifier>
   ], [
     shacl:class org:Organization;
     shacl:description "Organisatie die deze organisatie omvat.";
@@ -1173,12 +1227,11 @@
     shacl:class <https://data.europa.eu/snb/model#MediaObject>;
     shacl:maxCount 1;
     shacl:name "logo";
-    shacl:path <http://fixme.com#logo>
+    shacl:path schema:logo
   ], [
     shacl:class org:Site;
-    shacl:minCount 1;
     shacl:name "vestiging";
-    shacl:path <http://fixme.com#vestiging>
+    shacl:path org:hasPrimarySite
   ], [
     shacl:datatype rdf:langString;
     shacl:description "Naam waarmee de organisatie bij voorkeur wordt aangeduid.";
@@ -1201,7 +1254,7 @@
     shacl:datatype xsd:duration;
     shacl:maxCount 1;
     shacl:name "duur";
-    shacl:path <http://fixme.com#duur>
+    shacl:path <http://www.w3.org/2006/time#hasDuration>
   ], [
     shacl:datatype xsd:dateTime;
     shacl:description "Einde vd tijdsduur.";
@@ -1217,7 +1270,6 @@
     shacl:datatype xsd:string;
     shacl:description "Gedeelte van de volledige naam vd persoon ontvangen van de vorige generatie.";
     shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "achternaam";
     shacl:path foaf:familyName
   ], [
@@ -1242,20 +1294,20 @@
     shacl:class dc:Location;
     shacl:maxCount 1;
     shacl:name "geboorteplaats";
-    shacl:path <http://fixme.com#geboorteplaats>
+    shacl:path <http://www.w3.org/ns/person#placeOfBirth>
   ], [
-    shacl:class <http://fixme.com#Gender>;
+    shacl:class skos:Concept;
     shacl:maxCount 1;
     shacl:name "gender";
-    shacl:path <http://fixme.com#gender>
+    shacl:path <http://data.europa.eu/m8g/gender>
   ], [
-    shacl:class <https://data.vlaanderen.be/ns/onderwijs/leercredential#Leercredential>;
+    shacl:class <https://data.vlaanderen.be/ns/leercredential#Leercredential>;
     shacl:name "heeftCredential";
     shacl:path <https://data.europa.eu/snb/model#hasCredential>
   ], [
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
     shacl:name "identificator";
-    shacl:path <http://fixme.com#identificator>
+    shacl:path <http://www.w3.org/ns/adms#identifier>
   ], [
     shacl:datatype xsd:string;
     shacl:description "Achternaam gebaseerd op de voornaam vd vader ve persoon.";
@@ -1265,17 +1317,16 @@
   ], [
     shacl:class dc:Jurisdiction;
     shacl:name "staatsburgerschap";
-    shacl:path <http://fixme.com#staatsburgerschap>
+    shacl:path dc:citizenship
   ], [
     shacl:class <http://www.w3.org/ns/locn#Address>;
     shacl:description "TODO";
     shacl:maxCount 1;
     shacl:name "verblijfsadres";
-    shacl:path <http://fixme.com#verblijfsadres>
+    shacl:path <http://www.w3.org/ns/person#residency>
   ], [
     shacl:datatype xsd:string;
     shacl:description "Naam die een kind bij geboorte wordt gegeven. Onderscheidt het kind van de andere kinderen in de familie.";
-    shacl:minCount 1;
     shacl:name "voornaam";
     shacl:path foaf:givenName
   ];
@@ -1287,7 +1338,7 @@
     shacl:datatype xsd:anyURI;
     shacl:maxCount 1;
     shacl:name "identificator";
-    shacl:path <http://fixme.com#identificator>
+    shacl:path <http://www.w3.org/ns/adms#identifier>
   ], [
     shacl:datatype rdf:langString;
     shacl:description "Naam van de plaats of van het gebied.";
@@ -1557,9 +1608,33 @@
     shacl:class prov:Location;
     shacl:minCount 1;
     shacl:name "locatie";
-    shacl:path <http://fixme.com#locatie>
+    shacl:path <http://data.europa.eu/m8g/location>
   ];
   shacl:targetClass org:Site .
+
+<https://data.vlaanderen.be/shacl/diploma-ap#VoorstellingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:description "TODO";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "hoofdtaal";
+    shacl:path <https://data.europa.eu/snb/model#primaryLanguage>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "TODO";
+    shacl:minCount 1;
+    shacl:name "taal";
+    shacl:path dc:language
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:description "TODO";
+    shacl:minCount 1;
+    shacl:name "titel";
+    shacl:path <http://purl.org/dc/title>
+  ];
+  shacl:targetClass <https://data.vlaanderen.be/ns/leercredential#Voorstelling> .
 
 <https://data.vlaanderen.be/shacl/diploma-ap#WebdocumentShape> a shacl:NodeShape;
   shacl:closed false;

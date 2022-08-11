@@ -1,5 +1,5 @@
 {
-  "@id": "https://data.vlaanderen.be/ns/onderwijs/leercredential",
+  "@id": "https://data.vlaanderen.be/ns/leercredential",
   "@type": "http://www.w3.org/2002/07/owl#Ontology",
   "authors": [
     {
@@ -58,7 +58,7 @@
   },
   "classes": [
     {
-      "@id": "https://data.vlaanderen.be/ns/onderwijs/leercredential#Bewijs",
+      "@id": "https://data.vlaanderen.be/ns/leercredential#Bewijs",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
         "nl": "Een bewijs dat aantoont dat een persoon een bepaalde opleiding voltooid heeft of relevante beroepservaring heeft."
@@ -70,7 +70,7 @@
       "usage": {}
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/onderwijs/leercredential#Credential",
+      "@id": "https://data.vlaanderen.be/ns/leercredential#Credential",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
         "nl": "Een credential is een reeks van een of meer beweringen gemaakt door een uitgever."
@@ -82,7 +82,7 @@
       "usage": {}
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/onderwijs/leercredential#Leercredential",
+      "@id": "https://data.vlaanderen.be/ns/leercredential#Leercredential",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "description": {
         "nl": "Een reeks van een of meer beweringen over leerervaringen, gemaakt door een uitgever."
@@ -91,14 +91,40 @@
         "nl": "Leercredential"
       },
       "parents": [
-        "https://data.vlaanderen.be/ns/onderwijs/leercredential#Credential"
+        "https://data.vlaanderen.be/ns/leercredential#Credential"
       ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/leercredential#Voorstelling",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "description": {},
+      "name": {},
+      "parents": [],
       "usage": {}
     }
   ],
   "properties": [
     {
-      "@id": "https://data.vlaanderen.be/ns/onderwijs/leercredential#geassocieerdeVaardigheid",
+      "@id": "https://data.vlaanderen.be/ns/leercredential#authenticiteit",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "description": {
+        "nl": "TODO"
+      },
+      "domain": [
+        "https://data.europa.eu/snb/model#Claim"
+      ],
+      "generalization": [],
+      "name": {
+        "nl": "authenticiteit"
+      },
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "usage": {}
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/leercredential#geassocieerdeVaardigheid",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "description": {
         "nl": "TODO"
@@ -304,6 +330,18 @@
       "@type": "rdfs:Class",
       "name": {
         "nl": "Mediacoderingtype"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {}
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class",
+      "name": {
+        "nl": "Authenticiteit"
       }
     },
     {
@@ -578,14 +616,14 @@
       "@id": "http://purl.org/dc/terms/language",
       "@type": "rdf:Property",
       "name": {
-        "nl": "taal"
+        "nl": "onderwijstaal"
       }
     },
     {
       "@id": "http://purl.org/dc/terms/language",
       "@type": "rdf:Property",
       "name": {
-        "nl": "onderwijstaal"
+        "nl": "taal"
       }
     },
     {
@@ -715,6 +753,13 @@
       }
     },
     {
+      "@id": "http://purl.org/dc/title",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "titel"
+      }
+    },
+    {
       "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
       "@type": "rdf:Property",
       "name": {
@@ -809,14 +854,14 @@
       "@id": "https://data.europa.eu/snb/model#accreditation",
       "@type": "rdf:Property",
       "name": {
-        "nl": "accreditatie"
+        "nl": "heeft accreditatie"
       }
     },
     {
       "@id": "https://data.europa.eu/snb/model#accreditation",
       "@type": "rdf:Property",
       "name": {
-        "nl": "heeft accreditatie"
+        "nl": "accreditatie"
       }
     },
     {
@@ -971,6 +1016,13 @@
       "@type": "rdf:Property",
       "name": {
         "nl": "display"
+      }
+    },
+    {
+      "@id": "https://data.europa.eu/snb/model#displayParameter",
+      "@type": "rdf:Property",
+      "name": {
+        "nl": "voorstelling"
       }
     },
     {
@@ -1395,7 +1447,7 @@
       "@id": "https://data.europa.eu/snb/model#primaryLanguage",
       "@type": "rdf:Property",
       "name": {
-        "nl": "hoofd taal"
+        "nl": "hoofdtaal"
       }
     },
     {
@@ -1633,7 +1685,7 @@
       "@id": "https://www.w3.org/2018/credentials#issued",
       "@type": "rdf:Property",
       "name": {
-        "nl": "uitgifte datum"
+        "nl": "uitgiftedatum"
       }
     },
     {
@@ -1647,7 +1699,7 @@
       "@id": "https://www.w3.org/2018/credentials#validUntil",
       "@type": "rdf:Property",
       "name": {
-        "nl": "verval datum"
+        "nl": "vervaldatum"
       }
     }
   ],

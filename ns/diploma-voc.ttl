@@ -34,7 +34,8 @@ skos:Concept a rdfs:Class;
     "Kwalificatieklasse"@nl,
     "Accreditatiestatus"@nl,
     "Mediaobjecttype"@nl,
-    "Mediacoderingtype"@nl .
+    "Mediacoderingtype"@nl,
+    "Authenticiteit"@nl .
 
 <https://data.europa.eu/snb/model#Accreditation> a rdfs:Class;
   rdfs:label "Accreditatie"@nl .
@@ -108,22 +109,32 @@ skos:Concept a rdfs:Class;
 <https://w3.org/2018/credentials#VerifiableCredential> a rdfs:Class;
   rdfs:label "Verifieerbare Credential"@nl .
 
-<https://data.vlaanderen.be/ns/onderwijs/leercredential#Bewijs> a owl:Class;
+<https://data.vlaanderen.be/ns/leercredential#Bewijs> a owl:Class;
   rdfs:label "Bewijs"@nl;
   rdfs:comment "Een bewijs dat aantoont dat een persoon een bepaalde opleiding voltooid heeft of relevante beroepservaring heeft."@nl;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/onderwijs/leercredential> .
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/leercredential> .
 
-<https://data.vlaanderen.be/ns/onderwijs/leercredential#Leercredential> a owl:Class;
+<https://data.vlaanderen.be/ns/leercredential#Leercredential> a owl:Class;
   rdfs:label "Leercredential"@nl;
   rdfs:comment "Een reeks van een of meer beweringen over leerervaringen, gemaakt door een uitgever."@nl;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/onderwijs/leercredential>;
-  rdfs:subClassOf <https://data.vlaanderen.be/ns/onderwijs/leercredential#Credential> .
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/leercredential>;
+  rdfs:subClassOf <https://data.vlaanderen.be/ns/leercredential#Credential> .
 
-<https://data.vlaanderen.be/ns/onderwijs/leercredential#geassocieerdeVaardigheid> a owl:ObjectProperty;
+<https://data.vlaanderen.be/ns/leercredential#Voorstelling> a owl:Class;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/leercredential> .
+
+<https://data.vlaanderen.be/ns/leercredential#authenticiteit> a owl:ObjectProperty;
+  rdfs:label "authenticiteit"@nl;
+  rdfs:comment "TODO"@nl;
+  rdfs:domain <https://data.europa.eu/snb/model#Claim>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/leercredential>;
+  rdfs:range skos:Concept .
+
+<https://data.vlaanderen.be/ns/leercredential#geassocieerdeVaardigheid> a owl:ObjectProperty;
   rdfs:label "geassocieerde vaardigheid"@nl;
   rdfs:comment "TODO"@nl;
   rdfs:domain <https://data.europa.eu/snb/model#LearningOutcome>;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/onderwijs/leercredential>;
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/leercredential>;
   rdfs:range skos:Concept .
 
 dc:description a rdf:Property;
@@ -152,6 +163,9 @@ dc:type a rdf:Property;
   rdfs:label "type"@nl,
     "accreditatietype"@nl .
 
+<http://purl.org/dc/title> a rdf:Property;
+  rdfs:label "titel"@nl .
+
 skos:altLabel a rdf:Property;
   rdfs:label "alternatieve naam"@nl .
 
@@ -171,8 +185,8 @@ foaf:homepage a rdf:Property;
   rdfs:label "NQF-niveau"@nl .
 
 <https://data.europa.eu/snb/model#accreditation> a rdf:Property;
-  rdfs:label "accreditatie"@nl,
-    "heeft accreditatie"@nl .
+  rdfs:label "heeft accreditatie"@nl,
+    "accreditatie"@nl .
 
 <https://data.europa.eu/snb/model#accreditingAgent> a rdf:Property;
   rdfs:label "verstrekt door"@nl .
@@ -227,7 +241,8 @@ foaf:homepage a rdf:Property;
   rdfs:label "ingericht door"@nl .
 
 <https://data.europa.eu/snb/model#displayParameter> a rdf:Property;
-  rdfs:label "display"@nl .
+  rdfs:label "display"@nl,
+    "voorstelling"@nl .
 
 <https://data.europa.eu/snb/model#educationLevel> a rdf:Property;
   rdfs:label "onderwijsniveau"@nl .
@@ -359,7 +374,7 @@ foaf:homepage a rdf:Property;
   rdfs:label "punten"@nl .
 
 <https://data.europa.eu/snb/model#primaryLanguage> a rdf:Property;
-  rdfs:label "hoofd taal"@nl .
+  rdfs:label "hoofdtaal"@nl .
 
 <https://data.europa.eu/snb/model#provenBy> a rdf:Property;
   rdfs:label "bewezen door"@nl .
@@ -423,24 +438,24 @@ foaf:homepage a rdf:Property;
 <https://data.europa.eu/snb/model#workload> a rdf:Property;
   rdfs:label "workload"@nl .
 
-<https://data.vlaanderen.be/ns/onderwijs/leercredential#Credential> a owl:Class;
+<https://data.vlaanderen.be/ns/leercredential#Credential> a owl:Class;
   rdfs:label "Credential"@nl;
   rdfs:comment "Een credential is een reeks van een of meer beweringen gemaakt door een uitgever."@nl;
-  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/onderwijs/leercredential> .
+  rdfs:isDefinedBy <https://data.vlaanderen.be/ns/leercredential> .
 
 <https://w3id.org/security#proof> a rdf:Property;
   rdfs:label "bewijs"@nl .
 
 <https://www.w3.org/2018/credentials#issued> a rdf:Property;
-  rdfs:label "uitgifte datum"@nl .
+  rdfs:label "uitgiftedatum"@nl .
 
 <https://www.w3.org/2018/credentials#validFrom> a rdf:Property;
   rdfs:label "geldig van"@nl .
 
 <https://www.w3.org/2018/credentials#validUntil> a rdf:Property;
-  rdfs:label "verval datum"@nl .
+  rdfs:label "vervaldatum"@nl .
 
-<https://data.vlaanderen.be/ns/onderwijs/leercredential> a owl:Ontology;
+<https://data.vlaanderen.be/ns/leercredential> a owl:Ontology;
   rdfs:label "diploma-voc"@en,
     "diploma-voc"@nl;
   dc:contributor [
@@ -493,6 +508,7 @@ foaf:homepage a rdf:Property;
     dc:temporal,
     dc:title,
     dc:type,
+    <http://purl.org/dc/title>,
     skos:altLabel,
     <http://www.w3.org/ns/adms#identifier>,
     foaf:homepage,

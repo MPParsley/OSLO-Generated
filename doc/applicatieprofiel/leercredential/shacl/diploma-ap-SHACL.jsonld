@@ -38,7 +38,7 @@
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/onderwijs/leercredential#Bewijs"
+      "sh:targetClass": "https://data.vlaanderen.be/ns/leercredential#Bewijs"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/diploma-ap#CredentialShape",
@@ -58,18 +58,18 @@
           "sh:description": "De datum en tijd waarop het certificaat digitaal ondertekend is.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
-          "sh:name": "uitgifteDatum",
+          "sh:name": "uitgiftedatum",
           "sh:path": "https://www.w3.org/2018/credentials#issued"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
           "sh:description": "De vervaldatum.",
           "sh:maxCount": "1",
-          "sh:name": "vervalDatum",
+          "sh:name": "vervaldatum",
           "sh:path": "https://www.w3.org/2018/credentials#validUntil"
         }
       ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/onderwijs/leercredential#Credential"
+      "sh:targetClass": "https://data.vlaanderen.be/ns/leercredential#Credential"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/diploma-ap#LeercredentialShape",
@@ -84,7 +84,7 @@
           "sh:path": "http://purl.org/dc/terms/description"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/onderwijs/leercredential#Bewijs",
+          "sh:class": "https://data.vlaanderen.be/ns/leercredential#Bewijs",
           "sh:description": "TODO",
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -98,6 +98,7 @@
           "sh:path": "https://data.europa.eu/snb/model#attachment"
         },
         {
+          "sh:class": "https://data.vlaanderen.be/ns/leercredential#Voorstelling",
           "sh:description": "TODO",
           "sh:maxCount": "1",
           "sh:name": "display",
@@ -112,31 +113,16 @@
           "sh:path": "https://w3.org/2018/credentials#credentialSubject"
         },
         {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "TODO",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "hoofdTaal",
-          "sh:path": "https://data.europa.eu/snb/model#primaryLanguage"
-        },
-        {
           "sh:class": "http://www.w3.org/ns/adms#Identifier",
           "sh:description": "TODO",
           "sh:name": "identificator",
           "sh:path": "http://www.w3.org/ns/adms#identifier"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/onderwijs/leercredential#Leercredential",
+          "sh:class": "https://data.vlaanderen.be/ns/leercredential#Leercredential",
           "sh:description": "TODO",
           "sh:name": "omvat",
           "sh:path": "https://data.europa.eu/snb/model#hasPart"
-        },
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:description": "TODO",
-          "sh:minCount": "1",
-          "sh:name": "taal",
-          "sh:path": "http://purl.org/dc/terms/language"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -161,16 +147,46 @@
           "sh:minCount": "1",
           "sh:name": "uitgever",
           "sh:path": "https://w3.org/2018/credentials#issuer"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/leercredential#Voorstelling",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:name": "voorstelling",
+          "sh:path": "https://data.europa.eu/snb/model#displayParameter"
         }
       ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/onderwijs/leercredential#Leercredential"
+      "sh:targetClass": "https://data.vlaanderen.be/ns/leercredential#Leercredential"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/diploma-ap#GenderShape",
+      "@id": "https://data.vlaanderen.be/shacl/diploma-ap#VoorstellingShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#Gender"
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "hoofdtaal",
+          "sh:path": "https://data.europa.eu/snb/model#primaryLanguage"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "TODO",
+          "sh:minCount": "1",
+          "sh:name": "taal",
+          "sh:path": "http://purl.org/dc/terms/language"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "TODO",
+          "sh:minCount": "1",
+          "sh:name": "titel",
+          "sh:path": "http://purl.org/dc/title"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/leercredential#Voorstelling"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/diploma-ap#JurisdictieShape",
@@ -182,7 +198,7 @@
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "identificator",
-          "sh:path": "http://fixme.com#identificator"
+          "sh:path": "http://www.w3.org/ns/adms#Identifier"
         }
       ],
       "sh:targetClass": "http://purl.org/dc/terms/Jurisdiction"
@@ -196,7 +212,7 @@
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
           "sh:maxCount": "1",
           "sh:name": "identificator",
-          "sh:path": "http://fixme.com#identificator"
+          "sh:path": "http://www.w3.org/ns/adms#identifier"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -275,14 +291,14 @@
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "string",
-          "sh:path": "http://fixme.com#string"
+          "sh:path": "http://www.w3.org/2000/01/rdf-schema#comment"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "type",
-          "sh:path": "http://fixme.com#type"
+          "sh:path": "http://purl.org/dc/terms/type"
         }
       ],
       "sh:targetClass": "http://www.w3.org/2000/01/rdf-schema#Literal"
@@ -386,6 +402,13 @@
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/diploma-ap#GenderShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/diploma-ap#LeercredentialtypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -477,6 +500,20 @@
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/diploma-ap#OrganisatieClassificatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/diploma-ap#AuthenticiteitShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/diploma-ap#PeriodeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -492,7 +529,7 @@
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
           "sh:maxCount": "1",
           "sh:name": "duur",
-          "sh:path": "http://fixme.com#duur"
+          "sh:path": "http://www.w3.org/2006/time#hasDuration"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
@@ -508,8 +545,52 @@
       "@id": "https://data.vlaanderen.be/shacl/diploma-ap#IdentificatorShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://www.w3.org/ns/adms#identifier"
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "notatie",
+          "sh:path": "http://www.w3.org/2004/02/skos/core#notation"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:name": "schemaNaam",
+          "sh:path": "http://www.w3.org/2001/01/rdf-schema#label"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:name": "schemaURI",
+          "sh:path": "http://purl.org/dc/terms/conformsTo"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:name": "uitgevendeAutoriteitNaam",
+          "sh:path": "http://www.w3.org/ns/adms#schemeAgency"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:name": "uitgevendeAutoriteitURI",
+          "sh:path": "http://purl.org/dc/term/creator"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:name": "uitgifteDatum",
+          "sh:path": "http://purl.org/dc/terms/issued"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/adms#Identifier"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/diploma-ap#OrganisatieShape",
@@ -529,6 +610,12 @@
           "sh:path": "http://www.w3.org/2004/02/skos/core#altLabel"
         },
         {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Rangschikking van de organisatie in een classificatiesysteem.",
+          "sh:name": "classificatie",
+          "sh:path": "http://www.w3.org/ns/org#classification"
+        },
+        {
           "sh:class": "http://schema.org/ContactPoint",
           "sh:description": "Informatie zoals email, telefoon... die toelaat de Organisatie te contacteren.",
           "sh:name": "contactinfo",
@@ -537,7 +624,7 @@
         {
           "sh:class": "https://data.europa.eu/snb/model#Note",
           "sh:name": "extraInformatie",
-          "sh:path": "http://fixme.com#extraInformatie"
+          "sh:path": "https://data.europa.eu/snb/model#additionalNote"
         },
         {
           "sh:class": "http://www.w3.org/ns/org#Organization",
@@ -555,7 +642,7 @@
         {
           "sh:class": "http://www.w3.org/ns/adms#Identifier",
           "sh:name": "identificator",
-          "sh:path": "http://fixme.com#identificator"
+          "sh:path": "http://www.w3.org/ns/adms#identifier"
         },
         {
           "sh:class": "http://www.w3.org/ns/org#Organization",
@@ -567,13 +654,12 @@
           "sh:class": "https://data.europa.eu/snb/model#MediaObject",
           "sh:maxCount": "1",
           "sh:name": "logo",
-          "sh:path": "http://fixme.com#logo"
+          "sh:path": "http://schema.org/logo"
         },
         {
           "sh:class": "http://www.w3.org/ns/org#Site",
-          "sh:minCount": "1",
           "sh:name": "vestiging",
-          "sh:path": "http://fixme.com#vestiging"
+          "sh:path": "http://www.w3.org/ns/org#hasPrimarySite"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -595,7 +681,7 @@
           "sh:class": "http://www.w3.org/ns/prov#Location",
           "sh:minCount": "1",
           "sh:name": "locatie",
-          "sh:path": "http://fixme.com#locatie"
+          "sh:path": "http://data.europa.eu/m8g/location"
         }
       ],
       "sh:targetClass": "http://www.w3.org/ns/org#Site"
@@ -609,7 +695,6 @@
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:description": "Gedeelte van de volledige naam vd persoon ontvangen van de vorige generatie.",
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": "achternaam",
           "sh:path": "http://xmlns.com/foaf/0.1/familyName"
         },
@@ -638,23 +723,23 @@
           "sh:class": "http://purl.org/dc/terms/Location",
           "sh:maxCount": "1",
           "sh:name": "geboorteplaats",
-          "sh:path": "http://fixme.com#geboorteplaats"
+          "sh:path": "http://www.w3.org/ns/person#placeOfBirth"
         },
         {
-          "sh:class": "http://fixme.com#Gender",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:maxCount": "1",
           "sh:name": "gender",
-          "sh:path": "http://fixme.com#gender"
+          "sh:path": "http://data.europa.eu/m8g/gender"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/onderwijs/leercredential#Leercredential",
+          "sh:class": "https://data.vlaanderen.be/ns/leercredential#Leercredential",
           "sh:name": "heeftCredential",
           "sh:path": "https://data.europa.eu/snb/model#hasCredential"
         },
         {
           "sh:class": "http://www.w3.org/ns/adms#Identifier",
           "sh:name": "identificator",
-          "sh:path": "http://fixme.com#identificator"
+          "sh:path": "http://www.w3.org/ns/adms#identifier"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -666,19 +751,18 @@
         {
           "sh:class": "http://purl.org/dc/terms/Jurisdiction",
           "sh:name": "staatsburgerschap",
-          "sh:path": "http://fixme.com#staatsburgerschap"
+          "sh:path": "http://purl.org/dc/terms/citizenship"
         },
         {
           "sh:class": "http://www.w3.org/ns/locn#Address",
           "sh:description": "TODO",
           "sh:maxCount": "1",
           "sh:name": "verblijfsadres",
-          "sh:path": "http://fixme.com#verblijfsadres"
+          "sh:path": "http://www.w3.org/ns/person#residency"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:description": "Naam die een kind bij geboorte wordt gegeven. Onderscheidt het kind van de andere kinderen in de familie.",
-          "sh:minCount": "1",
           "sh:name": "voornaam",
           "sh:path": "http://xmlns.com/foaf/0.1/givenName"
         }
@@ -693,17 +777,17 @@
         {
           "sh:class": "http://www.w3.org/ns/locn#Address",
           "sh:name": "adres",
-          "sh:path": "http://fixme.com#adres"
+          "sh:path": "http://data.europa.eu/m8g/address"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:name": "naam",
-          "sh:path": "http://fixme.com#naam"
+          "sh:path": "http://www.w3.org/ns/locn#geographicName"
         },
         {
           "sh:class": "http://purl.org/dc/terms/Location",
           "sh:name": "plaats",
-          "sh:path": "http://fixme.com#plaats"
+          "sh:path": "http://data.europa.eu/m8g/location"
         }
       ],
       "sh:targetClass": "http://www.w3.org/ns/prov#Location"
@@ -737,12 +821,6 @@
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/ns/adms#Identifier",
-          "sh:description": "De overdraagbare en unieke identificatiecode van het accreditatiedossier.",
-          "sh:name": "Identificator",
-          "sh:path": "http://www.w3.org/ns/adms#identifier"
-        },
         {
           "sh:class": "https://data.europa.eu/snb/model#Webresource",
           "sh:description": "TODO",
@@ -803,6 +881,12 @@
           "sh:path": "http://xmlns.com/foaf/0.1/homepage"
         },
         {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "De overdraagbare en unieke identificatiecode van het accreditatiedossier.",
+          "sh:name": "identificator",
+          "sh:path": "http://www.w3.org/ns/adms#identifier"
+        },
+        {
           "sh:class": "http://purl.org/dc/terms/Jurisdiction",
           "sh:description": "TODO",
           "sh:name": "jurisdictie",
@@ -859,13 +943,14 @@
         },
         {
           "sh:class": "http://www.w3.org/ns/org#Organization",
-          "sh:description": "De kwaliteitsborgingsautoriteit. (d.w.z. beoordelaar)",
+          "sh:description": "De kwaliteitsborgingsautoriteit (d.w.z. beoordelaar).",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "verstrektDoor",
           "sh:path": "https://data.europa.eu/snb/model#accreditingAgent"
         },
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
           "sh:description": "De datum waarop de accreditatie vervalt of is verlopen.",
           "sh:maxCount": "1",
           "sh:name": "vervaldatum",
@@ -1069,16 +1154,17 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "http://www.w3.org/ns/adms#Identifier",
-          "sh:description": "TODO",
-          "sh:name": "Identificator",
-          "sh:path": "http://www.w3.org/ns/adms#identifier"
-        },
-        {
           "sh:class": "https://data.europa.eu/snb/model#Webresource",
           "sh:description": "TODO",
           "sh:name": "aanvullendDocument",
           "sh:path": "https://data.europa.eu/snb/model#supplementaryDocument"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "TODO",
+          "sh:maxCount": "1",
+          "sh:name": "authenticiteit",
+          "sh:path": "https://data.vlaanderen.be/ns/leercredential#authenticiteit"
         },
         {
           "sh:class": "https://data.europa.eu/snb/model#Note",
@@ -1092,6 +1178,12 @@
           "sh:description": "TODO",
           "sh:name": "extraInformatie",
           "sh:path": "https://data.europa.eu/snb/model#additionalNote"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:description": "TODO",
+          "sh:name": "identificator",
+          "sh:path": "http://www.w3.org/ns/adms#identifier"
         },
         {
           "sh:class": "https://data.europa.eu/snb/model#Claim",
@@ -1340,7 +1432,6 @@
           "sh:path": "https://data.europa.eu/snb/model#specialisationOf"
         },
         {
-          "qb:codeList": "https://fixme.com",
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "TODO",
           "sh:name": "studiegebied",
@@ -1612,7 +1703,7 @@
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "TODO",
           "sh:name": "geassocieerdeVaardigheid",
-          "sh:path": "https://data.vlaanderen.be/ns/onderwijs/leercredential#geassocieerdeVaardigheid"
+          "sh:path": "https://data.vlaanderen.be/ns/leercredential#geassocieerdeVaardigheid"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
