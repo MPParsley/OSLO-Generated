@@ -1,0 +1,372 @@
+{
+  "@context": {
+    "AIMDBStatus": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus",
+    "AIMObject": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject",
+    "AIMToestand": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand",
+    "Afdekking": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Afdekking",
+    "Afdekking.herkomst": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Afdekking.herkomst",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "Afdekking.oppervlakte": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Afdekking.oppervlakte",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter"
+    },
+    "Afgraving": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Afgraving",
+    "Afgraving.bestemming": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Afgraving.bestemming",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "Afgraving.gewicht": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Afgraving.gewicht",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInTon"
+    },
+    "Afgraving.oppervlakte": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Afgraving.oppervlakte",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter"
+    },
+    "Afgraving.volume": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Afgraving.volume",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter"
+    },
+    "AnyURI": "http://www.w3.org/2001/XMLSchema#anyURI",
+    "Bemesting": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Bemesting",
+    "Bemesting.gewicht": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Bemesting.gewicht",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram"
+    },
+    "Bevestiging": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Bevestiging",
+    "Bodemverbeteringsmiddel": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Bodemverbeteringsmiddel",
+    "Bodemverbeteringsmiddel.gewicht": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Bodemverbeteringsmiddel.gewicht",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram"
+    },
+    "Bodemverbeteringsmiddel.oppervlakte": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Bodemverbeteringsmiddel.oppervlakte",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter"
+    },
+    "Bodemverbeteringsmiddel.volume": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Bodemverbeteringsmiddel.volume",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter"
+    },
+    "Boolean": "http://www.w3.org/2001/XMLSchema#boolean",
+    "Date": "http://www.w3.org/2001/XMLSchema#date",
+    "Decimal": "http://www.w3.org/2001/XMLSchema#decimal",
+    "DtcDocument": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument",
+    "DtcGrondbijmenging": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#DtcGrondbijmenging",
+    "DtcGrondsoort": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#DtcGrondsoort",
+    "DtcIdentificator": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator",
+    "DtcSoortVervuiling": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#DtcSoortVervuiling",
+    "DtcSoortVervuiling.soortVervuiling": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#DtcSoortVervuiling.soortVervuiling",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "DteTekstblok": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DteTekstblok",
+    "DteTekstblok.waarde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DteTekstblok.waarde",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Grond": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Grond",
+    "Grond.Bevestiging": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/grondwerken/#Bevestiging",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#PiezometrischeBuis"
+    },
+    "Grond.HeeftBeheer": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/grondwerken/#Heeft beheer",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Afgraving"
+    },
+    "Grond.soortVervuiling": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Grond.soortVervuiling",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#DtcSoortVervuiling"
+    },
+    "Grondbewerking": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Grondbewerking",
+    "Grondbewerking.oppervlakte": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Grondbewerking.oppervlakte",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter"
+    },
+    "HeeftBeheer": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#HeeftBeheer",
+    "KlAIMToestand": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlAfgravingSoorten": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlAlgMimeType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlBemesting": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlGewaarborgdeWrijvingshoek": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlGrondBijmengingHoeveelheidCode": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlGrondHoofdnaamCode": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlGrondbestemming": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlGrondbewerking": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlGrondherkomst": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlGrondverbeteringsmiddel": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlLaagRol": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlOphogingSoorten": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlUitgravingSoorten": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KlVervuilingSoorten": "http://www.w3.org/2004/02/skos/core#Concept",
+    "KwantWrdInCentimeter": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter",
+    "KwantWrdInCentimeter.standaardEenheid": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter.standaardEenheid",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "KwantWrdInCentimeter.waarde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter.waarde",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "KwantWrdInKilogram": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram",
+    "KwantWrdInKilogram.standaardEenheid": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram.standaardEenheid",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "KwantWrdInKilogram.waarde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram.waarde",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "KwantWrdInKubiekeMeter": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter",
+    "KwantWrdInKubiekeMeter.standaardEenheid": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter.standaardEenheid",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "KwantWrdInKubiekeMeter.waarde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter.waarde",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "KwantWrdInMaand": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand",
+    "KwantWrdInMaand.standaardEenheid": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand.standaardEenheid",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "KwantWrdInMaand.waarde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand.waarde",
+      "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "KwantWrdInMeter": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter",
+    "KwantWrdInMeter.standaardEenheid": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter.standaardEenheid",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "KwantWrdInMeter.waarde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter.waarde",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "KwantWrdInTon": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInTon",
+    "KwantWrdInTon.standaardEenheid": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInTon.standaardEenheid",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "KwantWrdInTon.waarde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInTon.waarde",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "KwantWrdInVierkanteMeter": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter",
+    "KwantWrdInVierkanteMeter.standaardEenheid": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter.standaardEenheid",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "KwantWrdInVierkanteMeter.waarde": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter.waarde",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "Laag": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Laag",
+    "Laag.oppervlakte": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter"
+    },
+    "LaagDikte": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#LaagDikte",
+    "LigtOp": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/grondwerken/#Ligt op",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Laag"
+    },
+    "Literal": "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "NonNegativeInteger": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "Ophoging": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Ophoging",
+    "Ophoging.gewicht": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Ophoging.gewicht",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInTon"
+    },
+    "Ophoging.herkomst": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Ophoging.herkomst",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "Ophoging.volume": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Ophoging.volume",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter"
+    },
+    "PiezometrischeBuis": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#PiezometrischeBuis",
+    "PiezometrischeBuis.Bevestiging": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/grondwerken/#Bevestiging",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Grond"
+    },
+    "String": "http://www.w3.org/2001/XMLSchema#string",
+    "Uitgraving": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Uitgraving",
+    "Uitgraving.bestemming": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Uitgraving.bestemming",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "Uitgraving.gewicht": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Uitgraving.gewicht",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInTon"
+    },
+    "Uitgraving.volume": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Uitgraving.volume",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter"
+    },
+    "assetId": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.assetId",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator"
+    },
+    "bemesting": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Bemesting.bemesting",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "bestandsnaam": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument.bestandsnaam",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "bestekPostNummer": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.bestekPostNummer",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "bijmenging": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#DtcGrondsoort.bijmenging",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#DtcGrondbijmenging"
+    },
+    "bijmengingshoofdnaamcode": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#DtcGrondbijmenging.bijmengingshoofdnaamcode",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "breedte": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Laag.breedte",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter"
+    },
+    "datumOprichtingObject": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.datumOprichtingObject",
+      "@type": "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "diepte": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#PiezometrischeBuis.diepte",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter"
+    },
+    "dikte": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#LaagDikte.dikte",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter"
+    },
+    "grondsoort": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Grond.grondsoort",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#DtcGrondsoort"
+    },
+    "grondverbeteringsmiddel": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Bodemverbeteringsmiddel.grondverbeteringsmiddel",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "hoeveelheidscode": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#DtcGrondbijmenging.hoeveelheidscode",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "hoofdnaamcode": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#DtcGrondsoort.hoofdnaamcode",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "identificator": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "isActief": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus.isActief",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "isPlaatselijk": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#DtcGrondbijmenging.isPlaatselijk",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "laagRol": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Laag.laagRol",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "lengte": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Laag.lengte",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter"
+    },
+    "microgramPerKilogram": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#DtcSoortVervuiling.microgramPerKilogram",
+      "@type": ""
+    },
+    "milieuHygienischeCode": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Grond.milieuHygienischeCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "mimeType": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument.mimeType",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "notitie": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.notitie",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "omschrijving": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument.omschrijving",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DteTekstblok"
+    },
+    "soortAfgraving": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Afgraving.soortAfgraving",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "soortGrondbewerking": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Grondbewerking.soortGrondbewerking",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "soortOphoging": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Ophoging.soortOphoging",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "soortUitgraving": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Uitgraving.soortUitgraving",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "standaardBestekPostNummer": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.standaardBestekPostNummer",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "technischVerslagBodemonderzoek": {
+      "@container": "@set",
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Grond.technischVerslagBodemonderzoek",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument"
+    },
+    "theoretischeLevensduur": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.theoretischeLevensduur",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand"
+    },
+    "toegekendDoor": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.toegekendDoor",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "toestand": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMToestand.toestand",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "tot": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Grond.tot",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter"
+    },
+    "typeURI": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject.typeURI",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "uri": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument.uri",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "van": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Grond.van",
+      "@type": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter"
+    },
+    "wrijvingshoek": {
+      "@id": "https://wegenenverkeer-test.data.vlaanderen.be/ns/levenscyclus#Ophoging.wrijvingshoek",
+      "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+    }
+  }
+}
