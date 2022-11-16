@@ -11,12 +11,12 @@
     <https://data.vlaanderen.be/shacl/constructie-element#DecimalShape>,
     <https://data.vlaanderen.be/shacl/constructie-element#NonNegativeIntegerShape>,
     <https://data.vlaanderen.be/shacl/constructie-element#StringShape>,
-    <https://data.vlaanderen.be/shacl/constructie-element#KlBetonmilieuklasseShape>,
-    <https://data.vlaanderen.be/shacl/constructie-element#KlBetonomgevingsklasseShape>,
-    <https://data.vlaanderen.be/shacl/constructie-element#KlBetonsterkteklasseShape>,
     <https://data.vlaanderen.be/shacl/constructie-element#KlGebruiksdomeinShape>,
     <https://data.vlaanderen.be/shacl/constructie-element#KlAlgMimeTypeShape>,
     <https://data.vlaanderen.be/shacl/constructie-element#KlToeslagmiddelBetonShape>,
+    <https://data.vlaanderen.be/shacl/constructie-element#KlBetonmilieuklasseShape>,
+    <https://data.vlaanderen.be/shacl/constructie-element#KlBetonomgevingsklasseShape>,
+    <https://data.vlaanderen.be/shacl/constructie-element#KlBetonsterkteklasseShape>,
     <https://data.vlaanderen.be/shacl/constructie-element#KlAIMToestandShape>,
     <https://data.vlaanderen.be/shacl/constructie-element#KlDikteBetonnenPlaatShape>,
     <https://data.vlaanderen.be/shacl/constructie-element#KlUitvoeringsmethodeShape>,
@@ -61,6 +61,7 @@
     <https://data.vlaanderen.be/shacl/constructie-element#KwantWrdInMaandShape>,
     <https://data.vlaanderen.be/shacl/constructie-element#KwantWrdInMeterShape>,
     <https://data.vlaanderen.be/shacl/constructie-element#KwantWrdInMillimeterShape>,
+    <https://data.vlaanderen.be/shacl/constructie-element#KwantWrdInVierkanteMeterShape>,
     <https://data.vlaanderen.be/shacl/constructie-element#BalkShape>,
     <https://data.vlaanderen.be/shacl/constructie-element#BrugliggerShape>,
     <https://data.vlaanderen.be/shacl/constructie-element#HorizontaleConstructieplaatShape>,
@@ -167,13 +168,6 @@
 <https://data.vlaanderen.be/shacl/constructie-element#BalkShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:string;
-    shacl:description "De mensleesbare naam van de balk. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing.";
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "naam";
-    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Balk.naam>
-  ], [
     shacl:class skos:Concept;
     shacl:description "De soort van balk.";
     shacl:maxCount 1;
@@ -281,11 +275,11 @@
 <https://data.vlaanderen.be/shacl/constructie-element#BreedplaatShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Wand>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#HorizontaleConstructieplaat>;
     shacl:description "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.";
     shacl:name "HoortBij"
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#HorizontaleConstructieplaat>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Wand>;
     shacl:description "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.";
     shacl:name "HoortBij"
   ], [
@@ -295,6 +289,13 @@
     shacl:minCount 1;
     shacl:name "dikte";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Breedplaat.dikte>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter>;
+    shacl:description "De oppervlakte van de breedplaat, uitgedrukt in vierkante meter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "oppervlakte";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Breedplaat.oppervlakte>
   ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument>;
     shacl:description "De technische fiche van de breedplaat. Alle afmetingen en hoe het samengesteld is, is hierin opgenomen.";
@@ -321,13 +322,6 @@
     shacl:minCount 1;
     shacl:name "detailplanBrugligger";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Brugligger.detailplanBrugligger>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:description "De mensleesbare naam van de brugligger. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing.";
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "naam";
-    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Brugligger.naam>
   ], [
     shacl:class skos:Concept;
     shacl:description "Het type van brugligger.";
@@ -371,6 +365,13 @@
     shacl:minCount 1;
     shacl:name "typeBeton";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Druklaag.typeBeton>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter>;
+    shacl:description "Het volume van de druklaag, uitgedrukt in kubieke meter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "volume";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Druklaag.volume>
   ];
   shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Druklaag> .
 
@@ -622,13 +623,6 @@
 <https://data.vlaanderen.be/shacl/constructie-element#HorizontaleConstructieplaatShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:string;
-    shacl:description "De mensleesbare naam van de horizontale plaat. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing.";
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "naam";
-    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#HorizontaleConstructieplaat.naam>
-  ], [
     shacl:class skos:Concept;
     shacl:description "Het type horizontale plaat.";
     shacl:maxCount 1;
@@ -684,6 +678,13 @@
     shacl:minCount 1;
     shacl:name "lengte";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#HoutenConstructieprofiel.lengte>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter>;
+    shacl:description "Het volume, uitgedrukt in kubieke meter, van het houten profiel in zijn geheel.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "volume";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#HoutenConstructieprofiel.volume>
   ];
   shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#HoutenConstructieprofiel> .
 
@@ -809,13 +810,6 @@
     shacl:name "hellingshoek";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Kolom.hellingshoek>
   ], [
-    shacl:datatype xsd:string;
-    shacl:description "De mensleesbare naam van de kolom. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing.";
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "naam";
-    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Kolom.naam>
-  ], [
     shacl:class skos:Concept;
     shacl:description "Het type van de zijden dat de kolom heeft (recht, rond, schuin,...)";
     shacl:maxCount 1;
@@ -938,6 +932,25 @@
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter.waarde>
   ];
   shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter> .
+
+<https://data.vlaanderen.be/shacl/constructie-element#KwantWrdInVierkanteMeterShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in vierkante meter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter.standaardEenheid>
+  ], [
+    shacl:class xsd:decimal;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter> .
 
 <https://data.vlaanderen.be/shacl/constructie-element#LigtOpShape> a shacl:NodeShape;
   shacl:closed false;
@@ -1104,7 +1117,7 @@
     shacl:name "HoortBij"
   ], [
     shacl:datatype xsd:boolean;
-    shacl:description "Bij het fabriceren wordt er bewust een ronding aangebracht in het profiel. Dit kan bijvoorbeeld dienen ter compensatie van doorbuiging of omwille van esthetische redenen,...";
+    shacl:description "Geeft aan of er bij het fabriceren bewust een ronding wordt aangebracht in het profiel. Dit kan bijvoorbeeld dienen ter compensatie van doorbuiging of omwille van esthetische redenen,...";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "isVoorgebogen";
@@ -1149,10 +1162,6 @@
     shacl:description "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.";
     shacl:name "HoortBij"
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Kolom>;
-    shacl:description "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.";
-    shacl:name "HoortBij"
-  ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Windverband>;
     shacl:description "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.";
     shacl:name "HoortBij"
@@ -1161,12 +1170,9 @@
     shacl:description "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.";
     shacl:name "HoortBij"
   ], [
-    shacl:datatype xsd:string;
-    shacl:description "De mensleesbare naam van het vakwerk-element. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing.";
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "naam";
-    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VakwerkElement.naam>
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Kolom>;
+    shacl:description "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.";
+    shacl:name "HoortBij"
   ], [
     shacl:class skos:Concept;
     shacl:description "Het type van vakwerk-element.";
@@ -1186,13 +1192,6 @@
     shacl:minCount 1;
     shacl:name "isDragend";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Wand.isDragend>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:description "De mensleesbare naam van de wand. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing.";
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "naam";
-    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Wand.naam>
   ], [
     shacl:class skos:Concept;
     shacl:description "De functie die de wand uitoefent.";
@@ -1216,13 +1215,6 @@
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Brugligger>;
     shacl:description "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.";
     shacl:name "HoortBij"
-  ], [
-    shacl:datatype xsd:string;
-    shacl:description "De mensleesbare naam van het windverband. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing.";
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "naam";
-    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Windverband.naam>
   ], [
     shacl:class skos:Concept;
     shacl:description "Type windverband.";

@@ -83,27 +83,6 @@
       "sh:targetClass": "http://www.w3.org/2001/XMLSchema#string"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/constructie-element#KlBetonmilieuklasseShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/constructie-element#KlBetonomgevingsklasseShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
-    },
-    {
-      "@id": "https://data.vlaanderen.be/shacl/constructie-element#KlBetonsterkteklasseShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
-    },
-    {
       "@id": "https://data.vlaanderen.be/shacl/constructie-element#KlGebruiksdomeinShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -119,6 +98,27 @@
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/constructie-element#KlToeslagmiddelBetonShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/constructie-element#KlBetonmilieuklasseShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/constructie-element#KlBetonomgevingsklasseShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/constructie-element#KlBetonsterkteklasseShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
@@ -384,7 +384,7 @@
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
-          "sh:description": "Bij het fabriceren wordt er bewust een ronding aangebracht in het profiel. Dit kan bijvoorbeeld dienen ter compensatie van doorbuiging of omwille van esthetische redenen,...",
+          "sh:description": "Geeft aan of er bij het fabriceren bewust een ronding wordt aangebracht in het profiel. Dit kan bijvoorbeeld dienen ter compensatie van doorbuiging of omwille van esthetische redenen,...",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "isVoorgebogen",
@@ -917,18 +917,34 @@
       "sh:targetClass": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/constructie-element#BalkShape",
+      "@id": "https://data.vlaanderen.be/shacl/constructie-element#KwantWrdInVierkanteMeterShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "De mensleesbare naam van de balk. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing.",
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:description": "De standaard eenheid bij dit datatype is uitgedrukt in vierkante meter.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
-          "sh:name": "naam",
-          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Balk.naam"
+          "sh:name": "standaardEenheid",
+          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter.standaardEenheid"
         },
+        {
+          "sh:class": "http://www.w3.org/2001/XMLSchema#decimal",
+          "sh:description": "Bevat een getal die bij het datatype hoort.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "waarde",
+          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter.waarde"
+        }
+      ],
+      "sh:targetClass": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/constructie-element#BalkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "De soort van balk.",
@@ -954,14 +970,6 @@
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Brugligger.detailplanBrugligger"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "De mensleesbare naam van de brugligger. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "naam",
-          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Brugligger.naam"
-        },
-        {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "Het type van brugligger.",
           "sh:maxCount": "1",
@@ -977,14 +985,6 @@
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "De mensleesbare naam van de horizontale plaat. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "naam",
-          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#HorizontaleConstructieplaat.naam"
-        },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "Het type horizontale plaat.",
@@ -1010,14 +1010,6 @@
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Kolom.hellingshoek"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "De mensleesbare naam van de kolom. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "naam",
-          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Kolom.naam"
-        },
-        {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "Het type van de zijden dat de kolom heeft (recht, rond, schuin,...)",
           "sh:maxCount": "1",
@@ -1040,12 +1032,6 @@
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/constructie-element/#Hoort bij"
         },
         {
-          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Kolom",
-          "sh:description": "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.",
-          "sh:name": "HoortBij",
-          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/constructie-element/#Hoort bij"
-        },
-        {
           "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Windverband",
           "sh:description": "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.",
           "sh:name": "HoortBij",
@@ -1058,12 +1044,10 @@
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/constructie-element/#Hoort bij"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "De mensleesbare naam van het vakwerk-element. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "naam",
-          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VakwerkElement.naam"
+          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Kolom",
+          "sh:description": "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.",
+          "sh:name": "HoortBij",
+          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/constructie-element/#Hoort bij"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -1088,14 +1072,6 @@
           "sh:minCount": "1",
           "sh:name": "isDragend",
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Wand.isDragend"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "De mensleesbare naam van de wand. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "naam",
-          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Wand.naam"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -1126,14 +1102,6 @@
           "sh:description": "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.",
           "sh:name": "HoortBij",
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/constructie-element/#Hoort bij"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "De mensleesbare naam van het windverband. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing.",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": "naam",
-          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Windverband.naam"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -1237,13 +1205,13 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Wand",
+          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#HorizontaleConstructieplaat",
           "sh:description": "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.",
           "sh:name": "HoortBij",
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/constructie-element/#Hoort bij"
         },
         {
-          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#HorizontaleConstructieplaat",
+          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Wand",
           "sh:description": "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.",
           "sh:name": "HoortBij",
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/constructie-element/#Hoort bij"
@@ -1255,6 +1223,14 @@
           "sh:minCount": "1",
           "sh:name": "dikte",
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Breedplaat.dikte"
+        },
+        {
+          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter",
+          "sh:description": "De oppervlakte van de breedplaat, uitgedrukt in vierkante meter.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "oppervlakte",
+          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Breedplaat.oppervlakte"
         },
         {
           "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument",
@@ -1293,6 +1269,14 @@
           "sh:minCount": "1",
           "sh:name": "typeBeton",
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Druklaag.typeBeton"
+        },
+        {
+          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter",
+          "sh:description": "Het volume van de druklaag, uitgedrukt in kubieke meter.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "volume",
+          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Druklaag.volume"
         }
       ],
       "sh:targetClass": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Druklaag"
@@ -1370,6 +1354,14 @@
           "sh:minCount": "1",
           "sh:name": "lengte",
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#HoutenConstructieprofiel.lengte"
+        },
+        {
+          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter",
+          "sh:description": "Het volume, uitgedrukt in kubieke meter, van het houten profiel in zijn geheel.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "volume",
+          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#HoutenConstructieprofiel.volume"
         }
       ],
       "sh:targetClass": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#HoutenConstructieprofiel"
