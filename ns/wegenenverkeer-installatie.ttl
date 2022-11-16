@@ -9,20 +9,20 @@
 
 skos:Concept a rdfs:Class;
   rdfs:label "Wegberm type"@nl,
-    "Type wand"@nl,
-    "Zijden type"@nl,
-    "Type balk"@nl,
+    "Wegberm BIO"@nl,
     "Type vakwerk-element"@nl,
     "Type brugligger"@nl,
     "Type windverband"@nl,
     "Type horizontale plaat"@nl,
-    "Wegberm BIO"@nl,
+    "Type wand"@nl,
+    "Zijden type"@nl,
+    "Type balk"@nl,
     "Type aanvaarbescherming"@nl,
     "Type externe naspanning"@nl,
+    "Graad van statische bepaaldheid"@nl,
     "Type brugdeel"@nl,
     "Type trekker"@nl,
     "Type beweegbaar brugdeel"@nl,
-    "Graad van statische bepaaldheid"@nl,
     "graad van beweegbaarheid"@nl,
     "Type landhoofd"@nl,
     "Materiaal dragende structuur brugdeel"@nl,
@@ -30,33 +30,7 @@ skos:Concept a rdfs:Class;
     "Aardingsinstallatie aardingsstelsel"@nl,
     "Lokaal terreintype"@nl,
     "Z-pad type"@nl,
-    "Pad netwerkprotectie"@nl,
-    "Radioheruitzendinstallatie modelnaam"@nl,
-    "Silo merk"@nl,
-    "Tank materiaal"@nl,
-    "Zoutbijlaadplaats verharding"@nl,
-    "Radioheruitzendinstallatie merk"@nl,
-    "Silo modelnaam"@nl,
-    "Tank merk"@nl,
-    "Tank opstelling"@nl,
-    "tank modelnaam"@nl,
-    "Tank vorm"@nl,
-    "Tank kleur"@nl,
-    "Silo materiaal"@nl .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#ASTRIDInstallatie.certificaat> a owl:ObjectProperty;
-  rdfs:label "certificaat"@nl;
-  rdfs:comment "Documenten van interne of externe organisaties, die de installatie goedkeuren of opmerkingen geven."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#ASTRIDInstallatie>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#ASTRIDInstallatie.technischeFiche> a owl:ObjectProperty;
-  rdfs:label "technische fiche"@nl;
-  rdfs:comment "De technische fiche van de ASTRID installatie."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#ASTRIDInstallatie>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
+    "Pad netwerkprotectie"@nl .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aanvaarbescherming.lengte> a owl:ObjectProperty;
   rdfs:label "lengte"@nl;
@@ -145,6 +119,13 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Balk.naam> a owl:DatatypeProperty;
+  rdfs:label "naam"@nl;
+  rdfs:comment "De mensleesbare naam van de balk. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Balk>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range xsd:string .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Balk.typeBalk> a owl:ObjectProperty;
   rdfs:label "type balk"@nl;
   rdfs:comment "De soort van balk."@nl;
@@ -179,11 +160,12 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:range skos:Concept .
 
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Boog> a owl:Class;
-  rdfs:label "Boog"@nl;
-  rdfs:comment "Een gebogen overspanning (boven een opening), tussen twee steunpunten en ter ondersteuning van een brug, waarbij de druk (ook) zijdelings wordt afgevoerd."@nl;
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Boog.naam> a owl:DatatypeProperty;
+  rdfs:label "naam"@nl;
+  rdfs:comment "De mensleesbare naam van de boog. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Boog>;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ConstructiefObject> .
+  rdfs:range xsd:string .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Brug.burgerlijkeKlasse> a owl:ObjectProperty;
   rdfs:label "burgerlijke klasse"@nl;
@@ -225,7 +207,7 @@ skos:Concept a rdfs:Class;
   rdfs:comment "De oppervlakte van de brug, uitgedrukt in vierkante meter. Dit is meestal de breedte maal lengte."@nl;
   rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Brug>;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter> .
+  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Brugballast> a owl:Class;
   rdfs:label "Brugballast"@nl;
@@ -329,6 +311,13 @@ skos:Concept a rdfs:Class;
   rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Brugligger>;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Brugligger.naam> a owl:DatatypeProperty;
+  rdfs:label "naam"@nl;
+  rdfs:comment "De mensleesbare naam van de brugligger. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Brugligger>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range xsd:string .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Brugligger.type> a owl:ObjectProperty;
   rdfs:label "type"@nl;
@@ -566,6 +555,13 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter> .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#HorizontaleConstructieplaat.naam> a owl:DatatypeProperty;
+  rdfs:label "naam"@nl;
+  rdfs:comment "De mensleesbare naam van de horizontale plaat. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#HorizontaleConstructieplaat>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range xsd:string .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#HorizontaleConstructieplaat.type> a owl:ObjectProperty;
   rdfs:label "type"@nl;
   rdfs:comment "Het type horizontale plaat."@nl;
@@ -639,6 +635,13 @@ skos:Concept a rdfs:Class;
   rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Kolom>;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInDecimaleGraden> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Kolom.naam> a owl:DatatypeProperty;
+  rdfs:label "naam"@nl;
+  rdfs:comment "De mensleesbare naam van de kolom. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Kolom>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range xsd:string .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Kolom.zijden> a owl:ObjectProperty;
   rdfs:label "zijden"@nl;
@@ -796,7 +799,7 @@ skos:Concept a rdfs:Class;
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#MIVInstallatie.technischeDocumentatie> a owl:ObjectProperty;
   rdfs:label "technische documentatie"@nl;
   <http://purl.org/vocab/vann/usageNote> "Bestanden van het type pdf."@nl;
-  rdfs:comment "Documentatie van de onderdelen: LVE / luskaart / communicatiekaart, configurator, ..."@nl;
+  rdfs:comment "Documentatie van de onderdelen: LVE / luskaart / communicatiekaart, configurator,  ..."@nl;
   rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#MIVInstallatie>;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
@@ -884,60 +887,12 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:range xsd:boolean .
 
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Pyloon> a owl:Class;
-  rdfs:label "Pyloon"@nl;
-  rdfs:comment "Een pyloon is een taps toelopende hoge constructie, als drager van kabels e.d. (bv. een hoogspanningmast of een mast van een brug)."@nl;
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Pyloon.naam> a owl:DatatypeProperty;
+  rdfs:label "naam"@nl;
+  rdfs:comment "De mensleesbare naam van de pyloon. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Pyloon>;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ConstructiefObject> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#RadioheruitzendInstallatie.bevatASTRID> a owl:DatatypeProperty;
-  rdfs:label "bevat ASTRID"@nl;
-  rdfs:comment "De al dan niet aanwezigheid van een ASTIRD module in de radioheruitzend installatie."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#RadioheruitzendInstallatie>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range xsd:boolean .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#RadioheruitzendInstallatie.bevatBreakIn> a owl:DatatypeProperty;
-  rdfs:label "bevat break in"@nl;
-  rdfs:comment "De al dan niet aanwezigheid van break in, een installatie die het mogelijk maakt om het radiosignaal te onderbreken om bijv. een noodsignaal uit te sturen."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#RadioheruitzendInstallatie>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range xsd:boolean .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#RadioheruitzendInstallatie.certificaat> a owl:ObjectProperty;
-  rdfs:label "certificaat"@nl;
-  rdfs:comment "Documenten van interne of externe organisaties, die de installatie goedkeuren of opmerkingen geven."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#RadioheruitzendInstallatie>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#RadioheruitzendInstallatie.merk> a owl:ObjectProperty;
-  rdfs:label "merk"@nl;
-  rdfs:comment "Het merk van de radioheruitzend installatie."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#RadioheruitzendInstallatie>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range skos:Concept .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#RadioheruitzendInstallatie.modelnaam> a owl:ObjectProperty;
-  rdfs:label "modelnaam"@nl;
-  rdfs:comment "De modelnaam van de radioheruitzend installatie."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#RadioheruitzendInstallatie>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range skos:Concept .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#RadioheruitzendInstallatie.sadDocument> a owl:ObjectProperty;
-  rdfs:label "system architecture design document"@nl;
-  rdfs:comment "System Architecture Design (SAD) document, dat het ontwerp van de installatie (of de uitbreiding) beschrijft en toelicht."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#RadioheruitzendInstallatie>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#RadioheruitzendInstallatie.technischeFiche> a owl:ObjectProperty;
-  rdfs:label "technische fiche"@nl;
-  rdfs:comment "De technische fiche van een radioheruitzend installatie."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#RadioheruitzendInstallatie>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
+  rdfs:range xsd:string .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Randprofiel.lopendeMeter> a owl:ObjectProperty;
   rdfs:label "lopende meter"@nl;
@@ -945,6 +900,13 @@ skos:Concept a rdfs:Class;
   rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Randprofiel>;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Randprofiel.naam> a owl:DatatypeProperty;
+  rdfs:label "naam"@nl;
+  rdfs:comment "De mensleesbare naam van het randprofiel. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Randprofiel>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range xsd:string .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Rioleringsstelsel.rioleringsstelsel> a owl:ObjectProperty;
   rdfs:label "rioleringsstelsel"@nl;
@@ -961,62 +923,6 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:range skos:Concept .
 
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Silo.diameter> a owl:ObjectProperty;
-  rdfs:label "diameter"@nl;
-  rdfs:comment "De diamater in centimeter van de silo."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Silo>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Silo.hoogte> a owl:ObjectProperty;
-  rdfs:label "hoogte"@nl;
-  rdfs:comment "De hoogte in centimeter tussen het grondoppervlak en de bovenkant van de silo."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Silo>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Silo.materiaal> a owl:ObjectProperty;
-  rdfs:label "materiaal"@nl;
-  rdfs:comment "Het materiaal waaruit de silo vervaardigd is."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Silo>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range skos:Concept .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Silo.merk> a owl:ObjectProperty;
-  rdfs:label "merk"@nl;
-  rdfs:comment "Het merk van de silo."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Silo>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range skos:Concept .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Silo.modelnaam> a owl:ObjectProperty;
-  rdfs:label "modelnaam"@nl;
-  rdfs:comment "De modelnaam van de silo."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Silo>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range skos:Concept .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Silo.onderDoorrijHoogte> a owl:ObjectProperty;
-  rdfs:label "onderdoorrijhoogte"@nl;
-  rdfs:comment "De maximale doorrijhoogte voor een voertuig in centimeter beschikbaar tussen het grondoppervlak en de onderkant van de silo."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Silo>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Silo.technischeFiche> a owl:ObjectProperty;
-  rdfs:label "technische fiche"@nl;
-  rdfs:comment "De technische fiche van de silo."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Silo>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Silo.volume> a owl:ObjectProperty;
-  rdfs:label "volume"@nl;
-  rdfs:comment "Het volume in kubieke meter van de silo."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Silo>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter> .
-
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Slagboom.isManueel> a owl:DatatypeProperty;
   rdfs:label "is manueel"@nl;
   <http://purl.org/vocab/vann/usageNote> "Voor een manuele slagboom zijn geen instanties van de onderliggende onderdelen Slagboomkolom en Slagboomarm vereist."@nl;
@@ -1024,104 +930,6 @@ skos:Concept a rdfs:Class;
   rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Slagboom>;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:range xsd:boolean .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank.diameter> a owl:ObjectProperty;
-  rdfs:label "diameter"@nl;
-  rdfs:comment "De diameter in centimeter van de tank."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank.heeftAanvoerleiding> a owl:DatatypeProperty;
-  rdfs:label "aanvoerleiding"@nl;
-  rdfs:comment "Geeft aan of het object al dan niet een aanvoerleiding bevat."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range xsd:boolean .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank.heeftAfvoerleiding> a owl:DatatypeProperty;
-  rdfs:label "heeft afvoerleiding"@nl;
-  rdfs:comment "Geeft aan of het object al dan niet een afvoerleiding bevat."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range xsd:boolean .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank.heeftTrapconstructie> a owl:DatatypeProperty;
-  rdfs:label "heeft trapconstructie"@nl;
-  rdfs:comment "Geeft aan of het object al dan niet een trapconstructie bevat."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range xsd:boolean .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank.kleur> a owl:ObjectProperty;
-  rdfs:label "kleur"@nl;
-  rdfs:comment "De kleur van een tank."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range skos:Concept .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank.lengte> a owl:ObjectProperty;
-  rdfs:label "lengte"@nl;
-  rdfs:comment "Lengte in centimeter van de tank. "@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank.materiaal> a owl:ObjectProperty;
-  rdfs:label "materiaal"@nl;
-  rdfs:comment "Het materiaal waaruit de tank vervaardigd is."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range skos:Concept .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank.merk> a owl:ObjectProperty;
-  rdfs:label "merk"@nl;
-  rdfs:comment "Het merk van de tank."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range skos:Concept .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank.modelnaam> a owl:ObjectProperty;
-  rdfs:label "modelnaam"@nl;
-  rdfs:comment "De modelnaam van de tank."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range skos:Concept .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank.opstelHoogte> a owl:ObjectProperty;
-  rdfs:label "opstelhoogte"@nl;
-  rdfs:comment "De hoogte in centimeter beschikbaar tussen het grondoppervlak en de tank."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank.opstelling> a owl:ObjectProperty;
-  rdfs:label "oriëntatie"@nl;
-  rdfs:comment "De oriëntatie van de opstelling van de tank."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range skos:Concept .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank.technischeFiche> a owl:ObjectProperty;
-  rdfs:label "technische fiche"@nl;
-  rdfs:comment "De technische fiche van de tank."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank.volume> a owl:ObjectProperty;
-  rdfs:label "volume"@nl;
-  rdfs:comment "Het volume in kubieke meter van de tank."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank.vorm> a owl:ObjectProperty;
-  rdfs:label "vorm"@nl;
-  rdfs:comment "De vorm van de tank."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range skos:Concept .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Trajectcontrole.attest> a owl:ObjectProperty;
   rdfs:label "attest"@nl;
@@ -1186,6 +994,13 @@ skos:Concept a rdfs:Class;
   rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VLAN>;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:range xsd:nonNegativeInteger .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VakwerkElement.naam> a owl:DatatypeProperty;
+  rdfs:label "naam"@nl;
+  rdfs:comment "De mensleesbare naam van het vakwerk-element. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VakwerkElement>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range xsd:string .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VakwerkElement.typeVakwerkElement> a owl:ObjectProperty;
   rdfs:label "type vakwerk-element"@nl;
@@ -1305,6 +1120,13 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:range xsd:boolean .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Wand.naam> a owl:DatatypeProperty;
+  rdfs:label "naam"@nl;
+  rdfs:comment "De mensleesbare naam van de wand. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Wand>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range xsd:string .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Wand.typeWand> a owl:ObjectProperty;
   rdfs:label "type wand"@nl;
   rdfs:comment "De functie die de wand uitoefent."@nl;
@@ -1333,33 +1155,19 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:range skos:Concept .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Windverband.naam> a owl:DatatypeProperty;
+  rdfs:label "naam"@nl;
+  rdfs:comment "De mensleesbare naam van het windverband. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Naamconventies zijn hier van toepassing."@nl;
+  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Windverband>;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:range xsd:string .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Windverband.type> a owl:ObjectProperty;
   rdfs:label "type"@nl;
   rdfs:comment "Type windverband."@nl;
   rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Windverband>;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:range skos:Concept .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Zoutbijlaadplaats.aardVerharding> a owl:ObjectProperty;
-  rdfs:label "aard verharding"@nl;
-  rdfs:comment "Aard verharding van de ondergrond van de zoutbijlaadplaatssite."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Zoutbijlaadplaats>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range skos:Concept .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Zoutbijlaadplaats.adres> a owl:ObjectProperty;
-  rdfs:label "adres"@nl;
-  rdfs:comment "Adres (aanduiding van de locatie) van de zoutbijlaadplaats. Indien deze geen adres heeft, wordt het adres van een nabijgelegen straat genomen."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Zoutbijlaadplaats>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAdres> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Zoutbijlaadplaats.opstellingsplan> a owl:ObjectProperty;
-  rdfs:label "opstellingsplan"@nl;
-  rdfs:comment "Een plan dat de opstelling van alle infrastructuurelementen op de site aangeeft."@nl;
-  rdfs:domain <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Zoutbijlaadplaats>;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:range <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Zpad.WANCapaciteit> a owl:DatatypeProperty;
   rdfs:label "wan capaciteit"@nl;
@@ -1389,18 +1197,18 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:range skos:Concept .
 
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Balk> a owl:Class;
-  rdfs:label "Balk"@nl;
-  rdfs:comment "Ruimteoverspannend enkelvoudig constructie-element waarvan de lengte vele malen groter is dan de breedte en de hoogte in doorsnede. De breedte is weer gelijk of kleiner dan de hoogte."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ConstructiefObject> .
-
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#BlindePut> a owl:Class;
   rdfs:label "Blinde put"@nl;
   rdfs:comment "Een put waar de riolering op aangesloten is maar die niet meer zichtbaar is."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject>,
     <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Put> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Boog> a owl:Class;
+  rdfs:label "Boog"@nl;
+  rdfs:comment "Een gebogen overspanning (boven een opening), tussen twee steunpunten en ter ondersteuning van een brug, waarbij de druk (ook) zijdelings wordt afgevoerd."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ConstructiefObject> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Ecoduct> a owl:Class;
   rdfs:label "Ecoduct"@nl;
@@ -1444,12 +1252,6 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
 
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#HorizontaleConstructieplaat> a owl:Class;
-  rdfs:label "Horizontale constructieplaat"@nl;
-  rdfs:comment "Een plaat die dient ter constructie en die horizontaal wordt gebruikt. Deze omvat geen platen die met fundering te maken hebben (vb.: funderingsplaat, funderingszool,...)."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ConstructiefObject> .
-
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Lokaal> a owl:Class;
   rdfs:label "Lokaal"@nl;
   rdfs:comment "Een ruimte binnen een gebouw."@nl;
@@ -1468,9 +1270,9 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
 
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Randprofiel> a owl:Class;
-  rdfs:label "Randprofiel"@nl;
-  rdfs:comment "Profiel ter afwerking en versterking van de rand. Deze kan uitgevoerd worden in verschillende materialen."@nl;
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Pyloon> a owl:Class;
+  rdfs:label "Pyloon"@nl;
+  rdfs:comment "Een pyloon is een taps toelopende hoge constructie, als drager van kabels e.d. (bv. een hoogspanningmast of een mast van een brug)."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ConstructiefObject> .
 
@@ -1486,41 +1288,23 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> .
 
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VakwerkElement> a owl:Class;
-  rdfs:label "Vakwerkelement"@nl;
-  rdfs:comment "Element dat deel uitmaakt van een constructie waarbij balken en staven, volgens een stelsel van rechthoeken en/of driehoeken, aan de uiteinden en/of kruiselings verbonden worden tot een onwrikbaar geheel."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ConstructiefObject> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Windverband> a owl:Class;
-  rdfs:label "Windverband"@nl;
-  rdfs:comment "Ook: kruisverband. Stabiliteitsvoorziening om een constructie stijf te maken. Vangt windbelastingen, spatkrachten en dwarskrachten op. Ze bestaan meestal uit vrijwel onwrikbare (onvervormbare) driehoeken."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ConstructiefObject> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#ASTRIDInstallatie> a owl:Class;
-  rdfs:label "ASTRID installatie"@nl;
-  rdfs:comment "Een (radio)heruitzendingsinstallatie van radiosignalen (over TETRA in een hogere frequentieband van 380 tot 400 MHz) ondersteund door ASTRID als communicatiesysteem voor de hulpdiensten. Door de ontvangst- en  zendfrequenties verschillend te maken ontstaat tweerichtingscommunicatie over grote afstanden en op plaatsen, waar radiogolven normaal niet geraken."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> .
-
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aanvaarbescherming> a owl:Class;
   rdfs:label "Aanvaarbescherming"@nl;
   rdfs:comment "Constructie om schepen te geleiden en/of te verhinderen dat ze ergens tegenaan botsen."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Balk> a owl:Class;
+  rdfs:label "Balk"@nl;
+  rdfs:comment "Ruimteoverspannend enkelvoudig constructie-element waarvan de lengte vele malen groter is dan de breedte en de hoogte in doorsnede. De breedte is weer gelijk of kleiner dan de hoogte."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ConstructiefObject> .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Bochtafbakeningsinstallatie> a owl:Class;
   rdfs:label "Bochtafbakeningsinstallatie"@nl;
   rdfs:comment "De verzameling van alle bochtafbakeningsborden in dezelfde bocht en rijrichting."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#EMAfbakening> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Brugligger> a owl:Class;
-  rdfs:label "Brugligger"@nl;
-  rdfs:comment "Ondersteunende balkstructuur van een brug onder het brugdek."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ConstructiefObject> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#ExterneNaspanning> a owl:Class;
   rdfs:label "Externe naspanning"@nl;
@@ -1533,6 +1317,12 @@ skos:Concept a rdfs:Class;
   rdfs:comment "Groepering van de dwarse- en figuratiemarkering."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#HorizontaleConstructieplaat> a owl:Class;
+  rdfs:label "Horizontale constructieplaat"@nl;
+  rdfs:comment "Een plaat die dient ter constructie en die horizontaal wordt gebruikt. Deze omvat geen platen die met fundering te maken hebben (vb.: funderingsplaat, funderingszool,...)."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ConstructiefObject> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#InspectieputRiolering> a owl:Class;
   rdfs:label "Inspectieput riolering"@nl;
@@ -1553,12 +1343,6 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> .
 
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Kolom> a owl:Class;
-  rdfs:label "Kolom"@nl;
-  rdfs:comment "Een verticale constructie die dient als drager en bestaat uit een zuil of pilaar."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ConstructiefObject> .
-
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#MIVInstallatie> a owl:Class;
   rdfs:label "MIV-installatie"@nl;
   rdfs:comment "De volledige opstelling voor meten in Vlaanderen op een bepaalde locatie."@nl;
@@ -1571,11 +1355,23 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Randprofiel> a owl:Class;
+  rdfs:label "Randprofiel"@nl;
+  rdfs:comment "Profiel ter afwerking en versterking van de rand. Deze kan uitgevoerd worden in verschillende materialen."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ConstructiefObject> .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Rioleringsstelsel> a owl:Class;
   rdfs:label "Rioleringsstelsel"@nl;
   rdfs:comment "De groepering van de objecten die behoren tot de riolering."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VakwerkElement> a owl:Class;
+  rdfs:label "Vakwerkelement"@nl;
+  rdfs:comment "Element dat deel uitmaakt van een constructie waarbij balken en staven, volgens een stelsel van rechthoeken en/of driehoeken, aan de uiteinden en/of kruiselings verbonden worden tot een onwrikbaar geheel."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ConstructiefObject> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VerkeersbordVerkeersteken> a owl:Class;
   rdfs:label "Verkeersbord - verkeersteken"@nl;
@@ -1590,6 +1386,12 @@ skos:Concept a rdfs:Class;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject>,
     <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#TerreinDeel> .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Windverband> a owl:Class;
+  rdfs:label "Windverband"@nl;
+  rdfs:comment "Ook: kruisverband. Stabiliteitsvoorziening om een constructie stijf te maken. Vangt windbelastingen, spatkrachten en dwarskrachten op. Ze bestaan meestal uit vrijwel onwrikbare (onvervormbare) driehoeken."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ConstructiefObject> .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aardingsinstallatie> a owl:Class;
   rdfs:label "Aardingsinstallatie"@nl;
   rdfs:comment "Een galvanische verbinding van een elektrische installatie met de aarde. De elektrische installatie die op deze wijze met de aarde wordt verbonden krijgt een spanning van nul volt."@nl;
@@ -1602,11 +1404,23 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
 
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Brugligger> a owl:Class;
+  rdfs:label "Brugligger"@nl;
+  rdfs:comment "Ondersteunende balkstructuur van een brug onder het brugdek."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ConstructiefObject> .
+
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#DtcAardingsstelsel> a owl:Class;
   rdfs:label "Aardingsstelsel details."@nl;
   <http://purl.org/vocab/vann/usageNote> "Het attest is enkel vereist voor globale aardingsstelsels. Voor gescheiden aardinsstelsel kanhet attribuut attestDNB leeg blijven."@nl;
   rdfs:comment "Complex datatype dat het mogelijk maakt om het attest van de distributienetbeheerder toe te voegen in het geval van een globaal aardingsstelsel."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Kolom> a owl:Class;
+  rdfs:label "Kolom"@nl;
+  rdfs:comment "Een verticale constructie die dient als drager en bestaat uit een zuil of pilaar."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ConstructiefObject> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Landhoofd> a owl:Class;
   rdfs:label "Landhoofd"@nl;
@@ -1619,18 +1433,6 @@ skos:Concept a rdfs:Class;
   rdfs:comment "Het (glasvezel) traject tussen twee toestellen (NetwerkElementen) die rechtstreeks met mekaar communiceren."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Wand> a owl:Class;
-  rdfs:label "Wand"@nl;
-  rdfs:comment "Een verticaal constructiedeel, vrijstaand of omsluitend die een afscheiding vormt, bv. tussen 2 ruimtes."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ConstructiefObject> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Zoutbijlaadplaats> a owl:Class;
-  rdfs:label "Zoutbijlaadplaats"@nl;
-  rdfs:comment "Site in het beheer van een district, waar strooiwagens zout of pekel kunnen bijladen, wanneer ze tijdens de winterdienst hun strooiroute afleggen. De leverancier kan toegang krijgen (batch of codeklavier) om de tanks of de silos terug te vullen."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aswegersite> a owl:Class;
   rdfs:label "Aswegersite"@nl;
@@ -1651,9 +1453,15 @@ skos:Concept a rdfs:Class;
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#VLAN> a owl:Class;
   rdfs:label "VLAN"@nl;
-  rdfs:comment "Binnen de L2 access structuur vormt de VLAN een specifieke virtuele LAN. De toepassingen zijn verbonden met een specifieke VLAN. Rechtstreekse communicatie tussen toepassingen is enkel mogelijk indien deze zijn verbonden met dezelfde VLAN."@nl;
+  rdfs:comment "Binnen de L2 access structuur vormt de VLAN een specifieke virtuele LAN. De toepassingen zijn verbonden met een specifieke VLAN.   Rechtstreekse communicatie tussen toepassingen is enkel mogelijk indien deze zijn verbonden met dezelfde VLAN."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#NaampadObject> .
+
+<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Wand> a owl:Class;
+  rdfs:label "Wand"@nl;
+  rdfs:comment "Een verticaal constructiedeel, vrijstaand of omsluitend die een afscheiding vormt, bv. tussen 2 ruimtes."@nl;
+  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
+  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ConstructiefObject> .
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Zpad> a owl:Class;
   rdfs:label "Zpad"@nl;
@@ -1682,7 +1490,9 @@ skos:Concept a rdfs:Class;
 
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Gronddam> a owl:Class;
   rdfs:label "Gronddam"@nl;
-  rdfs:comment "Gronddammen zijn trapeziumvormige constructies bestaande uit zand, grond of steenachtige materialen. De onderkant van de gronddam wordt direct op het bestaand maaiveld aangebracht of op een vooraf aangebrachte grondverbetering. Een gronddam kan volgende functies vervullen: geluidswering, geleiding van dieren, veiligheid en lichtwering."@nl;
+  rdfs:comment """Gronddammen zijn trapeziumvormige constructies bestaande uit zand, grond of steenachtige materialen.
+De onderkant van de gronddam wordt direct op het bestaand maaiveld aangebracht of op een vooraf aangebrachte grondverbetering.
+Een gronddam kan volgende functies vervullen: geluidswering, geleiding van dieren, veiligheid en lichtwering."""@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
 
@@ -1710,27 +1520,9 @@ skos:Concept a rdfs:Class;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> .
 
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#RadioheruitzendInstallatie> a owl:Class;
-  rdfs:label "Radioheruitzend installatie"@nl;
-  rdfs:comment "Het geheel van ontvangstantenne, infrastructuur en straalkabel of zendantenne om de radiosignalen van radiozenders over FM (88 tot 108 MHz) of DAB (174 tot 230 MHz) uit te zenden op plaatsen, die afgesloten zijn van de buitenwereld, zoals tunnels en ondergrondse parkings."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Silo> a owl:Class;
-  rdfs:label "Silo"@nl;
-  rdfs:comment "Meestal een metalen reservoir voor eerder vaste vulmiddelen, zoals korrels, kristallen: zout, zand, enz, waarbij op een gecontroleerde manier middelen kunnen afgenomen of bijgevuld worden. "@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> .
-
 <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Brugdeel> a owl:Class;
   rdfs:label "Brugdeel"@nl;
   rdfs:comment "Het deel dat je kan wegnemen van een brug in zijn geheel. Dit kan ook meerdere overspanningen hebben."@nl;
-  rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
-  rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> .
-
-<https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Tank> a owl:Class;
-  rdfs:label "Tank"@nl;
-  rdfs:comment "Een constructie voor het opslaan van goederen, typisch in vloeibare of gasvormige toestand, zoals water, brandstof, aardgas, lucht, etc."@nl;
   rdfs:isDefinedBy <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie>;
   rdfs:subClassOf <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> .
 
