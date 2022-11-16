@@ -50,9 +50,9 @@
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlLEGCMateriaalShape>,
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlLEGCGeluidskarakteristiekShape>,
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlBGSchermelementtypeShape>,
-    <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlVGOpstellingShape>,
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlVormSchermelementShape>,
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlVGSchermelementtypeShape>,
+    <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlVGOpstellingShape>,
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlBevestigingsbeugelTypeShape>,
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlDeurHandgreeptypeShape>,
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlDeurFabrikantShape>,
@@ -62,11 +62,11 @@
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlProfielsoortShape>,
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlProfielhoogtemaatShape>,
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlPlaatsingswijzePlintShape>,
+    <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlGebruiksdomeinShape>,
+    <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlToeslagmiddelBetonShape>,
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlBetonmilieuklasseShape>,
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlBetonomgevingsklasseShape>,
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlBetonsterkteklasseShape>,
-    <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlGebruiksdomeinShape>,
-    <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlToeslagmiddelBetonShape>,
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlUitvoeringsmethodeShape>,
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlWvLedLichtpunthoogteShape>,
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KlWvLedTussenafstandShape>,
@@ -107,6 +107,7 @@
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#StalenConstructieElementShape>,
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#StalenProfielShape>,
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#TerreinDeelShape>,
+    <https://data.vlaanderen.be/shacl/lijnvormige-elementen#ToegangselementShape>,
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#VegetatieElementShape>,
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#VerlichtingstoestelShape>,
     <https://data.vlaanderen.be/shacl/lijnvormige-elementen#VerlichtingstoestelConnectorShape>,
@@ -464,11 +465,11 @@
 <https://data.vlaanderen.be/shacl/lijnvormige-elementen#BeginstukShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Overgangsconstructie>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Geleideconstructie>;
     shacl:description "Deze relatie geeft aan hoe 2 onderdelen in horizontale zin elkaar opvolgen. Dit wordt gebruikt om een topologisch netwerk op te bouwen. Enkel in gebruik bij afschermende constructies en riolering/waterlopen. Deze relatie heeft steeds een richting van het opwaartse naar het afwaartse onderdeel.";
     shacl:name "SluitAanOp"
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Geleideconstructie>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Overgangsconstructie>;
     shacl:description "Deze relatie geeft aan hoe 2 onderdelen in horizontale zin elkaar opvolgen. Dit wordt gebruikt om een topologisch netwerk op te bouwen. Enkel in gebruik bij afschermende constructies en riolering/waterlopen. Deze relatie heeft steeds een richting van het opwaartse naar het afwaartse onderdeel.";
     shacl:name "SluitAanOp"
   ];
@@ -538,6 +539,13 @@
     shacl:minCount 1;
     shacl:name "constructieEnMontageplan";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel.constructieEnMontageplan>
+  ], [
+    shacl:datatype xsd:boolean;
+    shacl:description "Metalen strip in de beugel, die verhinderd dat het bevestigd onderdeel naar beneden zou komen (bijvoorbeeld bij brand).";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "heeftVeiligheidsstrip";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel.heeftVeiligheidsstrip>
   ], [
     shacl:datatype xsd:boolean;
     shacl:description "Geeft aan of de bevestigingsbeugel verzegeld is tegen het ongemerkt losmaken ervan.";
@@ -1162,7 +1170,7 @@
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#EigenschappenVoertuigkering.kerendVermogen>
   ], [
     shacl:class skos:Concept;
-    shacl:description "Naast het horizontaal verplaatsen van de veiligheidsafbakening bij een impact, kan een voertuig bij impact ook over de afbakening hellen.  De maximale overhelling wordt op basis van foto's en video-opnames van de test bepaald.";
+    shacl:description "Naast het horizontaal verplaatsen van de veiligheidsafbakening bij een impact, kan een voertuig bij impact ook over de afbakening hellen. De maximale overhelling wordt op basis van foto's en video-opnames van de test bepaald.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "voertuigOverhelling";
@@ -1224,11 +1232,11 @@
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#NietConformBegin>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Beginstuk>;
     shacl:description "Deze relatie geeft aan hoe 2 onderdelen in horizontale zin elkaar opvolgen. Dit wordt gebruikt om een topologisch netwerk op te bouwen. Enkel in gebruik bij afschermende constructies en riolering/waterlopen. Deze relatie heeft steeds een richting van het opwaartse naar het afwaartse onderdeel.";
     shacl:name "SluitAanOp"
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Beginstuk>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#NietConformBegin>;
     shacl:description "Deze relatie geeft aan hoe 2 onderdelen in horizontale zin elkaar opvolgen. Dit wordt gebruikt om een topologisch netwerk op te bouwen. Enkel in gebruik bij afschermende constructies en riolering/waterlopen. Deze relatie heeft steeds een richting van het opwaartse naar het afwaartse onderdeel.";
     shacl:name "SluitAanOp"
   ], [
@@ -1264,12 +1272,12 @@
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#VegetatieElement>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ConstructieElementenGC>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#ConstructieElementenGC>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#VegetatieElement>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
@@ -1638,12 +1646,12 @@ De niet-vlakke schermen zijn de schermen die niet kunnen getest worden volgens d
 <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KantstrookAfwShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#TrottoirbandAfw>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#TrottoirbandStd>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#TrottoirbandStd>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#TrottoirbandAfw>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
@@ -1660,12 +1668,12 @@ De niet-vlakke schermen zijn de schermen die niet kunnen getest worden volgens d
 <https://data.vlaanderen.be/shacl/lijnvormige-elementen#KantstrookStdShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#TrottoirbandStd>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#TrottoirbandAfw>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#TrottoirbandAfw>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#TrottoirbandStd>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
@@ -2224,11 +2232,11 @@ De niet-vlakke schermen zijn de schermen die niet kunnen getest worden volgens d
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Baanlichaam>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Gronddam>;
     shacl:description "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.";
     shacl:name "HoortBij"
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Gronddam>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Baanlichaam>;
     shacl:description "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.";
     shacl:name "HoortBij"
   ], [
@@ -2272,17 +2280,17 @@ De niet-vlakke schermen zijn de schermen die niet kunnen getest worden volgens d
 <https://data.vlaanderen.be/shacl/lijnvormige-elementen#LijnvormigElementShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Baanlichaam>;
-    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
-    shacl:name "Bevestiging";
-    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
-  ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Fundering>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
   ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Wegberm>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Baanlichaam>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
@@ -2306,17 +2314,17 @@ De niet-vlakke schermen zijn de schermen die niet kunnen getest worden volgens d
 <https://data.vlaanderen.be/shacl/lijnvormige-elementen#MotorvangplankShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Eindstuk>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
+  ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#NietGetestBeginstuk>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
   ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#AansluitendeConstructie>;
-    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
-    shacl:name "Bevestiging";
-    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
-  ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Eindstuk>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
@@ -2453,7 +2461,7 @@ De niet-vlakke schermen zijn de schermen die niet kunnen getest worden volgens d
 <https://data.vlaanderen.be/shacl/lijnvormige-elementen#PictogramShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Vluchtdeur>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#PlintGC>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
@@ -2463,7 +2471,7 @@ De niet-vlakke schermen zijn de schermen die niet kunnen getest worden volgens d
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#PlintGC>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Vluchtdeur>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
@@ -2640,7 +2648,7 @@ De niet-vlakke schermen zijn de schermen die niet kunnen getest worden volgens d
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
   ], [
     shacl:datatype xsd:boolean;
-    shacl:description "Bij het fabriceren wordt er bewust een ronding aangebracht in het profiel. Dit kan bijvoorbeeld dienen ter compensatie van doorbuiging of omwille van esthetische redenen,...";
+    shacl:description "Geeft aan of er bij het fabriceren bewust een ronding wordt aangebracht in het profiel. Dit kan bijvoorbeeld dienen ter compensatie van doorbuiging of omwille van esthetische redenen,...";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "isVoorgebogen";
@@ -2711,15 +2719,19 @@ De niet-vlakke schermen zijn de schermen die niet kunnen getest worden volgens d
   ];
   shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#TerreinDeel> .
 
+<https://data.vlaanderen.be/shacl/lijnvormige-elementen#ToegangselementShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Toegangselement> .
+
 <https://data.vlaanderen.be/shacl/lijnvormige-elementen#TrottoirbandAfwShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#KantstrookAfw>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#KantstrookStd>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#KantstrookStd>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#KantstrookAfw>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
@@ -2729,12 +2741,12 @@ De niet-vlakke schermen zijn de schermen die niet kunnen getest worden volgens d
 <https://data.vlaanderen.be/shacl/lijnvormige-elementen#TrottoirbandStdShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#KantstrookStd>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#KantstrookAfw>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#KantstrookAfw>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#KantstrookStd>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/lijnvormige-elementen/#Bevestiging>

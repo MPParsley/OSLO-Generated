@@ -20,24 +20,28 @@
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#KlAlgMimeTypeShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#KlBatterijMerkShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#KlBatterijModelnaamShape>,
+    <https://data.vlaanderen.be/shacl/fietstelinstallatie#KlBatterijMateriaalShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#KlZonnepaneelMerkShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#KlZonnepaneelModelnaamShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#BevestigingGCShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#DetectieShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#DetectielusShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#SelNietSelLusShape>,
+    <https://data.vlaanderen.be/shacl/fietstelinstallatie#SerienummerObjectShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#SoftwareToegangShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#VoedingspuntShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#AIMDBStatusShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#AIMNaamObjectShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#AIMObjectShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#AIMToestandShape>,
+    <https://data.vlaanderen.be/shacl/fietstelinstallatie#DtcAfmetingBxhInMmShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#DtcAfmetingBxlInMShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#DtcAfmetingBxlxhInMmShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#DtcDocumentShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#DtcIdentificatorShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#DtcTijdsduurShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#DteTekstblokShape>,
+    <https://data.vlaanderen.be/shacl/fietstelinstallatie#KwantWrdInAmpereUurShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#KwantWrdInMaandShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#KwantWrdInMeterShape>,
     <https://data.vlaanderen.be/shacl/fietstelinstallatie#KwantWrdInMillimeterShape>,
@@ -164,15 +168,43 @@
     shacl:name "Voedt";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Voedt>
   ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem>;
+    shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
+    shacl:name "Voedt";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Voedt>
+  ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#FietstelDisplay>;
     shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
     shacl:name "Voedt";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Voedt>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Fietstelsysteem>;
-    shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
-    shacl:name "Voedt";
-    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Voedt>
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxhInMm>;
+    shacl:description "De afmetingen van de batterij in millimeter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "afmetingen";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Batterij.afmetingen>
+  ], [
+    shacl:datatype xsd:date;
+    shacl:description "De datum waarop de batterij geproduceerd is.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "fabricatiedatum";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Batterij.fabricatiedatum>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInAmpereUur>;
+    shacl:description "Wordt ook wel capaciteit of autonomie genoemd. Geeft aan hoe veel energie de batterij kan leveren in volledig opgeladen staat.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "lading";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Batterij.lading>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "Het materiaal waaruit de batterij gemaakt is. Het gaat hier om het materiaal waarin de lading opgeslagen is.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "materiaal";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Batterij.materiaal>
   ], [
     shacl:class skos:Concept;
     shacl:description "Merk van de batterij.";
@@ -187,6 +219,13 @@
     shacl:minCount 1;
     shacl:name "modelnaam";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Batterij.modelnaam>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt>;
+    shacl:description "De spanning die de batterij kan leveren. Wordt ook wel het werkingsvoltage genoemd.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "spanning";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Batterij.spanning>
   ];
   shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Batterij> .
 
@@ -240,6 +279,25 @@
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Detectielus.bewakingstijd>
   ];
   shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Detectielus> .
+
+<https://data.vlaanderen.be/shacl/fietstelinstallatie#DtcAfmetingBxhInMmShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter>;
+    shacl:description "De breedte in millimeter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "breedte";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxhInMm.breedte>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter>;
+    shacl:description "De hoogte in millimeter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "hoogte";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxhInMm.hoogte>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcAfmetingBxhInMm> .
 
 <https://data.vlaanderen.be/shacl/fietstelinstallatie#DtcAfmetingBxlInMShape> a shacl:NodeShape;
   shacl:closed false;
@@ -379,7 +437,7 @@
 <https://data.vlaanderen.be/shacl/fietstelinstallatie#FietstelDisplayShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Batterij>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Stroomkring>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Bevestiging>
@@ -389,7 +447,7 @@
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Bevestiging>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Stroomkring>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Batterij>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Bevestiging>
@@ -486,6 +544,10 @@
   shacl:closed false;
   shacl:targetClass skos:Concept .
 
+<https://data.vlaanderen.be/shacl/fietstelinstallatie#KlBatterijMateriaalShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
 <https://data.vlaanderen.be/shacl/fietstelinstallatie#KlBatterijMerkShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass skos:Concept .
@@ -521,6 +583,25 @@
 <https://data.vlaanderen.be/shacl/fietstelinstallatie#KlZonnepaneelModelnaamShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/fietstelinstallatie#KwantWrdInAmpereUurShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in ampere uur.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInAmpereUur.standaardEenheid>
+  ], [
+    shacl:class xsd:decimal;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInAmpereUur.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInAmpereUur> .
 
 <https://data.vlaanderen.be/shacl/fietstelinstallatie#KwantWrdInMaandShape> a shacl:NodeShape;
   shacl:closed false;
@@ -717,7 +798,7 @@
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#NietSelectieveDetectielus.isMotorgevoelig>
   ], [
     shacl:datatype xsd:boolean;
-    shacl:description "Is de detectielus gevoelig voor de richting waarin het voertuig het gevoeligheidsgebied van de lus binnenkomt?";
+    shacl:description "Geeft aan of de detectielus gevoelig is voor de richting waarin het voertuig het gevoeligheidsgebied van de lus al dan niet binnenkomt.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "isRichtingsgevoelig";
@@ -754,6 +835,18 @@
   ];
   shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#SelNietSelLus> .
 
+<https://data.vlaanderen.be/shacl/fietstelinstallatie#SerienummerObjectShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:string;
+    shacl:description "Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "serienummer";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#SerienummerObject.serienummer>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#SerienummerObject> .
+
 <https://data.vlaanderen.be/shacl/fietstelinstallatie#SoftwareToegangShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
@@ -775,6 +868,11 @@
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Bevestiging>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Batterij>;
+    shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
+    shacl:name "Voedt";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Voedt>
   ], [
     shacl:datatype xsd:string;
     shacl:description "De identificatie van de stroomkring.";
@@ -821,6 +919,11 @@
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Bevestiging>
   ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Stroomkring>;
+    shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
+    shacl:name "Voedt";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Voedt>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Batterij>;
     shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
     shacl:name "Voedt";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/fietstelinstallatie/#Voedt>

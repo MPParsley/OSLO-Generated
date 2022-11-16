@@ -118,14 +118,14 @@
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/hulpposten#KlBrandhaspelMerkShape",
+      "@id": "https://data.vlaanderen.be/shacl/hulpposten#KlBrandhaspelModelnaamShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
-      "@id": "https://data.vlaanderen.be/shacl/hulpposten#KlBrandhaspelModelnaamShape",
+      "@id": "https://data.vlaanderen.be/shacl/hulpposten#KlBrandhaspelMerkShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
@@ -195,6 +195,20 @@
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
+      "@id": "https://data.vlaanderen.be/shacl/hulpposten#KlContactpuntMerkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/hulpposten#KlContactpuntModelnaamShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
       "@id": "https://data.vlaanderen.be/shacl/hulpposten#KlContactpuntTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -217,6 +231,13 @@
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/hulpposten#KlIntercomModelnaamShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/hulpposten#KlIntercomUitvoeringShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
@@ -330,12 +351,6 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Aanstraalverlichting",
-          "sh:description": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.",
-          "sh:name": "Bevestiging",
-          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging"
-        },
-        {
           "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram",
           "sh:description": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.",
           "sh:name": "Bevestiging",
@@ -343,6 +358,12 @@
         },
         {
           "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel",
+          "sh:description": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.",
+          "sh:name": "Bevestiging",
+          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging"
+        },
+        {
+          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Aanstraalverlichting",
           "sh:description": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.",
           "sh:name": "Bevestiging",
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging"
@@ -410,7 +431,7 @@
       "sh:property": [
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "Nummer van de batch.",
+          "sh:description": "Nummer van de productiebatch van de leverancier.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "batchnummer",
@@ -490,6 +511,22 @@
         }
       ],
       "sh:targetClass": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Kast"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/hulpposten#SerienummerObjectShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "serienummer",
+          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#SerienummerObject.serienummer"
+        }
+      ],
+      "sh:targetClass": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#SerienummerObject"
     },
     {
       "@id": "https://data.vlaanderen.be/shacl/hulpposten#AIMDBStatusShape",
@@ -1285,6 +1322,46 @@
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Sturing"
         },
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "Geeft aan of het contactpunt zich binnen of buiten bevindt.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "isBuiten",
+          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Contactpunt.isBuiten"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "Geeft aan of het contactpunt door middel van opbouw gerealiseerd is.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "isOpbouw",
+          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Contactpunt.isOpbouw"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "Geeft aan of het contactpunt een wisselcontact is. Bij een wisselcontact kan men zelf instellen het contact 'normaal open' of 'normaal toe' is bij een stroompanne.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "isWisselcontact",
+          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Contactpunt.isWisselcontact"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Het merk van het contactpunt.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "merk",
+          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Contactpunt.merk"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "De modelnaam van het contactpunt.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "modelnaam",
+          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Contactpunt.modelnaam"
+        },
+        {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "Typering van de gebruikte techniek op basis waarvan de aan- of afwezigheid van een contact vastgesteld wordt.",
           "sh:maxCount": "1",
@@ -1314,6 +1391,18 @@
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging"
         },
         {
+          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Pictogram",
+          "sh:description": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.",
+          "sh:name": "Bevestiging",
+          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging"
+        },
+        {
+          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Hydrant",
+          "sh:description": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.",
+          "sh:name": "Bevestiging",
+          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging"
+        },
+        {
           "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel",
           "sh:description": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.",
           "sh:name": "Bevestiging",
@@ -1327,18 +1416,6 @@
         },
         {
           "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Brandblusser",
-          "sh:description": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.",
-          "sh:name": "Bevestiging",
-          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging"
-        },
-        {
-          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Hydrant",
-          "sh:description": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.",
-          "sh:name": "Bevestiging",
-          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging"
-        },
-        {
-          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Pictogram",
           "sh:description": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.",
           "sh:name": "Bevestiging",
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging"
@@ -1430,13 +1507,13 @@
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Sturing"
         },
         {
-          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Contactpunt",
+          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram",
           "sh:description": "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting.",
           "sh:name": "Sturing",
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Sturing"
         },
         {
-          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram",
+          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Contactpunt",
           "sh:description": "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting.",
           "sh:name": "Sturing",
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Sturing"
@@ -1531,11 +1608,19 @@
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:description": "De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.",
+          "sh:description": "De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": "dnsNaam",
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel.dnsNaam"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "Geeft aan of het toestel voorzien is van een camera om naast audio ook video ter verzenden naar een ander toestel in het netwerk.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "heeftCamera",
+          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel.heeftCamera"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
@@ -1554,6 +1639,14 @@
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel.ipAdres"
         },
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "Geeft aan of het intercomtoestel een inbouw- of opbouwtoestel is.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "isInbouw",
+          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel.isInbouw"
+        },
+        {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:description": "Het merk van het intercomtoestel.",
           "sh:maxCount": "1",
@@ -1570,6 +1663,14 @@
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel.modelnaam"
         },
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Het nummer dat een gebruiker in een verzendend toestel ingeeft om een verbinding te maken met dit, het ontvangend, toestel.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "oproepnummer",
+          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel.oproepnummer"
+        },
+        {
           "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument",
           "sh:description": "De technische fiche van het intercomtoestel.",
           "sh:maxCount": "1",
@@ -1584,6 +1685,14 @@
           "sh:minCount": "1",
           "sh:name": "transportType",
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel.transportType"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Geeft aan welke functie het toestel vervultin het intercomnetwerk.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "uitvoering",
+          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel.uitvoering"
         }
       ],
       "sh:targetClass": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel"
@@ -1820,19 +1929,7 @@
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Sturing"
         },
         {
-          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Stopcontact",
-          "sh:description": "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.",
-          "sh:name": "Voedt",
-          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Voedt"
-        },
-        {
           "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Verwarmingselement",
-          "sh:description": "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.",
-          "sh:name": "Voedt",
-          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Voedt"
-        },
-        {
-          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram",
           "sh:description": "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.",
           "sh:name": "Voedt",
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Voedt"
@@ -1845,6 +1942,18 @@
         },
         {
           "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Montagekast",
+          "sh:description": "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.",
+          "sh:name": "Voedt",
+          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Voedt"
+        },
+        {
+          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram",
+          "sh:description": "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.",
+          "sh:name": "Voedt",
+          "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Voedt"
+        },
+        {
+          "sh:class": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Stopcontact",
           "sh:description": "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.",
           "sh:name": "Voedt",
           "sh:path": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Voedt"

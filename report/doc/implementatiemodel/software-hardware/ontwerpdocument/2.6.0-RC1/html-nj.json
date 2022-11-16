@@ -4,7 +4,7 @@
       "nl": "Software-hardware"
     },
     "uri": "http://fixme.com",
-    "issued": "2022-7-6",
+    "issued": "2022-11-15",
     "filename": "software-hardware",
     "navigation": {
       "prev": "/doc/implementatiemodel/software-hardware/ontwerpdocument/2.5.0-RC2",
@@ -13,8 +13,8 @@
     "license": "https://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0",
     "status": "https://data.vlaanderen.be/doc/concept/StandaardStatus/KandidaatStandaard",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-wegenenverkeer/tree/02511d4bf72f481b76ef67c58d982ea0d5bc4d74",
-    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-wegenenverkeer/blob/02511d4bf72f481b76ef67c58d982ea0d5bc4d74/CHANGELOG",
+    "repositoryurl": "https://github.com/Informatievlaanderen/OSLOthema-wegenenverkeer/tree/b5fd4f91218a8065b602360a8b8a44eff9833daa",
+    "changelogurl": "https://github.com/Informatievlaanderen/OSLOthema-wegenenverkeer/blob/b5fd4f91218a8065b602360a8b8a44eff9833daa/CHANGELOG",
     "feedbackurl": "https://docs.google.com/forms/d/e/1FAIpQLSeaxOnrCkcarNHWI21YfPJ7sZChHVzOB2-P9ptzxkD9YX69-g/viewform",
     "standaardregisterurl": "https://data.vlaanderen.be/standaarden/",
     "dependencies": [],
@@ -49,7 +49,7 @@
           },
           "sort_nl": "batchnummer",
           "description": {
-            "nl": "Nummer van de batch."
+            "nl": "Nummer van de productiebatch van de leverancier."
           },
           "usage": {},
           "domain": [
@@ -445,7 +445,7 @@
           },
           "sort_nl": "DNS naam",
           "description": {
-            "nl": "De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be."
+            "nl": "De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be."
           },
           "usage": {},
           "domain": [
@@ -643,6 +643,19 @@
           "codelist_uri": ""
         }
       ]
+    },
+    {
+      "uri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#RHZModule",
+      "name": {
+        "nl": "Radioheruitzend module"
+      },
+      "sort_nl": "Radioheruitzend module",
+      "description": {
+        "nl": "Abstracte, die alle relaties van de afzonderlijke modules uit een radioheruitzendinstallatie groepeert."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
     },
     {
       "uri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#SoftwareToegang",
@@ -2037,16 +2050,16 @@
           ],
           "range": [
             {
-              "range_label": "Stroomkring",
-              "range_uri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Stroomkring"
+              "range_label": "PLC",
+              "range_uri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#PLC"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Stroomkring",
-              "range_puri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Stroomkring",
+              "range_uri": "#PLC",
+              "range_puri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#PLC",
               "range_label": {
-                "nl": "Stroomkring"
+                "nl": "PLC"
               }
             }
           ],
@@ -2071,16 +2084,16 @@
           ],
           "range": [
             {
-              "range_label": "PLC",
-              "range_uri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#PLC"
+              "range_label": "Stroomkring",
+              "range_uri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Stroomkring"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#PLC",
-              "range_puri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#PLC",
+              "range_uri": "#Stroomkring",
+              "range_puri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Stroomkring",
               "range_label": {
-                "nl": "PLC"
+                "nl": "Stroomkring"
               }
             }
           ],
@@ -2565,6 +2578,13 @@
           "package": "OSLO-Implementatieelement",
           "uri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject",
           "scoped_uri": "#AIM naam object"
+        },
+        {
+          "name": "RHZModule",
+          "label": "Radioheruitzend module",
+          "package": "OSLO-Abstracten",
+          "uri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#RHZModule",
+          "scoped_uri": "#Radioheruitzend module"
         }
       ],
       "properties": [
@@ -3145,40 +3165,6 @@
           "description": {
             "nl": "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting."
           },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
-              "EA-Name": "Netwerkpoort"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "UPS",
-              "range_uri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#UPS"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#UPS",
-              "range_puri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#UPS",
-              "range_label": {
-                "nl": "UPS"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/software-hardware/#Sturing",
-          "name": {
-            "nl": "sturing"
-          },
-          "sort_nl": "sturing",
-          "description": {
-            "nl": "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting."
-          },
           "usage": {
             "nl": "Relatie uit gebruik sinds versie 2.0.0-RC3"
           },
@@ -3200,6 +3186,40 @@
               "range_puri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Hardware",
               "range_label": {
                 "nl": "Hardware"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/software-hardware/#Sturing",
+          "name": {
+            "nl": "sturing"
+          },
+          "sort_nl": "sturing",
+          "description": {
+            "nl": "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Netwerkpoort",
+              "EA-Name": "Netwerkpoort"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "UPS",
+              "range_uri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#UPS"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#UPS",
+              "range_puri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#UPS",
+              "range_label": {
+                "nl": "UPS"
               }
             }
           ],
@@ -4014,40 +4034,6 @@
               "range_puri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Hardware",
               "range_label": {
                 "nl": "Hardware"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/software-hardware/#Voedt",
-          "name": {
-            "nl": "voedt"
-          },
-          "sort_nl": "voedt",
-          "description": {
-            "nl": "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "uri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Rack",
-              "EA-Name": "Rack"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "UPS",
-              "range_uri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#UPS"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#UPS",
-              "range_puri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#UPS",
-              "range_label": {
-                "nl": "UPS"
               }
             }
           ],
@@ -4912,10 +4898,17 @@
       },
       "sort_nl": "UPS",
       "description": {
-        "nl": "Toestel (Uninterruptible Power Supply = niet onderbreekbare voeding) voor het leveren van  elektrische energie van een vastgelegde kwaliteit, onafhankelijk van de beschikbaarheid van een betrouwbare netspanning. Indien het openbare net niet langer bruikbaar is om als energiebron te fungeren, wordt de energievoorziening overgenomen door de accubatterij. Deze zal gedurende een bepaalde tijd, afhankelijk van de capaciteit, de stroomvoorziening verzorgen. De UPS dient om de (minimale) voeding ononderbroken te verzekeren"
+        "nl": "Toestel (Uninterruptible Power Supply = niet onderbreekbare voeding) voor het leveren van elektrische energie van een vastgelegde kwaliteit, onafhankelijk van de beschikbaarheid van een betrouwbare netspanning. Indien het openbare net niet langer bruikbaar is om als energiebron te fungeren, wordt de energievoorziening overgenomen door de accubatterij. Deze zal gedurende een bepaalde tijd, afhankelijk van de capaciteit, de stroomvoorziening verzorgen. De UPS dient om de (minimale) voeding ononderbroken te verzekeren"
       },
       "usage": {},
       "parents": [
+        {
+          "name": "RHZModule",
+          "label": "Radioheruitzend module",
+          "package": "OSLO-Abstracten",
+          "uri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#RHZModule",
+          "scoped_uri": "#Radioheruitzend module"
+        },
         {
           "name": "Voedingspunt",
           "label": "Voedingspunt",
@@ -5055,6 +5048,40 @@
               "range_puri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Stroomkring",
               "range_label": {
                 "nl": "Stroomkring"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/software-hardware/#Voedt",
+          "name": {
+            "nl": "voedt"
+          },
+          "sort_nl": "voedt",
+          "description": {
+            "nl": "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "uri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#UPS",
+              "EA-Name": "UPS"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rack",
+              "range_uri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Rack"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Rack",
+              "range_puri": "https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Rack",
+              "range_label": {
+                "nl": "Rack"
               }
             }
           ],
