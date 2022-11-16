@@ -33,6 +33,10 @@
     <https://data.vlaanderen.be/shacl/aswegersite#KlNetwerkpoortTypeShape>,
     <https://data.vlaanderen.be/shacl/aswegersite#KlNetwerkTechnologieShape>,
     <https://data.vlaanderen.be/shacl/aswegersite#KlNetwerkpoortGolflengteShape>,
+    <https://data.vlaanderen.be/shacl/aswegersite#KlAflsuitingTypeShape>,
+    <https://data.vlaanderen.be/shacl/aswegersite#KlAfsluitingMerkShape>,
+    <https://data.vlaanderen.be/shacl/aswegersite#KlAfsluitingModelnaamShape>,
+    <https://data.vlaanderen.be/shacl/aswegersite#KlAfsluitingMateriaalShape>,
     <https://data.vlaanderen.be/shacl/aswegersite#KlWeegcelModelnaamShape>,
     <https://data.vlaanderen.be/shacl/aswegersite#KlWeegcelMerkShape>,
     <https://data.vlaanderen.be/shacl/aswegersite#KlAswegersiteTypeMarkeringShape>,
@@ -179,6 +183,48 @@
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Aswegersite>;
     shacl:description "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.";
     shacl:name "HoortBij"
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter>;
+    shacl:description "De hoogte in centimeter van de afsluiting.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "hoogte";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Afsluiting.hoogte>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "Het materiaal waaruit de afsluiting vervaardigd is.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "materiaal";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Afsluiting.materiaal>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "Het merk van de afsluiting.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "merk";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Afsluiting.merk>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "De modelnaam van de afsluiting.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "modelnaam";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Afsluiting.modelnaam>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument>;
+    shacl:description "De technische fiche van de afsluiting.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "technischeFiche";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Afsluiting.technischeFiche>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "Het type van afsluiting.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "type";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Afsluiting.type>
   ];
   shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Afsluiting> .
 
@@ -189,12 +235,12 @@
 <https://data.vlaanderen.be/shacl/aswegersite#AswegerputShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Weegcel>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Laag>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/aswegersite/#Bevestiging>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Laag>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Weegcel>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/aswegersite/#Bevestiging>
@@ -629,7 +675,23 @@
   shacl:closed false;
   shacl:targetClass skos:Concept .
 
+<https://data.vlaanderen.be/shacl/aswegersite#KlAflsuitingTypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
 <https://data.vlaanderen.be/shacl/aswegersite#KlAfmetingAswegerzoneShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/aswegersite#KlAfsluitingMateriaalShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/aswegersite#KlAfsluitingMerkShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/aswegersite#KlAfsluitingModelnaamShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass skos:Concept .
 
@@ -1154,12 +1216,12 @@
 <https://data.vlaanderen.be/shacl/aswegersite#StroomkringShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Weegcomputer>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Weegcel>;
     shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
     shacl:name "Voedt";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/aswegersite/#Voedt>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Weegcel>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Weegcomputer>;
     shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
     shacl:name "Voedt";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/aswegersite/#Voedt>
@@ -1284,6 +1346,13 @@
     shacl:minCount 1;
     shacl:name "serienummer";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Weegcel.serienummer>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument>;
+    shacl:description "De technische fiche van de weegcel.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "technischeFiche";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Weegcel.technischeFiche>
   ];
   shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Weegcel> .
 
@@ -1295,12 +1364,12 @@
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/aswegersite/#Bevestiging>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Weegcel>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Netwerkpoort>;
     shacl:description "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting.";
     shacl:name "Sturing";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/aswegersite/#Sturing>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Netwerkpoort>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Weegcel>;
     shacl:description "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting.";
     shacl:name "Sturing";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/aswegersite/#Sturing>

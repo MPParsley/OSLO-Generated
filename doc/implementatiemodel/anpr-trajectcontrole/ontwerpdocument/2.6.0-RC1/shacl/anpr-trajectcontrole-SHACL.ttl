@@ -37,11 +37,11 @@
     <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#KlANPRModelnaamShape>,
     <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#KlANPRMerkShape>,
     <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#KlBevestigingsbeugelTypeShape>,
-    <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#KlCameraModelnaamShape>,
     <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#KlCameraMerkShape>,
     <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#KlServicePrioriteitShape>,
     <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#KlCameraBeeldverwerkingstypeShape>,
     <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#KlSpectrumShape>,
+    <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#KlCameraModelnaamShape>,
     <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#KlBijlageMetGeometrieTypeShape>,
     <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#AbstracteAanvullendeGeometrieShape>,
     <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#BehuizingShape>,
@@ -49,6 +49,7 @@
     <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#BuitenkastShape>,
     <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#DraagconstructieShape>,
     <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#KastShape>,
+    <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#RHZModuleShape>,
     <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#SignalisatieShape>,
     <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#SoftwareToegangShape>,
     <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#VoedingspuntShape>,
@@ -211,7 +212,7 @@
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Sturing>
   ], [
     shacl:datatype xsd:string;
-    shacl:description "De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.";
+    shacl:description "De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "dnsNaam";
@@ -359,17 +360,17 @@
 <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#BevestigingsbeugelShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#ANPRCamera>;
-    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
-    shacl:name "Bevestiging";
-    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Bevestiging>
-  ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Camera>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Bevestiging>
   ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Draagconstructie>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Bevestiging>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#ANPRCamera>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Bevestiging>
@@ -385,6 +386,13 @@
     shacl:minCount 1;
     shacl:name "constructieEnMontageplan";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel.constructieEnMontageplan>
+  ], [
+    shacl:datatype xsd:boolean;
+    shacl:description "Metalen strip in de beugel, die verhinderd dat het bevestigd onderdeel naar beneden zou komen (bijvoorbeeld bij brand).";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "heeftVeiligheidsstrip";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel.heeftVeiligheidsstrip>
   ], [
     shacl:datatype xsd:boolean;
     shacl:description "Geeft aan of de bevestigingsbeugel verzegeld is tegen het ongemerkt losmaken ervan.";
@@ -435,12 +443,12 @@
 <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#CameraShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Draagconstructie>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Bevestiging>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Draagconstructie>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Bevestiging>
@@ -464,7 +472,7 @@
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Camera.configBestandAid>
   ], [
     shacl:datatype xsd:string;
-    shacl:description "De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.";
+    shacl:description "De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "dnsNaam";
@@ -570,7 +578,7 @@
 <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#DraagconstructieShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Camera>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Bevestiging>
@@ -580,7 +588,7 @@
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Bevestiging>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Bevestigingsbeugel>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Camera>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Bevestiging>
@@ -802,7 +810,7 @@
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Voedt>
   ], [
     shacl:datatype xsd:string;
-    shacl:description "De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.";
+    shacl:description "De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "dnsNaam";
@@ -823,7 +831,7 @@
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IpPowerSwitch.ipAdres>
   ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument>;
-    shacl:description "De technische fiche  van de IP powerswitch.";
+    shacl:description "De technische fiche van de IP powerswitch.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "technischeFiche";
@@ -1158,17 +1166,17 @@
 <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#LaagspanningsbordShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Stroomkring>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Bevestiging>
+  ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Wegkantkast>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Bevestiging>
   ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Behuizing>;
-    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
-    shacl:name "Bevestiging";
-    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Bevestiging>
-  ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Stroomkring>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Bevestiging>
@@ -1208,12 +1216,12 @@
 <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#NetwerkelementShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Netwerkpoort>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Kast>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Bevestiging>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#Kast>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Netwerkpoort>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Bevestiging>
@@ -1324,27 +1332,27 @@
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Bevestiging>
   ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#ANPRCamera>;
+    shacl:description "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting.";
+    shacl:name "Sturing";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Sturing>
+  ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Camera>;
     shacl:description "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting.";
     shacl:name "Sturing";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Sturing>
   ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Camera>;
+    shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
+    shacl:name "Voedt";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Voedt>
+  ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#ANPRCamera>;
-    shacl:description "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting.";
-    shacl:name "Sturing";
-    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Sturing>
+    shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
+    shacl:name "Voedt";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Voedt>
   ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IpPowerSwitch>;
-    shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
-    shacl:name "Voedt";
-    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Voedt>
-  ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#ANPRCamera>;
-    shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
-    shacl:name "Voedt";
-    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Voedt>
-  ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Camera>;
     shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
     shacl:name "Voedt";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Voedt>
@@ -1417,6 +1425,10 @@
 <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#NonNegativeIntegerShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass xsd:nonNegativeInteger .
+
+<https://data.vlaanderen.be/shacl/anpr-trajectcontrole#RHZModuleShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#RHZModule> .
 
 <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#SignalisatieShape> a shacl:NodeShape;
   shacl:closed false;
@@ -1503,17 +1515,17 @@
 <https://data.vlaanderen.be/shacl/anpr-trajectcontrole#UPSShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Netwerkelement>;
+    shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
+    shacl:name "Voedt";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Voedt>
+  ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Stroomkring>;
     shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
     shacl:name "Voedt";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Voedt>
   ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#ANPRCamera>;
-    shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
-    shacl:name "Voedt";
-    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Voedt>
-  ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Netwerkelement>;
     shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
     shacl:name "Voedt";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/anpr-trajectcontrole/#Voedt>

@@ -16,8 +16,8 @@
     <https://data.vlaanderen.be/shacl/hulpposten#KlAIMToestandShape>,
     <https://data.vlaanderen.be/shacl/hulpposten#KlBinnenverlichtingstoestelSoortLampShape>,
     <https://data.vlaanderen.be/shacl/hulpposten#KlPictogramSymboolShape>,
-    <https://data.vlaanderen.be/shacl/hulpposten#KlBrandhaspelMerkShape>,
     <https://data.vlaanderen.be/shacl/hulpposten#KlBrandhaspelModelnaamShape>,
+    <https://data.vlaanderen.be/shacl/hulpposten#KlBrandhaspelMerkShape>,
     <https://data.vlaanderen.be/shacl/hulpposten#KlStopcontactAantalPolenShape>,
     <https://data.vlaanderen.be/shacl/hulpposten#KlIOKaartMerkShape>,
     <https://data.vlaanderen.be/shacl/hulpposten#KlIORichtingShape>,
@@ -27,10 +27,13 @@
     <https://data.vlaanderen.be/shacl/hulpposten#KlPLCMerkShape>,
     <https://data.vlaanderen.be/shacl/hulpposten#KlPLCModelnaamShape>,
     <https://data.vlaanderen.be/shacl/hulpposten#KlAlgMimeTypeShape>,
+    <https://data.vlaanderen.be/shacl/hulpposten#KlContactpuntMerkShape>,
+    <https://data.vlaanderen.be/shacl/hulpposten#KlContactpuntModelnaamShape>,
     <https://data.vlaanderen.be/shacl/hulpposten#KlContactpuntTypeShape>,
     <https://data.vlaanderen.be/shacl/hulpposten#KlAudioTransportTypeShape>,
     <https://data.vlaanderen.be/shacl/hulpposten#KlIntercomMerkShape>,
     <https://data.vlaanderen.be/shacl/hulpposten#KlIntercomModelnaamShape>,
+    <https://data.vlaanderen.be/shacl/hulpposten#KlIntercomUitvoeringShape>,
     <https://data.vlaanderen.be/shacl/hulpposten#KlHydrantKoppelingShape>,
     <https://data.vlaanderen.be/shacl/hulpposten#KlHulppostkastTypeShape>,
     <https://data.vlaanderen.be/shacl/hulpposten#KlAlgIngressProtectionCodeShape>,
@@ -48,6 +51,7 @@
     <https://data.vlaanderen.be/shacl/hulpposten#BuitenkastShape>,
     <https://data.vlaanderen.be/shacl/hulpposten#ControllerShape>,
     <https://data.vlaanderen.be/shacl/hulpposten#KastShape>,
+    <https://data.vlaanderen.be/shacl/hulpposten#SerienummerObjectShape>,
     <https://data.vlaanderen.be/shacl/hulpposten#AIMDBStatusShape>,
     <https://data.vlaanderen.be/shacl/hulpposten#AIMNaamObjectShape>,
     <https://data.vlaanderen.be/shacl/hulpposten#AIMObjectShape>,
@@ -232,12 +236,12 @@
 <https://data.vlaanderen.be/shacl/hulpposten#BekledingComponentShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging>
@@ -264,12 +268,12 @@
 <https://data.vlaanderen.be/shacl/hulpposten#BrandblusserShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Contactpunt>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Hulppostkast>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Hulppostkast>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Contactpunt>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging>
@@ -427,6 +431,41 @@
     shacl:name "Sturing";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Sturing>
   ], [
+    shacl:datatype xsd:boolean;
+    shacl:description "Geeft aan of het contactpunt zich binnen of buiten bevindt.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "isBuiten";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Contactpunt.isBuiten>
+  ], [
+    shacl:datatype xsd:boolean;
+    shacl:description "Geeft aan of het contactpunt door middel van opbouw gerealiseerd is.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "isOpbouw";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Contactpunt.isOpbouw>
+  ], [
+    shacl:datatype xsd:boolean;
+    shacl:description "Geeft aan of het contactpunt een wisselcontact is. Bij een wisselcontact kan men zelf instellen het contact 'normaal open' of 'normaal toe' is bij een stroompanne.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "isWisselcontact";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Contactpunt.isWisselcontact>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "Het merk van het contactpunt.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "merk";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Contactpunt.merk>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "De modelnaam van het contactpunt.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "modelnaam";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Contactpunt.modelnaam>
+  ], [
     shacl:class skos:Concept;
     shacl:description "Typering van de gebruikte techniek op basis waarvan de aan- of afwezigheid van een contact vastgesteld wordt.";
     shacl:maxCount 1;
@@ -440,7 +479,7 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype xsd:string;
-    shacl:description "Nummer van de batch.";
+    shacl:description "Nummer van de productiebatch van de leverancier.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "batchnummer";
@@ -643,7 +682,17 @@
 <https://data.vlaanderen.be/shacl/hulpposten#HulppostkastShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Hydrant>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Brandblusser>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Brandhaspel>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging>
@@ -658,17 +707,7 @@
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel>;
-    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
-    shacl:name "Bevestiging";
-    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging>
-  ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Brandblusser>;
-    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
-    shacl:name "Bevestiging";
-    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging>
-  ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Brandhaspel>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Hydrant>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging>
@@ -736,17 +775,17 @@
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram>;
-    shacl:description "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting.";
-    shacl:name "Sturing";
-    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Sturing>
-  ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Contactpunt>;
     shacl:description "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting.";
     shacl:name "Sturing";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Sturing>
   ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#PLC>;
+    shacl:description "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting.";
+    shacl:name "Sturing";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Sturing>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram>;
     shacl:description "Deze relatie geeft aan of er een of andere vorm van dataverkeer is tussen 2 onderdelen. Een wegverlichtingstoestel dat aan staat wordt ook als sturing beschouwd, in dit geval is het een lang ononderbroken elektrisch aan-signaal. Deze relatie heeft geen richting.";
     shacl:name "Sturing";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Sturing>
@@ -805,6 +844,11 @@
 <https://data.vlaanderen.be/shacl/hulpposten#IntercomToestelShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Hulppostkast>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging>
+  ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#BekledingComponent>;
     shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
     shacl:name "Bevestiging";
@@ -815,21 +859,23 @@
     shacl:name "Bevestiging";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Hulppostkast>;
-    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
-    shacl:name "Bevestiging";
-    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Bevestiging>
-  ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/installatie#Hulppost>;
     shacl:description "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.";
     shacl:name "HoortBij"
   ], [
     shacl:datatype xsd:string;
-    shacl:description "De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en  toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.";
+    shacl:description "De DNSNaam (ook \"volledige domein naam\" genoemd ) is een unieke naam binnen het Domain Name System (DNS), het naamgevingssysteem waarmee computers, webservers, diensten en toepassing op een unieke manier kunnen worden geïdentificeerd. Deze bevat zowel de hostname en de top level domein naam bv. 120c8-ar1.belfa.be.";
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "dnsNaam";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel.dnsNaam>
+  ], [
+    shacl:datatype xsd:boolean;
+    shacl:description "Geeft aan of het toestel voorzien is van een camera om naast audio ook video ter verzenden naar een ander toestel in het netwerk.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "heeftCamera";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel.heeftCamera>
   ], [
     shacl:datatype xsd:boolean;
     shacl:description "Geeft aan of communicatie tussen personen al dan niet via video kan verlopen.";
@@ -845,6 +891,13 @@
     shacl:name "ipAdres";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel.ipAdres>
   ], [
+    shacl:datatype xsd:boolean;
+    shacl:description "Geeft aan of het intercomtoestel een inbouw- of opbouwtoestel is.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "isInbouw";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel.isInbouw>
+  ], [
     shacl:class skos:Concept;
     shacl:description "Het merk van het intercomtoestel.";
     shacl:maxCount 1;
@@ -859,6 +912,13 @@
     shacl:name "modelnaam";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel.modelnaam>
   ], [
+    shacl:datatype xsd:string;
+    shacl:description "Het nummer dat een gebruiker in een verzendend toestel ingeeft om een verbinding te maken met dit, het ontvangend, toestel.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "oproepnummer";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel.oproepnummer>
+  ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/implementatieelement#DtcDocument>;
     shacl:description "De technische fiche van het intercomtoestel.";
     shacl:maxCount 1;
@@ -872,6 +932,13 @@
     shacl:minCount 1;
     shacl:name "transportType";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel.transportType>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "Geeft aan welke functie het toestel vervultin het intercomnetwerk.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "uitvoering";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel.uitvoering>
   ];
   shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#IntercomToestel> .
 
@@ -1007,6 +1074,14 @@
   shacl:closed false;
   shacl:targetClass skos:Concept .
 
+<https://data.vlaanderen.be/shacl/hulpposten#KlContactpuntMerkShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/hulpposten#KlContactpuntModelnaamShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
 <https://data.vlaanderen.be/shacl/hulpposten#KlContactpuntTypeShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass skos:Concept .
@@ -1044,6 +1119,10 @@
   shacl:targetClass skos:Concept .
 
 <https://data.vlaanderen.be/shacl/hulpposten#KlIntercomModelnaamShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/hulpposten#KlIntercomUitvoeringShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass skos:Concept .
 
@@ -1419,6 +1498,18 @@
   ];
   shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Pictogram> .
 
+<https://data.vlaanderen.be/shacl/hulpposten#SerienummerObjectShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:string;
+    shacl:description "Het unieke nummer waarmee het toestel door de fabrikant geïdentificeerd is.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "serienummer";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#SerienummerObject.serienummer>
+  ];
+  shacl:targetClass <https://wegenenverkeer-test.data.vlaanderen.be/ns/abstracten#SerienummerObject> .
+
 <https://data.vlaanderen.be/shacl/hulpposten#StopcontactShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
@@ -1466,7 +1557,12 @@
     shacl:name "Sturing";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Sturing>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Aanstraalverlichting>;
+    shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
+    shacl:name "Voedt";
+    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Voedt>
+  ], [
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Stopcontact>;
     shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
     shacl:name "Voedt";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Voedt>
@@ -1476,17 +1572,12 @@
     shacl:name "Voedt";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Voedt>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Aanstraalverlichting>;
-    shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
-    shacl:name "Voedt";
-    shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Voedt>
-  ], [
     shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Montagekast>;
     shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
     shacl:name "Voedt";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Voedt>
   ], [
-    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#Stopcontact>;
+    shacl:class <https://wegenenverkeer-test.data.vlaanderen.be/ns/onderdeel#InwendigVerlichtPictogram>;
     shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
     shacl:name "Voedt";
     shacl:path <https://wegenenverkeer-test.data.vlaanderen.be/doc/implementatiemodel/hulpposten/#Voedt>
