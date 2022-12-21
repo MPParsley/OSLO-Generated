@@ -1,0 +1,671 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening> <https://data.vlaanderen.be/shacl/elektromechanische-afbakeningshapes> <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#LiteralShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#AnyURIShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#BooleanShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#DateShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#DecimalShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#NonNegativeIntegerShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#StringShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KlLichtzuilSoortLampShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KlAIMToestandShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KlAlgMimeTypeShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KlAlgProvincieShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KlAlgGemeenteShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KlAlgMateriaalShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KlKleurReflectorShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#BehuizingShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#EMAfbakeningShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#AIMDBStatusShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#AIMNaamObjectShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#AIMObjectShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#AIMToestandShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#DtcAdresShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#DtcDocumentShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#DtcIdentificatorShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#DteTekstblokShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KwantWrdInAmpereShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KwantWrdInCentimeterShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KwantWrdInMaandShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KwantWrdInMeterShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KwantWrdInVoltShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KwantWrdInWattShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#BochtafbakeningsinstallatieShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#LEDRotondeafbakeningShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#LEDWegdekreflectorBebakeningShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#BevestigingShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#LaagspanningsbordShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#LichtnagelShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#LichtzuilShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#StroomkringShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#VoedtShape>,
+    <https://data.vlaanderen.be/shacl/elektromechanische-afbakening#VoedtAangestuurdShape> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#AIMDBStatusShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:boolean;
+    shacl:description "Geeft aan of het object actief kan gebruikt worden of (zacht) verwijderd is uit het asset beheer systeem.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "isActief";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus.isActief>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#AIMNaamObjectShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:string;
+    shacl:description "De mensleesbare naam van een asset zoals dit bv. ook terug te vinden is op een etiket op het object zelf. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Indien een object een algemeen gangbare naam heeft zoals bv. bij een waterloop dan wordt deze gebruikt.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "naam";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject.naam>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#AIMObjectShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator>;
+    shacl:description "Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "assetId";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.assetId>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Een verwijzing naar een postnummer uit het specifieke bestek waar het object mee verband houdt.";
+    shacl:minCount 1;
+    shacl:name "bestekPostNummer";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.bestekPostNummer>
+  ], [
+    shacl:datatype xsd:date;
+    shacl:description "De datum waarop het object op het terrein is beginnen bestaan, bv. de datum van aanleg.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "datumOprichtingObject";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.datumOprichtingObject>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Extra notitie voor het object.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "notitie";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.notitie>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Een verwijzing naar een postnummer uit het standaardbestek waar het object mee verband houdt. De notatie van het postnummer moet overeenkomen met de notatie die gebruikt is in de catalogi van standaardbestekken, bijvoorbeeld postnummer 0701.20404G.";
+    shacl:minCount 1;
+    shacl:name "standaardBestekPostNummer";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.standaardBestekPostNummer>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand>;
+    shacl:description " De levensduur in aantal maanden die theoretisch mag verwacht worden voor een object.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "theoretischeLevensduur";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.theoretischeLevensduur>
+  ], [
+    shacl:class xsd:anyURI;
+    shacl:description "De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI .";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "typeURI";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.typeURI>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#AIMToestandShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:description "Geeft de actuele stand in de levenscyclus van het object.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "toestand";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand.toestand>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#AnyURIShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:anyURI .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#BehuizingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/elektromechanische-afbakening/#Bevestiging>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/elektromechanische-afbakening/#Bevestiging>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Laagspanningsbord>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/elektromechanische-afbakening/#Bevestiging>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres>;
+    shacl:description "Adres (aanduiding van de locatie) van de behuizing. Indien deze geen adres heeft, wordt net zoals door Fluvius voor cabines, het adres van een nabijgelegen straat genomen.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "adres";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing.adres>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument>;
+    shacl:description "Een bestandsbijlage met de risicoanalyse voor werken in en rond een behuizing.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "risicoanalyse";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing.risicoanalyse>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument>;
+    shacl:description "Een bestandsbijlage met de ingevulde en actuele tabel uitwendige invloeden zoals vereist door het AREI voor bepaalde elektrische installaties.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "tabelUitwendigeInvloeden";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing.tabelUitwendigeInvloeden>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#BevestigingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/elektromechanische-afbakening/#Bevestiging> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#BochtafbakeningsinstallatieShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class xsd:nonNegativeInteger;
+    shacl:description "Het aantal borden in de bochtafbakening voor het aanduiden van een bocht in een rijrichting.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "aantalBorden";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Bochtafbakeningsinstallatie.aantalBorden>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "Het materiaal waaruit de behuizing gemaakt is.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "materiaalBehuizing";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Bochtafbakeningsinstallatie.materiaalBehuizing>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Bochtafbakeningsinstallatie> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#BooleanShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:boolean .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#DateShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:date .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#DecimalShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:decimal .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#DtcAdresShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:string;
+    shacl:description "Een nummer dat de postbus aanduidt.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "bus";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.bus>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "De bestuurlijke eenheid waarin het adres gelegen is.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "gemeente";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.gemeente>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Een nummer dat door de gemeente aan bv. een huis wordt toegekend.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "huisnummer";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.huisnummer>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Een korte reeks tekens die in het postadres wordt opgenomen.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "postcode";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.postcode>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "Het deelgebied waarin het adres gelegen is.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "provincie";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.provincie>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "De naam van de straat.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "straatnaam";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres.straatnaam>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcAdres> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#DtcDocumentShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:string;
+    shacl:description "De naam van het Document inclusief de bestandsextensie, van de naam gescheiden door een punt.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "bestandsnaam";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.bestandsnaam>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "Het MIME type van het document.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "mimeType";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.mimeType>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTekstblok>;
+    shacl:description "Een korte toelichting over waar het document juist voor dient.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "omschrijving";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.omschrijving>
+  ], [
+    shacl:class xsd:anyURI;
+    shacl:description "De verwijzing naar de bestandslocatie via een link. Bij lokale bestanden kan dit eventueel ook een pad zijn.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "uri";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.uri>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#DtcIdentificatorShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:string;
+    shacl:description "Een groep van tekens om een AIM object te identificeren of te benoemen.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "identificator";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Gegevens van de organisatie die de toekenning deed.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "toegekendDoor";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.toegekendDoor>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#DteTekstblokShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:string;
+    shacl:description "De string welke uit meerdere zinnen bestaat, en ook regeleindes kan bevatten. Een tekstblok bevat maximaal 65.000 karakters.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTekstblok.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTekstblok> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#EMAfbakeningShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#EMAfbakening> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KlAIMToestandShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KlAlgGemeenteShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KlAlgMateriaalShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KlAlgMimeTypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KlAlgProvincieShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KlKleurReflectorShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KlLichtzuilSoortLampShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KwantWrdInAmpereShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in ampere.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInAmpere.standaardEenheid>
+  ], [
+    shacl:class xsd:decimal;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInAmpere.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInAmpere> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KwantWrdInCentimeterShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in centimeter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter.standaardEenheid>
+  ], [
+    shacl:class xsd:decimal;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KwantWrdInMaandShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in maand.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand.standaardEenheid>
+  ], [
+    shacl:class xsd:nonNegativeInteger;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KwantWrdInMeterShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in meter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter.standaardEenheid>
+  ], [
+    shacl:class xsd:decimal;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KwantWrdInVoltShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in Volt.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.standaardEenheid>
+  ], [
+    shacl:class xsd:decimal;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#KwantWrdInWattShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in Watt.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt.standaardEenheid>
+  ], [
+    shacl:class xsd:decimal;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#LEDRotondeafbakeningShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class xsd:nonNegativeInteger;
+    shacl:description "Het aantal actieve reflectoren in de verzameling van reflectoren die hetzelfde obstakel of risico aangeven.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "aantalActieveReflectoren";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#LEDRotondeafbakening.aantalActieveReflectoren>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter>;
+    shacl:description "De afstand tussen de eerste en de laatste actieve reflector in de verzameling gevoed door dezelfde stroomkring. ";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "lengte";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#LEDRotondeafbakening.lengte>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInWatt>;
+    shacl:description "Nominale spanning (in volt) van de LED rotondeafbakening.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "nominaalVermogen";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#LEDRotondeafbakening.nominaalVermogen>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt>;
+    shacl:description "Nominaal vermogen (in watt) van de LED rotondeafbakening.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "nominaleSpanning";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#LEDRotondeafbakening.nominaleSpanning>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter>;
+    shacl:description "De afstand van middelpunt tot middelpunt tussen twee reflectoren in de verzameling.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "tussenafstand";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#LEDRotondeafbakening.tussenafstand>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#LEDRotondeafbakening> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#LEDWegdekreflectorBebakeningShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class xsd:nonNegativeInteger;
+    shacl:description "Het aantal actieve reflectoren in de verzameling van reflectoren die hetzelfde obstakel of risico aangeven.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "aantalActieveReflectoren";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#LEDWegdekreflectorBebakening.aantalActieveReflectoren>
+  ], [
+    shacl:datatype xsd:boolean;
+    shacl:description "Geeft aan dat de verzameling bestaat uit actieve reflectoren met geintegreerde zonnecellen en een batterij die zorgen voor de voeding van de verlichting in de relfector.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "heeftVoedingOpZonneEnergie";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#LEDWegdekreflectorBebakening.heeftVoedingOpZonneEnergie>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "De kleur van het niet-actieve deel de reflector stroomafwaarts.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "kleurReflectorAflopend";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#LEDWegdekreflectorBebakening.kleurReflectorAflopend>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "De kleur van het niet-actieve deel de reflector stroomopwaarts.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "kleurReflectorOplopend";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#LEDWegdekreflectorBebakening.kleurReflectorOplopend>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter>;
+    shacl:description "De afstand tussen de eerste en de laatste actieve reflector in de verzameling gevoed door dezelfde stroomkring. ";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "lengte";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#LEDWegdekreflectorBebakening.lengte>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter>;
+    shacl:description "De afstand van middelpunt tot middelpunt tussen twee reflectoren in de verzameling.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "tussenafstand";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#LEDWegdekreflectorBebakening.tussenafstand>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/installatie#LEDWegdekreflectorBebakening> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#LaagspanningsbordShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/elektromechanische-afbakening/#Bevestiging>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Behuizing>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/elektromechanische-afbakening/#Bevestiging>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument>;
+    shacl:description "Het elektrisch aansluitschema van het laagspanningsbord.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "elektrischSchema";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Laagspanningsbord.elektrischSchema>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInAmpere>;
+    shacl:description "Het vermogen van het laagspanningsbord.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "vermogen";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Laagspanningsbord.vermogen>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Laagspanningsbord> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#LichtnagelShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:boolean;
+    shacl:description "Geeft aan of de lichtnagel opgelicht wordt door middel van geïntegreerde LEDs.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "isLED";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtnagel.isLED>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtnagel> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#LichtzuilShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:description "Welke soort lamp er gebruikt wordt in de lichtzuil.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "soortLamp";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtzuil.soortLamp>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Lichtzuil> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#LiteralShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass rdfs:Literal .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#NonNegativeIntegerShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:nonNegativeInteger .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#StringShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:string .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#StroomkringShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Laagspanningsbord>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/elektromechanische-afbakening/#Bevestiging>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring>;
+    shacl:description "Deze relatie wordt enkel gelegd naar onderdelen die permanent onder spanning staan in normaal bedrijf. Aan deze relatie wordt steeds een richting toegekend van de voedinggever naar de ontvanger.";
+    shacl:name "Voedt";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/elektromechanische-afbakening/#Voedt>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#EMAfbakening>;
+    shacl:description "Deze relatie wordt enkel gelegd naar objecttypes die typisch een groot vermogen vereisen en onder spanning komen nadat het voedend element aangestuurd is om die spanning door te sturen.";
+    shacl:name "VoedtAangestuurd"
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "De identificatie van de stroomkring.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "stroomkringnummer";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring.stroomkringnummer>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Stroomkring> .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#VoedtAangestuurdShape> a shacl:NodeShape;
+  shacl:closed false .
+
+<https://data.vlaanderen.be/shacl/elektromechanische-afbakening#VoedtShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt>;
+    shacl:description "Spanning van de aansluiting, dit wordt enkel ingevuld op voedingsrelaties voorbij de hoofdschakelaar.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "aansluitspanning";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt.aansluitspanning>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVolt>;
+    shacl:description "Vermogen van de aansluiting, dit wordt enkel ingevuld op voedingsrelaties voorbij de hoofdschakelaar.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "aansluitvermogen";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Voedt.aansluitvermogen>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/elektromechanische-afbakening/#Voedt> .

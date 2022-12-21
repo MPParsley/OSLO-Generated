@@ -1,0 +1,861 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://data.vlaanderen.be/shacl/grondwerken> <https://data.vlaanderen.be/shacl/grondwerkenshapes> <https://data.vlaanderen.be/shacl/grondwerken#LiteralShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#AnyURIShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#BooleanShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#DateShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#DecimalShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#NonNegativeIntegerShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#StringShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KlGrondherkomstShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KlAIMToestandShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KlUitgravingSoortenShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KlGrondbestemmingShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KlGrondHoofdnaamCodeShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KlGrondBijmengingHoeveelheidCodeShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KlAlgMimeTypeShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KlVervuilingSoortenShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KlLaagRolShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KlAfgravingSoortenShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KlGewaarborgdeWrijvingshoekShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KlOphogingSoortenShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KlBemestingShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KlGrondbewerkingShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KlGrondverbeteringsmiddelShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#LaagShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#LaagDikteShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#AIMDBStatusShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#AIMObjectShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#AIMToestandShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#DtcDocumentShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#DtcIdentificatorShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#DteTekstblokShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KwantWrdInCentimeterShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KwantWrdInKilogramShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KwantWrdInKubiekeMeterShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KwantWrdInMaandShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KwantWrdInMeterShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KwantWrdInMicrogramPerKilogramShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KwantWrdInTonShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#KwantWrdInVierkanteMeterShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#AfdekkingShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#AfgravingShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#BemestingShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#BodemverbeteringsmiddelShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#GrondbewerkingShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#OphogingShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#UitgravingShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#BevestigingShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#DtcGrondbijmengingShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#DtcGrondsoortShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#DtcSoortVervuilingShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#GrondShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#HeeftBeheerShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#LigtOpShape>,
+    <https://data.vlaanderen.be/shacl/grondwerken#PiezometrischeBuisShape> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#AIMDBStatusShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:boolean;
+    shacl:description "Geeft aan of het object actief kan gebruikt worden of (zacht) verwijderd is uit het asset beheer systeem.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "isActief";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus.isActief>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#AIMObjectShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator>;
+    shacl:description "Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "assetId";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.assetId>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Een verwijzing naar een postnummer uit het specifieke bestek waar het object mee verband houdt.";
+    shacl:minCount 1;
+    shacl:name "bestekPostNummer";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.bestekPostNummer>
+  ], [
+    shacl:datatype xsd:date;
+    shacl:description "De datum waarop het object op het terrein is beginnen bestaan, bv. de datum van aanleg.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "datumOprichtingObject";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.datumOprichtingObject>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Extra notitie voor het object.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "notitie";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.notitie>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Een verwijzing naar een postnummer uit het standaardbestek waar het object mee verband houdt. De notatie van het postnummer moet overeenkomen met de notatie die gebruikt is in de catalogi van standaardbestekken, bijvoorbeeld postnummer 0701.20404G.";
+    shacl:minCount 1;
+    shacl:name "standaardBestekPostNummer";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.standaardBestekPostNummer>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand>;
+    shacl:description " De levensduur in aantal maanden die theoretisch mag verwacht worden voor een object.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "theoretischeLevensduur";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.theoretischeLevensduur>
+  ], [
+    shacl:class xsd:anyURI;
+    shacl:description "De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI .";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "typeURI";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.typeURI>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#AIMToestandShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:description "Geeft de actuele stand in de levenscyclus van het object.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "toestand";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand.toestand>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#AfdekkingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:description "De herkomst van de grond.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "herkomst";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Afdekking.herkomst>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter>;
+    shacl:description "De oppervlakte in vierkante meter van de afdekking.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "oppervlakte";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Afdekking.oppervlakte>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Afdekking> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#AfgravingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:description "De bestemmingen of doelen van de grond.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "bestemming";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Afgraving.bestemming>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInTon>;
+    shacl:description "Het gewicht van de grondlaag in ton.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "gewicht";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Afgraving.gewicht>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter>;
+    shacl:description "De oppervlakte in vierkante meter van de afgraving.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "oppervlakte";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Afgraving.oppervlakte>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "De specificatie van type handeling bij afgraving.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "soortAfgraving";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Afgraving.soortAfgraving>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter>;
+    shacl:description "Het volume van de grondlaag in kubieke meter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "volume";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Afgraving.volume>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Afgraving> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#AnyURIShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:anyURI .
+
+<https://data.vlaanderen.be/shacl/grondwerken#BemestingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:description "Het toevoegen van en verwerken van meststoffen zowel bij aanleg alsook bij beheer.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "bemesting";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Bemesting.bemesting>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram>;
+    shacl:description "Het gewicht in kilogram van de te bewerken grond.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "gewicht";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Bemesting.gewicht>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Bemesting> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#BevestigingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/grondwerken/#Bevestiging> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#BodemverbeteringsmiddelShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram>;
+    shacl:description "Het gewicht in kilogram van de verbeterde grond.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "gewicht";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Bodemverbeteringsmiddel.gewicht>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "Het verwerken van bodemverbeteringsmiddelen omvat het gelijkmatig spreiden ervan op bepaalde grondoppervlakken en/of het verwerken in plantputten.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "grondverbeteringsmiddel";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Bodemverbeteringsmiddel.grondverbeteringsmiddel>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter>;
+    shacl:description "De oppervlakte van de verbeterde grond in vierkante meter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "oppervlakte";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Bodemverbeteringsmiddel.oppervlakte>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter>;
+    shacl:description "Het volume van de verbeterde grond in kubieke meter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "volume";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Bodemverbeteringsmiddel.volume>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Bodemverbeteringsmiddel> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#BooleanShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:boolean .
+
+<https://data.vlaanderen.be/shacl/grondwerken#DateShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:date .
+
+<https://data.vlaanderen.be/shacl/grondwerken#DecimalShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:decimal .
+
+<https://data.vlaanderen.be/shacl/grondwerken#DtcDocumentShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:string;
+    shacl:description "De naam van het Document inclusief de bestandsextensie, van de naam gescheiden door een punt.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "bestandsnaam";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.bestandsnaam>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "Het MIME type van het document.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "mimeType";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.mimeType>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTekstblok>;
+    shacl:description "Een korte toelichting over waar het document juist voor dient.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "omschrijving";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.omschrijving>
+  ], [
+    shacl:class xsd:anyURI;
+    shacl:description "De verwijzing naar de bestandslocatie via een link. Bij lokale bestanden kan dit eventueel ook een pad zijn.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "uri";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.uri>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#DtcGrondbijmengingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:description "Lithologisch nevenbestanddeel (als code) van de laag zoals gebruikt bij Databank Ondergrond Vlaanderen (gecodeerde lithologie en geotechnische codering).";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "bijmengingshoofdnaamcode";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGrondbijmenging.bijmengingshoofdnaamcode>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "Aanduiding (als code) van de hoeveelheid bijmenging.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "hoeveelheidscode";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGrondbijmenging.hoeveelheidscode>
+  ], [
+    shacl:datatype xsd:boolean;
+    shacl:description "Grondbijmenging plaatselijk of niet-plaatselijk.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "isPlaatselijk";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGrondbijmenging.isPlaatselijk>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGrondbijmenging> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#DtcGrondsoortShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGrondbijmenging>;
+    shacl:description "Lithologisch hoofdbestanddeel (als code) van de laag zoals gebruikt bij Databank Ondergrond Vlaanderen (gecodeerde lithologie en geotechnische codering).";
+    shacl:maxCount 3;
+    shacl:minCount 1;
+    shacl:name "bijmenging";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGrondsoort.bijmenging>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "Lithologisch hoofdbestanddeel (als code) van de laag zoals gebruikt bij Databank Ondergrond Vlaanderen (gecodeerde lithologie en geotechnische codering).";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "hoofdnaamcode";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGrondsoort.hoofdnaamcode>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGrondsoort> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#DtcIdentificatorShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:string;
+    shacl:description "Een groep van tekens om een AIM object te identificeren of te benoemen.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "identificator";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:description "Gegevens van de organisatie die de toekenning deed.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "toegekendDoor";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.toegekendDoor>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#DtcSoortVervuilingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMicrogramPerKilogram>;
+    shacl:description "De concentratie van de vervuiling kan in µg/kg bepaalt worden. ";
+    shacl:maxCount 3;
+    shacl:minCount 1;
+    shacl:name "microgramPerKilogram";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSoortVervuiling.microgramPerKilogram>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "Het soort vervuiling kan hiermee bepaalt worden.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "soortVervuiling";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSoortVervuiling.soortVervuiling>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSoortVervuiling> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#DteTekstblokShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:string;
+    shacl:description "De string welke uit meerdere zinnen bestaat, en ook regeleindes kan bevatten. Een tekstblok bevat maximaal 65.000 karakters.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTekstblok.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTekstblok> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#GrondShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PiezometrischeBuis>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/grondwerken/#Bevestiging>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Ophoging>;
+    shacl:description "De relatie geeft aan dat een onderdeel wordt beheerd. Het beheer object bevat de nodige beheer eigenschappen.";
+    shacl:name "HeeftBeheer"
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Uitgraving>;
+    shacl:description "De relatie geeft aan dat een onderdeel wordt beheerd. Het beheer object bevat de nodige beheer eigenschappen.";
+    shacl:name "HeeftBeheer"
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Bodemverbeteringsmiddel>;
+    shacl:description "De relatie geeft aan dat een onderdeel wordt beheerd. Het beheer object bevat de nodige beheer eigenschappen.";
+    shacl:name "HeeftBeheer"
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Grondbewerking>;
+    shacl:description "De relatie geeft aan dat een onderdeel wordt beheerd. Het beheer object bevat de nodige beheer eigenschappen.";
+    shacl:name "HeeftBeheer"
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Afgraving>;
+    shacl:description "De relatie geeft aan dat een onderdeel wordt beheerd. Het beheer object bevat de nodige beheer eigenschappen.";
+    shacl:name "HeeftBeheer"
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Afdekking>;
+    shacl:description "De relatie geeft aan dat een onderdeel wordt beheerd. Het beheer object bevat de nodige beheer eigenschappen.";
+    shacl:name "HeeftBeheer"
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Bemesting>;
+    shacl:description "De relatie geeft aan dat een onderdeel wordt beheerd. Het beheer object bevat de nodige beheer eigenschappen.";
+    shacl:name "HeeftBeheer"
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcGrondsoort>;
+    shacl:description "Lithologisch hoofd- en nevenbestanddeel (als code) van de laag zoals gebruikt bij databank ondergrond Vlaanderen (gecodeerde lithologie en geotechnische codering).";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "grondsoort";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Grond.grondsoort>
+  ], [
+    shacl:class xsd:nonNegativeInteger;
+    shacl:description "Het 3-delig nummer dat gehanteerd wordt door de vzw grondbank om de milieuhygiënische mogelijkheden van een partij bodem of grond aan te geven.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "milieuHygienischeCode";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Grond.milieuHygienischeCode>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#DtcSoortVervuiling>;
+    shacl:description "De soort vervuiling die vastgesteld is op het pakket grond.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "soortVervuiling";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Grond.soortVervuiling>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument>;
+    shacl:description "Het technisch verslag van een bodemonderzoek.";
+    shacl:minCount 1;
+    shacl:name "technischVerslagBodemonderzoek";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Grond.technischVerslagBodemonderzoek>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter>;
+    shacl:description "Diepte van de onderkant van de laag in meter. https://www.dov.vlaanderen.be/xdov/schema/latest/xsd/kern/generiek/GeneriekeDataTypes.xsd (DiepteType).";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "tot";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Grond.tot>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter>;
+    shacl:description "Diepte van de bovenkant van de laag in meter. https://www.dov.vlaanderen.be/xdov/schema/latest/xsd/kern/generiek/GeneriekeDataTypes.xsd (DiepteType).";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "van";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Grond.van>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Grond> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#GrondbewerkingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter>;
+    shacl:description "De oppervlakte in vierkante meter van de te bewerken grond.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "oppervlakte";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Grondbewerking.oppervlakte>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "Specificatie van het type profielbewerking en bouwvoorwerkzaamheden voor aanleg van beplantingen, graslanden, wegbermen en grasmatten.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "soortGrondbewerking";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Grondbewerking.soortGrondbewerking>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Grondbewerking> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#HeeftBeheerShape> a shacl:NodeShape;
+  shacl:closed false .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KlAIMToestandShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KlAfgravingSoortenShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KlAlgMimeTypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KlBemestingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KlGewaarborgdeWrijvingshoekShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KlGrondBijmengingHoeveelheidCodeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KlGrondHoofdnaamCodeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KlGrondbestemmingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KlGrondbewerkingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KlGrondherkomstShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KlGrondverbeteringsmiddelShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KlLaagRolShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KlOphogingSoortenShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KlUitgravingSoortenShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KlVervuilingSoortenShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KwantWrdInCentimeterShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in centimeter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter.standaardEenheid>
+  ], [
+    shacl:class xsd:decimal;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KwantWrdInKilogramShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in kilogram.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram.standaardEenheid>
+  ], [
+    shacl:class xsd:decimal;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKilogram> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KwantWrdInKubiekeMeterShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in kubieke meter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter.standaardEenheid>
+  ], [
+    shacl:class xsd:decimal;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KwantWrdInMaandShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in maand.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand.standaardEenheid>
+  ], [
+    shacl:class xsd:nonNegativeInteger;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KwantWrdInMeterShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in meter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter.standaardEenheid>
+  ], [
+    shacl:class xsd:decimal;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KwantWrdInMicrogramPerKilogramShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in µg/kg.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMicrogramPerKilogram.standaardEenheid>
+  ], [
+    shacl:class xsd:decimal;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMicrogramPerKilogram.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMicrogramPerKilogram> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KwantWrdInTonShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in ton.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInTon.standaardEenheid>
+  ], [
+    shacl:class xsd:decimal;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInTon.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInTon> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#KwantWrdInVierkanteMeterShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:description "De standaard eenheid bij dit datatype is uitgedrukt in vierkante meter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "standaardEenheid";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter.standaardEenheid>
+  ], [
+    shacl:class xsd:decimal;
+    shacl:description "Bevat een getal die bij het datatype hoort.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "waarde";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter.waarde>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#LaagDikteShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter>;
+    shacl:description "De gemiddelde dikte van een laag in centimeter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "dikte";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagDikte.dikte>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#LaagDikte> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#LaagShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag>;
+    shacl:description "Deze relatie geeft aan dat 2 onderdelen direct fysiek op elkaar liggen. Deze relatie heeft een richting en gaat van het bovenste naar het onderste onderdeel.";
+    shacl:name "LigtOp"
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter>;
+    shacl:description "De (gemiddelde) breedte van een laag in meter. Dit kan ook de nominale breedte zijn afhankelijk van de laag en situatie.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "breedte";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.breedte>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "De functie die de laag vervult in de verticale opbouw.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "laagRol";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.laagRol>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter>;
+    shacl:description "De (gemiddelde) lengte van een laag in meter. Dit kan ook de nominale lengte zijn afhankelijk van de laag en situatie.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "lengte";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.lengte>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInVierkanteMeter>;
+    shacl:description "De oppervlakte van een laag in vierkante meter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "oppervlakte";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag.oppervlakte>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#Laag> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#LigtOpShape> a shacl:NodeShape;
+  shacl:closed false .
+
+<https://data.vlaanderen.be/shacl/grondwerken#LiteralShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass rdfs:Literal .
+
+<https://data.vlaanderen.be/shacl/grondwerken#NonNegativeIntegerShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:nonNegativeInteger .
+
+<https://data.vlaanderen.be/shacl/grondwerken#OphogingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInTon>;
+    shacl:description "Het gewicht van de grondlaag in ton.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "gewicht";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Ophoging.gewicht>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "De herkomst van de grond.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "herkomst";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Ophoging.herkomst>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "De specificatie van type grond bij ophoging.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "soortOphoging";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Ophoging.soortOphoging>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter>;
+    shacl:description "Het volume van de grondlaag in kubieke meter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "volume";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Ophoging.volume>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "De hoek van inwendige wrijving geeft een aanwijzing omtrent de afschuifkarakteristieken en wordt dan ook gebruikt bij berekening van afschuiving, gronddruk en draagvermogen van paalfunderingen.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "wrijvingshoek";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Ophoging.wrijvingshoek>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Ophoging> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#PiezometrischeBuisShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Grond>;
+    shacl:description "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.";
+    shacl:name "Bevestiging";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/grondwerken/#Bevestiging>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMeter>;
+    shacl:description "De diepte vanaf maaiveld tot de onderkant van de piezometrische buis in meter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "diepte";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PiezometrischeBuis.diepte>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#PiezometrischeBuis> .
+
+<https://data.vlaanderen.be/shacl/grondwerken#StringShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:string .
+
+<https://data.vlaanderen.be/shacl/grondwerken#UitgravingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:description "De bestemmingen of doelen van de grond.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "bestemming";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Uitgraving.bestemming>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInTon>;
+    shacl:description "Het gewicht van de grondlaag in ton.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "gewicht";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Uitgraving.gewicht>
+  ], [
+    shacl:class skos:Concept;
+    shacl:description "De specificatie van type grond bij uitgraving.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "soortUitgraving";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Uitgraving.soortUitgraving>
+  ], [
+    shacl:class <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInKubiekeMeter>;
+    shacl:description "Het volume van de grondlaag in kubieke meter.";
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "volume";
+    shacl:path <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Uitgraving.volume>
+  ];
+  shacl:targetClass <https://wegenenverkeer.data.vlaanderen.be/ns/levenscyclus#Uitgraving> .

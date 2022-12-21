@@ -1,0 +1,615 @@
+{
+  "@context": {
+    "@vocab": "https://data.vlaanderen.be/shacl/aarding",
+    "qb": "http://purl.org/linked-data/cube#",
+    "qb:codeList": {
+      "@type": "@id"
+    },
+    "sh": "http://www.w3.org/ns/shacl#",
+    "sh:class": {
+      "@type": "@id"
+    },
+    "sh:datatype": {
+      "@type": "@id"
+    },
+    "sh:maxCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:minCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:path": {
+      "@type": "@id"
+    },
+    "sh:property": {
+      "@type": "@id"
+    },
+    "sh:targetClass": {
+      "@type": "@id"
+    },
+    "shapes": {
+      "@type": "@id"
+    }
+  },
+  "@id": "https://data.vlaanderen.be/shacl/aarding",
+  "shapes": [
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#LiteralShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#AnyURIShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#BooleanShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#DateShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2001/XMLSchema#date"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#DecimalShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#NonNegativeIntegerShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#StringShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#KlAIMToestandShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#KlAardingskabelSectieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#KlAardingAardingsnetShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#KlAardingAardingsstelselShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#KlAlgMimeTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#KabelAardingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter",
+          "sh:description": "De buitenste afmeting van de kabel in millimeter.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "buitenmantelDiameter",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KabelAarding.buitenmantelDiameter"
+        }
+      ],
+      "sh:targetClass": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KabelAarding"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#KabelAardingSamenstellingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Geeft de dikte van een kabel of pen voor aarding weer als oppervlakte van een doorsnede, uitgedrukt in mm².",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "sectie",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KabelAardingSamenstelling.sectie"
+        }
+      ],
+      "sh:targetClass": "https://wegenenverkeer.data.vlaanderen.be/ns/abstracten#KabelAardingSamenstelling"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#AIMDBStatusShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "Geeft aan of het object actief kan gebruikt worden of (zacht) verwijderd is uit het asset beheer systeem.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "isActief",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus.isActief"
+        }
+      ],
+      "sh:targetClass": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#AIMNaamObjectShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "De mensleesbare naam van een asset zoals dit bv. ook terug te vinden is op een etiket op het object zelf. De assetbeheerder kent deze naam toe of geeft de opdracht om deze toe te kennen. Indien een object een algemeen gangbare naam heeft zoals bv. bij een waterloop dan wordt deze gebruikt.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "naam",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject.naam"
+        }
+      ],
+      "sh:targetClass": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMNaamObject"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#AIMObjectShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator",
+          "sh:description": "Unieke identificatie van de asset zoals toegekend door de assetbeheerder of n.a.v. eerste aanlevering door de leverancier.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "assetId",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.assetId"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Een verwijzing naar een postnummer uit het specifieke bestek waar het object mee verband houdt.",
+          "sh:minCount": "1",
+          "sh:name": "bestekPostNummer",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.bestekPostNummer"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#date",
+          "sh:description": "De datum waarop het object op het terrein is beginnen bestaan, bv. de datum van aanleg.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "datumOprichtingObject",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.datumOprichtingObject"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Extra notitie voor het object.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "notitie",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.notitie"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Een verwijzing naar een postnummer uit het standaardbestek waar het object mee verband houdt. De notatie van het postnummer moet overeenkomen met de notatie die gebruikt is in de catalogi van standaardbestekken, bijvoorbeeld postnummer 0701.20404G.",
+          "sh:minCount": "1",
+          "sh:name": "standaardBestekPostNummer",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.standaardBestekPostNummer"
+        },
+        {
+          "sh:class": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand",
+          "sh:description": " De levensduur in aantal maanden die theoretisch mag verwacht worden voor een object.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "theoretischeLevensduur",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.theoretischeLevensduur"
+        },
+        {
+          "sh:class": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:description": "De URI van het object volgens https://www.w3.org/2001/XMLSchema#anyURI .",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "typeURI",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject.typeURI"
+        }
+      ],
+      "sh:targetClass": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMObject"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#AIMToestandShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Geeft de actuele stand in de levenscyclus van het object.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "toestand",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand.toestand"
+        }
+      ],
+      "sh:targetClass": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMToestand"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#DtcDocumentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "De naam van het Document inclusief de bestandsextensie, van de naam gescheiden door een punt.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "bestandsnaam",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.bestandsnaam"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Het MIME type van het document.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "mimeType",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.mimeType"
+        },
+        {
+          "sh:class": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTekstblok",
+          "sh:description": "Een korte toelichting over waar het document juist voor dient.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "omschrijving",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.omschrijving"
+        },
+        {
+          "sh:class": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:description": "De verwijzing naar de bestandslocatie via een link. Bij lokale bestanden kan dit eventueel ook een pad zijn.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "uri",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument.uri"
+        }
+      ],
+      "sh:targetClass": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#DtcIdentificatorShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Een groep van tekens om een AIM object te identificeren of te benoemen.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "identificator",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "Gegevens van de organisatie die de toekenning deed.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "toegekendDoor",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.toegekendDoor"
+        }
+      ],
+      "sh:targetClass": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#DteTekstblokShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:description": "De string welke uit meerdere zinnen bestaat, en ook regeleindes kan bevatten. Een tekstblok bevat maximaal 65.000 karakters.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "waarde",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTekstblok.waarde"
+        }
+      ],
+      "sh:targetClass": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DteTekstblok"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#KwantWrdInCentimeterShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:description": "De standaard eenheid bij dit datatype is uitgedrukt in centimeter.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "standaardEenheid",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter.standaardEenheid"
+        },
+        {
+          "sh:class": "http://www.w3.org/2001/XMLSchema#decimal",
+          "sh:description": "Bevat een getal die bij het datatype hoort.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "waarde",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter.waarde"
+        }
+      ],
+      "sh:targetClass": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#KwantWrdInMaandShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:description": "De standaard eenheid bij dit datatype is uitgedrukt in maand.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "standaardEenheid",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand.standaardEenheid"
+        },
+        {
+          "sh:class": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+          "sh:description": "Bevat een getal die bij het datatype hoort.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "waarde",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand.waarde"
+        }
+      ],
+      "sh:targetClass": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMaand"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#KwantWrdInMillimeterShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:description": "De standaard eenheid bij dit datatype is uitgedrukt in millimeter.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "standaardEenheid",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter.standaardEenheid"
+        },
+        {
+          "sh:class": "http://www.w3.org/2001/XMLSchema#decimal",
+          "sh:description": "Bevat een getal die bij het datatype hoort.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "waarde",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter.waarde"
+        }
+      ],
+      "sh:targetClass": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInMillimeter"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#KwantWrdInOhmShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:description": "De standaard eenheid bij dit datatype is uitgedrukt in ohm.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "standaardEenheid",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInOhm.standaardEenheid"
+        },
+        {
+          "sh:class": "http://www.w3.org/2001/XMLSchema#decimal",
+          "sh:description": "Bevat een getal die bij het datatype hoort.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "waarde",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInOhm.waarde"
+        }
+      ],
+      "sh:targetClass": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInOhm"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#AardingsinstallatieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aardingsinstallatie",
+          "sh:description": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.",
+          "sh:name": "Bevestiging",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/aarding/#Bevestiging"
+        },
+        {
+          "sh:class": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aardingsinstallatie",
+          "sh:description": "Deze relatie geeft aan dat twee onderdelen direct fysiek op elkaar bevestigd zijn. Dit kan zowel aan de buitenkant als aan de binnenkant zijn zoals bv. een camera aan een paal of een laagspanningsbord in een kast. Deze relatie heeft geen richting.",
+          "sh:name": "Bevestiging",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/aarding/#Bevestiging"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "De manier waarop respectievelijk de bron en de verbruiker met de aarde verbonden worden om op die manier foutstromen af te voeren.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "aardingsnet",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aardingsinstallatie.aardingsnet"
+        },
+        {
+          "sh:class": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#DtcAardingsstelsel",
+          "sh:description": "De wijze waarop verschillende aardingen (bv. laagspanningsaarding, nulpuntsaarding, hoogspanningsaarding) zich t.o.v. elkaar bevinden: ofwel bevinden alle aardingen zich uit elkaars invloedssfeer en hebben ze geen impact op elkaars potentiaal ofwel zijn alle aardverbindingen galvanisch met elkaar in contact. In het eerste geval spreekt men van gescheiden aardingsstelsel, in het tweede geval van een globale aarding.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "aardingsstelsel",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aardingsinstallatie.aardingsstelsel"
+        },
+        {
+          "sh:class": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInOhm",
+          "sh:description": "De grootte van de weerstand tussen de aardelektrode en de omringende grond.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "aardingsweerstand",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aardingsinstallatie.aardingsweerstand"
+        }
+      ],
+      "sh:targetClass": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aardingsinstallatie"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#DtcAardingsstelselShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcDocument",
+          "sh:description": "Een bestandsbijlage met het attest volgens het aardingsstelsel voorzien door de distributienetbeheerder .",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "attestDNB",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#DtcAardingsstelsel.attestDNB"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:description": "Geeft het type aan van het aardingsstelsel volgens een keuzelijst.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "type",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#DtcAardingsstelsel.type"
+        }
+      ],
+      "sh:targetClass": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#DtcAardingsstelsel"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#AardingskabelShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aardingsinstallatie",
+          "sh:description": "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.",
+          "sh:name": "HoortBij",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/aarding/#Hoort bij"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "Geeft expliciet aan of de aardingskabel al dan niet geïsoleerd is. ",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "isGeisoleerd",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aardingskabel.isGeisoleerd"
+        }
+      ],
+      "sh:targetClass": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aardingskabel"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#AardingslusShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aardingsinstallatie",
+          "sh:description": "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.",
+          "sh:name": "HoortBij",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/aarding/#Hoort bij"
+        }
+      ],
+      "sh:targetClass": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aardingslus"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#AardingsonderbrekerShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aardingsinstallatie",
+          "sh:description": "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.",
+          "sh:name": "HoortBij",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/aarding/#Hoort bij"
+        }
+      ],
+      "sh:targetClass": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aardingsonderbreker"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#AardingspenShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aardingsinstallatie",
+          "sh:description": "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.",
+          "sh:name": "HoortBij",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/aarding/#Hoort bij"
+        },
+        {
+          "sh:class": "https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#KwantWrdInCentimeter",
+          "sh:description": "De totale lengte van de aardingspen.",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "lengte",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aardingspen.lengte"
+        }
+      ],
+      "sh:targetClass": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Aardingspen"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#BevestigingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/aarding/#Bevestiging"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#EquipotentiaalVerbindingShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Aardingsinstallatie",
+          "sh:description": "De relatie geeft aan dat een onderdeel of collectie behoort bij, deel van of lid van een (andere) groep of collectie is.",
+          "sh:name": "HoortBij",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/aarding/#Hoort bij"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:description": "Geeft expliciet aan of de aardingskabel al dan niet geïsoleerd is. ",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": "isGeisoleerd",
+          "sh:path": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EquipotentiaalVerbinding.isGeisoleerd"
+        }
+      ],
+      "sh:targetClass": "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#EquipotentiaalVerbinding"
+    },
+    {
+      "@id": "https://data.vlaanderen.be/shacl/aarding#HoortBijShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://wegenenverkeer.data.vlaanderen.be/doc/implementatiemodel/aarding/#Hoort bij"
+    }
+  ]
+}
